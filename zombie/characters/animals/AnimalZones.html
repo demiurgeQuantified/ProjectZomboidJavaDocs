@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -69,6 +69,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#addAnimalChunk(zombie.characters.animals.AnimalChunk)" tabindex="0">addAnimalChunk(AnimalChunk)</a></li>
 <li><a href="#removeAnimalChunk(zombie.characters.animals.AnimalChunk)" tabindex="0">removeAnimalChunk(AnimalChunk)</a></li>
 <li><a href="#createJunctions(zombie.characters.animals.AnimalCell)" tabindex="0">createJunctions(AnimalCell)</a></li>
+<li><a href="#spawnAnimalsInCell(zombie.characters.animals.AnimalCell)" tabindex="0">spawnAnimalsInCell(AnimalCell)</a></li>
+<li><a href="#getClosestZoneDist(float,float)" tabindex="0">getClosestZoneDist(float, float)</a></li>
+<li><a href="#getClosestZone(float,float,java.lang.String)" tabindex="0">getClosestZone(float, float, String)</a></li>
 <li><a href="#render(zombie.worldMap.UIWorldMap,boolean,boolean)" tabindex="0">render(UIWorldMap, boolean, boolean)</a></li>
 <li><a href="#updateVirtualAnimals()" tabindex="0">updateVirtualAnimals()</a></li>
 <li><a href="#getClosestJunction(int,int)" tabindex="0">getClosestJunction(int, int)</a></li>
@@ -128,6 +131,15 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getClosestJunction(int,int)" class="member-name-link">getClosestJunction</a><wbr>(int&nbsp;x,
  int&nbsp;y)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="AnimalZone.html" title="class in zombie.characters.animals">AnimalZone</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getClosestZone(float,float,java.lang.String)" class="member-name-link">getClosestZone</a><wbr>(float&nbsp;x,
+ float&nbsp;y,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;action)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getClosestZoneDist(float,float)" class="member-name-link">getClosestZoneDist</a><wbr>(float&nbsp;x,
+ float&nbsp;y)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="AnimalZones.html" title="class in zombie.characters.animals">AnimalZones</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance()" class="member-name-link">getInstance</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
@@ -142,9 +154,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#Reset()" class="member-name-link">Reset</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateVirtualAnimals()" class="member-name-link">updateVirtualAnimals</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawnAnimalsInCell(zombie.characters.animals.AnimalCell)" class="member-name-link">spawnAnimalsInCell</a><wbr>(<a href="AnimalCell.html" title="class in zombie.characters.animals">AnimalCell</a>&nbsp;cell)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateVirtualAnimals()" class="member-name-link">updateVirtualAnimals</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -207,6 +222,33 @@ loadScripts(document, 'script');</script>
 <h3>createJunctions</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">createJunctions</span><wbr><span class="parameters">(<a href="AnimalCell.html" title="class in zombie.characters.animals">AnimalCell</a>&nbsp;cell)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="spawnAnimalsInCell(zombie.characters.animals.AnimalCell)">
+<h3>spawnAnimalsInCell</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">spawnAnimalsInCell</span><wbr><span class="parameters">(<a href="AnimalCell.html" title="class in zombie.characters.animals">AnimalCell</a>&nbsp;cell)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getClosestZoneDist(float,float)">
+<h3>getClosestZoneDist</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getClosestZoneDist</span><wbr><span class="parameters">(float&nbsp;x,
+ float&nbsp;y)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getClosestZone(float,float,java.lang.String)">
+<h3>getClosestZone</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="AnimalZone.html" title="class in zombie.characters.animals">AnimalZone</a></span>&nbsp;<span class="element-name">getClosestZone</span><wbr><span class="parameters">(float&nbsp;x,
+ float&nbsp;y,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;action)</span></div>
 </div>
 </section>
 </li>

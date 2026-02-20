@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -116,6 +116,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#loadSync(java.nio.ByteBuffer,int)" tabindex="0">loadSync(ByteBuffer, int)</a></li>
 <li><a href="#save(java.nio.ByteBuffer)" tabindex="0">save(ByteBuffer)</a></li>
 <li><a href="#load(java.nio.ByteBuffer,int)" tabindex="0">load(ByteBuffer, int)</a></li>
+<li><a href="#sync()" tabindex="0">sync()</a></li>
 </ol>
 </li>
 </ol>
@@ -279,11 +280,11 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(java.nio.ByteBuffer,int)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;input,
- int&nbsp;WorldVersion)</code></div>
+ int&nbsp;worldVersion)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadSync(java.nio.ByteBuffer,int)" class="member-name-link">loadSync</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;input,
- int&nbsp;WorldVersion)</code></div>
+ int&nbsp;worldVersion)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#offerItem(zombie.inventory.InventoryItem)" class="member-name-link">offerItem</a><wbr>(<a href="../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
@@ -327,12 +328,15 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setProgress(double)" class="member-name-link">setProgress</a><wbr>(double&nbsp;progress)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryTransferTo(zombie.entity.components.resources.Resource)" class="member-name-link">tryTransferTo</a><wbr>(<a href="Resource.html" title="class in zombie.entity.components.resources">Resource</a>&nbsp;target)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sync()" class="member-name-link">sync</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryTransferTo(zombie.entity.components.resources.Resource,float)" class="member-name-link">tryTransferTo</a><wbr>(<a href="Resource.html" title="class in zombie.entity.components.resources">Resource</a>&nbsp;target,
- float&nbsp;amount)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryTransferTo(zombie.entity.components.resources.Resource)" class="member-name-link">tryTransferTo</a><wbr>(<a href="Resource.html" title="class in zombie.entity.components.resources">Resource</a>&nbsp;target)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryTransferTo(zombie.entity.components.resources.Resource,float)" class="member-name-link">tryTransferTo</a><wbr>(<a href="Resource.html" title="class in zombie.entity.components.resources">Resource</a>&nbsp;target,
+ float&nbsp;amount)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -800,7 +804,7 @@ loadScripts(document, 'script');</script>
 <h3>loadSync</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadSync</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;input,
- int&nbsp;WorldVersion)</span>
+ int&nbsp;worldVersion)</span>
               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
@@ -827,12 +831,20 @@ loadScripts(document, 'script');</script>
 <h3>load</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;input,
- int&nbsp;WorldVersion)</span>
+ int&nbsp;worldVersion)</span>
           throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 </dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="sync()">
+<h3>sync</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sync</span>()</div>
 </div>
 </section>
 </li>

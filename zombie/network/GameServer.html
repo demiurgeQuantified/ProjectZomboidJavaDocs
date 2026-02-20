@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -149,8 +149,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#sendZombieSound(zombie.characters.IsoZombie.ZombieSound,zombie.characters.IsoZombie)" tabindex="0">sendZombieSound(IsoZombie.ZombieSound, IsoZombie)</a></li>
 <li><a href="#helmetFall(zombie.characters.IsoGameCharacter,boolean)" tabindex="0">helmetFall(IsoGameCharacter, boolean)</a></li>
 <li><a href="#initClientCommandFilter()" tabindex="0">initClientCommandFilter()</a></li>
-<li><a href="#getAnyPlayerFromConnection(zombie.core.raknet.UdpConnection)" tabindex="0">getAnyPlayerFromConnection(UdpConnection)</a></li>
-<li><a href="#getPlayerFromConnection(zombie.core.raknet.UdpConnection,int)" tabindex="0">getPlayerFromConnection(UdpConnection, int)</a></li>
+<li><a href="#getAnyPlayerFromConnection(zombie.network.IConnection)" tabindex="0">getAnyPlayerFromConnection(IConnection)</a></li>
+<li><a href="#getPlayerFromConnection(zombie.network.IConnection,int)" tabindex="0">getPlayerFromConnection(IConnection, int)</a></li>
 <li><a href="#getPlayerByRealUserName(java.lang.String)" tabindex="0">getPlayerByRealUserName(String)</a></li>
 <li><a href="#getPlayerByUserName(java.lang.String)" tabindex="0">getPlayerByUserName(String)</a></li>
 <li><a href="#getPlayerByUserNameForCommand(java.lang.String)" tabindex="0">getPlayerByUserNameForCommand(String)</a></li>
@@ -171,19 +171,19 @@ loadScripts(document, 'script');</script>
 <li><a href="#doDelayedDisconnect(zombie.characters.IsoPlayer)" tabindex="0">doDelayedDisconnect(IsoPlayer)</a></li>
 <li><a href="#isDelayedDisconnect(zombie.core.raknet.UdpConnection)" tabindex="0">isDelayedDisconnect(UdpConnection)</a></li>
 <li><a href="#isDelayedDisconnect(zombie.characters.IsoPlayer)" tabindex="0">isDelayedDisconnect(IsoPlayer)</a></li>
-<li><a href="#disconnectPlayer(zombie.characters.IsoPlayer,zombie.core.raknet.UdpConnection)" tabindex="0">disconnectPlayer(IsoPlayer, UdpConnection)</a></li>
+<li><a href="#disconnectPlayer(zombie.characters.IsoPlayer,zombie.network.IConnection)" tabindex="0">disconnectPlayer(IsoPlayer, IConnection)</a></li>
 <li><a href="#getFreeSlot()" tabindex="0">getFreeSlot()</a></li>
 <li><a href="#receiveClientConnect(zombie.core.raknet.UdpConnection,zombie.network.ServerWorldDatabase.LogonResult)" tabindex="0">receiveClientConnect(UdpConnection, ServerWorldDatabase.LogonResult)</a></li>
 <li><a href="#sendMetaGrid(int,int,int,zombie.core.raknet.UdpConnection)" tabindex="0">sendMetaGrid(int, int, int, UdpConnection)</a></li>
 <li><a href="#sendMetaGrid(int,int,int)" tabindex="0">sendMetaGrid(int, int, int)</a></li>
-<li><a href="#setCustomVariables(zombie.characters.IsoPlayer,zombie.core.raknet.UdpConnection)" tabindex="0">setCustomVariables(IsoPlayer, UdpConnection)</a></li>
-<li><a href="#sendPlayerConnected(zombie.characters.IsoPlayer,zombie.core.raknet.UdpConnection)" tabindex="0">sendPlayerConnected(IsoPlayer, UdpConnection)</a></li>
-<li><a href="#receivePlayerConnect(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,java.lang.String)" tabindex="0">receivePlayerConnect(ByteBuffer, UdpConnection, String)</a></li>
-<li><a href="#sendInitialWorldState(zombie.core.raknet.UdpConnection)" tabindex="0">sendInitialWorldState(UdpConnection)</a></li>
+<li><a href="#setCustomVariables(zombie.characters.IsoPlayer,zombie.network.IConnection)" tabindex="0">setCustomVariables(IsoPlayer, IConnection)</a></li>
+<li><a href="#sendPlayerConnected(zombie.characters.IsoPlayer,zombie.network.IConnection)" tabindex="0">sendPlayerConnected(IsoPlayer, IConnection)</a></li>
+<li><a href="#receivePlayerConnect(java.nio.ByteBuffer,zombie.network.IConnection,java.lang.String)" tabindex="0">receivePlayerConnect(ByteBuffer, IConnection, String)</a></li>
+<li><a href="#sendInitialWorldState(zombie.network.IConnection)" tabindex="0">sendInitialWorldState(IConnection)</a></li>
 <li><a href="#sendObjectModData(zombie.iso.IsoObject)" tabindex="0">sendObjectModData(IsoObject)</a></li>
 <li><a href="#sendSlowFactor(zombie.characters.IsoGameCharacter)" tabindex="0">sendSlowFactor(IsoGameCharacter)</a></li>
-<li><a href="#sendObjectChange(zombie.iso.IsoObject,java.lang.String,se.krka.kahlua.vm.KahluaTable)" tabindex="0">sendObjectChange(IsoObject, String, KahluaTable)</a></li>
-<li><a href="#sendObjectChange(zombie.iso.IsoObject,java.lang.String,java.lang.Object...)" tabindex="0">sendObjectChange(IsoObject, String, Object...)</a></li>
+<li><a href="#sendObjectChange(zombie.iso.IsoObject,zombie.core.properties.IsoObjectChange,se.krka.kahlua.vm.KahluaTable)" tabindex="0">sendObjectChange(IsoObject, IsoObjectChange, KahluaTable)</a></li>
+<li><a href="#sendObjectChange(zombie.iso.IsoObject,zombie.core.properties.IsoObjectChange,java.lang.Object...)" tabindex="0">sendObjectChange(IsoObject, IsoObjectChange, Object...)</a></li>
 <li><a href="#RemoveItemFromMap(zombie.iso.IsoObject)" tabindex="0">RemoveItemFromMap(IsoObject)</a></li>
 <li><a href="#sendBloodSplatter(zombie.inventory.types.HandWeapon,float,float,float,zombie.iso.Vector2,boolean,boolean)" tabindex="0">sendBloodSplatter(HandWeapon, float, float, float, Vector2, boolean, boolean)</a></li>
 <li><a href="#disconnect(zombie.core.raknet.UdpConnection,java.lang.String)" tabindex="0">disconnect(UdpConnection, String)</a></li>
@@ -196,7 +196,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#receiveEatBody(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)" tabindex="0">receiveEatBody(ByteBuffer, UdpConnection, short)</a></li>
 <li><a href="#receiveSyncRadioData(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)" tabindex="0">receiveSyncRadioData(ByteBuffer, UdpConnection, short)</a></li>
 <li><a href="#sendWorldSound(zombie.WorldSoundManager.WorldSound,zombie.core.raknet.UdpConnection)" tabindex="0">sendWorldSound(WorldSoundManager.WorldSound, UdpConnection)</a></li>
-<li><a href="#kick(zombie.core.raknet.UdpConnection,java.lang.String,java.lang.String)" tabindex="0">kick(UdpConnection, String, String)</a></li>
+<li><a href="#kick(zombie.network.IConnection,java.lang.String,java.lang.String)" tabindex="0">kick(IConnection, String, String)</a></li>
 <li><a href="#startRain()" tabindex="0">startRain()</a></li>
 <li><a href="#stopRain()" tabindex="0">stopRain()</a></li>
 <li><a href="#sendWeather()" tabindex="0">sendWeather()</a></li>
@@ -480,8 +480,8 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;description)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#disconnectPlayer(zombie.characters.IsoPlayer,zombie.core.raknet.UdpConnection)" class="member-name-link">disconnectPlayer</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#disconnectPlayer(zombie.characters.IsoPlayer,zombie.network.IConnection)" class="member-name-link">disconnectPlayer</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ <a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#doDelayedDisconnect(zombie.characters.IsoPlayer)" class="member-name-link">doDelayedDisconnect</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
@@ -490,7 +490,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#doMinimumInit()" class="member-name-link">doMinimumInit</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getAnyPlayerFromConnection(zombie.core.raknet.UdpConnection)" class="member-name-link">getAnyPlayerFromConnection</a><wbr>(<a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getAnyPlayerFromConnection(zombie.network.IConnection)" class="member-name-link">getAnyPlayerFromConnection</a><wbr>(<a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getConnectionByPlayerOnlineID(short)" class="member-name-link">getConnectionByPlayerOnlineID</a><wbr>(short&nbsp;onlineID)</code></div>
@@ -517,7 +517,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getPlayerCount()" class="member-name-link">getPlayerCount</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getPlayerFromConnection(zombie.core.raknet.UdpConnection,int)" class="member-name-link">getPlayerFromConnection</a><wbr>(<a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getPlayerFromConnection(zombie.network.IConnection,int)" class="member-name-link">getPlayerFromConnection</a><wbr>(<a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection,
  int&nbsp;playerIndex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&gt;</code></div>
@@ -552,7 +552,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isSpawnBuilding(zombie.iso.BuildingDef)" class="member-name-link">isSpawnBuilding</a><wbr>(<a href="../iso/BuildingDef.html" title="class in zombie.iso">BuildingDef</a>&nbsp;def)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#kick(zombie.core.raknet.UdpConnection,java.lang.String,java.lang.String)" class="member-name-link">kick</a><wbr>(<a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#kick(zombie.network.IConnection,java.lang.String,java.lang.String)" class="member-name-link">kick</a><wbr>(<a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;description,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;reason)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
@@ -633,8 +633,8 @@ loadScripts(document, 'script');</script>
  short&nbsp;packetType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receivePlayerConnect(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,java.lang.String)" class="member-name-link">receivePlayerConnect</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
- <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receivePlayerConnect(java.nio.ByteBuffer,zombie.network.IConnection,java.lang.String)" class="member-name-link">receivePlayerConnect</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+ <a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
@@ -726,7 +726,7 @@ loadScripts(document, 'script');</script>
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendInitialWorldState(zombie.core.raknet.UdpConnection)" class="member-name-link">sendInitialWorldState</a><wbr>(<a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;c)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendInitialWorldState(zombie.network.IConnection)" class="member-name-link">sendInitialWorldState</a><wbr>(<a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;c)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendIsoWaveSignal(long,int,int,int,java.lang.String,java.lang.String,java.lang.String,float,float,float,int,boolean)" class="member-name-link">sendIsoWaveSignal</a><wbr>(long&nbsp;source,
@@ -774,13 +774,13 @@ loadScripts(document, 'script');</script>
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendObjectChange(zombie.iso.IsoObject,java.lang.String,java.lang.Object...)" class="member-name-link">sendObjectChange</a><wbr>(<a href="../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;o,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;change,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendObjectChange(zombie.iso.IsoObject,zombie.core.properties.IsoObjectChange,java.lang.Object...)" class="member-name-link">sendObjectChange</a><wbr>(<a href="../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;o,
+ <a href="../core/properties/IsoObjectChange.html" title="enum class in zombie.core.properties">IsoObjectChange</a>&nbsp;change,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;objects)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendObjectChange(zombie.iso.IsoObject,java.lang.String,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">sendObjectChange</a><wbr>(<a href="../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;o,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;change,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendObjectChange(zombie.iso.IsoObject,zombie.core.properties.IsoObjectChange,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">sendObjectChange</a><wbr>(<a href="../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;o,
+ <a href="../core/properties/IsoObjectChange.html" title="enum class in zombie.core.properties">IsoObjectChange</a>&nbsp;change,
  se.krka.kahlua.vm.KahluaTable&nbsp;tbl)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
@@ -790,8 +790,8 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendOptionsToClients()" class="member-name-link">sendOptionsToClients</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendPlayerConnected(zombie.characters.IsoPlayer,zombie.core.raknet.UdpConnection)" class="member-name-link">sendPlayerConnected</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
- <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;c)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendPlayerConnected(zombie.characters.IsoPlayer,zombie.network.IConnection)" class="member-name-link">sendPlayerConnected</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
+ <a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;c)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendPlayerExtraInfo(zombie.characters.IsoPlayer,zombie.core.raknet.UdpConnection)" class="member-name-link">sendPlayerExtraInfo</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
@@ -892,8 +892,8 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendZone(zombie.iso.zones.Zone)" class="member-name-link">sendZone</a><wbr>(<a href="../iso/zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&nbsp;zone)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setCustomVariables(zombie.characters.IsoPlayer,zombie.core.raknet.UdpConnection)" class="member-name-link">setCustomVariables</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
- <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;c)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setCustomVariables(zombie.characters.IsoPlayer,zombie.network.IConnection)" class="member-name-link">setCustomVariables</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
+ <a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;c)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDifficulty(java.lang.String)" class="member-name-link">setDifficulty</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;difficulty)</code></div>
@@ -1733,18 +1733,18 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="getAnyPlayerFromConnection(zombie.core.raknet.UdpConnection)">
+<section class="detail" id="getAnyPlayerFromConnection(zombie.network.IConnection)">
 <h3>getAnyPlayerFromConnection</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></span>&nbsp;<span class="element-name">getAnyPlayerFromConnection</span><wbr><span class="parameters">(<a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></span>&nbsp;<span class="element-name">getAnyPlayerFromConnection</span><wbr><span class="parameters">(<a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="getPlayerFromConnection(zombie.core.raknet.UdpConnection,int)">
+<section class="detail" id="getPlayerFromConnection(zombie.network.IConnection,int)">
 <h3>getPlayerFromConnection</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></span>&nbsp;<span class="element-name">getPlayerFromConnection</span><wbr><span class="parameters">(<a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></span>&nbsp;<span class="element-name">getPlayerFromConnection</span><wbr><span class="parameters">(<a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection,
  int&nbsp;playerIndex)</span></div>
 </div>
 </section>
@@ -1920,11 +1920,11 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="disconnectPlayer(zombie.characters.IsoPlayer,zombie.core.raknet.UdpConnection)">
+<section class="detail" id="disconnectPlayer(zombie.characters.IsoPlayer,zombie.network.IConnection)">
 <h3>disconnectPlayer</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">disconnectPlayer</span><wbr><span class="parameters">(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</span></div>
+ <a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</span></div>
 </div>
 </section>
 </li>
@@ -1967,38 +1967,38 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="setCustomVariables(zombie.characters.IsoPlayer,zombie.core.raknet.UdpConnection)">
+<section class="detail" id="setCustomVariables(zombie.characters.IsoPlayer,zombie.network.IConnection)">
 <h3>setCustomVariables</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCustomVariables</span><wbr><span class="parameters">(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
- <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;c)</span></div>
+ <a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;c)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="sendPlayerConnected(zombie.characters.IsoPlayer,zombie.core.raknet.UdpConnection)">
+<section class="detail" id="sendPlayerConnected(zombie.characters.IsoPlayer,zombie.network.IConnection)">
 <h3>sendPlayerConnected</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendPlayerConnected</span><wbr><span class="parameters">(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
- <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;c)</span></div>
+ <a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;c)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="receivePlayerConnect(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,java.lang.String)">
+<section class="detail" id="receivePlayerConnect(java.nio.ByteBuffer,zombie.network.IConnection,java.lang.String)">
 <h3>receivePlayerConnect</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">receivePlayerConnect</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
- <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+ <a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="sendInitialWorldState(zombie.core.raknet.UdpConnection)">
+<section class="detail" id="sendInitialWorldState(zombie.network.IConnection)">
 <h3>sendInitialWorldState</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendInitialWorldState</span><wbr><span class="parameters">(<a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;c)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendInitialWorldState</span><wbr><span class="parameters">(<a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;c)</span></div>
 </div>
 </section>
 </li>
@@ -2019,21 +2019,21 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="sendObjectChange(zombie.iso.IsoObject,java.lang.String,se.krka.kahlua.vm.KahluaTable)">
+<section class="detail" id="sendObjectChange(zombie.iso.IsoObject,zombie.core.properties.IsoObjectChange,se.krka.kahlua.vm.KahluaTable)">
 <h3>sendObjectChange</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendObjectChange</span><wbr><span class="parameters">(<a href="../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;o,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;change,
+ <a href="../core/properties/IsoObjectChange.html" title="enum class in zombie.core.properties">IsoObjectChange</a>&nbsp;change,
  se.krka.kahlua.vm.KahluaTable&nbsp;tbl)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="sendObjectChange(zombie.iso.IsoObject,java.lang.String,java.lang.Object...)">
+<section class="detail" id="sendObjectChange(zombie.iso.IsoObject,zombie.core.properties.IsoObjectChange,java.lang.Object...)">
 <h3>sendObjectChange</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendObjectChange</span><wbr><span class="parameters">(<a href="../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;o,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;change,
+ <a href="../core/properties/IsoObjectChange.html" title="enum class in zombie.core.properties">IsoObjectChange</a>&nbsp;change,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;objects)</span></div>
 </div>
 </section>
@@ -2151,10 +2151,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="kick(zombie.core.raknet.UdpConnection,java.lang.String,java.lang.String)">
+<section class="detail" id="kick(zombie.network.IConnection,java.lang.String,java.lang.String)">
 <h3>kick</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">kick</span><wbr><span class="parameters">(<a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">kick</span><wbr><span class="parameters">(<a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;description,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;reason)</span></div>
 </div>

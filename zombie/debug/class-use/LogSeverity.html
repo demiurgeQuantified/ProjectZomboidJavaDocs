@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#use">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -94,9 +94,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ExceptionLogger.</span><code><a href="../../core/logger/ExceptionLogger.html#logException(java.lang.Throwable,java.lang.String,zombie.debug.DebugLogStream,zombie.debug.LogSeverity)" class="member-name-link">logException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;ex,
+<div class="col-second even-row-color"><span class="type-name-label">ExceptionLogger.</span><code><a href="../../core/logger/ExceptionLogger.html#logException(java.lang.Throwable,java.lang.String,zombie.debug.DebugType,zombie.debug.LogSeverity)" class="member-name-link">logException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;ex,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;errorMessage,
- <a href="../DebugLogStream.html" title="class in zombie.debug">DebugLogStream</a>&nbsp;out,
+ <a href="../DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;out,
  <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;severity)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
@@ -146,7 +146,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><span class="type-name-label">DebugLog.</span><code><a href="../DebugLog.html#getLogLevel(zombie.debug.DebugType)" class="member-name-link">getLogLevel</a><wbr>(<a href="../DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">DebugLog.</span><code><a href="../DebugLog.html#getLogSeverity(zombie.debug.DebugType)" class="member-name-link">getLogSeverity</a><wbr>(<a href="../DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;in_type)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">DebugLog.</span><code><a href="../DebugLog.html#getLogSeverity(zombie.debug.DebugType)" class="member-name-link">getLogSeverity</a><wbr>(<a href="../DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a></code></div>
 <div class="col-second even-row-color"><span class="type-name-label">DebugLogStream.</span><code><a href="../DebugLogStream.html#getLogSeverity()" class="member-name-link">getLogSeverity</a>()</code></div>
@@ -178,9 +178,18 @@ the order they are declared.</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static <a href="../AutoRepiperDebugLogStream.RepiperPacket.html" title="class in zombie.debug">AutoRepiperDebugLogStream.RepiperPacket</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AutoRepiperDebugLogStream.RepiperPacket.</span><code><a href="../AutoRepiperDebugLogStream.RepiperPacket.html#alloc(java.lang.Object,zombie.debug.LogSeverity,zombie.debug.DebugType)" class="member-name-link">alloc</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;in_object,
- <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;in_defaultLogSeverity,
- <a href="../DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;in_defaultDebugType)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">AutoRepiperDebugLogStream.RepiperPacket.</span><code><a href="../AutoRepiperDebugLogStream.RepiperPacket.html#alloc(java.lang.Object,zombie.debug.LogSeverity,zombie.debug.DebugType)" class="member-name-link">alloc</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
+ <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;defaultLogSeverity,
+ <a href="../DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;defaultDebugType)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">DebugLog.</span><code><a href="../DebugLog.html#echoExceptionLineToLogFiles(zombie.debug.LogSeverity,java.lang.String,java.lang.String)" class="member-name-link">echoExceptionLineToLogFiles</a><wbr>(<a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;messageType,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;outString)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">DebugLog.</span><code><a href="../DebugLog.html#echoToLogFiles(zombie.debug.LogSeverity,java.lang.String)" class="member-name-link">echoToLogFiles</a><wbr>(<a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;outString)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">DebugLog.</span><code><a href="../DebugLog.html#enableLog(zombie.debug.DebugType,zombie.debug.LogSeverity)" class="member-name-link">enableLog</a><wbr>(<a href="../DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type,
@@ -203,14 +212,14 @@ the order they are declared.</div>
 <div class="col-second even-row-color"><span class="type-name-label">DebugLog.</span><code><a href="../DebugLog.html#formatString(zombie.debug.DebugType,zombie.debug.LogSeverity,java.lang.Object,boolean,java.lang.String)" class="member-name-link">formatString</a><wbr>(<a href="../DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type,
  <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;affix,
- boolean&nbsp;in_allowRepeat,
+ boolean&nbsp;allowRepeat,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;formatNoParams)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">DebugLog.</span><code><a href="../DebugLog.html#formatString(zombie.debug.DebugType,zombie.debug.LogSeverity,java.lang.Object,boolean,java.lang.String,java.lang.Object...)" class="member-name-link">formatString</a><wbr>(<a href="../DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type,
  <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;affix,
- boolean&nbsp;in_allowRepeat,
+ boolean&nbsp;allowRepeat,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;params)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
@@ -218,64 +227,82 @@ the order they are declared.</div>
 <div class="col-second even-row-color"><span class="type-name-label">DebugLog.</span><code><a href="../DebugLog.html#formatStringVarArgs(zombie.debug.DebugType,zombie.debug.LogSeverity,java.lang.Object,boolean,java.lang.String,java.lang.Object...)" class="member-name-link">formatStringVarArgs</a><wbr>(<a href="../DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type,
  <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;affix,
- boolean&nbsp;in_allowRepeat,
+ boolean&nbsp;allowRepeat,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;params)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../StackTraceContainer.html" title="class in zombie.debug">StackTraceContainer</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">DebugType.</span><code><a href="../DebugType.html#getStackTrace(zombie.debug.LogSeverity,java.lang.String,int)" class="member-name-link">getStackTrace</a><wbr>(<a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;in_logSeverity,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;in_indent,
- int&nbsp;in_depth)</code></div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">DebugType.</span><code><a href="../DebugType.html#isEnabled(zombie.debug.LogSeverity)" class="member-name-link">isEnabled</a><wbr>(<a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../StackTraceContainer.html" title="class in zombie.debug">StackTraceContainer</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">DebugType.</span><code><a href="../DebugType.html#getStackTrace(zombie.debug.LogSeverity,java.lang.String,int,int)" class="member-name-link">getStackTrace</a><wbr>(<a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;in_logSeverity,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;in_indent,
- int&nbsp;in_depthStart,
- int&nbsp;in_depthCount)</code></div>
+<div class="col-first even-row-color"><code>static boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">DebugLog.</span><code><a href="../DebugLog.html#isLogEnabled(zombie.debug.DebugType,zombie.debug.LogSeverity)" class="member-name-link">isLogEnabled</a><wbr>(<a href="../DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type,
+ <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">DebugLog.</span><code><a href="../DebugLog.html#isLogEnabled(zombie.debug.DebugType,zombie.debug.LogSeverity)" class="member-name-link">isLogEnabled</a><wbr>(<a href="../DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;in_type,
- <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;in_logSeverity)</code></div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">DebugLogStream.</span><code><a href="../DebugLogStream.html#isLogEnabled(zombie.debug.LogSeverity)" class="member-name-link">isLogEnabled</a><wbr>(<a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">DebugLogStream.</span><code><a href="../DebugLogStream.html#isLogEnabled(zombie.debug.LogSeverity)" class="member-name-link">isLogEnabled</a><wbr>(<a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;in_logSeverity)</code></div>
+<div class="col-first even-row-color"><code><a href="../AutoRepiperDebugLogStream.RepiperPacket.html" title="class in zombie.debug">AutoRepiperDebugLogStream.RepiperPacket</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">AutoRepiperDebugLogStream.</span><code><a href="../AutoRepiperDebugLogStream.html#parseRepiper(java.lang.Object,zombie.debug.LogSeverity)" class="member-name-link">parseRepiper</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
+ <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;defaultLogSeverity)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../AutoRepiperDebugLogStream.RepiperPacket.html" title="class in zombie.debug">AutoRepiperDebugLogStream.RepiperPacket</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">AutoRepiperDebugLogStream.</span><code><a href="../AutoRepiperDebugLogStream.html#parseRepiper(java.lang.Object,zombie.debug.LogSeverity)" class="member-name-link">parseRepiper</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;in_object,
- <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;in_defaultLogSeverity)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">DebugLogStream.</span><code><a href="../DebugLogStream.html#printException(java.lang.Throwable,java.lang.String,java.lang.String,zombie.debug.LogSeverity)" class="member-name-link">printException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;ex,
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">DebugLogStream.</span><code><a href="../DebugLogStream.html#printException(java.lang.Throwable,java.lang.String,java.lang.String,zombie.debug.LogSeverity)" class="member-name-link">printException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;ex,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;errorMessage,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;callerPrefix,
  <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;severity)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">DebugLogStream.</span><code><a href="../DebugLogStream.html#printException(java.lang.Throwable,java.lang.String,zombie.debug.LogSeverity)" class="member-name-link">printException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;ex,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">DebugLogStream.</span><code><a href="../DebugLogStream.html#printException(java.lang.Throwable,java.lang.String,zombie.debug.LogSeverity)" class="member-name-link">printException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;ex,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;errorMessage,
  <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;severity)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">DebugType.</span><code><a href="../DebugType.html#printException(java.lang.Exception,java.lang.String,zombie.debug.LogSeverity)" class="member-name-link">printException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>&nbsp;in_ex,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;in_message,
- <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;in_logSeverity)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">DebugType.</span><code><a href="../DebugType.html#routedWrite(int,zombie.debug.LogSeverity,java.lang.String)" class="member-name-link">routedWrite</a><wbr>(int&nbsp;in_backTraceOffset,
- <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;in_logSeverity,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;in_logText)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">DebugLog.</span><code><a href="../DebugLog.html#setLogSeverity(zombie.debug.DebugType,zombie.debug.LogSeverity)" class="member-name-link">setLogSeverity</a><wbr>(<a href="../DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;in_type,
- <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;in_logSeverity)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">DebugLogStream.</span><code><a href="../DebugLogStream.html#setLogSeverity(zombie.debug.LogSeverity)" class="member-name-link">setLogSeverity</a><wbr>(<a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;in_newSeverity)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">DebugLogStream.</span><code><a href="../DebugLogStream.html#printException(java.lang.Throwable,zombie.debug.LogSeverity,java.lang.String,java.lang.String,java.lang.Object...)" class="member-name-link">printException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;ex,
+ <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;severity,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;callerPrefix,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;errorMessageFormat,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;params)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">DebugType.</span><code><a href="../DebugType.html#write(zombie.debug.LogSeverity,java.lang.String)" class="member-name-link">write</a><wbr>(<a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;in_logSeverity,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;in_logText)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">DebugType.</span><code><a href="../DebugType.html#printException(java.lang.Throwable,java.lang.String,zombie.debug.LogSeverity)" class="member-name-link">printException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;ex,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
+ <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">DebugType.</span><code><a href="../DebugType.html#printException(java.lang.Throwable,zombie.debug.LogSeverity,java.lang.String,java.lang.Object...)" class="member-name-link">printException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;ex,
+ <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;messageFormat,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;params)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">DebugLogStream.</span><code><a href="../DebugLogStream.html#printStackTrace(zombie.debug.LogSeverity,int,int,java.lang.String,java.lang.Object...)" class="member-name-link">printStackTrace</a><wbr>(<a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;severity,
+ int&nbsp;depthStart,
+ int&nbsp;depthCount,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;messageFormat,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;params)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">DebugType.</span><code><a href="../DebugType.html#printStackTrace(zombie.debug.LogSeverity,int,java.lang.String,java.lang.Object...)" class="member-name-link">printStackTrace</a><wbr>(<a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;severity,
+ int&nbsp;depth,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;messageFormat,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;params)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">DebugType.</span><code><a href="../DebugType.html#routedWrite(int,zombie.debug.LogSeverity,java.lang.String)" class="member-name-link">routedWrite</a><wbr>(int&nbsp;backTraceOffset,
+ <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;logText)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">DebugLog.</span><code><a href="../DebugLog.html#setLogSeverity(zombie.debug.DebugType,zombie.debug.LogSeverity)" class="member-name-link">setLogSeverity</a><wbr>(<a href="../DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type,
+ <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">DebugLogStream.</span><code><a href="../DebugLogStream.html#setLogSeverity(zombie.debug.LogSeverity)" class="member-name-link">setLogSeverity</a><wbr>(<a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;newSeverity)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">DebugType.</span><code><a href="../DebugType.html#write(zombie.debug.LogSeverity,java.lang.String)" class="member-name-link">write</a><wbr>(<a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;logText)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Constructors in <a href="../package-summary.html">zombie.debug</a> with parameters of type <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a></span></div>
 <div class="summary-table three-column-summary">
@@ -283,7 +310,7 @@ the order they are declared.</div>
 <div class="table-header col-second">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../AutoRepiperDebugLogStream.html#%3Cinit%3E(java.io.PrintStream,zombie.debug.DebugType,zombie.debug.LogSeverity)" class="member-name-link">AutoRepiperDebugLogStream</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link">PrintStream</a>&nbsp;defaultOut,
+<div class="col-second even-row-color"><code><a href="../AutoRepiperDebugLogStream.html#%3Cinit%3E(zombie.debug.DebugType,zombie.debug.DebugType,zombie.debug.LogSeverity)" class="member-name-link">AutoRepiperDebugLogStream</a><wbr>(<a href="../DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;defaultOut,
  <a href="../DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;defaultDebugType,
  <a href="../LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>

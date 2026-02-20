@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -72,9 +72,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#updateAuth(zombie.characters.IsoZombie)" tabindex="0">updateAuth(IsoZombie)</a></li>
 <li><a href="#moveZombie(zombie.characters.IsoZombie,zombie.core.raknet.UdpConnection,zombie.characters.IsoPlayer)" tabindex="0">moveZombie(IsoZombie, UdpConnection, IsoPlayer)</a></li>
 <li><a href="#getZombieAuth(zombie.core.raknet.UdpConnection,zombie.network.packets.character.ZombieListPacket)" tabindex="0">getZombieAuth(UdpConnection, ZombieListPacket)</a></li>
-<li><a href="#clearTargetAuth(zombie.core.raknet.UdpConnection,zombie.characters.IsoPlayer)" tabindex="0">clearTargetAuth(UdpConnection, IsoPlayer)</a></li>
+<li><a href="#clearTargetAuth(zombie.network.IConnection,zombie.characters.IsoPlayer)" tabindex="0">clearTargetAuth(IConnection, IsoPlayer)</a></li>
 <li><a href="#removeZombies(zombie.core.raknet.UdpConnection)" tabindex="0">removeZombies(UdpConnection)</a></li>
-<li><a href="#recheck(zombie.core.raknet.UdpConnection)" tabindex="0">recheck(UdpConnection)</a></li>
+<li><a href="#recheck(zombie.network.IConnection)" tabindex="0">recheck(IConnection)</a></li>
 </ol>
 </li>
 </ol>
@@ -124,7 +124,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#canSpotted(zombie.characters.IsoZombie)" class="member-name-link">canSpotted</a><wbr>(<a href="../characters/IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;zombie)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearTargetAuth(zombie.core.raknet.UdpConnection,zombie.characters.IsoPlayer)" class="member-name-link">clearTargetAuth</a><wbr>(<a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearTargetAuth(zombie.network.IConnection,zombie.characters.IsoPlayer)" class="member-name-link">clearTargetAuth</a><wbr>(<a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection,
  <a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
@@ -146,7 +146,7 @@ loadScripts(document, 'script');</script>
  <a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recheck(zombie.core.raknet.UdpConnection)" class="member-name-link">recheck</a><wbr>(<a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recheck(zombie.network.IConnection)" class="member-name-link">recheck</a><wbr>(<a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removeZombies(zombie.core.raknet.UdpConnection)" class="member-name-link">removeZombies</a><wbr>(<a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
@@ -247,10 +247,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="clearTargetAuth(zombie.core.raknet.UdpConnection,zombie.characters.IsoPlayer)">
+<section class="detail" id="clearTargetAuth(zombie.network.IConnection,zombie.characters.IsoPlayer)">
 <h3>clearTargetAuth</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearTargetAuth</span><wbr><span class="parameters">(<a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearTargetAuth</span><wbr><span class="parameters">(<a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection,
  <a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</span></div>
 </div>
 </section>
@@ -264,10 +264,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="recheck(zombie.core.raknet.UdpConnection)">
+<section class="detail" id="recheck(zombie.network.IConnection)">
 <h3>recheck</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">recheck</span><wbr><span class="parameters">(<a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">recheck</span><wbr><span class="parameters">(<a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</span></div>
 </div>
 </section>
 </li>

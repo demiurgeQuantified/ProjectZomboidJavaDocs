@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -72,9 +72,41 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#ReleventTo(float,float)" tabindex="0">ReleventTo(float, float)</a></li>
+<li><a href="#getPlayerAt(int)" tabindex="0">getPlayerAt(int)</a></li>
+<li><a href="#setPlayerAt(int,zombie.characters.IsoPlayer)" tabindex="0">setPlayerAt(int, IsoPlayer)</a></li>
 <li><a href="#startPacket()" tabindex="0">startPacket()</a></li>
+<li><a href="#endPacket(int,int,byte)" tabindex="0">endPacket(int, int, byte)</a></li>
+<li><a href="#getUserName()" tabindex="0">getUserName()</a></li>
+<li><a href="#hasPlayer(java.lang.String)" tabindex="0">hasPlayer(String)</a></li>
+<li><a href="#getRole()" tabindex="0">getRole()</a></li>
+<li><a href="#setRole(zombie.characters.Role)" tabindex="0">setRole(Role)</a></li>
+<li><a href="#isRelevantTo(float,float)" tabindex="0">isRelevantTo(float, float)</a></li>
+<li><a href="#getConnectedGUID()" tabindex="0">getConnectedGUID()</a></li>
+<li><a href="#getIDStr()" tabindex="0">getIDStr()</a></li>
+<li><a href="#wasInLoadingQueue()" tabindex="0">wasInLoadingQueue()</a></li>
+<li><a href="#getPlayerDownloadServer()" tabindex="0">getPlayerDownloadServer()</a></li>
 <li><a href="#endPacketImmediate()" tabindex="0">endPacketImmediate()</a></li>
 <li><a href="#cancelPacket()" tabindex="0">cancelPacket()</a></li>
+<li><a href="#getLastConnection()" tabindex="0">getLastConnection()</a></li>
+<li><a href="#getMTUSize()" tabindex="0">getMTUSize()</a></li>
+<li><a href="#setConnectionTimestamp(long)" tabindex="0">setConnectionTimestamp(long)</a></li>
+<li><a href="#getValidator()" tabindex="0">getValidator()</a></li>
+<li><a href="#getChunkGridWidth()" tabindex="0">getChunkGridWidth()</a></li>
+<li><a href="#setChunkGridWidth(int)" tabindex="0">setChunkGridWidth(int)</a></li>
+<li><a href="#setUserName(int,java.lang.String)" tabindex="0">setUserName(int, String)</a></li>
+<li><a href="#setRelevantPos(int,zombie.iso.Vector3)" tabindex="0">setRelevantPos(int, Vector3)</a></li>
+<li><a href="#setConnectArea(int,zombie.iso.Vector3)" tabindex="0">setConnectArea(int, Vector3)</a></li>
+<li><a href="#setPlayerId(int,short)" tabindex="0">setPlayerId(int, short)</a></li>
+<li><a href="#getUserName(int)" tabindex="0">getUserName(int)</a></li>
+<li><a href="#setRelevantRange(byte)" tabindex="0">setRelevantRange(byte)</a></li>
+<li><a href="#forceDisconnect(java.lang.String)" tabindex="0">forceDisconnect(String)</a></li>
+<li><a href="#setFullyConnected()" tabindex="0">setFullyConnected()</a></li>
+<li><a href="#getSteamId()" tabindex="0">getSteamId()</a></li>
+<li><a href="#getIP()" tabindex="0">getIP()</a></li>
+<li><a href="#getPlayerId(int)" tabindex="0">getPlayerId(int)</a></li>
+<li><a href="#setLoadedCells(int,zombie.network.ClientServerMap)" tabindex="0">setLoadedCells(int, ClientServerMap)</a></li>
+<li><a href="#getLoadedCell(int)" tabindex="0">getLoadedCell(int)</a></li>
+<li><a href="#getRelevantPos(int)" tabindex="0">getRelevantPos(int)</a></li>
 </ol>
 </li>
 </ol>
@@ -90,10 +122,15 @@ loadScripts(document, 'script');</script>
 </div>
 </div>
 <section class="class-description" id="class-description">
+<dl class="notes">
+<dt>All Implemented Interfaces:</dt>
+<dd><code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">UdpConnection</span>
-<span class="extends-implements">extends <a href="../network/PacketsCache.html" title="class in zombie.network">PacketsCache</a></span></div>
+<span class="extends-implements">extends <a href="../network/PacketsCache.html" title="class in zombie.network">PacketsCache</a>
+implements <a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></span></div>
 </div>
 </section>
 <section class="summary">
@@ -141,14 +178,119 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#cancelPacket()" class="member-name-link">cancelPacket</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#endPacketImmediate()" class="member-name-link">endPacketImmediate</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#endPacket(int,int,byte)" class="member-name-link">endPacket</a><wbr>(int&nbsp;packetPriority,
+ int&nbsp;packetReliability,
+ byte&nbsp;orderingChannel)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#endPacketImmediate()" class="member-name-link">endPacketImmediate</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#forceDisconnect(java.lang.String)" class="member-name-link">forceDisconnect</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;description)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkGridWidth()" class="member-name-link">getChunkGridWidth</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getConnectedGUID()" class="member-name-link">getConnectedGUID</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIDStr()" class="member-name-link">getIDStr</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIP()" class="member-name-link">getIP</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLastConnection()" class="member-name-link">getLastConnection</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../network/ClientServerMap.html" title="class in zombie.network">ClientServerMap</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLoadedCell(int)" class="member-name-link">getLoadedCell</a><wbr>(int&nbsp;playerIndex)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMTUSize()" class="member-name-link">getMTUSize</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayerAt(int)" class="member-name-link">getPlayerAt</a><wbr>(int&nbsp;playerIndex)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../network/PlayerDownloadServer.html" title="class in zombie.network">PlayerDownloadServer</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayerDownloadServer()" class="member-name-link">getPlayerDownloadServer</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>short</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayerId(int)" class="member-name-link">getPlayerId</a><wbr>(int&nbsp;playerIndex)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../iso/Vector3.html" title="class in zombie.iso">Vector3</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRelevantPos(int)" class="member-name-link">getRelevantPos</a><wbr>(int&nbsp;playerIndex)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../characters/Role.html" title="class in zombie.characters">Role</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRole()" class="member-name-link">getRole</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSteamId()" class="member-name-link">getSteamId</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUserName()" class="member-name-link">getUserName</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUserName(int)" class="member-name-link">getUserName</a><wbr>(int&nbsp;playerIndex)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../network/anticheats/PacketValidator.html" title="class in zombie.network.anticheats">PacketValidator</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getValidator()" class="member-name-link">getValidator</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasPlayer(java.lang.String)" class="member-name-link">hasPlayer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;userName)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRelevantTo(float,float)" class="member-name-link">isRelevantTo</a><wbr>(float&nbsp;x,
+ float&nbsp;y)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ReleventTo(float,float)" class="member-name-link">ReleventTo</a><wbr>(float&nbsp;x,
  float&nbsp;y)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../core/network/ByteBufferWriter.html" title="class in zombie.core.network">ByteBufferWriter</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startPacket()" class="member-name-link">startPacket</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setChunkGridWidth(int)" class="member-name-link">setChunkGridWidth</a><wbr>(int&nbsp;range)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setConnectArea(int,zombie.iso.Vector3)" class="member-name-link">setConnectArea</a><wbr>(int&nbsp;playerIndex,
+ <a href="../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;connectArea)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setConnectionTimestamp(long)" class="member-name-link">setConnectionTimestamp</a><wbr>(long&nbsp;connectionReadyInterval)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setFullyConnected()" class="member-name-link">setFullyConnected</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLoadedCells(int,zombie.network.ClientServerMap)" class="member-name-link">setLoadedCells</a><wbr>(int&nbsp;playerIndex,
+ <a href="../network/ClientServerMap.html" title="class in zombie.network">ClientServerMap</a>&nbsp;clientServerMap)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPlayerAt(int,zombie.characters.IsoPlayer)" class="member-name-link">setPlayerAt</a><wbr>(int&nbsp;playerIndex,
+ <a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPlayerId(int,short)" class="member-name-link">setPlayerId</a><wbr>(int&nbsp;playerIndex,
+ short&nbsp;playerID)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRelevantPos(int,zombie.iso.Vector3)" class="member-name-link">setRelevantPos</a><wbr>(int&nbsp;playerIndex,
+ <a href="../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;relevantPos)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRelevantRange(byte)" class="member-name-link">setRelevantRange</a><wbr>(byte&nbsp;relevantRange)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRole(zombie.characters.Role)" class="member-name-link">setRole</a><wbr>(<a href="../characters/Role.html" title="class in zombie.characters">Role</a>&nbsp;role)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setUserName(int,java.lang.String)" class="member-name-link">setUserName</a><wbr>(int&nbsp;playerIndex,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;userName)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../core/network/ByteBufferWriter.html" title="class in zombie.core.network">ByteBufferWriter</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startPacket()" class="member-name-link">startPacket</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wasInLoadingQueue()" class="member-name-link">wasInLoadingQueue</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -159,6 +301,9 @@ loadScripts(document, 'script');</script>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-zombie.network.IConnection">Methods inherited from interface&nbsp;<a href="../network/IConnection.html#method-summary" title="interface in zombie.network">IConnection</a></h3>
+<code><a href="../network/IConnection.html#getPacket(zombie.network.PacketTypes.PacketType)" title="getPacket(PacketTypes.PacketType)">getPacket</a></code></div>
 </section>
 </li>
 </ul>
@@ -212,10 +357,162 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="getPlayerAt(int)">
+<h3>getPlayerAt</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></span>&nbsp;<span class="element-name">getPlayerAt</span><wbr><span class="parameters">(int&nbsp;playerIndex)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#getPlayerAt(int)">getPlayerAt</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setPlayerAt(int,zombie.characters.IsoPlayer)">
+<h3>setPlayerAt</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPlayerAt</span><wbr><span class="parameters">(int&nbsp;playerIndex,
+ <a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#setPlayerAt(int,zombie.characters.IsoPlayer)">setPlayerAt</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="startPacket()">
 <h3>startPacket</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../core/network/ByteBufferWriter.html" title="class in zombie.core.network">ByteBufferWriter</a></span>&nbsp;<span class="element-name">startPacket</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#startPacket()">startPacket</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="endPacket(int,int,byte)">
+<h3>endPacket</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">endPacket</span><wbr><span class="parameters">(int&nbsp;packetPriority,
+ int&nbsp;packetReliability,
+ byte&nbsp;orderingChannel)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#endPacket(int,int,byte)">endPacket</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getUserName()">
+<h3>getUserName</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getUserName</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#getUserName()">getUserName</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="hasPlayer(java.lang.String)">
+<h3>hasPlayer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasPlayer</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;userName)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#hasPlayer(java.lang.String)">hasPlayer</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getRole()">
+<h3>getRole</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../characters/Role.html" title="class in zombie.characters">Role</a></span>&nbsp;<span class="element-name">getRole</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#getRole()">getRole</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setRole(zombie.characters.Role)">
+<h3>setRole</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setRole</span><wbr><span class="parameters">(<a href="../characters/Role.html" title="class in zombie.characters">Role</a>&nbsp;role)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#setRole(zombie.characters.Role)">setRole</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isRelevantTo(float,float)">
+<h3>isRelevantTo</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isRelevantTo</span><wbr><span class="parameters">(float&nbsp;x,
+ float&nbsp;y)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#isRelevantTo(float,float)">isRelevantTo</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getConnectedGUID()">
+<h3>getConnectedGUID</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getConnectedGUID</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#getConnectedGUID()">getConnectedGUID</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getIDStr()">
+<h3>getIDStr</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getIDStr</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#getIDStr()">getIDStr</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="wasInLoadingQueue()">
+<h3>wasInLoadingQueue</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">wasInLoadingQueue</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#wasInLoadingQueue()">wasInLoadingQueue</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getPlayerDownloadServer()">
+<h3>getPlayerDownloadServer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../network/PlayerDownloadServer.html" title="class in zombie.network">PlayerDownloadServer</a></span>&nbsp;<span class="element-name">getPlayerDownloadServer</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#getPlayerDownloadServer()">getPlayerDownloadServer</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
 </div>
 </section>
 </li>
@@ -232,6 +529,255 @@ loadScripts(document, 'script');</script>
 <h3>cancelPacket</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">cancelPacket</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#cancelPacket()">cancelPacket</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getLastConnection()">
+<h3>getLastConnection</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getLastConnection</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#getLastConnection()">getLastConnection</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getMTUSize()">
+<h3>getMTUSize</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getMTUSize</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#getMTUSize()">getMTUSize</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setConnectionTimestamp(long)">
+<h3>setConnectionTimestamp</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setConnectionTimestamp</span><wbr><span class="parameters">(long&nbsp;connectionReadyInterval)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#setConnectionTimestamp(long)">setConnectionTimestamp</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getValidator()">
+<h3>getValidator</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../network/anticheats/PacketValidator.html" title="class in zombie.network.anticheats">PacketValidator</a></span>&nbsp;<span class="element-name">getValidator</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#getValidator()">getValidator</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getChunkGridWidth()">
+<h3>getChunkGridWidth</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getChunkGridWidth</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#getChunkGridWidth()">getChunkGridWidth</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setChunkGridWidth(int)">
+<h3>setChunkGridWidth</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setChunkGridWidth</span><wbr><span class="parameters">(int&nbsp;range)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#setChunkGridWidth(int)">setChunkGridWidth</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setUserName(int,java.lang.String)">
+<h3>setUserName</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setUserName</span><wbr><span class="parameters">(int&nbsp;playerIndex,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;userName)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#setUserName(int,java.lang.String)">setUserName</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setRelevantPos(int,zombie.iso.Vector3)">
+<h3>setRelevantPos</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setRelevantPos</span><wbr><span class="parameters">(int&nbsp;playerIndex,
+ <a href="../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;relevantPos)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#setRelevantPos(int,zombie.iso.Vector3)">setRelevantPos</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setConnectArea(int,zombie.iso.Vector3)">
+<h3>setConnectArea</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setConnectArea</span><wbr><span class="parameters">(int&nbsp;playerIndex,
+ <a href="../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;connectArea)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#setConnectArea(int,zombie.iso.Vector3)">setConnectArea</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setPlayerId(int,short)">
+<h3>setPlayerId</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPlayerId</span><wbr><span class="parameters">(int&nbsp;playerIndex,
+ short&nbsp;playerID)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#setPlayerId(int,short)">setPlayerId</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getUserName(int)">
+<h3>getUserName</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getUserName</span><wbr><span class="parameters">(int&nbsp;playerIndex)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#getUserName(int)">getUserName</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setRelevantRange(byte)">
+<h3>setRelevantRange</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setRelevantRange</span><wbr><span class="parameters">(byte&nbsp;relevantRange)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#setRelevantRange(byte)">setRelevantRange</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="forceDisconnect(java.lang.String)">
+<h3>forceDisconnect</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">forceDisconnect</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;description)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#forceDisconnect(java.lang.String)">forceDisconnect</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setFullyConnected()">
+<h3>setFullyConnected</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setFullyConnected</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#setFullyConnected()">setFullyConnected</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getSteamId()">
+<h3>getSteamId</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getSteamId</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#getSteamId()">getSteamId</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getIP()">
+<h3>getIP</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getIP</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#getIP()">getIP</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getPlayerId(int)">
+<h3>getPlayerId</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">short</span>&nbsp;<span class="element-name">getPlayerId</span><wbr><span class="parameters">(int&nbsp;playerIndex)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#getPlayerId(int)">getPlayerId</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setLoadedCells(int,zombie.network.ClientServerMap)">
+<h3>setLoadedCells</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setLoadedCells</span><wbr><span class="parameters">(int&nbsp;playerIndex,
+ <a href="../network/ClientServerMap.html" title="class in zombie.network">ClientServerMap</a>&nbsp;clientServerMap)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#setLoadedCells(int,zombie.network.ClientServerMap)">setLoadedCells</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getLoadedCell(int)">
+<h3>getLoadedCell</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../network/ClientServerMap.html" title="class in zombie.network">ClientServerMap</a></span>&nbsp;<span class="element-name">getLoadedCell</span><wbr><span class="parameters">(int&nbsp;playerIndex)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#getLoadedCell(int)">getLoadedCell</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getRelevantPos(int)">
+<h3>getRelevantPos</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../iso/Vector3.html" title="class in zombie.iso">Vector3</a></span>&nbsp;<span class="element-name">getRelevantPos</span><wbr><span class="parameters">(int&nbsp;playerIndex)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/IConnection.html#getRelevantPos(int)">getRelevantPos</a></code>&nbsp;in interface&nbsp;<code><a href="../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
 </div>
 </section>
 </li>

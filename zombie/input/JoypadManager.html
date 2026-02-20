@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -108,8 +108,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#isYButtonReleasePress(int)" tabindex="0">isYButtonReleasePress(int)</a></li>
 <li><a href="#getMovementAxisX(int)" tabindex="0">getMovementAxisX(int)</a></li>
 <li><a href="#getMovementAxisY(int)" tabindex="0">getMovementAxisY(int)</a></li>
+<li><a href="#getMovementAxis(int,zombie.iso.Vector2)" tabindex="0">getMovementAxis(int, Vector2)</a></li>
+<li><a href="#isMovementAxisBeingApplied(int)" tabindex="0">isMovementAxisBeingApplied(int)</a></li>
 <li><a href="#getAimingAxisX(int)" tabindex="0">getAimingAxisX(int)</a></li>
 <li><a href="#getAimingAxisY(int)" tabindex="0">getAimingAxisY(int)</a></li>
+<li><a href="#getAimingAxis(int,zombie.iso.Vector2)" tabindex="0">getAimingAxis(int, Vector2)</a></li>
+<li><a href="#isAimingAxisBeingApplied(int)" tabindex="0">isAimingAxisBeingApplied(int)</a></li>
 <li><a href="#onPressedAxis(int,int)" tabindex="0">onPressedAxis(int, int)</a></li>
 <li><a href="#onPressedAxisNeg(int,int)" tabindex="0">onPressedAxisNeg(int, int)</a></li>
 <li><a href="#onPressedTrigger(int,int)" tabindex="0">onPressedTrigger(int, int)</a></li>
@@ -223,30 +227,38 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#assignJoypad(int,int)" class="member-name-link">assignJoypad</a><wbr>(int&nbsp;controller,
  int&nbsp;player)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAimingAxisX(int)" class="member-name-link">getAimingAxisX</a><wbr>(int&nbsp;c)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../iso/Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAimingAxis(int,zombie.iso.Vector2)" class="member-name-link">getAimingAxis</a><wbr>(int&nbsp;joypadIndex,
+ <a href="../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAimingAxisY(int)" class="member-name-link">getAimingAxisY</a><wbr>(int&nbsp;c)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAimingAxisX(int)" class="member-name-link">getAimingAxisX</a><wbr>(int&nbsp;joypadIndex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDeadZone(int,int)" class="member-name-link">getDeadZone</a><wbr>(int&nbsp;c,
- int&nbsp;axis)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAimingAxisY(int)" class="member-name-link">getAimingAxisY</a><wbr>(int&nbsp;joypadIndex)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="JoypadManager.Joypad.html" title="class in zombie.input">JoypadManager.Joypad</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFromControllerID(int)" class="member-name-link">getFromControllerID</a><wbr>(int&nbsp;id)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDeadZone(int,int)" class="member-name-link">getDeadZone</a><wbr>(int&nbsp;joypadIndex,
+ int&nbsp;axis)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="JoypadManager.Joypad.html" title="class in zombie.input">JoypadManager.Joypad</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFromPlayer(int)" class="member-name-link">getFromPlayer</a><wbr>(int&nbsp;player)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFromControllerID(int)" class="member-name-link">getFromControllerID</a><wbr>(int&nbsp;id)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLastActivity(int)" class="member-name-link">getLastActivity</a><wbr>(int&nbsp;c)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="JoypadManager.Joypad.html" title="class in zombie.input">JoypadManager.Joypad</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFromPlayer(int)" class="member-name-link">getFromPlayer</a><wbr>(int&nbsp;player)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLastActivity(int)" class="member-name-link">getLastActivity</a><wbr>(int&nbsp;c)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../iso/Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMovementAxis(int,zombie.iso.Vector2)" class="member-name-link">getMovementAxis</a><wbr>(int&nbsp;joypadIndex,
+ <a href="../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMovementAxisX(int)" class="member-name-link">getMovementAxisX</a><wbr>(int&nbsp;c)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMovementAxisX(int)" class="member-name-link">getMovementAxisX</a><wbr>(int&nbsp;joypadIndex)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMovementAxisY(int)" class="member-name-link">getMovementAxisY</a><wbr>(int&nbsp;c)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMovementAxisY(int)" class="member-name-link">getMovementAxisY</a><wbr>(int&nbsp;joypadIndex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAButtonReleasePress(int)" class="member-name-link">isAButtonReleasePress</a><wbr>(int&nbsp;c)</code></div>
@@ -255,42 +267,48 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAButtonStartPress(int)" class="member-name-link">isAButtonStartPress</a><wbr>(int&nbsp;c)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAPressed(int)" class="member-name-link">isAPressed</a><wbr>(int&nbsp;c)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAimingAxisBeingApplied(int)" class="member-name-link">isAimingAxisBeingApplied</a><wbr>(int&nbsp;joypadIndex)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBButtonReleasePress(int)" class="member-name-link">isBButtonReleasePress</a><wbr>(int&nbsp;c)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAPressed(int)" class="member-name-link">isAPressed</a><wbr>(int&nbsp;c)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBButtonStartPress(int)" class="member-name-link">isBButtonStartPress</a><wbr>(int&nbsp;c)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBButtonReleasePress(int)" class="member-name-link">isBButtonReleasePress</a><wbr>(int&nbsp;c)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBPressed(int)" class="member-name-link">isBPressed</a><wbr>(int&nbsp;c)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBButtonStartPress(int)" class="member-name-link">isBButtonStartPress</a><wbr>(int&nbsp;c)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isButtonReleasePress(int,int)" class="member-name-link">isButtonReleasePress</a><wbr>(int&nbsp;c,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBPressed(int)" class="member-name-link">isBPressed</a><wbr>(int&nbsp;c)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isButtonReleasePress(int,int)" class="member-name-link">isButtonReleasePress</a><wbr>(int&nbsp;c,
+ int&nbsp;button)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isButtonStartPress(int,int)" class="member-name-link">isButtonStartPress</a><wbr>(int&nbsp;c,
  int&nbsp;button)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isButtonStartPress(int,int)" class="member-name-link">isButtonStartPress</a><wbr>(int&nbsp;c,
- int&nbsp;button)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDownPressed(int)" class="member-name-link">isDownPressed</a><wbr>(int&nbsp;c)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDownPressed(int)" class="member-name-link">isDownPressed</a><wbr>(int&nbsp;c)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isJoypadConnected(int)" class="member-name-link">isJoypadConnected</a><wbr>(int&nbsp;index)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isJoypadConnected(int)" class="member-name-link">isJoypadConnected</a><wbr>(int&nbsp;index)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isL3Pressed(int)" class="member-name-link">isL3Pressed</a><wbr>(int&nbsp;c)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isL3Pressed(int)" class="member-name-link">isL3Pressed</a><wbr>(int&nbsp;c)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isLBPressed(int)" class="member-name-link">isLBPressed</a><wbr>(int&nbsp;c)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isLBPressed(int)" class="member-name-link">isLBPressed</a><wbr>(int&nbsp;c)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isLeftPressed(int)" class="member-name-link">isLeftPressed</a><wbr>(int&nbsp;c)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isLeftPressed(int)" class="member-name-link">isLeftPressed</a><wbr>(int&nbsp;c)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isLTPressed(int)" class="member-name-link">isLTPressed</a><wbr>(int&nbsp;c)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isLTPressed(int)" class="member-name-link">isLTPressed</a><wbr>(int&nbsp;c)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isMovementAxisBeingApplied(int)" class="member-name-link">isMovementAxisBeingApplied</a><wbr>(int&nbsp;joypadIndex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isR3Pressed(int)" class="member-name-link">isR3Pressed</a><wbr>(int&nbsp;c)</code></div>
@@ -711,7 +729,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getMovementAxisX(int)">
 <h3>getMovementAxisX</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getMovementAxisX</span><wbr><span class="parameters">(int&nbsp;c)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getMovementAxisX</span><wbr><span class="parameters">(int&nbsp;joypadIndex)</span></div>
 </div>
 </section>
 </li>
@@ -719,7 +737,24 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getMovementAxisY(int)">
 <h3>getMovementAxisY</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getMovementAxisY</span><wbr><span class="parameters">(int&nbsp;c)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getMovementAxisY</span><wbr><span class="parameters">(int&nbsp;joypadIndex)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getMovementAxis(int,zombie.iso.Vector2)">
+<h3>getMovementAxis</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../iso/Vector2.html" title="class in zombie.iso">Vector2</a></span>&nbsp;<span class="element-name">getMovementAxis</span><wbr><span class="parameters">(int&nbsp;joypadIndex,
+ <a href="../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isMovementAxisBeingApplied(int)">
+<h3>isMovementAxisBeingApplied</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isMovementAxisBeingApplied</span><wbr><span class="parameters">(int&nbsp;joypadIndex)</span></div>
 </div>
 </section>
 </li>
@@ -727,7 +762,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getAimingAxisX(int)">
 <h3>getAimingAxisX</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getAimingAxisX</span><wbr><span class="parameters">(int&nbsp;c)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getAimingAxisX</span><wbr><span class="parameters">(int&nbsp;joypadIndex)</span></div>
 </div>
 </section>
 </li>
@@ -735,7 +770,24 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getAimingAxisY(int)">
 <h3>getAimingAxisY</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getAimingAxisY</span><wbr><span class="parameters">(int&nbsp;c)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getAimingAxisY</span><wbr><span class="parameters">(int&nbsp;joypadIndex)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getAimingAxis(int,zombie.iso.Vector2)">
+<h3>getAimingAxis</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../iso/Vector2.html" title="class in zombie.iso">Vector2</a></span>&nbsp;<span class="element-name">getAimingAxis</span><wbr><span class="parameters">(int&nbsp;joypadIndex,
+ <a href="../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isAimingAxisBeingApplied(int)">
+<h3>isAimingAxisBeingApplied</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAimingAxisBeingApplied</span><wbr><span class="parameters">(int&nbsp;joypadIndex)</span></div>
 </div>
 </section>
 </li>
@@ -778,7 +830,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getDeadZone(int,int)">
 <h3>getDeadZone</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getDeadZone</span><wbr><span class="parameters">(int&nbsp;c,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getDeadZone</span><wbr><span class="parameters">(int&nbsp;joypadIndex,
  int&nbsp;axis)</span></div>
 </div>
 </section>

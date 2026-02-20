@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -105,8 +105,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#createFluidSample(float)" tabindex="0">createFluidSample(float)</a></li>
 <li><a href="#createFluidSample(zombie.entity.components.fluids.FluidSample,float)" tabindex="0">createFluidSample(FluidSample, float)</a></li>
 <li><a href="#isPureFluid(zombie.entity.components.fluids.Fluid)" tabindex="0">isPureFluid(Fluid)</a></li>
+<li><a href="#isPrimaryFluidType(zombie.entity.components.fluids.FluidType)" tabindex="0">isPrimaryFluidType(FluidType)</a></li>
+<li><a href="#isPrimaryFluidType(java.lang.String)" tabindex="0">isPrimaryFluidType(String)</a></li>
 <li><a href="#getPrimaryFluid()" tabindex="0">getPrimaryFluid()</a></li>
 <li><a href="#getPrimaryFluidAmount()" tabindex="0">getPrimaryFluidAmount()</a></li>
+<li><a href="#isPrimaryFluid(zombie.entity.components.fluids.Fluid)" tabindex="0">isPrimaryFluid(Fluid)</a></li>
+<li><a href="#isWaterSource()" tabindex="0">isWaterSource()</a></li>
 <li><a href="#isPerceivedFluidToPlayer(zombie.entity.components.fluids.Fluid,zombie.characters.IsoGameCharacter)" tabindex="0">isPerceivedFluidToPlayer(Fluid, IsoGameCharacter)</a></li>
 <li><a href="#isMixture()" tabindex="0">isMixture()</a></li>
 <li><a href="#getWhitelist()" tabindex="0">getWhitelist()</a></li>
@@ -361,20 +365,32 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPoisonous()" class="member-name-link">isPoisonous</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPureFluid(zombie.entity.components.fluids.Fluid)" class="member-name-link">isPureFluid</a><wbr>(<a href="Fluid.html" title="class in zombie.entity.components.fluids">Fluid</a>&nbsp;fluid)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPrimaryFluid(zombie.entity.components.fluids.Fluid)" class="member-name-link">isPrimaryFluid</a><wbr>(<a href="Fluid.html" title="class in zombie.entity.components.fluids">Fluid</a>&nbsp;fluid)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isQualifiesForMetaStorage()" class="member-name-link">isQualifiesForMetaStorage</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPrimaryFluidType(java.lang.String)" class="member-name-link">isPrimaryFluidType</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fluidType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTainted()" class="member-name-link">isTainted</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPrimaryFluidType(zombie.entity.components.fluids.FluidType)" class="member-name-link">isPrimaryFluidType</a><wbr>(<a href="FluidType.html" title="enum class in zombie.entity.components.fluids">FluidType</a>&nbsp;fluidType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTaintedStatusKnown()" class="member-name-link">isTaintedStatusKnown</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPureFluid(zombie.entity.components.fluids.Fluid)" class="member-name-link">isPureFluid</a><wbr>(<a href="Fluid.html" title="class in zombie.entity.components.fluids">Fluid</a>&nbsp;fluid)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isQualifiesForMetaStorage()" class="member-name-link">isQualifiesForMetaStorage</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTainted()" class="member-name-link">isTainted</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTaintedStatusKnown()" class="member-name-link">isTaintedStatusKnown</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isWaterSource()" class="member-name-link">isWaterSource</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(java.nio.ByteBuffer,int)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;input,
- int&nbsp;WorldVersion)</code></div>
+ int&nbsp;worldVersion)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeFluid()" class="member-name-link">removeFluid</a>()</code></div>
@@ -837,6 +853,22 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="isPrimaryFluidType(zombie.entity.components.fluids.FluidType)">
+<h3>isPrimaryFluidType</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isPrimaryFluidType</span><wbr><span class="parameters">(<a href="FluidType.html" title="enum class in zombie.entity.components.fluids">FluidType</a>&nbsp;fluidType)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isPrimaryFluidType(java.lang.String)">
+<h3>isPrimaryFluidType</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isPrimaryFluidType</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fluidType)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="getPrimaryFluid()">
 <h3>getPrimaryFluid</h3>
 <div class="horizontal-scroll">
@@ -849,6 +881,22 @@ loadScripts(document, 'script');</script>
 <h3>getPrimaryFluidAmount</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getPrimaryFluidAmount</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isPrimaryFluid(zombie.entity.components.fluids.Fluid)">
+<h3>isPrimaryFluid</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isPrimaryFluid</span><wbr><span class="parameters">(<a href="Fluid.html" title="class in zombie.entity.components.fluids">Fluid</a>&nbsp;fluid)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isWaterSource()">
+<h3>isWaterSource</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isWaterSource</span>()</div>
 </div>
 </section>
 </li>
@@ -1121,7 +1169,7 @@ loadScripts(document, 'script');</script>
 <h3>load</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;input,
- int&nbsp;WorldVersion)</span>
+ int&nbsp;worldVersion)</span>
           throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>

@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -101,6 +101,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#setLastSelectedRecipe(zombie.scripting.entity.components.crafting.CraftRecipe)" tabindex="0">setLastSelectedRecipe(CraftRecipe)</a></li>
 <li><a href="#getLastSelectedRecipe()" tabindex="0">getLastSelectedRecipe()</a></li>
 <li><a href="#setLastManualInputMode(boolean)" tabindex="0">setLastManualInputMode(boolean)</a></li>
+<li><a href="#findCraftSurface(zombie.characters.IsoGameCharacter,int)" tabindex="0">findCraftSurface(IsoGameCharacter, int)</a></li>
 </ol>
 </li>
 </ol>
@@ -180,103 +181,107 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;force,
  <a href="../../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAllItems()" class="member-name-link">getAllItems</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>se.krka.kahlua.j2se.KahluaTableImpl</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCraftActionTable()" class="member-name-link">getCraftActionTable</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../CraftBench.html" title="class in zombie.entity.components.crafting">CraftBench</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCraftBench()" class="member-name-link">getCraftBench</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCreatedOutputItems(java.util.ArrayList)" class="member-name-link">getCreatedOutputItems</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&gt;&nbsp;list)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIsoObject()" class="member-name-link">getIsoObject</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findCraftSurface(zombie.characters.IsoGameCharacter,int)" class="member-name-link">findCraftSurface</a><wbr>(<a href="../../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;player,
+ int&nbsp;radius)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../scripting/entity/components/crafting/CraftRecipe.html" title="class in zombie.scripting.entity.components.crafting">CraftRecipe</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLastSelectedRecipe()" class="member-name-link">getLastSelectedRecipe</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAllItems()" class="member-name-link">getAllItems</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayer()" class="member-name-link">getPlayer</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>se.krka.kahlua.j2se.KahluaTableImpl</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCraftActionTable()" class="member-name-link">getCraftActionTable</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CraftRecipeData.html" title="class in zombie.entity.components.crafting.recipe">CraftRecipeData</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecipeData()" class="member-name-link">getRecipeData</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../CraftBench.html" title="class in zombie.entity.components.crafting">CraftBench</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCraftBench()" class="member-name-link">getCraftBench</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CraftRecipeListNodeCollection.html" title="class in zombie.entity.components.crafting.recipe">CraftRecipeListNodeCollection</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecipeList()" class="member-name-link">getRecipeList</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCreatedOutputItems(java.util.ArrayList)" class="member-name-link">getCreatedOutputItems</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&gt;&nbsp;list)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecipeSortMode()" class="member-name-link">getRecipeSortMode</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIsoObject()" class="member-name-link">getIsoObject</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResidualFluidFromInput(zombie.scripting.entity.components.crafting.InputScript)" class="member-name-link">getResidualFluidFromInput</a><wbr>(<a href="../../../../scripting/entity/components/crafting/InputScript.html" title="class in zombie.scripting.entity.components.crafting">InputScript</a>&nbsp;inputScript)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../scripting/entity/components/crafting/CraftRecipe.html" title="class in zombie.scripting.entity.components.crafting">CraftRecipe</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLastSelectedRecipe()" class="member-name-link">getLastSelectedRecipe</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../core/textures/Texture.html" title="class in zombie.core.textures">Texture</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResultTexture()" class="member-name-link">getResultTexture</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayer()" class="member-name-link">getPlayer</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CraftRecipeData.html" title="class in zombie.entity.components.crafting.recipe">CraftRecipeData</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecipeData()" class="member-name-link">getRecipeData</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CraftRecipeListNodeCollection.html" title="class in zombie.entity.components.crafting.recipe">CraftRecipeListNodeCollection</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecipeList()" class="member-name-link">getRecipeList</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSelectedRecipeStyle()" class="member-name-link">getSelectedRecipeStyle</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecipeSortMode()" class="member-name-link">getRecipeSortMode</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../../resources/Resource.html" title="class in zombie.entity.components.resources">Resource</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSourceResources()" class="member-name-link">getSourceResources</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResidualFluidFromInput(zombie.scripting.entity.components.crafting.InputScript)" class="member-name-link">getResidualFluidFromInput</a><wbr>(<a href="../../../../scripting/entity/components/crafting/InputScript.html" title="class in zombie.scripting.entity.components.crafting">InputScript</a>&nbsp;inputScript)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUsingRecipeAtHandItem()" class="member-name-link">getUsingRecipeAtHandItem</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../core/textures/Texture.html" title="class in zombie.core.textures">Texture</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResultTexture()" class="member-name-link">getResultTexture</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCharacterInRangeOfWorkbench()" class="member-name-link">isCharacterInRangeOfWorkbench</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSelectedRecipeStyle()" class="member-name-link">getSelectedRecipeStyle</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCraftActionInProgress()" class="member-name-link">isCraftActionInProgress</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../../resources/Resource.html" title="class in zombie.entity.components.resources">Resource</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSourceResources()" class="member-name-link">getSourceResources</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRecipeAtHand()" class="member-name-link">isRecipeAtHand</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRecipeAvailableForCharacter(zombie.scripting.entity.components.crafting.CraftRecipe)" class="member-name-link">isRecipeAvailableForCharacter</a><wbr>(<a href="../../../../scripting/entity/components/crafting/CraftRecipe.html" title="class in zombie.scripting.entity.components.crafting">CraftRecipe</a>&nbsp;recipe)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isUsingRecipeAtHandBenefit()" class="member-name-link">isUsingRecipeAtHandBenefit</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUsingRecipeAtHandItem()" class="member-name-link">getUsingRecipeAtHandItem</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isValidRecipeForCharacter(zombie.scripting.entity.components.crafting.CraftRecipe)" class="member-name-link">isValidRecipeForCharacter</a><wbr>(<a href="../../../../scripting/entity/components/crafting/CraftRecipe.html" title="class in zombie.scripting.entity.components.crafting">CraftRecipe</a>&nbsp;recipe)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCharacterInRangeOfWorkbench()" class="member-name-link">isCharacterInRangeOfWorkbench</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#performCurrentRecipe()" class="member-name-link">performCurrentRecipe</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCraftActionInProgress()" class="member-name-link">isCraftActionInProgress</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setIsoObject(zombie.iso.IsoObject)" class="member-name-link">setIsoObject</a><wbr>(<a href="../../../../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;isoObj)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRecipeAtHand()" class="member-name-link">isRecipeAtHand</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRecipeAvailableForCharacter(zombie.scripting.entity.components.crafting.CraftRecipe)" class="member-name-link">isRecipeAvailableForCharacter</a><wbr>(<a href="../../../../scripting/entity/components/crafting/CraftRecipe.html" title="class in zombie.scripting.entity.components.crafting">CraftRecipe</a>&nbsp;recipe)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isUsingRecipeAtHandBenefit()" class="member-name-link">isUsingRecipeAtHandBenefit</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isValidRecipeForCharacter(zombie.scripting.entity.components.crafting.CraftRecipe)" class="member-name-link">isValidRecipeForCharacter</a><wbr>(<a href="../../../../scripting/entity/components/crafting/CraftRecipe.html" title="class in zombie.scripting.entity.components.crafting">CraftRecipe</a>&nbsp;recipe)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#performCurrentRecipe()" class="member-name-link">performCurrentRecipe</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLastManualInputMode(boolean)" class="member-name-link">setLastManualInputMode</a><wbr>(boolean&nbsp;b)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setIsoObject(zombie.iso.IsoObject)" class="member-name-link">setIsoObject</a><wbr>(<a href="../../../../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;isoObj)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLastSelectedRecipe(zombie.scripting.entity.components.crafting.CraftRecipe)" class="member-name-link">setLastSelectedRecipe</a><wbr>(<a href="../../../../scripting/entity/components/crafting/CraftRecipe.html" title="class in zombie.scripting.entity.components.crafting">CraftRecipe</a>&nbsp;recipe)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLastManualInputMode(boolean)" class="member-name-link">setLastManualInputMode</a><wbr>(boolean&nbsp;b)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRecipe(zombie.scripting.entity.components.crafting.CraftRecipe)" class="member-name-link">setRecipe</a><wbr>(<a href="../../../../scripting/entity/components/crafting/CraftRecipe.html" title="class in zombie.scripting.entity.components.crafting">CraftRecipe</a>&nbsp;recipe)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLastSelectedRecipe(zombie.scripting.entity.components.crafting.CraftRecipe)" class="member-name-link">setLastSelectedRecipe</a><wbr>(<a href="../../../../scripting/entity/components/crafting/CraftRecipe.html" title="class in zombie.scripting.entity.components.crafting">CraftRecipe</a>&nbsp;recipe)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRecipeFromContextClick(zombie.scripting.entity.components.crafting.CraftRecipe,zombie.inventory.InventoryItem)" class="member-name-link">setRecipeFromContextClick</a><wbr>(<a href="../../../../scripting/entity/components/crafting/CraftRecipe.html" title="class in zombie.scripting.entity.components.crafting">CraftRecipe</a>&nbsp;recipe,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRecipe(zombie.scripting.entity.components.crafting.CraftRecipe)" class="member-name-link">setRecipe</a><wbr>(<a href="../../../../scripting/entity/components/crafting/CraftRecipe.html" title="class in zombie.scripting.entity.components.crafting">CraftRecipe</a>&nbsp;recipe)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRecipeFromContextClick(zombie.scripting.entity.components.crafting.CraftRecipe,zombie.inventory.InventoryItem)" class="member-name-link">setRecipeFromContextClick</a><wbr>(<a href="../../../../scripting/entity/components/crafting/CraftRecipe.html" title="class in zombie.scripting.entity.components.crafting">CraftRecipe</a>&nbsp;recipe,
  <a href="../../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;inventoryItem)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRecipes(java.util.List)" class="member-name-link">setRecipes</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../../scripting/entity/components/crafting/CraftRecipe.html" title="class in zombie.scripting.entity.components.crafting">CraftRecipe</a>&gt;&nbsp;recipes)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRecipeSortMode(java.lang.String)" class="member-name-link">setRecipeSortMode</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;sortMode)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRecipes(java.util.List)" class="member-name-link">setRecipes</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../../scripting/entity/components/crafting/CraftRecipe.html" title="class in zombie.scripting.entity.components.crafting">CraftRecipe</a>&gt;&nbsp;recipes)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSelectedRecipeStyle(java.lang.String)" class="member-name-link">setSelectedRecipeStyle</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;style)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRecipeSortMode(java.lang.String)" class="member-name-link">setRecipeSortMode</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;sortMode)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startCraftAction(se.krka.kahlua.j2se.KahluaTableImpl)" class="member-name-link">startCraftAction</a><wbr>(se.krka.kahlua.j2se.KahluaTableImpl&nbsp;actionTable)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSelectedRecipeStyle(java.lang.String)" class="member-name-link">setSelectedRecipeStyle</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;style)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopCraftAction()" class="member-name-link">stopCraftAction</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startCraftAction(se.krka.kahlua.j2se.KahluaTableImpl)" class="member-name-link">startCraftAction</a><wbr>(se.krka.kahlua.j2se.KahluaTableImpl&nbsp;actionTable)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopCraftAction()" class="member-name-link">stopCraftAction</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -612,6 +617,15 @@ loadScripts(document, 'script');</script>
 <h3>setLastManualInputMode</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setLastManualInputMode</span><wbr><span class="parameters">(boolean&nbsp;b)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="findCraftSurface(zombie.characters.IsoGameCharacter,int)">
+<h3>findCraftSurface</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a></span>&nbsp;<span class="element-name">findCraftSurface</span><wbr><span class="parameters">(<a href="../../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;player,
+ int&nbsp;radius)</span></div>
 </div>
 </section>
 </li>

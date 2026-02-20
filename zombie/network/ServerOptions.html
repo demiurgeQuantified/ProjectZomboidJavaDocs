@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -105,6 +105,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#dropOffWhiteListAfterDeath" tabindex="0">dropOffWhiteListAfterDeath</a></li>
 <li><a href="#noFire" tabindex="0">noFire</a></li>
 <li><a href="#announceDeath" tabindex="0">announceDeath</a></li>
+<li><a href="#announceAnimalDeath" tabindex="0">announceAnimalDeath</a></li>
 <li><a href="#saveWorldEveryMinutes" tabindex="0">saveWorldEveryMinutes</a></li>
 <li><a href="#playerSafehouse" tabindex="0">playerSafehouse</a></li>
 <li><a href="#adminSafehouse" tabindex="0">adminSafehouse</a></li>
@@ -119,6 +120,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#maxSafezoneSize" tabindex="0">maxSafezoneSize</a></li>
 <li><a href="#allowDestructionBySledgehammer" tabindex="0">allowDestructionBySledgehammer</a></li>
 <li><a href="#sledgehammerOnlyInSafehouse" tabindex="0">sledgehammerOnlyInSafehouse</a></li>
+<li><a href="#war" tabindex="0">war</a></li>
 <li><a href="#warStartDelay" tabindex="0">warStartDelay</a></li>
 <li><a href="#warDuration" tabindex="0">warDuration</a></li>
 <li><a href="#warSafehouseHitPoints" tabindex="0">warSafehouseHitPoints</a></li>
@@ -127,8 +129,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#rconPassword" tabindex="0">rconPassword</a></li>
 <li><a href="#discordEnable" tabindex="0">discordEnable</a></li>
 <li><a href="#discordToken" tabindex="0">discordToken</a></li>
-<li><a href="#discordChannel" tabindex="0">discordChannel</a></li>
-<li><a href="#discordChannelId" tabindex="0">discordChannelId</a></li>
+<li><a href="#discordChatChannel" tabindex="0">discordChatChannel</a></li>
+<li><a href="#discordLogChannel" tabindex="0">discordLogChannel</a></li>
+<li><a href="#discordCommandChannel" tabindex="0">discordCommandChannel</a></li>
 <li><a href="#webhookAddress" tabindex="0">webhookAddress</a></li>
 <li><a href="#password" tabindex="0">password</a></li>
 <li><a href="#maxAccountsPerUser" tabindex="0">maxAccountsPerUser</a></li>
@@ -320,148 +323,154 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><code><a href="#allowNonAsciiUsername" class="member-name-link">allowNonAsciiUsername</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#announceDeath" class="member-name-link">announceDeath</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#antiCheatChecksum" class="member-name-link">antiCheatChecksum</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#antiCheatFire" class="member-name-link">antiCheatFire</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#antiCheatHit" class="member-name-link">antiCheatHit</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#antiCheatItem" class="member-name-link">antiCheatItem</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#antiCheatMovement" class="member-name-link">antiCheatMovement</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#antiCheatPacket" class="member-name-link">antiCheatPacket</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#antiCheatPermission" class="member-name-link">antiCheatPermission</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#antiCheatPlayer" class="member-name-link">antiCheatPlayer</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#antiCheatRecipe" class="member-name-link">antiCheatRecipe</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#antiCheatSafeHouse" class="member-name-link">antiCheatSafeHouse</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#antiCheatSafety" class="member-name-link">antiCheatSafety</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#antiCheatServerCustomization" class="member-name-link">antiCheatServerCustomization</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#antiCheatXp" class="member-name-link">antiCheatXp</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#autoCreateUserInWhiteList" class="member-name-link">autoCreateUserInWhiteList</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="ServerOptions.IntegerServerOption.html" title="class in zombie.network">ServerOptions.IntegerServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#backupsCount" class="member-name-link">backupsCount</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#backupsOnStart" class="member-name-link">backupsOnStart</a></code></div>
+<div class="col-second even-row-color"><code><a href="#announceAnimalDeath" class="member-name-link">announceAnimalDeath</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#backupsOnVersionChange" class="member-name-link">backupsOnVersionChange</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#announceDeath" class="member-name-link">announceDeath</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#antiCheatChecksum" class="member-name-link">antiCheatChecksum</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#antiCheatFire" class="member-name-link">antiCheatFire</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#antiCheatHit" class="member-name-link">antiCheatHit</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#antiCheatItem" class="member-name-link">antiCheatItem</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#antiCheatMovement" class="member-name-link">antiCheatMovement</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#antiCheatPacket" class="member-name-link">antiCheatPacket</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#antiCheatPermission" class="member-name-link">antiCheatPermission</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#antiCheatPlayer" class="member-name-link">antiCheatPlayer</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#antiCheatRecipe" class="member-name-link">antiCheatRecipe</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#antiCheatSafeHouse" class="member-name-link">antiCheatSafeHouse</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#antiCheatSafety" class="member-name-link">antiCheatSafety</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#antiCheatServerCustomization" class="member-name-link">antiCheatServerCustomization</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#antiCheatXp" class="member-name-link">antiCheatXp</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#autoCreateUserInWhiteList" class="member-name-link">autoCreateUserInWhiteList</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="ServerOptions.IntegerServerOption.html" title="class in zombie.network">ServerOptions.IntegerServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#backupsPeriod" class="member-name-link">backupsPeriod</a></code></div>
+<div class="col-second even-row-color"><code><a href="#backupsCount" class="member-name-link">backupsCount</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#badWordListFile" class="member-name-link">badWordListFile</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#badWordPolicy" class="member-name-link">badWordPolicy</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#badWordReplacement" class="member-name-link">badWordReplacement</a></code></div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#backupsOnStart" class="member-name-link">backupsOnStart</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#banKickGlobalSound" class="member-name-link">banKickGlobalSound</a></code></div>
+<div class="col-second even-row-color"><code><a href="#backupsOnVersionChange" class="member-name-link">backupsOnVersionChange</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="ServerOptions.IntegerServerOption.html" title="class in zombie.network">ServerOptions.IntegerServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#bloodSplatLifespanDays" class="member-name-link">bloodSplatLifespanDays</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#backupsPeriod" class="member-name-link">backupsPeriod</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#cardList" class="member-name-link">cardList</a></code></div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#badWordListFile" class="member-name-link">badWordListFile</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="ServerOptions.DoubleServerOption.html" title="class in zombie.network">ServerOptions.DoubleServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#carEngineAttractionModifier" class="member-name-link">carEngineAttractionModifier</a></code></div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#badWordPolicy" class="member-name-link">badWordPolicy</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#badWordReplacement" class="member-name-link">badWordReplacement</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#banKickGlobalSound" class="member-name-link">banKickGlobalSound</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="ServerOptions.IntegerServerOption.html" title="class in zombie.network">ServerOptions.IntegerServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#chatMessageCharacterLimit" class="member-name-link">chatMessageCharacterLimit</a></code></div>
+<div class="col-second even-row-color"><code><a href="#bloodSplatLifespanDays" class="member-name-link">bloodSplatLifespanDays</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#cardList" class="member-name-link">cardList</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.DoubleServerOption.html" title="class in zombie.network">ServerOptions.DoubleServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#carEngineAttractionModifier" class="member-name-link">carEngineAttractionModifier</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="ServerOptions.IntegerServerOption.html" title="class in zombie.network">ServerOptions.IntegerServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#chatMessageSlowModeTime" class="member-name-link">chatMessageSlowModeTime</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#chatStreams" class="member-name-link">chatStreams</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#clientActionLogs" class="member-name-link">clientActionLogs</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#clientCommandFilter" class="member-name-link">clientCommandFilter</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link">HashMap</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#clientOptionsList" class="member-name-link">clientOptionsList</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#chatMessageCharacterLimit" class="member-name-link">chatMessageCharacterLimit</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="ServerOptions.IntegerServerOption.html" title="class in zombie.network">ServerOptions.IntegerServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#defaultPort" class="member-name-link">defaultPort</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#denyLoginOnOverloadedServer" class="member-name-link">denyLoginOnOverloadedServer</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#disableBurntTowing" class="member-name-link">disableBurntTowing</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#disableRadioAdmin" class="member-name-link">disableRadioAdmin</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#disableRadioGm" class="member-name-link">disableRadioGm</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#disableRadioInvisible" class="member-name-link">disableRadioInvisible</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#disableRadioModerator" class="member-name-link">disableRadioModerator</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#disableRadioOverseer" class="member-name-link">disableRadioOverseer</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#disableRadioStaff" class="member-name-link">disableRadioStaff</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#disableSafehouseWhenPlayerConnected" class="member-name-link">disableSafehouseWhenPlayerConnected</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#disableScoreboard" class="member-name-link">disableScoreboard</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#disableTrailerTowing" class="member-name-link">disableTrailerTowing</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#disableVehicleTowing" class="member-name-link">disableVehicleTowing</a></code></div>
+<div class="col-second even-row-color"><code><a href="#chatMessageSlowModeTime" class="member-name-link">chatMessageSlowModeTime</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#discordChannel" class="member-name-link">discordChannel</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#chatStreams" class="member-name-link">chatStreams</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#discordChannelId" class="member-name-link">discordChannelId</a></code></div>
+<div class="col-second even-row-color"><code><a href="#clientActionLogs" class="member-name-link">clientActionLogs</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#clientCommandFilter" class="member-name-link">clientCommandFilter</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link">HashMap</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#clientOptionsList" class="member-name-link">clientOptionsList</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.IntegerServerOption.html" title="class in zombie.network">ServerOptions.IntegerServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#defaultPort" class="member-name-link">defaultPort</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#denyLoginOnOverloadedServer" class="member-name-link">denyLoginOnOverloadedServer</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#discordEnable" class="member-name-link">discordEnable</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#disableBurntTowing" class="member-name-link">disableBurntTowing</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#disableRadioAdmin" class="member-name-link">disableRadioAdmin</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#disableRadioGm" class="member-name-link">disableRadioGm</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#disableRadioInvisible" class="member-name-link">disableRadioInvisible</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#disableRadioModerator" class="member-name-link">disableRadioModerator</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#disableRadioOverseer" class="member-name-link">disableRadioOverseer</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#disableRadioStaff" class="member-name-link">disableRadioStaff</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#disableSafehouseWhenPlayerConnected" class="member-name-link">disableSafehouseWhenPlayerConnected</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#disableScoreboard" class="member-name-link">disableScoreboard</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#disableTrailerTowing" class="member-name-link">disableTrailerTowing</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#disableVehicleTowing" class="member-name-link">disableVehicleTowing</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#discordChatChannel" class="member-name-link">discordChatChannel</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#discordCommandChannel" class="member-name-link">discordCommandChannel</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#discordEnable" class="member-name-link">discordEnable</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#discordLogChannel" class="member-name-link">discordLogChannel</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></code></div>
 <div class="col-second even-row-color"><code><a href="#discordToken" class="member-name-link">discordToken</a></code></div>
@@ -742,21 +751,24 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code><a href="ServerOptions.DoubleServerOption.html" title="class in zombie.network">ServerOptions.DoubleServerOption</a></code></div>
 <div class="col-second even-row-color"><code><a href="#voiceMinDistance" class="member-name-link">voiceMinDistance</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="ServerOptions.IntegerServerOption.html" title="class in zombie.network">ServerOptions.IntegerServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#warDuration" class="member-name-link">warDuration</a></code></div>
+<div class="col-first odd-row-color"><code><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#war" class="member-name-link">war</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="ServerOptions.IntegerServerOption.html" title="class in zombie.network">ServerOptions.IntegerServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#warSafehouseHitPoints" class="member-name-link">warSafehouseHitPoints</a></code></div>
+<div class="col-second even-row-color"><code><a href="#warDuration" class="member-name-link">warDuration</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="ServerOptions.IntegerServerOption.html" title="class in zombie.network">ServerOptions.IntegerServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#warStartDelay" class="member-name-link">warStartDelay</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#warSafehouseHitPoints" class="member-name-link">warSafehouseHitPoints</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#webhookAddress" class="member-name-link">webhookAddress</a></code></div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.IntegerServerOption.html" title="class in zombie.network">ServerOptions.IntegerServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#warStartDelay" class="member-name-link">warStartDelay</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#workshopItems" class="member-name-link">workshopItems</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#webhookAddress" class="member-name-link">webhookAddress</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#workshopItems" class="member-name-link">workshopItems</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -1226,6 +1238,14 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="announceAnimalDeath">
+<h3>announceAnimalDeath</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></span>&nbsp;<span class="element-name">announceAnimalDeath</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="saveWorldEveryMinutes">
 <h3>saveWorldEveryMinutes</h3>
 <div class="horizontal-scroll">
@@ -1338,6 +1358,14 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="war">
+<h3>war</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ServerOptions.BooleanServerOption.html" title="class in zombie.network">ServerOptions.BooleanServerOption</a></span>&nbsp;<span class="element-name">war</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="warStartDelay">
 <h3>warStartDelay</h3>
 <div class="horizontal-scroll">
@@ -1402,18 +1430,26 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="discordChannel">
-<h3>discordChannel</h3>
+<section class="detail" id="discordChatChannel">
+<h3>discordChatChannel</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></span>&nbsp;<span class="element-name">discordChannel</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></span>&nbsp;<span class="element-name">discordChatChannel</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="discordChannelId">
-<h3>discordChannelId</h3>
+<section class="detail" id="discordLogChannel">
+<h3>discordLogChannel</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></span>&nbsp;<span class="element-name">discordChannelId</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></span>&nbsp;<span class="element-name">discordLogChannel</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="discordCommandChannel">
+<h3>discordCommandChannel</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ServerOptions.StringServerOption.html" title="class in zombie.network">ServerOptions.StringServerOption</a></span>&nbsp;<span class="element-name">discordCommandChannel</span></div>
 </div>
 </section>
 </li>

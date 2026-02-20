@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#use">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -76,7 +76,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static <a href="../ActionGroup.html" title="class in zombie.characters.action">ActionGroup</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ActionGroup.</span><code><a href="../ActionGroup.html#getActionGroup(java.lang.String)" class="member-name-link">getActionGroup</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;in_groupName)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ActionGroup.</span><code><a href="../ActionGroup.html#getActionGroup(java.lang.String)" class="member-name-link">getActionGroup</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;groupName)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="../ActionGroup.html" title="class in zombie.characters.action">ActionGroup</a></code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">ActionContext.</span><code><a href="../ActionContext.html#getGroup()" class="member-name-link">getGroup</a>()</code></div>
@@ -90,11 +90,20 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ActionStateContainer.</span><code><a href="../ActionStateContainer.html#canTransitionToState(zombie.characters.action.ActionGroup,java.lang.String)" class="member-name-link">canTransitionToState</a><wbr>(<a href="../ActionGroup.html" title="class in zombie.characters.action">ActionGroup</a>&nbsp;actionGroup,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;stateName)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ActionStateContainer.</span><code><a href="../ActionStateContainer.html#canTransitionToState(zombie.characters.action.ActionGroup,java.lang.String,boolean)" class="member-name-link">canTransitionToState</a><wbr>(<a href="../ActionGroup.html" title="class in zombie.characters.action">ActionGroup</a>&nbsp;actionGroup,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;stateName,
+ boolean&nbsp;allowSubState)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">ActionContext.</span><code><a href="../ActionContext.html#setGroup(zombie.characters.action.ActionGroup)" class="member-name-link">setGroup</a><wbr>(<a href="../ActionGroup.html" title="class in zombie.characters.action">ActionGroup</a>&nbsp;group)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ActionState.</span><code><a href="../ActionState.html#setParentActionGroup(zombie.characters.action.ActionGroup)" class="member-name-link">setParentActionGroup</a><wbr>(<a href="../ActionGroup.html" title="class in zombie.characters.action">ActionGroup</a>&nbsp;in_parentActionGroup)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ActionState.</span><code><a href="../ActionState.html#setParentActionGroup(zombie.characters.action.ActionGroup)" class="member-name-link">setParentActionGroup</a><wbr>(<a href="../ActionGroup.html" title="class in zombie.characters.action">ActionGroup</a>&nbsp;parentActionGroup)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
@@ -113,9 +122,9 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../ActionState.html" title="class in zombie.characters.action">ActionState</a>&gt;&nbsp;childStates)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">AnimationPlayerRecorder.</span><code><a href="../../../core/skinnedmodel/animation/debug/AnimationPlayerRecorder.html#logActionState(zombie.characters.action.ActionGroup,zombie.characters.action.ActionState,java.util.List)" class="member-name-link">logActionState</a><wbr>(<a href="../ActionGroup.html" title="class in zombie.characters.action">ActionGroup</a>&nbsp;in_actionGroup,
- <a href="../ActionState.html" title="class in zombie.characters.action">ActionState</a>&nbsp;in_actionState,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../ActionState.html" title="class in zombie.characters.action">ActionState</a>&gt;&nbsp;in_subStates)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">AnimationPlayerRecorder.</span><code><a href="../../../core/skinnedmodel/animation/debug/AnimationPlayerRecorder.html#logActionState(zombie.characters.action.ActionGroup,zombie.characters.action.ActionState,java.util.List)" class="member-name-link">logActionState</a><wbr>(<a href="../ActionGroup.html" title="class in zombie.characters.action">ActionGroup</a>&nbsp;actionGroup,
+ <a href="../ActionState.html" title="class in zombie.characters.action">ActionState</a>&nbsp;actionState,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../ActionState.html" title="class in zombie.characters.action">ActionState</a>&gt;&nbsp;subStates)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>

@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -61,20 +61,24 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
 <li><a href="#shouldBeActive" tabindex="0">shouldBeActive</a></li>
+<li><a href="#desiredLayer" tabindex="0">desiredLayer</a></li>
 <li><a href="#animLayer" tabindex="0">animLayer</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#alloc(zombie.core.skinnedmodel.advancedanimation.AnimLayer,zombie.core.skinnedmodel.advancedanimation.IAnimatable,zombie.core.skinnedmodel.advancedanimation.AdvancedAnimator)" tabindex="0">alloc(AnimLayer, IAnimatable, AdvancedAnimator)</a></li>
+<li><a href="#alloc(zombie.core.skinnedmodel.advancedanimation.IAnimatable,zombie.core.skinnedmodel.advancedanimation.AdvancedAnimator)" tabindex="0">alloc(IAnimatable, AdvancedAnimator)</a></li>
 <li><a href="#reset()" tabindex="0">reset()</a></li>
 <li><a href="#onReleased()" tabindex="0">onReleased()</a></li>
 <li><a href="#update(float)" tabindex="0">update(float)</a></li>
-<li><a href="#transitionTo(zombie.core.skinnedmodel.advancedanimation.AnimState,zombie.core.skinnedmodel.advancedanimation.AnimLayer)" tabindex="0">transitionTo(AnimState, AnimLayer)</a></li>
-<li><a href="#applyTransition()" tabindex="0">applyTransition()</a></li>
+<li><a href="#clearShouldBeActiveFlag()" tabindex="0">clearShouldBeActiveFlag()</a></li>
+<li><a href="#applyNextTransition()" tabindex="0">applyNextTransition()</a></li>
 <li><a href="#setParentLayer(zombie.core.skinnedmodel.advancedanimation.AnimLayer)" tabindex="0">setParentLayer(AnimLayer)</a></li>
-<li><a href="#isStateless()" tabindex="0">isStateless()</a></li>
+<li><a href="#setParentSlot(zombie.core.skinnedmodel.advancedanimation.SubLayerSlot)" tabindex="0">setParentSlot(SubLayerSlot)</a></li>
 <li><a href="#hasRunningAnims()" tabindex="0">hasRunningAnims()</a></li>
+<li><a href="#setNextTransitionTo(zombie.core.skinnedmodel.advancedanimation.AnimState)" tabindex="0">setNextTransitionTo(AnimState)</a></li>
+<li><a href="#isNextOrCurrentState(zombie.core.skinnedmodel.advancedanimation.AnimState)" tabindex="0">isNextOrCurrentState(AnimState)</a></li>
+<li><a href="#compare(zombie.core.skinnedmodel.advancedanimation.SubLayerSlot,zombie.core.skinnedmodel.advancedanimation.SubLayerSlot)" tabindex="0">compare(SubLayerSlot, SubLayerSlot)</a></li>
 </ol>
 </li>
 </ol>
@@ -114,9 +118,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code><a href="AnimLayer.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimLayer</a></code></div>
 <div class="col-second even-row-color"><code><a href="#animLayer" class="member-name-link">animLayer</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#shouldBeActive" class="member-name-link">shouldBeActive</a></code></div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><a href="#desiredLayer" class="member-name-link">desiredLayer</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#shouldBeActive" class="member-name-link">shouldBeActive</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -132,18 +139,24 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="SubLayerSlot.html" title="class in zombie.core.skinnedmodel.advancedanimation">SubLayerSlot</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#alloc(zombie.core.skinnedmodel.advancedanimation.AnimLayer,zombie.core.skinnedmodel.advancedanimation.IAnimatable,zombie.core.skinnedmodel.advancedanimation.AdvancedAnimator)" class="member-name-link">alloc</a><wbr>(<a href="AnimLayer.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimLayer</a>&nbsp;in_parentLayer,
- <a href="IAnimatable.html" title="interface in zombie.core.skinnedmodel.advancedanimation">IAnimatable</a>&nbsp;character,
- <a href="AdvancedAnimator.html" title="class in zombie.core.skinnedmodel.advancedanimation">AdvancedAnimator</a>&nbsp;in_parentAnimator)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#alloc(zombie.core.skinnedmodel.advancedanimation.IAnimatable,zombie.core.skinnedmodel.advancedanimation.AdvancedAnimator)" class="member-name-link">alloc</a><wbr>(<a href="IAnimatable.html" title="interface in zombie.core.skinnedmodel.advancedanimation">IAnimatable</a>&nbsp;character,
+ <a href="AdvancedAnimator.html" title="class in zombie.core.skinnedmodel.advancedanimation">AdvancedAnimator</a>&nbsp;parentAnimator)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#applyTransition()" class="member-name-link">applyTransition</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#applyNextTransition()" class="member-name-link">applyNextTransition</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearShouldBeActiveFlag()" class="member-name-link">clearShouldBeActiveFlag</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#compare(zombie.core.skinnedmodel.advancedanimation.SubLayerSlot,zombie.core.skinnedmodel.advancedanimation.SubLayerSlot)" class="member-name-link">compare</a><wbr>(<a href="SubLayerSlot.html" title="class in zombie.core.skinnedmodel.advancedanimation">SubLayerSlot</a>&nbsp;a,
+ <a href="SubLayerSlot.html" title="class in zombie.core.skinnedmodel.advancedanimation">SubLayerSlot</a>&nbsp;b)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasRunningAnims()" class="member-name-link">hasRunningAnims</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isStateless()" class="member-name-link">isStateless</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNextOrCurrentState(zombie.core.skinnedmodel.advancedanimation.AnimState)" class="member-name-link">isNextOrCurrentState</a><wbr>(<a href="AnimState.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimState</a>&nbsp;state)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onReleased()" class="member-name-link">onReleased</a>()</code></div>
@@ -152,15 +165,17 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset()" class="member-name-link">reset</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setParentLayer(zombie.core.skinnedmodel.advancedanimation.AnimLayer)" class="member-name-link">setParentLayer</a><wbr>(<a href="AnimLayer.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimLayer</a>&nbsp;in_parentLayer)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setNextTransitionTo(zombie.core.skinnedmodel.advancedanimation.AnimState)" class="member-name-link">setNextTransitionTo</a><wbr>(<a href="AnimState.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimState</a>&nbsp;nextState)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#transitionTo(zombie.core.skinnedmodel.advancedanimation.AnimState,zombie.core.skinnedmodel.advancedanimation.AnimLayer)" class="member-name-link">transitionTo</a><wbr>(<a href="AnimState.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimState</a>&nbsp;in_newState,
- <a href="AnimLayer.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimLayer</a>&nbsp;in_sourceLayer)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setParentLayer(zombie.core.skinnedmodel.advancedanimation.AnimLayer)" class="member-name-link">setParentLayer</a><wbr>(<a href="AnimLayer.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimLayer</a>&nbsp;parentLayer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(float)" class="member-name-link">update</a><wbr>(float&nbsp;in_deltaT)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setParentSlot(zombie.core.skinnedmodel.advancedanimation.SubLayerSlot)" class="member-name-link">setParentSlot</a><wbr>(<a href="SubLayerSlot.html" title="class in zombie.core.skinnedmodel.advancedanimation">SubLayerSlot</a>&nbsp;parentSlot)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(float)" class="member-name-link">update</a><wbr>(float&nbsp;deltaT)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -190,6 +205,14 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="desiredLayer">
+<h3>desiredLayer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">desiredLayer</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="animLayer">
 <h3>animLayer</h3>
 <div class="horizontal-scroll">
@@ -206,12 +229,11 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="alloc(zombie.core.skinnedmodel.advancedanimation.AnimLayer,zombie.core.skinnedmodel.advancedanimation.IAnimatable,zombie.core.skinnedmodel.advancedanimation.AdvancedAnimator)">
+<section class="detail" id="alloc(zombie.core.skinnedmodel.advancedanimation.IAnimatable,zombie.core.skinnedmodel.advancedanimation.AdvancedAnimator)">
 <h3>alloc</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="SubLayerSlot.html" title="class in zombie.core.skinnedmodel.advancedanimation">SubLayerSlot</a></span>&nbsp;<span class="element-name">alloc</span><wbr><span class="parameters">(<a href="AnimLayer.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimLayer</a>&nbsp;in_parentLayer,
- <a href="IAnimatable.html" title="interface in zombie.core.skinnedmodel.advancedanimation">IAnimatable</a>&nbsp;character,
- <a href="AdvancedAnimator.html" title="class in zombie.core.skinnedmodel.advancedanimation">AdvancedAnimator</a>&nbsp;in_parentAnimator)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="SubLayerSlot.html" title="class in zombie.core.skinnedmodel.advancedanimation">SubLayerSlot</a></span>&nbsp;<span class="element-name">alloc</span><wbr><span class="parameters">(<a href="IAnimatable.html" title="interface in zombie.core.skinnedmodel.advancedanimation">IAnimatable</a>&nbsp;character,
+ <a href="AdvancedAnimator.html" title="class in zombie.core.skinnedmodel.advancedanimation">AdvancedAnimator</a>&nbsp;parentAnimator)</span></div>
 </div>
 </section>
 </li>
@@ -235,24 +257,23 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="update(float)">
 <h3>update</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">update</span><wbr><span class="parameters">(float&nbsp;in_deltaT)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">update</span><wbr><span class="parameters">(float&nbsp;deltaT)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="transitionTo(zombie.core.skinnedmodel.advancedanimation.AnimState,zombie.core.skinnedmodel.advancedanimation.AnimLayer)">
-<h3>transitionTo</h3>
+<section class="detail" id="clearShouldBeActiveFlag()">
+<h3>clearShouldBeActiveFlag</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">transitionTo</span><wbr><span class="parameters">(<a href="AnimState.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimState</a>&nbsp;in_newState,
- <a href="AnimLayer.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimLayer</a>&nbsp;in_sourceLayer)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearShouldBeActiveFlag</span>()</div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="applyTransition()">
-<h3>applyTransition</h3>
+<section class="detail" id="applyNextTransition()">
+<h3>applyNextTransition</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">applyTransition</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">applyNextTransition</span>()</div>
 </div>
 </section>
 </li>
@@ -260,15 +281,15 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="setParentLayer(zombie.core.skinnedmodel.advancedanimation.AnimLayer)">
 <h3>setParentLayer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setParentLayer</span><wbr><span class="parameters">(<a href="AnimLayer.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimLayer</a>&nbsp;in_parentLayer)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setParentLayer</span><wbr><span class="parameters">(<a href="AnimLayer.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimLayer</a>&nbsp;parentLayer)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="isStateless()">
-<h3>isStateless</h3>
+<section class="detail" id="setParentSlot(zombie.core.skinnedmodel.advancedanimation.SubLayerSlot)">
+<h3>setParentSlot</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isStateless</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setParentSlot</span><wbr><span class="parameters">(<a href="SubLayerSlot.html" title="class in zombie.core.skinnedmodel.advancedanimation">SubLayerSlot</a>&nbsp;parentSlot)</span></div>
 </div>
 </section>
 </li>
@@ -277,6 +298,31 @@ loadScripts(document, 'script');</script>
 <h3>hasRunningAnims</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasRunningAnims</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setNextTransitionTo(zombie.core.skinnedmodel.advancedanimation.AnimState)">
+<h3>setNextTransitionTo</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setNextTransitionTo</span><wbr><span class="parameters">(<a href="AnimState.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimState</a>&nbsp;nextState)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isNextOrCurrentState(zombie.core.skinnedmodel.advancedanimation.AnimState)">
+<h3>isNextOrCurrentState</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isNextOrCurrentState</span><wbr><span class="parameters">(<a href="AnimState.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimState</a>&nbsp;state)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="compare(zombie.core.skinnedmodel.advancedanimation.SubLayerSlot,zombie.core.skinnedmodel.advancedanimation.SubLayerSlot)">
+<h3>compare</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">compare</span><wbr><span class="parameters">(<a href="SubLayerSlot.html" title="class in zombie.core.skinnedmodel.advancedanimation">SubLayerSlot</a>&nbsp;a,
+ <a href="SubLayerSlot.html" title="class in zombie.core.skinnedmodel.advancedanimation">SubLayerSlot</a>&nbsp;b)</span></div>
 </div>
 </section>
 </li>

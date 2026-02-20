@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -61,8 +61,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
+<li><a href="#ADD_CIGARETTE" tabindex="0">ADD_CIGARETTE</a></li>
 <li><a href="#APPLY_ALCOHOL" tabindex="0">APPLY_ALCOHOL</a></li>
-<li><a href="#APPLY_GLAZE" tabindex="0">APPLY_GLAZE</a></li>
 <li><a href="#BUILD_BARBED_WIRE_FENCE" tabindex="0">BUILD_BARBED_WIRE_FENCE</a></li>
 <li><a href="#BUILD_BY_TYING_HIGH" tabindex="0">BUILD_BY_TYING_HIGH</a></li>
 <li><a href="#BUILD_BY_TYING_LOW" tabindex="0">BUILD_BY_TYING_LOW</a></li>
@@ -102,6 +102,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#DRAW_CARD" tabindex="0">DRAW_CARD</a></li>
 <li><a href="#EMPTY_BAG" tabindex="0">EMPTY_BAG</a></li>
 <li><a href="#EMPTY_PAN" tabindex="0">EMPTY_PAN</a></li>
+<li><a href="#HAMMER_BONE_STANDING" tabindex="0">HAMMER_BONE_STANDING</a></li>
+<li><a href="#HAMMER_METAL_STANDING" tabindex="0">HAMMER_METAL_STANDING</a></li>
+<li><a href="#HAMMER_STONE_STANDING" tabindex="0">HAMMER_STONE_STANDING</a></li>
 <li><a href="#KNITTING" tabindex="0">KNITTING</a></li>
 <li><a href="#MAKE_CHUM" tabindex="0">MAKE_CHUM</a></li>
 <li><a href="#MAKE_COFFEE" tabindex="0">MAKE_COFFEE</a></li>
@@ -124,6 +127,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#OPEN_SHELLS_BOX" tabindex="0">OPEN_SHELLS_BOX</a></li>
 <li><a href="#OPEN_TIN_CAN" tabindex="0">OPEN_TIN_CAN</a></li>
 <li><a href="#OPEN_TIN_CAN_WITH_KNIFE" tabindex="0">OPEN_TIN_CAN_WITH_KNIFE</a></li>
+<li><a href="#PACK_CIGARETTES" tabindex="0">PACK_CIGARETTES</a></li>
 <li><a href="#PACKING_BOX" tabindex="0">PACKING_BOX</a></li>
 <li><a href="#PACKING_BOX_SMALL" tabindex="0">PACKING_BOX_SMALL</a></li>
 <li><a href="#PAINT" tabindex="0">PAINT</a></li>
@@ -150,6 +154,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#SLICE_MEAT_SURFACE" tabindex="0">SLICE_MEAT_SURFACE</a></li>
 <li><a href="#SMASH_BOTTLE" tabindex="0">SMASH_BOTTLE</a></li>
 <li><a href="#SMITHING_HAMMER" tabindex="0">SMITHING_HAMMER</a></li>
+<li><a href="#TAKE_CIGARETTE" tabindex="0">TAKE_CIGARETTE</a></li>
 <li><a href="#TAKE_OFF_RACK" tabindex="0">TAKE_OFF_RACK</a></li>
 <li><a href="#TAN_LEATHER_BARREL" tabindex="0">TAN_LEATHER_BARREL</a></li>
 <li><a href="#TEST" tabindex="0">TEST</a></li>
@@ -162,6 +167,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#UN_PACK_BOX_SMALL" tabindex="0">UN_PACK_BOX_SMALL</a></li>
 <li><a href="#UN_PACK_SACK" tabindex="0">UN_PACK_SACK</a></li>
 <li><a href="#UN_PACK_SMALL_BAG" tabindex="0">UN_PACK_SMALL_BAG</a></li>
+<li><a href="#UNPACK_CIGARETTES" tabindex="0">UNPACK_CIGARETTES</a></li>
 <li><a href="#USE_BANDSAW" tabindex="0">USE_BANDSAW</a></li>
 <li><a href="#USE_GRINDING_SLAB" tabindex="0">USE_GRINDING_SLAB</a></li>
 <li><a href="#USE_GRINDING_STONE" tabindex="0">USE_GRINDING_STONE</a></li>
@@ -220,10 +226,10 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second even-row-color"><code><a href="#APPLY_ALCOHOL" class="member-name-link">APPLY_ALCOHOL</a></code></div>
+<div class="col-second even-row-color"><code><a href="#ADD_CIGARETTE" class="member-name-link">ADD_CIGARETTE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#APPLY_GLAZE" class="member-name-link">APPLY_GLAZE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#APPLY_ALCOHOL" class="member-name-link">APPLY_ALCOHOL</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
 <div class="col-second even-row-color"><code><a href="#BUILD_BARBED_WIRE_FENCE" class="member-name-link">BUILD_BARBED_WIRE_FENCE</a></code></div>
@@ -343,70 +349,82 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="#EMPTY_PAN" class="member-name-link">EMPTY_PAN</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#KNITTING" class="member-name-link">KNITTING</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#HAMMER_BONE_STANDING" class="member-name-link">HAMMER_BONE_STANDING</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second even-row-color"><code><a href="#MAKE_CHUM" class="member-name-link">MAKE_CHUM</a></code></div>
+<div class="col-second even-row-color"><code><a href="#HAMMER_METAL_STANDING" class="member-name-link">HAMMER_METAL_STANDING</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#MAKE_COFFEE" class="member-name-link">MAKE_COFFEE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#HAMMER_STONE_STANDING" class="member-name-link">HAMMER_STONE_STANDING</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second even-row-color"><code><a href="#MAKE_SHEET_SLING_BAG" class="member-name-link">MAKE_SHEET_SLING_BAG</a></code></div>
+<div class="col-second even-row-color"><code><a href="#KNITTING" class="member-name-link">KNITTING</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#MAKE_WITH_BRICK" class="member-name-link">MAKE_WITH_BRICK</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#MAKE_CHUM" class="member-name-link">MAKE_CHUM</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second even-row-color"><code><a href="#MAKE_WITH_BRICK_LOW" class="member-name-link">MAKE_WITH_BRICK_LOW</a></code></div>
+<div class="col-second even-row-color"><code><a href="#MAKE_COFFEE" class="member-name-link">MAKE_COFFEE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#MAKING" class="member-name-link">MAKING</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#MAKE_SHEET_SLING_BAG" class="member-name-link">MAKE_SHEET_SLING_BAG</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second even-row-color"><code><a href="#MAKING_ELECTRICAL" class="member-name-link">MAKING_ELECTRICAL</a></code></div>
+<div class="col-second even-row-color"><code><a href="#MAKE_WITH_BRICK" class="member-name-link">MAKE_WITH_BRICK</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#MAKING_HAMMER_SURFACE" class="member-name-link">MAKING_HAMMER_SURFACE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#MAKE_WITH_BRICK_LOW" class="member-name-link">MAKE_WITH_BRICK_LOW</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second even-row-color"><code><a href="#MAKING_JEWELLERY" class="member-name-link">MAKING_JEWELLERY</a></code></div>
+<div class="col-second even-row-color"><code><a href="#MAKING" class="member-name-link">MAKING</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#MAKING_SURFACE" class="member-name-link">MAKING_SURFACE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#MAKING_ELECTRICAL" class="member-name-link">MAKING_ELECTRICAL</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second even-row-color"><code><a href="#MAKING_WITH_KILN" class="member-name-link">MAKING_WITH_KILN</a></code></div>
+<div class="col-second even-row-color"><code><a href="#MAKING_HAMMER_SURFACE" class="member-name-link">MAKING_HAMMER_SURFACE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#MIXING_BOWL" class="member-name-link">MIXING_BOWL</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#MAKING_JEWELLERY" class="member-name-link">MAKING_JEWELLERY</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second even-row-color"><code><a href="#MIXING_BUCKET" class="member-name-link">MIXING_BUCKET</a></code></div>
+<div class="col-second even-row-color"><code><a href="#MAKING_SURFACE" class="member-name-link">MAKING_SURFACE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#MIXING_MORTAR_PESTLE" class="member-name-link">MIXING_MORTAR_PESTLE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#MAKING_WITH_KILN" class="member-name-link">MAKING_WITH_KILN</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second even-row-color"><code><a href="#OPEN_AMMO_BOX" class="member-name-link">OPEN_AMMO_BOX</a></code></div>
+<div class="col-second even-row-color"><code><a href="#MIXING_BOWL" class="member-name-link">MIXING_BOWL</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#OPEN_BEER_BOTTLE" class="member-name-link">OPEN_BEER_BOTTLE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#MIXING_BUCKET" class="member-name-link">MIXING_BUCKET</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second even-row-color"><code><a href="#OPEN_CHAMPAGNE" class="member-name-link">OPEN_CHAMPAGNE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#MIXING_MORTAR_PESTLE" class="member-name-link">MIXING_MORTAR_PESTLE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#OPEN_POP_CAN" class="member-name-link">OPEN_POP_CAN</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#OPEN_AMMO_BOX" class="member-name-link">OPEN_AMMO_BOX</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second even-row-color"><code><a href="#OPEN_SHELLS_BOX" class="member-name-link">OPEN_SHELLS_BOX</a></code></div>
+<div class="col-second even-row-color"><code><a href="#OPEN_BEER_BOTTLE" class="member-name-link">OPEN_BEER_BOTTLE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#OPEN_TIN_CAN" class="member-name-link">OPEN_TIN_CAN</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#OPEN_CHAMPAGNE" class="member-name-link">OPEN_CHAMPAGNE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second even-row-color"><code><a href="#OPEN_TIN_CAN_WITH_KNIFE" class="member-name-link">OPEN_TIN_CAN_WITH_KNIFE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#OPEN_POP_CAN" class="member-name-link">OPEN_POP_CAN</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#OPEN_SHELLS_BOX" class="member-name-link">OPEN_SHELLS_BOX</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
+<div class="col-second even-row-color"><code><a href="#OPEN_TIN_CAN" class="member-name-link">OPEN_TIN_CAN</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#OPEN_TIN_CAN_WITH_KNIFE" class="member-name-link">OPEN_TIN_CAN_WITH_KNIFE</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
+<div class="col-second even-row-color"><code><a href="#PACK_CIGARETTES" class="member-name-link">PACK_CIGARETTES</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#PACKING_BOX" class="member-name-link">PACKING_BOX</a></code></div>
@@ -487,31 +505,37 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="#SMITHING_HAMMER" class="member-name-link">SMITHING_HAMMER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#TAKE_OFF_RACK" class="member-name-link">TAKE_OFF_RACK</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#TAKE_CIGARETTE" class="member-name-link">TAKE_CIGARETTE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second even-row-color"><code><a href="#TAN_LEATHER_BARREL" class="member-name-link">TAN_LEATHER_BARREL</a></code></div>
+<div class="col-second even-row-color"><code><a href="#TAKE_OFF_RACK" class="member-name-link">TAKE_OFF_RACK</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#TEST" class="member-name-link">TEST</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#TAN_LEATHER_BARREL" class="member-name-link">TAN_LEATHER_BARREL</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second even-row-color"><code><a href="#THRESHING" class="member-name-link">THRESHING</a></code></div>
+<div class="col-second even-row-color"><code><a href="#TEST" class="member-name-link">TEST</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#UN_PACK_BOX" class="member-name-link">UN_PACK_BOX</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#THRESHING" class="member-name-link">THRESHING</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second even-row-color"><code><a href="#UN_PACK_BOX_SMALL" class="member-name-link">UN_PACK_BOX_SMALL</a></code></div>
+<div class="col-second even-row-color"><code><a href="#UN_PACK_BOX" class="member-name-link">UN_PACK_BOX</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#UN_PACK_SACK" class="member-name-link">UN_PACK_SACK</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#UN_PACK_BOX_SMALL" class="member-name-link">UN_PACK_BOX_SMALL</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second even-row-color"><code><a href="#UN_PACK_SMALL_BAG" class="member-name-link">UN_PACK_SMALL_BAG</a></code></div>
+<div class="col-second even-row-color"><code><a href="#UN_PACK_SACK" class="member-name-link">UN_PACK_SACK</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#UNCORK_BOTTLE" class="member-name-link">UNCORK_BOTTLE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#UN_PACK_SMALL_BAG" class="member-name-link">UN_PACK_SMALL_BAG</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
+<div class="col-second even-row-color"><code><a href="#UNCORK_BOTTLE" class="member-name-link">UNCORK_BOTTLE</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#UNPACK_CIGARETTES" class="member-name-link">UNPACK_CIGARETTES</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></code></div>
 <div class="col-second even-row-color"><code><a href="#UNTIE_HIGH" class="member-name-link">UNTIE_HIGH</a></code></div>
@@ -625,18 +649,18 @@ loadScripts(document, 'script');</script>
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="APPLY_ALCOHOL">
-<h3>APPLY_ALCOHOL</h3>
+<section class="detail" id="ADD_CIGARETTE">
+<h3>ADD_CIGARETTE</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></span>&nbsp;<span class="element-name">APPLY_ALCOHOL</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></span>&nbsp;<span class="element-name">ADD_CIGARETTE</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="APPLY_GLAZE">
-<h3>APPLY_GLAZE</h3>
+<section class="detail" id="APPLY_ALCOHOL">
+<h3>APPLY_ALCOHOL</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></span>&nbsp;<span class="element-name">APPLY_GLAZE</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></span>&nbsp;<span class="element-name">APPLY_ALCOHOL</span></div>
 </div>
 </section>
 </li>
@@ -953,6 +977,30 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="HAMMER_BONE_STANDING">
+<h3>HAMMER_BONE_STANDING</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></span>&nbsp;<span class="element-name">HAMMER_BONE_STANDING</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="HAMMER_METAL_STANDING">
+<h3>HAMMER_METAL_STANDING</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></span>&nbsp;<span class="element-name">HAMMER_METAL_STANDING</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="HAMMER_STONE_STANDING">
+<h3>HAMMER_STONE_STANDING</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></span>&nbsp;<span class="element-name">HAMMER_STONE_STANDING</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="KNITTING">
 <h3>KNITTING</h3>
 <div class="horizontal-scroll">
@@ -1125,6 +1173,14 @@ loadScripts(document, 'script');</script>
 <h3>OPEN_TIN_CAN_WITH_KNIFE</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></span>&nbsp;<span class="element-name">OPEN_TIN_CAN_WITH_KNIFE</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="PACK_CIGARETTES">
+<h3>PACK_CIGARETTES</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></span>&nbsp;<span class="element-name">PACK_CIGARETTES</span></div>
 </div>
 </section>
 </li>
@@ -1337,6 +1393,14 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="TAKE_CIGARETTE">
+<h3>TAKE_CIGARETTE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></span>&nbsp;<span class="element-name">TAKE_CIGARETTE</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="TAKE_OFF_RACK">
 <h3>TAKE_OFF_RACK</h3>
 <div class="horizontal-scroll">
@@ -1429,6 +1493,14 @@ loadScripts(document, 'script');</script>
 <h3>UN_PACK_SMALL_BAG</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></span>&nbsp;<span class="element-name">UN_PACK_SMALL_BAG</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="UNPACK_CIGARETTES">
+<h3>UNPACK_CIGARETTES</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="TimedActionKey.html" title="class in zombie.scripting.objects">TimedActionKey</a></span>&nbsp;<span class="element-name">UNPACK_CIGARETTES</span></div>
 </div>
 </section>
 </li>

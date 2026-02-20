@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -92,6 +92,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#pregnantTime" tabindex="0">pregnantTime</a></li>
 <li><a href="#lastTimeMilked" tabindex="0">lastTimeMilked</a></li>
 <li><a href="#maxMilkActual" tabindex="0">maxMilkActual</a></li>
+<li><a href="#fertilizedTime" tabindex="0">fertilizedTime</a></li>
+<li><a href="#lastImpregnateTime" tabindex="0">lastImpregnateTime</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -104,9 +106,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#getPacketSizeBytes()" tabindex="0">getPacketSizeBytes()</a></li>
 <li><a href="#write(zombie.core.network.ByteBufferWriter)" tabindex="0">write(ByteBufferWriter)</a></li>
 <li><a href="#write(java.nio.ByteBuffer)" tabindex="0">write(ByteBuffer)</a></li>
-<li><a href="#parse(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" tabindex="0">parse(ByteBuffer, UdpConnection)</a></li>
+<li><a href="#parse(java.nio.ByteBuffer,zombie.network.IConnection)" tabindex="0">parse(ByteBuffer, IConnection)</a></li>
 <li><a href="#isDead()" tabindex="0">isDead()</a></li>
-<li><a href="#isConsistent(zombie.core.raknet.UdpConnection)" tabindex="0">isConsistent(UdpConnection)</a></li>
+<li><a href="#isConsistent(zombie.network.IConnection)" tabindex="0">isConsistent(IConnection)</a></li>
 </ol>
 </li>
 </ol>
@@ -172,23 +174,29 @@ implements <a href="../INetworkPacket.html" title="interface in zombie.network.p
 <div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#customName" class="member-name-link">customName</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>short</code></div>
-<div class="col-second odd-row-color"><code><a href="#flags" class="member-name-link">flags</a></code></div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><a href="#fertilizedTime" class="member-name-link">fertilizedTime</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>byte</code></div>
-<div class="col-second even-row-color"><code><a href="#health" class="member-name-link">health</a></code></div>
+<div class="col-first even-row-color"><code>short</code></div>
+<div class="col-second even-row-color"><code><a href="#flags" class="member-name-link">flags</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#hunger" class="member-name-link">hunger</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#health" class="member-name-link">health</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>byte</code></div>
-<div class="col-second even-row-color"><code><a href="#hutchNestBox" class="member-name-link">hutchNestBox</a></code></div>
+<div class="col-second even-row-color"><code><a href="#hunger" class="member-name-link">hunger</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#hutchPosition" class="member-name-link">hutchPosition</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#hutchNestBox" class="member-name-link">hutchNestBox</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#idleAction" class="member-name-link">idleAction</a></code></div>
+<div class="col-first even-row-color"><code>byte</code></div>
+<div class="col-second even-row-color"><code><a href="#hutchPosition" class="member-name-link">hutchPosition</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#idleAction" class="member-name-link">idleAction</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>byte</code></div>
+<div class="col-second even-row-color"><code><a href="#lastImpregnateTime" class="member-name-link">lastImpregnateTime</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>long</code></div>
 <div class="col-second odd-row-color"><code><a href="#lastTimeMilked" class="member-name-link">lastTimeMilked</a></code></div>
@@ -278,14 +286,14 @@ implements <a href="../INetworkPacket.html" title="interface in zombie.network.p
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPacketSizeBytes()" class="member-name-link">getPacketSizeBytes</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isConsistent(zombie.core.raknet.UdpConnection)" class="member-name-link">isConsistent</a><wbr>(<a href="../../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isConsistent(zombie.network.IConnection)" class="member-name-link">isConsistent</a><wbr>(<a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDead()" class="member-name-link">isDead</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;b,
- <a href="../../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(java.nio.ByteBuffer,zombie.network.IConnection)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;b,
+ <a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#write(java.nio.ByteBuffer)" class="member-name-link">write</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;b)</code></div>
@@ -304,7 +312,7 @@ implements <a href="../INetworkPacket.html" title="interface in zombie.network.p
 <code><a href="../IDescriptor.html#getClassDescription(java.lang.StringBuilder,java.lang.Class,java.util.HashSet)" title="getClassDescription(StringBuilder, Class, HashSet)">getClassDescription</a>, <a href="../IDescriptor.html#getDescription()" title="getDescription()">getDescription</a>, <a href="../IDescriptor.html#getDescription(java.util.HashSet)" title="getDescription(HashSet)">getDescription</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.packets.INetworkPacket">Methods inherited from interface&nbsp;<a href="../INetworkPacket.html#method-summary" title="interface in zombie.network.packets">INetworkPacket</a></h3>
-<code><a href="../INetworkPacket.html#isPostponed()" title="isPostponed()">isPostponed</a>, <a href="../INetworkPacket.html#parseClient(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" title="parseClient(ByteBuffer, UdpConnection)">parseClient</a>, <a href="../INetworkPacket.html#parseClientLoading(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" title="parseClientLoading(ByteBuffer, UdpConnection)">parseClientLoading</a>, <a href="../INetworkPacket.html#parseServer(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" title="parseServer(ByteBuffer, UdpConnection)">parseServer</a>, <a href="../INetworkPacket.html#postpone()" title="postpone()">postpone</a>, <a href="../INetworkPacket.html#processClient(zombie.core.raknet.UdpConnection)" title="processClient(UdpConnection)">processClient</a>, <a href="../INetworkPacket.html#processClientLoading(zombie.core.raknet.UdpConnection)" title="processClientLoading(UdpConnection)">processClientLoading</a>, <a href="../INetworkPacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="processServer(PacketTypes.PacketType, UdpConnection)">processServer</a>, <a href="../INetworkPacket.html#sendToClient(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sendToClient(PacketTypes.PacketType, UdpConnection)">sendToClient</a>, <a href="../INetworkPacket.html#sendToClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sendToClients(PacketTypes.PacketType, UdpConnection)">sendToClients</a>, <a href="../INetworkPacket.html#sendToRelativeClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection,float,float)" title="sendToRelativeClients(PacketTypes.PacketType, UdpConnection, float, float)">sendToRelativeClients</a>, <a href="../INetworkPacket.html#sendToServer(zombie.network.PacketTypes.PacketType)" title="sendToServer(PacketTypes.PacketType)">sendToServer</a>, <a href="../INetworkPacket.html#setData(java.lang.Object...)" title="setData(Object...)">setData</a>, <a href="../INetworkPacket.html#sync(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sync(PacketTypes.PacketType, UdpConnection)">sync</a></code></div>
+<code><a href="../INetworkPacket.html#isPostponed()" title="isPostponed()">isPostponed</a>, <a href="../INetworkPacket.html#parseClient(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" title="parseClient(ByteBuffer, UdpConnection)">parseClient</a>, <a href="../INetworkPacket.html#parseClientLoading(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" title="parseClientLoading(ByteBuffer, UdpConnection)">parseClientLoading</a>, <a href="../INetworkPacket.html#parseServer(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" title="parseServer(ByteBuffer, UdpConnection)">parseServer</a>, <a href="../INetworkPacket.html#postpone()" title="postpone()">postpone</a>, <a href="../INetworkPacket.html#processClient(zombie.core.raknet.UdpConnection)" title="processClient(UdpConnection)">processClient</a>, <a href="../INetworkPacket.html#processClientLoading(zombie.core.raknet.UdpConnection)" title="processClientLoading(UdpConnection)">processClientLoading</a>, <a href="../INetworkPacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="processServer(PacketTypes.PacketType, UdpConnection)">processServer</a>, <a href="../INetworkPacket.html#sendToClient(zombie.network.PacketTypes.PacketType,zombie.network.IConnection)" title="sendToClient(PacketTypes.PacketType, IConnection)">sendToClient</a>, <a href="../INetworkPacket.html#sendToClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sendToClients(PacketTypes.PacketType, UdpConnection)">sendToClients</a>, <a href="../INetworkPacket.html#sendToRelativeClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection,float,float)" title="sendToRelativeClients(PacketTypes.PacketType, UdpConnection, float, float)">sendToRelativeClients</a>, <a href="../INetworkPacket.html#sendToServer(zombie.network.PacketTypes.PacketType)" title="sendToServer(PacketTypes.PacketType)">sendToServer</a>, <a href="../INetworkPacket.html#setData(java.lang.Object...)" title="setData(Object...)">setData</a>, <a href="../INetworkPacket.html#sync(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sync(PacketTypes.PacketType, UdpConnection)">sync</a></code></div>
 </section>
 </li>
 </ul>
@@ -564,6 +572,22 @@ implements <a href="../INetworkPacket.html" title="interface in zombie.network.p
 </div>
 </section>
 </li>
+<li>
+<section class="detail" id="fertilizedTime">
+<h3>fertilizedTime</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">fertilizedTime</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="lastImpregnateTime">
+<h3>lastImpregnateTime</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">lastImpregnateTime</span></div>
+</div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -621,14 +645,14 @@ implements <a href="../INetworkPacket.html" title="interface in zombie.network.p
 </section>
 </li>
 <li>
-<section class="detail" id="parse(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)">
+<section class="detail" id="parse(java.nio.ByteBuffer,zombie.network.IConnection)">
 <h3>parse</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;b,
- <a href="../../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</span></div>
+ <a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../../fields/INetworkPacketField.html#parse(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)">parse</a></code>&nbsp;in interface&nbsp;<code><a href="../../fields/INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a></code></dd>
+<dd><code><a href="../../fields/INetworkPacketField.html#parse(java.nio.ByteBuffer,zombie.network.IConnection)">parse</a></code>&nbsp;in interface&nbsp;<code><a href="../../fields/INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a></code></dd>
 </dl>
 </div>
 </section>
@@ -642,13 +666,13 @@ implements <a href="../INetworkPacket.html" title="interface in zombie.network.p
 </section>
 </li>
 <li>
-<section class="detail" id="isConsistent(zombie.core.raknet.UdpConnection)">
+<section class="detail" id="isConsistent(zombie.network.IConnection)">
 <h3>isConsistent</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isConsistent</span><wbr><span class="parameters">(<a href="../../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isConsistent</span><wbr><span class="parameters">(<a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../../fields/INetworkPacketField.html#isConsistent(zombie.core.raknet.UdpConnection)">isConsistent</a></code>&nbsp;in interface&nbsp;<code><a href="../../fields/INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a></code></dd>
+<dd><code><a href="../../fields/INetworkPacketField.html#isConsistent(zombie.network.IConnection)">isConsistent</a></code>&nbsp;in interface&nbsp;<code><a href="../../fields/INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a></code></dd>
 </dl>
 </div>
 </section>

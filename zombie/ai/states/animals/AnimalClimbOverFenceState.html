@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -58,20 +58,29 @@ loadScripts(document, 'script');</script>
 <li><a href="#" tabindex="0">Description</a></li>
 <li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
+<li><a href="#START_X" tabindex="0">START_X</a></li>
+<li><a href="#START_Y" tabindex="0">START_Y</a></li>
+<li><a href="#Z" tabindex="0">Z</a></li>
+<li><a href="#END_X" tabindex="0">END_X</a></li>
+<li><a href="#END_Y" tabindex="0">END_Y</a></li>
+<li><a href="#DIR" tabindex="0">DIR</a></li>
+<li><a href="#ZOMBIE_ON_FLOOR" tabindex="0">ZOMBIE_ON_FLOOR</a></li>
+<li><a href="#PREV_STATE" tabindex="0">PREV_STATE</a></li>
+<li><a href="#SCRATCH" tabindex="0">SCRATCH</a></li>
+<li><a href="#COUNTER" tabindex="0">COUNTER</a></li>
+<li><a href="#SOLID_FLOOR" tabindex="0">SOLID_FLOOR</a></li>
+<li><a href="#SHEET_ROPE" tabindex="0">SHEET_ROPE</a></li>
+<li><a href="#RUN" tabindex="0">RUN</a></li>
+<li><a href="#SPRINT" tabindex="0">SPRINT</a></li>
+<li><a href="#COLLIDABLE" tabindex="0">COLLIDABLE</a></li>
 <li><a href="#TRIP_TREE" tabindex="0">TRIP_TREE</a></li>
 <li><a href="#TRIP_ZOMBIE" tabindex="0">TRIP_ZOMBIE</a></li>
 <li><a href="#COLLIDE_WITH_WALL" tabindex="0">COLLIDE_WITH_WALL</a></li>
 <li><a href="#TRIP_METAL_BARS" tabindex="0">TRIP_METAL_BARS</a></li>
 <li><a href="#TRIP_WINDOW" tabindex="0">TRIP_WINDOW</a></li>
-</ol>
-</li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
-<ol class="toc-list">
-<li><a href="#%3Cinit%3E()" tabindex="0">AnimalClimbOverFenceState()</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
@@ -100,7 +109,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../../core/skinnedmodel/advancedanimation/events/IAnimEventListener.html" title="interface in zombie.core.skinnedmodel.advancedanimation.events">IAnimEventListener</a>, <a href="../../../core/skinnedmodel/advancedanimation/events/IAnimEventWrappedBroadcaster.html" title="interface in zombie.core.skinnedmodel.advancedanimation.events">IAnimEventWrappedBroadcaster</a></code></dd>
+<dd><code><a href="../../IStateFlagsSource.html" title="interface in zombie.ai">IStateFlagsSource</a>, <a href="../../../core/skinnedmodel/advancedanimation/events/IAnimEventListener.html" title="interface in zombie.core.skinnedmodel.advancedanimation.events">IAnimEventListener</a>, <a href="../../../core/skinnedmodel/advancedanimation/events/IAnimEventWrappedBroadcaster.html" title="interface in zombie.core.skinnedmodel.advancedanimation.events">IAnimEventWrappedBroadcaster</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
@@ -116,7 +125,7 @@ loadScripts(document, 'script');</script>
 <h2>Nested Class Summary</h2>
 <div class="inherited-list">
 <h3 id="nested-classes-inherited-from-class-zombie.ai.State">Nested classes/interfaces inherited from class&nbsp;<a href="../../State.html#nested-class-summary" title="class in zombie.ai">State</a></h3>
-<code><a href="../../State.Stage.html" title="enum class in zombie.ai">State.Stage</a></code></div>
+<code><a href="../../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;T&gt;, <a href="../../State.Stage.html" title="enum class in zombie.ai">State.Stage</a></code></div>
 </section>
 </li>
 <!-- =========== FIELD SUMMARY =========== -->
@@ -128,34 +137,66 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#COLLIDE_WITH_WALL" class="member-name-link">COLLIDE_WITH_WALL</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="../../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#COLLIDABLE" class="member-name-link">COLLIDABLE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#TRIP_METAL_BARS" class="member-name-link">TRIP_METAL_BARS</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#COLLIDE_WITH_WALL" class="member-name-link">COLLIDE_WITH_WALL</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="../../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#COUNTER" class="member-name-link">COUNTER</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="../../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="../../../iso/IsoDirections.html" title="enum class in zombie.iso">IsoDirections</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#DIR" class="member-name-link">DIR</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="../../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#END_X" class="member-name-link">END_X</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="../../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#END_Y" class="member-name-link">END_Y</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="../../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="../../State.html" title="class in zombie.ai">State</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#PREV_STATE" class="member-name-link">PREV_STATE</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="../../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#RUN" class="member-name-link">RUN</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="../../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#SCRATCH" class="member-name-link">SCRATCH</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="../../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#SHEET_ROPE" class="member-name-link">SHEET_ROPE</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="../../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#SOLID_FLOOR" class="member-name-link">SOLID_FLOOR</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="../../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#SPRINT" class="member-name-link">SPRINT</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="../../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#START_X" class="member-name-link">START_X</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="../../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#START_Y" class="member-name-link">START_Y</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#TRIP_TREE" class="member-name-link">TRIP_TREE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#TRIP_METAL_BARS" class="member-name-link">TRIP_METAL_BARS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#TRIP_WINDOW" class="member-name-link">TRIP_WINDOW</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#TRIP_TREE" class="member-name-link">TRIP_TREE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#TRIP_ZOMBIE" class="member-name-link">TRIP_ZOMBIE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#TRIP_WINDOW" class="member-name-link">TRIP_WINDOW</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<li>
-<section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
-<div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">AnimalClimbOverFenceState</a>()</code></div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#TRIP_ZOMBIE" class="member-name-link">TRIP_ZOMBIE</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="../../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#Z" class="member-name-link">Z</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="../../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#ZOMBIE_ON_FLOOR" class="member-name-link">ZOMBIE_ON_FLOOR</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -208,13 +249,16 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.ai.State">Methods inherited from class&nbsp;<a href="../../State.html#method-summary" title="class in zombie.ai">State</a></h3>
-<code><a href="../../State.html#canRagdoll(zombie.characters.IsoGameCharacter)" title="canRagdoll(IsoGameCharacter)">canRagdoll</a>, <a href="../../State.html#getAnimEventBroadcaster()" title="getAnimEventBroadcaster()">getAnimEventBroadcaster</a>, <a href="../../State.html#getDeltaModifiers(zombie.characters.IsoGameCharacter,zombie.characters.MoveDeltaModifiers)" title="getDeltaModifiers(IsoGameCharacter, MoveDeltaModifiers)">getDeltaModifiers</a>, <a href="../../State.html#getName()" title="getName()">getName</a>, <a href="../../State.html#isAttacking(zombie.characters.IsoGameCharacter)" title="isAttacking(IsoGameCharacter)">isAttacking</a>, <a href="../../State.html#isDoingActionThatCanBeCancelled()" title="isDoingActionThatCanBeCancelled()">isDoingActionThatCanBeCancelled</a>, <a href="../../State.html#isMoving(zombie.characters.IsoGameCharacter)" title="isMoving(IsoGameCharacter)">isMoving</a>, <a href="../../State.html#isProcessedOnEnter()" title="isProcessedOnEnter()">isProcessedOnEnter</a>, <a href="../../State.html#isProcessedOnExit()" title="isProcessedOnExit()">isProcessedOnExit</a>, <a href="../../State.html#isSyncInIdle()" title="isSyncInIdle()">isSyncInIdle</a>, <a href="../../State.html#isSyncOnEnter()" title="isSyncOnEnter()">isSyncOnEnter</a>, <a href="../../State.html#isSyncOnExit()" title="isSyncOnExit()">isSyncOnExit</a>, <a href="../../State.html#isSyncOnSquare()" title="isSyncOnSquare()">isSyncOnSquare</a>, <a href="../../State.html#processOnEnter(zombie.characters.IsoGameCharacter,java.util.Map)" title="processOnEnter(IsoGameCharacter, Map)">processOnEnter</a>, <a href="../../State.html#processOnExit(zombie.characters.IsoGameCharacter,java.util.Map)" title="processOnExit(IsoGameCharacter, Map)">processOnExit</a>, <a href="../../State.html#setParams(zombie.characters.IsoGameCharacter,zombie.ai.State.Stage)" title="setParams(IsoGameCharacter, State.Stage)">setParams</a></code></div>
+<code><a href="../../State.html#getAnimEventBroadcaster()" title="getAnimEventBroadcaster()">getAnimEventBroadcaster</a>, <a href="../../State.html#getDeltaModifiers(zombie.characters.IsoGameCharacter,zombie.characters.MoveDeltaModifiers)" title="getDeltaModifiers(IsoGameCharacter, MoveDeltaModifiers)">getDeltaModifiers</a>, <a href="../../State.html#getName()" title="getName()">getName</a>, <a href="../../State.html#getParams(zombie.characters.IsoGameCharacter)" title="getParams(IsoGameCharacter)">getParams</a>, <a href="../../State.html#isProcessedOnEnter()" title="isProcessedOnEnter()">isProcessedOnEnter</a>, <a href="../../State.html#isProcessedOnExit()" title="isProcessedOnExit()">isProcessedOnExit</a>, <a href="../../State.html#isSyncInIdle()" title="isSyncInIdle()">isSyncInIdle</a>, <a href="../../State.html#isSyncOnEnter()" title="isSyncOnEnter()">isSyncOnEnter</a>, <a href="../../State.html#isSyncOnExit()" title="isSyncOnExit()">isSyncOnExit</a>, <a href="../../State.html#isSyncOnSquare()" title="isSyncOnSquare()">isSyncOnSquare</a>, <a href="../../State.html#loadFrom(java.util.Map,zombie.characters.IsoGameCharacter)" title="loadFrom(Map, IsoGameCharacter)">loadFrom</a>, <a href="../../State.html#processOnEnter(zombie.characters.IsoGameCharacter,java.util.Map)" title="processOnEnter(IsoGameCharacter, Map)">processOnEnter</a>, <a href="../../State.html#processOnExit(zombie.characters.IsoGameCharacter,java.util.Map)" title="processOnExit(IsoGameCharacter, Map)">processOnExit</a>, <a href="../../State.html#setParams(zombie.characters.IsoGameCharacter,zombie.ai.State.Stage)" title="setParams(IsoGameCharacter, State.Stage)">setParams</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.core.skinnedmodel.advancedanimation.events.IAnimEventWrappedBroadcaster">Methods inherited from interface&nbsp;<a href="../../../core/skinnedmodel/advancedanimation/events/IAnimEventWrappedBroadcaster.html#method-summary" title="interface in zombie.core.skinnedmodel.advancedanimation.events">IAnimEventWrappedBroadcaster</a></h3>
 <code><a href="../../../core/skinnedmodel/advancedanimation/events/IAnimEventWrappedBroadcaster.html#addAnimEventListener(java.lang.String,zombie.core.skinnedmodel.advancedanimation.events.IAnimEventListener)" title="addAnimEventListener(String, IAnimEventListener)">addAnimEventListener</a>, <a href="../../../core/skinnedmodel/advancedanimation/events/IAnimEventWrappedBroadcaster.html#addAnimEventListener(java.lang.String,zombie.core.skinnedmodel.advancedanimation.events.IAnimEventListenerBoolean)" title="addAnimEventListener(String, IAnimEventListenerBoolean)">addAnimEventListener</a>, <a href="../../../core/skinnedmodel/advancedanimation/events/IAnimEventWrappedBroadcaster.html#addAnimEventListener(java.lang.String,zombie.core.skinnedmodel.advancedanimation.events.IAnimEventListenerEnum,E)" title="addAnimEventListener(String, IAnimEventListenerEnum, E)">addAnimEventListener</a>, <a href="../../../core/skinnedmodel/advancedanimation/events/IAnimEventWrappedBroadcaster.html#addAnimEventListener(java.lang.String,zombie.core.skinnedmodel.advancedanimation.events.IAnimEventListenerFloat)" title="addAnimEventListener(String, IAnimEventListenerFloat)">addAnimEventListener</a>, <a href="../../../core/skinnedmodel/advancedanimation/events/IAnimEventWrappedBroadcaster.html#addAnimEventListener(java.lang.String,zombie.core.skinnedmodel.advancedanimation.events.IAnimEventListenerNoParam)" title="addAnimEventListener(String, IAnimEventListenerNoParam)">addAnimEventListener</a>, <a href="../../../core/skinnedmodel/advancedanimation/events/IAnimEventWrappedBroadcaster.html#addAnimEventListener(java.lang.String,zombie.core.skinnedmodel.advancedanimation.events.IAnimEventListenerNoTrack)" title="addAnimEventListener(String, IAnimEventListenerNoTrack)">addAnimEventListener</a>, <a href="../../../core/skinnedmodel/advancedanimation/events/IAnimEventWrappedBroadcaster.html#addAnimEventListener(java.lang.String,zombie.core.skinnedmodel.advancedanimation.events.IAnimEventListenerNoTrackEnum,E)" title="addAnimEventListener(String, IAnimEventListenerNoTrackEnum, E)">addAnimEventListener</a>, <a href="../../../core/skinnedmodel/advancedanimation/events/IAnimEventWrappedBroadcaster.html#addAnimEventListener(java.lang.String,zombie.core.skinnedmodel.advancedanimation.events.IAnimEventListenerNoTrackString)" title="addAnimEventListener(String, IAnimEventListenerNoTrackString)">addAnimEventListener</a>, <a href="../../../core/skinnedmodel/advancedanimation/events/IAnimEventWrappedBroadcaster.html#addAnimEventListener(java.lang.String,zombie.core.skinnedmodel.advancedanimation.events.IAnimEventListenerString)" title="addAnimEventListener(String, IAnimEventListenerString)">addAnimEventListener</a>, <a href="../../../core/skinnedmodel/advancedanimation/events/IAnimEventWrappedBroadcaster.html#addAnimEventListener(zombie.core.skinnedmodel.advancedanimation.events.IAnimEventListenerSetVariableString)" title="addAnimEventListener(IAnimEventListenerSetVariableString)">addAnimEventListener</a></code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-zombie.ai.IStateFlagsSource">Methods inherited from interface&nbsp;<a href="../../IStateFlagsSource.html#method-summary" title="interface in zombie.ai">IStateFlagsSource</a></h3>
+<code><a href="../../IStateFlagsSource.html#canBeHitByVehicle(zombie.characters.IsoGameCharacter,zombie.vehicles.BaseVehicle)" title="canBeHitByVehicle(IsoGameCharacter, BaseVehicle)">canBeHitByVehicle</a>, <a href="../../IStateFlagsSource.html#canRagdoll(zombie.characters.IsoGameCharacter)" title="canRagdoll(IsoGameCharacter)">canRagdoll</a>, <a href="../../IStateFlagsSource.html#canSlowDownVehicleWhenHit(zombie.characters.IsoGameCharacter,zombie.vehicles.BaseVehicle)" title="canSlowDownVehicleWhenHit(IsoGameCharacter, BaseVehicle)">canSlowDownVehicleWhenHit</a>, <a href="../../IStateFlagsSource.html#causesDamageToVehicleWhenHit(zombie.characters.IsoGameCharacter,zombie.vehicles.BaseVehicle)" title="causesDamageToVehicleWhenHit(IsoGameCharacter, BaseVehicle)">causesDamageToVehicleWhenHit</a>, <a href="../../IStateFlagsSource.html#isAttacking(zombie.characters.IsoGameCharacter)" title="isAttacking(IsoGameCharacter)">isAttacking</a>, <a href="../../IStateFlagsSource.html#isDoingActionThatCanBeCancelled()" title="isDoingActionThatCanBeCancelled()">isDoingActionThatCanBeCancelled</a>, <a href="../../IStateFlagsSource.html#isMoving(zombie.characters.IsoGameCharacter)" title="isMoving(IsoGameCharacter)">isMoving</a></code></div>
 </section>
 </li>
 </ul>
@@ -226,6 +270,126 @@ loadScripts(document, 'script');</script>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="START_X">
+<h3>START_X</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</span>&nbsp;<span class="element-name">START_X</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="START_Y">
+<h3>START_Y</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</span>&nbsp;<span class="element-name">START_Y</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="Z">
+<h3>Z</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</span>&nbsp;<span class="element-name">Z</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="END_X">
+<h3>END_X</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</span>&nbsp;<span class="element-name">END_X</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="END_Y">
+<h3>END_Y</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</span>&nbsp;<span class="element-name">END_Y</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="DIR">
+<h3>DIR</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="../../../iso/IsoDirections.html" title="enum class in zombie.iso">IsoDirections</a>&gt;</span>&nbsp;<span class="element-name">DIR</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="ZOMBIE_ON_FLOOR">
+<h3>ZOMBIE_ON_FLOOR</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</span>&nbsp;<span class="element-name">ZOMBIE_ON_FLOOR</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="PREV_STATE">
+<h3>PREV_STATE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="../../State.html" title="class in zombie.ai">State</a>&gt;</span>&nbsp;<span class="element-name">PREV_STATE</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SCRATCH">
+<h3>SCRATCH</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</span>&nbsp;<span class="element-name">SCRATCH</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="COUNTER">
+<h3>COUNTER</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</span>&nbsp;<span class="element-name">COUNTER</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SOLID_FLOOR">
+<h3>SOLID_FLOOR</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</span>&nbsp;<span class="element-name">SOLID_FLOOR</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SHEET_ROPE">
+<h3>SHEET_ROPE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</span>&nbsp;<span class="element-name">SHEET_ROPE</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="RUN">
+<h3>RUN</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</span>&nbsp;<span class="element-name">RUN</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SPRINT">
+<h3>SPRINT</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</span>&nbsp;<span class="element-name">SPRINT</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="COLLIDABLE">
+<h3>COLLIDABLE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</span>&nbsp;<span class="element-name">COLLIDABLE</span></div>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="TRIP_TREE">
 <h3>TRIP_TREE</h3>
@@ -303,22 +467,6 @@ loadScripts(document, 'script');</script>
 </ul>
 </dd>
 </dl>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<li>
-<section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="&lt;init&gt;()">
-<h3>AnimalClimbOverFenceState</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">AnimalClimbOverFenceState</span>()</div>
 </div>
 </section>
 </li>

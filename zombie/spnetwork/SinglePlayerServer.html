@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -73,8 +73,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#addIncoming(short,java.nio.ByteBuffer,zombie.spnetwork.UdpConnection)" tabindex="0">addIncoming(short, ByteBuffer, UdpConnection)</a></li>
-<li><a href="#sendObjectChange(zombie.iso.IsoObject,java.lang.String,se.krka.kahlua.vm.KahluaTable)" tabindex="0">sendObjectChange(IsoObject, String, KahluaTable)</a></li>
-<li><a href="#sendObjectChange(zombie.iso.IsoObject,java.lang.String,java.lang.Object...)" tabindex="0">sendObjectChange(IsoObject, String, Object...)</a></li>
+<li><a href="#sendObjectChange(zombie.iso.IsoObject,zombie.core.properties.IsoObjectChange,se.krka.kahlua.vm.KahluaTable)" tabindex="0">sendObjectChange(IsoObject, IsoObjectChange, KahluaTable)</a></li>
+<li><a href="#sendObjectChange(zombie.iso.IsoObject,zombie.core.properties.IsoObjectChange,java.lang.Object...)" tabindex="0">sendObjectChange(IsoObject, IsoObjectChange, Object...)</a></li>
 <li><a href="#sendServerCommand(java.lang.String,java.lang.String,se.krka.kahlua.vm.KahluaTable,zombie.spnetwork.UdpConnection)" tabindex="0">sendServerCommand(String, String, KahluaTable, UdpConnection)</a></li>
 <li><a href="#sendServerCommand(java.lang.String,java.lang.String,se.krka.kahlua.vm.KahluaTable)" tabindex="0">sendServerCommand(String, String, KahluaTable)</a></li>
 <li><a href="#update()" tabindex="0">update()</a></li>
@@ -163,13 +163,13 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#Reset()" class="member-name-link">Reset</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendObjectChange(zombie.iso.IsoObject,java.lang.String,java.lang.Object...)" class="member-name-link">sendObjectChange</a><wbr>(<a href="../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;o,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;change,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendObjectChange(zombie.iso.IsoObject,zombie.core.properties.IsoObjectChange,java.lang.Object...)" class="member-name-link">sendObjectChange</a><wbr>(<a href="../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;o,
+ <a href="../core/properties/IsoObjectChange.html" title="enum class in zombie.core.properties">IsoObjectChange</a>&nbsp;change,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;objects)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendObjectChange(zombie.iso.IsoObject,java.lang.String,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">sendObjectChange</a><wbr>(<a href="../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;o,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;change,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendObjectChange(zombie.iso.IsoObject,zombie.core.properties.IsoObjectChange,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">sendObjectChange</a><wbr>(<a href="../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;o,
+ <a href="../core/properties/IsoObjectChange.html" title="enum class in zombie.core.properties">IsoObjectChange</a>&nbsp;change,
  se.krka.kahlua.vm.KahluaTable&nbsp;tbl)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
@@ -246,21 +246,21 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="sendObjectChange(zombie.iso.IsoObject,java.lang.String,se.krka.kahlua.vm.KahluaTable)">
+<section class="detail" id="sendObjectChange(zombie.iso.IsoObject,zombie.core.properties.IsoObjectChange,se.krka.kahlua.vm.KahluaTable)">
 <h3>sendObjectChange</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendObjectChange</span><wbr><span class="parameters">(<a href="../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;o,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;change,
+ <a href="../core/properties/IsoObjectChange.html" title="enum class in zombie.core.properties">IsoObjectChange</a>&nbsp;change,
  se.krka.kahlua.vm.KahluaTable&nbsp;tbl)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="sendObjectChange(zombie.iso.IsoObject,java.lang.String,java.lang.Object...)">
+<section class="detail" id="sendObjectChange(zombie.iso.IsoObject,zombie.core.properties.IsoObjectChange,java.lang.Object...)">
 <h3>sendObjectChange</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendObjectChange</span><wbr><span class="parameters">(<a href="../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;o,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;change,
+ <a href="../core/properties/IsoObjectChange.html" title="enum class in zombie.core.properties">IsoObjectChange</a>&nbsp;change,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;objects)</span></div>
 </div>
 </section>

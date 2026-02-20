@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -83,6 +83,7 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#init()" tabindex="0">init()</a></li>
 <li><a href="#CatchToBullet(java.nio.ByteBuffer)" tabindex="0">CatchToBullet(ByteBuffer)</a></li>
+<li><a href="#getPZBulletVersion()" tabindex="0">getPZBulletVersion()</a></li>
 <li><a href="#initPZBullet()" tabindex="0">initPZBullet()</a></li>
 <li><a href="#isWorldInit()" tabindex="0">isWorldInit()</a></li>
 <li><a href="#initWorld(int,int,int,int,int,int,boolean)" tabindex="0">initWorld(int, int, int, int, int, int, boolean)</a></li>
@@ -139,7 +140,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#removeConstraint(int)" tabindex="0">removeConstraint(int)</a></li>
 <li><a href="#clearPhysicsMeshes()" tabindex="0">clearPhysicsMeshes()</a></li>
 <li><a href="#definePhysicsMesh(int,boolean,float%5B%5D)" tabindex="0">definePhysicsMesh(int, boolean, float[])</a></li>
-<li><a href="#initializeRagdollPose(int,float%5B%5D,float,float,float)" tabindex="0">initializeRagdollPose(int, float[], float, float, float)</a></li>
+<li><a href="#initializeRagdollPose(int,float%5B%5D,float,float,float,float)" tabindex="0">initializeRagdollPose(int, float[], float, float, float, float)</a></li>
 <li><a href="#initializeRagdollSkeleton(int,int%5B%5D)" tabindex="0">initializeRagdollSkeleton(int, int[])</a></li>
 <li><a href="#addRagdoll(int,float,float,float,float,float,float,float)" tabindex="0">addRagdoll(int, float, float, float, float, float, float, float)</a></li>
 <li><a href="#addRagdoll(int,org.lwjgl.util.vector.Vector3f,org.lwjgl.util.vector.Quaternion)" tabindex="0">addRagdoll(int, Vector3f, Quaternion)</a></li>
@@ -327,8 +328,8 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addRagdoll(int,org.lwjgl.util.vector.Vector3f,org.lwjgl.util.vector.Quaternion)" class="member-name-link">addRagdoll</a><wbr>(int&nbsp;id,
- org.lwjgl.util.vector.Vector3f&nbsp;in_worldPosition,
- org.lwjgl.util.vector.Quaternion&nbsp;in_worldRotation)</code></div>
+ org.lwjgl.util.vector.Vector3f&nbsp;worldPosition,
+ org.lwjgl.util.vector.Quaternion&nbsp;worldRotation)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addRopeConstraint(int,int,float,float,float,float,float,float,float)" class="member-name-link">addRopeConstraint</a><wbr>(int&nbsp;var0,
@@ -489,54 +490,58 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getOwnVehiclePhysics(int,float%5B%5D)" class="member-name-link">getOwnVehiclePhysics</a><wbr>(int&nbsp;var0,
  float[]&nbsp;var1)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getRagdollSimulationState(int)" class="member-name-link">getRagdollSimulationState</a><wbr>(int&nbsp;var0)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getPZBulletVersion()" class="member-name-link">getPZBulletVersion</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getTargetedBodyPart(int)" class="member-name-link">getTargetedBodyPart</a><wbr>(int&nbsp;var0)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getRagdollSimulationState(int)" class="member-name-link">getRagdollSimulationState</a><wbr>(int&nbsp;var0)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getVehicleCount()" class="member-name-link">getVehicleCount</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getTargetedBodyPart(int)" class="member-name-link">getTargetedBodyPart</a><wbr>(int&nbsp;var0)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getVehiclePhysics(int,float%5B%5D)" class="member-name-link">getVehiclePhysics</a><wbr>(int&nbsp;var0,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getVehicleCount()" class="member-name-link">getVehicleCount</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getVehiclePhysics(int,float%5B%5D)" class="member-name-link">getVehiclePhysics</a><wbr>(int&nbsp;var0,
  float[]&nbsp;var1)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#highlightRagdollBodyPart(int,int)" class="member-name-link">highlightRagdollBodyPart</a><wbr>(int&nbsp;var0,
- int&nbsp;var1)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#init()" class="member-name-link">init</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#highlightRagdollBodyPart(int,int)" class="member-name-link">highlightRagdollBodyPart</a><wbr>(int&nbsp;var0,
+ int&nbsp;var1)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initializeRagdollPose(int,float%5B%5D,float,float,float)" class="member-name-link">initializeRagdollPose</a><wbr>(int&nbsp;var0,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#init()" class="member-name-link">init</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initializeRagdollPose(int,float%5B%5D,float,float,float,float)" class="member-name-link">initializeRagdollPose</a><wbr>(int&nbsp;var0,
  float[]&nbsp;var1,
  float&nbsp;var2,
  float&nbsp;var3,
- float&nbsp;var4)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initializeRagdollSkeleton(int,int%5B%5D)" class="member-name-link">initializeRagdollSkeleton</a><wbr>(int&nbsp;var0,
+ float&nbsp;var4,
+ float&nbsp;var5)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initializeRagdollSkeleton(int,int%5B%5D)" class="member-name-link">initializeRagdollSkeleton</a><wbr>(int&nbsp;var0,
  int[]&nbsp;var1)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initPhysicsMeshes()" class="member-name-link">initPhysicsMeshes</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initPZBullet()" class="member-name-link">initPZBullet</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initPhysicsMeshes()" class="member-name-link">initPhysicsMeshes</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initWorld(int,int,int,int,int,int,boolean)" class="member-name-link">initWorld</a><wbr>(int&nbsp;var0,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initPZBullet()" class="member-name-link">initPZBullet</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initWorld(int,int,int,int,int,int,boolean)" class="member-name-link">initWorld</a><wbr>(int&nbsp;var0,
  int&nbsp;var1,
  int&nbsp;var2,
  int&nbsp;var3,
  int&nbsp;var4,
  int&nbsp;var5,
  boolean&nbsp;var6)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initWorld(int,int,int,int,int,int,int,int,int)" class="member-name-link">initWorld</a><wbr>(int&nbsp;minCellX,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initWorld(int,int,int,int,int,int,int,int,int)" class="member-name-link">initWorld</a><wbr>(int&nbsp;minCellX,
  int&nbsp;minCellY,
  int&nbsp;maxCellX,
  int&nbsp;maxCellY,
@@ -545,173 +550,173 @@ loadScripts(document, 'script');</script>
  int&nbsp;wx,
  int&nbsp;wy,
  int&nbsp;chunkGridWidth)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isWorldInit()" class="member-name-link">isWorldInit</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.joml.Matrix4f</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#postMultiplyTranslateRotateScale(org.joml.Vector3f,org.joml.Vector3f,float,org.joml.Matrix4f)" class="member-name-link">postMultiplyTranslateRotateScale</a><wbr>(org.joml.Vector3f&nbsp;translate,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isWorldInit()" class="member-name-link">isWorldInit</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.joml.Matrix4f</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#postMultiplyTranslateRotateScale(org.joml.Vector3f,org.joml.Vector3f,float,org.joml.Matrix4f)" class="member-name-link">postMultiplyTranslateRotateScale</a><wbr>(org.joml.Vector3f&nbsp;translate,
  org.joml.Vector3f&nbsp;rotate,
  float&nbsp;scale,
  org.joml.Matrix4f&nbsp;result)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removeBallistics(int)" class="member-name-link">removeBallistics</a><wbr>(int&nbsp;var0)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removeBallisticsTarget(int)" class="member-name-link">removeBallisticsTarget</a><wbr>(int&nbsp;var0)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removeConstraint(int)" class="member-name-link">removeConstraint</a><wbr>(int&nbsp;var0)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removeRagdoll(int)" class="member-name-link">removeRagdoll</a><wbr>(int&nbsp;var0)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removeBallistics(int)" class="member-name-link">removeBallistics</a><wbr>(int&nbsp;var0)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removeBallisticsTarget(int)" class="member-name-link">removeBallisticsTarget</a><wbr>(int&nbsp;var0)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removeConstraint(int)" class="member-name-link">removeConstraint</a><wbr>(int&nbsp;var0)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removeServerCell(int,int)" class="member-name-link">removeServerCell</a><wbr>(int&nbsp;var0,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removeRagdoll(int)" class="member-name-link">removeRagdoll</a><wbr>(int&nbsp;var0)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removeServerCell(int,int)" class="member-name-link">removeServerCell</a><wbr>(int&nbsp;var0,
  int&nbsp;var1)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removeVehicle(int)" class="member-name-link">removeVehicle</a><wbr>(int&nbsp;var0)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#resetRagdollBodyDynamics(int)" class="member-name-link">resetRagdollBodyDynamics</a><wbr>(int&nbsp;var0)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#resetSkeletonPose(int)" class="member-name-link">resetSkeletonPose</a><wbr>(int&nbsp;var0)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#scrollChunkMap(int,int)" class="member-name-link">scrollChunkMap</a><wbr>(int&nbsp;var0,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removeVehicle(int)" class="member-name-link">removeVehicle</a><wbr>(int&nbsp;var0)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#resetRagdollBodyDynamics(int)" class="member-name-link">resetRagdollBodyDynamics</a><wbr>(int&nbsp;var0)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#resetSkeletonPose(int)" class="member-name-link">resetSkeletonPose</a><wbr>(int&nbsp;var0)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#scrollChunkMap(int,int)" class="member-name-link">scrollChunkMap</a><wbr>(int&nbsp;var0,
  int&nbsp;var1)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#scrollChunkMapDown(int)" class="member-name-link">scrollChunkMapDown</a><wbr>(int&nbsp;playerIndex)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#scrollChunkMapLeft(int)" class="member-name-link">scrollChunkMapLeft</a><wbr>(int&nbsp;playerIndex)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#scrollChunkMapDown(int)" class="member-name-link">scrollChunkMapDown</a><wbr>(int&nbsp;playerIndex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#scrollChunkMapRight(int)" class="member-name-link">scrollChunkMapRight</a><wbr>(int&nbsp;playerIndex)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#scrollChunkMapLeft(int)" class="member-name-link">scrollChunkMapLeft</a><wbr>(int&nbsp;playerIndex)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#scrollChunkMapUp(int)" class="member-name-link">scrollChunkMapUp</a><wbr>(int&nbsp;playerIndex)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#scrollChunkMapRight(int)" class="member-name-link">scrollChunkMapRight</a><wbr>(int&nbsp;playerIndex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setBallisticsColor(int,float,float,float)" class="member-name-link">setBallisticsColor</a><wbr>(int&nbsp;var0,
- float&nbsp;var1,
- float&nbsp;var2,
- float&nbsp;var3)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#scrollChunkMapUp(int)" class="member-name-link">scrollChunkMapUp</a><wbr>(int&nbsp;playerIndex)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setBallisticsRange(int,float)" class="member-name-link">setBallisticsRange</a><wbr>(int&nbsp;var0,
- float&nbsp;var1)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setBallisticsSize(int,float)" class="member-name-link">setBallisticsSize</a><wbr>(int&nbsp;var0,
- float&nbsp;var1)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setBallisticsTargetAdjustingShapeScale(float,float,float)" class="member-name-link">setBallisticsTargetAdjustingShapeScale</a><wbr>(float&nbsp;var0,
- float&nbsp;var1,
- float&nbsp;var2)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setBallisticsTargetAllPartsColor(float,float,float)" class="member-name-link">setBallisticsTargetAllPartsColor</a><wbr>(float&nbsp;var0,
- float&nbsp;var1,
- float&nbsp;var2)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setBallisticsTargetAxis(int,float,float,float)" class="member-name-link">setBallisticsTargetAxis</a><wbr>(int&nbsp;var0,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setBallisticsColor(int,float,float,float)" class="member-name-link">setBallisticsColor</a><wbr>(int&nbsp;var0,
  float&nbsp;var1,
  float&nbsp;var2,
  float&nbsp;var3)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setChunkMinMaxLevel(int,int,int,int)" class="member-name-link">setChunkMinMaxLevel</a><wbr>(int&nbsp;var0,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setBallisticsRange(int,float)" class="member-name-link">setBallisticsRange</a><wbr>(int&nbsp;var0,
+ float&nbsp;var1)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setBallisticsSize(int,float)" class="member-name-link">setBallisticsSize</a><wbr>(int&nbsp;var0,
+ float&nbsp;var1)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setBallisticsTargetAdjustingShapeScale(float,float,float)" class="member-name-link">setBallisticsTargetAdjustingShapeScale</a><wbr>(float&nbsp;var0,
+ float&nbsp;var1,
+ float&nbsp;var2)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setBallisticsTargetAllPartsColor(float,float,float)" class="member-name-link">setBallisticsTargetAllPartsColor</a><wbr>(float&nbsp;var0,
+ float&nbsp;var1,
+ float&nbsp;var2)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setBallisticsTargetAxis(int,float,float,float)" class="member-name-link">setBallisticsTargetAxis</a><wbr>(int&nbsp;var0,
+ float&nbsp;var1,
+ float&nbsp;var2,
+ float&nbsp;var3)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setChunkMinMaxLevel(int,int,int,int)" class="member-name-link">setChunkMinMaxLevel</a><wbr>(int&nbsp;var0,
  int&nbsp;var1,
  int&nbsp;var2,
  int&nbsp;var3)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setOwnVehiclePhysics(int,float%5B%5D)" class="member-name-link">setOwnVehiclePhysics</a><wbr>(int&nbsp;var0,
- float[]&nbsp;var1)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setRagdollActive(int,boolean)" class="member-name-link">setRagdollActive</a><wbr>(int&nbsp;var0,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setOwnVehiclePhysics(int,float%5B%5D)" class="member-name-link">setOwnVehiclePhysics</a><wbr>(int&nbsp;var0,
+ float[]&nbsp;var1)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setRagdollActive(int,boolean)" class="member-name-link">setRagdollActive</a><wbr>(int&nbsp;var0,
  boolean&nbsp;var1)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setRagdollBodyDynamics(int,float%5B%5D)" class="member-name-link">setRagdollBodyDynamics</a><wbr>(int&nbsp;var0,
- float[]&nbsp;var1)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setRagdollLocalTransformRotation(int,float,float,float,float)" class="member-name-link">setRagdollLocalTransformRotation</a><wbr>(int&nbsp;var0,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setRagdollBodyDynamics(int,float%5B%5D)" class="member-name-link">setRagdollBodyDynamics</a><wbr>(int&nbsp;var0,
+ float[]&nbsp;var1)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setRagdollLocalTransformRotation(int,float,float,float,float)" class="member-name-link">setRagdollLocalTransformRotation</a><wbr>(int&nbsp;var0,
  float&nbsp;var1,
  float&nbsp;var2,
  float&nbsp;var3,
  float&nbsp;var4)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setRagdollMass(float)" class="member-name-link">setRagdollMass</a><wbr>(float&nbsp;var0)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setTireInflation(int,int,float)" class="member-name-link">setTireInflation</a><wbr>(int&nbsp;var0,
- int&nbsp;var1,
- float&nbsp;var2)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setRagdollMass(float)" class="member-name-link">setRagdollMass</a><wbr>(float&nbsp;var0)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setTireRemoved(int,int,boolean)" class="member-name-link">setTireRemoved</a><wbr>(int&nbsp;var0,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setTireInflation(int,int,float)" class="member-name-link">setTireInflation</a><wbr>(int&nbsp;var0,
+ int&nbsp;var1,
+ float&nbsp;var2)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setTireRemoved(int,int,boolean)" class="member-name-link">setTireRemoved</a><wbr>(int&nbsp;var0,
  int&nbsp;var1,
  boolean&nbsp;var2)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setVehicleActive(int,boolean)" class="member-name-link">setVehicleActive</a><wbr>(int&nbsp;var0,
- boolean&nbsp;var1)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setVehicleActive(zombie.vehicles.BaseVehicle,boolean)" class="member-name-link">setVehicleActive</a><wbr>(<a href="../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle,
- boolean&nbsp;isActive)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setVehicleMass(int,float)" class="member-name-link">setVehicleMass</a><wbr>(int&nbsp;var0,
- float&nbsp;var1)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setVehicleParams(int,float%5B%5D)" class="member-name-link">setVehicleParams</a><wbr>(int&nbsp;var0,
- float[]&nbsp;var1)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setVehicleStatic(int,boolean)" class="member-name-link">setVehicleStatic</a><wbr>(int&nbsp;var0,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setVehicleActive(int,boolean)" class="member-name-link">setVehicleActive</a><wbr>(int&nbsp;var0,
  boolean&nbsp;var1)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setVehicleStatic(zombie.vehicles.BaseVehicle,boolean)" class="member-name-link">setVehicleStatic</a><wbr>(<a href="../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle,
- boolean&nbsp;isStatic)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setVehicleVelocityMultiplier(int,float,float)" class="member-name-link">setVehicleVelocityMultiplier</a><wbr>(int&nbsp;var0,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setVehicleActive(zombie.vehicles.BaseVehicle,boolean)" class="member-name-link">setVehicleActive</a><wbr>(<a href="../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle,
+ boolean&nbsp;isActive)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setVehicleMass(int,float)" class="member-name-link">setVehicleMass</a><wbr>(int&nbsp;var0,
+ float&nbsp;var1)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setVehicleParams(int,float%5B%5D)" class="member-name-link">setVehicleParams</a><wbr>(int&nbsp;var0,
+ float[]&nbsp;var1)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setVehicleStatic(int,boolean)" class="member-name-link">setVehicleStatic</a><wbr>(int&nbsp;var0,
+ boolean&nbsp;var1)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setVehicleStatic(zombie.vehicles.BaseVehicle,boolean)" class="member-name-link">setVehicleStatic</a><wbr>(<a href="../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle,
+ boolean&nbsp;isStatic)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setVehicleVelocityMultiplier(int,float,float)" class="member-name-link">setVehicleVelocityMultiplier</a><wbr>(int&nbsp;var0,
  float&nbsp;var1,
  float&nbsp;var2)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#simulateRagdoll(int,float%5B%5D)" class="member-name-link">simulateRagdoll</a><wbr>(int&nbsp;var0,
- float[]&nbsp;var1)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#simulateRagdollWithRigidBodyOutput(int,float%5B%5D,float%5B%5D)" class="member-name-link">simulateRagdollWithRigidBodyOutput</a><wbr>(int&nbsp;var0,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#simulateRagdoll(int,float%5B%5D)" class="member-name-link">simulateRagdoll</a><wbr>(int&nbsp;var0,
+ float[]&nbsp;var1)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#simulateRagdollWithRigidBodyOutput(int,float%5B%5D,float%5B%5D)" class="member-name-link">simulateRagdollWithRigidBodyOutput</a><wbr>(int&nbsp;var0,
  float[]&nbsp;var1,
  float[]&nbsp;var2)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#startLoadingPhysicsMeshes()" class="member-name-link">startLoadingPhysicsMeshes</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stepSimulation(float,int,float)" class="member-name-link">stepSimulation</a><wbr>(float&nbsp;var0,
- int&nbsp;var1,
- float&nbsp;var2)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#startLoadingPhysicsMeshes()" class="member-name-link">startLoadingPhysicsMeshes</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#teleportVehicle(int,float,float,float,float,float,float,float)" class="member-name-link">teleportVehicle</a><wbr>(int&nbsp;var0,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stepSimulation(float,int,float)" class="member-name-link">stepSimulation</a><wbr>(float&nbsp;var0,
+ int&nbsp;var1,
+ float&nbsp;var2)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#teleportVehicle(int,float,float,float,float,float,float,float)" class="member-name-link">teleportVehicle</a><wbr>(int&nbsp;var0,
  float&nbsp;var1,
  float&nbsp;var2,
  float&nbsp;var3,
@@ -719,67 +724,67 @@ loadScripts(document, 'script');</script>
  float&nbsp;var5,
  float&nbsp;var6,
  float&nbsp;var7)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#transformPhysicsMeshPoints(org.joml.Matrix4f,float%5B%5D,boolean)" class="member-name-link">transformPhysicsMeshPoints</a><wbr>(org.joml.Matrix4f&nbsp;xfrm,
- float[]&nbsp;points,
- boolean&nbsp;bSwapYZ)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float[]</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#transformPhysicsMeshPoints(org.joml.Vector3f,org.joml.Vector3f,float,org.joml.Matrix4f,float%5B%5D,boolean)" class="member-name-link">transformPhysicsMeshPoints</a><wbr>(org.joml.Vector3f&nbsp;translate,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#transformPhysicsMeshPoints(org.joml.Matrix4f,float%5B%5D,boolean)" class="member-name-link">transformPhysicsMeshPoints</a><wbr>(org.joml.Matrix4f&nbsp;xfrm,
+ float[]&nbsp;points,
+ boolean&nbsp;bSwapYZ)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#transformPhysicsMeshPoints(org.joml.Vector3f,org.joml.Vector3f,float,org.joml.Matrix4f,float%5B%5D,boolean)" class="member-name-link">transformPhysicsMeshPoints</a><wbr>(org.joml.Vector3f&nbsp;translate,
  org.joml.Vector3f&nbsp;rotate,
  float&nbsp;scale,
  org.joml.Matrix4f&nbsp;meshXfrm,
  float[]&nbsp;points,
  boolean&nbsp;bSwapYZ)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.joml.Matrix4f</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#translationRotateScale(org.joml.Vector3f,org.joml.Vector3f,float,org.joml.Matrix4f)" class="member-name-link">translationRotateScale</a><wbr>(org.joml.Vector3f&nbsp;translate,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.joml.Matrix4f</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#translationRotateScale(org.joml.Vector3f,org.joml.Vector3f,float,org.joml.Matrix4f)" class="member-name-link">translationRotateScale</a><wbr>(org.joml.Vector3f&nbsp;translate,
  org.joml.Vector3f&nbsp;rotate,
  float&nbsp;scale,
  org.joml.Matrix4f&nbsp;result)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateBallistics(int,float,float,float)" class="member-name-link">updateBallistics</a><wbr>(int&nbsp;var0,
- float&nbsp;var1,
- float&nbsp;var2,
- float&nbsp;var3)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateBallisticsAimReticlePosition(int,float,float,float)" class="member-name-link">updateBallisticsAimReticlePosition</a><wbr>(int&nbsp;var0,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateBallistics(int,float,float,float)" class="member-name-link">updateBallistics</a><wbr>(int&nbsp;var0,
  float&nbsp;var1,
  float&nbsp;var2,
  float&nbsp;var3)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateBallisticsAimReticleQuaternion(int,float,float,float,float)" class="member-name-link">updateBallisticsAimReticleQuaternion</a><wbr>(int&nbsp;var0,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateBallisticsAimReticlePosition(int,float,float,float)" class="member-name-link">updateBallisticsAimReticlePosition</a><wbr>(int&nbsp;var0,
  float&nbsp;var1,
  float&nbsp;var2,
- float&nbsp;var3,
- float&nbsp;var4)</code></div>
+ float&nbsp;var3)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateBallisticsAimReticleRotate(int,float,float,float,float)" class="member-name-link">updateBallisticsAimReticleRotate</a><wbr>(int&nbsp;var0,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateBallisticsAimReticleQuaternion(int,float,float,float,float)" class="member-name-link">updateBallisticsAimReticleQuaternion</a><wbr>(int&nbsp;var0,
  float&nbsp;var1,
  float&nbsp;var2,
  float&nbsp;var3,
  float&nbsp;var4)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateBallisticsAimReticleRotation(int,float,float,float,float)" class="member-name-link">updateBallisticsAimReticleRotation</a><wbr>(int&nbsp;var0,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateBallisticsAimReticleRotate(int,float,float,float,float)" class="member-name-link">updateBallisticsAimReticleRotate</a><wbr>(int&nbsp;var0,
  float&nbsp;var1,
  float&nbsp;var2,
  float&nbsp;var3,
  float&nbsp;var4)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateBallisticsMuzzleAimDirection(int,float,float,float)" class="member-name-link">updateBallisticsMuzzleAimDirection</a><wbr>(int&nbsp;var0,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateBallisticsAimReticleRotation(int,float,float,float,float)" class="member-name-link">updateBallisticsAimReticleRotation</a><wbr>(int&nbsp;var0,
+ float&nbsp;var1,
+ float&nbsp;var2,
+ float&nbsp;var3,
+ float&nbsp;var4)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateBallisticsMuzzleAimDirection(int,float,float,float)" class="member-name-link">updateBallisticsMuzzleAimDirection</a><wbr>(int&nbsp;var0,
  float&nbsp;var1,
  float&nbsp;var2,
  float&nbsp;var3)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateBallisticsTarget(int,float,float,float,float,float,float,float,boolean)" class="member-name-link">updateBallisticsTarget</a><wbr>(int&nbsp;var0,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateBallisticsTarget(int,float,float,float,float,float,float,float,boolean)" class="member-name-link">updateBallisticsTarget</a><wbr>(int&nbsp;var0,
  float&nbsp;var1,
  float&nbsp;var2,
  float&nbsp;var3,
@@ -788,28 +793,28 @@ loadScripts(document, 'script');</script>
  float&nbsp;var6,
  float&nbsp;var7,
  boolean&nbsp;var8)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateBallisticsTargetSkeleton(int,int,float%5B%5D)" class="member-name-link">updateBallisticsTargetSkeleton</a><wbr>(int&nbsp;var0,
- int&nbsp;var1,
- float[]&nbsp;var2)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateChunk(int,int,int,byte%5B%5D)" class="member-name-link">updateChunk</a><wbr>(int&nbsp;x,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateBallisticsTargetSkeleton(int,int,float%5B%5D)" class="member-name-link">updateBallisticsTargetSkeleton</a><wbr>(int&nbsp;var0,
+ int&nbsp;var1,
+ float[]&nbsp;var2)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateChunk(int,int,int,byte%5B%5D)" class="member-name-link">updateChunk</a><wbr>(int&nbsp;x,
  int&nbsp;y,
  int&nbsp;numShapes,
  byte[]&nbsp;shapes)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updatePhysicsForLevelIfNeeded(int,int,int)" class="member-name-link">updatePhysicsForLevelIfNeeded</a><wbr>(int&nbsp;wx,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updatePhysicsForLevelIfNeeded(int,int,int)" class="member-name-link">updatePhysicsForLevelIfNeeded</a><wbr>(int&nbsp;wx,
  int&nbsp;wy,
  int&nbsp;level)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updatePlayerList(java.util.ArrayList)" class="member-name-link">updatePlayerList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&gt;&nbsp;players)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateRagdoll(int,float,float,float,float,float,float,float)" class="member-name-link">updateRagdoll</a><wbr>(int&nbsp;var0,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updatePlayerList(java.util.ArrayList)" class="member-name-link">updatePlayerList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&gt;&nbsp;players)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateRagdoll(int,float,float,float,float,float,float,float)" class="member-name-link">updateRagdoll</a><wbr>(int&nbsp;var0,
  float&nbsp;var1,
  float&nbsp;var2,
  float&nbsp;var3,
@@ -817,28 +822,28 @@ loadScripts(document, 'script');</script>
  float&nbsp;var5,
  float&nbsp;var6,
  float&nbsp;var7)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateRagdoll(int,org.lwjgl.util.vector.Vector3f,org.lwjgl.util.vector.Quaternion)" class="member-name-link">updateRagdoll</a><wbr>(int&nbsp;id,
- org.lwjgl.util.vector.Vector3f&nbsp;in_worldPosition,
- org.lwjgl.util.vector.Quaternion&nbsp;in_worldRotation)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateRagdollSkeletonPreviousTransforms(int,int,float,float%5B%5D)" class="member-name-link">updateRagdollSkeletonPreviousTransforms</a><wbr>(int&nbsp;var0,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateRagdoll(int,org.lwjgl.util.vector.Vector3f,org.lwjgl.util.vector.Quaternion)" class="member-name-link">updateRagdoll</a><wbr>(int&nbsp;id,
+ org.lwjgl.util.vector.Vector3f&nbsp;worldPosition,
+ org.lwjgl.util.vector.Quaternion&nbsp;worldRotation)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateRagdollSkeletonPreviousTransforms(int,int,float,float%5B%5D)" class="member-name-link">updateRagdollSkeletonPreviousTransforms</a><wbr>(int&nbsp;var0,
  int&nbsp;var1,
  float&nbsp;var2,
  float[]&nbsp;var3)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateRagdollSkeletonTransforms(int,int,float%5B%5D)" class="member-name-link">updateRagdollSkeletonTransforms</a><wbr>(int&nbsp;var0,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateRagdollSkeletonTransforms(int,int,float%5B%5D)" class="member-name-link">updateRagdollSkeletonTransforms</a><wbr>(int&nbsp;var0,
  int&nbsp;var1,
  float[]&nbsp;var2)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateSkeletonFromNetworkPhysics(int,float%5B%5D,float%5B%5D)" class="member-name-link">updateSkeletonFromNetworkPhysics</a><wbr>(int&nbsp;var0,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateSkeletonFromNetworkPhysics(int,float%5B%5D,float%5B%5D)" class="member-name-link">updateSkeletonFromNetworkPhysics</a><wbr>(int&nbsp;var0,
  float[]&nbsp;var1,
  float[]&nbsp;var2)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -1053,6 +1058,14 @@ loadScripts(document, 'script');</script>
 <h3>CatchToBullet</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">CatchToBullet</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getPZBulletVersion()">
+<h3>getPZBulletVersion</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getPZBulletVersion</span>()</div>
 </div>
 </section>
 </li>
@@ -1616,14 +1629,15 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="initializeRagdollPose(int,float[],float,float,float)">
+<section class="detail" id="initializeRagdollPose(int,float[],float,float,float,float)">
 <h3>initializeRagdollPose</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">initializeRagdollPose</span><wbr><span class="parameters">(int&nbsp;var0,
  float[]&nbsp;var1,
  float&nbsp;var2,
  float&nbsp;var3,
- float&nbsp;var4)</span></div>
+ float&nbsp;var4,
+ float&nbsp;var5)</span></div>
 </div>
 </section>
 </li>
@@ -1656,8 +1670,8 @@ loadScripts(document, 'script');</script>
 <h3>addRagdoll</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addRagdoll</span><wbr><span class="parameters">(int&nbsp;id,
- org.lwjgl.util.vector.Vector3f&nbsp;in_worldPosition,
- org.lwjgl.util.vector.Quaternion&nbsp;in_worldRotation)</span></div>
+ org.lwjgl.util.vector.Vector3f&nbsp;worldPosition,
+ org.lwjgl.util.vector.Quaternion&nbsp;worldRotation)</span></div>
 </div>
 </section>
 </li>
@@ -1739,8 +1753,8 @@ loadScripts(document, 'script');</script>
 <h3>updateRagdoll</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateRagdoll</span><wbr><span class="parameters">(int&nbsp;id,
- org.lwjgl.util.vector.Vector3f&nbsp;in_worldPosition,
- org.lwjgl.util.vector.Quaternion&nbsp;in_worldRotation)</span></div>
+ org.lwjgl.util.vector.Vector3f&nbsp;worldPosition,
+ org.lwjgl.util.vector.Quaternion&nbsp;worldRotation)</span></div>
 </div>
 </section>
 </li>

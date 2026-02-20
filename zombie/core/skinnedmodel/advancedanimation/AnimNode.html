@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -97,6 +97,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#scalar2" tabindex="0">scalar2</a></li>
 <li><a href="#isAnimReverse" tabindex="0">isAnimReverse</a></li>
 <li><a href="#syncTrackingEnabled" tabindex="0">syncTrackingEnabled</a></li>
+<li><a href="#trackTimeToVariable" tabindex="0">trackTimeToVariable</a></li>
 <li><a href="#blends2d" tabindex="0">blends2d</a></li>
 <li><a href="#conditions" tabindex="0">conditions</a></li>
 <li><a href="#events" tabindex="0">events</a></li>
@@ -287,15 +288,18 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>boolean</code></div>
 <div class="col-second even-row-color"><code><a href="#syncTrackingEnabled" class="member-name-link">syncTrackingEnabled</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="AnimTransition.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimTransition</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#transitions" class="member-name-link">transitions</a></code></div>
+<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#trackTimeToVariable" class="member-name-link">trackTimeToVariable</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#useDeferedRotation" class="member-name-link">useDeferedRotation</a></code></div>
+<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="AnimTransition.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimTransition</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#transitions" class="member-name-link">transitions</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#useDeferredMovement" class="member-name-link">useDeferredMovement</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#useDeferedRotation" class="member-name-link">useDeferedRotation</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#useDeferredMovement" class="member-name-link">useDeferredMovement</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -334,8 +338,8 @@ loadScripts(document, 'script');</script>
  <a href="AnimNode.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimNode</a>&nbsp;b)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="AnimTransition.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimTransition</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findTransitionTo(zombie.core.skinnedmodel.advancedanimation.IAnimationVariableSource,zombie.core.skinnedmodel.advancedanimation.AnimNode)" class="member-name-link">findTransitionTo</a><wbr>(<a href="IAnimationVariableSource.html" title="interface in zombie.core.skinnedmodel.advancedanimation">IAnimationVariableSource</a>&nbsp;in_varSource,
- <a href="AnimNode.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimNode</a>&nbsp;in_toNode)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findTransitionTo(zombie.core.skinnedmodel.advancedanimation.IAnimationVariableSource,zombie.core.skinnedmodel.advancedanimation.AnimNode)" class="member-name-link">findTransitionTo</a><wbr>(<a href="IAnimationVariableSource.html" title="interface in zombie.core.skinnedmodel.advancedanimation">IAnimationVariableSource</a>&nbsp;varSource,
+ <a href="AnimNode.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimNode</a>&nbsp;toNode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../math/IInterpolator.html" title="class in zombie.core.math">IInterpolator</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlendCurve()" class="member-name-link">getBlendCurve</a>()</code></div>
@@ -695,6 +699,14 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="trackTimeToVariable">
+<h3>trackTimeToVariable</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">trackTimeToVariable</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="blends2d">
 <h3>blends2d</h3>
 <div class="horizontal-scroll">
@@ -834,8 +846,8 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="findTransitionTo(zombie.core.skinnedmodel.advancedanimation.IAnimationVariableSource,zombie.core.skinnedmodel.advancedanimation.AnimNode)">
 <h3>findTransitionTo</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="AnimTransition.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimTransition</a></span>&nbsp;<span class="element-name">findTransitionTo</span><wbr><span class="parameters">(<a href="IAnimationVariableSource.html" title="interface in zombie.core.skinnedmodel.advancedanimation">IAnimationVariableSource</a>&nbsp;in_varSource,
- <a href="AnimNode.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimNode</a>&nbsp;in_toNode)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="AnimTransition.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimTransition</a></span>&nbsp;<span class="element-name">findTransitionTo</span><wbr><span class="parameters">(<a href="IAnimationVariableSource.html" title="interface in zombie.core.skinnedmodel.advancedanimation">IAnimationVariableSource</a>&nbsp;varSource,
+ <a href="AnimNode.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimNode</a>&nbsp;toNode)</span></div>
 </div>
 </section>
 </li>

@@ -34,7 +34,7 @@ loadScripts(document, 'script');</script>
 <li><a href="search.html">Search</a></li>
 <li><a href="help-doc.html#serialized-form">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -210,6 +210,10 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>animal</h5>
 <pre>boolean animal</pre>
+</li>
+<li class="block-list">
+<h5>animationFinishing</h5>
+<pre>boolean animationFinishing</pre>
 </li>
 <li class="block-list">
 <h5>animationInvisibleFrameDelay</h5>
@@ -440,12 +444,16 @@ loadScripts(document, 'script');</script>
 <pre><a href="zombie/characters/ClothingWetness.html" title="class in zombie.characters">ClothingWetness</a> clothingWetness</pre>
 </li>
 <li class="block-list">
+<h5>clothingWetnessSync</h5>
+<pre><a href="zombie/characters/ClothingWetnessSync.html" title="class in zombie.characters">ClothingWetnessSync</a> clothingWetnessSync</pre>
+</li>
+<li class="block-list">
 <h5>combatSpeedModifier</h5>
 <pre>float combatSpeedModifier</pre>
 </li>
 <li class="block-list">
 <h5>concurrentActionList</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt; concurrentActionList</pre>
+<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt; concurrentActionList</pre>
 </li>
 <li class="block-list">
 <h5>corpseSicknessRate</h5>
@@ -1273,6 +1281,10 @@ loadScripts(document, 'script');</script>
 <pre>int sleepSpeechCnt</pre>
 </li>
 <li class="block-list">
+<h5>slideAwayFromWalls</h5>
+<pre>zombie.characters.IsoGameCharacter.LC_slideAwayFromWalls slideAwayFromWalls</pre>
+</li>
+<li class="block-list">
 <h5>slowFactor</h5>
 <pre>float slowFactor</pre>
 </li>
@@ -1318,7 +1330,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li class="block-list">
 <h5>stateMachineParams</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link">HashMap</a>&lt;<a href="zombie/ai/State.html" title="class in zombie.ai">State</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link">HashMap</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&gt; stateMachineParams</pre>
+<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="zombie/ai/State.Param.html" title="class in zombie.ai">State.Param</a>&lt;?&gt;, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&gt; stateMachineParams</pre>
 </li>
 <li class="block-list">
 <h5>stats</h5>
@@ -2819,10 +2831,6 @@ loadScripts(document, 'script');</script>
 <pre>boolean sitAgainstWall</pre>
 </li>
 <li class="block-list">
-<h5>slideAwayFromWalls</h5>
-<pre>zombie.characters.IsoZombie.LC_slideAwayFromWalls slideAwayFromWalls</pre>
-</li>
-<li class="block-list">
 <h5>soundAttract</h5>
 <pre>float soundAttract</pre>
 </li>
@@ -2909,6 +2917,10 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>timeSinceSeenFlesh</h5>
 <pre>float timeSinceSeenFlesh</pre>
+</li>
+<li class="block-list">
+<h5>unbalancedLevel</h5>
+<pre>float unbalancedLevel</pre>
 </li>
 <li class="block-list">
 <h5>useless</h5>
@@ -3428,6 +3440,18 @@ loadScripts(document, 'script');</script>
 <section class="serialized-package-container">
 <h2 title="Package">Package&nbsp;<a href="zombie/core/properties/package-summary.html">zombie.core.properties</a></h2>
 <ul class="block-list">
+<li>
+<section class="serialized-class-details" id="zombie.core.properties.IsoObjectChange.IsoObjectChangeNotFoundException">
+<h3>Exception Class&nbsp;<a href="zombie/core/properties/IsoObjectChange.IsoObjectChangeNotFoundException.html" title="class in zombie.core.properties">zombie.core.properties.IsoObjectChange.IsoObjectChangeNotFoundException</a></h3>
+<div class="type-signature">class IsoObjectChangeNotFoundException extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link">RuntimeException</a> implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></div>
+</section>
+</li>
+<li>
+<section class="serialized-class-details" id="zombie.core.properties.IsoPropertyType.IsoPropertyTypeNotFoundException">
+<h3>Exception Class&nbsp;<a href="zombie/core/properties/IsoPropertyType.IsoPropertyTypeNotFoundException.html" title="class in zombie.core.properties">zombie.core.properties.IsoPropertyType.IsoPropertyTypeNotFoundException</a></h3>
+<div class="type-signature">class IsoPropertyTypeNotFoundException extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link">RuntimeException</a> implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></div>
+</section>
+</li>
 <li>
 <section class="serialized-class-details" id="zombie.core.properties.PropertyContainer">
 <h3>Class&nbsp;<a href="zombie/core/properties/PropertyContainer.html" title="class in zombie.core.properties">zombie.core.properties.PropertyContainer</a></h3>
@@ -7453,6 +7477,32 @@ loadScripts(document, 'script');</script>
 </li>
 <li>
 <section class="serialized-package-container">
+<h2 title="Package">Package&nbsp;<a href="zombie/network/packets/package-summary.html">zombie.network.packets</a></h2>
+<ul class="block-list">
+<li>
+<section class="serialized-class-details" id="zombie.network.packets.ObjectChangePacket.IsoObjectChangeTargetNotFoundException">
+<h3>Exception Class&nbsp;<a href="zombie/network/packets/ObjectChangePacket.IsoObjectChangeTargetNotFoundException.html" title="class in zombie.network.packets">zombie.network.packets.ObjectChangePacket.IsoObjectChangeTargetNotFoundException</a></h3>
+<div class="type-signature">class IsoObjectChangeTargetNotFoundException extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a> implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></div>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>Serialized Fields</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>params</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[] params</pre>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<li>
+<section class="serialized-package-container">
 <h2 title="Package">Package&nbsp;<a href="zombie/randomizedWorld/randomizedBuilding/package-summary.html">zombie.randomizedWorld.randomizedBuilding</a></h2>
 <ul class="block-list">
 <li>
@@ -7792,16 +7842,16 @@ loadScripts(document, 'script');</script>
 <pre><a href="zombie/inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a> ignitionSwitch</pre>
 </li>
 <li class="block-list">
-<h5>impulseFromHitZombie</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;zombie.vehicles.BaseVehicle.VehicleImpulse&gt; impulseFromHitZombie</pre>
-</li>
-<li class="block-list">
 <h5>impulseFromServer</h5>
 <pre>zombie.vehicles.BaseVehicle.VehicleImpulse impulseFromServer</pre>
 </li>
 <li class="block-list">
-<h5>impulseFromSquishedZombie</h5>
-<pre>zombie.vehicles.BaseVehicle.VehicleImpulse[] impulseFromSquishedZombie</pre>
+<h5>impulsesFromHitObjects</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;zombie.vehicles.BaseVehicle.VehicleImpulse&gt; impulsesFromHitObjects</pre>
+</li>
+<li class="block-list">
+<h5>impulsesFromSquishedBodies</h5>
+<pre>zombie.vehicles.BaseVehicle.VehicleImpulse[] impulsesFromSquishedBodies</pre>
 </li>
 <li class="block-list">
 <h5>initialMass</h5>
@@ -7870,6 +7920,10 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>lastDamagedBy</h5>
 <pre><a href="zombie/characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a> lastDamagedBy</pre>
+</li>
+<li class="block-list">
+<h5>lastDrivenBy</h5>
+<pre><a href="zombie/characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a> lastDrivenBy</pre>
 </li>
 <li class="block-list">
 <h5>lastLinearVelocity</h5>
@@ -8018,6 +8072,10 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>passengers</h5>
 <pre><a href="zombie/vehicles/BaseVehicle.Passenger.html" title="class in zombie.vehicles">BaseVehicle.Passenger</a>[] passengers</pre>
+</li>
+<li class="block-list">
+<h5>pedestrianContacts</h5>
+<pre><a href="zombie/vehicles/VehiclePedestrianContactTracking.html" title="class in zombie.vehicles">VehiclePedestrianContactTracking</a> pedestrianContacts</pre>
 </li>
 <li class="block-list">
 <h5>physicActiveCheck</h5>
@@ -8306,10 +8364,6 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>zombieHitTimestamp</h5>
 <pre>long zombieHitTimestamp</pre>
-</li>
-<li class="block-list">
-<h5>zombiesHits</h5>
-<pre>int zombiesHits</pre>
 </li>
 </ul>
 </section>

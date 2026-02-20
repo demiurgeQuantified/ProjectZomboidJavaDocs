@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -66,10 +66,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#set(zombie.inventory.types.HandWeapon)" tabindex="0">set(HandWeapon)</a></li>
-<li><a href="#parse(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,zombie.characters.IsoLivingCharacter)" tabindex="0">parse(ByteBuffer, UdpConnection, IsoLivingCharacter)</a></li>
-<li><a href="#parse(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" tabindex="0">parse(ByteBuffer, UdpConnection)</a></li>
+<li><a href="#parse(java.nio.ByteBuffer,zombie.network.IConnection,zombie.characters.IsoLivingCharacter)" tabindex="0">parse(ByteBuffer, IConnection, IsoLivingCharacter)</a></li>
+<li><a href="#parse(java.nio.ByteBuffer,zombie.network.IConnection)" tabindex="0">parse(ByteBuffer, IConnection)</a></li>
 <li><a href="#write(zombie.core.network.ByteBufferWriter)" tabindex="0">write(ByteBufferWriter)</a></li>
-<li><a href="#isConsistent(zombie.core.raknet.UdpConnection)" tabindex="0">isConsistent(UdpConnection)</a></li>
 <li><a href="#getWeapon()" tabindex="0">getWeapon()</a></li>
 </ol>
 </li>
@@ -126,30 +125,27 @@ implements <a href="../INetworkPacketField.html" title="interface in zombie.netw
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWeapon()" class="member-name-link">getWeapon</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isConsistent(zombie.core.raknet.UdpConnection)" class="member-name-link">isConsistent</a><wbr>(<a href="../../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(java.nio.ByteBuffer,zombie.network.IConnection)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;b,
+ <a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;b,
- <a href="../../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,zombie.characters.IsoLivingCharacter)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;b,
- <a href="../../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(java.nio.ByteBuffer,zombie.network.IConnection,zombie.characters.IsoLivingCharacter)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;b,
+ <a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection,
  <a href="../../../characters/IsoLivingCharacter.html" title="class in zombie.characters">IsoLivingCharacter</a>&nbsp;character)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(zombie.inventory.types.HandWeapon)" class="member-name-link">set</a><wbr>(<a href="../../../inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;weapon)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#write(zombie.core.network.ByteBufferWriter)" class="member-name-link">write</a><wbr>(<a href="../../../core/network/ByteBufferWriter.html" title="class in zombie.core.network">ByteBufferWriter</a>&nbsp;b)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(zombie.inventory.types.HandWeapon)" class="member-name-link">set</a><wbr>(<a href="../../../inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;weapon)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#write(zombie.core.network.ByteBufferWriter)" class="member-name-link">write</a><wbr>(<a href="../../../core/network/ByteBufferWriter.html" title="class in zombie.core.network">ByteBufferWriter</a>&nbsp;b)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.fields.IDInteger">Methods inherited from class&nbsp;<a href="../IDInteger.html#method-summary" title="class in zombie.network.fields">IDInteger</a></h3>
-<code><a href="../IDInteger.html#getID()" title="getID()">getID</a>, <a href="../IDInteger.html#setID(int)" title="setID(int)">setID</a></code></div>
+<code><a href="../IDInteger.html#getID()" title="getID()">getID</a>, <a href="../IDInteger.html#isConsistent(zombie.network.IConnection)" title="isConsistent(IConnection)">isConsistent</a>, <a href="../IDInteger.html#setID(int)" title="setID(int)">setID</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -158,7 +154,7 @@ implements <a href="../INetworkPacketField.html" title="interface in zombie.netw
 <code><a href="../../packets/IDescriptor.html#getClassDescription(java.lang.StringBuilder,java.lang.Class,java.util.HashSet)" title="getClassDescription(StringBuilder, Class, HashSet)">getClassDescription</a>, <a href="../../packets/IDescriptor.html#getDescription()" title="getDescription()">getDescription</a>, <a href="../../packets/IDescriptor.html#getDescription(java.util.HashSet)" title="getDescription(HashSet)">getDescription</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.fields.INetworkPacketField">Methods inherited from interface&nbsp;<a href="../INetworkPacketField.html#method-summary" title="interface in zombie.network.fields">INetworkPacketField</a></h3>
-<code><a href="../INetworkPacketField.html#getPacketSizeBytes()" title="getPacketSizeBytes()">getPacketSizeBytes</a></code></div>
+<code><a href="../INetworkPacketField.html#getPacketSizeBytes()" title="getPacketSizeBytes()">getPacketSizeBytes</a>, <a href="../INetworkPacketField.html#isConsistent(zombie.network.IConnection)" title="isConsistent(IConnection)">isConsistent</a></code></div>
 </section>
 </li>
 </ul>
@@ -195,26 +191,26 @@ implements <a href="../INetworkPacketField.html" title="interface in zombie.netw
 </section>
 </li>
 <li>
-<section class="detail" id="parse(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,zombie.characters.IsoLivingCharacter)">
+<section class="detail" id="parse(java.nio.ByteBuffer,zombie.network.IConnection,zombie.characters.IsoLivingCharacter)">
 <h3>parse</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;b,
- <a href="../../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+ <a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection,
  <a href="../../../characters/IsoLivingCharacter.html" title="class in zombie.characters">IsoLivingCharacter</a>&nbsp;character)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="parse(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)">
+<section class="detail" id="parse(java.nio.ByteBuffer,zombie.network.IConnection)">
 <h3>parse</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;b,
- <a href="../../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</span></div>
+ <a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../INetworkPacketField.html#parse(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)">parse</a></code>&nbsp;in interface&nbsp;<code><a href="../INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a></code></dd>
+<dd><code><a href="../INetworkPacketField.html#parse(java.nio.ByteBuffer,zombie.network.IConnection)">parse</a></code>&nbsp;in interface&nbsp;<code><a href="../INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a></code></dd>
 <dt>Overrides:</dt>
-<dd><code><a href="../IDInteger.html#parse(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)">parse</a></code>&nbsp;in class&nbsp;<code><a href="../IDInteger.html" title="class in zombie.network.fields">IDInteger</a></code></dd>
+<dd><code><a href="../IDInteger.html#parse(java.nio.ByteBuffer,zombie.network.IConnection)">parse</a></code>&nbsp;in class&nbsp;<code><a href="../IDInteger.html" title="class in zombie.network.fields">IDInteger</a></code></dd>
 </dl>
 </div>
 </section>
@@ -229,20 +225,6 @@ implements <a href="../INetworkPacketField.html" title="interface in zombie.netw
 <dd><code><a href="../INetworkPacketField.html#write(zombie.core.network.ByteBufferWriter)">write</a></code>&nbsp;in interface&nbsp;<code><a href="../INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a></code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="../IDInteger.html#write(zombie.core.network.ByteBufferWriter)">write</a></code>&nbsp;in class&nbsp;<code><a href="../IDInteger.html" title="class in zombie.network.fields">IDInteger</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isConsistent(zombie.core.raknet.UdpConnection)">
-<h3>isConsistent</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isConsistent</span><wbr><span class="parameters">(<a href="../../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../INetworkPacketField.html#isConsistent(zombie.core.raknet.UdpConnection)">isConsistent</a></code>&nbsp;in interface&nbsp;<code><a href="../INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a></code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="../IDInteger.html#isConsistent(zombie.core.raknet.UdpConnection)">isConsistent</a></code>&nbsp;in class&nbsp;<code><a href="../IDInteger.html" title="class in zombie.network.fields">IDInteger</a></code></dd>
 </dl>
 </div>
 </section>

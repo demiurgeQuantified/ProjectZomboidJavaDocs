@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -132,7 +132,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#Load(java.lang.String,zombie.scripting.ScriptParser.Block)" tabindex="0">Load(String, ScriptParser.Block)</a></li>
 <li><a href="#PreReload()" tabindex="0">PreReload()</a></li>
 <li><a href="#OnScriptsLoaded(zombie.scripting.ScriptLoadMode)" tabindex="0">OnScriptsLoaded(ScriptLoadMode)</a></li>
-<li><a href="#OnLoadedAfterLua()" tabindex="0">OnLoadedAfterLua()</a></li>
 <li><a href="#OnPostWorldDictionaryInit()" tabindex="0">OnPostWorldDictionaryInit()</a></li>
 <li><a href="#getRequiredSkills()" tabindex="0">getRequiredSkills()</a></li>
 <li><a href="#getAutoLearnAnySkills()" tabindex="0">getAutoLearnAnySkills()</a></li>
@@ -154,9 +153,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#getXPAward(int)" tabindex="0">getXPAward(int)</a></li>
 <li><a href="#clearRequiredSkills()" tabindex="0">clearRequiredSkills()</a></li>
 <li><a href="#addRequiredSkill(zombie.characters.skills.PerkFactory.Perk,int)" tabindex="0">addRequiredSkill(PerkFactory.Perk, int)</a></li>
-<li><a href="#canUseItem(zombie.inventory.InventoryItem)" tabindex="0">canUseItem(InventoryItem)</a></li>
+<li><a href="#canUseItem(zombie.inventory.InventoryItem,zombie.characters.IsoGameCharacter)" tabindex="0">canUseItem(InventoryItem, IsoGameCharacter)</a></li>
 <li><a href="#canUseItem(java.lang.String)" tabindex="0">canUseItem(String)</a></li>
-<li><a href="#OnTestItem(zombie.inventory.InventoryItem)" tabindex="0">OnTestItem(InventoryItem)</a></li>
+<li><a href="#OnTestItem(zombie.inventory.InventoryItem,zombie.characters.IsoGameCharacter)" tabindex="0">OnTestItem(InventoryItem, IsoGameCharacter)</a></li>
 <li><a href="#hasTag(zombie.scripting.objects.CraftRecipeTag)" tabindex="0">hasTag(CraftRecipeTag)</a></li>
 <li><a href="#isCanBeDoneFromFloor()" tabindex="0">isCanBeDoneFromFloor()</a></li>
 <li><a href="#canBeDoneInDark()" tabindex="0">canBeDoneInDark()</a></li>
@@ -349,7 +348,8 @@ implements <a href="../../../../util/TaggedObjectManager.TaggedObject.html" titl
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canUseItem(java.lang.String)" class="member-name-link">canUseItem</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;item)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canUseItem(zombie.inventory.InventoryItem)" class="member-name-link">canUseItem</a><wbr>(<a href="../../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canUseItem(zombie.inventory.InventoryItem,zombie.characters.IsoGameCharacter)" class="member-name-link">canUseItem</a><wbr>(<a href="../../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item,
+ <a href="../../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#characterHasRequiredSkills(zombie.characters.IsoGameCharacter)" class="member-name-link">characterHasRequiredSkills</a><wbr>(<a href="../../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;chr)</code></div>
@@ -647,58 +647,56 @@ implements <a href="../../../../util/TaggedObjectManager.TaggedObject.html" titl
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#normalizeSkillLevel(int)" class="member-name-link">normalizeSkillLevel</a><wbr>(int&nbsp;level)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#OnLoadedAfterLua()" class="member-name-link">OnLoadedAfterLua</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLuaFileReloaded()" class="member-name-link">onLuaFileReloaded</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#OnPostWorldDictionaryInit()" class="member-name-link">OnPostWorldDictionaryInit</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLuaFileReloaded()" class="member-name-link">onLuaFileReloaded</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#OnScriptsLoaded(zombie.scripting.ScriptLoadMode)" class="member-name-link">OnScriptsLoaded</a><wbr>(<a href="../../../ScriptLoadMode.html" title="enum class in zombie.scripting">ScriptLoadMode</a>&nbsp;loadMode)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#OnTestItem(zombie.inventory.InventoryItem)" class="member-name-link">OnTestItem</a><wbr>(<a href="../../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;inventoryItem)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#overrideIconTexture(zombie.core.textures.Texture)" class="member-name-link">overrideIconTexture</a><wbr>(<a href="../../../../core/textures/Texture.html" title="class in zombie.core.textures">Texture</a>&nbsp;icon)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#OnPostWorldDictionaryInit()" class="member-name-link">OnPostWorldDictionaryInit</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#overrideTranslationName(java.lang.String)" class="member-name-link">overrideTranslationName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#PreReload()" class="member-name-link">PreReload</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#requiresSpecificWorkstation()" class="member-name-link">requiresSpecificWorkstation</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAnimation(java.lang.String)" class="member-name-link">setAnimation</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;animationString)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setProp1(zombie.scripting.entity.components.crafting.InputScript)" class="member-name-link">setProp1</a><wbr>(<a href="InputScript.html" title="class in zombie.scripting.entity.components.crafting">InputScript</a>&nbsp;prop)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setProp2(zombie.scripting.entity.components.crafting.InputScript)" class="member-name-link">setProp2</a><wbr>(<a href="InputScript.html" title="class in zombie.scripting.entity.components.crafting">InputScript</a>&nbsp;prop)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setResearchSkillLevel(int)" class="member-name-link">setResearchSkillLevel</a><wbr>(int&nbsp;level)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#OnScriptsLoaded(zombie.scripting.ScriptLoadMode)" class="member-name-link">OnScriptsLoaded</a><wbr>(<a href="../../../ScriptLoadMode.html" title="enum class in zombie.scripting">ScriptLoadMode</a>&nbsp;loadMode)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validateBenefitFromRecipeAtHand(zombie.characters.IsoGameCharacter,java.util.ArrayList)" class="member-name-link">validateBenefitFromRecipeAtHand</a><wbr>(<a href="../../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;chr,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../../../../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&gt;&nbsp;containers)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#OnTestItem(zombie.inventory.InventoryItem,zombie.characters.IsoGameCharacter)" class="member-name-link">OnTestItem</a><wbr>(<a href="../../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;inventoryItem,
+ <a href="../../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#overrideIconTexture(zombie.core.textures.Texture)" class="member-name-link">overrideIconTexture</a><wbr>(<a href="../../../../core/textures/Texture.html" title="class in zombie.core.textures">Texture</a>&nbsp;icon)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#overrideTranslationName(java.lang.String)" class="member-name-link">overrideTranslationName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#PreReload()" class="member-name-link">PreReload</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#requiresSpecificWorkstation()" class="member-name-link">requiresSpecificWorkstation</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAnimation(java.lang.String)" class="member-name-link">setAnimation</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;animationString)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setProp1(zombie.scripting.entity.components.crafting.InputScript)" class="member-name-link">setProp1</a><wbr>(<a href="InputScript.html" title="class in zombie.scripting.entity.components.crafting">InputScript</a>&nbsp;prop)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setProp2(zombie.scripting.entity.components.crafting.InputScript)" class="member-name-link">setProp2</a><wbr>(<a href="InputScript.html" title="class in zombie.scripting.entity.components.crafting">InputScript</a>&nbsp;prop)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setResearchSkillLevel(int)" class="member-name-link">setResearchSkillLevel</a><wbr>(int&nbsp;level)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validateBenefitFromRecipeAtHand(zombie.entity.components.crafting.recipe.HandcraftLogic)" class="member-name-link">validateBenefitFromRecipeAtHand</a><wbr>(<a href="../../../../entity/components/crafting/recipe/HandcraftLogic.html" title="class in zombie.entity.components.crafting.recipe">HandcraftLogic</a>&nbsp;logic)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validateBenefitFromRecipeAtHand(zombie.characters.IsoGameCharacter,java.util.ArrayList)" class="member-name-link">validateBenefitFromRecipeAtHand</a><wbr>(<a href="../../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;chr,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../../../../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&gt;&nbsp;containers)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validateBenefitFromRecipeAtHand(zombie.entity.components.crafting.recipe.HandcraftLogic)" class="member-name-link">validateBenefitFromRecipeAtHand</a><wbr>(<a href="../../../../entity/components/crafting/recipe/HandcraftLogic.html" title="class in zombie.entity.components.crafting.recipe">HandcraftLogic</a>&nbsp;logic)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.scripting.objects.BaseScriptObject">Methods inherited from class&nbsp;<a href="../../../objects/BaseScriptObject.html#method-summary" title="class in zombie.scripting.objects">BaseScriptObject</a></h3>
-<code><a href="../../../objects/BaseScriptObject.html#addLoadedScriptBody(java.lang.String,java.lang.String)" title="addLoadedScriptBody(String, String)">addLoadedScriptBody</a>, <a href="../../../objects/BaseScriptObject.html#calculateScriptVersion()" title="calculateScriptVersion()">calculateScriptVersion</a>, <a href="../../../objects/BaseScriptObject.html#debugString()" title="debugString()">debugString</a>, <a href="../../../objects/BaseScriptObject.html#getAllScriptLines(java.util.ArrayList)" title="getAllScriptLines(ArrayList)">getAllScriptLines</a>, <a href="../../../objects/BaseScriptObject.html#getBodyScriptLines(int,java.util.ArrayList)" title="getBodyScriptLines(int, ArrayList)">getBodyScriptLines</a>, <a href="../../../objects/BaseScriptObject.html#getLoadedScriptBodies()" title="getLoadedScriptBodies()">getLoadedScriptBodies</a>, <a href="../../../objects/BaseScriptObject.html#getLoadedScriptBodyCount()" title="getLoadedScriptBodyCount()">getLoadedScriptBodyCount</a>, <a href="../../../objects/BaseScriptObject.html#getModule()" title="getModule()">getModule</a>, <a href="../../../objects/BaseScriptObject.html#getObsolete()" title="getObsolete()">getObsolete</a>, <a href="../../../objects/BaseScriptObject.html#getParent()" title="getParent()">getParent</a>, <a href="../../../objects/BaseScriptObject.html#getScriptLines()" title="getScriptLines()">getScriptLines</a>, <a href="../../../objects/BaseScriptObject.html#getScriptObjectFullType()" title="getScriptObjectFullType()">getScriptObjectFullType</a>, <a href="../../../objects/BaseScriptObject.html#getScriptObjectName()" title="getScriptObjectName()">getScriptObjectName</a>, <a href="../../../objects/BaseScriptObject.html#getScriptObjectType()" title="getScriptObjectType()">getScriptObjectType</a>, <a href="../../../objects/BaseScriptObject.html#getScriptVersion()" title="getScriptVersion()">getScriptVersion</a>, <a href="../../../objects/BaseScriptObject.html#getVersion(zombie.world.scripts.IVersionHash)" title="getVersion(IVersionHash)">getVersion</a>, <a href="../../../objects/BaseScriptObject.html#isDebugOnly()" title="isDebugOnly()">isDebugOnly</a>, <a href="../../../objects/BaseScriptObject.html#isEnabled()" title="isEnabled()">isEnabled</a>, <a href="../../../objects/BaseScriptObject.html#LoadCommonBlock(java.lang.String)" title="LoadCommonBlock(String)">LoadCommonBlock</a>, <a href="../../../objects/BaseScriptObject.html#LoadCommonBlock(zombie.scripting.ScriptParser.Block)" title="LoadCommonBlock(ScriptParser.Block)">LoadCommonBlock</a>, <a href="../../../objects/BaseScriptObject.html#reset()" title="reset()">reset</a>, <a href="../../../objects/BaseScriptObject.html#resetLoadedScriptBodies()" title="resetLoadedScriptBodies()">resetLoadedScriptBodies</a>, <a href="../../../objects/BaseScriptObject.html#setModule(zombie.scripting.objects.ScriptModule)" title="setModule(ScriptModule)">setModule</a>, <a href="../../../objects/BaseScriptObject.html#setParent(zombie.scripting.objects.BaseScriptObject)" title="setParent(BaseScriptObject)">setParent</a></code></div>
+<code><a href="../../../objects/BaseScriptObject.html#addLoadedScriptBody(java.lang.String,java.lang.String)" title="addLoadedScriptBody(String, String)">addLoadedScriptBody</a>, <a href="../../../objects/BaseScriptObject.html#calculateScriptVersion()" title="calculateScriptVersion()">calculateScriptVersion</a>, <a href="../../../objects/BaseScriptObject.html#debugString()" title="debugString()">debugString</a>, <a href="../../../objects/BaseScriptObject.html#getAllScriptLines(java.util.ArrayList)" title="getAllScriptLines(ArrayList)">getAllScriptLines</a>, <a href="../../../objects/BaseScriptObject.html#getBodyScriptLines(int,java.util.ArrayList)" title="getBodyScriptLines(int, ArrayList)">getBodyScriptLines</a>, <a href="../../../objects/BaseScriptObject.html#getLoadedScriptBodies()" title="getLoadedScriptBodies()">getLoadedScriptBodies</a>, <a href="../../../objects/BaseScriptObject.html#getLoadedScriptBodyCount()" title="getLoadedScriptBodyCount()">getLoadedScriptBodyCount</a>, <a href="../../../objects/BaseScriptObject.html#getModule()" title="getModule()">getModule</a>, <a href="../../../objects/BaseScriptObject.html#getObsolete()" title="getObsolete()">getObsolete</a>, <a href="../../../objects/BaseScriptObject.html#getParent()" title="getParent()">getParent</a>, <a href="../../../objects/BaseScriptObject.html#getScriptLines()" title="getScriptLines()">getScriptLines</a>, <a href="../../../objects/BaseScriptObject.html#getScriptObjectFullType()" title="getScriptObjectFullType()">getScriptObjectFullType</a>, <a href="../../../objects/BaseScriptObject.html#getScriptObjectName()" title="getScriptObjectName()">getScriptObjectName</a>, <a href="../../../objects/BaseScriptObject.html#getScriptObjectType()" title="getScriptObjectType()">getScriptObjectType</a>, <a href="../../../objects/BaseScriptObject.html#getScriptVersion()" title="getScriptVersion()">getScriptVersion</a>, <a href="../../../objects/BaseScriptObject.html#getVersion(zombie.world.scripts.IVersionHash)" title="getVersion(IVersionHash)">getVersion</a>, <a href="../../../objects/BaseScriptObject.html#isDebugOnly()" title="isDebugOnly()">isDebugOnly</a>, <a href="../../../objects/BaseScriptObject.html#isEnabled()" title="isEnabled()">isEnabled</a>, <a href="../../../objects/BaseScriptObject.html#LoadCommonBlock(java.lang.String)" title="LoadCommonBlock(String)">LoadCommonBlock</a>, <a href="../../../objects/BaseScriptObject.html#LoadCommonBlock(zombie.scripting.ScriptParser.Block)" title="LoadCommonBlock(ScriptParser.Block)">LoadCommonBlock</a>, <a href="../../../objects/BaseScriptObject.html#OnLoadedAfterLua()" title="OnLoadedAfterLua()">OnLoadedAfterLua</a>, <a href="../../../objects/BaseScriptObject.html#reset()" title="reset()">reset</a>, <a href="../../../objects/BaseScriptObject.html#resetLoadedScriptBodies()" title="resetLoadedScriptBodies()">resetLoadedScriptBodies</a>, <a href="../../../objects/BaseScriptObject.html#setModule(zombie.scripting.objects.ScriptModule)" title="setModule(ScriptModule)">setModule</a>, <a href="../../../objects/BaseScriptObject.html#setParent(zombie.scripting.objects.BaseScriptObject)" title="setParent(BaseScriptObject)">setParent</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -1269,21 +1267,6 @@ implements <a href="../../../../util/TaggedObjectManager.TaggedObject.html" titl
 </section>
 </li>
 <li>
-<section class="detail" id="OnLoadedAfterLua()">
-<h3>OnLoadedAfterLua</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">OnLoadedAfterLua</span>()
-                      throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../objects/BaseScriptObject.html#OnLoadedAfterLua()">OnLoadedAfterLua</a></code>&nbsp;in class&nbsp;<code><a href="../../../objects/BaseScriptObject.html" title="class in zombie.scripting.objects">BaseScriptObject</a></code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="OnPostWorldDictionaryInit()">
 <h3>OnPostWorldDictionaryInit</h3>
 <div class="horizontal-scroll">
@@ -1463,10 +1446,11 @@ implements <a href="../../../../util/TaggedObjectManager.TaggedObject.html" titl
 </section>
 </li>
 <li>
-<section class="detail" id="canUseItem(zombie.inventory.InventoryItem)">
+<section class="detail" id="canUseItem(zombie.inventory.InventoryItem,zombie.characters.IsoGameCharacter)">
 <h3>canUseItem</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canUseItem</span><wbr><span class="parameters">(<a href="../../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canUseItem</span><wbr><span class="parameters">(<a href="../../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item,
+ <a href="../../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character)</span></div>
 </div>
 </section>
 </li>
@@ -1479,10 +1463,11 @@ implements <a href="../../../../util/TaggedObjectManager.TaggedObject.html" titl
 </section>
 </li>
 <li>
-<section class="detail" id="OnTestItem(zombie.inventory.InventoryItem)">
+<section class="detail" id="OnTestItem(zombie.inventory.InventoryItem,zombie.characters.IsoGameCharacter)">
 <h3>OnTestItem</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">OnTestItem</span><wbr><span class="parameters">(<a href="../../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;inventoryItem)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">OnTestItem</span><wbr><span class="parameters">(<a href="../../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;inventoryItem,
+ <a href="../../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character)</span></div>
 </div>
 </section>
 </li>

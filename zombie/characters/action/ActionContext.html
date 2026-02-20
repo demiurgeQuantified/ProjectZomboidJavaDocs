@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -79,8 +79,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#setPlaybackStateSnapshot(zombie.characters.action.ActionStateSnapshot)" tabindex="0">setPlaybackStateSnapshot(ActionStateSnapshot)</a></li>
 <li><a href="#getPlaybackStateSnapshot()" tabindex="0">getPlaybackStateSnapshot()</a></li>
 <li><a href="#setCurrentState(zombie.characters.action.ActionState)" tabindex="0">setCurrentState(ActionState)</a></li>
-<li><a href="#tryInsertChildState(zombie.characters.action.ActionState)" tabindex="0">tryInsertChildState(ActionState)</a></li>
-<li><a href="#removeChildStateAt(int)" tabindex="0">removeChildStateAt(int)</a></li>
 <li><a href="#logCurrentState()" tabindex="0">logCurrentState()</a></li>
 <li><a href="#clearActionContextEvents()" tabindex="0">clearActionContextEvents()</a></li>
 <li><a href="#getCurrentState()" tabindex="0">getCurrentState()</a></li>
@@ -88,10 +86,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#getGroup()" tabindex="0">getGroup()</a></li>
 <li><a href="#reportEvent(java.lang.String)" tabindex="0">reportEvent(String)</a></li>
 <li><a href="#reportEvent(java.lang.String,java.lang.String)" tabindex="0">reportEvent(String, String)</a></li>
-<li><a href="#hasChildStates()" tabindex="0">hasChildStates()</a></li>
-<li><a href="#childStateCount()" tabindex="0">childStateCount()</a></li>
-<li><a href="#foreachChildState(java.util.function.Consumer)" tabindex="0">foreachChildState(Consumer)</a></li>
-<li><a href="#indexOfChildState(java.util.function.Predicate)" tabindex="0">indexOfChildState(Predicate)</a></li>
 <li><a href="#getChildStateAt(int)" tabindex="0">getChildStateAt(int)</a></li>
 <li><a href="#getChildStates()" tabindex="0">getChildStates()</a></li>
 <li><a href="#getCurrentStateName()" tabindex="0">getCurrentStateName()</a></li>
@@ -163,25 +157,19 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canTransitionToState(java.lang.String)" class="member-name-link">canTransitionToState</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;in_stateName)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canTransitionToState(java.lang.String)" class="member-name-link">canTransitionToState</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;stateName)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canTransitionToState(java.lang.String,boolean)" class="member-name-link">canTransitionToState</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;in_stateName,
- boolean&nbsp;in_allowSubState)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#childStateCount()" class="member-name-link">childStateCount</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearActionContextEvents()" class="member-name-link">clearActionContextEvents</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canTransitionToState(java.lang.String,boolean)" class="member-name-link">canTransitionToState</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;stateName,
+ boolean&nbsp;allowSubState)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearEvent(java.lang.String)" class="member-name-link">clearEvent</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;eventName)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearActionContextEvents()" class="member-name-link">clearActionContextEvents</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#foreachChildState(java.util.function.Consumer)" class="member-name-link">foreachChildState</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="ActionState.html" title="class in zombie.characters.action">ActionState</a>&gt;&nbsp;consumer)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearEvent(java.lang.String)" class="member-name-link">clearEvent</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;eventName)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="ActionState.html" title="class in zombie.characters.action">ActionState</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ActionState.html" title="class in zombie.characters.action">ActionState</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChildStateAt(int)" class="member-name-link">getChildStateAt</a><wbr>(int&nbsp;idx)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="ActionState.html" title="class in zombie.characters.action">ActionState</a>&gt;</code></div>
@@ -209,25 +197,19 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPreviousStateName()" class="member-name-link">getPreviousStateName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../core/skinnedmodel/advancedanimation/IAnimationVariableSlot.html" title="interface in zombie.core.skinnedmodel.advancedanimation">IAnimationVariableSlot</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVariable(zombie.core.skinnedmodel.advancedanimation.AnimationVariableHandle)" class="member-name-link">getVariable</a><wbr>(<a href="../../core/skinnedmodel/advancedanimation/AnimationVariableHandle.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimationVariableHandle</a>&nbsp;in_handle)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVariable(zombie.core.skinnedmodel.advancedanimation.AnimationVariableHandle)" class="member-name-link">getVariable</a><wbr>(<a href="../../core/skinnedmodel/advancedanimation/AnimationVariableHandle.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimationVariableHandle</a>&nbsp;handle)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasChildStates()" class="member-name-link">hasChildStates</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasEventOccurred(java.lang.String)" class="member-name-link">hasEventOccurred</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;eventName)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasEventOccurred(java.lang.String)" class="member-name-link">hasEventOccurred</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;eventName)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns TRUE if an event has occurred on any layer.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasEventOccurred(java.lang.String,java.lang.String)" class="member-name-link">hasEventOccurred</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;eventName,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;stateName)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasStateVariables()" class="member-name-link">hasStateVariables</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasEventOccurred(java.lang.String,java.lang.String)" class="member-name-link">hasEventOccurred</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;eventName,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;stateName)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#indexOfChildState(java.util.function.Predicate)" class="member-name-link">indexOfChildState</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="ActionState.html" title="class in zombie.characters.action">ActionState</a>&gt;&nbsp;predicate)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasStateVariables()" class="member-name-link">hasStateVariables</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logCurrentState()" class="member-name-link">logCurrentState</a>()</code></div>
@@ -236,26 +218,20 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#peekNextState()" class="member-name-link">peekNextState</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeChildStateAt(int)" class="member-name-link">removeChildStateAt</a><wbr>(int&nbsp;subStateIdx)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reportEvent(java.lang.String)" class="member-name-link">reportEvent</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;event)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reportEvent(java.lang.String)" class="member-name-link">reportEvent</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;event)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reportEvent(java.lang.String,java.lang.String)" class="member-name-link">reportEvent</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;state,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reportEvent(java.lang.String,java.lang.String)" class="member-name-link">reportEvent</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;state,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;event)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCurrentState(zombie.characters.action.ActionState)" class="member-name-link">setCurrentState</a><wbr>(<a href="ActionState.html" title="class in zombie.characters.action">ActionState</a>&nbsp;nextState)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setGroup(zombie.characters.action.ActionGroup)" class="member-name-link">setGroup</a><wbr>(<a href="ActionGroup.html" title="class in zombie.characters.action">ActionGroup</a>&nbsp;group)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCurrentState(zombie.characters.action.ActionState)" class="member-name-link">setCurrentState</a><wbr>(<a href="ActionState.html" title="class in zombie.characters.action">ActionState</a>&nbsp;nextState)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPlaybackStateSnapshot(zombie.characters.action.ActionStateSnapshot)" class="member-name-link">setPlaybackStateSnapshot</a><wbr>(<a href="ActionStateSnapshot.html" title="class in zombie.characters.action">ActionStateSnapshot</a>&nbsp;snapshot)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setGroup(zombie.characters.action.ActionGroup)" class="member-name-link">setGroup</a><wbr>(<a href="ActionGroup.html" title="class in zombie.characters.action">ActionGroup</a>&nbsp;group)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryInsertChildState(zombie.characters.action.ActionState)" class="member-name-link">tryInsertChildState</a><wbr>(<a href="ActionState.html" title="class in zombie.characters.action">ActionState</a>&nbsp;in_nextState)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPlaybackStateSnapshot(zombie.characters.action.ActionStateSnapshot)" class="member-name-link">setPlaybackStateSnapshot</a><wbr>(<a href="ActionStateSnapshot.html" title="class in zombie.characters.action">ActionStateSnapshot</a>&nbsp;snapshot)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
@@ -337,7 +313,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="canTransitionToState(java.lang.String)">
 <h3>canTransitionToState</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canTransitionToState</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;in_stateName)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canTransitionToState</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;stateName)</span></div>
 </div>
 </section>
 </li>
@@ -345,8 +321,8 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="canTransitionToState(java.lang.String,boolean)">
 <h3>canTransitionToState</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canTransitionToState</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;in_stateName,
- boolean&nbsp;in_allowSubState)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canTransitionToState</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;stateName,
+ boolean&nbsp;allowSubState)</span></div>
 </div>
 </section>
 </li>
@@ -370,23 +346,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="setCurrentState(zombie.characters.action.ActionState)">
 <h3>setCurrentState</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">setCurrentState</span><wbr><span class="parameters">(<a href="ActionState.html" title="class in zombie.characters.action">ActionState</a>&nbsp;nextState)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="tryInsertChildState(zombie.characters.action.ActionState)">
-<h3>tryInsertChildState</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">tryInsertChildState</span><wbr><span class="parameters">(<a href="ActionState.html" title="class in zombie.characters.action">ActionState</a>&nbsp;in_nextState)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="removeChildStateAt(int)">
-<h3>removeChildStateAt</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeChildStateAt</span><wbr><span class="parameters">(int&nbsp;subStateIdx)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCurrentState</span><wbr><span class="parameters">(<a href="ActionState.html" title="class in zombie.characters.action">ActionState</a>&nbsp;nextState)</span></div>
 </div>
 </section>
 </li>
@@ -448,42 +408,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="hasChildStates()">
-<h3>hasChildStates</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasChildStates</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="childStateCount()">
-<h3>childStateCount</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">childStateCount</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="foreachChildState(java.util.function.Consumer)">
-<h3>foreachChildState</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">foreachChildState</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="ActionState.html" title="class in zombie.characters.action">ActionState</a>&gt;&nbsp;consumer)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="indexOfChildState(java.util.function.Predicate)">
-<h3>indexOfChildState</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">indexOfChildState</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="ActionState.html" title="class in zombie.characters.action">ActionState</a>&gt;&nbsp;predicate)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="getChildStateAt(int)">
 <h3>getChildStateAt</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ActionState.html" title="class in zombie.characters.action">ActionState</a></span>&nbsp;<span class="element-name">getChildStateAt</span><wbr><span class="parameters">(int&nbsp;idx)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ActionState.html" title="class in zombie.characters.action">ActionState</a></span>&nbsp;<span class="element-name">getChildStateAt</span><wbr><span class="parameters">(int&nbsp;idx)</span></div>
 </div>
 </section>
 </li>
@@ -549,7 +477,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getVariable(zombie.core.skinnedmodel.advancedanimation.AnimationVariableHandle)">
 <h3>getVariable</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../core/skinnedmodel/advancedanimation/IAnimationVariableSlot.html" title="interface in zombie.core.skinnedmodel.advancedanimation">IAnimationVariableSlot</a></span>&nbsp;<span class="element-name">getVariable</span><wbr><span class="parameters">(<a href="../../core/skinnedmodel/advancedanimation/AnimationVariableHandle.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimationVariableHandle</a>&nbsp;in_handle)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../core/skinnedmodel/advancedanimation/IAnimationVariableSlot.html" title="interface in zombie.core.skinnedmodel.advancedanimation">IAnimationVariableSlot</a></span>&nbsp;<span class="element-name">getVariable</span><wbr><span class="parameters">(<a href="../../core/skinnedmodel/advancedanimation/AnimationVariableHandle.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimationVariableHandle</a>&nbsp;handle)</span></div>
 </div>
 </section>
 </li>

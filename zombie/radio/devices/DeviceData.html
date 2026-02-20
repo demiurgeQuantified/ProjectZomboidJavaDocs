@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -85,7 +85,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#setHasBattery(boolean)" tabindex="0">setHasBattery(boolean)</a></li>
 <li><a href="#addBattery(zombie.inventory.types.DrainableComboItem)" tabindex="0">addBattery(DrainableComboItem)</a></li>
 <li><a href="#getBattery(zombie.inventory.ItemContainer)" tabindex="0">getBattery(ItemContainer)</a></li>
-<li><a href="#transmitBattryChange()" tabindex="0">transmitBattryChange()</a></li>
+<li><a href="#transmitBatteryChange()" tabindex="0">transmitBatteryChange()</a></li>
+<li><a href="#transmitBatteryChangeServer()" tabindex="0">transmitBatteryChangeServer()</a></li>
 <li><a href="#addHeadphones(zombie.inventory.InventoryItem)" tabindex="0">addHeadphones(InventoryItem)</a></li>
 <li><a href="#getHeadphones(zombie.inventory.ItemContainer)" tabindex="0">getHeadphones(ItemContainer)</a></li>
 <li><a href="#getMicRange()" tabindex="0">getMicRange()</a></li>
@@ -258,7 +259,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBaseVolumeRange()" class="member-name-link">getBaseVolumeRange</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBattery(zombie.inventory.ItemContainer)" class="member-name-link">getBattery</a><wbr>(<a href="../../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;inventory)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
@@ -383,7 +384,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(java.nio.ByteBuffer,int,boolean)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;input,
- int&nbsp;WorldVersion,
+ int&nbsp;worldVersion,
  boolean&nbsp;net)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -403,7 +404,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#receiveDeviceDataStatePacket(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" class="member-name-link">receiveDeviceDataStatePacket</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
  <a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;ignoreConnection)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeMediaItem(zombie.inventory.ItemContainer)" class="member-name-link">removeMediaItem</a><wbr>(<a href="../../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;inventory)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -521,28 +522,31 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#StopPlayMedia()" class="member-name-link">StopPlayMedia</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#transmitBattryChange()" class="member-name-link">transmitBattryChange</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#transmitBatteryChange()" class="member-name-link">transmitBatteryChange</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#transmitPresets()" class="member-name-link">transmitPresets</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#transmitBatteryChangeServer()" class="member-name-link">transmitBatteryChangeServer</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#TriggerPlayerListening(boolean)" class="member-name-link">TriggerPlayerListening</a><wbr>(boolean&nbsp;listening)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#transmitPresets()" class="member-name-link">transmitPresets</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(boolean,boolean)" class="member-name-link">update</a><wbr>(boolean&nbsp;isIso,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#TriggerPlayerListening(boolean)" class="member-name-link">TriggerPlayerListening</a><wbr>(boolean&nbsp;listening)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(boolean,boolean)" class="member-name-link">update</a><wbr>(boolean&nbsp;isIso,
  boolean&nbsp;playerInRange)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateEvent(long,zombie.audio.GameSoundClip)" class="member-name-link">updateEvent</a><wbr>(long&nbsp;eventInstance,
- <a href="../../audio/GameSoundClip.html" title="class in zombie.audio">GameSoundClip</a>&nbsp;clip)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateMediaPlaying()" class="member-name-link">updateMediaPlaying</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateEvent(long,zombie.audio.GameSoundClip)" class="member-name-link">updateEvent</a><wbr>(long&nbsp;eventInstance,
+ <a href="../../audio/GameSoundClip.html" title="class in zombie.audio">GameSoundClip</a>&nbsp;clip)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateSimple()" class="member-name-link">updateSimple</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateMediaPlaying()" class="member-name-link">updateMediaPlaying</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateSimple()" class="member-name-link">updateSimple</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -737,15 +741,23 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <section class="detail" id="getBattery(zombie.inventory.ItemContainer)">
 <h3>getBattery</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a></span>&nbsp;<span class="element-name">getBattery</span><wbr><span class="parameters">(<a href="../../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;inventory)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">getBattery</span><wbr><span class="parameters">(<a href="../../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;inventory)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="transmitBattryChange()">
-<h3>transmitBattryChange</h3>
+<section class="detail" id="transmitBatteryChange()">
+<h3>transmitBatteryChange</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">transmitBattryChange</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">transmitBatteryChange</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="transmitBatteryChangeServer()">
+<h3>transmitBatteryChangeServer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">transmitBatteryChangeServer</span>()</div>
 </div>
 </section>
 </li>
@@ -1260,7 +1272,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <h3>load</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;input,
- int&nbsp;WorldVersion,
+ int&nbsp;worldVersion,
  boolean&nbsp;net)</span>
           throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <dl class="notes">
@@ -1322,7 +1334,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <section class="detail" id="removeMediaItem(zombie.inventory.ItemContainer)">
 <h3>removeMediaItem</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a></span>&nbsp;<span class="element-name">removeMediaItem</span><wbr><span class="parameters">(<a href="../../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;inventory)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeMediaItem</span><wbr><span class="parameters">(<a href="../../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;inventory)</span></div>
 </div>
 </section>
 </li>

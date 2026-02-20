@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#use">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -331,9 +331,11 @@ loadScripts(document, 'script');</script>
  int&nbsp;bufferId)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ModelManager.</span><code><a href="../../skinnedmodel/ModelManager.html#RenderWater(zombie.core.textures.TextureDraw,int,int,boolean)" class="member-name-link">RenderWater</a><wbr>(<a href="../TextureDraw.html" title="class in zombie.core.textures">TextureDraw</a>&nbsp;texd,
+<div class="col-second even-row-color"><span class="type-name-label">ModelManager.</span><code><a href="../../skinnedmodel/ModelManager.html#RenderWater(zombie.core.textures.TextureDraw,int,int,int,int,boolean)" class="member-name-link">RenderWater</a><wbr>(<a href="../TextureDraw.html" title="class in zombie.core.textures">TextureDraw</a>&nbsp;texd,
  int&nbsp;shaderID,
- int&nbsp;userId,
+ int&nbsp;playerIndex,
+ int&nbsp;firstSquare,
+ int&nbsp;numSquares,
  boolean&nbsp;bShore)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
@@ -848,10 +850,11 @@ loadScripts(document, 'script');</script>
  int&nbsp;bufferId)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">TextureDraw.</span><code><a href="../TextureDraw.html#drawWater(zombie.core.textures.TextureDraw,zombie.core.opengl.Shader,int,int,boolean)" class="member-name-link">drawWater</a><wbr>(<a href="../TextureDraw.html" title="class in zombie.core.textures">TextureDraw</a>&nbsp;texd,
+<div class="col-second odd-row-color"><span class="type-name-label">TextureDraw.</span><code><a href="../TextureDraw.html#drawWater(zombie.core.textures.TextureDraw,zombie.core.opengl.Shader,int,int,int,boolean)" class="member-name-link">drawWater</a><wbr>(<a href="../TextureDraw.html" title="class in zombie.core.textures">TextureDraw</a>&nbsp;texd,
  <a href="../../opengl/Shader.html" title="class in zombie.core.opengl">Shader</a>&nbsp;shader,
- int&nbsp;userId,
- int&nbsp;apiId,
+ int&nbsp;playerIndex,
+ int&nbsp;firstSquare,
+ int&nbsp;numSquares,
  boolean&nbsp;bShore)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
@@ -1272,16 +1275,16 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>void</code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">FireShader.</span><code><a href="../../../iso/FireShader.html#updateFireParams(zombie.core.textures.TextureDraw,int,float)" class="member-name-link">updateFireParams</a><wbr>(<a href="../TextureDraw.html" title="class in zombie.core.textures">TextureDraw</a>&nbsp;texd,
  int&nbsp;userId,
- float&nbsp;in_firetime)</code></div>
+ float&nbsp;firetime)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">SmokeShader.</span><code><a href="../../../iso/SmokeShader.html#updateSmokeParams(zombie.core.textures.TextureDraw,int,float)" class="member-name-link">updateSmokeParams</a><wbr>(<a href="../TextureDraw.html" title="class in zombie.core.textures">TextureDraw</a>&nbsp;texd,
  int&nbsp;userId,
- float&nbsp;in_firetime)</code></div>
+ float&nbsp;firetime)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">WaterShader.</span><code><a href="../../../iso/WaterShader.html#updateWaterParams(zombie.core.textures.TextureDraw,int)" class="member-name-link">updateWaterParams</a><wbr>(<a href="../TextureDraw.html" title="class in zombie.core.textures">TextureDraw</a>&nbsp;texd,
- int&nbsp;userId)</code></div>
+ int&nbsp;playerIndex)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Method parameters in <a href="../../../iso/package-summary.html">zombie.iso</a> with type arguments of type <a href="../TextureDraw.html" title="class in zombie.core.textures">TextureDraw</a></span></div>
@@ -1443,7 +1446,7 @@ loadScripts(document, 'script');</script>
  float&nbsp;sy,
  <a href="../../../iso/IsoDirections.html" title="enum class in zombie.iso">IsoDirections</a>&nbsp;dir,
  <a href="../ColorInfo.html" title="class in zombie.core.textures">ColorInfo</a>&nbsp;info,
- boolean&nbsp;Flip,
+ boolean&nbsp;flip,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../TextureDraw.html" title="class in zombie.core.textures">TextureDraw</a>&gt;&nbsp;texdModifier)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final void</code></div>
@@ -1676,6 +1679,13 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>void</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">WeatherShader.</span><code><a href="../../../iso/weather/WeatherShader.html#startRenderThread(zombie.core.textures.TextureDraw)" class="member-name-link">startRenderThread</a><wbr>(<a href="../TextureDraw.html" title="class in zombie.core.textures">TextureDraw</a>&nbsp;texd)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">WeatherShader.</span><code><a href="../../../iso/weather/WeatherShader.html#startThumbnail(zombie.core.textures.TextureDraw,int,int,int,float)" class="member-name-link">startThumbnail</a><wbr>(<a href="../TextureDraw.html" title="class in zombie.core.textures">TextureDraw</a>&nbsp;texd,
+ int&nbsp;playerIndex,
+ int&nbsp;thumbWidth,
+ int&nbsp;thumbHeight,
+ float&nbsp;zoom)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>

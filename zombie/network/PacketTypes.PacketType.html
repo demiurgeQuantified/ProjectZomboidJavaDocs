@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -87,6 +87,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#Equip" tabindex="0">Equip</a></li>
 <li><a href="#AddXP" tabindex="0">AddXP</a></li>
 <li><a href="#AddXPMultiplier" tabindex="0">AddXPMultiplier</a></li>
+<li><a href="#HaloText" tabindex="0">HaloText</a></li>
 <li><a href="#PlayerDeath" tabindex="0">PlayerDeath</a></li>
 <li><a href="#ChangeSafety" tabindex="0">ChangeSafety</a></li>
 <li><a href="#BodyDamageUpdate" tabindex="0">BodyDamageUpdate</a></li>
@@ -96,6 +97,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#SyncPlayerFields" tabindex="0">SyncPlayerFields</a></li>
 <li><a href="#ForageItemFound" tabindex="0">ForageItemFound</a></li>
 <li><a href="#PlayerDropHeldItems" tabindex="0">PlayerDropHeldItems</a></li>
+<li><a href="#ClothingWetness" tabindex="0">ClothingWetness</a></li>
 <li><a href="#ServerMap" tabindex="0">ServerMap</a></li>
 <li><a href="#RequestLargeAreaZip" tabindex="0">RequestLargeAreaZip</a></li>
 <li><a href="#SentChunk" tabindex="0">SentChunk</a></li>
@@ -193,8 +195,11 @@ loadScripts(document, 'script');</script>
 <li><a href="#SledgehammerDestroy" tabindex="0">SledgehammerDestroy</a></li>
 <li><a href="#SyncPlayerAlarmClock" tabindex="0">SyncPlayerAlarmClock</a></li>
 <li><a href="#SyncWorldAlarmClock" tabindex="0">SyncWorldAlarmClock</a></li>
+<li><a href="#SyncExtendedPlacement" tabindex="0">SyncExtendedPlacement</a></li>
+<li><a href="#SyncItemActivated" tabindex="0">SyncItemActivated</a></li>
 <li><a href="#GlobalObjects" tabindex="0">GlobalObjects</a></li>
 <li><a href="#ReceiveModData" tabindex="0">ReceiveModData</a></li>
+<li><a href="#ReceiveContainerModData" tabindex="0">ReceiveContainerModData</a></li>
 <li><a href="#GlobalModData" tabindex="0">GlobalModData</a></li>
 <li><a href="#GlobalModDataRequest" tabindex="0">GlobalModDataRequest</a></li>
 <li><a href="#SyncItemFields" tabindex="0">SyncItemFields</a></li>
@@ -213,12 +218,14 @@ loadScripts(document, 'script');</script>
 <li><a href="#ZombieHitThumpable" tabindex="0">ZombieHitThumpable</a></li>
 <li><a href="#VehicleHitZombie" tabindex="0">VehicleHitZombie</a></li>
 <li><a href="#VehicleHitPlayer" tabindex="0">VehicleHitPlayer</a></li>
+<li><a href="#VehicleHitAnimal" tabindex="0">VehicleHitAnimal</a></li>
 <li><a href="#PlayerDamage" tabindex="0">PlayerDamage</a></li>
 <li><a href="#PlayerStats" tabindex="0">PlayerStats</a></li>
 <li><a href="#PlayerHealth" tabindex="0">PlayerHealth</a></li>
 <li><a href="#PlayerInjuries" tabindex="0">PlayerInjuries</a></li>
 <li><a href="#PlayerEffects" tabindex="0">PlayerEffects</a></li>
 <li><a href="#PlayerXp" tabindex="0">PlayerXp</a></li>
+<li><a href="#AttackCollisionCheckPacket" tabindex="0">AttackCollisionCheckPacket</a></li>
 <li><a href="#PlaySound" tabindex="0">PlaySound</a></li>
 <li><a href="#WorldSoundPacket" tabindex="0">WorldSoundPacket</a></li>
 <li><a href="#AddAmbient" tabindex="0">AddAmbient</a></li>
@@ -250,7 +257,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#SyncCompost" tabindex="0">SyncCompost</a></li>
 <li><a href="#GetModData" tabindex="0">GetModData</a></li>
 <li><a href="#SyncPerks" tabindex="0">SyncPerks</a></li>
-<li><a href="#SyncWeight" tabindex="0">SyncWeight</a></li>
 <li><a href="#SyncEquippedRadioFreq" tabindex="0">SyncEquippedRadioFreq</a></li>
 <li><a href="#UpdateOverlaySprite" tabindex="0">UpdateOverlaySprite</a></li>
 <li><a href="#AddAlarm" tabindex="0">AddAlarm</a></li>
@@ -334,6 +340,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#DebugStory" tabindex="0">DebugStory</a></li>
 <li><a href="#SendItemListNet" tabindex="0">SendItemListNet</a></li>
 <li><a href="#GameEntity" tabindex="0">GameEntity</a></li>
+<li><a href="#SyncEntityResource" tabindex="0">SyncEntityResource</a></li>
 </ol>
 </li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
@@ -350,7 +357,7 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#values()" tabindex="0">values()</a></li>
 <li><a href="#valueOf(java.lang.String)" tabindex="0">valueOf(String)</a></li>
-<li><a href="#send(zombie.core.raknet.UdpConnection)" tabindex="0">send(UdpConnection)</a></li>
+<li><a href="#send(zombie.network.IConnection)" tabindex="0">send(IConnection)</a></li>
 <li><a href="#doPacket(zombie.core.network.ByteBufferWriter)" tabindex="0">doPacket(ByteBufferWriter)</a></li>
 <li><a href="#getId()" tabindex="0">getId()</a></li>
 <li><a href="#onServerPacket(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" tabindex="0">onServerPacket(ByteBuffer, UdpConnection)</a></li>
@@ -465,35 +472,39 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="#AnimalUpdateUnreliable" class="member-name-link">AnimalUpdateUnreliable</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#BanUnbanUserAction" class="member-name-link">BanUnbanUserAction</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#AttackCollisionCheckPacket" class="member-name-link">AttackCollisionCheckPacket</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#BloodSplatter" class="member-name-link">BloodSplatter</a></code></div>
+<div class="col-first even-row-color"><code><a href="#BanUnbanUserAction" class="member-name-link">BanUnbanUserAction</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#BodyDamageUpdate" class="member-name-link">BodyDamageUpdate</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#BloodSplatter" class="member-name-link">BloodSplatter</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#BodyPartSync" class="member-name-link">BodyPartSync</a></code></div>
+<div class="col-first even-row-color"><code><a href="#BodyDamageUpdate" class="member-name-link">BodyDamageUpdate</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#BuildAction" class="member-name-link">BuildAction</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#BodyPartSync" class="member-name-link">BodyPartSync</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#BurnCorpse" class="member-name-link">BurnCorpse</a></code></div>
+<div class="col-first even-row-color"><code><a href="#BuildAction" class="member-name-link">BuildAction</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#ChangePlayerStats" class="member-name-link">ChangePlayerStats</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#BurnCorpse" class="member-name-link">BurnCorpse</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#ChangeSafety" class="member-name-link">ChangeSafety</a></code></div>
+<div class="col-first even-row-color"><code><a href="#ChangePlayerStats" class="member-name-link">ChangePlayerStats</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#ChangeTextColor" class="member-name-link">ChangeTextColor</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#ChangeSafety" class="member-name-link">ChangeSafety</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#ChatMessageFromPlayer" class="member-name-link">ChatMessageFromPlayer</a></code></div>
+<div class="col-first even-row-color"><code><a href="#ChangeTextColor" class="member-name-link">ChangeTextColor</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#ChatMessageToPlayer" class="member-name-link">ChatMessageToPlayer</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#ChatMessageFromPlayer" class="member-name-link">ChatMessageFromPlayer</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#Checksum" class="member-name-link">Checksum</a></code></div>
+<div class="col-first even-row-color"><code><a href="#ChatMessageToPlayer" class="member-name-link">ChatMessageToPlayer</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#ChunkObjectState" class="member-name-link">ChunkObjectState</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#Checksum" class="member-name-link">Checksum</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#ClientCommand" class="member-name-link">ClientCommand</a></code></div>
+<div class="col-first even-row-color"><code><a href="#ChunkObjectState" class="member-name-link">ChunkObjectState</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#ClimateManagerPacket" class="member-name-link">ClimateManagerPacket</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#ClientCommand" class="member-name-link">ClientCommand</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="#ClimateManagerPacket" class="member-name-link">ClimateManagerPacket</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="#ClothingWetness" class="member-name-link">ClothingWetness</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="#ConnectCoop" class="member-name-link">ConnectCoop</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -543,129 +554,133 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="#GoogleAuthRequest" class="member-name-link">GoogleAuthRequest</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#Helicopter" class="member-name-link">Helicopter</a></code></div>
+<div class="col-first even-row-color"><code><a href="#HaloText" class="member-name-link">HaloText</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#HumanVisual" class="member-name-link">HumanVisual</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#Helicopter" class="member-name-link">Helicopter</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#InitPlayerChat" class="member-name-link">InitPlayerChat</a></code></div>
+<div class="col-first even-row-color"><code><a href="#HumanVisual" class="member-name-link">HumanVisual</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#InvMngGetItem" class="member-name-link">InvMngGetItem</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#InitPlayerChat" class="member-name-link">InitPlayerChat</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#InvMngRemoveItem" class="member-name-link">InvMngRemoveItem</a></code></div>
+<div class="col-first even-row-color"><code><a href="#InvMngGetItem" class="member-name-link">InvMngGetItem</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#InvMngReqItem" class="member-name-link">InvMngReqItem</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#InvMngRemoveItem" class="member-name-link">InvMngRemoveItem</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#InvMngUpdateItem" class="member-name-link">InvMngUpdateItem</a></code></div>
+<div class="col-first even-row-color"><code><a href="#InvMngReqItem" class="member-name-link">InvMngReqItem</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#IsoRegionClientRequestFullUpdate" class="member-name-link">IsoRegionClientRequestFullUpdate</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#InvMngUpdateItem" class="member-name-link">InvMngUpdateItem</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#IsoRegionServerPacket" class="member-name-link">IsoRegionServerPacket</a></code></div>
+<div class="col-first even-row-color"><code><a href="#IsoRegionClientRequestFullUpdate" class="member-name-link">IsoRegionClientRequestFullUpdate</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#ItemStats" class="member-name-link">ItemStats</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#IsoRegionServerPacket" class="member-name-link">IsoRegionServerPacket</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#ItemTransaction" class="member-name-link">ItemTransaction</a></code></div>
+<div class="col-first even-row-color"><code><a href="#ItemStats" class="member-name-link">ItemStats</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#Kicked" class="member-name-link">Kicked</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#ItemTransaction" class="member-name-link">ItemTransaction</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#LoadPlayerProfile" class="member-name-link">LoadPlayerProfile</a></code></div>
+<div class="col-first even-row-color"><code><a href="#Kicked" class="member-name-link">Kicked</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#Login" class="member-name-link">Login</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#LoadPlayerProfile" class="member-name-link">LoadPlayerProfile</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#LoginQueueDone" class="member-name-link">LoginQueueDone</a></code></div>
+<div class="col-first even-row-color"><code><a href="#Login" class="member-name-link">Login</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#LoginQueueRequest" class="member-name-link">LoginQueueRequest</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#LoginQueueDone" class="member-name-link">LoginQueueDone</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#MessageForAdmin" class="member-name-link">MessageForAdmin</a></code></div>
+<div class="col-first even-row-color"><code><a href="#LoginQueueRequest" class="member-name-link">LoginQueueRequest</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#MetaData" class="member-name-link">MetaData</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#MessageForAdmin" class="member-name-link">MessageForAdmin</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#MetaGrid" class="member-name-link">MetaGrid</a></code></div>
+<div class="col-first even-row-color"><code><a href="#MetaData" class="member-name-link">MetaData</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#NetTimedAction" class="member-name-link">NetTimedAction</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#MetaGrid" class="member-name-link">MetaGrid</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#NetworkUserAction" class="member-name-link">NetworkUserAction</a></code></div>
+<div class="col-first even-row-color"><code><a href="#NetTimedAction" class="member-name-link">NetTimedAction</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#NetworkUsers" class="member-name-link">NetworkUsers</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#NetworkUserAction" class="member-name-link">NetworkUserAction</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#NotRequiredInZip" class="member-name-link">NotRequiredInZip</a></code></div>
+<div class="col-first even-row-color"><code><a href="#NetworkUsers" class="member-name-link">NetworkUsers</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#ObjectChange" class="member-name-link">ObjectChange</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#NotRequiredInZip" class="member-name-link">NotRequiredInZip</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#ObjectModData" class="member-name-link">ObjectModData</a></code></div>
+<div class="col-first even-row-color"><code><a href="#ObjectChange" class="member-name-link">ObjectChange</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#Ping" class="member-name-link">Ping</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#ObjectModData" class="member-name-link">ObjectModData</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#PlayerConnect" class="member-name-link">PlayerConnect</a></code></div>
+<div class="col-first even-row-color"><code><a href="#Ping" class="member-name-link">Ping</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#PlayerConnectedToChat" class="member-name-link">PlayerConnectedToChat</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#PlayerConnect" class="member-name-link">PlayerConnect</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#PlayerDamage" class="member-name-link">PlayerDamage</a></code></div>
+<div class="col-first even-row-color"><code><a href="#PlayerConnectedToChat" class="member-name-link">PlayerConnectedToChat</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#PlayerDataRequest" class="member-name-link">PlayerDataRequest</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#PlayerDamage" class="member-name-link">PlayerDamage</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#PlayerDeath" class="member-name-link">PlayerDeath</a></code></div>
+<div class="col-first even-row-color"><code><a href="#PlayerDataRequest" class="member-name-link">PlayerDataRequest</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#PlayerDropHeldItems" class="member-name-link">PlayerDropHeldItems</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#PlayerDeath" class="member-name-link">PlayerDeath</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#PlayerEffects" class="member-name-link">PlayerEffects</a></code></div>
+<div class="col-first even-row-color"><code><a href="#PlayerDropHeldItems" class="member-name-link">PlayerDropHeldItems</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#PlayerHealth" class="member-name-link">PlayerHealth</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#PlayerEffects" class="member-name-link">PlayerEffects</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#PlayerHitAnimal" class="member-name-link">PlayerHitAnimal</a></code></div>
+<div class="col-first even-row-color"><code><a href="#PlayerHealth" class="member-name-link">PlayerHealth</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#PlayerHitObject" class="member-name-link">PlayerHitObject</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#PlayerHitAnimal" class="member-name-link">PlayerHitAnimal</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#PlayerHitPlayer" class="member-name-link">PlayerHitPlayer</a></code></div>
+<div class="col-first even-row-color"><code><a href="#PlayerHitObject" class="member-name-link">PlayerHitObject</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#PlayerHitSquare" class="member-name-link">PlayerHitSquare</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#PlayerHitPlayer" class="member-name-link">PlayerHitPlayer</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#PlayerHitVehicle" class="member-name-link">PlayerHitVehicle</a></code></div>
+<div class="col-first even-row-color"><code><a href="#PlayerHitSquare" class="member-name-link">PlayerHitSquare</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#PlayerHitZombie" class="member-name-link">PlayerHitZombie</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#PlayerHitVehicle" class="member-name-link">PlayerHitVehicle</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#PlayerInjuries" class="member-name-link">PlayerInjuries</a></code></div>
+<div class="col-first even-row-color"><code><a href="#PlayerHitZombie" class="member-name-link">PlayerHitZombie</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#PlayerInventory" class="member-name-link">PlayerInventory</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#PlayerInjuries" class="member-name-link">PlayerInjuries</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#PlayerJoinChat" class="member-name-link">PlayerJoinChat</a></code></div>
+<div class="col-first even-row-color"><code><a href="#PlayerInventory" class="member-name-link">PlayerInventory</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#PlayerLeaveChat" class="member-name-link">PlayerLeaveChat</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#PlayerJoinChat" class="member-name-link">PlayerJoinChat</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#PlayerListensChannel" class="member-name-link">PlayerListensChannel</a></code></div>
+<div class="col-first even-row-color"><code><a href="#PlayerLeaveChat" class="member-name-link">PlayerLeaveChat</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#PlayerNotFound" class="member-name-link">PlayerNotFound</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#PlayerListensChannel" class="member-name-link">PlayerListensChannel</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#PlayerStartPMChat" class="member-name-link">PlayerStartPMChat</a></code></div>
+<div class="col-first even-row-color"><code><a href="#PlayerNotFound" class="member-name-link">PlayerNotFound</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#PlayerStats" class="member-name-link">PlayerStats</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#PlayerStartPMChat" class="member-name-link">PlayerStartPMChat</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#PlayerTimeout" class="member-name-link">PlayerTimeout</a></code></div>
+<div class="col-first even-row-color"><code><a href="#PlayerStats" class="member-name-link">PlayerStats</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#PlayerUpdateReliable" class="member-name-link">PlayerUpdateReliable</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#PlayerTimeout" class="member-name-link">PlayerTimeout</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#PlayerUpdateUnreliable" class="member-name-link">PlayerUpdateUnreliable</a></code></div>
+<div class="col-first even-row-color"><code><a href="#PlayerUpdateReliable" class="member-name-link">PlayerUpdateReliable</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#PlayerXp" class="member-name-link">PlayerXp</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#PlayerUpdateUnreliable" class="member-name-link">PlayerUpdateUnreliable</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#PlaySound" class="member-name-link">PlaySound</a></code></div>
+<div class="col-first even-row-color"><code><a href="#PlayerXp" class="member-name-link">PlayerXp</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#PlaySoundEveryPlayer" class="member-name-link">PlaySoundEveryPlayer</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#PlaySound" class="member-name-link">PlaySound</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#PlayWorldSound" class="member-name-link">PlayWorldSound</a></code></div>
+<div class="col-first even-row-color"><code><a href="#PlaySoundEveryPlayer" class="member-name-link">PlaySoundEveryPlayer</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#PopmanDebugCommand" class="member-name-link">PopmanDebugCommand</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#PlayWorldSound" class="member-name-link">PlayWorldSound</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#PVPEvents" class="member-name-link">PVPEvents</a></code></div>
+<div class="col-first even-row-color"><code><a href="#PopmanDebugCommand" class="member-name-link">PopmanDebugCommand</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#RadioDeviceDataState" class="member-name-link">RadioDeviceDataState</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#PVPEvents" class="member-name-link">PVPEvents</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#RadioPostSilenceEvent" class="member-name-link">RadioPostSilenceEvent</a></code></div>
+<div class="col-first even-row-color"><code><a href="#RadioDeviceDataState" class="member-name-link">RadioDeviceDataState</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#RadioServerData" class="member-name-link">RadioServerData</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#RadioPostSilenceEvent" class="member-name-link">RadioPostSilenceEvent</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#ReadAnnotedMap" class="member-name-link">ReadAnnotedMap</a></code></div>
+<div class="col-first even-row-color"><code><a href="#RadioServerData" class="member-name-link">RadioServerData</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#ReceiveCommand" class="member-name-link">ReceiveCommand</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#ReadAnnotedMap" class="member-name-link">ReadAnnotedMap</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="#ReceiveCommand" class="member-name-link">ReceiveCommand</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="#ReceiveContainerModData" class="member-name-link">ReceiveContainerModData</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="#ReceiveModData" class="member-name-link">ReceiveModData</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -795,7 +810,11 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="#SyncDoorKey" class="member-name-link">SyncDoorKey</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#SyncEquippedRadioFreq" class="member-name-link">SyncEquippedRadioFreq</a></code></div>
+<div class="col-first even-row-color"><code><a href="#SyncEntityResource" class="member-name-link">SyncEntityResource</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="#SyncEquippedRadioFreq" class="member-name-link">SyncEquippedRadioFreq</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="#SyncExtendedPlacement" class="member-name-link">SyncExtendedPlacement</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="#SyncFaction" class="member-name-link">SyncFaction</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
@@ -803,29 +822,29 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="#SyncIsoObject" class="member-name-link">SyncIsoObject</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#SyncItemDelete" class="member-name-link">SyncItemDelete</a></code></div>
+<div class="col-first even-row-color"><code><a href="#SyncItemActivated" class="member-name-link">SyncItemActivated</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#SyncItemFields" class="member-name-link">SyncItemFields</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#SyncItemDelete" class="member-name-link">SyncItemDelete</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#SyncItemModData" class="member-name-link">SyncItemModData</a></code></div>
+<div class="col-first even-row-color"><code><a href="#SyncItemFields" class="member-name-link">SyncItemFields</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#SyncNonPvpZone" class="member-name-link">SyncNonPvpZone</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#SyncItemModData" class="member-name-link">SyncItemModData</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#SyncPerks" class="member-name-link">SyncPerks</a></code></div>
+<div class="col-first even-row-color"><code><a href="#SyncNonPvpZone" class="member-name-link">SyncNonPvpZone</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#SyncPlayerAlarmClock" class="member-name-link">SyncPlayerAlarmClock</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#SyncPerks" class="member-name-link">SyncPerks</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#SyncPlayerFields" class="member-name-link">SyncPlayerFields</a></code></div>
+<div class="col-first even-row-color"><code><a href="#SyncPlayerAlarmClock" class="member-name-link">SyncPlayerAlarmClock</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#SyncPlayerStats" class="member-name-link">SyncPlayerStats</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#SyncPlayerFields" class="member-name-link">SyncPlayerFields</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#SyncRadioData" class="member-name-link">SyncRadioData</a></code></div>
+<div class="col-first even-row-color"><code><a href="#SyncPlayerStats" class="member-name-link">SyncPlayerStats</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#SyncThumpable" class="member-name-link">SyncThumpable</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#SyncRadioData" class="member-name-link">SyncRadioData</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#SyncVisuals" class="member-name-link">SyncVisuals</a></code></div>
+<div class="col-first even-row-color"><code><a href="#SyncThumpable" class="member-name-link">SyncThumpable</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#SyncWeight" class="member-name-link">SyncWeight</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#SyncVisuals" class="member-name-link">SyncVisuals</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="#SyncWorldAlarmClock" class="member-name-link">SyncWorldAlarmClock</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -865,90 +884,92 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="#VehicleFullUpdate" class="member-name-link">VehicleFullUpdate</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#VehicleHitPlayer" class="member-name-link">VehicleHitPlayer</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#VehicleHitAnimal" class="member-name-link">VehicleHitAnimal</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#VehicleHitZombie" class="member-name-link">VehicleHitZombie</a></code></div>
+<div class="col-first even-row-color"><code><a href="#VehicleHitPlayer" class="member-name-link">VehicleHitPlayer</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#VehiclePassengerPosition" class="member-name-link">VehiclePassengerPosition</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#VehicleHitZombie" class="member-name-link">VehicleHitZombie</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#VehiclePassengerRequest" class="member-name-link">VehiclePassengerRequest</a></code></div>
+<div class="col-first even-row-color"><code><a href="#VehiclePassengerPosition" class="member-name-link">VehiclePassengerPosition</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#VehiclePassengerResponse" class="member-name-link">VehiclePassengerResponse</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#VehiclePassengerRequest" class="member-name-link">VehiclePassengerRequest</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#VehiclePhysicsReliable" class="member-name-link">VehiclePhysicsReliable</a></code></div>
+<div class="col-first even-row-color"><code><a href="#VehiclePassengerResponse" class="member-name-link">VehiclePassengerResponse</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#VehiclePhysicsUnreliable" class="member-name-link">VehiclePhysicsUnreliable</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#VehiclePhysicsReliable" class="member-name-link">VehiclePhysicsReliable</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#VehicleRemove" class="member-name-link">VehicleRemove</a></code></div>
+<div class="col-first even-row-color"><code><a href="#VehiclePhysicsUnreliable" class="member-name-link">VehiclePhysicsUnreliable</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#VehicleRequest" class="member-name-link">VehicleRequest</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#VehicleRemove" class="member-name-link">VehicleRemove</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#VehicleSwitchSeat" class="member-name-link">VehicleSwitchSeat</a></code></div>
+<div class="col-first even-row-color"><code><a href="#VehicleRequest" class="member-name-link">VehicleRequest</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#VehicleTowingAttach" class="member-name-link">VehicleTowingAttach</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#VehicleSwitchSeat" class="member-name-link">VehicleSwitchSeat</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#VehicleTowingDetach" class="member-name-link">VehicleTowingDetach</a></code></div>
+<div class="col-first even-row-color"><code><a href="#VehicleTowingAttach" class="member-name-link">VehicleTowingAttach</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#VehicleTowingState" class="member-name-link">VehicleTowingState</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#VehicleTowingDetach" class="member-name-link">VehicleTowingDetach</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#VehicleUpdate" class="member-name-link">VehicleUpdate</a></code></div>
+<div class="col-first even-row-color"><code><a href="#VehicleTowingState" class="member-name-link">VehicleTowingState</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#ViewBannedIPs" class="member-name-link">ViewBannedIPs</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#VehicleUpdate" class="member-name-link">VehicleUpdate</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#ViewBannedSteamIDs" class="member-name-link">ViewBannedSteamIDs</a></code></div>
+<div class="col-first even-row-color"><code><a href="#ViewBannedIPs" class="member-name-link">ViewBannedIPs</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#ViewedTicket" class="member-name-link">ViewedTicket</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#ViewBannedSteamIDs" class="member-name-link">ViewBannedSteamIDs</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#ViewTickets" class="member-name-link">ViewTickets</a></code></div>
+<div class="col-first even-row-color"><code><a href="#ViewedTicket" class="member-name-link">ViewedTicket</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#WakeUpPlayer" class="member-name-link">WakeUpPlayer</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#ViewTickets" class="member-name-link">ViewTickets</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#WarStateSync" class="member-name-link">WarStateSync</a></code></div>
+<div class="col-first even-row-color"><code><a href="#WakeUpPlayer" class="member-name-link">WakeUpPlayer</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#WarSync" class="member-name-link">WarSync</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#WarStateSync" class="member-name-link">WarStateSync</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#WaveSignal" class="member-name-link">WaveSignal</a></code></div>
+<div class="col-first even-row-color"><code><a href="#WarSync" class="member-name-link">WarSync</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#Weather" class="member-name-link">Weather</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#WaveSignal" class="member-name-link">WaveSignal</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#WorldMap" class="member-name-link">WorldMap</a></code></div>
+<div class="col-first even-row-color"><code><a href="#Weather" class="member-name-link">Weather</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#WorldMapPlayerPosition" class="member-name-link">WorldMapPlayerPosition</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#WorldMap" class="member-name-link">WorldMap</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#WorldMessage" class="member-name-link">WorldMessage</a></code></div>
+<div class="col-first even-row-color"><code><a href="#WorldMapPlayerPosition" class="member-name-link">WorldMapPlayerPosition</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#WorldSoundPacket" class="member-name-link">WorldSoundPacket</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#WorldMessage" class="member-name-link">WorldMessage</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#ZombieControl" class="member-name-link">ZombieControl</a></code></div>
+<div class="col-first even-row-color"><code><a href="#WorldSoundPacket" class="member-name-link">WorldSoundPacket</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#ZombieDeath" class="member-name-link">ZombieDeath</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#ZombieControl" class="member-name-link">ZombieControl</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#ZombieDelete" class="member-name-link">ZombieDelete</a></code></div>
+<div class="col-first even-row-color"><code><a href="#ZombieDeath" class="member-name-link">ZombieDeath</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#ZombieDeleteOnClient" class="member-name-link">ZombieDeleteOnClient</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#ZombieDelete" class="member-name-link">ZombieDelete</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#ZombieDescriptors" class="member-name-link">ZombieDescriptors</a></code></div>
+<div class="col-first even-row-color"><code><a href="#ZombieDeleteOnClient" class="member-name-link">ZombieDeleteOnClient</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#ZombieHelmetFalling" class="member-name-link">ZombieHelmetFalling</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#ZombieDescriptors" class="member-name-link">ZombieDescriptors</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#ZombieHitPlayer" class="member-name-link">ZombieHitPlayer</a></code></div>
+<div class="col-first even-row-color"><code><a href="#ZombieHelmetFalling" class="member-name-link">ZombieHelmetFalling</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#ZombieHitThumpable" class="member-name-link">ZombieHitThumpable</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#ZombieHitPlayer" class="member-name-link">ZombieHitPlayer</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#ZombieList" class="member-name-link">ZombieList</a></code></div>
+<div class="col-first even-row-color"><code><a href="#ZombieHitThumpable" class="member-name-link">ZombieHitThumpable</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#ZombieRequest" class="member-name-link">ZombieRequest</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#ZombieList" class="member-name-link">ZombieList</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#ZombieSimulationReliable" class="member-name-link">ZombieSimulationReliable</a></code></div>
+<div class="col-first even-row-color"><code><a href="#ZombieRequest" class="member-name-link">ZombieRequest</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#ZombieSimulationUnreliable" class="member-name-link">ZombieSimulationUnreliable</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#ZombieSimulationReliable" class="member-name-link">ZombieSimulationReliable</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#ZombieSound" class="member-name-link">ZombieSound</a></code></div>
+<div class="col-first even-row-color"><code><a href="#ZombieSimulationUnreliable" class="member-name-link">ZombieSimulationUnreliable</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#ZombieSynchronizationReliable" class="member-name-link">ZombieSynchronizationReliable</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#ZombieSound" class="member-name-link">ZombieSound</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#ZombieSynchronizationUnreliable" class="member-name-link">ZombieSynchronizationUnreliable</a></code></div>
+<div class="col-first even-row-color"><code><a href="#ZombieSynchronizationReliable" class="member-name-link">ZombieSynchronizationReliable</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="#ZombieSynchronizationUnreliable" class="member-name-link">ZombieSynchronizationUnreliable</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -1016,7 +1037,7 @@ loadScripts(document, 'script');</script>
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#send(zombie.core.raknet.UdpConnection)" class="member-name-link">send</a><wbr>(<a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#send(zombie.network.IConnection)" class="member-name-link">send</a><wbr>(<a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLogEnabled(boolean)" class="member-name-link">setLogEnabled</a><wbr>(boolean&nbsp;logEnabled)</code></div>
@@ -1245,6 +1266,14 @@ the order they are declared.</div>
 </section>
 </li>
 <li>
+<section class="detail" id="HaloText">
+<h3>HaloText</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a></span>&nbsp;<span class="element-name">HaloText</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="PlayerDeath">
 <h3>PlayerDeath</h3>
 <div class="horizontal-scroll">
@@ -1313,6 +1342,14 @@ the order they are declared.</div>
 <h3>PlayerDropHeldItems</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a></span>&nbsp;<span class="element-name">PlayerDropHeldItems</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="ClothingWetness">
+<h3>ClothingWetness</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a></span>&nbsp;<span class="element-name">ClothingWetness</span></div>
 </div>
 </section>
 </li>
@@ -2093,6 +2130,22 @@ the order they are declared.</div>
 </section>
 </li>
 <li>
+<section class="detail" id="SyncExtendedPlacement">
+<h3>SyncExtendedPlacement</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a></span>&nbsp;<span class="element-name">SyncExtendedPlacement</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SyncItemActivated">
+<h3>SyncItemActivated</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a></span>&nbsp;<span class="element-name">SyncItemActivated</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="GlobalObjects">
 <h3>GlobalObjects</h3>
 <div class="horizontal-scroll">
@@ -2105,6 +2158,14 @@ the order they are declared.</div>
 <h3>ReceiveModData</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a></span>&nbsp;<span class="element-name">ReceiveModData</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="ReceiveContainerModData">
+<h3>ReceiveContainerModData</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a></span>&nbsp;<span class="element-name">ReceiveContainerModData</span></div>
 </div>
 </section>
 </li>
@@ -2253,6 +2314,14 @@ the order they are declared.</div>
 </section>
 </li>
 <li>
+<section class="detail" id="VehicleHitAnimal">
+<h3>VehicleHitAnimal</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a></span>&nbsp;<span class="element-name">VehicleHitAnimal</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="PlayerDamage">
 <h3>PlayerDamage</h3>
 <div class="horizontal-scroll">
@@ -2297,6 +2366,14 @@ the order they are declared.</div>
 <h3>PlayerXp</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a></span>&nbsp;<span class="element-name">PlayerXp</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="AttackCollisionCheckPacket">
+<h3>AttackCollisionCheckPacket</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a></span>&nbsp;<span class="element-name">AttackCollisionCheckPacket</span></div>
 </div>
 </section>
 </li>
@@ -2545,14 +2622,6 @@ the order they are declared.</div>
 <h3>SyncPerks</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a></span>&nbsp;<span class="element-name">SyncPerks</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="SyncWeight">
-<h3>SyncWeight</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a></span>&nbsp;<span class="element-name">SyncWeight</span></div>
 </div>
 </section>
 </li>
@@ -3220,6 +3289,14 @@ the order they are declared.</div>
 </div>
 </section>
 </li>
+<li>
+<section class="detail" id="SyncEntityResource">
+<h3>SyncEntityResource</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a></span>&nbsp;<span class="element-name">SyncEntityResource</span></div>
+</div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -3320,10 +3397,10 @@ not permitted.)</div>
 </section>
 </li>
 <li>
-<section class="detail" id="send(zombie.core.raknet.UdpConnection)">
+<section class="detail" id="send(zombie.network.IConnection)">
 <h3>send</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">send</span><wbr><span class="parameters">(<a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">send</span><wbr><span class="parameters">(<a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</span></div>
 </div>
 </section>
 </li>

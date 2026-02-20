@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.13.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -93,6 +93,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#onPressedAxisNeg(int)" tabindex="0">onPressedAxisNeg(int)</a></li>
 <li><a href="#onPressedTrigger(int)" tabindex="0">onPressedTrigger(int)</a></li>
 <li><a href="#onPressedPov()" tabindex="0">onPressedPov()</a></li>
+<li><a href="#getMovementAxisDeadZoneX()" tabindex="0">getMovementAxisDeadZoneX()</a></li>
+<li><a href="#getMovementAxisDeadZoneY()" tabindex="0">getMovementAxisDeadZoneY()</a></li>
+<li><a href="#getAimingAxisDeadZoneX()" tabindex="0">getAimingAxisDeadZoneX()</a></li>
+<li><a href="#getAimingAxisDeadZoneY()" tabindex="0">getAimingAxisDeadZoneY()</a></li>
 <li><a href="#getDeadZone(int)" tabindex="0">getDeadZone(int)</a></li>
 <li><a href="#setDeadZone(int,float)" tabindex="0">setDeadZone(int, float)</a></li>
 <li><a href="#setDeadZone(float)" tabindex="0">setDeadZone(float)</a></li>
@@ -108,6 +112,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#getR3()" tabindex="0">getR3()</a></li>
 <li><a href="#getBackButton()" tabindex="0">getBackButton()</a></li>
 <li><a href="#getStartButton()" tabindex="0">getStartButton()</a></li>
+<li><a href="#isMovementInsideDeadZone(float,float)" tabindex="0">isMovementInsideDeadZone(float, float)</a></li>
+<li><a href="#isMovementAxisBeingApplied()" tabindex="0">isMovementAxisBeingApplied()</a></li>
+<li><a href="#isAimingInsideDeadZone(float,float)" tabindex="0">isAimingInsideDeadZone(float, float)</a></li>
+<li><a href="#isAimingAxisBeingApplied()" tabindex="0">isAimingAxisBeingApplied()</a></li>
 </ol>
 </li>
 </ol>
@@ -161,6 +169,12 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAButton()" class="member-name-link">getAButton</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAimingAxisDeadZoneX()" class="member-name-link">getAimingAxisDeadZoneX</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAimingAxisDeadZoneY()" class="member-name-link">getAimingAxisDeadZoneY</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAimingAxisX()" class="member-name-link">getAimingAxisX</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
@@ -185,6 +199,12 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLBumper()" class="member-name-link">getLBumper</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMovementAxisDeadZoneX()" class="member-name-link">getMovementAxisDeadZoneX</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMovementAxisDeadZoneY()" class="member-name-link">getMovementAxisDeadZoneY</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMovementAxisX()" class="member-name-link">getMovementAxisX</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
@@ -204,6 +224,13 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getYButton()" class="member-name-link">getYButton</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAimingAxisBeingApplied()" class="member-name-link">isAimingAxisBeingApplied</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAimingInsideDeadZone(float,float)" class="member-name-link">isAimingInsideDeadZone</a><wbr>(float&nbsp;x,
+ float&nbsp;y)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAPressed()" class="member-name-link">isAPressed</a>()</code></div>
@@ -237,6 +264,13 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isLTPressed()" class="member-name-link">isLTPressed</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isMovementAxisBeingApplied()" class="member-name-link">isMovementAxisBeingApplied</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isMovementInsideDeadZone(float,float)" class="member-name-link">isMovementInsideDeadZone</a><wbr>(float&nbsp;x,
+ float&nbsp;y)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isR3Pressed()" class="member-name-link">isR3Pressed</a>()</code></div>
@@ -534,6 +568,38 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="getMovementAxisDeadZoneX()">
+<h3>getMovementAxisDeadZoneX</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getMovementAxisDeadZoneX</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getMovementAxisDeadZoneY()">
+<h3>getMovementAxisDeadZoneY</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getMovementAxisDeadZoneY</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getAimingAxisDeadZoneX()">
+<h3>getAimingAxisDeadZoneX</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getAimingAxisDeadZoneX</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getAimingAxisDeadZoneY()">
+<h3>getAimingAxisDeadZoneY</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getAimingAxisDeadZoneY</span>()</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="getDeadZone(int)">
 <h3>getDeadZone</h3>
 <div class="horizontal-scroll">
@@ -651,6 +717,40 @@ loadScripts(document, 'script');</script>
 <h3>getStartButton</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getStartButton</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isMovementInsideDeadZone(float,float)">
+<h3>isMovementInsideDeadZone</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isMovementInsideDeadZone</span><wbr><span class="parameters">(float&nbsp;x,
+ float&nbsp;y)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isMovementAxisBeingApplied()">
+<h3>isMovementAxisBeingApplied</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isMovementAxisBeingApplied</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isAimingInsideDeadZone(float,float)">
+<h3>isAimingInsideDeadZone</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAimingInsideDeadZone</span><wbr><span class="parameters">(float&nbsp;x,
+ float&nbsp;y)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isAimingAxisBeingApplied()">
+<h3>isAimingAxisBeingApplied</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAimingAxisBeingApplied</span>()</div>
 </div>
 </section>
 </li>
