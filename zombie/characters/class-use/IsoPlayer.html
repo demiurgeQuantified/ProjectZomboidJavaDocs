@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#use">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -374,18 +374,21 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code><a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
 <div class="col-second even-row-color"><span class="type-name-label">IsoZombie.</span><code><a href="../IsoZombie.html#getOwnerPlayer()" class="member-name-link">getOwnerPlayer</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoZombie.</span><code><a href="../IsoZombie.html#getReanimatedPlayer()" class="member-name-link">getReanimatedPlayer</a>()</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>abstract <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">NetworkCharacterAI.</span><code><a href="../NetworkCharacterAI.html#getRelatedPlayer()" class="member-name-link">getRelatedPlayer</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">NetworkPlayerAI.</span><code><a href="../NetworkPlayerAI.html#getRelatedPlayer()" class="member-name-link">getRelatedPlayer</a>()</code></div>
+<div class="col-first odd-row-color"><code>static <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoPlayer.</span><code><a href="../IsoPlayer.html#getPlayer(int)" class="member-name-link">getPlayer</a><wbr>(int&nbsp;playerIndex)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">NetworkZombieAI.</span><code><a href="../NetworkZombieAI.html#getRelatedPlayer()" class="member-name-link">getRelatedPlayer</a>()</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoZombie.</span><code><a href="../IsoZombie.html#getReanimatedPlayer()" class="member-name-link">getReanimatedPlayer</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>abstract <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">NetworkCharacterAI.</span><code><a href="../NetworkCharacterAI.html#getRelatedPlayer()" class="member-name-link">getRelatedPlayer</a>()</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">NetworkPlayerAI.</span><code><a href="../NetworkPlayerAI.html#getRelatedPlayer()" class="member-name-link">getRelatedPlayer</a>()</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">NetworkZombieAI.</span><code><a href="../NetworkZombieAI.html#getRelatedPlayer()" class="member-name-link">getRelatedPlayer</a>()</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Methods in <a href="../package-summary.html">zombie.characters</a> that return types with arguments of type <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></span></div>
 <div class="summary-table three-column-summary">
@@ -777,13 +780,11 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../chat/ChatBase.html#%3Cinit%3E(java.nio.ByteBuffer,zombie.network.chat.ChatType,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">ChatBase</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second even-row-color"><code><a href="../../chat/ChatBase.html#%3Cinit%3E(zombie.core.network.ByteBufferReader,zombie.network.chat.ChatType,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">ChatBase</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../../network/chat/ChatType.html" title="enum class in zombie.network.chat">ChatType</a>&nbsp;type,
  <a href="../../chat/ChatTab.html" title="class in zombie.chat">ChatTab</a>&nbsp;tab,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;owner)</code></div>
-<div class="col-last even-row-color">
-<div class="block">Should called only on client side of chat system</div>
-</div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -796,47 +797,47 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../chat/defaultChats/AdminChat.html#%3Cinit%3E(java.nio.ByteBuffer,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">AdminChat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second even-row-color"><code><a href="../../chat/defaultChats/AdminChat.html#%3Cinit%3E(zombie.core.network.ByteBufferReader,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">AdminChat</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../../chat/ChatTab.html" title="class in zombie.chat">ChatTab</a>&nbsp;tab,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;owner)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../chat/defaultChats/FactionChat.html#%3Cinit%3E(java.nio.ByteBuffer,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">FactionChat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second odd-row-color"><code><a href="../../chat/defaultChats/FactionChat.html#%3Cinit%3E(zombie.core.network.ByteBufferReader,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">FactionChat</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../../chat/ChatTab.html" title="class in zombie.chat">ChatTab</a>&nbsp;tab,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;owner)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../chat/defaultChats/GeneralChat.html#%3Cinit%3E(java.nio.ByteBuffer,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">GeneralChat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second even-row-color"><code><a href="../../chat/defaultChats/GeneralChat.html#%3Cinit%3E(zombie.core.network.ByteBufferReader,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">GeneralChat</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../../chat/ChatTab.html" title="class in zombie.chat">ChatTab</a>&nbsp;tab,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;owner)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../chat/defaultChats/RadioChat.html#%3Cinit%3E(java.nio.ByteBuffer,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">RadioChat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second odd-row-color"><code><a href="../../chat/defaultChats/RadioChat.html#%3Cinit%3E(zombie.core.network.ByteBufferReader,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">RadioChat</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../../chat/ChatTab.html" title="class in zombie.chat">ChatTab</a>&nbsp;tab,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;owner)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../chat/defaultChats/SafehouseChat.html#%3Cinit%3E(java.nio.ByteBuffer,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">SafehouseChat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second even-row-color"><code><a href="../../chat/defaultChats/SafehouseChat.html#%3Cinit%3E(zombie.core.network.ByteBufferReader,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">SafehouseChat</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../../chat/ChatTab.html" title="class in zombie.chat">ChatTab</a>&nbsp;tab,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;owner)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../chat/defaultChats/SayChat.html#%3Cinit%3E(java.nio.ByteBuffer,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">SayChat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second odd-row-color"><code><a href="../../chat/defaultChats/SayChat.html#%3Cinit%3E(zombie.core.network.ByteBufferReader,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">SayChat</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../../chat/ChatTab.html" title="class in zombie.chat">ChatTab</a>&nbsp;tab,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;owner)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../chat/defaultChats/ServerChat.html#%3Cinit%3E(java.nio.ByteBuffer,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">ServerChat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second even-row-color"><code><a href="../../chat/defaultChats/ServerChat.html#%3Cinit%3E(zombie.core.network.ByteBufferReader,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">ServerChat</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../../chat/ChatTab.html" title="class in zombie.chat">ChatTab</a>&nbsp;tab,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;owner)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../chat/defaultChats/ShoutChat.html#%3Cinit%3E(java.nio.ByteBuffer,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">ShoutChat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second odd-row-color"><code><a href="../../chat/defaultChats/ShoutChat.html#%3Cinit%3E(zombie.core.network.ByteBufferReader,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">ShoutChat</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../../chat/ChatTab.html" title="class in zombie.chat">ChatTab</a>&nbsp;tab,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;owner)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../chat/defaultChats/WhisperChat.html#%3Cinit%3E(java.nio.ByteBuffer,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">WhisperChat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second even-row-color"><code><a href="../../chat/defaultChats/WhisperChat.html#%3Cinit%3E(zombie.core.network.ByteBufferReader,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">WhisperChat</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../../chat/ChatTab.html" title="class in zombie.chat">ChatTab</a>&nbsp;tab,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;owner)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -1154,110 +1155,114 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>boolean</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">MashingLogic.</span><code><a href="../../entity/components/crafting/MashingLogic.html#canStart(zombie.characters.IsoPlayer)" class="member-name-link">canStart</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../../entity/components/crafting/CraftRecipeMonitor.html" title="class in zombie.entity.components.crafting">CraftRecipeMonitor</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">CraftLogic.</span><code><a href="../../entity/components/crafting/CraftLogic.html#debugCanStart(zombie.characters.IsoPlayer)" class="member-name-link">debugCanStart</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">CraftLogic.</span><code><a href="../../entity/components/crafting/CraftLogic.html#canStartWithInventoryItems(zombie.characters.IsoPlayer,java.util.List)" class="member-name-link">canStartWithInventoryItems</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&gt;&nbsp;selectedInventoryItems)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="../../entity/components/crafting/CraftRecipeMonitor.html" title="class in zombie.entity.components.crafting">CraftRecipeMonitor</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">CraftUtil.</span><code><a href="../../entity/components/crafting/CraftUtil.html#debugCanStart(zombie.characters.IsoPlayer,zombie.entity.components.crafting.recipe.CraftRecipeData,java.util.List,java.util.List,java.util.List,zombie.entity.components.crafting.CraftRecipeMonitor)" class="member-name-link">debugCanStart</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+<div class="col-first even-row-color"><code><a href="../../entity/components/crafting/CraftRecipeMonitor.html" title="class in zombie.entity.components.crafting">CraftRecipeMonitor</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">CraftLogic.</span><code><a href="../../entity/components/crafting/CraftLogic.html#debugCanStart(zombie.characters.IsoPlayer)" class="member-name-link">debugCanStart</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../../entity/components/crafting/CraftRecipeMonitor.html" title="class in zombie.entity.components.crafting">CraftRecipeMonitor</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">CraftUtil.</span><code><a href="../../entity/components/crafting/CraftUtil.html#debugCanStart(zombie.characters.IsoPlayer,zombie.entity.components.crafting.recipe.CraftRecipeData,java.util.List,java.util.List,java.util.List,zombie.entity.components.crafting.CraftRecipeMonitor)" class="member-name-link">debugCanStart</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="../../entity/components/crafting/recipe/CraftRecipeData.html" title="class in zombie.entity.components.crafting.recipe">CraftRecipeData</a>&nbsp;craftTestData,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../scripting/entity/components/crafting/CraftRecipe.html" title="class in zombie.scripting.entity.components.crafting">CraftRecipe</a>&gt;&nbsp;recipes,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../entity/components/resources/Resource.html" title="class in zombie.entity.components.resources">Resource</a>&gt;&nbsp;inputs,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../entity/components/resources/Resource.html" title="class in zombie.entity.components.resources">Resource</a>&gt;&nbsp;outputs,
  <a href="../../entity/components/crafting/CraftRecipeMonitor.html" title="class in zombie.entity.components.crafting">CraftRecipeMonitor</a>&nbsp;monitor)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../../entity/components/crafting/CraftRecipeMonitor.html" title="class in zombie.entity.components.crafting">CraftRecipeMonitor</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">DryingLogic.</span><code><a href="../../entity/components/crafting/DryingLogic.html#debugCanStart(zombie.characters.IsoPlayer)" class="member-name-link">debugCanStart</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="../../entity/components/crafting/CraftRecipeMonitor.html" title="class in zombie.entity.components.crafting">CraftRecipeMonitor</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">FurnaceLogic.</span><code><a href="../../entity/components/crafting/FurnaceLogic.html#debugCanStart(zombie.characters.IsoPlayer)" class="member-name-link">debugCanStart</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">DryingLogic.</span><code><a href="../../entity/components/crafting/DryingLogic.html#debugCanStart(zombie.characters.IsoPlayer)" class="member-name-link">debugCanStart</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="../../entity/components/crafting/CraftRecipeMonitor.html" title="class in zombie.entity.components.crafting">CraftRecipeMonitor</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">MashingLogic.</span><code><a href="../../entity/components/crafting/MashingLogic.html#debugCanStart(zombie.characters.IsoPlayer)" class="member-name-link">debugCanStart</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">FurnaceLogic.</span><code><a href="../../entity/components/crafting/FurnaceLogic.html#debugCanStart(zombie.characters.IsoPlayer)" class="member-name-link">debugCanStart</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="../../entity/components/crafting/recipe/CraftRecipeListNodeCollection.html" title="class in zombie.entity.components.crafting.recipe">CraftRecipeListNodeCollection</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">BaseCraftingLogic.</span><code><a href="../../entity/components/crafting/BaseCraftingLogic.html#filterAndSortRecipeList(java.lang.String,java.lang.String,zombie.entity.components.crafting.recipe.CraftRecipeListNodeCollection,java.util.List,zombie.characters.IsoPlayer,java.util.Comparator)" class="member-name-link">filterAndSortRecipeList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filterString,
+<div class="col-first even-row-color"><code><a href="../../entity/components/crafting/CraftRecipeMonitor.html" title="class in zombie.entity.components.crafting">CraftRecipeMonitor</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MashingLogic.</span><code><a href="../../entity/components/crafting/MashingLogic.html#debugCanStart(zombie.characters.IsoPlayer)" class="member-name-link">debugCanStart</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../../entity/components/crafting/recipe/CraftRecipeListNodeCollection.html" title="class in zombie.entity.components.crafting.recipe">CraftRecipeListNodeCollection</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">BaseCraftingLogic.</span><code><a href="../../entity/components/crafting/BaseCraftingLogic.html#filterAndSortRecipeList(java.lang.String,java.lang.String,zombie.entity.components.crafting.recipe.CraftRecipeListNodeCollection,java.util.List,zombie.characters.IsoPlayer,java.util.Comparator)" class="member-name-link">filterAndSortRecipeList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filterString,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;categoryFilterString,
  <a href="../../entity/components/crafting/recipe/CraftRecipeListNodeCollection.html" title="class in zombie.entity.components.crafting.recipe">CraftRecipeListNodeCollection</a>&nbsp;listToPopulate,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../scripting/entity/components/crafting/CraftRecipe.html" title="class in zombie.scripting.entity.components.crafting">CraftRecipe</a>&gt;&nbsp;sourceList,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Comparator.html" title="class or interface in java.util" class="external-link">Comparator</a>&lt;<a href="../../scripting/entity/components/crafting/CraftRecipe.html" title="class in zombie.scripting.entity.components.crafting">CraftRecipe</a>&gt;&nbsp;sortComparator)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">BaseCraftingLogic.</span><code><a href="../../entity/components/crafting/BaseCraftingLogic.html#filterRecipeList(java.lang.String,java.lang.String,boolean,zombie.characters.IsoPlayer)" class="member-name-link">filterRecipeList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filter,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;categoryFilter,
- boolean&nbsp;force,
- <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">CraftLogicUILogic.</span><code><a href="../../entity/components/crafting/CraftLogicUILogic.html#filterRecipeList(java.lang.String,java.lang.String,boolean,zombie.characters.IsoPlayer)" class="member-name-link">filterRecipeList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filter,
+<div class="col-second even-row-color"><span class="type-name-label">BaseCraftingLogic.</span><code><a href="../../entity/components/crafting/BaseCraftingLogic.html#filterRecipeList(java.lang.String,java.lang.String,boolean,zombie.characters.IsoPlayer)" class="member-name-link">filterRecipeList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filter,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;categoryFilter,
  boolean&nbsp;force,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">CraftLogic.</span><code><a href="../../entity/components/crafting/CraftLogic.html#sendStartRequest(zombie.characters.IsoPlayer)" class="member-name-link">sendStartRequest</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">CraftLogicUILogic.</span><code><a href="../../entity/components/crafting/CraftLogicUILogic.html#filterRecipeList(java.lang.String,java.lang.String,boolean,zombie.characters.IsoPlayer)" class="member-name-link">filterRecipeList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;categoryFilter,
+ boolean&nbsp;force,
+ <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">DryingLogic.</span><code><a href="../../entity/components/crafting/DryingLogic.html#sendStartRequest(zombie.characters.IsoPlayer)" class="member-name-link">sendStartRequest</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">CraftLogic.</span><code><a href="../../entity/components/crafting/CraftLogic.html#sendStartRequest(zombie.characters.IsoPlayer)" class="member-name-link">sendStartRequest</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">FurnaceLogic.</span><code><a href="../../entity/components/crafting/FurnaceLogic.html#sendStartRequest(zombie.characters.IsoPlayer)" class="member-name-link">sendStartRequest</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">DryingLogic.</span><code><a href="../../entity/components/crafting/DryingLogic.html#sendStartRequest(zombie.characters.IsoPlayer)" class="member-name-link">sendStartRequest</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MashingLogic.</span><code><a href="../../entity/components/crafting/MashingLogic.html#sendStartRequest(zombie.characters.IsoPlayer)" class="member-name-link">sendStartRequest</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">FurnaceLogic.</span><code><a href="../../entity/components/crafting/FurnaceLogic.html#sendStartRequest(zombie.characters.IsoPlayer)" class="member-name-link">sendStartRequest</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">CraftLogic.</span><code><a href="../../entity/components/crafting/CraftLogic.html#sendStopRequest(zombie.characters.IsoPlayer)" class="member-name-link">sendStopRequest</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MashingLogic.</span><code><a href="../../entity/components/crafting/MashingLogic.html#sendStartRequest(zombie.characters.IsoPlayer)" class="member-name-link">sendStartRequest</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">DryingLogic.</span><code><a href="../../entity/components/crafting/DryingLogic.html#sendStopRequest(zombie.characters.IsoPlayer)" class="member-name-link">sendStopRequest</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">CraftLogic.</span><code><a href="../../entity/components/crafting/CraftLogic.html#sendStopRequest(zombie.characters.IsoPlayer)" class="member-name-link">sendStopRequest</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">FurnaceLogic.</span><code><a href="../../entity/components/crafting/FurnaceLogic.html#sendStopRequest(zombie.characters.IsoPlayer)" class="member-name-link">sendStopRequest</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">DryingLogic.</span><code><a href="../../entity/components/crafting/DryingLogic.html#sendStopRequest(zombie.characters.IsoPlayer)" class="member-name-link">sendStopRequest</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MashingLogic.</span><code><a href="../../entity/components/crafting/MashingLogic.html#sendStopRequest(zombie.characters.IsoPlayer)" class="member-name-link">sendStopRequest</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">FurnaceLogic.</span><code><a href="../../entity/components/crafting/FurnaceLogic.html#sendStopRequest(zombie.characters.IsoPlayer)" class="member-name-link">sendStopRequest</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">CraftLogic.</span><code><a href="../../entity/components/crafting/CraftLogic.html#start(zombie.characters.IsoPlayer)" class="member-name-link">start</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MashingLogic.</span><code><a href="../../entity/components/crafting/MashingLogic.html#sendStopRequest(zombie.characters.IsoPlayer)" class="member-name-link">sendStopRequest</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">DryingLogic.</span><code><a href="../../entity/components/crafting/DryingLogic.html#start(zombie.characters.IsoPlayer)" class="member-name-link">start</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">CraftLogic.</span><code><a href="../../entity/components/crafting/CraftLogic.html#start(zombie.characters.IsoPlayer)" class="member-name-link">start</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">FurnaceLogic.</span><code><a href="../../entity/components/crafting/FurnaceLogic.html#start(zombie.characters.IsoPlayer)" class="member-name-link">start</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">DryingLogic.</span><code><a href="../../entity/components/crafting/DryingLogic.html#start(zombie.characters.IsoPlayer)" class="member-name-link">start</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MashingLogic.</span><code><a href="../../entity/components/crafting/MashingLogic.html#start(zombie.characters.IsoPlayer)" class="member-name-link">start</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">FurnaceLogic.</span><code><a href="../../entity/components/crafting/FurnaceLogic.html#start(zombie.characters.IsoPlayer)" class="member-name-link">start</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">CraftLogic.</span><code><a href="../../entity/components/crafting/CraftLogic.html#stop(zombie.characters.IsoPlayer)" class="member-name-link">stop</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MashingLogic.</span><code><a href="../../entity/components/crafting/MashingLogic.html#start(zombie.characters.IsoPlayer)" class="member-name-link">start</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">CraftLogic.</span><code><a href="../../entity/components/crafting/CraftLogic.html#stop(zombie.characters.IsoPlayer,boolean)" class="member-name-link">stop</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+<div class="col-second even-row-color"><span class="type-name-label">CraftLogic.</span><code><a href="../../entity/components/crafting/CraftLogic.html#stop(zombie.characters.IsoPlayer)" class="member-name-link">stop</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">CraftLogic.</span><code><a href="../../entity/components/crafting/CraftLogic.html#stop(zombie.characters.IsoPlayer,boolean)" class="member-name-link">stop</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  boolean&nbsp;force)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">DryingLogic.</span><code><a href="../../entity/components/crafting/DryingLogic.html#stop(zombie.characters.IsoPlayer)" class="member-name-link">stop</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">DryingLogic.</span><code><a href="../../entity/components/crafting/DryingLogic.html#stop(zombie.characters.IsoPlayer,boolean)" class="member-name-link">stop</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- boolean&nbsp;force)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">DryingLogic.</span><code><a href="../../entity/components/crafting/DryingLogic.html#stop(zombie.characters.IsoPlayer)" class="member-name-link">stop</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">FurnaceLogic.</span><code><a href="../../entity/components/crafting/FurnaceLogic.html#stop(zombie.characters.IsoPlayer)" class="member-name-link">stop</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">DryingLogic.</span><code><a href="../../entity/components/crafting/DryingLogic.html#stop(zombie.characters.IsoPlayer,boolean)" class="member-name-link">stop</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ boolean&nbsp;force)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">FurnaceLogic.</span><code><a href="../../entity/components/crafting/FurnaceLogic.html#stop(zombie.characters.IsoPlayer,boolean)" class="member-name-link">stop</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- boolean&nbsp;force)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">FurnaceLogic.</span><code><a href="../../entity/components/crafting/FurnaceLogic.html#stop(zombie.characters.IsoPlayer)" class="member-name-link">stop</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">MashingLogic.</span><code><a href="../../entity/components/crafting/MashingLogic.html#stop(zombie.characters.IsoPlayer)" class="member-name-link">stop</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">FurnaceLogic.</span><code><a href="../../entity/components/crafting/FurnaceLogic.html#stop(zombie.characters.IsoPlayer,boolean)" class="member-name-link">stop</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ boolean&nbsp;force)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MashingLogic.</span><code><a href="../../entity/components/crafting/MashingLogic.html#stop(zombie.characters.IsoPlayer,boolean)" class="member-name-link">stop</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- boolean&nbsp;force)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MashingLogic.</span><code><a href="../../entity/components/crafting/MashingLogic.html#stop(zombie.characters.IsoPlayer)" class="member-name-link">stop</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MashingLogic.</span><code><a href="../../entity/components/crafting/MashingLogic.html#stop(zombie.characters.IsoPlayer,boolean)" class="member-name-link">stop</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ boolean&nbsp;force)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Constructors in <a href="../../entity/components/crafting/package-summary.html">zombie.entity.components.crafting</a> with parameters of type <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></span></div>
 <div class="summary-table three-column-summary">
@@ -1318,7 +1323,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">SGlobalObjectNetwork.</span><code><a href="../../globalObjects/SGlobalObjectNetwork.html#receive(java.nio.ByteBuffer,zombie.characters.IsoPlayer)" class="member-name-link">receive</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second even-row-color"><span class="type-name-label">SGlobalObjectNetwork.</span><code><a href="../../globalObjects/SGlobalObjectNetwork.html#receive(zombie.core.network.ByteBufferReader,zombie.characters.IsoPlayer)" class="member-name-link">receive</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static boolean</code></div>
@@ -1910,166 +1915,171 @@ loadScripts(document, 'script');</script>
  <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendHumanVisual(zombie.characters.IsoPlayer)" class="member-name-link">sendHumanVisual</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendHitPlayer(zombie.characters.IsoPlayer,java.lang.String,java.lang.String)" class="member-name-link">sendHitPlayer</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;target,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;damage,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;range)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendHutchGrabAnimal(zombie.characters.animals.IsoAnimal,zombie.characters.IsoPlayer,zombie.iso.IsoObject,zombie.inventory.InventoryItem)" class="member-name-link">sendHutchGrabAnimal</a><wbr>(<a href="../animals/IsoAnimal.html" title="class in zombie.characters.animals">IsoAnimal</a>&nbsp;animal,
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendHumanVisual(zombie.characters.IsoPlayer)" class="member-name-link">sendHumanVisual</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendHutchGrabAnimal(zombie.characters.animals.IsoAnimal,zombie.characters.IsoPlayer,zombie.iso.IsoObject,zombie.inventory.InventoryItem)" class="member-name-link">sendHutchGrabAnimal</a><wbr>(<a href="../animals/IsoAnimal.html" title="class in zombie.characters.animals">IsoAnimal</a>&nbsp;animal,
+ <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ <a href="../../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object,
+ <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendHutchGrabCorpseAction(zombie.characters.animals.IsoAnimal,zombie.characters.IsoPlayer,zombie.iso.IsoObject,zombie.inventory.InventoryItem)" class="member-name-link">sendHutchGrabCorpseAction</a><wbr>(<a href="../animals/IsoAnimal.html" title="class in zombie.characters.animals">IsoAnimal</a>&nbsp;animal,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="../../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object,
  <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendHutchGrabCorpseAction(zombie.characters.animals.IsoAnimal,zombie.characters.IsoPlayer,zombie.iso.IsoObject,zombie.inventory.InventoryItem)" class="member-name-link">sendHutchGrabCorpseAction</a><wbr>(<a href="../animals/IsoAnimal.html" title="class in zombie.characters.animals">IsoAnimal</a>&nbsp;animal,
- <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object,
- <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendHutchRemoveAnimalAction(zombie.characters.animals.IsoAnimal,zombie.characters.IsoPlayer,zombie.iso.IsoObject)" class="member-name-link">sendHutchRemoveAnimalAction</a><wbr>(<a href="../animals/IsoAnimal.html" title="class in zombie.characters.animals">IsoAnimal</a>&nbsp;animal,
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendHutchRemoveAnimalAction(zombie.characters.animals.IsoAnimal,zombie.characters.IsoPlayer,zombie.iso.IsoObject)" class="member-name-link">sendHutchRemoveAnimalAction</a><wbr>(<a href="../animals/IsoAnimal.html" title="class in zombie.characters.animals">IsoAnimal</a>&nbsp;animal,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="../../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendIconFound(zombie.characters.IsoPlayer,java.lang.String,float)" class="member-name-link">sendIconFound</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendIconFound(zombie.characters.IsoPlayer,java.lang.String,float)" class="member-name-link">sendIconFound</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
  float&nbsp;distanceTraveled)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendItemListNet(zombie.characters.IsoPlayer,java.util.ArrayList,zombie.characters.IsoPlayer,java.lang.String,java.lang.String)" class="member-name-link">sendItemListNet</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;sender,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendItemListNet(zombie.characters.IsoPlayer,java.util.ArrayList,zombie.characters.IsoPlayer,java.lang.String,java.lang.String)" class="member-name-link">sendItemListNet</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;sender,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&gt;&nbsp;items,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;receiver,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;transferID,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;custom)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendPersonalColor(zombie.characters.IsoPlayer)" class="member-name-link">sendPersonalColor</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendPickupAnimal(zombie.characters.animals.IsoAnimal,zombie.characters.IsoPlayer,zombie.inventory.types.AnimalInventoryItem)" class="member-name-link">sendPickupAnimal</a><wbr>(<a href="../animals/IsoAnimal.html" title="class in zombie.characters.animals">IsoAnimal</a>&nbsp;animal,
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendPersonalColor(zombie.characters.IsoPlayer)" class="member-name-link">sendPersonalColor</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendPickupAnimal(zombie.characters.animals.IsoAnimal,zombie.characters.IsoPlayer,zombie.inventory.types.AnimalInventoryItem)" class="member-name-link">sendPickupAnimal</a><wbr>(<a href="../animals/IsoAnimal.html" title="class in zombie.characters.animals">IsoAnimal</a>&nbsp;animal,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="../../inventory/types/AnimalInventoryItem.html" title="class in zombie.inventory.types">AnimalInventoryItem</a>&nbsp;item)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendPlayerEffects(zombie.characters.IsoPlayer)" class="member-name-link">sendPlayerEffects</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendPlayerExtraInfo(zombie.characters.IsoPlayer)" class="member-name-link">sendPlayerExtraInfo</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendPlayerEffects(zombie.characters.IsoPlayer)" class="member-name-link">sendPlayerEffects</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendPlayerNutrition(zombie.characters.IsoPlayer)" class="member-name-link">sendPlayerNutrition</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendPlayerExtraInfo(zombie.characters.IsoPlayer)" class="member-name-link">sendPlayerExtraInfo</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendPlayerStat(zombie.characters.IsoPlayer,zombie.characters.CharacterStat)" class="member-name-link">sendPlayerStat</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendPlayerNutrition(zombie.characters.IsoPlayer)" class="member-name-link">sendPlayerNutrition</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendPlayerStat(zombie.characters.IsoPlayer,zombie.characters.CharacterStat)" class="member-name-link">sendPlayerStat</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="../CharacterStat.html" title="class in zombie.characters">CharacterStat</a>&nbsp;stat)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendPlayerStatsChange(zombie.characters.IsoPlayer)" class="member-name-link">sendPlayerStatsChange</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendRemoveAndGrabAnimalFromTrailer(zombie.characters.animals.IsoAnimal,zombie.characters.IsoPlayer,zombie.vehicles.BaseVehicle,zombie.inventory.types.AnimalInventoryItem)" class="member-name-link">sendRemoveAndGrabAnimalFromTrailer</a><wbr>(<a href="../animals/IsoAnimal.html" title="class in zombie.characters.animals">IsoAnimal</a>&nbsp;animal,
- <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle,
- <a href="../../inventory/types/AnimalInventoryItem.html" title="class in zombie.inventory.types">AnimalInventoryItem</a>&nbsp;item)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendPlayerStatsChange(zombie.characters.IsoPlayer)" class="member-name-link">sendPlayerStatsChange</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendRemoveAndGrabAnimalFromTrailer(zombie.iso.objects.IsoDeadBody,zombie.characters.IsoPlayer,zombie.vehicles.BaseVehicle,zombie.inventory.types.AnimalInventoryItem)" class="member-name-link">sendRemoveAndGrabAnimalFromTrailer</a><wbr>(<a href="../../iso/objects/IsoDeadBody.html" title="class in zombie.iso.objects">IsoDeadBody</a>&nbsp;animal,
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendRemoveAndGrabAnimalFromTrailer(zombie.characters.animals.IsoAnimal,zombie.characters.IsoPlayer,zombie.vehicles.BaseVehicle,zombie.inventory.types.AnimalInventoryItem)" class="member-name-link">sendRemoveAndGrabAnimalFromTrailer</a><wbr>(<a href="../animals/IsoAnimal.html" title="class in zombie.characters.animals">IsoAnimal</a>&nbsp;animal,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle,
  <a href="../../inventory/types/AnimalInventoryItem.html" title="class in zombie.inventory.types">AnimalInventoryItem</a>&nbsp;item)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendRemoveAnimalFromTrailer(zombie.characters.animals.IsoAnimal,zombie.characters.IsoPlayer,zombie.vehicles.BaseVehicle)" class="member-name-link">sendRemoveAnimalFromTrailer</a><wbr>(<a href="../animals/IsoAnimal.html" title="class in zombie.characters.animals">IsoAnimal</a>&nbsp;animal,
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendRemoveAndGrabAnimalFromTrailer(zombie.iso.objects.IsoDeadBody,zombie.characters.IsoPlayer,zombie.vehicles.BaseVehicle,zombie.inventory.types.AnimalInventoryItem)" class="member-name-link">sendRemoveAndGrabAnimalFromTrailer</a><wbr>(<a href="../../iso/objects/IsoDeadBody.html" title="class in zombie.iso.objects">IsoDeadBody</a>&nbsp;animal,
+ <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ <a href="../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle,
+ <a href="../../inventory/types/AnimalInventoryItem.html" title="class in zombie.inventory.types">AnimalInventoryItem</a>&nbsp;item)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendRemoveAnimalFromTrailer(zombie.characters.animals.IsoAnimal,zombie.characters.IsoPlayer,zombie.vehicles.BaseVehicle)" class="member-name-link">sendRemoveAnimalFromTrailer</a><wbr>(<a href="../animals/IsoAnimal.html" title="class in zombie.characters.animals">IsoAnimal</a>&nbsp;animal,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendSafehouseClaim(zombie.iso.IsoGridSquare,zombie.characters.IsoPlayer,java.lang.String)" class="member-name-link">sendSafehouseClaim</a><wbr>(<a href="../../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
- <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendSafehouseInvite(zombie.iso.areas.SafeHouse,zombie.characters.IsoPlayer,java.lang.String)" class="member-name-link">sendSafehouseInvite</a><wbr>(<a href="../../iso/areas/SafeHouse.html" title="class in zombie.iso.areas">SafeHouse</a>&nbsp;safehouse,
- <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;host,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;invited)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendSafehouseClaim(zombie.iso.IsoGridSquare,zombie.characters.IsoPlayer,java.lang.String)" class="member-name-link">sendSafehouseClaim</a><wbr>(<a href="../../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
+ <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendServerCommand(zombie.characters.IsoPlayer,java.lang.String,java.lang.String,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">sendServerCommand</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendSafehouseInvite(zombie.iso.areas.SafeHouse,zombie.characters.IsoPlayer,java.lang.String)" class="member-name-link">sendSafehouseInvite</a><wbr>(<a href="../../iso/areas/SafeHouse.html" title="class in zombie.iso.areas">SafeHouse</a>&nbsp;safehouse,
+ <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;host,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;invited)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendServerCommand(zombie.characters.IsoPlayer,java.lang.String,java.lang.String,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">sendServerCommand</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;module,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;command,
  se.krka.kahlua.vm.KahluaTable&nbsp;args)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-last even-row-color">
 <div class="block">Sends a command to a specific client, triggering the OnServerCommand event on the client.</div>
 </div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendSyncPlayerFields(zombie.characters.IsoPlayer,byte)" class="member-name-link">sendSyncPlayerFields</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- byte&nbsp;syncParams)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendVisual(zombie.characters.IsoPlayer)" class="member-name-link">sendVisual</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendSyncPlayerFields(zombie.characters.IsoPlayer,byte)" class="member-name-link">sendSyncPlayerFields</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ byte&nbsp;syncParams)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#setPlayerJoypad(int,int,zombie.characters.IsoPlayer,java.lang.String)" class="member-name-link">setPlayerJoypad</a><wbr>(int&nbsp;player,
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendVisual(zombie.characters.IsoPlayer)" class="member-name-link">sendVisual</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#setPlayerJoypad(int,int,zombie.characters.IsoPlayer,java.lang.String)" class="member-name-link">setPlayerJoypad</a><wbr>(int&nbsp;player,
  int&nbsp;joypad,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;playerObj,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#setPlayerMouse(zombie.characters.IsoPlayer)" class="member-name-link">setPlayerMouse</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;playerObj)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#setProgressBarValue(zombie.characters.IsoPlayer,int)" class="member-name-link">setProgressBarValue</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- int&nbsp;value)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#setPlayerMouse(zombie.characters.IsoPlayer)" class="member-name-link">setPlayerMouse</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;playerObj)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static byte</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#startFishingAction(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem,zombie.iso.IsoGridSquare,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">startFishingAction</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#setProgressBarValue(zombie.characters.IsoPlayer,int)" class="member-name-link">setProgressBarValue</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ int&nbsp;value)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static byte</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#startFishingAction(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem,zombie.iso.IsoGridSquare,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">startFishingAction</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item,
  <a href="../../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;sq,
  se.krka.kahlua.vm.KahluaTable&nbsp;bobber)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#syncHandWeaponFields(zombie.characters.IsoPlayer,zombie.inventory.types.HandWeapon)" class="member-name-link">syncHandWeaponFields</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../../inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;item)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#syncItemActivated(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">syncItemActivated</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#syncHandWeaponFields(zombie.characters.IsoPlayer,zombie.inventory.types.HandWeapon)" class="member-name-link">syncHandWeaponFields</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ <a href="../../inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;item)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#syncItemFields(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">syncItemFields</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#syncItemActivated(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">syncItemActivated</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#syncItemModData(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">syncItemModData</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#syncItemFields(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">syncItemFields</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#syncPlayerStats(zombie.characters.IsoPlayer,int)" class="member-name-link">syncPlayerStats</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#syncItemModData(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">syncItemModData</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#syncPlayerStats(zombie.characters.IsoPlayer,int)" class="member-name-link">syncPlayerStats</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  int&nbsp;syncParams)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#syncVisuals(zombie.characters.IsoPlayer)" class="member-name-link">syncVisuals</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#SyncXp(zombie.characters.IsoPlayer)" class="member-name-link">SyncXp</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#teleportPlayers(zombie.characters.IsoPlayer)" class="member-name-link">teleportPlayers</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#tradingUISendAddItem(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">tradingUISendAddItem</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
- <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;other,
- <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#syncVisuals(zombie.characters.IsoPlayer)" class="member-name-link">syncVisuals</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#SyncXp(zombie.characters.IsoPlayer)" class="member-name-link">SyncXp</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#teleportPlayers(zombie.characters.IsoPlayer)" class="member-name-link">teleportPlayers</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#tradingUISendRemoveItem(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">tradingUISendRemoveItem</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#tradingUISendAddItem(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">tradingUISendAddItem</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;other,
  <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#tradingUISendUpdateState(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,int)" class="member-name-link">tradingUISendUpdateState</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#tradingUISendRemoveItem(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">tradingUISendRemoveItem</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
+ <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;other,
+ <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#tradingUISendUpdateState(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,int)" class="member-name-link">tradingUISendUpdateState</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;other,
  int&nbsp;state)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -2192,188 +2202,195 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;noMultiplier)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#addXpMultiplier(zombie.characters.IsoPlayer,zombie.characters.skills.PerkFactory.Perk,float,int,int)" class="member-name-link">addXpMultiplier</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
+<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#addXp(zombie.characters.IsoPlayer,zombie.characters.skills.PerkFactory.Perk,float,boolean,boolean)" class="member-name-link">addXp</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
+ <a href="../skills/PerkFactory.Perk.html" title="class in zombie.characters.skills">PerkFactory.Perk</a>&nbsp;perk,
+ float&nbsp;xp,
+ boolean&nbsp;noMultiplier,
+ boolean&nbsp;showXP)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#addXpMultiplier(zombie.characters.IsoPlayer,zombie.characters.skills.PerkFactory.Perk,float,int,int)" class="member-name-link">addXpMultiplier</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
  <a href="../skills/PerkFactory.Perk.html" title="class in zombie.characters.skills">PerkFactory.Perk</a>&nbsp;perk,
  float&nbsp;multiplier,
  int&nbsp;minLevel,
  int&nbsp;maxLevel)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#canModifyPlayerStats(zombie.core.raknet.UdpConnection,zombie.characters.IsoPlayer)" class="member-name-link">canModifyPlayerStats</a><wbr>(<a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;c,
- <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ServerMap.</span><code><a href="../../network/ServerMap.html#characterIn(zombie.characters.IsoPlayer)" class="member-name-link">characterIn</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#disconnectPlayer(zombie.characters.IsoPlayer,zombie.network.IConnection)" class="member-name-link">disconnectPlayer</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../../network/IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#doDelayedDisconnect(zombie.characters.IsoPlayer)" class="member-name-link">doDelayedDisconnect</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ServerLOS.</span><code><a href="../../network/ServerLOS.html#doServerZombieLOS(zombie.characters.IsoPlayer)" class="member-name-link">doServerZombieLOS</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#drink(zombie.characters.IsoPlayer,float)" class="member-name-link">drink</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- float&nbsp;drink)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#eatFood(zombie.characters.IsoPlayer,zombie.inventory.types.Food,float)" class="member-name-link">eatFood</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../../inventory/types/Food.html" title="class in zombie.inventory.types">Food</a>&nbsp;food,
- float&nbsp;percentage)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#getConnectionFromPlayer(zombie.characters.IsoPlayer)" class="member-name-link">getConnectionFromPlayer</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../../network/WarManager.War.html" title="class in zombie.network">WarManager.War</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">WarManager.</span><code><a href="../../network/WarManager.html#getWarNearest(zombie.characters.IsoPlayer)" class="member-name-link">getWarNearest</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../../network/WarManager.War.html" title="class in zombie.network">WarManager.War</a>&gt;</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">WarManager.</span><code><a href="../../network/WarManager.html#getWarRelevent(zombie.characters.IsoPlayer)" class="member-name-link">getWarRelevent</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ServerLOS.</span><code><a href="../../network/ServerLOS.html#isCouldSee(zombie.characters.IsoPlayer,zombie.iso.IsoGridSquare)" class="member-name-link">isCouldSee</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;sq)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#isDelayedDisconnect(zombie.characters.IsoPlayer)" class="member-name-link">isDelayedDisconnect</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#canModifyPlayerStats(zombie.core.raknet.UdpConnection,zombie.characters.IsoPlayer)" class="member-name-link">canModifyPlayerStats</a><wbr>(<a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;c,
+ <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">PVPLogTool.</span><code><a href="../../network/PVPLogTool.html#logKill(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer)" class="member-name-link">logKill</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;wielder,
- <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;target)</code></div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ServerMap.</span><code><a href="../../network/ServerMap.html#characterIn(zombie.characters.IsoPlayer)" class="member-name-link">characterIn</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">PVPLogTool.</span><code><a href="../../network/PVPLogTool.html#logSafety(zombie.characters.IsoPlayer,java.lang.String)" class="member-name-link">logSafety</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;event)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#disconnectPlayer(zombie.characters.IsoPlayer,zombie.network.IConnection)" class="member-name-link">disconnectPlayer</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ <a href="../../network/IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#rememberPlayerPosition(zombie.characters.IsoPlayer,float,float)" class="member-name-link">rememberPlayerPosition</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#doDelayedDisconnect(zombie.characters.IsoPlayer)" class="member-name-link">doDelayedDisconnect</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ServerLOS.</span><code><a href="../../network/ServerLOS.html#doServerZombieLOS(zombie.characters.IsoPlayer)" class="member-name-link">doServerZombieLOS</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#drink(zombie.characters.IsoPlayer,float)" class="member-name-link">drink</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ float&nbsp;drink)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#eatFood(zombie.characters.IsoPlayer,zombie.inventory.types.Food,float)" class="member-name-link">eatFood</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ <a href="../../inventory/types/Food.html" title="class in zombie.inventory.types">Food</a>&nbsp;food,
+ float&nbsp;percentage)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#getConnectionFromPlayer(zombie.characters.IsoPlayer)" class="member-name-link">getConnectionFromPlayer</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../../network/WarManager.War.html" title="class in zombie.network">WarManager.War</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">WarManager.</span><code><a href="../../network/WarManager.html#getWarNearest(zombie.characters.IsoPlayer)" class="member-name-link">getWarNearest</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../../network/WarManager.War.html" title="class in zombie.network">WarManager.War</a>&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">WarManager.</span><code><a href="../../network/WarManager.html#getWarRelevent(zombie.characters.IsoPlayer)" class="member-name-link">getWarRelevent</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ServerLOS.</span><code><a href="../../network/ServerLOS.html#isCouldSee(zombie.characters.IsoPlayer,zombie.iso.IsoGridSquare)" class="member-name-link">isCouldSee</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ <a href="../../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;sq)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#isDelayedDisconnect(zombie.characters.IsoPlayer)" class="member-name-link">isDelayedDisconnect</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">PVPLogTool.</span><code><a href="../../network/PVPLogTool.html#logKill(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer)" class="member-name-link">logKill</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;wielder,
+ <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;target)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">PVPLogTool.</span><code><a href="../../network/PVPLogTool.html#logSafety(zombie.characters.IsoPlayer,java.lang.String)" class="member-name-link">logSafety</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;event)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#rememberPlayerPosition(zombie.characters.IsoPlayer,float,float)" class="member-name-link">rememberPlayerPosition</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  float&nbsp;x,
  float&nbsp;y)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ServerLOS.</span><code><a href="../../network/ServerLOS.html#removePlayer(zombie.characters.IsoPlayer)" class="member-name-link">removePlayer</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#requestTrading(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer)" class="member-name-link">requestTrading</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
- <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;other)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ServerLOS.</span><code><a href="../../network/ServerLOS.html#removePlayer(zombie.characters.IsoPlayer)" class="member-name-link">removePlayer</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendAttackCollisionCheck(zombie.characters.IsoPlayer,zombie.inventory.types.HandWeapon,int)" class="member-name-link">sendAttackCollisionCheck</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;wielder,
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#requestTrading(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer)" class="member-name-link">requestTrading</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
+ <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;other)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendAttackCollisionCheck(zombie.characters.IsoPlayer,zombie.inventory.types.HandWeapon,int)" class="member-name-link">sendAttackCollisionCheck</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;wielder,
  <a href="../../inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;weapon,
  int&nbsp;hitCount)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendChangedPlayerStats(zombie.characters.IsoPlayer)" class="member-name-link">sendChangedPlayerStats</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;otherPlayer)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendClientCommand(zombie.characters.IsoPlayer,java.lang.String,java.lang.String,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">sendClientCommand</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendChangedPlayerStats(zombie.characters.IsoPlayer)" class="member-name-link">sendChangedPlayerStats</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;otherPlayer)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendClientCommand(zombie.characters.IsoPlayer,java.lang.String,java.lang.String,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">sendClientCommand</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;module,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;command,
  se.krka.kahlua.vm.KahluaTable&nbsp;args)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendClientCommandV(zombie.characters.IsoPlayer,java.lang.String,java.lang.String,java.lang.Object...)" class="member-name-link">sendClientCommandV</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendClientCommandV(zombie.characters.IsoPlayer,java.lang.String,java.lang.String,java.lang.Object...)" class="member-name-link">sendClientCommandV</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;module,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;command,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;objects)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendEquippedRadioFreq(zombie.characters.IsoPlayer)" class="member-name-link">sendEquippedRadioFreq</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;plyr)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendFactionInvite(zombie.characters.Faction,zombie.characters.IsoPlayer,java.lang.String)" class="member-name-link">sendFactionInvite</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction,
- <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;host,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;invited)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendEquippedRadioFreq(zombie.characters.IsoPlayer)" class="member-name-link">sendEquippedRadioFreq</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;plyr)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendForageItemFound(zombie.characters.IsoPlayer,java.lang.String,float)" class="member-name-link">sendForageItemFound</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendFactionInvite(zombie.characters.Faction,zombie.characters.IsoPlayer,java.lang.String)" class="member-name-link">sendFactionInvite</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction,
+ <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;host,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;invited)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendForageItemFound(zombie.characters.IsoPlayer,java.lang.String,float)" class="member-name-link">sendForageItemFound</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
  float&nbsp;amount)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendItemListNet(zombie.characters.IsoPlayer,java.util.ArrayList,zombie.characters.IsoPlayer,java.lang.String,java.lang.String)" class="member-name-link">sendItemListNet</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;sender,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendItemListNet(zombie.characters.IsoPlayer,java.util.ArrayList,zombie.characters.IsoPlayer,java.lang.String,java.lang.String)" class="member-name-link">sendItemListNet</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;sender,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&gt;&nbsp;items,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;receiver,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;sessionID,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;custom)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#sendItemListNet(zombie.core.raknet.UdpConnection,zombie.characters.IsoPlayer,java.util.ArrayList,zombie.characters.IsoPlayer,java.lang.String,java.lang.String)" class="member-name-link">sendItemListNet</a><wbr>(<a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;ignore,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#sendItemListNet(zombie.core.raknet.UdpConnection,zombie.characters.IsoPlayer,java.util.ArrayList,zombie.characters.IsoPlayer,java.lang.String,java.lang.String)" class="member-name-link">sendItemListNet</a><wbr>(<a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;ignore,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;sender,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&gt;&nbsp;items,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;receiver,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;sessionID,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;custom)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendPerks(zombie.characters.IsoPlayer)" class="member-name-link">sendPerks</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendPersonalColor(zombie.characters.IsoPlayer)" class="member-name-link">sendPersonalColor</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendPlayer(zombie.characters.IsoPlayer)" class="member-name-link">sendPlayer</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;isoPlayer)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendPlayer2(zombie.characters.IsoPlayer)" class="member-name-link">sendPlayer2</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;isoPlayer)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendPlayerConnect(zombie.characters.IsoPlayer)" class="member-name-link">sendPlayerConnect</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#sendPlayerConnected(zombie.characters.IsoPlayer,zombie.network.IConnection)" class="member-name-link">sendPlayerConnected</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
+<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendPerks(zombie.characters.IsoPlayer)" class="member-name-link">sendPerks</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendPersonalColor(zombie.characters.IsoPlayer)" class="member-name-link">sendPersonalColor</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendPlayer(zombie.characters.IsoPlayer)" class="member-name-link">sendPlayer</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;isoPlayer)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendPlayer2(zombie.characters.IsoPlayer)" class="member-name-link">sendPlayer2</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;isoPlayer)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendPlayerConnect(zombie.characters.IsoPlayer)" class="member-name-link">sendPlayerConnect</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#sendPlayerConnected(zombie.characters.IsoPlayer,zombie.network.IConnection)" class="member-name-link">sendPlayerConnected</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
  <a href="../../network/IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;c)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendPlayerDamage(zombie.characters.IsoPlayer)" class="member-name-link">sendPlayerDamage</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendPlayerExtraInfo(zombie.characters.IsoPlayer)" class="member-name-link">sendPlayerExtraInfo</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendPlayerDamage(zombie.characters.IsoPlayer)" class="member-name-link">sendPlayerDamage</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#sendPlayerExtraInfo(zombie.characters.IsoPlayer,zombie.core.raknet.UdpConnection)" class="member-name-link">sendPlayerExtraInfo</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
+<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendPlayerExtraInfo(zombie.characters.IsoPlayer)" class="member-name-link">sendPlayerExtraInfo</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#sendPlayerExtraInfo(zombie.characters.IsoPlayer,zombie.core.raknet.UdpConnection)" class="member-name-link">sendPlayerExtraInfo</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
  <a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#sendPlayerExtraInfo(zombie.characters.IsoPlayer,zombie.core.raknet.UdpConnection,boolean)" class="member-name-link">sendPlayerExtraInfo</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#sendPlayerExtraInfo(zombie.characters.IsoPlayer,zombie.core.raknet.UdpConnection,boolean)" class="member-name-link">sendPlayerExtraInfo</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
  <a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  boolean&nbsp;isForced)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#sendReanimatedZombieID(zombie.characters.IsoPlayer,zombie.characters.IsoZombie)" class="member-name-link">sendReanimatedZombieID</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;zombie)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#sendServerCommand(zombie.characters.IsoPlayer,java.lang.String,java.lang.String,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">sendServerCommand</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#sendReanimatedZombieID(zombie.characters.IsoPlayer,zombie.characters.IsoZombie)" class="member-name-link">sendReanimatedZombieID</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ <a href="../IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;zombie)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#sendServerCommand(zombie.characters.IsoPlayer,java.lang.String,java.lang.String,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">sendServerCommand</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;module,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;command,
  se.krka.kahlua.vm.KahluaTable&nbsp;args)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendSneezingCoughing(zombie.characters.IsoPlayer,int,byte)" class="member-name-link">sendSneezingCoughing</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendSneezingCoughing(zombie.characters.IsoPlayer,int,byte)" class="member-name-link">sendSneezingCoughing</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  int&nbsp;sneezingCoughing,
  byte&nbsp;sneezeVar)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#sendSyncClothing(zombie.characters.IsoPlayer,zombie.scripting.objects.ItemBodyLocation,zombie.inventory.InventoryItem)" class="member-name-link">sendSyncClothing</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../../scripting/objects/ItemBodyLocation.html" title="class in zombie.scripting.objects">ItemBodyLocation</a>&nbsp;location,
- <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#sendSyncPlayerFields(zombie.characters.IsoPlayer,byte)" class="member-name-link">sendSyncPlayerFields</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- byte&nbsp;syncParams)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#sendSyncClothing(zombie.characters.IsoPlayer,zombie.scripting.objects.ItemBodyLocation,zombie.inventory.InventoryItem)" class="member-name-link">sendSyncClothing</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ <a href="../../scripting/objects/ItemBodyLocation.html" title="class in zombie.scripting.objects">ItemBodyLocation</a>&nbsp;location,
+ <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#sendTeleport(zombie.characters.IsoPlayer,float,float,float)" class="member-name-link">sendTeleport</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#sendSyncPlayerFields(zombie.characters.IsoPlayer,byte)" class="member-name-link">sendSyncPlayerFields</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ byte&nbsp;syncParams)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#sendTeleport(zombie.characters.IsoPlayer,float,float,float)" class="member-name-link">sendTeleport</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  float&nbsp;x,
  float&nbsp;y,
  float&nbsp;z)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendVehicleHit(zombie.characters.IsoPlayer,zombie.characters.IsoGameCharacter,zombie.vehicles.BaseVehicle,float,boolean,int,float,boolean)" class="member-name-link">sendVehicleHit</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;wielder,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendVehicleHit(zombie.characters.IsoPlayer,zombie.characters.IsoGameCharacter,zombie.vehicles.BaseVehicle,float,boolean,int,float,boolean)" class="member-name-link">sendVehicleHit</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;wielder,
  <a href="../IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;target,
  <a href="../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle,
  float&nbsp;damage,
@@ -2381,55 +2398,57 @@ loadScripts(document, 'script');</script>
  int&nbsp;vehicleDamage,
  float&nbsp;vehicleSpeed,
  boolean&nbsp;isVehicleHitFromBehind)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendVisual(zombie.characters.IsoPlayer)" class="member-name-link">sendVisual</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">WarManager.</span><code><a href="../../network/WarManager.html#sendWarToPlayer(zombie.characters.IsoPlayer)" class="member-name-link">sendWarToPlayer</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendVisual(zombie.characters.IsoPlayer)" class="member-name-link">sendVisual</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendZombieHit(zombie.characters.IsoZombie,zombie.characters.IsoPlayer)" class="member-name-link">sendZombieHit</a><wbr>(<a href="../IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;wielder,
- <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;target)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">WarManager.</span><code><a href="../../network/WarManager.html#sendWarToPlayer(zombie.characters.IsoPlayer)" class="member-name-link">sendWarToPlayer</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#setCustomVariables(zombie.characters.IsoPlayer,zombie.network.IConnection)" class="member-name-link">setCustomVariables</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
+<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendZombieHit(zombie.characters.IsoZombie,zombie.characters.IsoPlayer,boolean,java.lang.String)" class="member-name-link">sendZombieHit</a><wbr>(<a href="../IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;wielder,
+ <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;target,
+ boolean&nbsp;didDamage,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;hitReaction)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#setCustomVariables(zombie.characters.IsoPlayer,zombie.network.IConnection)" class="member-name-link">setCustomVariables</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
  <a href="../../network/IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;c)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IConnection.</span><code><a href="../../network/IConnection.html#setPlayerAt(int,zombie.characters.IsoPlayer)" class="member-name-link">setPlayerAt</a><wbr>(int&nbsp;var1,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IConnection.</span><code><a href="../../network/IConnection.html#setPlayerAt(int,zombie.characters.IsoPlayer)" class="member-name-link">setPlayerAt</a><wbr>(int&nbsp;var1,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;var2)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">BodyDamageSync.</span><code><a href="../../network/BodyDamageSync.html#startReceivingUpdates(zombie.characters.IsoPlayer)" class="member-name-link">startReceivingUpdates</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;remotePlayer)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">BodyDamageSync.</span><code><a href="../../network/BodyDamageSync.html#stopReceivingUpdates(zombie.characters.IsoPlayer)" class="member-name-link">stopReceivingUpdates</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;remotePlayer)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#syncVisuals(zombie.characters.IsoPlayer)" class="member-name-link">syncVisuals</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#tradingUISendAddItem(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">tradingUISendAddItem</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
- <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;other,
- <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">BodyDamageSync.</span><code><a href="../../network/BodyDamageSync.html#startReceivingUpdates(zombie.characters.IsoPlayer)" class="member-name-link">startReceivingUpdates</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;remotePlayer)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#tradingUISendRemoveItem(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">tradingUISendRemoveItem</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
+<div class="col-second odd-row-color"><span class="type-name-label">BodyDamageSync.</span><code><a href="../../network/BodyDamageSync.html#stopReceivingUpdates(zombie.characters.IsoPlayer)" class="member-name-link">stopReceivingUpdates</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;remotePlayer)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../network/GameServer.html#syncVisuals(zombie.characters.IsoPlayer)" class="member-name-link">syncVisuals</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#tradingUISendAddItem(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">tradingUISendAddItem</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;other,
  <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#tradingUISendUpdateState(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,int)" class="member-name-link">tradingUISendUpdateState</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
+<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#tradingUISendRemoveItem(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">tradingUISendRemoveItem</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
+ <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;other,
+ <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#tradingUISendUpdateState(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,int)" class="member-name-link">tradingUISendUpdateState</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;other,
  int&nbsp;state)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ServerLOS.</span><code><a href="../../network/ServerLOS.html#updateLOS(zombie.characters.IsoPlayer)" class="member-name-link">updateLOS</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">PassengerMap.</span><code><a href="../../network/PassengerMap.html#updatePassenger(zombie.characters.IsoPlayer)" class="member-name-link">updatePassenger</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ServerLOS.</span><code><a href="../../network/ServerLOS.html#updateLOS(zombie.characters.IsoPlayer)" class="member-name-link">updateLOS</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">PassengerMap.</span><code><a href="../../network/PassengerMap.html#updatePassenger(zombie.characters.IsoPlayer)" class="member-name-link">updatePassenger</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Method parameters in <a href="../../network/package-summary.html">zombie.network</a> with type arguments of type <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></span></div>
 <div class="summary-table three-column-summary">
@@ -2583,11 +2602,12 @@ loadScripts(document, 'script');</script>
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;other)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">AddXpPacket.</span><code><a href="../../network/packets/AddXpPacket.html#addXp(zombie.core.raknet.UdpConnection,zombie.characters.IsoPlayer,zombie.characters.skills.PerkFactory.Perk,float,boolean)" class="member-name-link">addXp</a><wbr>(<a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+<div class="col-second odd-row-color"><span class="type-name-label">AddXpPacket.</span><code><a href="../../network/packets/AddXpPacket.html#addXp(zombie.core.raknet.UdpConnection,zombie.characters.IsoPlayer,zombie.characters.skills.PerkFactory.Perk,float,boolean,boolean)" class="member-name-link">addXp</a><wbr>(<a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="../skills/PerkFactory.Perk.html" title="class in zombie.characters.skills">PerkFactory.Perk</a>&nbsp;perk,
  float&nbsp;amount,
- boolean&nbsp;noMultiplier)</code></div>
+ boolean&nbsp;noMultiplier,
+ boolean&nbsp;showXP)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">RequestTradingPacket.</span><code><a href="../../network/packets/RequestTradingPacket.html#ask(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer)" class="member-name-link">ask</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
@@ -2623,41 +2643,48 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;noMultiplier)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">SyncClothingPacket.</span><code><a href="../../network/packets/SyncClothingPacket.html#set(zombie.characters.IsoPlayer)" class="member-name-link">set</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">AddXpPacket.</span><code><a href="../../network/packets/AddXpPacket.html#set(zombie.characters.IsoPlayer,zombie.characters.skills.PerkFactory.Perk,float,boolean,boolean)" class="member-name-link">set</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;target,
+ <a href="../skills/PerkFactory.Perk.html" title="class in zombie.characters.skills">PerkFactory.Perk</a>&nbsp;perk,
+ float&nbsp;amount,
+ boolean&nbsp;noMultiplier,
+ boolean&nbsp;showXP)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">SyncPlayerFieldsPacket.</span><code><a href="../../network/packets/SyncPlayerFieldsPacket.html#set(zombie.characters.IsoPlayer,byte)" class="member-name-link">set</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+<div class="col-second even-row-color"><span class="type-name-label">SyncClothingPacket.</span><code><a href="../../network/packets/SyncClothingPacket.html#set(zombie.characters.IsoPlayer)" class="member-name-link">set</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">SyncPlayerFieldsPacket.</span><code><a href="../../network/packets/SyncPlayerFieldsPacket.html#set(zombie.characters.IsoPlayer,byte)" class="member-name-link">set</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  byte&nbsp;syncParams)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">SyncVisualsPacket.</span><code><a href="../../network/packets/SyncVisualsPacket.html#set(zombie.characters.IsoPlayer)" class="member-name-link">set</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">TradingUIAddItemPacket.</span><code><a href="../../network/packets/TradingUIAddItemPacket.html#set(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">set</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
- <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;other,
- <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">SyncVisualsPacket.</span><code><a href="../../network/packets/SyncVisualsPacket.html#set(zombie.characters.IsoPlayer)" class="member-name-link">set</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">TradingUIRemoveItemPacket.</span><code><a href="../../network/packets/TradingUIRemoveItemPacket.html#set(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">set</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
+<div class="col-second odd-row-color"><span class="type-name-label">TradingUIAddItemPacket.</span><code><a href="../../network/packets/TradingUIAddItemPacket.html#set(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">set</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;other,
  <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">TradingUIUpdateStatePacket.</span><code><a href="../../network/packets/TradingUIUpdateStatePacket.html#set(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,byte)" class="member-name-link">set</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
+<div class="col-second even-row-color"><span class="type-name-label">TradingUIRemoveItemPacket.</span><code><a href="../../network/packets/TradingUIRemoveItemPacket.html#set(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">set</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
+ <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;other,
+ <a href="../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">TradingUIUpdateStatePacket.</span><code><a href="../../network/packets/TradingUIUpdateStatePacket.html#set(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,byte)" class="member-name-link">set</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;other,
  byte&nbsp;state)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">BodyDamageUpdatePacket.</span><code><a href="../../network/packets/BodyDamageUpdatePacket.html#setStart(zombie.characters.IsoPlayer)" class="member-name-link">setStart</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;remotePlayer)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">BodyDamageUpdatePacket.</span><code><a href="../../network/packets/BodyDamageUpdatePacket.html#setStop(zombie.characters.IsoPlayer)" class="member-name-link">setStop</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;remotePlayer)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">BodyDamageUpdatePacket.</span><code><a href="../../network/packets/BodyDamageUpdatePacket.html#setStart(zombie.characters.IsoPlayer)" class="member-name-link">setStart</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;remotePlayer)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">BodyDamageUpdatePacket.</span><code><a href="../../network/packets/BodyDamageUpdatePacket.html#setUpdate(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,java.nio.ByteBuffer)" class="member-name-link">setUpdate</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;remotePlayer,
+<div class="col-second odd-row-color"><span class="type-name-label">BodyDamageUpdatePacket.</span><code><a href="../../network/packets/BodyDamageUpdatePacket.html#setStop(zombie.characters.IsoPlayer)" class="member-name-link">setStop</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;remotePlayer)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">BodyDamageUpdatePacket.</span><code><a href="../../network/packets/BodyDamageUpdatePacket.html#setUpdate(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,java.nio.ByteBuffer)" class="member-name-link">setUpdate</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;remotePlayer,
  <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;requester,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;inputData)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -2861,7 +2888,7 @@ loadScripts(document, 'script');</script>
  float&nbsp;damage)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">PlayerHitZombiePacket.</span><code><a href="../../network/packets/hit/PlayerHitZombiePacket.html#set(zombie.characters.IsoPlayer,zombie.inventory.types.HandWeapon,boolean,boolean,zombie.characters.IsoZombie,float,float,boolean,boolean)" class="member-name-link">set</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;wielder,
+<div class="col-second even-row-color"><span class="type-name-label">PlayerHitZombiePacket.</span><code><a href="../../network/packets/hit/PlayerHitZombiePacket.html#set(zombie.characters.IsoPlayer,zombie.inventory.types.HandWeapon,boolean,boolean,zombie.characters.IsoZombie,float,float,boolean,boolean,boolean)" class="member-name-link">set</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;wielder,
  <a href="../../inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;weapon,
  boolean&nbsp;isIgnoreDamage,
  boolean&nbsp;isCriticalHit,
@@ -2869,7 +2896,8 @@ loadScripts(document, 'script');</script>
  float&nbsp;damage,
  float&nbsp;range,
  boolean&nbsp;helmetFall,
- boolean&nbsp;hitHead)</code></div>
+ boolean&nbsp;hitHead,
+ boolean&nbsp;removeKnife)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">VehicleHit.</span><code><a href="../../network/packets/hit/VehicleHit.html#set(zombie.characters.IsoPlayer,zombie.characters.IsoGameCharacter,zombie.vehicles.BaseVehicle,boolean,float,boolean,int,float,boolean)" class="member-name-link">set</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;wielder,
@@ -2913,8 +2941,10 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;isVehicleHitFromBehind)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ZombieHitPlayerPacket.</span><code><a href="../../network/packets/hit/ZombieHitPlayerPacket.html#set(zombie.characters.IsoZombie,zombie.characters.IsoPlayer)" class="member-name-link">set</a><wbr>(<a href="../IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;wielder,
- <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;target)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ZombieHitPlayerPacket.</span><code><a href="../../network/packets/hit/ZombieHitPlayerPacket.html#set(zombie.characters.IsoZombie,zombie.characters.IsoPlayer,boolean,java.lang.String)" class="member-name-link">set</a><wbr>(<a href="../IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;wielder,
+ <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;target,
+ boolean&nbsp;didDamage,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;hitReaction)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>

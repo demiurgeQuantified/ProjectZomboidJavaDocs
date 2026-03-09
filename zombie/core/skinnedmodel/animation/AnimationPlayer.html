@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -126,6 +126,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#getModelTransformAt(int)" tabindex="0">getModelTransformAt(int)</a></li>
 <li><a href="#getBoneTransformsTimeDelta()" tabindex="0">getBoneTransformsTimeDelta()</a></li>
 <li><a href="#isRagdollSimulationActive()" tabindex="0">isRagdollSimulationActive()</a></li>
+<li><a href="#isFullyRagdolling()" tabindex="0">isFullyRagdolling()</a></li>
 <li><a href="#updateMultiTrackBoneTransforms_DeferredMovementOnly()" tabindex="0">updateMultiTrackBoneTransforms_DeferredMovementOnly()</a></li>
 <li><a href="#isRecording()" tabindex="0">isRecording()</a></li>
 <li><a href="#setRecorder(zombie.core.skinnedmodel.animation.debug.AnimationPlayerRecorder)" tabindex="0">setRecorder(AnimationPlayerRecorder)</a></li>
@@ -133,6 +134,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#dismember(int)" tabindex="0">dismember(int)</a></li>
 <li><a href="#transformRootChildBones(java.lang.String,org.lwjgl.util.vector.Quaternion)" tabindex="0">transformRootChildBones(String, Quaternion)</a></li>
 <li><a href="#getBoneModelTransform(int,org.lwjgl.util.vector.Matrix4f)" tabindex="0">getBoneModelTransform(int, Matrix4f)</a></li>
+<li><a href="#getBoneWorldPosition(zombie.core.skinnedmodel.model.SkeletonBone,org.lwjgl.util.vector.Vector3f)" tabindex="0">getBoneWorldPosition(SkeletonBone, Vector3f)</a></li>
 <li><a href="#getBindPoseBoneModelTransform(int,org.lwjgl.util.vector.Matrix4f)" tabindex="0">getBindPoseBoneModelTransform(int, Matrix4f)</a></li>
 <li><a href="#getBoneTransform(int,org.lwjgl.util.vector.Matrix4f)" tabindex="0">getBoneTransform(int, Matrix4f)</a></li>
 <li><a href="#getBone(int)" tabindex="0">getBone(int)</a></li>
@@ -299,138 +301,145 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBoneTransformsTimeDelta()" class="member-name-link">getBoneTransformsTimeDelta</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="AnimationBoneBinding.html" title="class in zombie.core.skinnedmodel.animation">AnimationBoneBinding</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCounterRotationBone()" class="member-name-link">getCounterRotationBone</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.lwjgl.util.vector.Vector3f</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBoneWorldPosition(zombie.core.skinnedmodel.model.SkeletonBone,org.lwjgl.util.vector.Vector3f)" class="member-name-link">getBoneWorldPosition</a><wbr>(<a href="../model/SkeletonBone.html" title="enum class in zombie.core.skinnedmodel.model">SkeletonBone</a>&nbsp;bone,
+ org.lwjgl.util.vector.Vector3f&nbsp;pos)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDeferredAngleDelta()" class="member-name-link">getDeferredAngleDelta</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../iso/Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDeferredMovement(zombie.iso.Vector2,boolean)" class="member-name-link">getDeferredMovement</a><wbr>(<a href="../../../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;result,
- boolean&nbsp;reset)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDeferredMovementFromRagdoll(zombie.iso.Vector3)" class="member-name-link">getDeferredMovementFromRagdoll</a><wbr>(<a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;result)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="AnimationBoneBinding.html" title="class in zombie.core.skinnedmodel.animation">AnimationBoneBinding</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCounterRotationBone()" class="member-name-link">getCounterRotationBone</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDeferredRotationWeight()" class="member-name-link">getDeferredRotationWeight</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getExcessTwistAngle()" class="member-name-link">getExcessTwistAngle</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.joml.Vector3f</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getGrappleOffset(org.joml.Vector3f)" class="member-name-link">getGrappleOffset</a><wbr>(org.joml.Vector3f&nbsp;result)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getGrappleOffset(zombie.iso.Vector3)" class="member-name-link">getGrappleOffset</a><wbr>(<a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;result)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIsoGameCharacter()" class="member-name-link">getIsoGameCharacter</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMaxTwistAngle()" class="member-name-link">getMaxTwistAngle</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the maximum twist angle, in radians.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../model/Model.html" title="class in zombie.core.skinnedmodel.model">Model</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getModel()" class="member-name-link">getModel</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.lwjgl.util.vector.Matrix4f</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getModelTransformAt(int)" class="member-name-link">getModelTransformAt</a><wbr>(int&nbsp;idx)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getModelTransformsCount()" class="member-name-link">getModelTransformsCount</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="AnimationMultiTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationMultiTrack</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMultiTrack()" class="member-name-link">getMultiTrack</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNumBones()" class="member-name-link">getNumBones</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNumTwistBones()" class="member-name-link">getNumTwistBones</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="AnimationClip.html" title="class in zombie.core.skinnedmodel.animation">AnimationClip</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOrCreateRagdollAnimationClip()" class="member-name-link">getOrCreateRagdollAnimationClip</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.lwjgl.util.vector.Matrix4f</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#GetPropBoneMatrix(int)" class="member-name-link">GetPropBoneMatrix</a><wbr>(int&nbsp;bone)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../physics/RagdollController.html" title="class in zombie.core.physics">RagdollController</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRagdollController()" class="member-name-link">getRagdollController</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="AnimationClip.html" title="class in zombie.core.skinnedmodel.animation">AnimationClip</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRagdollSimulationAnimationClip()" class="member-name-link">getRagdollSimulationAnimationClip</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="debug/AnimationPlayerRecorder.html" title="class in zombie.core.skinnedmodel.animation.debug">AnimationPlayerRecorder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecorder()" class="member-name-link">getRecorder</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRenderedAngle()" class="member-name-link">getRenderedAngle</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getShoulderTwistAngle()" class="member-name-link">getShoulderTwistAngle</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../model/SkinningBoneHierarchy.html" title="class in zombie.core.skinnedmodel.model">SkinningBoneHierarchy</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSkeletonBoneHierarchy()" class="member-name-link">getSkeletonBoneHierarchy</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSkinningBoneIndex(java.lang.String,int)" class="member-name-link">getSkinningBoneIndex</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;boneName,
- int&nbsp;defaultVal)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link">HashMap</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSkinningBoneIndices()" class="member-name-link">getSkinningBoneIndices</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../model/SkinningData.html" title="class in zombie.core.skinnedmodel.model">SkinningData</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSkinningData()" class="member-name-link">getSkinningData</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.lwjgl.util.vector.Matrix4f[]</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSkinTransforms(zombie.core.skinnedmodel.model.SkinningData)" class="member-name-link">getSkinTransforms</a><wbr>(<a href="../model/SkinningData.html" title="class in zombie.core.skinnedmodel.model">SkinningData</a>&nbsp;skinnedTo)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTargetAngle()" class="member-name-link">getTargetAngle</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.joml.Vector3f</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTargetGrapplePos(org.joml.Vector3f)" class="member-name-link">getTargetGrapplePos</a><wbr>(org.joml.Vector3f&nbsp;result)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTargetGrapplePos(zombie.iso.Vector3)" class="member-name-link">getTargetGrapplePos</a><wbr>(<a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;result)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDeferredAngleDelta()" class="member-name-link">getDeferredAngleDelta</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../iso/Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTargetGrappleRotation(zombie.iso.Vector2)" class="member-name-link">getTargetGrappleRotation</a><wbr>(<a href="../../../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;result)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDeferredMovement(zombie.iso.Vector2,boolean)" class="member-name-link">getDeferredMovement</a><wbr>(<a href="../../../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;result,
+ boolean&nbsp;reset)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDeferredMovementFromRagdoll(zombie.iso.Vector3)" class="member-name-link">getDeferredMovementFromRagdoll</a><wbr>(<a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;result)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDeferredRotationWeight()" class="member-name-link">getDeferredRotationWeight</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTargetTwistAngle()" class="member-name-link">getTargetTwistAngle</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getExcessTwistAngle()" class="member-name-link">getExcessTwistAngle</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.joml.Vector3f</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getGrappleOffset(org.joml.Vector3f)" class="member-name-link">getGrappleOffset</a><wbr>(org.joml.Vector3f&nbsp;result)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getGrappleOffset(zombie.iso.Vector3)" class="member-name-link">getGrappleOffset</a><wbr>(<a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;result)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIsoGameCharacter()" class="member-name-link">getIsoGameCharacter</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMaxTwistAngle()" class="member-name-link">getMaxTwistAngle</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the maximum twist angle, in radians.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../model/Model.html" title="class in zombie.core.skinnedmodel.model">Model</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getModel()" class="member-name-link">getModel</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.lwjgl.util.vector.Matrix4f</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getModelTransformAt(int)" class="member-name-link">getModelTransformAt</a><wbr>(int&nbsp;idx)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getModelTransformsCount()" class="member-name-link">getModelTransformsCount</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="AnimationMultiTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationMultiTrack</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMultiTrack()" class="member-name-link">getMultiTrack</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNumBones()" class="member-name-link">getNumBones</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNumTwistBones()" class="member-name-link">getNumTwistBones</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="AnimationClip.html" title="class in zombie.core.skinnedmodel.animation">AnimationClip</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOrCreateRagdollAnimationClip()" class="member-name-link">getOrCreateRagdollAnimationClip</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.lwjgl.util.vector.Matrix4f</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#GetPropBoneMatrix(int)" class="member-name-link">GetPropBoneMatrix</a><wbr>(int&nbsp;bone)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../physics/RagdollController.html" title="class in zombie.core.physics">RagdollController</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRagdollController()" class="member-name-link">getRagdollController</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="AnimationClip.html" title="class in zombie.core.skinnedmodel.animation">AnimationClip</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRagdollSimulationAnimationClip()" class="member-name-link">getRagdollSimulationAnimationClip</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="debug/AnimationPlayerRecorder.html" title="class in zombie.core.skinnedmodel.animation.debug">AnimationPlayerRecorder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecorder()" class="member-name-link">getRecorder</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRenderedAngle()" class="member-name-link">getRenderedAngle</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getShoulderTwistAngle()" class="member-name-link">getShoulderTwistAngle</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../model/SkinningBoneHierarchy.html" title="class in zombie.core.skinnedmodel.model">SkinningBoneHierarchy</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSkeletonBoneHierarchy()" class="member-name-link">getSkeletonBoneHierarchy</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSkinningBoneIndex(java.lang.String,int)" class="member-name-link">getSkinningBoneIndex</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;boneName,
+ int&nbsp;defaultVal)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link">HashMap</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSkinningBoneIndices()" class="member-name-link">getSkinningBoneIndices</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../model/SkinningData.html" title="class in zombie.core.skinnedmodel.model">SkinningData</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSkinningData()" class="member-name-link">getSkinningData</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.lwjgl.util.vector.Matrix4f[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSkinTransforms(zombie.core.skinnedmodel.model.SkinningData)" class="member-name-link">getSkinTransforms</a><wbr>(<a href="../model/SkinningData.html" title="class in zombie.core.skinnedmodel.model">SkinningData</a>&nbsp;skinnedTo)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTargetAngle()" class="member-name-link">getTargetAngle</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.joml.Vector3f</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTargetGrapplePos(org.joml.Vector3f)" class="member-name-link">getTargetGrapplePos</a><wbr>(org.joml.Vector3f&nbsp;result)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTargetGrapplePos(zombie.iso.Vector3)" class="member-name-link">getTargetGrapplePos</a><wbr>(<a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;result)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../iso/Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTargetGrappleRotation(zombie.iso.Vector2)" class="member-name-link">getTargetGrappleRotation</a><wbr>(<a href="../../../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;result)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTargetTwistAngle()" class="member-name-link">getTargetTwistAngle</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The lookAt bearing, in radians.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTwistAngle()" class="member-name-link">getTwistAngle</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="AnimatorsBoneTransform.html" title="class in zombie.core.skinnedmodel.animation">AnimatorsBoneTransform</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTwistBoneAt(int)" class="member-name-link">getTwistBoneAt</a><wbr>(int&nbsp;twistBoneIdx)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTwistAngle()" class="member-name-link">getTwistAngle</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTwistBoneNameAt(int)" class="member-name-link">getTwistBoneNameAt</a><wbr>(int&nbsp;twistBoneIdx)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="AnimatorsBoneTransform.html" title="class in zombie.core.skinnedmodel.animation">AnimatorsBoneTransform</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTwistBoneAt(int)" class="member-name-link">getTwistBoneAt</a><wbr>(int&nbsp;twistBoneIdx)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.lwjgl.util.vector.Matrix4f</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getUnweightedBoneTransform(zombie.core.skinnedmodel.animation.AnimationTrack,int,org.lwjgl.util.vector.Matrix4f)" class="member-name-link">getUnweightedBoneTransform</a><wbr>(<a href="AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a>&nbsp;track,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTwistBoneNameAt(int)" class="member-name-link">getTwistBoneNameAt</a><wbr>(int&nbsp;twistBoneIdx)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.lwjgl.util.vector.Matrix4f</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getUnweightedBoneTransform(zombie.core.skinnedmodel.animation.AnimationTrack,int,org.lwjgl.util.vector.Matrix4f)" class="member-name-link">getUnweightedBoneTransform</a><wbr>(<a href="AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a>&nbsp;track,
  int&nbsp;boneIdx,
  org.lwjgl.util.vector.Matrix4f&nbsp;boneTransform)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.lwjgl.util.vector.Matrix4f</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUnweightedModelTransform(zombie.core.skinnedmodel.animation.AnimationTrack,int,org.lwjgl.util.vector.Matrix4f)" class="member-name-link">getUnweightedModelTransform</a><wbr>(<a href="AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a>&nbsp;track,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.lwjgl.util.vector.Matrix4f</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUnweightedModelTransform(zombie.core.skinnedmodel.animation.AnimationTrack,int,org.lwjgl.util.vector.Matrix4f)" class="member-name-link">getUnweightedModelTransform</a><wbr>(<a href="AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a>&nbsp;track,
  int&nbsp;boneIdx,
  org.lwjgl.util.vector.Matrix4f&nbsp;modelTransform)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasSkinningData()" class="member-name-link">hasSkinningData</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBoneReparented(int)" class="member-name-link">isBoneReparented</a><wbr>(int&nbsp;boneIdx)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasSkinningData()" class="member-name-link">hasSkinningData</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBoneTransformsNeedFirstFrame()" class="member-name-link">isBoneTransformsNeedFirstFrame</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBoneReparented(int)" class="member-name-link">isBoneReparented</a><wbr>(int&nbsp;boneIdx)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBoneTransformsNeedFirstFrame()" class="member-name-link">isBoneTransformsNeedFirstFrame</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFullyRagdolling()" class="member-name-link">isFullyRagdolling</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRagdolling()" class="member-name-link">isRagdolling</a>()</code></div>
@@ -1120,6 +1129,14 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="isFullyRagdolling()">
+<h3>isFullyRagdolling</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isFullyRagdolling</span>()</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="updateMultiTrackBoneTransforms_DeferredMovementOnly()">
 <h3>updateMultiTrackBoneTransforms_DeferredMovementOnly</h3>
 <div class="horizontal-scroll">
@@ -1176,6 +1193,15 @@ loadScripts(document, 'script');</script>
  org.lwjgl.util.vector.Matrix4f&nbsp;modelTransform)</span></div>
 <div class="block">Get the bone's transform, in the model space.
   That is, relative to the model's origin.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getBoneWorldPosition(zombie.core.skinnedmodel.model.SkeletonBone,org.lwjgl.util.vector.Vector3f)">
+<h3>getBoneWorldPosition</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.lwjgl.util.vector.Vector3f</span>&nbsp;<span class="element-name">getBoneWorldPosition</span><wbr><span class="parameters">(<a href="../model/SkeletonBone.html" title="enum class in zombie.core.skinnedmodel.model">SkeletonBone</a>&nbsp;bone,
+ org.lwjgl.util.vector.Vector3f&nbsp;pos)</span></div>
 </div>
 </section>
 </li>

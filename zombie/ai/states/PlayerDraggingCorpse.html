@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -65,8 +65,14 @@ loadScripts(document, 'script');</script>
 <li><a href="#GRAPPLING_TARGET" tabindex="0">GRAPPLING_TARGET</a></li>
 <li><a href="#DO_GRAPPLE" tabindex="0">DO_GRAPPLE</a></li>
 <li><a href="#DO_CONTINUE_GRAPPLE" tabindex="0">DO_CONTINUE_GRAPPLE</a></li>
-<li><a href="#IS_GRAPPLE_WINDOW" tabindex="0">IS_GRAPPLE_WINDOW</a></li>
+<li><a href="#IS_THROW_OUT_WINDOW" tabindex="0">IS_THROW_OUT_WINDOW</a></li>
+<li><a href="#IS_THROW_OVER_FENCE" tabindex="0">IS_THROW_OVER_FENCE</a></li>
+<li><a href="#IS_THROW_INTO_CONTAINER" tabindex="0">IS_THROW_INTO_CONTAINER</a></li>
 <li><a href="#GRUNT_COUNTER" tabindex="0">GRUNT_COUNTER</a></li>
+<li><a href="#BEARING_FROM_GRAPPLE_TARGET" tabindex="0">BEARING_FROM_GRAPPLE_TARGET</a></li>
+<li><a href="#THROWN_OUT_WINDOW_OBJ" tabindex="0">THROWN_OUT_WINDOW_OBJ</a></li>
+<li><a href="#THROWN_OVER_FENCE_DIR" tabindex="0">THROWN_OVER_FENCE_DIR</a></li>
+<li><a href="#THROWN_INTO_CONTAINER_OBJ" tabindex="0">THROWN_INTO_CONTAINER_OBJ</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
@@ -121,23 +127,41 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static final <a href="../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Float.html" title="class or interface in java.lang" class="external-link">Float</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#BEARING_FROM_GRAPPLE_TARGET" class="member-name-link">BEARING_FROM_GRAPPLE_TARGET</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#DO_CONTINUE_GRAPPLE" class="member-name-link">DO_CONTINUE_GRAPPLE</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#DO_CONTINUE_GRAPPLE" class="member-name-link">DO_CONTINUE_GRAPPLE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#DO_GRAPPLE" class="member-name-link">DO_GRAPPLE</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="../../core/skinnedmodel/IGrappleable.html" title="interface in zombie.core.skinnedmodel">IGrappleable</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#GRAPPLING_TARGET" class="member-name-link">GRAPPLING_TARGET</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#GRAPPLING_TYPE" class="member-name-link">GRAPPLING_TYPE</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#GRUNT_COUNTER" class="member-name-link">GRUNT_COUNTER</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#IS_THROW_INTO_CONTAINER" class="member-name-link">IS_THROW_INTO_CONTAINER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#DO_GRAPPLE" class="member-name-link">DO_GRAPPLE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IS_THROW_OUT_WINDOW" class="member-name-link">IS_THROW_OUT_WINDOW</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final <a href="../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="../../core/skinnedmodel/IGrappleable.html" title="interface in zombie.core.skinnedmodel">IGrappleable</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#GRAPPLING_TARGET" class="member-name-link">GRAPPLING_TARGET</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#IS_THROW_OVER_FENCE" class="member-name-link">IS_THROW_OVER_FENCE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#GRAPPLING_TYPE" class="member-name-link">GRAPPLING_TYPE</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="../../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#THROWN_INTO_CONTAINER_OBJ" class="member-name-link">THROWN_INTO_CONTAINER_OBJ</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final <a href="../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#GRUNT_COUNTER" class="member-name-link">GRUNT_COUNTER</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="../../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#THROWN_OUT_WINDOW_OBJ" class="member-name-link">THROWN_OUT_WINDOW_OBJ</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#IS_GRAPPLE_WINDOW" class="member-name-link">IS_GRAPPLE_WINDOW</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="../State.Param.html" title="class in zombie.ai">State.Param</a><wbr>&lt;<a href="../../iso/IsoDirections.html" title="enum class in zombie.iso">IsoDirections</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#THROWN_OVER_FENCE_DIR" class="member-name-link">THROWN_OVER_FENCE_DIR</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
@@ -228,10 +252,26 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="IS_GRAPPLE_WINDOW">
-<h3>IS_GRAPPLE_WINDOW</h3>
+<section class="detail" id="IS_THROW_OUT_WINDOW">
+<h3>IS_THROW_OUT_WINDOW</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</span>&nbsp;<span class="element-name">IS_GRAPPLE_WINDOW</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</span>&nbsp;<span class="element-name">IS_THROW_OUT_WINDOW</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="IS_THROW_OVER_FENCE">
+<h3>IS_THROW_OVER_FENCE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</span>&nbsp;<span class="element-name">IS_THROW_OVER_FENCE</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="IS_THROW_INTO_CONTAINER">
+<h3>IS_THROW_INTO_CONTAINER</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</span>&nbsp;<span class="element-name">IS_THROW_INTO_CONTAINER</span></div>
 </div>
 </section>
 </li>
@@ -240,6 +280,38 @@ loadScripts(document, 'script');</script>
 <h3>GRUNT_COUNTER</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</span>&nbsp;<span class="element-name">GRUNT_COUNTER</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="BEARING_FROM_GRAPPLE_TARGET">
+<h3>BEARING_FROM_GRAPPLE_TARGET</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Float.html" title="class or interface in java.lang" class="external-link">Float</a>&gt;</span>&nbsp;<span class="element-name">BEARING_FROM_GRAPPLE_TARGET</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="THROWN_OUT_WINDOW_OBJ">
+<h3>THROWN_OUT_WINDOW_OBJ</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="../../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;</span>&nbsp;<span class="element-name">THROWN_OUT_WINDOW_OBJ</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="THROWN_OVER_FENCE_DIR">
+<h3>THROWN_OVER_FENCE_DIR</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="../../iso/IsoDirections.html" title="enum class in zombie.iso">IsoDirections</a>&gt;</span>&nbsp;<span class="element-name">THROWN_OVER_FENCE_DIR</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="THROWN_INTO_CONTAINER_OBJ">
+<h3>THROWN_INTO_CONTAINER_OBJ</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../State.Param.html" title="class in zombie.ai">State.Param</a>&lt;<a href="../../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&gt;</span>&nbsp;<span class="element-name">THROWN_INTO_CONTAINER_OBJ</span></div>
 </div>
 </section>
 </li>

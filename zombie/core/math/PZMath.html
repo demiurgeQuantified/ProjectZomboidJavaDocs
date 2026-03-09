@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -155,6 +155,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#rotateVector(org.lwjgl.util.vector.Vector3f,org.lwjgl.util.vector.Quaternion,org.lwjgl.util.vector.Vector3f)" tabindex="0">rotateVector(Vector3f, Quaternion, Vector3f)</a></li>
 <li><a href="#rotateVector(float,float,float,float,float,float,float,org.lwjgl.util.vector.Vector3f)" tabindex="0">rotateVector(float, float, float, float, float, float, float, Vector3f)</a></li>
 <li><a href="#rotateVector(float,float,float,float,float,float,zombie.iso.Vector2)" tabindex="0">rotateVector(float, float, float, float, float, float, Vector2)</a></li>
+<li><a href="#cross(zombie.iso.Vector3,zombie.iso.Vector3,zombie.iso.Vector3)" tabindex="0">cross(Vector3, Vector3, Vector3)</a></li>
 <li><a href="#testSideOfLine(float,float,float,float,float,float)" tabindex="0">testSideOfLine(float, float, float, float, float, float)</a></li>
 <li><a href="#normalize(java.util.List,zombie.core.math.PZMath.FloatGet,zombie.core.math.PZMath.FloatSet)" tabindex="0">normalize(List, PZMath.FloatGet, PZMath.FloatSet)</a></li>
 <li><a href="#normalize(E%5B%5D,zombie.core.math.PZMath.FloatGet,zombie.core.math.PZMath.FloatSet)" tabindex="0">normalize(E[], PZMath.FloatGet, PZMath.FloatSet)</a></li>
@@ -429,52 +430,57 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#coordmodulof(float,int)" class="member-name-link">coordmodulof</a><wbr>(float&nbsp;value,
  int&nbsp;divisor)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#degToRad(float)" class="member-name-link">degToRad</a><wbr>(float&nbsp;degrees)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#equal(float,float)" class="member-name-link">equal</a><wbr>(float&nbsp;a,
- float&nbsp;b)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#equal(float,float,float)" class="member-name-link">equal</a><wbr>(float&nbsp;a,
- float&nbsp;b,
- float&nbsp;delta)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fastfloor(double)" class="member-name-link">fastfloor</a><wbr>(double&nbsp;val)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fastfloor(float)" class="member-name-link">fastfloor</a><wbr>(float&nbsp;val)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#floor(double)" class="member-name-link">floor</a><wbr>(double&nbsp;val)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#floor(float)" class="member-name-link">floor</a><wbr>(float&nbsp;val)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#cross(zombie.iso.Vector3,zombie.iso.Vector3,zombie.iso.Vector3)" class="member-name-link">cross</a><wbr>(<a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;a,
+ <a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;b,
+ <a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;out)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#frac(float)" class="member-name-link">frac</a><wbr>(float&nbsp;val)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#degToRad(float)" class="member-name-link">degToRad</a><wbr>(float&nbsp;degrees)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#equal(float,float)" class="member-name-link">equal</a><wbr>(float&nbsp;a,
+ float&nbsp;b)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#equal(float,float,float)" class="member-name-link">equal</a><wbr>(float&nbsp;a,
+ float&nbsp;b,
+ float&nbsp;delta)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fastfloor(double)" class="member-name-link">fastfloor</a><wbr>(double&nbsp;val)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fastfloor(float)" class="member-name-link">fastfloor</a><wbr>(float&nbsp;val)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#floor(double)" class="member-name-link">floor</a><wbr>(double&nbsp;val)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#floor(float)" class="member-name-link">floor</a><wbr>(float&nbsp;val)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#gain(float,float)" class="member-name-link">gain</a><wbr>(float&nbsp;x,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#frac(float)" class="member-name-link">frac</a><wbr>(float&nbsp;val)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#gain(float,float)" class="member-name-link">gain</a><wbr>(float&nbsp;x,
  float&nbsp;k)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Gain
 
  Remapping the unit interval into the unit interval by expanding the sides and compressing the center, and
  keeping 1/2 mapped to 1/2, that can be done with the gain() function.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getClosestAngle(float,float)" class="member-name-link">getClosestAngle</a><wbr>(float&nbsp;radsA,
- float&nbsp;radsB)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getClosestAngleDegrees(float,float)" class="member-name-link">getClosestAngleDegrees</a><wbr>(float&nbsp;degsA,
- float&nbsp;degsB)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getClosestAngle(float,float)" class="member-name-link">getClosestAngle</a><wbr>(float&nbsp;radsA,
+ float&nbsp;radsB)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#intersectLineSegments(float,float,float,float,float,float,float,float,org.joml.Vector2f)" class="member-name-link">intersectLineSegments</a><wbr>(float&nbsp;x1,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getClosestAngleDegrees(float,float)" class="member-name-link">getClosestAngleDegrees</a><wbr>(float&nbsp;degsA,
+ float&nbsp;degsB)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#intersectLineSegments(float,float,float,float,float,float,float,float,org.joml.Vector2f)" class="member-name-link">intersectLineSegments</a><wbr>(float&nbsp;x1,
  float&nbsp;y1,
  float&nbsp;x2,
  float&nbsp;y2,
@@ -483,174 +489,174 @@ loadScripts(document, 'script');</script>
  float&nbsp;x4,
  float&nbsp;y4,
  org.joml.Vector2f&nbsp;intersection)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isLeft(float,float,float,float,float,float)" class="member-name-link">isLeft</a><wbr>(float&nbsp;x0,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isLeft(float,float,float,float,float,float)" class="member-name-link">isLeft</a><wbr>(float&nbsp;x0,
  float&nbsp;y0,
  float&nbsp;x1,
  float&nbsp;y1,
  float&nbsp;x2,
  float&nbsp;y2)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerp(float,float,float)" class="member-name-link">lerp</a><wbr>(float&nbsp;src,
- float&nbsp;dest,
- float&nbsp;alpha)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerp(float,float,float,zombie.core.math.interpolators.LerpType)" class="member-name-link">lerp</a><wbr>(float&nbsp;src,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerp(float,float,float)" class="member-name-link">lerp</a><wbr>(float&nbsp;src,
+ float&nbsp;dest,
+ float&nbsp;alpha)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerp(float,float,float,zombie.core.math.interpolators.LerpType)" class="member-name-link">lerp</a><wbr>(float&nbsp;src,
  float&nbsp;dest,
  float&nbsp;alpha,
  <a href="interpolators/LerpType.html" title="enum class in zombie.core.math.interpolators">LerpType</a>&nbsp;lerpType)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.lwjgl.util.vector.Vector3f</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerp(org.lwjgl.util.vector.Vector3f,org.lwjgl.util.vector.Vector3f,org.lwjgl.util.vector.Vector3f,float)" class="member-name-link">lerp</a><wbr>(org.lwjgl.util.vector.Vector3f&nbsp;out,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.lwjgl.util.vector.Vector3f</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerp(org.lwjgl.util.vector.Vector3f,org.lwjgl.util.vector.Vector3f,org.lwjgl.util.vector.Vector3f,float)" class="member-name-link">lerp</a><wbr>(org.lwjgl.util.vector.Vector3f&nbsp;out,
  org.lwjgl.util.vector.Vector3f&nbsp;a,
  org.lwjgl.util.vector.Vector3f&nbsp;b,
  float&nbsp;t)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../iso/Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerp(zombie.iso.Vector2,zombie.iso.Vector2,zombie.iso.Vector2,float)" class="member-name-link">lerp</a><wbr>(<a href="../../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../iso/Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerp(zombie.iso.Vector2,zombie.iso.Vector2,zombie.iso.Vector2,float)" class="member-name-link">lerp</a><wbr>(<a href="../../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out,
  <a href="../../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;a,
  <a href="../../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;b,
  float&nbsp;t)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerp(zombie.iso.Vector3,zombie.iso.Vector3,zombie.iso.Vector3,float)" class="member-name-link">lerp</a><wbr>(<a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;out,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerp(zombie.iso.Vector3,zombie.iso.Vector3,zombie.iso.Vector3,float)" class="member-name-link">lerp</a><wbr>(<a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;out,
  <a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;a,
  <a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;b,
  float&nbsp;t)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerpAngle(float,float,float)" class="member-name-link">lerpAngle</a><wbr>(float&nbsp;src,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerpAngle(float,float,float)" class="member-name-link">lerpAngle</a><wbr>(float&nbsp;src,
  float&nbsp;dest,
  float&nbsp;alpha)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerpFunc_EaseInQuad(float)" class="member-name-link">lerpFunc_EaseInQuad</a><wbr>(float&nbsp;x)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerpFunc_EaseOutInQuad(float)" class="member-name-link">lerpFunc_EaseOutInQuad</a><wbr>(float&nbsp;x)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerpFunc_EaseInQuad(float)" class="member-name-link">lerpFunc_EaseInQuad</a><wbr>(float&nbsp;x)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerpFunc_EaseOutQuad(float)" class="member-name-link">lerpFunc_EaseOutQuad</a><wbr>(float&nbsp;x)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerpFunc_EaseOutInQuad(float)" class="member-name-link">lerpFunc_EaseOutInQuad</a><wbr>(float&nbsp;x)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#max(float,float)" class="member-name-link">max</a><wbr>(float&nbsp;a,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerpFunc_EaseOutQuad(float)" class="member-name-link">lerpFunc_EaseOutQuad</a><wbr>(float&nbsp;x)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#max(float,float)" class="member-name-link">max</a><wbr>(float&nbsp;a,
  float&nbsp;b)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#max(float,float,float)" class="member-name-link">max</a><wbr>(float&nbsp;a,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#max(float,float,float)" class="member-name-link">max</a><wbr>(float&nbsp;a,
  float&nbsp;b,
  float&nbsp;c)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#max(float,float,float,float)" class="member-name-link">max</a><wbr>(float&nbsp;a,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#max(float,float,float,float)" class="member-name-link">max</a><wbr>(float&nbsp;a,
  float&nbsp;b,
  float&nbsp;c,
  float&nbsp;d)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#max(float,float,float,float,float)" class="member-name-link">max</a><wbr>(float&nbsp;a,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#max(float,float,float,float,float)" class="member-name-link">max</a><wbr>(float&nbsp;a,
  float&nbsp;b,
  float&nbsp;c,
  float&nbsp;d,
  float&nbsp;e)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#max(int,int)" class="member-name-link">max</a><wbr>(int&nbsp;a,
- int&nbsp;b)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#max(int,int,int)" class="member-name-link">max</a><wbr>(int&nbsp;a,
- int&nbsp;b,
- int&nbsp;c)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#max(int,int)" class="member-name-link">max</a><wbr>(int&nbsp;a,
+ int&nbsp;b)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#max(int,int,int,int)" class="member-name-link">max</a><wbr>(int&nbsp;a,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#max(int,int,int)" class="member-name-link">max</a><wbr>(int&nbsp;a,
+ int&nbsp;b,
+ int&nbsp;c)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#max(int,int,int,int)" class="member-name-link">max</a><wbr>(int&nbsp;a,
  int&nbsp;b,
  int&nbsp;c,
  int&nbsp;d)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#max(int,int,int,int,int)" class="member-name-link">max</a><wbr>(int&nbsp;a,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#max(int,int,int,int,int)" class="member-name-link">max</a><wbr>(int&nbsp;a,
  int&nbsp;b,
  int&nbsp;c,
  int&nbsp;d,
  int&nbsp;e)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#min(float,float)" class="member-name-link">min</a><wbr>(float&nbsp;a,
- float&nbsp;b)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#min(float,float,float)" class="member-name-link">min</a><wbr>(float&nbsp;a,
- float&nbsp;b,
- float&nbsp;c)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#min(float,float)" class="member-name-link">min</a><wbr>(float&nbsp;a,
+ float&nbsp;b)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#min(float,float,float,float)" class="member-name-link">min</a><wbr>(float&nbsp;a,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#min(float,float,float)" class="member-name-link">min</a><wbr>(float&nbsp;a,
+ float&nbsp;b,
+ float&nbsp;c)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#min(float,float,float,float)" class="member-name-link">min</a><wbr>(float&nbsp;a,
  float&nbsp;b,
  float&nbsp;c,
  float&nbsp;d)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#min(float,float,float,float,float)" class="member-name-link">min</a><wbr>(float&nbsp;a,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#min(float,float,float,float,float)" class="member-name-link">min</a><wbr>(float&nbsp;a,
  float&nbsp;b,
  float&nbsp;c,
  float&nbsp;d,
  float&nbsp;e)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#min(int,int)" class="member-name-link">min</a><wbr>(int&nbsp;a,
- int&nbsp;b)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#min(int,int,int)" class="member-name-link">min</a><wbr>(int&nbsp;a,
- int&nbsp;b,
- int&nbsp;c)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#min(int,int)" class="member-name-link">min</a><wbr>(int&nbsp;a,
+ int&nbsp;b)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#min(int,int,int,int)" class="member-name-link">min</a><wbr>(int&nbsp;a,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#min(int,int,int)" class="member-name-link">min</a><wbr>(int&nbsp;a,
+ int&nbsp;b,
+ int&nbsp;c)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#min(int,int,int,int)" class="member-name-link">min</a><wbr>(int&nbsp;a,
  int&nbsp;b,
  int&nbsp;c,
  int&nbsp;d)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#min(int,int,int,int,int)" class="member-name-link">min</a><wbr>(int&nbsp;a,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#min(int,int,int,int,int)" class="member-name-link">min</a><wbr>(int&nbsp;a,
  int&nbsp;b,
  int&nbsp;c,
  int&nbsp;d,
  int&nbsp;e)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nextPowerOfTwo(int)" class="member-name-link">nextPowerOfTwo</a><wbr>(int&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#normalize(float%5B%5D)" class="member-name-link">normalize</a><wbr>(float[]&nbsp;weights)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nextPowerOfTwo(int)" class="member-name-link">nextPowerOfTwo</a><wbr>(int&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;E&gt;&nbsp;void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#normalize(E%5B%5D,zombie.core.math.PZMath.FloatGet,zombie.core.math.PZMath.FloatSet)" class="member-name-link">normalize</a><wbr>(E[]&nbsp;list,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#normalize(float%5B%5D)" class="member-name-link">normalize</a><wbr>(float[]&nbsp;weights)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;E&gt;&nbsp;void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#normalize(E%5B%5D,zombie.core.math.PZMath.FloatGet,zombie.core.math.PZMath.FloatSet)" class="member-name-link">normalize</a><wbr>(E[]&nbsp;list,
  <a href="PZMath.FloatGet.html" title="interface in zombie.core.math">PZMath.FloatGet</a>&lt;E&gt;&nbsp;floatGet,
  <a href="PZMath.FloatSet.html" title="interface in zombie.core.math">PZMath.FloatSet</a>&lt;E&gt;&nbsp;floatSet)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#normalize(java.util.ArrayList)" class="member-name-link">normalize</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&gt;&nbsp;list)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;E&gt;&nbsp;void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#normalize(java.util.List,zombie.core.math.PZMath.FloatGet,zombie.core.math.PZMath.FloatSet)" class="member-name-link">normalize</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;E&gt;&nbsp;list,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#normalize(java.util.ArrayList)" class="member-name-link">normalize</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&gt;&nbsp;list)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;E&gt;&nbsp;void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#normalize(java.util.List,zombie.core.math.PZMath.FloatGet,zombie.core.math.PZMath.FloatSet)" class="member-name-link">normalize</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;E&gt;&nbsp;list,
  <a href="PZMath.FloatGet.html" title="interface in zombie.core.math">PZMath.FloatGet</a>&lt;E&gt;&nbsp;floatGet,
  <a href="PZMath.FloatSet.html" title="interface in zombie.core.math">PZMath.FloatSet</a>&lt;E&gt;&nbsp;floatSet)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#pow(float,float)" class="member-name-link">pow</a><wbr>(float&nbsp;a,
- float&nbsp;b)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#radToDeg(float)" class="member-name-link">radToDeg</a><wbr>(float&nbsp;radians)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#pow(float,float)" class="member-name-link">pow</a><wbr>(float&nbsp;a,
+ float&nbsp;b)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.lwjgl.util.vector.Vector3f</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rotateVector(float,float,float,float,float,float,float,org.lwjgl.util.vector.Vector3f)" class="member-name-link">rotateVector</a><wbr>(float&nbsp;vx,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#radToDeg(float)" class="member-name-link">radToDeg</a><wbr>(float&nbsp;radians)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.lwjgl.util.vector.Vector3f</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rotateVector(float,float,float,float,float,float,float,org.lwjgl.util.vector.Vector3f)" class="member-name-link">rotateVector</a><wbr>(float&nbsp;vx,
  float&nbsp;vy,
  float&nbsp;vz,
  float&nbsp;qx,
@@ -658,94 +664,94 @@ loadScripts(document, 'script');</script>
  float&nbsp;qz,
  float&nbsp;qw,
  org.lwjgl.util.vector.Vector3f&nbsp;result)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../iso/Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rotateVector(float,float,float,float,float,float,zombie.iso.Vector2)" class="member-name-link">rotateVector</a><wbr>(float&nbsp;vx,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../iso/Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rotateVector(float,float,float,float,float,float,zombie.iso.Vector2)" class="member-name-link">rotateVector</a><wbr>(float&nbsp;vx,
  float&nbsp;vy,
  float&nbsp;qx,
  float&nbsp;qy,
  float&nbsp;qz,
  float&nbsp;qw,
  <a href="../../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;result)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.lwjgl.util.vector.Vector3f</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rotateVector(org.lwjgl.util.vector.Vector3f,org.lwjgl.util.vector.Quaternion,org.lwjgl.util.vector.Vector3f)" class="member-name-link">rotateVector</a><wbr>(org.lwjgl.util.vector.Vector3f&nbsp;vector,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.lwjgl.util.vector.Vector3f</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rotateVector(org.lwjgl.util.vector.Vector3f,org.lwjgl.util.vector.Quaternion,org.lwjgl.util.vector.Vector3f)" class="member-name-link">rotateVector</a><wbr>(org.lwjgl.util.vector.Vector3f&nbsp;vector,
  org.lwjgl.util.vector.Quaternion&nbsp;quaternion,
  org.lwjgl.util.vector.Vector3f&nbsp;result)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundFloat(float,int)" class="member-name-link">roundFloat</a><wbr>(float&nbsp;value,
- int&nbsp;scale)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundFloatPos(float,int)" class="member-name-link">roundFloatPos</a><wbr>(float&nbsp;number,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundFloat(float,int)" class="member-name-link">roundFloat</a><wbr>(float&nbsp;value,
  int&nbsp;scale)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundFromEdges(float)" class="member-name-link">roundFromEdges</a><wbr>(float&nbsp;val)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundToInt(float)" class="member-name-link">roundToInt</a><wbr>(float&nbsp;val)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundToIntPlus05(float)" class="member-name-link">roundToIntPlus05</a><wbr>(float&nbsp;val)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundFloatPos(float,int)" class="member-name-link">roundFloatPos</a><wbr>(float&nbsp;number,
+ int&nbsp;scale)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundToNearest(float)" class="member-name-link">roundToNearest</a><wbr>(float&nbsp;val)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundFromEdges(float)" class="member-name-link">roundFromEdges</a><wbr>(float&nbsp;val)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.lwjgl.util.vector.Quaternion</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setFromAxisAngle(float,float,float,float,org.lwjgl.util.vector.Quaternion)" class="member-name-link">setFromAxisAngle</a><wbr>(float&nbsp;ax,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundToInt(float)" class="member-name-link">roundToInt</a><wbr>(float&nbsp;val)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundToIntPlus05(float)" class="member-name-link">roundToIntPlus05</a><wbr>(float&nbsp;val)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundToNearest(float)" class="member-name-link">roundToNearest</a><wbr>(float&nbsp;val)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.lwjgl.util.vector.Quaternion</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setFromAxisAngle(float,float,float,float,org.lwjgl.util.vector.Quaternion)" class="member-name-link">setFromAxisAngle</a><wbr>(float&nbsp;ax,
  float&nbsp;ay,
  float&nbsp;az,
  float&nbsp;angleRadians,
  org.lwjgl.util.vector.Quaternion&nbsp;result)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sign(float)" class="member-name-link">sign</a><wbr>(float&nbsp;val)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.lwjgl.util.vector.Quaternion</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#slerp(org.lwjgl.util.vector.Quaternion,org.lwjgl.util.vector.Quaternion,org.lwjgl.util.vector.Quaternion,float)" class="member-name-link">slerp</a><wbr>(org.lwjgl.util.vector.Quaternion&nbsp;result,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sign(float)" class="member-name-link">sign</a><wbr>(float&nbsp;val)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.lwjgl.util.vector.Quaternion</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#slerp(org.lwjgl.util.vector.Quaternion,org.lwjgl.util.vector.Quaternion,org.lwjgl.util.vector.Quaternion,float)" class="member-name-link">slerp</a><wbr>(org.lwjgl.util.vector.Quaternion&nbsp;result,
  org.lwjgl.util.vector.Quaternion&nbsp;from,
  org.lwjgl.util.vector.Quaternion&nbsp;to,
  float&nbsp;alpha)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sqrt(float)" class="member-name-link">sqrt</a><wbr>(float&nbsp;val)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#step(float,float,float)" class="member-name-link">step</a><wbr>(float&nbsp;from,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sqrt(float)" class="member-name-link">sqrt</a><wbr>(float&nbsp;val)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#step(float,float,float)" class="member-name-link">step</a><wbr>(float&nbsp;from,
  float&nbsp;to,
  float&nbsp;delta)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="PZMath.SideOfLine.html" title="enum class in zombie.core.math">PZMath.SideOfLine</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#testSideOfLine(float,float,float,float,float,float)" class="member-name-link">testSideOfLine</a><wbr>(float&nbsp;x1,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="PZMath.SideOfLine.html" title="enum class in zombie.core.math">PZMath.SideOfLine</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#testSideOfLine(float,float,float,float,float,float)" class="member-name-link">testSideOfLine</a><wbr>(float&nbsp;x1,
  float&nbsp;y1,
  float&nbsp;x2,
  float&nbsp;y2,
  float&nbsp;px,
  float&nbsp;py)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tryParseDouble(java.lang.String,double)" class="member-name-link">tryParseDouble</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;varStr,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tryParseDouble(java.lang.String,double)" class="member-name-link">tryParseDouble</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;varStr,
  double&nbsp;defaultVal)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tryParseFloat(java.lang.String,float)" class="member-name-link">tryParseFloat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;varStr,
- float&nbsp;defaultVal)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tryParseInt(java.lang.String,int)" class="member-name-link">tryParseInt</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;varStr,
- int&nbsp;defaultVal)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#wrap(float,float)" class="member-name-link">wrap</a><wbr>(float&nbsp;val,
- float&nbsp;range)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#wrap(float,float,float)" class="member-name-link">wrap</a><wbr>(float&nbsp;val,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tryParseFloat(java.lang.String,float)" class="member-name-link">tryParseFloat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;varStr,
+ float&nbsp;defaultVal)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tryParseInt(java.lang.String,int)" class="member-name-link">tryParseInt</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;varStr,
+ int&nbsp;defaultVal)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#wrap(float,float)" class="member-name-link">wrap</a><wbr>(float&nbsp;val,
+ float&nbsp;range)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#wrap(float,float,float)" class="member-name-link">wrap</a><wbr>(float&nbsp;val,
  float&nbsp;min,
  float&nbsp;max)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -1694,6 +1700,16 @@ loadScripts(document, 'script');</script>
  float&nbsp;qz,
  float&nbsp;qw,
  <a href="../../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;result)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="cross(zombie.iso.Vector3,zombie.iso.Vector3,zombie.iso.Vector3)">
+<h3>cross</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a></span>&nbsp;<span class="element-name">cross</span><wbr><span class="parameters">(<a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;a,
+ <a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;b,
+ <a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;out)</span></div>
 </div>
 </section>
 </li>

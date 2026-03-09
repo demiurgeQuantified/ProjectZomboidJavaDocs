@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -63,15 +63,15 @@ loadScripts(document, 'script');</script>
 <li><a href="#isSinglePlayerMode()" tabindex="0">isSinglePlayerMode()</a></li>
 <li><a href="#isWorking()" tabindex="0">isWorking()</a></li>
 <li><a href="#init(boolean,zombie.characters.IsoPlayer)" tabindex="0">init(boolean, IsoPlayer)</a></li>
-<li><a href="#processInitPlayerChatPacket(java.nio.ByteBuffer)" tabindex="0">processInitPlayerChatPacket(ByteBuffer)</a></li>
+<li><a href="#processInitPlayerChatPacket(zombie.core.network.ByteBufferReader)" tabindex="0">processInitPlayerChatPacket(ByteBufferReader)</a></li>
 <li><a href="#setFullyConnected()" tabindex="0">setFullyConnected()</a></li>
-<li><a href="#processAddTabPacket(java.nio.ByteBuffer)" tabindex="0">processAddTabPacket(ByteBuffer)</a></li>
-<li><a href="#processRemoveTabPacket(java.nio.ByteBuffer)" tabindex="0">processRemoveTabPacket(ByteBuffer)</a></li>
-<li><a href="#processJoinChatPacket(java.nio.ByteBuffer)" tabindex="0">processJoinChatPacket(ByteBuffer)</a></li>
-<li><a href="#processLeaveChatPacket(java.nio.ByteBuffer)" tabindex="0">processLeaveChatPacket(ByteBuffer)</a></li>
+<li><a href="#processAddTabPacket(zombie.core.network.ByteBufferReader)" tabindex="0">processAddTabPacket(ByteBufferReader)</a></li>
+<li><a href="#processRemoveTabPacket(zombie.core.network.ByteBufferReader)" tabindex="0">processRemoveTabPacket(ByteBufferReader)</a></li>
+<li><a href="#processJoinChatPacket(zombie.core.network.ByteBufferReader)" tabindex="0">processJoinChatPacket(ByteBufferReader)</a></li>
+<li><a href="#processLeaveChatPacket(zombie.core.network.ByteBufferReader)" tabindex="0">processLeaveChatPacket(ByteBufferReader)</a></li>
 <li><a href="#processPlayerNotFound(java.lang.String)" tabindex="0">processPlayerNotFound(String)</a></li>
-<li><a href="#unpackMessage(java.nio.ByteBuffer)" tabindex="0">unpackMessage(ByteBuffer)</a></li>
-<li><a href="#processChatMessagePacket(java.nio.ByteBuffer)" tabindex="0">processChatMessagePacket(ByteBuffer)</a></li>
+<li><a href="#unpackMessage(zombie.core.network.ByteBufferReader)" tabindex="0">unpackMessage(ByteBufferReader)</a></li>
+<li><a href="#processChatMessagePacket(zombie.core.network.ByteBufferReader)" tabindex="0">processChatMessagePacket(ByteBufferReader)</a></li>
 <li><a href="#updateChatSettings(java.lang.String,boolean,boolean)" tabindex="0">updateChatSettings(String, boolean, boolean)</a></li>
 <li><a href="#showInfoMessage(java.lang.String)" tabindex="0">showInfoMessage(String)</a></li>
 <li><a href="#showInfoMessage(java.lang.String,java.lang.String)" tabindex="0">showInfoMessage(String, String)</a></li>
@@ -155,25 +155,25 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isWorking()" class="member-name-link">isWorking</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processAddTabPacket(java.nio.ByteBuffer)" class="member-name-link">processAddTabPacket</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processAddTabPacket(zombie.core.network.ByteBufferReader)" class="member-name-link">processAddTabPacket</a><wbr>(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processChatMessagePacket(java.nio.ByteBuffer)" class="member-name-link">processChatMessagePacket</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processChatMessagePacket(zombie.core.network.ByteBufferReader)" class="member-name-link">processChatMessagePacket</a><wbr>(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processInitPlayerChatPacket(java.nio.ByteBuffer)" class="member-name-link">processInitPlayerChatPacket</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processInitPlayerChatPacket(zombie.core.network.ByteBufferReader)" class="member-name-link">processInitPlayerChatPacket</a><wbr>(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processJoinChatPacket(java.nio.ByteBuffer)" class="member-name-link">processJoinChatPacket</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processJoinChatPacket(zombie.core.network.ByteBufferReader)" class="member-name-link">processJoinChatPacket</a><wbr>(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processLeaveChatPacket(java.nio.ByteBuffer)" class="member-name-link">processLeaveChatPacket</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processLeaveChatPacket(zombie.core.network.ByteBufferReader)" class="member-name-link">processLeaveChatPacket</a><wbr>(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processPlayerNotFound(java.lang.String)" class="member-name-link">processPlayerNotFound</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;destPlayerName)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processRemoveTabPacket(java.nio.ByteBuffer)" class="member-name-link">processRemoveTabPacket</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processRemoveTabPacket(zombie.core.network.ByteBufferReader)" class="member-name-link">processRemoveTabPacket</a><wbr>(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendMessageToChat(java.lang.String,zombie.network.chat.ChatType,java.lang.String)" class="member-name-link">sendMessageToChat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;author,
@@ -212,7 +212,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#showStaticRadioSound(java.lang.String)" class="member-name-link">showStaticRadioSound</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ChatMessage.html" title="class in zombie.chat">ChatMessage</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unpackMessage(java.nio.ByteBuffer)" class="member-name-link">unpackMessage</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unpackMessage(zombie.core.network.ByteBufferReader)" class="member-name-link">unpackMessage</a><wbr>(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateChatSettings(java.lang.String,boolean,boolean)" class="member-name-link">updateChatSettings</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fontSize,
@@ -273,10 +273,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="processInitPlayerChatPacket(java.nio.ByteBuffer)">
+<section class="detail" id="processInitPlayerChatPacket(zombie.core.network.ByteBufferReader)">
 <h3>processInitPlayerChatPacket</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processInitPlayerChatPacket</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processInitPlayerChatPacket</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</span></div>
 </div>
 </section>
 </li>
@@ -289,34 +289,34 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="processAddTabPacket(java.nio.ByteBuffer)">
+<section class="detail" id="processAddTabPacket(zombie.core.network.ByteBufferReader)">
 <h3>processAddTabPacket</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processAddTabPacket</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processAddTabPacket</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="processRemoveTabPacket(java.nio.ByteBuffer)">
+<section class="detail" id="processRemoveTabPacket(zombie.core.network.ByteBufferReader)">
 <h3>processRemoveTabPacket</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processRemoveTabPacket</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processRemoveTabPacket</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="processJoinChatPacket(java.nio.ByteBuffer)">
+<section class="detail" id="processJoinChatPacket(zombie.core.network.ByteBufferReader)">
 <h3>processJoinChatPacket</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processJoinChatPacket</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processJoinChatPacket</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="processLeaveChatPacket(java.nio.ByteBuffer)">
+<section class="detail" id="processLeaveChatPacket(zombie.core.network.ByteBufferReader)">
 <h3>processLeaveChatPacket</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processLeaveChatPacket</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processLeaveChatPacket</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</span></div>
 </div>
 </section>
 </li>
@@ -329,18 +329,18 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="unpackMessage(java.nio.ByteBuffer)">
+<section class="detail" id="unpackMessage(zombie.core.network.ByteBufferReader)">
 <h3>unpackMessage</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ChatMessage.html" title="class in zombie.chat">ChatMessage</a></span>&nbsp;<span class="element-name">unpackMessage</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ChatMessage.html" title="class in zombie.chat">ChatMessage</a></span>&nbsp;<span class="element-name">unpackMessage</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="processChatMessagePacket(java.nio.ByteBuffer)">
+<section class="detail" id="processChatMessagePacket(zombie.core.network.ByteBufferReader)">
 <h3>processChatMessagePacket</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processChatMessagePacket</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processChatMessagePacket</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</span></div>
 </div>
 </section>
 </li>

@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -83,8 +83,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#ScriptsLoaded()" tabindex="0">ScriptsLoaded()</a></li>
 <li><a href="#isAllowScriptItemLoading()" tabindex="0">isAllowScriptItemLoading()</a></li>
 <li><a href="#onLoadEntity(zombie.scripting.entity.GameEntityScript)" tabindex="0">onLoadEntity(GameEntityScript)</a></li>
-<li><a href="#loadDataFromServer(java.nio.ByteBuffer)" tabindex="0">loadDataFromServer(ByteBuffer)</a></li>
-<li><a href="#saveDataForClient(java.nio.ByteBuffer)" tabindex="0">saveDataForClient(ByteBuffer)</a></li>
+<li><a href="#loadDataFromServer(zombie.core.network.ByteBufferReader)" tabindex="0">loadDataFromServer(ByteBufferReader)</a></li>
+<li><a href="#saveDataForClient(zombie.core.network.ByteBufferWriter)" tabindex="0">saveDataForClient(ByteBufferWriter)</a></li>
 <li><a href="#init()" tabindex="0">init()</a></li>
 <li><a href="#onWorldLoaded()" tabindex="0">onWorldLoaded()</a></li>
 <li><a href="#getItemInfoFromType(java.lang.String)" tabindex="0">getItemInfoFromType(String)</a></li>
@@ -283,7 +283,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isIsNewGame()" class="member-name-link">isIsNewGame</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadDataFromServer(java.nio.ByteBuffer)" class="member-name-link">loadDataFromServer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadDataFromServer(zombie.core.network.ByteBufferReader)" class="member-name-link">loadDataFromServer</a><wbr>(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLoadEntity(zombie.scripting.entity.GameEntityScript)" class="member-name-link">onLoadEntity</a><wbr>(<a href="../scripting/entity/GameEntityScript.html" title="class in zombie.scripting.entity">GameEntityScript</a>&nbsp;entityScript)</code></div>
@@ -292,7 +292,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onWorldLoaded()" class="member-name-link">onWorldLoaded</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#saveDataForClient(java.nio.ByteBuffer)" class="member-name-link">saveDataForClient</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#saveDataForClient(zombie.core.network.ByteBufferWriter)" class="member-name-link">saveDataForClient</a><wbr>(<a href="../core/network/ByteBufferWriter.html" title="class in zombie.core.network">ByteBufferWriter</a>&nbsp;bb)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ScriptsLoaded()" class="member-name-link">ScriptsLoaded</a>()</code></div>
@@ -505,10 +505,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="loadDataFromServer(java.nio.ByteBuffer)">
+<section class="detail" id="loadDataFromServer(zombie.core.network.ByteBufferReader)">
 <h3>loadDataFromServer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadDataFromServer</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</span>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadDataFromServer</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</span>
                                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
@@ -518,10 +518,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="saveDataForClient(java.nio.ByteBuffer)">
+<section class="detail" id="saveDataForClient(zombie.core.network.ByteBufferWriter)">
 <h3>saveDataForClient</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">saveDataForClient</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</span>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">saveDataForClient</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferWriter.html" title="class in zombie.core.network">ByteBufferWriter</a>&nbsp;bb)</span>
                               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>

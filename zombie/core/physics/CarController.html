@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -87,6 +87,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#getClientControls()" tabindex="0">getClientControls()</a></li>
 <li><a href="#update()" tabindex="0">update()</a></li>
 <li><a href="#updateTrailer()" tabindex="0">updateTrailer()</a></li>
+<li><a href="#getVehicleSteering()" tabindex="0">getVehicleSteering()</a></li>
+<li><a href="#isGas()" tabindex="0">isGas()</a></li>
+<li><a href="#isGasR()" tabindex="0">isGasR()</a></li>
+<li><a href="#isBreak()" tabindex="0">isBreak()</a></li>
 <li><a href="#control_NoControl()" tabindex="0">control_NoControl()</a></li>
 <li><a href="#updateControls()" tabindex="0">updateControls()</a></li>
 <li><a href="#park()" tabindex="0">park()</a></li>
@@ -259,11 +263,23 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CarController.ClientControls.html" title="class in zombie.core.physics">CarController.ClientControls</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getClientControls()" class="member-name-link">getClientControls</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBrakePedalPressed()" class="member-name-link">isBrakePedalPressed</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVehicleSteering()" class="member-name-link">getVehicleSteering</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isGasPedalPressed()" class="member-name-link">isGasPedalPressed</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBrakePedalPressed()" class="member-name-link">isBrakePedalPressed</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBreak()" class="member-name-link">isBreak</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isGas()" class="member-name-link">isGas</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isGasPedalPressed()" class="member-name-link">isGasPedalPressed</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isGasR()" class="member-name-link">isGasR</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#park()" class="member-name-link">park</a>()</code></div>
@@ -443,6 +459,38 @@ loadScripts(document, 'script');</script>
 <h3>updateTrailer</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateTrailer</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getVehicleSteering()">
+<h3>getVehicleSteering</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getVehicleSteering</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isGas()">
+<h3>isGas</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isGas</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isGasR()">
+<h3>isGasR</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isGasR</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isBreak()">
+<h3>isBreak</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isBreak</span>()</div>
 </div>
 </section>
 </li>

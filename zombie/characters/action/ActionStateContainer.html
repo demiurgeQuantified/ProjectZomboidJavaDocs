@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -72,7 +72,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#hasChildState(zombie.characters.action.ActionState)" tabindex="0">hasChildState(ActionState)</a></li>
 <li><a href="#setPlaybackStateSnapshot(zombie.characters.action.ActionContext,zombie.characters.action.ActionStateSnapshot)" tabindex="0">setPlaybackStateSnapshot(ActionContext, ActionStateSnapshot)</a></li>
 <li><a href="#getPlaybackStateSnapshot()" tabindex="0">getPlaybackStateSnapshot()</a></li>
-<li><a href="#setCurrentState(zombie.characters.action.ActionState)" tabindex="0">setCurrentState(ActionState)</a></li>
+<li><a href="#setCurrentState(zombie.characters.action.ActionState,zombie.characters.action.ActionTransition)" tabindex="0">setCurrentState(ActionState, ActionTransition)</a></li>
 <li><a href="#removeChildStateAt(int)" tabindex="0">removeChildStateAt(int)</a></li>
 <li><a href="#getRootState()" tabindex="0">getRootState()</a></li>
 <li><a href="#hasChildStates()" tabindex="0">hasChildStates()</a></li>
@@ -88,6 +88,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#clear()" tabindex="0">clear()</a></li>
 <li><a href="#equalTo(zombie.characters.action.ActionStateContainer)" tabindex="0">equalTo(ActionStateContainer)</a></li>
 <li><a href="#subStatesEqual(zombie.characters.action.ActionStateContainer)" tabindex="0">subStatesEqual(ActionStateContainer)</a></li>
+<li><a href="#getTransitionUsedForThisState()" tabindex="0">getTransitionUsedForThisState()</a></li>
 </ol>
 </li>
 </ol>
@@ -172,40 +173,44 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ActionState.html" title="class in zombie.characters.action">ActionState</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRootState()" class="member-name-link">getRootState</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../core/skinnedmodel/advancedanimation/IAnimationVariableSlot.html" title="interface in zombie.core.skinnedmodel.advancedanimation">IAnimationVariableSlot</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVariable(zombie.core.skinnedmodel.advancedanimation.AnimationVariableHandle)" class="member-name-link">getVariable</a><wbr>(<a href="../../core/skinnedmodel/advancedanimation/AnimationVariableHandle.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimationVariableHandle</a>&nbsp;handle)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ActionTransition.html" title="class in zombie.characters.action">ActionTransition</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransitionUsedForThisState()" class="member-name-link">getTransitionUsedForThisState</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasChildState(zombie.characters.action.ActionState)" class="member-name-link">hasChildState</a><wbr>(<a href="ActionState.html" title="class in zombie.characters.action">ActionState</a>&nbsp;child)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../core/skinnedmodel/advancedanimation/IAnimationVariableSlot.html" title="interface in zombie.core.skinnedmodel.advancedanimation">IAnimationVariableSlot</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVariable(zombie.core.skinnedmodel.advancedanimation.AnimationVariableHandle)" class="member-name-link">getVariable</a><wbr>(<a href="../../core/skinnedmodel/advancedanimation/AnimationVariableHandle.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimationVariableHandle</a>&nbsp;handle)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasChildStates()" class="member-name-link">hasChildStates</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasChildState(zombie.characters.action.ActionState)" class="member-name-link">hasChildState</a><wbr>(<a href="ActionState.html" title="class in zombie.characters.action">ActionState</a>&nbsp;child)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasStateVariables()" class="member-name-link">hasStateVariables</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasChildStates()" class="member-name-link">hasChildStates</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#indexOfChildState(java.util.function.Predicate)" class="member-name-link">indexOfChildState</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="ActionState.html" title="class in zombie.characters.action">ActionState</a>&gt;&nbsp;predicate)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasStateVariables()" class="member-name-link">hasStateVariables</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ActionState.html" title="class in zombie.characters.action">ActionState</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#peekNextState(zombie.characters.action.ActionContext)" class="member-name-link">peekNextState</a><wbr>(<a href="ActionContext.html" title="class in zombie.characters.action">ActionContext</a>&nbsp;actionContext)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#indexOfChildState(java.util.function.Predicate)" class="member-name-link">indexOfChildState</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="ActionState.html" title="class in zombie.characters.action">ActionState</a>&gt;&nbsp;predicate)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ActionState.html" title="class in zombie.characters.action">ActionState</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#peekNextState(zombie.characters.action.ActionContext)" class="member-name-link">peekNextState</a><wbr>(<a href="ActionContext.html" title="class in zombie.characters.action">ActionContext</a>&nbsp;actionContext)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeChildStateAt(int)" class="member-name-link">removeChildStateAt</a><wbr>(int&nbsp;subStateIdx)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeChildStateAt(int)" class="member-name-link">removeChildStateAt</a><wbr>(int&nbsp;subStateIdx)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(zombie.characters.action.ActionStateContainer)" class="member-name-link">set</a><wbr>(<a href="ActionStateContainer.html" title="class in zombie.characters.action">ActionStateContainer</a>&nbsp;actionStateContainer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(zombie.characters.action.ActionStateContainer)" class="member-name-link">set</a><wbr>(<a href="ActionStateContainer.html" title="class in zombie.characters.action">ActionStateContainer</a>&nbsp;actionStateContainer)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCurrentState(zombie.characters.action.ActionState,zombie.characters.action.ActionTransition)" class="member-name-link">setCurrentState</a><wbr>(<a href="ActionState.html" title="class in zombie.characters.action">ActionState</a>&nbsp;nextState,
+ <a href="ActionTransition.html" title="class in zombie.characters.action">ActionTransition</a>&nbsp;transitionUsed)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCurrentState(zombie.characters.action.ActionState)" class="member-name-link">setCurrentState</a><wbr>(<a href="ActionState.html" title="class in zombie.characters.action">ActionState</a>&nbsp;nextState)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPlaybackStateSnapshot(zombie.characters.action.ActionContext,zombie.characters.action.ActionStateSnapshot)" class="member-name-link">setPlaybackStateSnapshot</a><wbr>(<a href="ActionContext.html" title="class in zombie.characters.action">ActionContext</a>&nbsp;actionContext,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPlaybackStateSnapshot(zombie.characters.action.ActionContext,zombie.characters.action.ActionStateSnapshot)" class="member-name-link">setPlaybackStateSnapshot</a><wbr>(<a href="ActionContext.html" title="class in zombie.characters.action">ActionContext</a>&nbsp;actionContext,
  <a href="ActionStateSnapshot.html" title="class in zombie.characters.action">ActionStateSnapshot</a>&nbsp;snapshot)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#subStatesEqual(zombie.characters.action.ActionStateContainer)" class="member-name-link">subStatesEqual</a><wbr>(<a href="ActionStateContainer.html" title="class in zombie.characters.action">ActionStateContainer</a>&nbsp;rhs)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#subStatesEqual(zombie.characters.action.ActionStateContainer)" class="member-name-link">subStatesEqual</a><wbr>(<a href="ActionStateContainer.html" title="class in zombie.characters.action">ActionStateContainer</a>&nbsp;rhs)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -300,10 +305,11 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="setCurrentState(zombie.characters.action.ActionState)">
+<section class="detail" id="setCurrentState(zombie.characters.action.ActionState,zombie.characters.action.ActionTransition)">
 <h3>setCurrentState</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">setCurrentState</span><wbr><span class="parameters">(<a href="ActionState.html" title="class in zombie.characters.action">ActionState</a>&nbsp;nextState)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">setCurrentState</span><wbr><span class="parameters">(<a href="ActionState.html" title="class in zombie.characters.action">ActionState</a>&nbsp;nextState,
+ <a href="ActionTransition.html" title="class in zombie.characters.action">ActionTransition</a>&nbsp;transitionUsed)</span></div>
 </div>
 </section>
 </li>
@@ -424,6 +430,14 @@ loadScripts(document, 'script');</script>
 <h3>subStatesEqual</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">subStatesEqual</span><wbr><span class="parameters">(<a href="ActionStateContainer.html" title="class in zombie.characters.action">ActionStateContainer</a>&nbsp;rhs)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getTransitionUsedForThisState()">
+<h3>getTransitionUsedForThisState</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ActionTransition.html" title="class in zombie.characters.action">ActionTransition</a></span>&nbsp;<span class="element-name">getTransitionUsedForThisState</span>()</div>
 </div>
 </section>
 </li>

@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -73,13 +73,25 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#putBoolean(boolean)" tabindex="0">putBoolean(boolean)</a></li>
 <li><a href="#putByte(byte)" tabindex="0">putByte(byte)</a></li>
+<li><a href="#putByte(int)" tabindex="0">putByte(int)</a></li>
+<li><a href="#putByte(long)" tabindex="0">putByte(long)</a></li>
 <li><a href="#putChar(char)" tabindex="0">putChar(char)</a></li>
 <li><a href="#putDouble(double)" tabindex="0">putDouble(double)</a></li>
 <li><a href="#putFloat(float)" tabindex="0">putFloat(float)</a></li>
 <li><a href="#putInt(int)" tabindex="0">putInt(int)</a></li>
 <li><a href="#putLong(long)" tabindex="0">putLong(long)</a></li>
+<li><a href="#putShort(int)" tabindex="0">putShort(int)</a></li>
 <li><a href="#putShort(short)" tabindex="0">putShort(short)</a></li>
 <li><a href="#putUTF(java.lang.String)" tabindex="0">putUTF(String)</a></li>
+<li><a href="#putEnum(E)" tabindex="0">putEnum(E)</a></li>
+<li><a href="#clear()" tabindex="0">clear()</a></li>
+<li><a href="#flip()" tabindex="0">flip()</a></li>
+<li><a href="#put(java.nio.ByteBuffer)" tabindex="0">put(ByteBuffer)</a></li>
+<li><a href="#put(zombie.core.network.ByteBufferReader)" tabindex="0">put(ByteBufferReader)</a></li>
+<li><a href="#put(byte%5B%5D,int,int)" tabindex="0">put(byte[], int, int)</a></li>
+<li><a href="#position()" tabindex="0">position()</a></li>
+<li><a href="#position(int)" tabindex="0">position(int)</a></li>
+<li><a href="#put(byte%5B%5D)" tabindex="0">put(byte[])</a></li>
 </ol>
 </li>
 </ol>
@@ -110,7 +122,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a></code></div>
+<div class="col-first even-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a></code></div>
 <div class="col-second even-row-color"><code><a href="#bb" class="member-name-link">bb</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
@@ -141,10 +153,42 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clear()" class="member-name-link">clear</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#flip()" class="member-name-link">flip</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#position()" class="member-name-link">position</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#position(int)" class="member-name-link">position</a><wbr>(int&nbsp;newPosition)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#put(byte%5B%5D)" class="member-name-link">put</a><wbr>(byte[]&nbsp;src)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#put(byte%5B%5D,int,int)" class="member-name-link">put</a><wbr>(byte[]&nbsp;src,
+ int&nbsp;offset,
+ int&nbsp;length)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#put(java.nio.ByteBuffer)" class="member-name-link">put</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;src)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#put(zombie.core.network.ByteBufferReader)" class="member-name-link">put</a><wbr>(<a href="ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;src)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#putBoolean(boolean)" class="member-name-link">putBoolean</a><wbr>(boolean&nbsp;v)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#putByte(byte)" class="member-name-link">putByte</a><wbr>(byte&nbsp;v)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#putByte(int)" class="member-name-link">putByte</a><wbr>(int&nbsp;v)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#putByte(long)" class="member-name-link">putByte</a><wbr>(long&nbsp;v)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#putChar(char)" class="member-name-link">putChar</a><wbr>(char&nbsp;v)</code></div>
@@ -152,14 +196,20 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#putDouble(double)" class="member-name-link">putDouble</a><wbr>(double&nbsp;v)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#putFloat(float)" class="member-name-link">putFloat</a><wbr>(float&nbsp;v)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;E extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link">Enum</a>&lt;E&gt;&gt;<br>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#putEnum(E)" class="member-name-link">putEnum</a><wbr>(E&nbsp;v)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#putInt(int)" class="member-name-link">putInt</a><wbr>(int&nbsp;v)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#putFloat(float)" class="member-name-link">putFloat</a><wbr>(float&nbsp;v)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#putLong(long)" class="member-name-link">putLong</a><wbr>(long&nbsp;v)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#putInt(int)" class="member-name-link">putInt</a><wbr>(int&nbsp;v)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#putLong(long)" class="member-name-link">putLong</a><wbr>(long&nbsp;v)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#putShort(int)" class="member-name-link">putShort</a><wbr>(int&nbsp;v)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#putShort(short)" class="member-name-link">putShort</a><wbr>(short&nbsp;v)</code></div>
@@ -188,7 +238,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="bb">
 <h3>bb</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a></span>&nbsp;<span class="element-name">bb</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a></span>&nbsp;<span class="element-name">bb</span></div>
 </div>
 </section>
 </li>
@@ -220,7 +270,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="putBoolean(boolean)">
 <h3>putBoolean</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">putBoolean</span><wbr><span class="parameters">(boolean&nbsp;v)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">putBoolean</span><wbr><span class="parameters">(boolean&nbsp;v)</span></div>
 </div>
 </section>
 </li>
@@ -229,6 +279,22 @@ loadScripts(document, 'script');</script>
 <h3>putByte</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">putByte</span><wbr><span class="parameters">(byte&nbsp;v)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="putByte(int)">
+<h3>putByte</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">putByte</span><wbr><span class="parameters">(int&nbsp;v)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="putByte(long)">
+<h3>putByte</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">putByte</span><wbr><span class="parameters">(long&nbsp;v)</span></div>
 </div>
 </section>
 </li>
@@ -273,6 +339,14 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="putShort(int)">
+<h3>putShort</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">putShort</span><wbr><span class="parameters">(int&nbsp;v)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="putShort(short)">
 <h3>putShort</h3>
 <div class="horizontal-scroll">
@@ -285,6 +359,80 @@ loadScripts(document, 'script');</script>
 <h3>putUTF</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">putUTF</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;string)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="putEnum(E)">
+<h3 id="putEnum(java.lang.Enum)">putEnum</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;E extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link">Enum</a>&lt;E&gt;&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">putEnum</span><wbr><span class="parameters">(E&nbsp;v)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="clear()">
+<h3>clear</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clear</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="flip()">
+<h3>flip</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">flip</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="put(java.nio.ByteBuffer)">
+<h3>put</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;src)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="put(zombie.core.network.ByteBufferReader)">
+<h3>put</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(<a href="ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;src)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="put(byte[],int,int)">
+<h3>put</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(byte[]&nbsp;src,
+ int&nbsp;offset,
+ int&nbsp;length)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="position()">
+<h3>position</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">position</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="position(int)">
+<h3>position</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">position</span><wbr><span class="parameters">(int&nbsp;newPosition)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="put(byte[])">
+<h3>put</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(byte[]&nbsp;src)</span></div>
 </div>
 </section>
 </li>

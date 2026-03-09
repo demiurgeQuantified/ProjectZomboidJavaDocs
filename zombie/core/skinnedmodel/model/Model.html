@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -84,15 +84,18 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#VectorToWorldCoords(float,float,float,float,zombie.iso.Vector3)" tabindex="0">VectorToWorldCoords(float, float, float, float, Vector3)</a></li>
-<li><a href="#BoneToWorldCoords(zombie.core.skinnedmodel.animation.AnimationPlayer,float,float,float,float,int,zombie.iso.Vector3)" tabindex="0">BoneToWorldCoords(AnimationPlayer, float, float, float, float, int, Vector3)</a></li>
-<li><a href="#VectorToWorldCoords(zombie.characters.IsoGameCharacter,zombie.iso.Vector3)" tabindex="0">VectorToWorldCoords(IsoGameCharacter, Vector3)</a></li>
-<li><a href="#BoneToWorldCoords(zombie.characters.IsoGameCharacter,int,zombie.iso.Vector3)" tabindex="0">BoneToWorldCoords(IsoGameCharacter, int, Vector3)</a></li>
-<li><a href="#BoneZDirectionToWorldCoords(zombie.characters.IsoGameCharacter,int,zombie.iso.Vector3,float)" tabindex="0">BoneZDirectionToWorldCoords(IsoGameCharacter, int, Vector3, float)</a></li>
-<li><a href="#BoneYDirectionToWorldCoords(zombie.characters.IsoGameCharacter,int,zombie.iso.Vector3,float)" tabindex="0">BoneYDirectionToWorldCoords(IsoGameCharacter, int, Vector3, float)</a></li>
-<li><a href="#VectorToWorldCoords(zombie.core.skinnedmodel.model.ModelSlotRenderData,zombie.iso.Vector3)" tabindex="0">VectorToWorldCoords(ModelSlotRenderData, Vector3)</a></li>
-<li><a href="#BoneToWorldCoords(zombie.core.skinnedmodel.model.ModelSlotRenderData,int,zombie.iso.Vector3)" tabindex="0">BoneToWorldCoords(ModelSlotRenderData, int, Vector3)</a></li>
-<li><a href="#WorldToModel(zombie.characters.IsoGameCharacter,zombie.iso.Vector3)" tabindex="0">WorldToModel(IsoGameCharacter, Vector3)</a></li>
+<li><a href="#vectorToWorldCoords(float,float,float,float,zombie.iso.Vector3)" tabindex="0">vectorToWorldCoords(float, float, float, float, Vector3)</a></li>
+<li><a href="#boneToWorldCoords(zombie.core.skinnedmodel.animation.AnimationPlayer,float,float,float,float,int,zombie.iso.Vector3)" tabindex="0">boneToWorldCoords(AnimationPlayer, float, float, float, float, int, Vector3)</a></li>
+<li><a href="#vectorToWorldCoords(zombie.characters.IsoGameCharacter,zombie.iso.Vector3)" tabindex="0">vectorToWorldCoords(IsoGameCharacter, Vector3)</a></li>
+<li><a href="#boneToWorldCoords(zombie.characters.IsoGameCharacter,int,zombie.iso.Vector3)" tabindex="0">boneToWorldCoords(IsoGameCharacter, int, Vector3)</a></li>
+<li><a href="#boneToWorldCoords(zombie.characters.IsoGameCharacter,zombie.core.skinnedmodel.model.SkinningBone,zombie.iso.Vector3)" tabindex="0">boneToWorldCoords(IsoGameCharacter, SkinningBone, Vector3)</a></li>
+<li><a href="#boneZDirectionToWorldCoords(zombie.characters.IsoGameCharacter,int,zombie.iso.Vector3,float)" tabindex="0">boneZDirectionToWorldCoords(IsoGameCharacter, int, Vector3, float)</a></li>
+<li><a href="#boneZDirectionToWorldCoords(zombie.characters.IsoGameCharacter,zombie.core.skinnedmodel.model.SkinningBone,zombie.iso.Vector3,float)" tabindex="0">boneZDirectionToWorldCoords(IsoGameCharacter, SkinningBone, Vector3, float)</a></li>
+<li><a href="#boneYDirectionToWorldCoords(zombie.characters.IsoGameCharacter,int,zombie.iso.Vector3,float)" tabindex="0">boneYDirectionToWorldCoords(IsoGameCharacter, int, Vector3, float)</a></li>
+<li><a href="#vectorToWorldCoords(zombie.core.skinnedmodel.model.ModelSlotRenderData,zombie.iso.Vector3)" tabindex="0">vectorToWorldCoords(ModelSlotRenderData, Vector3)</a></li>
+<li><a href="#boneToWorldCoords(zombie.core.skinnedmodel.model.ModelSlotRenderData,int,zombie.iso.Vector3)" tabindex="0">boneToWorldCoords(ModelSlotRenderData, int, Vector3)</a></li>
+<li><a href="#boneToWorldCoords(zombie.core.skinnedmodel.model.ModelSlotRenderData,zombie.core.skinnedmodel.model.SkinningBone,zombie.iso.Vector3)" tabindex="0">boneToWorldCoords(ModelSlotRenderData, SkinningBone, Vector3)</a></li>
+<li><a href="#worldToModel(zombie.characters.IsoGameCharacter,zombie.iso.Vector3)" tabindex="0">worldToModel(IsoGameCharacter, Vector3)</a></li>
 <li><a href="#CharacterModelCameraBegin(zombie.core.skinnedmodel.model.ModelSlotRenderData)" tabindex="0">CharacterModelCameraBegin(ModelSlotRenderData)</a></li>
 <li><a href="#CharacterModelCameraEnd()" tabindex="0">CharacterModelCameraEnd()</a></li>
 <li><a href="#SwapInstancedBasic()" tabindex="0">SwapInstancedBasic()</a></li>
@@ -227,47 +230,63 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#BoneToWorldCoords(zombie.characters.IsoGameCharacter,int,zombie.iso.Vector3)" class="member-name-link">BoneToWorldCoords</a><wbr>(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#boneToWorldCoords(zombie.characters.IsoGameCharacter,int,zombie.iso.Vector3)" class="member-name-link">boneToWorldCoords</a><wbr>(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
  int&nbsp;boneIndex,
  <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#BoneToWorldCoords(zombie.core.skinnedmodel.animation.AnimationPlayer,float,float,float,float,int,zombie.iso.Vector3)" class="member-name-link">BoneToWorldCoords</a><wbr>(<a href="../animation/AnimationPlayer.html" title="class in zombie.core.skinnedmodel.animation">AnimationPlayer</a>&nbsp;animPlayer,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#boneToWorldCoords(zombie.characters.IsoGameCharacter,zombie.core.skinnedmodel.model.SkinningBone,zombie.iso.Vector3)" class="member-name-link">boneToWorldCoords</a><wbr>(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
+ <a href="SkinningBone.html" title="class in zombie.core.skinnedmodel.model">SkinningBone</a>&nbsp;bone,
+ <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#boneToWorldCoords(zombie.core.skinnedmodel.animation.AnimationPlayer,float,float,float,float,int,zombie.iso.Vector3)" class="member-name-link">boneToWorldCoords</a><wbr>(<a href="../animation/AnimationPlayer.html" title="class in zombie.core.skinnedmodel.animation">AnimationPlayer</a>&nbsp;animPlayer,
  float&nbsp;x,
  float&nbsp;y,
  float&nbsp;z,
  float&nbsp;animalSize,
  int&nbsp;boneIndex,
  <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#boneToWorldCoords(zombie.core.skinnedmodel.model.ModelSlotRenderData,int,zombie.iso.Vector3)" class="member-name-link">boneToWorldCoords</a><wbr>(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData,
+ int&nbsp;boneIndex,
+ <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#BoneToWorldCoords(zombie.core.skinnedmodel.model.ModelSlotRenderData,int,zombie.iso.Vector3)" class="member-name-link">BoneToWorldCoords</a><wbr>(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData,
- int&nbsp;boneIndex,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#boneToWorldCoords(zombie.core.skinnedmodel.model.ModelSlotRenderData,zombie.core.skinnedmodel.model.SkinningBone,zombie.iso.Vector3)" class="member-name-link">boneToWorldCoords</a><wbr>(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData,
+ <a href="SkinningBone.html" title="class in zombie.core.skinnedmodel.model">SkinningBone</a>&nbsp;bone,
  <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#BoneYDirectionToWorldCoords(zombie.characters.IsoGameCharacter,int,zombie.iso.Vector3,float)" class="member-name-link">BoneYDirectionToWorldCoords</a><wbr>(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#boneYDirectionToWorldCoords(zombie.characters.IsoGameCharacter,int,zombie.iso.Vector3,float)" class="member-name-link">boneYDirectionToWorldCoords</a><wbr>(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
  int&nbsp;boneIndex,
  <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec,
  float&nbsp;length)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#BoneZDirectionToWorldCoords(zombie.characters.IsoGameCharacter,int,zombie.iso.Vector3,float)" class="member-name-link">BoneZDirectionToWorldCoords</a><wbr>(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#boneZDirectionToWorldCoords(zombie.characters.IsoGameCharacter,int,zombie.iso.Vector3,float)" class="member-name-link">boneZDirectionToWorldCoords</a><wbr>(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
  int&nbsp;boneIndex,
  <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec,
  float&nbsp;length)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#CharacterModelCameraBegin(zombie.core.skinnedmodel.model.ModelSlotRenderData)" class="member-name-link">CharacterModelCameraBegin</a><wbr>(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#boneZDirectionToWorldCoords(zombie.characters.IsoGameCharacter,zombie.core.skinnedmodel.model.SkinningBone,zombie.iso.Vector3,float)" class="member-name-link">boneZDirectionToWorldCoords</a><wbr>(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
+ <a href="SkinningBone.html" title="class in zombie.core.skinnedmodel.model">SkinningBone</a>&nbsp;bone,
+ <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec,
+ float&nbsp;length)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#CharacterModelCameraEnd()" class="member-name-link">CharacterModelCameraEnd</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#CharacterModelCameraBegin(zombie.core.skinnedmodel.model.ModelSlotRenderData)" class="member-name-link">CharacterModelCameraBegin</a><wbr>(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#CreateShader(java.lang.String)" class="member-name-link">CreateShader</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#debugDrawAxis(float,float,float,boolean,boolean,boolean,float,float)" class="member-name-link">debugDrawAxis</a><wbr>(float&nbsp;x,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#CharacterModelCameraEnd()" class="member-name-link">CharacterModelCameraEnd</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#CreateShader(java.lang.String)" class="member-name-link">CreateShader</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#debugDrawAxis(float,float,float,boolean,boolean,boolean,float,float)" class="member-name-link">debugDrawAxis</a><wbr>(float&nbsp;x,
  float&nbsp;y,
  float&nbsp;z,
  boolean&nbsp;flipX,
@@ -275,77 +294,77 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;flipZ,
  float&nbsp;length,
  float&nbsp;thickness)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#debugDrawAxis(float,float,float,float,float)" class="member-name-link">debugDrawAxis</a><wbr>(float&nbsp;x,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#debugDrawAxis(float,float,float,float,float)" class="member-name-link">debugDrawAxis</a><wbr>(float&nbsp;x,
  float&nbsp;y,
  float&nbsp;z,
  float&nbsp;length,
  float&nbsp;thickness)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#debugDrawLightSource(float,float,float,float,float,float,float)" class="member-name-link">debugDrawLightSource</a><wbr>(float&nbsp;lx,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#debugDrawLightSource(float,float,float,float,float,float,float)" class="member-name-link">debugDrawLightSource</a><wbr>(float&nbsp;lx,
  float&nbsp;ly,
  float&nbsp;lz,
  float&nbsp;cx,
  float&nbsp;cy,
  float&nbsp;cz,
  float&nbsp;radians)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#debugDrawLightSource(zombie.iso.IsoLightSource,float,float,float,float)" class="member-name-link">debugDrawLightSource</a><wbr>(<a href="../../../iso/IsoLightSource.html" title="class in zombie.iso">IsoLightSource</a>&nbsp;ls,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#debugDrawLightSource(zombie.iso.IsoLightSource,float,float,float,float)" class="member-name-link">debugDrawLightSource</a><wbr>(<a href="../../../iso/IsoLightSource.html" title="class in zombie.iso">IsoLightSource</a>&nbsp;ls,
  float&nbsp;cx,
  float&nbsp;cy,
  float&nbsp;cz,
  float&nbsp;radians)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#drawBoneMtx(org.lwjgl.util.vector.Matrix4f)" class="member-name-link">drawBoneMtx</a><wbr>(org.lwjgl.util.vector.Matrix4f&nbsp;boneMtx)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#DrawChar(zombie.core.skinnedmodel.model.ModelSlotRenderData,zombie.core.skinnedmodel.model.ModelInstanceRenderData)" class="member-name-link">DrawChar</a><wbr>(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData,
- <a href="ModelInstanceRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelInstanceRenderData</a>&nbsp;instData)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#DrawVehicle(zombie.core.skinnedmodel.model.ModelSlotRenderData,zombie.core.skinnedmodel.model.ModelInstanceRenderData)" class="member-name-link">DrawVehicle</a><wbr>(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData,
- <a href="ModelInstanceRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelInstanceRenderData</a>&nbsp;instData)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#EnsureEffect()" class="member-name-link">EnsureEffect</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../asset/AssetType.html" title="class in zombie.asset">AssetType</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getType()" class="member-name-link">getType</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLights(zombie.core.skinnedmodel.model.ModelSlotRenderData,int)" class="member-name-link">setLights</a><wbr>(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData,
- int&nbsp;lightCount)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLightsInst(zombie.core.skinnedmodel.model.ModelSlotRenderData,int)" class="member-name-link">setLightsInst</a><wbr>(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData,
- int&nbsp;lightCount)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SwapInstancedBasic()" class="member-name-link">SwapInstancedBasic</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#drawBoneMtx(org.lwjgl.util.vector.Matrix4f)" class="member-name-link">drawBoneMtx</a><wbr>(org.lwjgl.util.vector.Matrix4f&nbsp;boneMtx)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#DrawChar(zombie.core.skinnedmodel.model.ModelSlotRenderData,zombie.core.skinnedmodel.model.ModelInstanceRenderData)" class="member-name-link">DrawChar</a><wbr>(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData,
+ <a href="ModelInstanceRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelInstanceRenderData</a>&nbsp;instData)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#DrawVehicle(zombie.core.skinnedmodel.model.ModelSlotRenderData,zombie.core.skinnedmodel.model.ModelInstanceRenderData)" class="member-name-link">DrawVehicle</a><wbr>(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData,
+ <a href="ModelInstanceRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelInstanceRenderData</a>&nbsp;instData)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#EnsureEffect()" class="member-name-link">EnsureEffect</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../asset/AssetType.html" title="class in zombie.asset">AssetType</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getType()" class="member-name-link">getType</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLights(zombie.core.skinnedmodel.model.ModelSlotRenderData,int)" class="member-name-link">setLights</a><wbr>(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData,
+ int&nbsp;lightCount)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLightsInst(zombie.core.skinnedmodel.model.ModelSlotRenderData,int)" class="member-name-link">setLightsInst</a><wbr>(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData,
+ int&nbsp;lightCount)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#VectorToWorldCoords(float,float,float,float,zombie.iso.Vector3)" class="member-name-link">VectorToWorldCoords</a><wbr>(float&nbsp;x,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SwapInstancedBasic()" class="member-name-link">SwapInstancedBasic</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#vectorToWorldCoords(float,float,float,float,zombie.iso.Vector3)" class="member-name-link">vectorToWorldCoords</a><wbr>(float&nbsp;x,
  float&nbsp;y,
  float&nbsp;z,
  float&nbsp;angle,
  <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#vectorToWorldCoords(zombie.characters.IsoGameCharacter,zombie.iso.Vector3)" class="member-name-link">vectorToWorldCoords</a><wbr>(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
+ <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#VectorToWorldCoords(zombie.characters.IsoGameCharacter,zombie.iso.Vector3)" class="member-name-link">VectorToWorldCoords</a><wbr>(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#vectorToWorldCoords(zombie.core.skinnedmodel.model.ModelSlotRenderData,zombie.iso.Vector3)" class="member-name-link">vectorToWorldCoords</a><wbr>(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData,
  <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#VectorToWorldCoords(zombie.core.skinnedmodel.model.ModelSlotRenderData,zombie.iso.Vector3)" class="member-name-link">VectorToWorldCoords</a><wbr>(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData,
- <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#WorldToModel(zombie.characters.IsoGameCharacter,zombie.iso.Vector3)" class="member-name-link">WorldToModel</a><wbr>(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;isoGameCharacter,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#worldToModel(zombie.characters.IsoGameCharacter,zombie.iso.Vector3)" class="member-name-link">worldToModel</a><wbr>(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;isoGameCharacter,
  <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vector3)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -497,10 +516,10 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="VectorToWorldCoords(float,float,float,float,zombie.iso.Vector3)">
-<h3>VectorToWorldCoords</h3>
+<section class="detail" id="vectorToWorldCoords(float,float,float,float,zombie.iso.Vector3)">
+<h3>vectorToWorldCoords</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">VectorToWorldCoords</span><wbr><span class="parameters">(float&nbsp;x,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">vectorToWorldCoords</span><wbr><span class="parameters">(float&nbsp;x,
  float&nbsp;y,
  float&nbsp;z,
  float&nbsp;angle,
@@ -509,10 +528,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="BoneToWorldCoords(zombie.core.skinnedmodel.animation.AnimationPlayer,float,float,float,float,int,zombie.iso.Vector3)">
-<h3>BoneToWorldCoords</h3>
+<section class="detail" id="boneToWorldCoords(zombie.core.skinnedmodel.animation.AnimationPlayer,float,float,float,float,int,zombie.iso.Vector3)">
+<h3>boneToWorldCoords</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">BoneToWorldCoords</span><wbr><span class="parameters">(<a href="../animation/AnimationPlayer.html" title="class in zombie.core.skinnedmodel.animation">AnimationPlayer</a>&nbsp;animPlayer,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">boneToWorldCoords</span><wbr><span class="parameters">(<a href="../animation/AnimationPlayer.html" title="class in zombie.core.skinnedmodel.animation">AnimationPlayer</a>&nbsp;animPlayer,
  float&nbsp;x,
  float&nbsp;y,
  float&nbsp;z,
@@ -523,29 +542,39 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="VectorToWorldCoords(zombie.characters.IsoGameCharacter,zombie.iso.Vector3)">
-<h3>VectorToWorldCoords</h3>
+<section class="detail" id="vectorToWorldCoords(zombie.characters.IsoGameCharacter,zombie.iso.Vector3)">
+<h3>vectorToWorldCoords</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">VectorToWorldCoords</span><wbr><span class="parameters">(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">vectorToWorldCoords</span><wbr><span class="parameters">(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
  <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="BoneToWorldCoords(zombie.characters.IsoGameCharacter,int,zombie.iso.Vector3)">
-<h3>BoneToWorldCoords</h3>
+<section class="detail" id="boneToWorldCoords(zombie.characters.IsoGameCharacter,int,zombie.iso.Vector3)">
+<h3>boneToWorldCoords</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">BoneToWorldCoords</span><wbr><span class="parameters">(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">boneToWorldCoords</span><wbr><span class="parameters">(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
  int&nbsp;boneIndex,
  <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="BoneZDirectionToWorldCoords(zombie.characters.IsoGameCharacter,int,zombie.iso.Vector3,float)">
-<h3>BoneZDirectionToWorldCoords</h3>
+<section class="detail" id="boneToWorldCoords(zombie.characters.IsoGameCharacter,zombie.core.skinnedmodel.model.SkinningBone,zombie.iso.Vector3)">
+<h3>boneToWorldCoords</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">BoneZDirectionToWorldCoords</span><wbr><span class="parameters">(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">boneToWorldCoords</span><wbr><span class="parameters">(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
+ <a href="SkinningBone.html" title="class in zombie.core.skinnedmodel.model">SkinningBone</a>&nbsp;bone,
+ <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="boneZDirectionToWorldCoords(zombie.characters.IsoGameCharacter,int,zombie.iso.Vector3,float)">
+<h3>boneZDirectionToWorldCoords</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">boneZDirectionToWorldCoords</span><wbr><span class="parameters">(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
  int&nbsp;boneIndex,
  <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec,
  float&nbsp;length)</span></div>
@@ -553,10 +582,21 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="BoneYDirectionToWorldCoords(zombie.characters.IsoGameCharacter,int,zombie.iso.Vector3,float)">
-<h3>BoneYDirectionToWorldCoords</h3>
+<section class="detail" id="boneZDirectionToWorldCoords(zombie.characters.IsoGameCharacter,zombie.core.skinnedmodel.model.SkinningBone,zombie.iso.Vector3,float)">
+<h3>boneZDirectionToWorldCoords</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">BoneYDirectionToWorldCoords</span><wbr><span class="parameters">(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">boneZDirectionToWorldCoords</span><wbr><span class="parameters">(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
+ <a href="SkinningBone.html" title="class in zombie.core.skinnedmodel.model">SkinningBone</a>&nbsp;bone,
+ <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec,
+ float&nbsp;length)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="boneYDirectionToWorldCoords(zombie.characters.IsoGameCharacter,int,zombie.iso.Vector3,float)">
+<h3>boneYDirectionToWorldCoords</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">boneYDirectionToWorldCoords</span><wbr><span class="parameters">(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
  int&nbsp;boneIndex,
  <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec,
  float&nbsp;length)</span></div>
@@ -564,29 +604,39 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="VectorToWorldCoords(zombie.core.skinnedmodel.model.ModelSlotRenderData,zombie.iso.Vector3)">
-<h3>VectorToWorldCoords</h3>
+<section class="detail" id="vectorToWorldCoords(zombie.core.skinnedmodel.model.ModelSlotRenderData,zombie.iso.Vector3)">
+<h3>vectorToWorldCoords</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">VectorToWorldCoords</span><wbr><span class="parameters">(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">vectorToWorldCoords</span><wbr><span class="parameters">(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData,
  <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="BoneToWorldCoords(zombie.core.skinnedmodel.model.ModelSlotRenderData,int,zombie.iso.Vector3)">
-<h3>BoneToWorldCoords</h3>
+<section class="detail" id="boneToWorldCoords(zombie.core.skinnedmodel.model.ModelSlotRenderData,int,zombie.iso.Vector3)">
+<h3>boneToWorldCoords</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">BoneToWorldCoords</span><wbr><span class="parameters">(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">boneToWorldCoords</span><wbr><span class="parameters">(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData,
  int&nbsp;boneIndex,
  <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="WorldToModel(zombie.characters.IsoGameCharacter,zombie.iso.Vector3)">
-<h3>WorldToModel</h3>
+<section class="detail" id="boneToWorldCoords(zombie.core.skinnedmodel.model.ModelSlotRenderData,zombie.core.skinnedmodel.model.SkinningBone,zombie.iso.Vector3)">
+<h3>boneToWorldCoords</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">WorldToModel</span><wbr><span class="parameters">(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;isoGameCharacter,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">boneToWorldCoords</span><wbr><span class="parameters">(<a href="ModelSlotRenderData.html" title="class in zombie.core.skinnedmodel.model">ModelSlotRenderData</a>&nbsp;slotData,
+ <a href="SkinningBone.html" title="class in zombie.core.skinnedmodel.model">SkinningBone</a>&nbsp;bone,
+ <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vec)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="worldToModel(zombie.characters.IsoGameCharacter,zombie.iso.Vector3)">
+<h3>worldToModel</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">worldToModel</span><wbr><span class="parameters">(<a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;isoGameCharacter,
  <a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;vector3)</span></div>
 </div>
 </section>

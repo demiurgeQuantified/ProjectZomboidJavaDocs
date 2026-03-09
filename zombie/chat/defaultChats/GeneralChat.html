@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -60,7 +60,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
-<li><a href="#%3Cinit%3E(java.nio.ByteBuffer,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" tabindex="0">GeneralChat(ByteBuffer, ChatTab, IsoPlayer)</a></li>
+<li><a href="#%3Cinit%3E(zombie.core.network.ByteBufferReader,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" tabindex="0">GeneralChat(ByteBufferReader, ChatTab, IsoPlayer)</a></li>
 <li><a href="#%3Cinit%3E(int,zombie.chat.ChatTab,boolean)" tabindex="0">GeneralChat(int, ChatTab, boolean)</a></li>
 <li><a href="#%3Cinit%3E()" tabindex="0">GeneralChat()</a></li>
 </ol>
@@ -72,7 +72,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#sendToDiscordGeneralChatDisabled()" tabindex="0">sendToDiscordGeneralChatDisabled()</a></li>
 <li><a href="#getMessagePrefix(zombie.chat.ChatMessage)" tabindex="0">getMessagePrefix(ChatMessage)</a></li>
 <li><a href="#packMessage(zombie.core.network.ByteBufferWriter,zombie.chat.ChatMessage)" tabindex="0">packMessage(ByteBufferWriter, ChatMessage)</a></li>
-<li><a href="#unpackMessage(java.nio.ByteBuffer)" tabindex="0">unpackMessage(ByteBuffer)</a></li>
+<li><a href="#unpackMessage(zombie.core.network.ByteBufferReader)" tabindex="0">unpackMessage(ByteBufferReader)</a></li>
 </ol>
 </li>
 </ol>
@@ -110,7 +110,7 @@ loadScripts(document, 'script');</script>
  <a href="../ChatTab.html" title="class in zombie.chat">ChatTab</a>&nbsp;tab,
  boolean&nbsp;discordEnabled)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.nio.ByteBuffer,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">GeneralChat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(zombie.core.network.ByteBufferReader,zombie.chat.ChatTab,zombie.characters.IsoPlayer)" class="member-name-link">GeneralChat</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../ChatTab.html" title="class in zombie.chat">ChatTab</a>&nbsp;tab,
  <a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;owner)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -145,7 +145,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendToDiscordGeneralChatDisabled()" class="member-name-link">sendToDiscordGeneralChatDisabled</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../ChatMessage.html" title="class in zombie.chat">ChatMessage</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unpackMessage(java.nio.ByteBuffer)" class="member-name-link">unpackMessage</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unpackMessage(zombie.core.network.ByteBufferReader)" class="member-name-link">unpackMessage</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -168,10 +168,10 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(java.nio.ByteBuffer,zombie.chat.ChatTab,zombie.characters.IsoPlayer)">
+<section class="detail" id="&lt;init&gt;(zombie.core.network.ByteBufferReader,zombie.chat.ChatTab,zombie.characters.IsoPlayer)">
 <h3>GeneralChat</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">GeneralChat</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">GeneralChat</span><wbr><span class="parameters">(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../ChatTab.html" title="class in zombie.chat">ChatTab</a>&nbsp;tab,
  <a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;owner)</span></div>
 </div>
@@ -257,13 +257,13 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="unpackMessage(java.nio.ByteBuffer)">
+<section class="detail" id="unpackMessage(zombie.core.network.ByteBufferReader)">
 <h3>unpackMessage</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../ChatMessage.html" title="class in zombie.chat">ChatMessage</a></span>&nbsp;<span class="element-name">unpackMessage</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../ChatMessage.html" title="class in zombie.chat">ChatMessage</a></span>&nbsp;<span class="element-name">unpackMessage</span><wbr><span class="parameters">(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</span></div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd><code><a href="../ChatBase.html#unpackMessage(java.nio.ByteBuffer)">unpackMessage</a></code>&nbsp;in class&nbsp;<code><a href="../ChatBase.html" title="class in zombie.chat">ChatBase</a></code></dd>
+<dd><code><a href="../ChatBase.html#unpackMessage(zombie.core.network.ByteBufferReader)">unpackMessage</a></code>&nbsp;in class&nbsp;<code><a href="../ChatBase.html" title="class in zombie.chat">ChatBase</a></code></dd>
 </dl>
 </div>
 </section>

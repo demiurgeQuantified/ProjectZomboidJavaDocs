@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -87,8 +87,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#applyLightningForPlayer(zombie.core.opengl.RenderSettings.PlayerRenderSettings,int,zombie.characters.IsoPlayer)" tabindex="0">applyLightningForPlayer(RenderSettings.PlayerRenderSettings, int, IsoPlayer)</a></li>
 <li><a href="#isModifyingNight()" tabindex="0">isModifyingNight()</a></li>
 <li><a href="#triggerThunderEvent(int,int,boolean,boolean,boolean)" tabindex="0">triggerThunderEvent(int, int, boolean, boolean, boolean)</a></li>
-<li><a href="#writeNetThunderEvent(java.nio.ByteBuffer)" tabindex="0">writeNetThunderEvent(ByteBuffer)</a></li>
-<li><a href="#readNetThunderEvent(java.nio.ByteBuffer)" tabindex="0">readNetThunderEvent(ByteBuffer)</a></li>
+<li><a href="#writeNetThunderEvent(zombie.core.network.ByteBufferWriter)" tabindex="0">writeNetThunderEvent(ByteBufferWriter)</a></li>
+<li><a href="#readNetThunderEvent(zombie.core.network.ByteBufferReader)" tabindex="0">readNetThunderEvent(ByteBufferReader)</a></li>
 <li><a href="#enqueueThunderEvent(int,int,boolean,boolean,boolean)" tabindex="0">enqueueThunderEvent(int, int, boolean, boolean, boolean)</a></li>
 <li><a href="#save(java.io.DataOutputStream)" tabindex="0">save(DataOutputStream)</a></li>
 <li><a href="#load(java.io.DataInputStream)" tabindex="0">load(DataInputStream)</a></li>
@@ -208,7 +208,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#noise(java.lang.String)" class="member-name-link">noise</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readNetThunderEvent(java.nio.ByteBuffer)" class="member-name-link">readNetThunderEvent</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;input)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readNetThunderEvent(zombie.core.network.ByteBufferReader)" class="member-name-link">readNetThunderEvent</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;input)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#save(java.io.DataOutputStream)" class="member-name-link">save</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/DataOutputStream.html" title="class or interface in java.io" class="external-link">DataOutputStream</a>&nbsp;output)</code></div>
@@ -251,7 +251,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(double)" class="member-name-link">update</a><wbr>(double&nbsp;currentTime)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNetThunderEvent(java.nio.ByteBuffer)" class="member-name-link">writeNetThunderEvent</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;output)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNetThunderEvent(zombie.core.network.ByteBufferWriter)" class="member-name-link">writeNetThunderEvent</a><wbr>(<a href="../../core/network/ByteBufferWriter.html" title="class in zombie.core.network">ByteBufferWriter</a>&nbsp;output)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -442,10 +442,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="writeNetThunderEvent(java.nio.ByteBuffer)">
+<section class="detail" id="writeNetThunderEvent(zombie.core.network.ByteBufferWriter)">
 <h3>writeNetThunderEvent</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">writeNetThunderEvent</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;output)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">writeNetThunderEvent</span><wbr><span class="parameters">(<a href="../../core/network/ByteBufferWriter.html" title="class in zombie.core.network">ByteBufferWriter</a>&nbsp;output)</span>
                           throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
@@ -455,10 +455,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="readNetThunderEvent(java.nio.ByteBuffer)">
+<section class="detail" id="readNetThunderEvent(zombie.core.network.ByteBufferReader)">
 <h3>readNetThunderEvent</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">readNetThunderEvent</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;input)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">readNetThunderEvent</span><wbr><span class="parameters">(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;input)</span>
                          throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>

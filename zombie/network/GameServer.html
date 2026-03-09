@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -135,6 +135,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#sendZone(zombie.iso.zones.Zone)" tabindex="0">sendZone(Zone)</a></li>
 <li><a href="#addXp(zombie.characters.IsoPlayer,zombie.characters.skills.PerkFactory.Perk,float)" tabindex="0">addXp(IsoPlayer, PerkFactory.Perk, float)</a></li>
 <li><a href="#addXp(zombie.characters.IsoPlayer,zombie.characters.skills.PerkFactory.Perk,float,boolean)" tabindex="0">addXp(IsoPlayer, PerkFactory.Perk, float, boolean)</a></li>
+<li><a href="#addXp(zombie.characters.IsoPlayer,zombie.characters.skills.PerkFactory.Perk,float,boolean,boolean)" tabindex="0">addXp(IsoPlayer, PerkFactory.Perk, float, boolean, boolean)</a></li>
 <li><a href="#addXpMultiplier(zombie.characters.IsoPlayer,zombie.characters.skills.PerkFactory.Perk,float,int,int)" tabindex="0">addXpMultiplier(IsoPlayer, PerkFactory.Perk, float, int, int)</a></li>
 <li><a href="#sendOptionsToClients()" tabindex="0">sendOptionsToClients()</a></li>
 <li><a href="#sendCorpse(zombie.iso.objects.IsoDeadBody)" tabindex="0">sendCorpse(IsoDeadBody)</a></li>
@@ -178,7 +179,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#sendMetaGrid(int,int,int)" tabindex="0">sendMetaGrid(int, int, int)</a></li>
 <li><a href="#setCustomVariables(zombie.characters.IsoPlayer,zombie.network.IConnection)" tabindex="0">setCustomVariables(IsoPlayer, IConnection)</a></li>
 <li><a href="#sendPlayerConnected(zombie.characters.IsoPlayer,zombie.network.IConnection)" tabindex="0">sendPlayerConnected(IsoPlayer, IConnection)</a></li>
-<li><a href="#receivePlayerConnect(java.nio.ByteBuffer,zombie.network.IConnection,java.lang.String)" tabindex="0">receivePlayerConnect(ByteBuffer, IConnection, String)</a></li>
+<li><a href="#receivePlayerConnect(zombie.core.network.ByteBufferReader,zombie.network.IConnection,java.lang.String)" tabindex="0">receivePlayerConnect(ByteBufferReader, IConnection, String)</a></li>
 <li><a href="#sendInitialWorldState(zombie.network.IConnection)" tabindex="0">sendInitialWorldState(IConnection)</a></li>
 <li><a href="#sendObjectModData(zombie.iso.IsoObject)" tabindex="0">sendObjectModData(IsoObject)</a></li>
 <li><a href="#sendSlowFactor(zombie.characters.IsoGameCharacter)" tabindex="0">sendSlowFactor(IsoGameCharacter)</a></li>
@@ -187,21 +188,21 @@ loadScripts(document, 'script');</script>
 <li><a href="#RemoveItemFromMap(zombie.iso.IsoObject)" tabindex="0">RemoveItemFromMap(IsoObject)</a></li>
 <li><a href="#sendBloodSplatter(zombie.inventory.types.HandWeapon,float,float,float,zombie.iso.Vector2,boolean,boolean)" tabindex="0">sendBloodSplatter(HandWeapon, float, float, float, Vector2, boolean, boolean)</a></li>
 <li><a href="#disconnect(zombie.core.raknet.UdpConnection,java.lang.String)" tabindex="0">disconnect(UdpConnection, String)</a></li>
-<li><a href="#addIncoming(short,java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" tabindex="0">addIncoming(short, ByteBuffer, UdpConnection)</a></li>
+<li><a href="#addIncoming(short,zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" tabindex="0">addIncoming(short, ByteBufferReader, UdpConnection)</a></li>
 <li><a href="#smashWindow(zombie.iso.objects.IsoWindow)" tabindex="0">smashWindow(IsoWindow)</a></li>
 <li><a href="#removeBrokenGlass(zombie.iso.objects.IsoWindow)" tabindex="0">removeBrokenGlass(IsoWindow)</a></li>
 <li><a href="#sendHitCharacter(zombie.network.packets.hit.HitCharacter,zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" tabindex="0">sendHitCharacter(HitCharacter, PacketTypes.PacketType, UdpConnection)</a></li>
 <li><a href="#sendCharacterDeath(zombie.iso.objects.IsoDeadBody)" tabindex="0">sendCharacterDeath(IsoDeadBody)</a></li>
 <li><a href="#sendItemStats(zombie.inventory.InventoryItem)" tabindex="0">sendItemStats(InventoryItem)</a></li>
-<li><a href="#receiveEatBody(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)" tabindex="0">receiveEatBody(ByteBuffer, UdpConnection, short)</a></li>
-<li><a href="#receiveSyncRadioData(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)" tabindex="0">receiveSyncRadioData(ByteBuffer, UdpConnection, short)</a></li>
+<li><a href="#receiveEatBody(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)" tabindex="0">receiveEatBody(ByteBufferReader, UdpConnection, short)</a></li>
+<li><a href="#receiveSyncRadioData(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)" tabindex="0">receiveSyncRadioData(ByteBufferReader, UdpConnection, short)</a></li>
 <li><a href="#sendWorldSound(zombie.WorldSoundManager.WorldSound,zombie.core.raknet.UdpConnection)" tabindex="0">sendWorldSound(WorldSoundManager.WorldSound, UdpConnection)</a></li>
 <li><a href="#kick(zombie.network.IConnection,java.lang.String,java.lang.String)" tabindex="0">kick(IConnection, String, String)</a></li>
 <li><a href="#startRain()" tabindex="0">startRain()</a></li>
 <li><a href="#stopRain()" tabindex="0">stopRain()</a></li>
 <li><a href="#sendWeather()" tabindex="0">sendWeather()</a></li>
 <li><a href="#sendWorldMapPlayerPosition()" tabindex="0">sendWorldMapPlayerPosition()</a></li>
-<li><a href="#receiveWorldMapPlayerPosition(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)" tabindex="0">receiveWorldMapPlayerPosition(ByteBuffer, UdpConnection, short)</a></li>
+<li><a href="#receiveWorldMapPlayerPosition(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)" tabindex="0">receiveWorldMapPlayerPosition(ByteBufferReader, UdpConnection, short)</a></li>
 <li><a href="#syncClock()" tabindex="0">syncClock()</a></li>
 <li><a href="#sendServerCommand(java.lang.String,java.lang.String,se.krka.kahlua.vm.KahluaTable,zombie.core.raknet.UdpConnection)" tabindex="0">sendServerCommand(String, String, KahluaTable, UdpConnection)</a></li>
 <li><a href="#sendServerCommand(java.lang.String,java.lang.String,se.krka.kahlua.vm.KahluaTable)" tabindex="0">sendServerCommand(String, String, KahluaTable)</a></li>
@@ -210,15 +211,16 @@ loadScripts(document, 'script');</script>
 <li><a href="#getPlayers(java.util.ArrayList)" tabindex="0">getPlayers(ArrayList)</a></li>
 <li><a href="#getPlayers()" tabindex="0">getPlayers()</a></li>
 <li><a href="#getPlayerCount()" tabindex="0">getPlayerCount()</a></li>
+<li><a href="#addUser(java.lang.String,java.lang.String)" tabindex="0">addUser(String, String)</a></li>
 <li><a href="#changeRole(java.lang.String,zombie.core.raknet.UdpConnection,java.lang.String,java.lang.String)" tabindex="0">changeRole(String, UdpConnection, String, String)</a></li>
 <li><a href="#sendAmbient(java.lang.String,int,int,int,float)" tabindex="0">sendAmbient(String, int, int, int, float)</a></li>
 <li><a href="#sendChangeSafety(zombie.characters.Safety)" tabindex="0">sendChangeSafety(Safety)</a></li>
 <li><a href="#updateOverlayForClients(zombie.iso.IsoObject,java.lang.String,float,float,float,float,zombie.core.raknet.UdpConnection)" tabindex="0">updateOverlayForClients(IsoObject, String, float, float, float, float, UdpConnection)</a></li>
 <li><a href="#sendReanimatedZombieID(zombie.characters.IsoPlayer,zombie.characters.IsoZombie)" tabindex="0">sendReanimatedZombieID(IsoPlayer, IsoZombie)</a></li>
-<li><a href="#receiveRadioServerData(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)" tabindex="0">receiveRadioServerData(ByteBuffer, UdpConnection, short)</a></li>
-<li><a href="#receiveRadioDeviceDataState(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)" tabindex="0">receiveRadioDeviceDataState(ByteBuffer, UdpConnection, short)</a></li>
+<li><a href="#receiveRadioServerData(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)" tabindex="0">receiveRadioServerData(ByteBufferReader, UdpConnection, short)</a></li>
+<li><a href="#receiveRadioDeviceDataState(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)" tabindex="0">receiveRadioDeviceDataState(ByteBufferReader, UdpConnection, short)</a></li>
 <li><a href="#sendIsoWaveSignal(long,int,int,int,java.lang.String,java.lang.String,java.lang.String,float,float,float,int,boolean)" tabindex="0">sendIsoWaveSignal(long, int, int, int, String, String, String, float, float, float, int, boolean)</a></li>
-<li><a href="#receivePlayerListensChannel(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)" tabindex="0">receivePlayerListensChannel(ByteBuffer, UdpConnection, short)</a></li>
+<li><a href="#receivePlayerListensChannel(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)" tabindex="0">receivePlayerListensChannel(ByteBufferReader, UdpConnection, short)</a></li>
 <li><a href="#sendAlarm(int,int)" tabindex="0">sendAlarm(int, int)</a></li>
 <li><a href="#sendToxicBuilding(int,int,boolean)" tabindex="0">sendToxicBuilding(int, int, boolean)</a></li>
 <li><a href="#isSpawnBuilding(zombie.iso.BuildingDef)" tabindex="0">isSpawnBuilding(BuildingDef)</a></li>
@@ -233,7 +235,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#setDifficulty(java.lang.String)" tabindex="0">setDifficulty(String)</a></li>
 <li><a href="#transmitBrokenGlass(zombie.iso.IsoGridSquare)" tabindex="0">transmitBrokenGlass(IsoGridSquare)</a></li>
 <li><a href="#transmitBigWaterSplash(int,int,float,float)" tabindex="0">transmitBigWaterSplash(int, int, float, float)</a></li>
-<li><a href="#receiveBigWaterSplash(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)" tabindex="0">receiveBigWaterSplash(ByteBuffer, UdpConnection, short)</a></li>
+<li><a href="#receiveBigWaterSplash(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)" tabindex="0">receiveBigWaterSplash(ByteBufferReader, UdpConnection, short)</a></li>
 <li><a href="#transmitFishingData(int,int,gnu.trove.map.hash.TLongIntHashMap,gnu.trove.map.hash.TLongObjectHashMap)" tabindex="0">transmitFishingData(int, int, TLongIntHashMap, TLongObjectHashMap)</a></li>
 <li><a href="#isServerDropPackets()" tabindex="0">isServerDropPackets()</a></li>
 <li><a href="#sendRadioPostSilence()" tabindex="0">sendRadioPostSilence()</a></li>
@@ -440,20 +442,31 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addDisconnect(zombie.core.raknet.UdpConnection)" class="member-name-link">addDisconnect</a><wbr>(<a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;con)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addIncoming(short,java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" class="member-name-link">addIncoming</a><wbr>(short&nbsp;id,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addIncoming(short,zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" class="member-name-link">addIncoming</a><wbr>(short&nbsp;id,
+ <a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addXp(zombie.characters.IsoPlayer,zombie.characters.skills.PerkFactory.Perk,float)" class="member-name-link">addXp</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
- <a href="../characters/skills/PerkFactory.Perk.html" title="class in zombie.characters.skills">PerkFactory.Perk</a>&nbsp;perk,
- float&nbsp;xp)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addUser(java.lang.String,java.lang.String)" class="member-name-link">addUser</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;newUsername,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;newUserPassword)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addXp(zombie.characters.IsoPlayer,zombie.characters.skills.PerkFactory.Perk,float,boolean)" class="member-name-link">addXp</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addXp(zombie.characters.IsoPlayer,zombie.characters.skills.PerkFactory.Perk,float)" class="member-name-link">addXp</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
+ <a href="../characters/skills/PerkFactory.Perk.html" title="class in zombie.characters.skills">PerkFactory.Perk</a>&nbsp;perk,
+ float&nbsp;xp)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addXp(zombie.characters.IsoPlayer,zombie.characters.skills.PerkFactory.Perk,float,boolean)" class="member-name-link">addXp</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
  <a href="../characters/skills/PerkFactory.Perk.html" title="class in zombie.characters.skills">PerkFactory.Perk</a>&nbsp;perk,
  float&nbsp;xp,
  boolean&nbsp;noMultiplier)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addXp(zombie.characters.IsoPlayer,zombie.characters.skills.PerkFactory.Perk,float,boolean,boolean)" class="member-name-link">addXp</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
+ <a href="../characters/skills/PerkFactory.Perk.html" title="class in zombie.characters.skills">PerkFactory.Perk</a>&nbsp;perk,
+ float&nbsp;xp,
+ boolean&nbsp;noMultiplier,
+ boolean&nbsp;showXP)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addXpMultiplier(zombie.characters.IsoPlayer,zombie.characters.skills.PerkFactory.Perk,float,int,int)" class="member-name-link">addXpMultiplier</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
@@ -619,7 +632,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rcon(java.lang.String)" class="member-name-link">rcon</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;command)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receiveBigWaterSplash(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)" class="member-name-link">receiveBigWaterSplash</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receiveBigWaterSplash(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)" class="member-name-link">receiveBigWaterSplash</a><wbr>(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  short&nbsp;packetType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
@@ -628,37 +641,37 @@ loadScripts(document, 'script');</script>
  <a href="ServerWorldDatabase.LogonResult.html" title="class in zombie.network">ServerWorldDatabase.LogonResult</a>&nbsp;r)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receiveEatBody(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)" class="member-name-link">receiveEatBody</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receiveEatBody(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)" class="member-name-link">receiveEatBody</a><wbr>(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  short&nbsp;packetType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receivePlayerConnect(java.nio.ByteBuffer,zombie.network.IConnection,java.lang.String)" class="member-name-link">receivePlayerConnect</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receivePlayerConnect(zombie.core.network.ByteBufferReader,zombie.network.IConnection,java.lang.String)" class="member-name-link">receivePlayerConnect</a><wbr>(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receivePlayerListensChannel(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)" class="member-name-link">receivePlayerListensChannel</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receivePlayerListensChannel(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)" class="member-name-link">receivePlayerListensChannel</a><wbr>(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  short&nbsp;packetType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receiveRadioDeviceDataState(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)" class="member-name-link">receiveRadioDeviceDataState</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receiveRadioDeviceDataState(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)" class="member-name-link">receiveRadioDeviceDataState</a><wbr>(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  short&nbsp;packetType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receiveRadioServerData(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)" class="member-name-link">receiveRadioServerData</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receiveRadioServerData(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)" class="member-name-link">receiveRadioServerData</a><wbr>(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  short&nbsp;packetType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receiveSyncRadioData(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)" class="member-name-link">receiveSyncRadioData</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receiveSyncRadioData(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)" class="member-name-link">receiveSyncRadioData</a><wbr>(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  short&nbsp;packetType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receiveWorldMapPlayerPosition(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)" class="member-name-link">receiveWorldMapPlayerPosition</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receiveWorldMapPlayerPosition(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)" class="member-name-link">receiveWorldMapPlayerPosition</a><wbr>(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  short&nbsp;packetType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
@@ -1586,6 +1599,18 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="addXp(zombie.characters.IsoPlayer,zombie.characters.skills.PerkFactory.Perk,float,boolean,boolean)">
+<h3>addXp</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addXp</span><wbr><span class="parameters">(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
+ <a href="../characters/skills/PerkFactory.Perk.html" title="class in zombie.characters.skills">PerkFactory.Perk</a>&nbsp;perk,
+ float&nbsp;xp,
+ boolean&nbsp;noMultiplier,
+ boolean&nbsp;showXP)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="addXpMultiplier(zombie.characters.IsoPlayer,zombie.characters.skills.PerkFactory.Perk,float,int,int)">
 <h3>addXpMultiplier</h3>
 <div class="horizontal-scroll">
@@ -1985,10 +2010,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="receivePlayerConnect(java.nio.ByteBuffer,zombie.network.IConnection,java.lang.String)">
+<section class="detail" id="receivePlayerConnect(zombie.core.network.ByteBufferReader,zombie.network.IConnection,java.lang.String)">
 <h3>receivePlayerConnect</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">receivePlayerConnect</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">receivePlayerConnect</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</span></div>
 </div>
@@ -2070,11 +2095,11 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="addIncoming(short,java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)">
+<section class="detail" id="addIncoming(short,zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)">
 <h3>addIncoming</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addIncoming</span><wbr><span class="parameters">(short&nbsp;id,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+ <a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</span></div>
 </div>
 </section>
@@ -2122,20 +2147,20 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="receiveEatBody(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)">
+<section class="detail" id="receiveEatBody(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)">
 <h3>receiveEatBody</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">receiveEatBody</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">receiveEatBody</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  short&nbsp;packetType)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="receiveSyncRadioData(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)">
+<section class="detail" id="receiveSyncRadioData(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)">
 <h3>receiveSyncRadioData</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">receiveSyncRadioData</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">receiveSyncRadioData</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  short&nbsp;packetType)</span></div>
 </div>
@@ -2193,10 +2218,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="receiveWorldMapPlayerPosition(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)">
+<section class="detail" id="receiveWorldMapPlayerPosition(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)">
 <h3>receiveWorldMapPlayerPosition</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">receiveWorldMapPlayerPosition</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">receiveWorldMapPlayerPosition</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  short&nbsp;packetType)</span></div>
 </div>
@@ -2277,6 +2302,15 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="addUser(java.lang.String,java.lang.String)">
+<h3>addUser</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">addUser</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;newUsername,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;newUserPassword)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="changeRole(java.lang.String,zombie.core.raknet.UdpConnection,java.lang.String,java.lang.String)">
 <h3>changeRole</h3>
 <div class="horizontal-scroll">
@@ -2336,20 +2370,20 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="receiveRadioServerData(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)">
+<section class="detail" id="receiveRadioServerData(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)">
 <h3>receiveRadioServerData</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">receiveRadioServerData</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">receiveRadioServerData</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  short&nbsp;packetType)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="receiveRadioDeviceDataState(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)">
+<section class="detail" id="receiveRadioDeviceDataState(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)">
 <h3>receiveRadioDeviceDataState</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">receiveRadioDeviceDataState</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">receiveRadioDeviceDataState</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  short&nbsp;packetType)</span></div>
 </div>
@@ -2375,10 +2409,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="receivePlayerListensChannel(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)">
+<section class="detail" id="receivePlayerListensChannel(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)">
 <h3>receivePlayerListensChannel</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">receivePlayerListensChannel</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">receivePlayerListensChannel</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  short&nbsp;packetType)</span></div>
 </div>
@@ -2517,10 +2551,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="receiveBigWaterSplash(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection,short)">
+<section class="detail" id="receiveBigWaterSplash(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection,short)">
 <h3>receiveBigWaterSplash</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">receiveBigWaterSplash</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">receiveBigWaterSplash</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  short&nbsp;packetType)</span></div>
 </div>

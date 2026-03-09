@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -102,6 +102,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#getContainers()" tabindex="0">getContainers()</a></li>
 <li><a href="#doProgressSlotTooltip(se.krka.kahlua.vm.KahluaTable,zombie.ui.ObjectTooltip)" tabindex="0">doProgressSlotTooltip(KahluaTable, ObjectTooltip)</a></li>
 <li><a href="#doPreviewSlotTooltip(se.krka.kahlua.vm.KahluaTable,zombie.ui.ObjectTooltip)" tabindex="0">doPreviewSlotTooltip(KahluaTable, ObjectTooltip)</a></li>
+<li><a href="#offerInputItem(zombie.inventory.InventoryItem)" tabindex="0">offerInputItem(InventoryItem)</a></li>
+<li><a href="#removeInputItem(zombie.inventory.InventoryItem)" tabindex="0">removeInputItem(InventoryItem)</a></li>
+<li><a href="#clearManualInputsFor(zombie.entity.components.crafting.recipe.CraftRecipeData.InputScriptData)" tabindex="0">clearManualInputsFor(CraftRecipeData.InputScriptData)</a></li>
+<li><a href="#getInventoryItemsToTransfer()" tabindex="0">getInventoryItemsToTransfer()</a></li>
 <li><a href="#cachedCanPerformCurrentRecipe()" tabindex="0">cachedCanPerformCurrentRecipe()</a></li>
 <li><a href="#areAllInputItemsSatisfied()" tabindex="0">areAllInputItemsSatisfied()</a></li>
 </ol>
@@ -185,45 +189,51 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#cachedCanStart(zombie.characters.IsoPlayer)" class="member-name-link">cachedCanStart</a><wbr>(<a href="../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doPreviewSlotTooltip(se.krka.kahlua.vm.KahluaTable,zombie.ui.ObjectTooltip)" class="member-name-link">doPreviewSlotTooltip</a><wbr>(se.krka.kahlua.vm.KahluaTable&nbsp;itemSlot,
- <a href="../../../ui/ObjectTooltip.html" title="class in zombie.ui">ObjectTooltip</a>&nbsp;tooltipUI)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearManualInputsFor(zombie.entity.components.crafting.recipe.CraftRecipeData.InputScriptData)" class="member-name-link">clearManualInputsFor</a><wbr>(<a href="recipe/CraftRecipeData.InputScriptData.html" title="class in zombie.entity.components.crafting.recipe">CraftRecipeData.InputScriptData</a>&nbsp;input)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doProgressSlotTooltip(se.krka.kahlua.vm.KahluaTable,zombie.ui.ObjectTooltip)" class="member-name-link">doProgressSlotTooltip</a><wbr>(se.krka.kahlua.vm.KahluaTable&nbsp;itemSlot,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doPreviewSlotTooltip(se.krka.kahlua.vm.KahluaTable,zombie.ui.ObjectTooltip)" class="member-name-link">doPreviewSlotTooltip</a><wbr>(se.krka.kahlua.vm.KahluaTable&nbsp;itemSlot,
  <a href="../../../ui/ObjectTooltip.html" title="class in zombie.ui">ObjectTooltip</a>&nbsp;tooltipUI)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#filterRecipeList(java.lang.String,java.lang.String)" class="member-name-link">filterRecipeList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filter,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;categoryFilter)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doProgressSlotTooltip(se.krka.kahlua.vm.KahluaTable,zombie.ui.ObjectTooltip)" class="member-name-link">doProgressSlotTooltip</a><wbr>(se.krka.kahlua.vm.KahluaTable&nbsp;itemSlot,
+ <a href="../../../ui/ObjectTooltip.html" title="class in zombie.ui">ObjectTooltip</a>&nbsp;tooltipUI)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#filterRecipeList(java.lang.String,java.lang.String,boolean)" class="member-name-link">filterRecipeList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filter,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#filterRecipeList(java.lang.String,java.lang.String)" class="member-name-link">filterRecipeList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;categoryFilter)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#filterRecipeList(java.lang.String,java.lang.String,boolean)" class="member-name-link">filterRecipeList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filter,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;categoryFilter,
  boolean&nbsp;force)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#filterRecipeList(java.lang.String,java.lang.String,boolean,zombie.characters.IsoPlayer)" class="member-name-link">filterRecipeList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filter,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#filterRecipeList(java.lang.String,java.lang.String,boolean,zombie.characters.IsoPlayer)" class="member-name-link">filterRecipeList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filter,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;categoryFilter,
  boolean&nbsp;force,
  <a href="../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../../../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getContainers()" class="member-name-link">getContainers</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CraftLogic.html" title="class in zombie.entity.components.crafting">CraftLogic</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCraftLogic()" class="member-name-link">getCraftLogic</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../../../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getContainers()" class="member-name-link">getContainers</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../GameEntity.html" title="class in zombie.entity">GameEntity</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntity()" class="member-name-link">getEntity</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CraftLogic.html" title="class in zombie.entity.components.crafting">CraftLogic</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCraftLogic()" class="member-name-link">getCraftLogic</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../core/textures/Texture.html" title="class in zombie.core.textures">Texture</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntityIcon()" class="member-name-link">getEntityIcon</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../GameEntity.html" title="class in zombie.entity">GameEntity</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntity()" class="member-name-link">getEntity</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="recipe/InputItemNode.html" title="class in zombie.entity.components.crafting.recipe">InputItemNode</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInputItemNodes()" class="member-name-link">getInputItemNodes</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../core/textures/Texture.html" title="class in zombie.core.textures">Texture</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntityIcon()" class="member-name-link">getEntityIcon</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="recipe/InputItemNode.html" title="class in zombie.entity.components.crafting.recipe">InputItemNode</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInputItemNodesForInput(zombie.scripting.entity.components.crafting.InputScript)" class="member-name-link">getInputItemNodesForInput</a><wbr>(<a href="../../../scripting/entity/components/crafting/InputScript.html" title="class in zombie.scripting.entity.components.crafting">InputScript</a>&nbsp;input)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInputItemNodes()" class="member-name-link">getInputItemNodes</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="recipe/InputItemNode.html" title="class in zombie.entity.components.crafting.recipe">InputItemNode</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInputItemNodesForInput(zombie.scripting.entity.components.crafting.InputScript)" class="member-name-link">getInputItemNodesForInput</a><wbr>(<a href="../../../scripting/entity/components/crafting/InputScript.html" title="class in zombie.scripting.entity.components.crafting">InputScript</a>&nbsp;input)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>se.krka.kahlua.vm.KahluaTable</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInventoryItemsToTransfer()" class="member-name-link">getInventoryItemsToTransfer</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>se.krka.kahlua.vm.KahluaTable</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getItemsInProgress()" class="member-name-link">getItemsInProgress</a>()</code></div>
@@ -263,7 +273,13 @@ loadScripts(document, 'script');</script>
  <a href="recipe/CraftRecipeData.html" title="class in zombie.entity.components.crafting.recipe">CraftRecipeData</a>&nbsp;craftRecipeData)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onResourceSlotContentsChanged()" class="member-name-link">onResourceSlotContentsChanged</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#offerInputItem(zombie.inventory.InventoryItem)" class="member-name-link">offerInputItem</a><wbr>(<a href="../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;inventoryItem)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onResourceSlotContentsChanged()" class="member-name-link">onResourceSlotContentsChanged</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeInputItem(zombie.inventory.InventoryItem)" class="member-name-link">removeInputItem</a><wbr>(<a href="../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;inventoryItem)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setContainers(java.util.ArrayList)" class="member-name-link">setContainers</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../../../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&gt;&nbsp;containersToUse)</code></div>
@@ -626,6 +642,38 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">doPreviewSlotTooltip</span><wbr><span class="parameters">(se.krka.kahlua.vm.KahluaTable&nbsp;itemSlot,
  <a href="../../../ui/ObjectTooltip.html" title="class in zombie.ui">ObjectTooltip</a>&nbsp;tooltipUI)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="offerInputItem(zombie.inventory.InventoryItem)">
+<h3>offerInputItem</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">offerInputItem</span><wbr><span class="parameters">(<a href="../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;inventoryItem)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="removeInputItem(zombie.inventory.InventoryItem)">
+<h3>removeInputItem</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeInputItem</span><wbr><span class="parameters">(<a href="../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;inventoryItem)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="clearManualInputsFor(zombie.entity.components.crafting.recipe.CraftRecipeData.InputScriptData)">
+<h3>clearManualInputsFor</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearManualInputsFor</span><wbr><span class="parameters">(<a href="recipe/CraftRecipeData.InputScriptData.html" title="class in zombie.entity.components.crafting.recipe">CraftRecipeData.InputScriptData</a>&nbsp;input)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getInventoryItemsToTransfer()">
+<h3>getInventoryItemsToTransfer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">se.krka.kahlua.vm.KahluaTable</span>&nbsp;<span class="element-name">getInventoryItemsToTransfer</span>()</div>
 </div>
 </section>
 </li>

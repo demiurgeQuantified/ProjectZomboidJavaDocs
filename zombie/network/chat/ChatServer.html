@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -63,9 +63,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#isInited()" tabindex="0">isInited()</a></li>
 <li><a href="#init()" tabindex="0">init()</a></li>
 <li><a href="#initPlayer(short)" tabindex="0">initPlayer(short)</a></li>
-<li><a href="#processMessageFromPlayerPacket(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" tabindex="0">processMessageFromPlayerPacket(ByteBuffer, UdpConnection)</a></li>
-<li><a href="#processPlayerStartWhisperChatPacket(java.nio.ByteBuffer)" tabindex="0">processPlayerStartWhisperChatPacket(ByteBuffer)</a></li>
-<li><a href="#unpackChatMessage(java.nio.ByteBuffer)" tabindex="0">unpackChatMessage(ByteBuffer)</a></li>
+<li><a href="#processMessageFromPlayerPacket(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" tabindex="0">processMessageFromPlayerPacket(ByteBufferReader, UdpConnection)</a></li>
+<li><a href="#processPlayerStartWhisperChatPacket(zombie.core.network.ByteBufferReader)" tabindex="0">processPlayerStartWhisperChatPacket(ByteBufferReader)</a></li>
+<li><a href="#unpackChatMessage(zombie.core.network.ByteBufferReader)" tabindex="0">unpackChatMessage(ByteBufferReader)</a></li>
 <li><a href="#disconnectPlayer(short)" tabindex="0">disconnectPlayer(short)</a></li>
 <li><a href="#joinAdminChat(short)" tabindex="0">joinAdminChat(short)</a></li>
 <li><a href="#leaveAdminChat(short)" tabindex="0">leaveAdminChat(short)</a></li>
@@ -146,11 +146,11 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#leaveAdminChat(short)" class="member-name-link">leaveAdminChat</a><wbr>(short&nbsp;playerID)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processMessageFromPlayerPacket(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" class="member-name-link">processMessageFromPlayerPacket</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processMessageFromPlayerPacket(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" class="member-name-link">processMessageFromPlayerPacket</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processPlayerStartWhisperChatPacket(java.nio.ByteBuffer)" class="member-name-link">processPlayerStartWhisperChatPacket</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processPlayerStartWhisperChatPacket(zombie.core.network.ByteBufferReader)" class="member-name-link">processPlayerStartWhisperChatPacket</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeFactionChat(java.lang.String)" class="member-name-link">removeFactionChat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;factionName)</code></div>
@@ -190,7 +190,7 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;players)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../chat/ChatMessage.html" title="class in zombie.chat">ChatMessage</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unpackChatMessage(java.nio.ByteBuffer)" class="member-name-link">unpackChatMessage</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unpackChatMessage(zombie.core.network.ByteBufferReader)" class="member-name-link">unpackChatMessage</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -242,27 +242,27 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="processMessageFromPlayerPacket(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)">
+<section class="detail" id="processMessageFromPlayerPacket(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)">
 <h3>processMessageFromPlayerPacket</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processMessageFromPlayerPacket</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processMessageFromPlayerPacket</span><wbr><span class="parameters">(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="processPlayerStartWhisperChatPacket(java.nio.ByteBuffer)">
+<section class="detail" id="processPlayerStartWhisperChatPacket(zombie.core.network.ByteBufferReader)">
 <h3>processPlayerStartWhisperChatPacket</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processPlayerStartWhisperChatPacket</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processPlayerStartWhisperChatPacket</span><wbr><span class="parameters">(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="unpackChatMessage(java.nio.ByteBuffer)">
+<section class="detail" id="unpackChatMessage(zombie.core.network.ByteBufferReader)">
 <h3>unpackChatMessage</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../chat/ChatMessage.html" title="class in zombie.chat">ChatMessage</a></span>&nbsp;<span class="element-name">unpackChatMessage</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../chat/ChatMessage.html" title="class in zombie.chat">ChatMessage</a></span>&nbsp;<span class="element-name">unpackChatMessage</span><wbr><span class="parameters">(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</span></div>
 </div>
 </section>
 </li>

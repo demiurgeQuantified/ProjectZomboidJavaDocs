@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../search.html">Search</a></li>
 <li><a href="../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -98,6 +98,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#isGamePaused()" tabindex="0">isGamePaused()</a></li>
 <li><a href="#getRealworldSecondsSinceLastUpdate()" tabindex="0">getRealworldSecondsSinceLastUpdate()</a></li>
 <li><a href="#getMultipliedSecondsSinceLastUpdate()" tabindex="0">getMultipliedSecondsSinceLastUpdate()</a></li>
+<li><a href="#getPhysicsSecondsSinceLastUpdate()" tabindex="0">getPhysicsSecondsSinceLastUpdate()</a></li>
+<li><a href="#getSlomoMultiplier()" tabindex="0">getSlomoMultiplier()</a></li>
 <li><a href="#getGameWorldSecondsSinceLastUpdate()" tabindex="0">getGameWorldSecondsSinceLastUpdate()</a></li>
 <li><a href="#daysInMonth(int,int)" tabindex="0">daysInMonth(int, int)</a></li>
 <li><a href="#getDeathString(zombie.characters.IsoPlayer)" tabindex="0">getDeathString(IsoPlayer)</a></li>
@@ -189,7 +191,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#save(java.io.DataOutputStream)" tabindex="0">save(DataOutputStream)</a></li>
 <li><a href="#save(java.nio.ByteBuffer)" tabindex="0">save(ByteBuffer)</a></li>
 <li><a href="#load(java.io.DataInputStream)" tabindex="0">load(DataInputStream)</a></li>
-<li><a href="#load(java.nio.ByteBuffer)" tabindex="0">load(ByteBuffer)</a></li>
+<li><a href="#load(zombie.core.network.ByteBufferReader)" tabindex="0">load(ByteBufferReader)</a></li>
 <li><a href="#load()" tabindex="0">load()</a></li>
 <li><a href="#getDawn()" tabindex="0">getDawn()</a></li>
 <li><a href="#setDawn(int)" tabindex="0">setDawn(int)</a></li>
@@ -198,7 +200,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#getModData()" tabindex="0">getModData()</a></li>
 <li><a href="#isThunderDay()" tabindex="0">isThunderDay()</a></li>
 <li><a href="#setThunderDay(boolean)" tabindex="0">setThunderDay(boolean)</a></li>
-<li><a href="#saveToPacket(java.nio.ByteBuffer)" tabindex="0">saveToPacket(ByteBuffer)</a></li>
+<li><a href="#saveToPacket(zombie.core.network.ByteBufferWriter)" tabindex="0">saveToPacket(ByteBufferWriter)</a></li>
 <li><a href="#getHelicopterDay1()" tabindex="0">getHelicopterDay1()</a></li>
 <li><a href="#getHelicopterDay()" tabindex="0">getHelicopterDay()</a></li>
 <li><a href="#setHelicopterDay(int)" tabindex="0">setHelicopterDay(int)</a></li>
@@ -518,27 +520,33 @@ loadScripts(document, 'script');</script>
 <div class="block"><span class="deprecated-label">Deprecated.</span>&nbsp;</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRealworldSecondsSinceLastUpdate()" class="member-name-link">getRealworldSecondsSinceLastUpdate</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPhysicsSecondsSinceLastUpdate()" class="member-name-link">getPhysicsSecondsSinceLastUpdate</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRealworldSecondsSinceLastUpdate()" class="member-name-link">getRealworldSecondsSinceLastUpdate</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Number of real seconds since the last tick.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getServerMultiplier()" class="member-name-link">getServerMultiplier</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getServerMultiplier()" class="member-name-link">getServerMultiplier</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Delta based on the target framerate rather than the actual framerate.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getServerTime()" class="member-name-link">getServerTime</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getServerTimeMills()" class="member-name-link">getServerTimeMills</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getServerTime()" class="member-name-link">getServerTime</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getServerTimeShiftIsSet()" class="member-name-link">getServerTimeShiftIsSet</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getServerTimeMills()" class="member-name-link">getServerTimeMills</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSkyLightLevel()" class="member-name-link">getSkyLightLevel</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getServerTimeShiftIsSet()" class="member-name-link">getServerTimeShiftIsSet</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSkyLightLevel()" class="member-name-link">getSkyLightLevel</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSlomoMultiplier()" class="member-name-link">getSlomoMultiplier</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStartDay()" class="member-name-link">getStartDay</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -668,7 +676,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(java.io.DataInputStream)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/DataInputStream.html" title="class or interface in java.io" class="external-link">DataInputStream</a>&nbsp;input)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(java.nio.ByteBuffer)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;input)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(zombie.core.network.ByteBufferReader)" class="member-name-link">load</a><wbr>(<a href="core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;input)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#RemoveZombiesIndiscriminate(int)" class="member-name-link">RemoveZombiesIndiscriminate</a><wbr>(int&nbsp;i)</code></div>
@@ -688,7 +696,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveToBufferMap(zombie.iso.SaveBufferMap)" class="member-name-link">saveToBufferMap</a><wbr>(<a href="iso/SaveBufferMap.html" title="class in zombie.iso">SaveBufferMap</a>&nbsp;bufferMap)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveToPacket(java.nio.ByteBuffer)" class="member-name-link">saveToPacket</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveToPacket(zombie.core.network.ByteBufferWriter)" class="member-name-link">saveToPacket</a><wbr>(<a href="core/network/ByteBufferWriter.html" title="class in zombie.core.network">ByteBufferWriter</a>&nbsp;bb)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#setAmbient(float)" class="member-name-link">setAmbient</a><wbr>(float&nbsp;ambient)</code></div>
@@ -1159,6 +1167,22 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getMultipliedSecondsSinceLastUpdate</span>()</div>
 <div class="block">Number of real world seconds since the last tick, multiplied by game speed.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getPhysicsSecondsSinceLastUpdate()">
+<h3>getPhysicsSecondsSinceLastUpdate</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getPhysicsSecondsSinceLastUpdate</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getSlomoMultiplier()">
+<h3>getSlomoMultiplier</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getSlomoMultiplier</span>()</div>
 </div>
 </section>
 </li>
@@ -2247,10 +2271,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="load(java.nio.ByteBuffer)">
+<section class="detail" id="load(zombie.core.network.ByteBufferReader)">
 <h3>load</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;input)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;input)</span>
           throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
@@ -2331,10 +2355,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="saveToPacket(java.nio.ByteBuffer)">
+<section class="detail" id="saveToPacket(zombie.core.network.ByteBufferWriter)">
 <h3>saveToPacket</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">saveToPacket</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">saveToPacket</span><wbr><span class="parameters">(<a href="core/network/ByteBufferWriter.html" title="class in zombie.core.network">ByteBufferWriter</a>&nbsp;bb)</span>
                   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>

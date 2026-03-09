@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -63,6 +63,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
 <li><a href="#largeFileBb" tabindex="0">largeFileBb</a></li>
+<li><a href="#largeFileBbReader" tabindex="0">largeFileBbReader</a></li>
+<li><a href="#largeFileBbWriter" tabindex="0">largeFileBbWriter</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -75,11 +77,11 @@ loadScripts(document, 'script');</script>
 <li><a href="#allocateLargeFileBB()" tabindex="0">allocateLargeFileBB()</a></li>
 <li><a href="#setRequest()" tabindex="0">setRequest()</a></li>
 <li><a href="#setRequest(zombie.network.packets.RequestDataPacket.RequestID)" tabindex="0">setRequest(RequestDataPacket.RequestID)</a></li>
-<li><a href="#setPartData(zombie.network.packets.RequestDataPacket.RequestID,java.nio.ByteBuffer)" tabindex="0">setPartData(RequestDataPacket.RequestID, ByteBuffer)</a></li>
+<li><a href="#setPartData(zombie.network.packets.RequestDataPacket.RequestID,zombie.core.network.ByteBufferReader)" tabindex="0">setPartData(RequestDataPacket.RequestID, ByteBufferReader)</a></li>
 <li><a href="#setPartDataParameters(int,int)" tabindex="0">setPartDataParameters(int, int)</a></li>
 <li><a href="#setACK(zombie.network.packets.RequestDataPacket.RequestID)" tabindex="0">setACK(RequestDataPacket.RequestID)</a></li>
 <li><a href="#sendConnectingDetails(zombie.core.raknet.UdpConnection,zombie.network.ServerWorldDatabase.LogonResult)" tabindex="0">sendConnectingDetails(UdpConnection, ServerWorldDatabase.LogonResult)</a></li>
-<li><a href="#parse(java.nio.ByteBuffer,zombie.network.IConnection)" tabindex="0">parse(ByteBuffer, IConnection)</a></li>
+<li><a href="#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)" tabindex="0">parse(ByteBufferReader, IConnection)</a></li>
 <li><a href="#write(zombie.core.network.ByteBufferWriter)" tabindex="0">write(ByteBufferWriter)</a></li>
 <li><a href="#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" tabindex="0">processServer(PacketTypes.PacketType, UdpConnection)</a></li>
 <li><a href="#processClientLoading(zombie.core.raknet.UdpConnection)" tabindex="0">processClientLoading(UdpConnection)</a></li>
@@ -139,6 +141,12 @@ implements <a href="INetworkPacket.html" title="interface in zombie.network.pack
 <div class="col-first even-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a></code></div>
 <div class="col-second even-row-color"><code><a href="#largeFileBb" class="member-name-link">largeFileBb</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#largeFileBbReader" class="member-name-link">largeFileBbReader</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../../core/network/ByteBufferWriter.html" title="class in zombie.core.network">ByteBufferWriter</a></code></div>
+<div class="col-second even-row-color"><code><a href="#largeFileBbWriter" class="member-name-link">largeFileBbWriter</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -176,7 +184,7 @@ implements <a href="INetworkPacket.html" title="interface in zombie.network.pack
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isConsistent(zombie.network.IConnection)" class="member-name-link">isConsistent</a><wbr>(<a href="../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(java.nio.ByteBuffer,zombie.network.IConnection)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;b,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)" class="member-name-link">parse</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;b,
  <a href="../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -197,8 +205,8 @@ implements <a href="INetworkPacket.html" title="interface in zombie.network.pack
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setACK(zombie.network.packets.RequestDataPacket.RequestID)" class="member-name-link">setACK</a><wbr>(<a href="RequestDataPacket.RequestID.html" title="enum class in zombie.network.packets">RequestDataPacket.RequestID</a>&nbsp;id)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPartData(zombie.network.packets.RequestDataPacket.RequestID,java.nio.ByteBuffer)" class="member-name-link">setPartData</a><wbr>(<a href="RequestDataPacket.RequestID.html" title="enum class in zombie.network.packets">RequestDataPacket.RequestID</a>&nbsp;id,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPartData(zombie.network.packets.RequestDataPacket.RequestID,zombie.core.network.ByteBufferReader)" class="member-name-link">setPartData</a><wbr>(<a href="RequestDataPacket.RequestID.html" title="enum class in zombie.network.packets">RequestDataPacket.RequestID</a>&nbsp;id,
+ <a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPartDataParameters(int,int)" class="member-name-link">setPartDataParameters</a><wbr>(int&nbsp;bytesSent,
@@ -224,7 +232,7 @@ implements <a href="INetworkPacket.html" title="interface in zombie.network.pack
 <code><a href="IDescriptor.html#getClassDescription(java.lang.StringBuilder,java.lang.Class,java.util.HashSet)" title="getClassDescription(StringBuilder, Class, HashSet)">getClassDescription</a>, <a href="IDescriptor.html#getDescription(java.util.HashSet)" title="getDescription(HashSet)">getDescription</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.packets.INetworkPacket">Methods inherited from interface&nbsp;<a href="INetworkPacket.html#method-summary" title="interface in zombie.network.packets">INetworkPacket</a></h3>
-<code><a href="INetworkPacket.html#isPostponed()" title="isPostponed()">isPostponed</a>, <a href="INetworkPacket.html#parseClient(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" title="parseClient(ByteBuffer, UdpConnection)">parseClient</a>, <a href="INetworkPacket.html#parseClientLoading(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" title="parseClientLoading(ByteBuffer, UdpConnection)">parseClientLoading</a>, <a href="INetworkPacket.html#parseServer(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" title="parseServer(ByteBuffer, UdpConnection)">parseServer</a>, <a href="INetworkPacket.html#postpone()" title="postpone()">postpone</a>, <a href="INetworkPacket.html#sendToClient(zombie.network.PacketTypes.PacketType,zombie.network.IConnection)" title="sendToClient(PacketTypes.PacketType, IConnection)">sendToClient</a>, <a href="INetworkPacket.html#sendToClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sendToClients(PacketTypes.PacketType, UdpConnection)">sendToClients</a>, <a href="INetworkPacket.html#sendToRelativeClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection,float,float)" title="sendToRelativeClients(PacketTypes.PacketType, UdpConnection, float, float)">sendToRelativeClients</a>, <a href="INetworkPacket.html#sendToServer(zombie.network.PacketTypes.PacketType)" title="sendToServer(PacketTypes.PacketType)">sendToServer</a>, <a href="INetworkPacket.html#setData(java.lang.Object...)" title="setData(Object...)">setData</a>, <a href="INetworkPacket.html#sync(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sync(PacketTypes.PacketType, UdpConnection)">sync</a></code></div>
+<code><a href="INetworkPacket.html#isPostponed()" title="isPostponed()">isPostponed</a>, <a href="INetworkPacket.html#parseClient(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseClient(ByteBufferReader, UdpConnection)">parseClient</a>, <a href="INetworkPacket.html#parseClientLoading(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseClientLoading(ByteBufferReader, UdpConnection)">parseClientLoading</a>, <a href="INetworkPacket.html#parseServer(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseServer(ByteBufferReader, UdpConnection)">parseServer</a>, <a href="INetworkPacket.html#postpone()" title="postpone()">postpone</a>, <a href="INetworkPacket.html#sendToClient(zombie.network.PacketTypes.PacketType,zombie.network.IConnection)" title="sendToClient(PacketTypes.PacketType, IConnection)">sendToClient</a>, <a href="INetworkPacket.html#sendToClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sendToClients(PacketTypes.PacketType, UdpConnection)">sendToClients</a>, <a href="INetworkPacket.html#sendToRelativeClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection,float,float)" title="sendToRelativeClients(PacketTypes.PacketType, UdpConnection, float, float)">sendToRelativeClients</a>, <a href="INetworkPacket.html#sendToServer(zombie.network.PacketTypes.PacketType)" title="sendToServer(PacketTypes.PacketType)">sendToServer</a>, <a href="INetworkPacket.html#setData(java.lang.Object...)" title="setData(Object...)">setData</a>, <a href="INetworkPacket.html#sync(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sync(PacketTypes.PacketType, UdpConnection)">sync</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.fields.INetworkPacketField">Methods inherited from interface&nbsp;<a href="../fields/INetworkPacketField.html#method-summary" title="interface in zombie.network.fields">INetworkPacketField</a></h3>
 <code><a href="../fields/INetworkPacketField.html#getPacketSizeBytes()" title="getPacketSizeBytes()">getPacketSizeBytes</a></code></div>
@@ -244,6 +252,22 @@ implements <a href="INetworkPacket.html" title="interface in zombie.network.pack
 <h3>largeFileBb</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a></span>&nbsp;<span class="element-name">largeFileBb</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="largeFileBbReader">
+<h3>largeFileBbReader</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a></span>&nbsp;<span class="element-name">largeFileBbReader</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="largeFileBbWriter">
+<h3>largeFileBbWriter</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../core/network/ByteBufferWriter.html" title="class in zombie.core.network">ByteBufferWriter</a></span>&nbsp;<span class="element-name">largeFileBbWriter</span></div>
 </div>
 </section>
 </li>
@@ -296,11 +320,11 @@ implements <a href="INetworkPacket.html" title="interface in zombie.network.pack
 </section>
 </li>
 <li>
-<section class="detail" id="setPartData(zombie.network.packets.RequestDataPacket.RequestID,java.nio.ByteBuffer)">
+<section class="detail" id="setPartData(zombie.network.packets.RequestDataPacket.RequestID,zombie.core.network.ByteBufferReader)">
 <h3>setPartData</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPartData</span><wbr><span class="parameters">(<a href="RequestDataPacket.RequestID.html" title="enum class in zombie.network.packets">RequestDataPacket.RequestID</a>&nbsp;id,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</span></div>
+ <a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</span></div>
 </div>
 </section>
 </li>
@@ -331,14 +355,14 @@ implements <a href="INetworkPacket.html" title="interface in zombie.network.pack
 </section>
 </li>
 <li>
-<section class="detail" id="parse(java.nio.ByteBuffer,zombie.network.IConnection)">
+<section class="detail" id="parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)">
 <h3>parse</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;b,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;b,
  <a href="../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../fields/INetworkPacketField.html#parse(java.nio.ByteBuffer,zombie.network.IConnection)">parse</a></code>&nbsp;in interface&nbsp;<code><a href="../fields/INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a></code></dd>
+<dd><code><a href="../fields/INetworkPacketField.html#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)">parse</a></code>&nbsp;in interface&nbsp;<code><a href="../fields/INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a></code></dd>
 </dl>
 </div>
 </section>

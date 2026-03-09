@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -67,8 +67,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#setNetTimeStamp(long)" tabindex="0">setNetTimeStamp(long)</a></li>
 <li><a href="#readChunksPacket(zombie.iso.areas.isoregion.data.DataRoot,java.util.List)" tabindex="0">readChunksPacket(DataRoot, List)</a></li>
 <li><a href="#saveChunksToDisk()" tabindex="0">saveChunksToDisk()</a></li>
-<li><a href="#saveChunksToNetBuffer(java.nio.ByteBuffer)" tabindex="0">saveChunksToNetBuffer(ByteBuffer)</a></li>
-<li><a href="#readChunksFromNetBuffer(java.nio.ByteBuffer,long)" tabindex="0">readChunksFromNetBuffer(ByteBuffer, long)</a></li>
+<li><a href="#saveChunksToNetBuffer(zombie.core.network.ByteBufferWriter)" tabindex="0">saveChunksToNetBuffer(ByteBufferWriter)</a></li>
+<li><a href="#readChunksFromNetBuffer(zombie.core.network.ByteBufferReader,long)" tabindex="0">readChunksFromNetBuffer(ByteBufferReader, long)</a></li>
 <li><a href="#canAddChunk()" tabindex="0">canAddChunk()</a></li>
 <li><a href="#addChunkFromDataChunk(zombie.iso.areas.isoregion.data.DataChunk)" tabindex="0">addChunkFromDataChunk(DataChunk)</a></li>
 <li><a href="#addChunkFromIsoChunk(zombie.iso.IsoChunk)" tabindex="0">addChunkFromIsoChunk(IsoChunk)</a></li>
@@ -133,7 +133,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTargetConn()" class="member-name-link">getTargetConn</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readChunksFromNetBuffer(java.nio.ByteBuffer,long)" class="member-name-link">readChunksFromNetBuffer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readChunksFromNetBuffer(zombie.core.network.ByteBufferReader,long)" class="member-name-link">readChunksFromNetBuffer</a><wbr>(<a href="../../../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  long&nbsp;serverTimeStamp)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
@@ -144,7 +144,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveChunksToDisk()" class="member-name-link">saveChunksToDisk</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveChunksToNetBuffer(java.nio.ByteBuffer)" class="member-name-link">saveChunksToNetBuffer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveChunksToNetBuffer(zombie.core.network.ByteBufferWriter)" class="member-name-link">saveChunksToNetBuffer</a><wbr>(<a href="../../../../core/network/ByteBufferWriter.html" title="class in zombie.core.network">ByteBufferWriter</a>&nbsp;bb)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setNetTimeStamp(long)" class="member-name-link">setNetTimeStamp</a><wbr>(long&nbsp;netTimeStamp)</code></div>
@@ -238,18 +238,18 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="saveChunksToNetBuffer(java.nio.ByteBuffer)">
+<section class="detail" id="saveChunksToNetBuffer(zombie.core.network.ByteBufferWriter)">
 <h3>saveChunksToNetBuffer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">saveChunksToNetBuffer</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">saveChunksToNetBuffer</span><wbr><span class="parameters">(<a href="../../../../core/network/ByteBufferWriter.html" title="class in zombie.core.network">ByteBufferWriter</a>&nbsp;bb)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="readChunksFromNetBuffer(java.nio.ByteBuffer,long)">
+<section class="detail" id="readChunksFromNetBuffer(zombie.core.network.ByteBufferReader,long)">
 <h3>readChunksFromNetBuffer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">readChunksFromNetBuffer</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">readChunksFromNetBuffer</span><wbr><span class="parameters">(<a href="../../../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  long&nbsp;serverTimeStamp)</span></div>
 </div>
 </section>

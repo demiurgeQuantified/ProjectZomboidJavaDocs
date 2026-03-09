@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -59,6 +59,11 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
+<li><a href="#field-detail" tabindex="0">Field Details</a>
+<ol class="toc-list">
+<li><a href="#shotID" tabindex="0">shotID</a></li>
+</ol>
+</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">Player()</a></li>
@@ -67,10 +72,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#set(zombie.characters.IsoPlayer,boolean)" tabindex="0">set(IsoPlayer, boolean)</a></li>
-<li><a href="#parse(java.nio.ByteBuffer,zombie.network.IConnection)" tabindex="0">parse(ByteBuffer, IConnection)</a></li>
+<li><a href="#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)" tabindex="0">parse(ByteBufferReader, IConnection)</a></li>
 <li><a href="#write(zombie.core.network.ByteBufferWriter)" tabindex="0">write(ByteBufferWriter)</a></li>
 <li><a href="#process()" tabindex="0">process()</a></li>
-<li><a href="#attack(zombie.inventory.types.HandWeapon,boolean)" tabindex="0">attack(HandWeapon, boolean)</a></li>
+<li><a href="#attack(zombie.inventory.types.HandWeapon,boolean,byte)" tabindex="0">attack(HandWeapon, boolean, byte)</a></li>
 <li><a href="#getPlayer()" tabindex="0">getPlayer()</a></li>
 <li><a href="#isRelevant(zombie.core.raknet.UdpConnection)" tabindex="0">isRelevant(UdpConnection)</a></li>
 </ol>
@@ -107,6 +112,15 @@ implements <a href="../INetworkPacketField.html" title="interface in zombie.netw
 <li>
 <section class="field-summary" id="field-summary">
 <h2>Field Summary</h2>
+<div class="caption"><span>Fields</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Field</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>byte</code></div>
+<div class="col-second even-row-color"><code><a href="#shotID" class="member-name-link">shotID</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-zombie.network.fields.character.CharacterID">Fields inherited from class&nbsp;<a href="../character/CharacterID.html#field-summary" title="class in zombie.network.fields.character">CharacterID</a></h3>
 <code><a href="../character/CharacterID.html#ANIMAL">ANIMAL</a>, <a href="../character/CharacterID.html#PLAYER">PLAYER</a>, <a href="../character/CharacterID.html#UNKNOWN">UNKNOWN</a>, <a href="../character/CharacterID.html#ZOMBIE">ZOMBIE</a></code></div>
@@ -137,8 +151,9 @@ implements <a href="../INetworkPacketField.html" title="interface in zombie.netw
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#attack(zombie.inventory.types.HandWeapon,boolean)" class="member-name-link">attack</a><wbr>(<a href="../../../inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;weapon,
- boolean&nbsp;isPVP)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#attack(zombie.inventory.types.HandWeapon,boolean,byte)" class="member-name-link">attack</a><wbr>(<a href="../../../inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;weapon,
+ boolean&nbsp;isPVP,
+ byte&nbsp;shotID)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayer()" class="member-name-link">getPlayer</a>()</code></div>
@@ -147,7 +162,7 @@ implements <a href="../INetworkPacketField.html" title="interface in zombie.netw
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRelevant(zombie.core.raknet.UdpConnection)" class="member-name-link">isRelevant</a><wbr>(<a href="../../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(java.nio.ByteBuffer,zombie.network.IConnection)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;b,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)" class="member-name-link">parse</a><wbr>(<a href="../../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;b,
  <a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -187,6 +202,22 @@ implements <a href="../INetworkPacketField.html" title="interface in zombie.netw
 </section>
 <section class="details">
 <ul class="details-list">
+<!-- ============ FIELD DETAIL =========== -->
+<li>
+<section class="field-details" id="field-detail">
+<h2>Field Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="shotID">
+<h3>shotID</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">shotID</span></div>
+</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -218,16 +249,16 @@ implements <a href="../INetworkPacketField.html" title="interface in zombie.netw
 </section>
 </li>
 <li>
-<section class="detail" id="parse(java.nio.ByteBuffer,zombie.network.IConnection)">
+<section class="detail" id="parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)">
 <h3>parse</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;b,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="../../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;b,
  <a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../INetworkPacketField.html#parse(java.nio.ByteBuffer,zombie.network.IConnection)">parse</a></code>&nbsp;in interface&nbsp;<code><a href="../INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a></code></dd>
+<dd><code><a href="../INetworkPacketField.html#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)">parse</a></code>&nbsp;in interface&nbsp;<code><a href="../INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a></code></dd>
 <dt>Overrides:</dt>
-<dd><code><a href="Character.html#parse(java.nio.ByteBuffer,zombie.network.IConnection)">parse</a></code>&nbsp;in class&nbsp;<code><a href="Character.html" title="class in zombie.network.fields.hit">Character</a></code></dd>
+<dd><code><a href="Character.html#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)">parse</a></code>&nbsp;in class&nbsp;<code><a href="Character.html" title="class in zombie.network.fields.hit">Character</a></code></dd>
 </dl>
 </div>
 </section>
@@ -255,11 +286,12 @@ implements <a href="../INetworkPacketField.html" title="interface in zombie.netw
 </section>
 </li>
 <li>
-<section class="detail" id="attack(zombie.inventory.types.HandWeapon,boolean)">
+<section class="detail" id="attack(zombie.inventory.types.HandWeapon,boolean,byte)">
 <h3>attack</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">attack</span><wbr><span class="parameters">(<a href="../../../inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;weapon,
- boolean&nbsp;isPVP)</span></div>
+ boolean&nbsp;isPVP,
+ byte&nbsp;shotID)</span></div>
 </div>
 </section>
 </li>

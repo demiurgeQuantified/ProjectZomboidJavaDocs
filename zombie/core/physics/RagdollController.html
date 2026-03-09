@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -78,17 +78,18 @@ loadScripts(document, 'script');</script>
 <li><a href="#getID()" tabindex="0">getID()</a></li>
 <li><a href="#getDebugDrawSettings()" tabindex="0">getDebugDrawSettings()</a></li>
 <li><a href="#isInitialized()" tabindex="0">isInitialized()</a></li>
+<li><a href="#isFirstFrame()" tabindex="0">isFirstFrame()</a></li>
 <li><a href="#isUpright()" tabindex="0">isUpright()</a></li>
-<li><a href="#setUpright(boolean)" tabindex="0">setUpright(boolean)</a></li>
 <li><a href="#isOnBack()" tabindex="0">isOnBack()</a></li>
-<li><a href="#setOnBack(boolean)" tabindex="0">setOnBack(boolean)</a></li>
 <li><a href="#getHeadPosition(zombie.iso.Vector3)" tabindex="0">getHeadPosition(Vector3)</a></li>
-<li><a href="#setHeadPosition(zombie.iso.Vector3)" tabindex="0">setHeadPosition(Vector3)</a></li>
 <li><a href="#getPelvisPosition(zombie.iso.Vector3)" tabindex="0">getPelvisPosition(Vector3)</a></li>
 <li><a href="#getPelvisPositionX()" tabindex="0">getPelvisPositionX()</a></li>
 <li><a href="#getPelvisPositionY()" tabindex="0">getPelvisPositionY()</a></li>
 <li><a href="#getPelvisPositionZ()" tabindex="0">getPelvisPositionZ()</a></li>
-<li><a href="#setPelvisPosition(zombie.iso.Vector3)" tabindex="0">setPelvisPosition(Vector3)</a></li>
+<li><a href="#getDesiredCharacterPosition(zombie.iso.Vector3)" tabindex="0">getDesiredCharacterPosition(Vector3)</a></li>
+<li><a href="#getDesiredCharacterPositionX()" tabindex="0">getDesiredCharacterPositionX()</a></li>
+<li><a href="#getDesiredCharacterPositionY()" tabindex="0">getDesiredCharacterPositionY()</a></li>
+<li><a href="#getDesiredCharacterPositionZ()" tabindex="0">getDesiredCharacterPositionZ()</a></li>
 <li><a href="#reinitialize()" tabindex="0">reinitialize()</a></li>
 <li><a href="#pzSpaceToBulletSpace(org.lwjgl.util.vector.Vector3f)" tabindex="0">pzSpaceToBulletSpace(Vector3f)</a></li>
 <li><a href="#setActive(boolean)" tabindex="0">setActive(boolean)</a></li>
@@ -210,6 +211,18 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="RagdollControllerDebugRenderer.DebugDrawSettings.html" title="class in zombie.core.physics">RagdollControllerDebugRenderer.DebugDrawSettings</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDebugDrawSettings()" class="member-name-link">getDebugDrawSettings</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDesiredCharacterPosition(zombie.iso.Vector3)" class="member-name-link">getDesiredCharacterPosition</a><wbr>(<a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;desiredCharacterPosition)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDesiredCharacterPositionX()" class="member-name-link">getDesiredCharacterPositionX</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDesiredCharacterPositionY()" class="member-name-link">getDesiredCharacterPositionY</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDesiredCharacterPositionZ()" class="member-name-link">getDesiredCharacterPositionZ</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getGameCharacterObject()" class="member-name-link">getGameCharacterObject</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -250,82 +263,73 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSimulationRenderedAngle()" class="member-name-link">getSimulationRenderedAngle</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInitialized()" class="member-name-link">isInitialized</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFirstFrame()" class="member-name-link">isFirstFrame</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isIsoPlayer()" class="member-name-link">isIsoPlayer</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInitialized()" class="member-name-link">isInitialized</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isOnBack()" class="member-name-link">isOnBack</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isIsoPlayer()" class="member-name-link">isIsoPlayer</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSimulationActive()" class="member-name-link">isSimulationActive</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isOnBack()" class="member-name-link">isOnBack</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSimulationDirectionCalculated()" class="member-name-link">isSimulationDirectionCalculated</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSimulationActive()" class="member-name-link">isSimulationActive</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSimulationSleeping()" class="member-name-link">isSimulationSleeping</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSimulationDirectionCalculated()" class="member-name-link">isSimulationDirectionCalculated</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isUpright()" class="member-name-link">isUpright</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSimulationSleeping()" class="member-name-link">isSimulationSleeping</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onReleased()" class="member-name-link">onReleased</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isUpright()" class="member-name-link">isUpright</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#postUpdate(float)" class="member-name-link">postUpdate</a><wbr>(float&nbsp;deltaT)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.lwjgl.util.vector.Vector3f</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#pzSpaceToBulletSpace(org.lwjgl.util.vector.Vector3f)" class="member-name-link">pzSpaceToBulletSpace</a><wbr>(org.lwjgl.util.vector.Vector3f&nbsp;result)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reinitialize()" class="member-name-link">reinitialize</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onReleased()" class="member-name-link">onReleased</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setActive(boolean)" class="member-name-link">setActive</a><wbr>(boolean&nbsp;active)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#postUpdate(float)" class="member-name-link">postUpdate</a><wbr>(float&nbsp;deltaT)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.lwjgl.util.vector.Vector3f</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#pzSpaceToBulletSpace(org.lwjgl.util.vector.Vector3f)" class="member-name-link">pzSpaceToBulletSpace</a><wbr>(org.lwjgl.util.vector.Vector3f&nbsp;result)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reinitialize()" class="member-name-link">reinitialize</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setGameCharacterObject(zombie.characters.IsoGameCharacter)" class="member-name-link">setGameCharacterObject</a><wbr>(<a href="../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;gameCharacterObject)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setActive(boolean)" class="member-name-link">setActive</a><wbr>(boolean&nbsp;active)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setHeadPosition(zombie.iso.Vector3)" class="member-name-link">setHeadPosition</a><wbr>(<a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;headPosition)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setGameCharacterObject(zombie.characters.IsoGameCharacter)" class="member-name-link">setGameCharacterObject</a><wbr>(<a href="../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;gameCharacterObject)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setOnBack(boolean)" class="member-name-link">setOnBack</a><wbr>(boolean&nbsp;onBack)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setVehicleRagdollBodyDynamics(zombie.scripting.objects.RagdollBodyDynamics)" class="member-name-link">setVehicleRagdollBodyDynamics</a><wbr>(<a href="../../scripting/objects/RagdollBodyDynamics.html" title="class in zombie.scripting.objects">RagdollBodyDynamics</a>&nbsp;ragdollBodyDynamics)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPelvisPosition(zombie.iso.Vector3)" class="member-name-link">setPelvisPosition</a><wbr>(<a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;pelvisPosition)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setUpright(boolean)" class="member-name-link">setUpright</a><wbr>(boolean&nbsp;upright)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setVehicleRagdollBodyDynamics(zombie.scripting.objects.RagdollBodyDynamics)" class="member-name-link">setVehicleRagdollBodyDynamics</a><wbr>(<a href="../../scripting/objects/RagdollBodyDynamics.html" title="class in zombie.scripting.objects">RagdollBodyDynamics</a>&nbsp;ragdollBodyDynamics)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#simulateRagdoll(int,org.lwjgl.util.vector.Vector3f,org.lwjgl.util.vector.Vector3f,org.lwjgl.util.vector.Quaternion,float%5B%5D,float%5B%5D)" class="member-name-link">simulateRagdoll</a><wbr>(int&nbsp;id,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#simulateRagdoll(int,org.lwjgl.util.vector.Vector3f,org.lwjgl.util.vector.Vector3f,org.lwjgl.util.vector.Quaternion,float%5B%5D,float%5B%5D)" class="member-name-link">simulateRagdoll</a><wbr>(int&nbsp;id,
  org.lwjgl.util.vector.Vector3f&nbsp;ragdollWorldPosition,
  org.lwjgl.util.vector.Vector3f&nbsp;ragdollWorldPositionPZBullet,
  org.lwjgl.util.vector.Quaternion&nbsp;ragdollWorldRotationPZBullet,
  float[]&nbsp;skeletonBuffer,
  float[]&nbsp;rigidBodyBuffer)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(float,org.lwjgl.util.vector.Vector3f,org.lwjgl.util.vector.Quaternion)" class="member-name-link">update</a><wbr>(float&nbsp;deltaT,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(float,org.lwjgl.util.vector.Vector3f,org.lwjgl.util.vector.Quaternion)" class="member-name-link">update</a><wbr>(float&nbsp;deltaT,
  org.lwjgl.util.vector.Vector3f&nbsp;ragdollWorldPosition,
  org.lwjgl.util.vector.Quaternion&nbsp;ragdollWorldRotation)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateRagdollSkeleton()" class="member-name-link">updateRagdollSkeleton</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateSimulationStateID()" class="member-name-link">updateSimulationStateID</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateRagdollSkeleton()" class="member-name-link">updateRagdollSkeleton</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#vehicleCollision(zombie.characters.IsoZombie,zombie.vehicles.BaseVehicle)" class="member-name-link">vehicleCollision</a><wbr>(<a href="../../characters/IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;isoZombie,
- <a href="../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;collidedVehicle)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateSimulationStateID()" class="member-name-link">updateSimulationStateID</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#vehicleCollision(zombie.characters.IsoZombie,zombie.vehicles.BaseVehicle)" class="member-name-link">vehicleCollision</a><wbr>(<a href="../../characters/IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;isoZombie,
+ <a href="../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;collidedVehicle)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -475,18 +479,18 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="isUpright()">
-<h3>isUpright</h3>
+<section class="detail" id="isFirstFrame()">
+<h3>isFirstFrame</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isUpright</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isFirstFrame</span>()</div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="setUpright(boolean)">
-<h3>setUpright</h3>
+<section class="detail" id="isUpright()">
+<h3>isUpright</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setUpright</span><wbr><span class="parameters">(boolean&nbsp;upright)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isUpright</span>()</div>
 </div>
 </section>
 </li>
@@ -499,26 +503,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="setOnBack(boolean)">
-<h3>setOnBack</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setOnBack</span><wbr><span class="parameters">(boolean&nbsp;onBack)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="getHeadPosition(zombie.iso.Vector3)">
 <h3>getHeadPosition</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a></span>&nbsp;<span class="element-name">getHeadPosition</span><wbr><span class="parameters">(<a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;headPosition)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="setHeadPosition(zombie.iso.Vector3)">
-<h3>setHeadPosition</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setHeadPosition</span><wbr><span class="parameters">(<a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;headPosition)</span></div>
 </div>
 </section>
 </li>
@@ -555,10 +543,34 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="setPelvisPosition(zombie.iso.Vector3)">
-<h3>setPelvisPosition</h3>
+<section class="detail" id="getDesiredCharacterPosition(zombie.iso.Vector3)">
+<h3>getDesiredCharacterPosition</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPelvisPosition</span><wbr><span class="parameters">(<a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;pelvisPosition)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a></span>&nbsp;<span class="element-name">getDesiredCharacterPosition</span><wbr><span class="parameters">(<a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;desiredCharacterPosition)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getDesiredCharacterPositionX()">
+<h3>getDesiredCharacterPositionX</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getDesiredCharacterPositionX</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getDesiredCharacterPositionY()">
+<h3>getDesiredCharacterPositionY</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getDesiredCharacterPositionY</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getDesiredCharacterPositionZ()">
+<h3>getDesiredCharacterPositionZ</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getDesiredCharacterPositionZ</span>()</div>
 </div>
 </section>
 </li>

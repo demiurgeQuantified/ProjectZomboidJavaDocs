@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -66,7 +66,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#logActionState(zombie.characters.action.ActionGroup,zombie.characters.action.ActionState,java.util.List)" tabindex="0">logActionState(ActionGroup, ActionState, List)</a></li>
+<li><a href="#logActionState(java.lang.String,java.lang.String)" tabindex="0">logActionState(String, String)</a></li>
 <li><a href="#logAIState(zombie.ai.State,java.util.List)" tabindex="0">logAIState(State, List)</a></li>
+<li><a href="#logAIState(java.lang.String)" tabindex="0">logAIState(String)</a></li>
 <li><a href="#logAnimState(zombie.core.skinnedmodel.advancedanimation.AnimState)" tabindex="0">logAnimState(AnimState)</a></li>
 <li><a href="#logCharacterToPlayerDiff(zombie.iso.Vector3)" tabindex="0">logCharacterToPlayerDiff(Vector3)</a></li>
 <li><a href="#buildHeader(java.lang.StringBuilder)" tabindex="0">buildHeader(StringBuilder)</a></li>
@@ -123,9 +125,16 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#buildHeader(java.lang.StringBuilder)" class="member-name-link">buildHeader</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/StringBuilder.html" title="class or interface in java.lang" class="external-link">StringBuilder</a>&nbsp;logLine)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logActionState(zombie.characters.action.ActionGroup,zombie.characters.action.ActionState,java.util.List)" class="member-name-link">logActionState</a><wbr>(<a href="../../../../characters/action/ActionGroup.html" title="class in zombie.characters.action">ActionGroup</a>&nbsp;group,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logActionState(java.lang.String,java.lang.String)" class="member-name-link">logActionState</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;actionGroupName,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;actionStateName)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logActionState(zombie.characters.action.ActionGroup,zombie.characters.action.ActionState,java.util.List)" class="member-name-link">logActionState</a><wbr>(<a href="../../../../characters/action/ActionGroup.html" title="class in zombie.characters.action">ActionGroup</a>&nbsp;group,
  <a href="../../../../characters/action/ActionState.html" title="class in zombie.characters.action">ActionState</a>&nbsp;state,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../../characters/action/ActionState.html" title="class in zombie.characters.action">ActionState</a>&gt;&nbsp;childStates)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logAIState(java.lang.String)" class="member-name-link">logAIState</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;aiStateName)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logAIState(zombie.ai.State,java.util.List)" class="member-name-link">logAIState</a><wbr>(<a href="../../../../ai/State.html" title="class in zombie.ai">State</a>&nbsp;state,
@@ -187,11 +196,28 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="logActionState(java.lang.String,java.lang.String)">
+<h3>logActionState</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">logActionState</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;actionGroupName,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;actionStateName)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="logAIState(zombie.ai.State,java.util.List)">
 <h3>logAIState</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">logAIState</span><wbr><span class="parameters">(<a href="../../../../ai/State.html" title="class in zombie.ai">State</a>&nbsp;state,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../../ai/StateMachine.SubstateSlot.html" title="class in zombie.ai">StateMachine.SubstateSlot</a>&gt;&nbsp;subStates)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="logAIState(java.lang.String)">
+<h3>logAIState</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">logAIState</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;aiStateName)</span></div>
 </div>
 </section>
 </li>

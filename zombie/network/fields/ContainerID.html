@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -68,6 +68,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#y" tabindex="0">y</a></li>
 <li><a href="#z" tabindex="0">z</a></li>
 <li><a href="#worldItemId" tabindex="0">worldItemId</a></li>
+<li><a href="#floorXY" tabindex="0">floorXY</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -90,7 +91,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#getObject()" tabindex="0">getObject()</a></li>
 <li><a href="#getPart()" tabindex="0">getPart()</a></li>
 <li><a href="#getVehicle()" tabindex="0">getVehicle()</a></li>
-<li><a href="#parse(java.nio.ByteBuffer,zombie.network.IConnection)" tabindex="0">parse(ByteBuffer, IConnection)</a></li>
+<li><a href="#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)" tabindex="0">parse(ByteBufferReader, IConnection)</a></li>
 <li><a href="#write(zombie.core.network.ByteBufferWriter)" tabindex="0">write(ByteBufferWriter)</a></li>
 <li><a href="#write(java.nio.ByteBuffer)" tabindex="0">write(ByteBuffer)</a></li>
 <li><a href="#findObject()" tabindex="0">findObject()</a></li>
@@ -150,21 +151,24 @@ implements <a href="INetworkPacketField.html" title="interface in zombie.network
 <div class="col-first even-row-color"><code><a href="ContainerID.ContainerType.html" title="enum class in zombie.network.fields">ContainerID.ContainerType</a></code></div>
 <div class="col-second even-row-color"><code><a href="#containerType" class="member-name-link">containerType</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="character/PlayerID.html" title="class in zombie.network.fields.character">PlayerID</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#playerId" class="member-name-link">playerId</a></code></div>
+<div class="col-first odd-row-color"><code>int[]</code></div>
+<div class="col-second odd-row-color"><code><a href="#floorXY" class="member-name-link">floorXY</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#worldItemId" class="member-name-link">worldItemId</a></code></div>
+<div class="col-first even-row-color"><code>final <a href="character/PlayerID.html" title="class in zombie.network.fields.character">PlayerID</a></code></div>
+<div class="col-second even-row-color"><code><a href="#playerId" class="member-name-link">playerId</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><a href="#x" class="member-name-link">x</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#worldItemId" class="member-name-link">worldItemId</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#y" class="member-name-link">y</a></code></div>
+<div class="col-second even-row-color"><code><a href="#x" class="member-name-link">x</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#z" class="member-name-link">z</a></code></div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><a href="#y" class="member-name-link">y</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>byte</code></div>
+<div class="col-second even-row-color"><code><a href="#z" class="member-name-link">z</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -224,7 +228,7 @@ implements <a href="INetworkPacketField.html" title="interface in zombie.network
  <a href="../../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;source)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(java.nio.ByteBuffer,zombie.network.IConnection)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;b,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)" class="member-name-link">parse</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;b,
  <a href="../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -330,6 +334,14 @@ implements <a href="INetworkPacketField.html" title="interface in zombie.network
 <h3>worldItemId</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">worldItemId</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="floorXY">
+<h3>floorXY</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int[]</span>&nbsp;<span class="element-name">floorXY</span></div>
 </div>
 </section>
 </li>
@@ -471,14 +483,14 @@ implements <a href="INetworkPacketField.html" title="interface in zombie.network
 </section>
 </li>
 <li>
-<section class="detail" id="parse(java.nio.ByteBuffer,zombie.network.IConnection)">
+<section class="detail" id="parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)">
 <h3>parse</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;b,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;b,
  <a href="../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="INetworkPacketField.html#parse(java.nio.ByteBuffer,zombie.network.IConnection)">parse</a></code>&nbsp;in interface&nbsp;<code><a href="INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a></code></dd>
+<dd><code><a href="INetworkPacketField.html#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)">parse</a></code>&nbsp;in interface&nbsp;<code><a href="INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a></code></dd>
 </dl>
 </div>
 </section>

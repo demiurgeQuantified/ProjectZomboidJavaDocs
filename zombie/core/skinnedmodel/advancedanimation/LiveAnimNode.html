@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -78,6 +78,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#stopTransitionIn()" tabindex="0">stopTransitionIn()</a></li>
 <li><a href="#removeAllTracks()" tabindex="0">removeAllTracks()</a></li>
 <li><a href="#setTransitionOut(zombie.core.skinnedmodel.advancedanimation.AnimTransition)" tabindex="0">setTransitionOut(AnimTransition)</a></li>
+<li><a href="#getTrackTimeToVariable(float)" tabindex="0">getTrackTimeToVariable(float)</a></li>
 <li><a href="#update(float)" tabindex="0">update(float)</a></li>
 <li><a href="#addMainTrack(zombie.core.skinnedmodel.animation.AnimationTrack)" tabindex="0">addMainTrack(AnimationTrack)</a></li>
 <li><a href="#setWeightsToZero()" tabindex="0">setWeightsToZero()</a></li>
@@ -308,157 +309,160 @@ implements <a href="../animation/IAnimListener.html" title="interface in zombie.
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="AnimBoneWeight.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimBoneWeight</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSubStateBoneWeights()" class="member-name-link">getSubStateBoneWeights</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransitionFrom()" class="member-name-link">getTransitionFrom</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTrackTimeToVariable(float)" class="member-name-link">getTrackTimeToVariable</a><wbr>(float&nbsp;defaultTime)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransitionFrom()" class="member-name-link">getTransitionFrom</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransitionInBlendInTime()" class="member-name-link">getTransitionInBlendInTime</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransitionInBlendInTime()" class="member-name-link">getTransitionInBlendInTime</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransitionInBlendOutTime()" class="member-name-link">getTransitionInBlendOutTime</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransitionInBlendOutTime()" class="member-name-link">getTransitionInBlendOutTime</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../animation/AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransitionInTrack()" class="member-name-link">getTransitionInTrack</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../animation/AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransitionInTrack()" class="member-name-link">getTransitionInTrack</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransitionInWeight()" class="member-name-link">getTransitionInWeight</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransitionInWeight()" class="member-name-link">getTransitionInWeight</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransitionLayerIdx()" class="member-name-link">getTransitionLayerIdx</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUseDeferredMovement()" class="member-name-link">getUseDeferredMovement</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransitionLayerIdx()" class="member-name-link">getTransitionLayerIdx</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUseDeferredRotation()" class="member-name-link">getUseDeferredRotation</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWeight()" class="member-name-link">getWeight</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="LiveAnimNode.WhileAliveFlag.html" title="class in zombie.core.skinnedmodel.advancedanimation">LiveAnimNode.WhileAliveFlag</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWhileAliveFlags()" class="member-name-link">getWhileAliveFlags</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUseDeferredMovement()" class="member-name-link">getUseDeferredMovement</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasMainAnimationTracks()" class="member-name-link">hasMainAnimationTracks</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUseDeferredRotation()" class="member-name-link">getUseDeferredRotation</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWeight()" class="member-name-link">getWeight</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="LiveAnimNode.WhileAliveFlag.html" title="class in zombie.core.skinnedmodel.advancedanimation">LiveAnimNode.WhileAliveFlag</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWhileAliveFlags()" class="member-name-link">getWhileAliveFlags</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#incrementWhileAliveFlagOnce(zombie.core.skinnedmodel.advancedanimation.AnimationVariableReference,boolean)" class="member-name-link">incrementWhileAliveFlagOnce</a><wbr>(<a href="AnimationVariableReference.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimationVariableReference</a>&nbsp;variableReference,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasMainAnimationTracks()" class="member-name-link">hasMainAnimationTracks</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#incrementWhileAliveFlagOnce(zombie.core.skinnedmodel.advancedanimation.AnimationVariableReference,boolean)" class="member-name-link">incrementWhileAliveFlagOnce</a><wbr>(<a href="AnimationVariableReference.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimationVariableReference</a>&nbsp;variableReference,
  boolean&nbsp;whileAliveFlagValue)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isActive()" class="member-name-link">isActive</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBlendingIn()" class="member-name-link">isBlendingIn</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isActive()" class="member-name-link">isActive</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBlendingOut()" class="member-name-link">isBlendingOut</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBlendingIn()" class="member-name-link">isBlendingIn</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isGrappler()" class="member-name-link">isGrappler</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBlendingOut()" class="member-name-link">isBlendingOut</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isIdleAnimActive()" class="member-name-link">isIdleAnimActive</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isGrappler()" class="member-name-link">isGrappler</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isIdleAnimActive()" class="member-name-link">isIdleAnimActive</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns TRUE if this Live node is currently Active, and if the source AnimNode is an Idle animation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isLooped()" class="member-name-link">isLooped</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isMainAnimActive()" class="member-name-link">isMainAnimActive</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isLooped()" class="member-name-link">isLooped</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNew()" class="member-name-link">isNew</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isMainAnimActive()" class="member-name-link">isMainAnimActive</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTransitioningIn()" class="member-name-link">isTransitioningIn</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNew()" class="member-name-link">isNew</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTweeningInGrapple()" class="member-name-link">isTweeningInGrapple</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTransitioningIn()" class="member-name-link">isTransitioningIn</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTweeningInGrappleFinished()" class="member-name-link">isTweeningInGrappleFinished</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTweeningInGrapple()" class="member-name-link">isTweeningInGrapple</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onAnimStarted(zombie.core.skinnedmodel.animation.AnimationTrack)" class="member-name-link">onAnimStarted</a><wbr>(<a href="../animation/AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a>&nbsp;track)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTweeningInGrappleFinished()" class="member-name-link">isTweeningInGrappleFinished</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onLoopedAnim(zombie.core.skinnedmodel.animation.AnimationTrack)" class="member-name-link">onLoopedAnim</a><wbr>(<a href="../animation/AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a>&nbsp;track)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onAnimStarted(zombie.core.skinnedmodel.animation.AnimationTrack)" class="member-name-link">onAnimStarted</a><wbr>(<a href="../animation/AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a>&nbsp;track)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onNoAnimConditionsPass()" class="member-name-link">onNoAnimConditionsPass</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onLoopedAnim(zombie.core.skinnedmodel.animation.AnimationTrack)" class="member-name-link">onLoopedAnim</a><wbr>(<a href="../animation/AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a>&nbsp;track)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onNonLoopedAnimFadeOut(zombie.core.skinnedmodel.animation.AnimationTrack)" class="member-name-link">onNonLoopedAnimFadeOut</a><wbr>(<a href="../animation/AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a>&nbsp;track)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onNoAnimConditionsPass()" class="member-name-link">onNoAnimConditionsPass</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onNonLoopedAnimFinished(zombie.core.skinnedmodel.animation.AnimationTrack)" class="member-name-link">onNonLoopedAnimFinished</a><wbr>(<a href="../animation/AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a>&nbsp;track)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onNonLoopedAnimFadeOut(zombie.core.skinnedmodel.animation.AnimationTrack)" class="member-name-link">onNonLoopedAnimFadeOut</a><wbr>(<a href="../animation/AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a>&nbsp;track)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onReleased()" class="member-name-link">onReleased</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onNonLoopedAnimFinished(zombie.core.skinnedmodel.animation.AnimationTrack)" class="member-name-link">onNonLoopedAnimFinished</a><wbr>(<a href="../animation/AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a>&nbsp;track)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onTrackDestroyed(zombie.core.skinnedmodel.animation.AnimationTrack)" class="member-name-link">onTrackDestroyed</a><wbr>(<a href="../animation/AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a>&nbsp;track)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onReleased()" class="member-name-link">onReleased</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onTransferredToLayer(zombie.core.skinnedmodel.advancedanimation.AnimLayer)" class="member-name-link">onTransferredToLayer</a><wbr>(<a href="AnimLayer.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimLayer</a>&nbsp;newParentLayer)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onTrackDestroyed(zombie.core.skinnedmodel.animation.AnimationTrack)" class="member-name-link">onTrackDestroyed</a><wbr>(<a href="../animation/AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a>&nbsp;track)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeAllTracks()" class="member-name-link">removeAllTracks</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onTransferredToLayer(zombie.core.skinnedmodel.advancedanimation.AnimLayer)" class="member-name-link">onTransferredToLayer</a><wbr>(<a href="AnimLayer.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimLayer</a>&nbsp;newParentLayer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectRandomAnim()" class="member-name-link">selectRandomAnim</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeAllTracks()" class="member-name-link">removeAllTracks</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setActive(boolean)" class="member-name-link">setActive</a><wbr>(boolean&nbsp;active)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectRandomAnim()" class="member-name-link">selectRandomAnim</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setGrappleTweenStartPos(org.joml.Vector3f)" class="member-name-link">setGrappleTweenStartPos</a><wbr>(org.joml.Vector3f&nbsp;pos)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setActive(boolean)" class="member-name-link">setActive</a><wbr>(boolean&nbsp;active)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setGrappleTweenStartPos(zombie.iso.Vector3)" class="member-name-link">setGrappleTweenStartPos</a><wbr>(<a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;pos)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setGrappleTweenStartPos(org.joml.Vector3f)" class="member-name-link">setGrappleTweenStartPos</a><wbr>(org.joml.Vector3f&nbsp;pos)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTransitionInBlendDelta(float)" class="member-name-link">setTransitionInBlendDelta</a><wbr>(float&nbsp;blendDelta)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setGrappleTweenStartPos(zombie.iso.Vector3)" class="member-name-link">setGrappleTweenStartPos</a><wbr>(<a href="../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;pos)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTransitionOut(zombie.core.skinnedmodel.advancedanimation.AnimTransition)" class="member-name-link">setTransitionOut</a><wbr>(<a href="AnimTransition.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimTransition</a>&nbsp;transitionOut)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTransitionInBlendDelta(float)" class="member-name-link">setTransitionInBlendDelta</a><wbr>(float&nbsp;blendDelta)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTweeningInGrapple(boolean)" class="member-name-link">setTweeningInGrapple</a><wbr>(boolean&nbsp;tweeningInGrapple)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTransitionOut(zombie.core.skinnedmodel.advancedanimation.AnimTransition)" class="member-name-link">setTransitionOut</a><wbr>(<a href="AnimTransition.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimTransition</a>&nbsp;transitionOut)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTweeningInGrappleFinished(boolean)" class="member-name-link">setTweeningInGrappleFinished</a><wbr>(boolean&nbsp;tweeningInGrappleFinished)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTweeningInGrapple(boolean)" class="member-name-link">setTweeningInGrapple</a><wbr>(boolean&nbsp;tweeningInGrapple)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWeightsToFull()" class="member-name-link">setWeightsToFull</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTweeningInGrappleFinished(boolean)" class="member-name-link">setTweeningInGrappleFinished</a><wbr>(boolean&nbsp;tweeningInGrappleFinished)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWeightsToZero()" class="member-name-link">setWeightsToZero</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWeightsToFull()" class="member-name-link">setWeightsToFull</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startTransitionIn(zombie.core.skinnedmodel.advancedanimation.AnimNode,zombie.core.skinnedmodel.advancedanimation.AnimTransition,zombie.core.skinnedmodel.animation.AnimationTrack)" class="member-name-link">startTransitionIn</a><wbr>(<a href="AnimNode.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimNode</a>&nbsp;transitionFrom,
- <a href="AnimTransition.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimTransition</a>&nbsp;transitionIn,
- <a href="../animation/AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a>&nbsp;track)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWeightsToZero()" class="member-name-link">setWeightsToZero</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startTransitionIn(zombie.core.skinnedmodel.advancedanimation.LiveAnimNode,zombie.core.skinnedmodel.advancedanimation.AnimTransition,zombie.core.skinnedmodel.animation.AnimationTrack)" class="member-name-link">startTransitionIn</a><wbr>(<a href="LiveAnimNode.html" title="class in zombie.core.skinnedmodel.advancedanimation">LiveAnimNode</a>&nbsp;transitionFrom,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startTransitionIn(zombie.core.skinnedmodel.advancedanimation.AnimNode,zombie.core.skinnedmodel.advancedanimation.AnimTransition,zombie.core.skinnedmodel.animation.AnimationTrack)" class="member-name-link">startTransitionIn</a><wbr>(<a href="AnimNode.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimNode</a>&nbsp;transitionFrom,
  <a href="AnimTransition.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimTransition</a>&nbsp;transitionIn,
  <a href="../animation/AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a>&nbsp;track)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopTransitionIn()" class="member-name-link">stopTransitionIn</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startTransitionIn(zombie.core.skinnedmodel.advancedanimation.LiveAnimNode,zombie.core.skinnedmodel.advancedanimation.AnimTransition,zombie.core.skinnedmodel.animation.AnimationTrack)" class="member-name-link">startTransitionIn</a><wbr>(<a href="LiveAnimNode.html" title="class in zombie.core.skinnedmodel.advancedanimation">LiveAnimNode</a>&nbsp;transitionFrom,
+ <a href="AnimTransition.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimTransition</a>&nbsp;transitionIn,
+ <a href="../animation/AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a>&nbsp;track)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(float)" class="member-name-link">update</a><wbr>(float&nbsp;timeDelta)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopTransitionIn()" class="member-name-link">stopTransitionIn</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wasActivated()" class="member-name-link">wasActivated</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(float)" class="member-name-link">update</a><wbr>(float&nbsp;timeDelta)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wasDeactivated()" class="member-name-link">wasDeactivated</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wasActivated()" class="member-name-link">wasActivated</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wasDeactivated()" class="member-name-link">wasDeactivated</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -597,6 +601,14 @@ implements <a href="../animation/IAnimListener.html" title="interface in zombie.
 <h3>setTransitionOut</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setTransitionOut</span><wbr><span class="parameters">(<a href="AnimTransition.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimTransition</a>&nbsp;transitionOut)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getTrackTimeToVariable(float)">
+<h3>getTrackTimeToVariable</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getTrackTimeToVariable</span><wbr><span class="parameters">(float&nbsp;defaultTime)</span></div>
 </div>
 </section>
 </li>

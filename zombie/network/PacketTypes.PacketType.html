@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.14.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -360,9 +360,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#send(zombie.network.IConnection)" tabindex="0">send(IConnection)</a></li>
 <li><a href="#doPacket(zombie.core.network.ByteBufferWriter)" tabindex="0">doPacket(ByteBufferWriter)</a></li>
 <li><a href="#getId()" tabindex="0">getId()</a></li>
-<li><a href="#onServerPacket(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" tabindex="0">onServerPacket(ByteBuffer, UdpConnection)</a></li>
-<li><a href="#onClientPacket(java.nio.ByteBuffer)" tabindex="0">onClientPacket(ByteBuffer)</a></li>
-<li><a href="#onClientLoadingPacket(java.nio.ByteBuffer)" tabindex="0">onClientLoadingPacket(ByteBuffer)</a></li>
+<li><a href="#onServerPacket(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" tabindex="0">onServerPacket(ByteBufferReader, UdpConnection)</a></li>
+<li><a href="#onClientPacket(zombie.core.network.ByteBufferReader)" tabindex="0">onClientPacket(ByteBufferReader)</a></li>
+<li><a href="#onClientLoadingPacket(zombie.core.network.ByteBufferReader)" tabindex="0">onClientLoadingPacket(ByteBufferReader)</a></li>
 <li><a href="#getFlags()" tabindex="0">getFlags()</a></li>
 <li><a href="#isLogEnabled()" tabindex="0">isLogEnabled()</a></li>
 <li><a href="#setLogEnabled(boolean)" tabindex="0">setLogEnabled(boolean)</a></li>
@@ -1027,13 +1027,13 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isLogEnabled()" class="member-name-link">isLogEnabled</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onClientLoadingPacket(java.nio.ByteBuffer)" class="member-name-link">onClientLoadingPacket</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onClientLoadingPacket(zombie.core.network.ByteBufferReader)" class="member-name-link">onClientLoadingPacket</a><wbr>(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onClientPacket(java.nio.ByteBuffer)" class="member-name-link">onClientPacket</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onClientPacket(zombie.core.network.ByteBufferReader)" class="member-name-link">onClientPacket</a><wbr>(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onServerPacket(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" class="member-name-link">onServerPacket</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onServerPacket(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" class="member-name-link">onServerPacket</a><wbr>(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -3421,10 +3421,10 @@ not permitted.)</div>
 </section>
 </li>
 <li>
-<section class="detail" id="onServerPacket(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)">
+<section class="detail" id="onServerPacket(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)">
 <h3>onServerPacket</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onServerPacket</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onServerPacket</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  <a href="../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</span>
                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
 <dl class="notes">
@@ -3435,10 +3435,10 @@ not permitted.)</div>
 </section>
 </li>
 <li>
-<section class="detail" id="onClientPacket(java.nio.ByteBuffer)">
+<section class="detail" id="onClientPacket(zombie.core.network.ByteBufferReader)">
 <h3>onClientPacket</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onClientPacket</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onClientPacket</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</span>
                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
@@ -3448,10 +3448,10 @@ not permitted.)</div>
 </section>
 </li>
 <li>
-<section class="detail" id="onClientLoadingPacket(java.nio.ByteBuffer)">
+<section class="detail" id="onClientLoadingPacket(zombie.core.network.ByteBufferReader)">
 <h3>onClientLoadingPacket</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">onClientLoadingPacket</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">onClientLoadingPacket</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</span>
                               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
