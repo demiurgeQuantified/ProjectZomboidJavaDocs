@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -59,13 +59,17 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#getInstance()" tabindex="0">getInstance()</a></li>
+<li><a href="#initInstances()" tabindex="0">initInstances()</a></li>
+<li><a href="#getInstance(int)" tabindex="0">getInstance(int)</a></li>
+<li><a href="#trySetTargetReticleMode(int,zombie.iso.sprite.IsoReticleMode)" tabindex="0">trySetTargetReticleMode(int, IsoReticleMode)</a></li>
+<li><a href="#getTargetReticleMode()" tabindex="0">getTargetReticleMode()</a></li>
+<li><a href="#setTargetReticleMode(zombie.iso.sprite.IsoReticleMode)" tabindex="0">setTargetReticleMode(IsoReticleMode)</a></li>
 <li><a href="#setAimColor(zombie.core.textures.ColorInfo)" tabindex="0">setAimColor(ColorInfo)</a></li>
 <li><a href="#setReticleColor(zombie.core.textures.ColorInfo)" tabindex="0">setReticleColor(ColorInfo)</a></li>
 <li><a href="#setChance(int)" tabindex="0">setChance(int)</a></li>
 <li><a href="#setAimPenalty(int)" tabindex="0">setAimPenalty(int)</a></li>
 <li><a href="#hasTarget(boolean)" tabindex="0">hasTarget(boolean)</a></li>
-<li><a href="#render(int)" tabindex="0">render(int)</a></li>
+<li><a href="#render()" tabindex="0">render()</a></li>
 </ol>
 </li>
 </ol>
@@ -99,13 +103,19 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="IsoReticle.html" title="class in zombie.iso.sprite">IsoReticle</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance()" class="member-name-link">getInstance</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance(int)" class="member-name-link">getInstance</a><wbr>(int&nbsp;playerIndex)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasTarget(boolean)" class="member-name-link">hasTarget</a><wbr>(boolean&nbsp;hasValidTarget)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="IsoReticleMode.html" title="enum class in zombie.iso.sprite">IsoReticleMode</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTargetReticleMode()" class="member-name-link">getTargetReticleMode</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(int)" class="member-name-link">render</a><wbr>(int&nbsp;playerIndex)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasTarget(boolean)" class="member-name-link">hasTarget</a><wbr>(boolean&nbsp;hasValidTarget)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initInstances()" class="member-name-link">initInstances</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render()" class="member-name-link">render</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAimColor(zombie.core.textures.ColorInfo)" class="member-name-link">setAimColor</a><wbr>(<a href="../../core/textures/ColorInfo.html" title="class in zombie.core.textures">ColorInfo</a>&nbsp;colorInfo)</code></div>
@@ -119,6 +129,13 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setReticleColor(zombie.core.textures.ColorInfo)" class="member-name-link">setReticleColor</a><wbr>(<a href="../../core/textures/ColorInfo.html" title="class in zombie.core.textures">ColorInfo</a>&nbsp;colorInfo)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTargetReticleMode(zombie.iso.sprite.IsoReticleMode)" class="member-name-link">setTargetReticleMode</a><wbr>(<a href="IsoReticleMode.html" title="enum class in zombie.iso.sprite">IsoReticleMode</a>&nbsp;reticleMode)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#trySetTargetReticleMode(int,zombie.iso.sprite.IsoReticleMode)" class="member-name-link">trySetTargetReticleMode</a><wbr>(int&nbsp;playerIndex,
+ <a href="IsoReticleMode.html" title="enum class in zombie.iso.sprite">IsoReticleMode</a>&nbsp;isoReticleMode)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -137,10 +154,43 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="getInstance()">
+<section class="detail" id="initInstances()">
+<h3>initInstances</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">initInstances</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getInstance(int)">
 <h3>getInstance</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="IsoReticle.html" title="class in zombie.iso.sprite">IsoReticle</a></span>&nbsp;<span class="element-name">getInstance</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="IsoReticle.html" title="class in zombie.iso.sprite">IsoReticle</a></span>&nbsp;<span class="element-name">getInstance</span><wbr><span class="parameters">(int&nbsp;playerIndex)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="trySetTargetReticleMode(int,zombie.iso.sprite.IsoReticleMode)">
+<h3>trySetTargetReticleMode</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">trySetTargetReticleMode</span><wbr><span class="parameters">(int&nbsp;playerIndex,
+ <a href="IsoReticleMode.html" title="enum class in zombie.iso.sprite">IsoReticleMode</a>&nbsp;isoReticleMode)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getTargetReticleMode()">
+<h3>getTargetReticleMode</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="IsoReticleMode.html" title="enum class in zombie.iso.sprite">IsoReticleMode</a></span>&nbsp;<span class="element-name">getTargetReticleMode</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setTargetReticleMode(zombie.iso.sprite.IsoReticleMode)">
+<h3>setTargetReticleMode</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setTargetReticleMode</span><wbr><span class="parameters">(<a href="IsoReticleMode.html" title="enum class in zombie.iso.sprite">IsoReticleMode</a>&nbsp;reticleMode)</span></div>
 </div>
 </section>
 </li>
@@ -185,10 +235,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="render(int)">
+<section class="detail" id="render()">
 <h3>render</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">render</span><wbr><span class="parameters">(int&nbsp;playerIndex)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">render</span>()</div>
 </div>
 </section>
 </li>

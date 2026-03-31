@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -104,9 +104,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#setLogSeverity(zombie.debug.DebugType,zombie.debug.LogSeverity)" tabindex="0">setLogSeverity(DebugType, LogSeverity)</a></li>
 <li><a href="#isEnabled(zombie.debug.DebugType)" tabindex="0">isEnabled(DebugType)</a></li>
 <li><a href="#isLogEnabled(zombie.debug.DebugType,zombie.debug.LogSeverity)" tabindex="0">isLogEnabled(DebugType, LogSeverity)</a></li>
-<li><a href="#formatString(zombie.debug.DebugType,zombie.debug.LogSeverity,java.lang.Object,boolean,java.lang.String)" tabindex="0">formatString(DebugType, LogSeverity, Object, boolean, String)</a></li>
-<li><a href="#formatString(zombie.debug.DebugType,zombie.debug.LogSeverity,java.lang.Object,boolean,java.lang.String,java.lang.Object...)" tabindex="0">formatString(DebugType, LogSeverity, Object, boolean, String, Object...)</a></li>
-<li><a href="#formatStringVarArgs(zombie.debug.DebugType,zombie.debug.LogSeverity,java.lang.Object,boolean,java.lang.String,java.lang.Object...)" tabindex="0">formatStringVarArgs(DebugType, LogSeverity, Object, boolean, String, Object...)</a></li>
+<li><a href="#formatLogString(zombie.debug.DebugType,zombie.debug.LogSeverity,java.lang.Object,java.lang.Object,java.lang.Object...)" tabindex="0">formatLogString(DebugType, LogSeverity, Object, Object, Object...)</a></li>
 <li><a href="#echoToLogFiles(zombie.debug.LogSeverity,java.lang.String)" tabindex="0">echoToLogFiles(LogSeverity, String)</a></li>
 <li><a href="#echoExceptionLineToLogFiles(zombie.debug.LogSeverity,java.lang.String,java.lang.String)" tabindex="0">echoExceptionLineToLogFiles(LogSeverity, String, String)</a></li>
 <li><a href="#log(zombie.debug.DebugType,java.lang.String)" tabindex="0">log(DebugType, String)</a></li>
@@ -118,7 +116,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#isLogTraceFileLocationEnabled()" tabindex="0">isLogTraceFileLocationEnabled()</a></li>
 <li><a href="#getRecordingOut()" tabindex="0">getRecordingOut()</a></li>
 <li><a href="#setRecordingOut(java.io.PrintStream)" tabindex="0">setRecordingOut(PrintStream)</a></li>
-<li><a href="#createLogStream(zombie.debug.DebugType)" tabindex="0">createLogStream(DebugType)</a></li>
+<li><a href="#getOrCreateLogStream(zombie.debug.DebugType)" tabindex="0">getOrCreateLogStream(DebugType)</a></li>
 <li><a href="#setStdOut(java.io.OutputStream)" tabindex="0">setStdOut(OutputStream)</a></li>
 <li><a href="#setStdErr(java.io.OutputStream)" tabindex="0">setStdErr(OutputStream)</a></li>
 <li><a href="#init()" tabindex="0">init()</a></li>
@@ -260,53 +258,37 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="DebugLogStream.html" title="class in zombie.debug">DebugLogStream</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createLogStream(zombie.debug.DebugType)" class="member-name-link">createLogStream</a><wbr>(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;debugType)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#echoExceptionLineToLogFiles(zombie.debug.LogSeverity,java.lang.String,java.lang.String)" class="member-name-link">echoExceptionLineToLogFiles</a><wbr>(<a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;messageType,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;outString)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#echoExceptionLineToLogFiles(zombie.debug.LogSeverity,java.lang.String,java.lang.String)" class="member-name-link">echoExceptionLineToLogFiles</a><wbr>(<a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;messageType,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#echoToLogFiles(zombie.debug.LogSeverity,java.lang.String)" class="member-name-link">echoToLogFiles</a><wbr>(<a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;outString)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#echoToLogFiles(zombie.debug.LogSeverity,java.lang.String)" class="member-name-link">echoToLogFiles</a><wbr>(<a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;outString)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#enableLog(zombie.debug.DebugType,zombie.debug.LogSeverity)" class="member-name-link">enableLog</a><wbr>(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#enableLog(zombie.debug.DebugType,zombie.debug.LogSeverity)" class="member-name-link">enableLog</a><wbr>(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type,
  <a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;severity)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#formatString(zombie.debug.DebugType,zombie.debug.LogSeverity,java.lang.Object,boolean,java.lang.String)" class="member-name-link">formatString</a><wbr>(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type,
- <a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;affix,
- boolean&nbsp;allowRepeat,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;formatNoParams)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#formatString(zombie.debug.DebugType,zombie.debug.LogSeverity,java.lang.Object,boolean,java.lang.String,java.lang.Object...)" class="member-name-link">formatString</a><wbr>(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#formatLogString(zombie.debug.DebugType,zombie.debug.LogSeverity,java.lang.Object,java.lang.Object,java.lang.Object...)" class="member-name-link">formatLogString</a><wbr>(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;debugType,
  <a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;affix,
- boolean&nbsp;allowRepeat,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;format,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;params)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#formatStringVarArgs(zombie.debug.DebugType,zombie.debug.LogSeverity,java.lang.Object,boolean,java.lang.String,java.lang.Object...)" class="member-name-link">formatStringVarArgs</a><wbr>(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type,
- <a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;affix,
- boolean&nbsp;allowRepeat,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;params)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getDebugTypes()" class="member-name-link">getDebugTypes</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLogLevel(zombie.debug.DebugType)" class="member-name-link">getLogLevel</a><wbr>(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getDebugTypes()" class="member-name-link">getDebugTypes</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLogSeverity(zombie.debug.DebugType)" class="member-name-link">getLogSeverity</a><wbr>(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLogLevel(zombie.debug.DebugType)" class="member-name-link">getLogLevel</a><wbr>(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLogSeverity(zombie.debug.DebugType)" class="member-name-link">getLogSeverity</a><wbr>(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="DebugLogStream.html" title="class in zombie.debug">DebugLogStream</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getOrCreateLogStream(zombie.debug.DebugType)" class="member-name-link">getOrCreateLogStream</a><wbr>(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;debugType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link">PrintStream</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getRecordingOut()" class="member-name-link">getRecordingOut</a>()</code></div>
@@ -709,39 +691,13 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="formatString(zombie.debug.DebugType,zombie.debug.LogSeverity,java.lang.Object,boolean,java.lang.String)">
-<h3>formatString</h3>
+<section class="detail" id="formatLogString(zombie.debug.DebugType,zombie.debug.LogSeverity,java.lang.Object,java.lang.Object,java.lang.Object...)">
+<h3>formatLogString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">formatString</span><wbr><span class="parameters">(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">formatLogString</span><wbr><span class="parameters">(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;debugType,
  <a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;affix,
- boolean&nbsp;allowRepeat,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;formatNoParams)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="formatString(zombie.debug.DebugType,zombie.debug.LogSeverity,java.lang.Object,boolean,java.lang.String,java.lang.Object...)">
-<h3>formatString</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">formatString</span><wbr><span class="parameters">(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type,
- <a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;affix,
- boolean&nbsp;allowRepeat,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;params)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="formatStringVarArgs(zombie.debug.DebugType,zombie.debug.LogSeverity,java.lang.Object,boolean,java.lang.String,java.lang.Object...)">
-<h3>formatStringVarArgs</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">formatStringVarArgs</span><wbr><span class="parameters">(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type,
- <a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;affix,
- boolean&nbsp;allowRepeat,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;format,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;params)</span></div>
 </div>
 </section>
@@ -840,10 +796,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="createLogStream(zombie.debug.DebugType)">
-<h3>createLogStream</h3>
+<section class="detail" id="getOrCreateLogStream(zombie.debug.DebugType)">
+<h3>getOrCreateLogStream</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="DebugLogStream.html" title="class in zombie.debug">DebugLogStream</a></span>&nbsp;<span class="element-name">createLogStream</span><wbr><span class="parameters">(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;debugType)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="DebugLogStream.html" title="class in zombie.debug">DebugLogStream</a></span>&nbsp;<span class="element-name">getOrCreateLogStream</span><wbr><span class="parameters">(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;debugType)</span></div>
 </div>
 </section>
 </li>

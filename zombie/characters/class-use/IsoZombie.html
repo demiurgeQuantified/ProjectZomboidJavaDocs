@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#use">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -366,7 +366,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static void</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">ZombiesZoneDefinition.</span><code><a href="../ZombiesZoneDefinition.html#dressInRandomOutfit(zombie.characters.IsoZombie)" class="member-name-link">dressInRandomOutfit</a><wbr>(<a href="../IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;chr)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static short</code></div>
+<div class="col-first odd-row-color"><code>static <a href="../../util/flags/ShortFlags.html" title="class in zombie.util.flags">ShortFlags</a></code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">NetworkZombieVariables.</span><code><a href="../NetworkZombieVariables.html#getBooleanVariables(zombie.characters.IsoZombie)" class="member-name-link">getBooleanVariables</a><wbr>(<a href="../IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;zombie)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
@@ -388,9 +388,13 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><span class="type-name-label">NetworkZombieVariables.</span><code><a href="../NetworkZombieVariables.html#setBooleanVariables(zombie.characters.IsoZombie,short)" class="member-name-link">setBooleanVariables</a><wbr>(<a href="../IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;zombie,
  short&nbsp;val)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../IsoGameCharacter.html#testDefense(zombie.characters.IsoZombie)" class="member-name-link">testDefense</a><wbr>(<a href="../IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;zomb)</code></div>
-<div class="col-last even-row-color">
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">NetworkZombieVariables.</span><code><a href="../NetworkZombieVariables.html#setBooleanVariables(zombie.characters.IsoZombie,zombie.util.flags.ShortFlags)" class="member-name-link">setBooleanVariables</a><wbr>(<a href="../IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;zombie,
+ <a href="../../util/flags/ShortFlags.html" title="class in zombie.util.flags">ShortFlags</a>&nbsp;val)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../IsoGameCharacter.html#testDefense(zombie.characters.IsoZombie)" class="member-name-link">testDefense</a><wbr>(<a href="../IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;zomb)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Test if we're able to defend a zombie bite
  Can only happen if zombie is attacking from front
  Calcul include current weapon skills, fitness <span class="invalid-tag">invalid input: '&amp;'</span> strength</div>
@@ -825,10 +829,11 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">PlayerHitZombiePacket.</span><code><a href="../../network/packets/hit/PlayerHitZombiePacket.html#set(zombie.characters.IsoPlayer,zombie.inventory.types.HandWeapon,boolean,boolean,zombie.characters.IsoZombie,float,float,boolean,boolean,boolean)" class="member-name-link">set</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;wielder,
+<div class="col-second even-row-color"><span class="type-name-label">PlayerHitZombiePacket.</span><code><a href="../../network/packets/hit/PlayerHitZombiePacket.html#set(zombie.characters.IsoPlayer,zombie.inventory.types.HandWeapon,boolean,boolean,java.util.List,zombie.characters.IsoZombie,float,float,boolean,boolean,boolean)" class="member-name-link">set</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;wielder,
  <a href="../../inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;weapon,
  boolean&nbsp;isIgnoreDamage,
  boolean&nbsp;isCriticalHit,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../network/fields/hit/TracerInfo.html" title="class in zombie.network.fields.hit">TracerInfo</a>&gt;&nbsp;tracers,
  <a href="../IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;target,
  float&nbsp;damage,
  float&nbsp;range,
@@ -855,10 +860,6 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;didDamage,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;hitReaction)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ZombieHitThumpablePacket.</span><code><a href="../../network/packets/hit/ZombieHitThumpablePacket.html#set(zombie.characters.IsoZombie,zombie.iso.IsoObject)" class="member-name-link">set</a><wbr>(<a href="../IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;wielder,
- <a href="../../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;thumpable)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>

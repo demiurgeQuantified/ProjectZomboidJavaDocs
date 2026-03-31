@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -61,6 +61,11 @@ loadScripts(document, 'script');</script>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">DeadAnimalPacket()</a></li>
+</ol>
+</li>
+<li><a href="#method-detail" tabindex="0">Method Details</a>
+<ol class="toc-list">
+<li><a href="#postpone()" tabindex="0">postpone()</a></li>
 </ol>
 </li>
 </ol>
@@ -108,9 +113,22 @@ implements <a href="../INetworkPacket.html" title="interface in zombie.network.p
 <li>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
+<div id="method-summary-table">
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#postpone()" class="member-name-link">postpone</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+</div>
+</div>
+</div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.packets.character.DeadCharacterPacket">Methods inherited from class&nbsp;<a href="DeadCharacterPacket.html#method-summary" title="class in zombie.network.packets.character">DeadCharacterPacket</a></h3>
-<code><a href="DeadCharacterPacket.html#isConsistent(zombie.network.IConnection)" title="isConsistent(IConnection)">isConsistent</a>, <a href="DeadCharacterPacket.html#isPostponed()" title="isPostponed()">isPostponed</a>, <a href="DeadCharacterPacket.html#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)" title="parse(ByteBufferReader, IConnection)">parse</a>, <a href="DeadCharacterPacket.html#postpone()" title="postpone()">postpone</a>, <a href="DeadCharacterPacket.html#processClient(zombie.core.raknet.UdpConnection)" title="processClient(UdpConnection)">processClient</a>, <a href="DeadCharacterPacket.html#setData(java.lang.Object...)" title="setData(Object...)">setData</a>, <a href="DeadCharacterPacket.html#write(zombie.core.network.ByteBufferWriter)" title="write(ByteBufferWriter)">write</a></code></div>
+<code><a href="DeadCharacterPacket.html#isConsistent(zombie.network.IConnection)" title="isConsistent(IConnection)">isConsistent</a>, <a href="DeadCharacterPacket.html#isPostponed()" title="isPostponed()">isPostponed</a>, <a href="DeadCharacterPacket.html#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)" title="parse(ByteBufferReader, IConnection)">parse</a>, <a href="DeadCharacterPacket.html#processClient(zombie.core.raknet.UdpConnection)" title="processClient(UdpConnection)">processClient</a>, <a href="DeadCharacterPacket.html#setData(java.lang.Object...)" title="setData(Object...)">setData</a>, <a href="DeadCharacterPacket.html#write(zombie.core.network.ByteBufferWriter)" title="write(ByteBufferWriter)">write</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.fields.Position">Methods inherited from class&nbsp;<a href="../../fields/Position.html#method-summary" title="class in zombie.network.fields">Position</a></h3>
 <code><a href="../../fields/Position.html#copy(zombie.network.fields.Position)" title="copy(Position)">copy</a>, <a href="../../fields/Position.html#getX()" title="getX()">getX</a>, <a href="../../fields/Position.html#getY()" title="getY()">getY</a>, <a href="../../fields/Position.html#getZ()" title="getZ()">getZ</a>, <a href="../../fields/Position.html#set(float,float,float)" title="set(float, float, float)">set</a>, <a href="../../fields/Position.html#write(java.nio.ByteBuffer)" title="write(ByteBuffer)">write</a></code></div>
@@ -122,7 +140,7 @@ implements <a href="../INetworkPacket.html" title="interface in zombie.network.p
 <code><a href="../IDescriptor.html#getClassDescription(java.lang.StringBuilder,java.lang.Class,java.util.HashSet)" title="getClassDescription(StringBuilder, Class, HashSet)">getClassDescription</a>, <a href="../IDescriptor.html#getDescription()" title="getDescription()">getDescription</a>, <a href="../IDescriptor.html#getDescription(java.util.HashSet)" title="getDescription(HashSet)">getDescription</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.packets.INetworkPacket">Methods inherited from interface&nbsp;<a href="../INetworkPacket.html#method-summary" title="interface in zombie.network.packets">INetworkPacket</a></h3>
-<code><a href="../INetworkPacket.html#isPostponed()" title="isPostponed()">isPostponed</a>, <a href="../INetworkPacket.html#parseClient(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseClient(ByteBufferReader, UdpConnection)">parseClient</a>, <a href="../INetworkPacket.html#parseClientLoading(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseClientLoading(ByteBufferReader, UdpConnection)">parseClientLoading</a>, <a href="../INetworkPacket.html#parseServer(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseServer(ByteBufferReader, UdpConnection)">parseServer</a>, <a href="../INetworkPacket.html#postpone()" title="postpone()">postpone</a>, <a href="../INetworkPacket.html#processClient(zombie.core.raknet.UdpConnection)" title="processClient(UdpConnection)">processClient</a>, <a href="../INetworkPacket.html#processClientLoading(zombie.core.raknet.UdpConnection)" title="processClientLoading(UdpConnection)">processClientLoading</a>, <a href="../INetworkPacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="processServer(PacketTypes.PacketType, UdpConnection)">processServer</a>, <a href="../INetworkPacket.html#sendToClient(zombie.network.PacketTypes.PacketType,zombie.network.IConnection)" title="sendToClient(PacketTypes.PacketType, IConnection)">sendToClient</a>, <a href="../INetworkPacket.html#sendToClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sendToClients(PacketTypes.PacketType, UdpConnection)">sendToClients</a>, <a href="../INetworkPacket.html#sendToRelativeClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection,float,float)" title="sendToRelativeClients(PacketTypes.PacketType, UdpConnection, float, float)">sendToRelativeClients</a>, <a href="../INetworkPacket.html#sendToServer(zombie.network.PacketTypes.PacketType)" title="sendToServer(PacketTypes.PacketType)">sendToServer</a>, <a href="../INetworkPacket.html#setData(java.lang.Object...)" title="setData(Object...)">setData</a>, <a href="../INetworkPacket.html#sync(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sync(PacketTypes.PacketType, UdpConnection)">sync</a></code></div>
+<code><a href="../INetworkPacket.html#isPostponed()" title="isPostponed()">isPostponed</a>, <a href="../INetworkPacket.html#parseClient(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseClient(ByteBufferReader, UdpConnection)">parseClient</a>, <a href="../INetworkPacket.html#parseClientLoading(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseClientLoading(ByteBufferReader, UdpConnection)">parseClientLoading</a>, <a href="../INetworkPacket.html#parseServer(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseServer(ByteBufferReader, UdpConnection)">parseServer</a>, <a href="../INetworkPacket.html#processClient(zombie.core.raknet.UdpConnection)" title="processClient(UdpConnection)">processClient</a>, <a href="../INetworkPacket.html#processClientLoading(zombie.core.raknet.UdpConnection)" title="processClientLoading(UdpConnection)">processClientLoading</a>, <a href="../INetworkPacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="processServer(PacketTypes.PacketType, UdpConnection)">processServer</a>, <a href="../INetworkPacket.html#sendToClient(zombie.network.PacketTypes.PacketType,zombie.network.IConnection)" title="sendToClient(PacketTypes.PacketType, IConnection)">sendToClient</a>, <a href="../INetworkPacket.html#sendToClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sendToClients(PacketTypes.PacketType, UdpConnection)">sendToClients</a>, <a href="../INetworkPacket.html#sendToRelativeClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection,float,float)" title="sendToRelativeClients(PacketTypes.PacketType, UdpConnection, float, float)">sendToRelativeClients</a>, <a href="../INetworkPacket.html#sendToServer(zombie.network.PacketTypes.PacketType)" title="sendToServer(PacketTypes.PacketType)">sendToServer</a>, <a href="../INetworkPacket.html#setData(java.lang.Object...)" title="setData(Object...)">setData</a>, <a href="../INetworkPacket.html#shouldInstantiate()" title="shouldInstantiate()">shouldInstantiate</a>, <a href="../INetworkPacket.html#sync(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sync(PacketTypes.PacketType, UdpConnection)">sync</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.fields.INetworkPacketField">Methods inherited from interface&nbsp;<a href="../../fields/INetworkPacketField.html#method-summary" title="interface in zombie.network.fields">INetworkPacketField</a></h3>
 <code><a href="../../fields/INetworkPacketField.html#getPacketSizeBytes()" title="getPacketSizeBytes()">getPacketSizeBytes</a>, <a href="../../fields/INetworkPacketField.html#isConsistent(zombie.network.IConnection)" title="isConsistent(IConnection)">isConsistent</a>, <a href="../../fields/INetworkPacketField.html#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)" title="parse(ByteBufferReader, IConnection)">parse</a>, <a href="../../fields/INetworkPacketField.html#write(zombie.core.network.ByteBufferWriter)" title="write(ByteBufferWriter)">write</a></code></div>
@@ -145,6 +163,28 @@ implements <a href="../INetworkPacket.html" title="interface in zombie.network.p
 <h3>DeadAnimalPacket</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">DeadAnimalPacket</span>()</div>
+</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<!-- ============ METHOD DETAIL ========== -->
+<li>
+<section class="method-details" id="method-detail">
+<h2>Method Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="postpone()">
+<h3>postpone</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">postpone</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../INetworkPacket.html#postpone()">postpone</a></code>&nbsp;in interface&nbsp;<code><a href="../INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a></code></dd>
+<dt>Overrides:</dt>
+<dd><code><a href="DeadCharacterPacket.html#postpone()">postpone</a></code>&nbsp;in class&nbsp;<code><a href="DeadCharacterPacket.html" title="class in zombie.network.packets.character">DeadCharacterPacket</a></code></dd>
+</dl>
 </div>
 </section>
 </li>

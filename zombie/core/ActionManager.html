@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -69,6 +69,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#start(zombie.core.Action)" tabindex="0">start(Action)</a></li>
 <li><a href="#add(zombie.core.Action)" tabindex="0">add(Action)</a></li>
 <li><a href="#stop(zombie.core.Action)" tabindex="0">stop(Action)</a></li>
+<li><a href="#stopPlayerActions(zombie.network.fields.character.PlayerID)" tabindex="0">stopPlayerActions(PlayerID)</a></li>
 <li><a href="#update()" tabindex="0">update()</a></li>
 <li><a href="#isRejected(byte)" tabindex="0">isRejected(byte)</a></li>
 <li><a href="#isDone(byte)" tabindex="0">isDone(byte)</a></li>
@@ -82,6 +83,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#setStateFromPacket(zombie.core.Action)" tabindex="0">setStateFromPacket(Action)</a></li>
 <li><a href="#disconnectPlayer(zombie.core.raknet.UdpConnection)" tabindex="0">disconnectPlayer(UdpConnection)</a></li>
 <li><a href="#replaceObjectInQueuedActions(zombie.characters.IsoPlayer,java.lang.Object,java.lang.Object)" tabindex="0">replaceObjectInQueuedActions(IsoPlayer, Object, Object)</a></li>
+<li><a href="#getAction(byte,zombie.network.fields.character.PlayerID)" tabindex="0">getAction(byte, PlayerID)</a></li>
 </ol>
 </li>
 </ol>
@@ -152,41 +154,48 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#disconnectPlayer(zombie.core.raknet.UdpConnection)" class="member-name-link">disconnectPlayer</a><wbr>(<a href="raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getDuration(byte)" class="member-name-link">getDuration</a><wbr>(byte&nbsp;id)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="NetTimedAction.html" title="class in zombie.core">NetTimedAction</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getAction(byte,zombie.network.fields.character.PlayerID)" class="member-name-link">getAction</a><wbr>(byte&nbsp;id,
+ <a href="../network/fields/character/PlayerID.html" title="class in zombie.network.fields.character">PlayerID</a>&nbsp;playerId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ActionManager.html" title="class in zombie.core">ActionManager</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance()" class="member-name-link">getInstance</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getDuration(byte)" class="member-name-link">getDuration</a><wbr>(byte&nbsp;id)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getPlayer(byte)" class="member-name-link">getPlayer</a><wbr>(byte&nbsp;id)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ActionManager.html" title="class in zombie.core">ActionManager</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance()" class="member-name-link">getInstance</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isDone(byte)" class="member-name-link">isDone</a><wbr>(byte&nbsp;id)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getPlayer(byte)" class="member-name-link">getPlayer</a><wbr>(byte&nbsp;id)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isLooped(byte)" class="member-name-link">isLooped</a><wbr>(byte&nbsp;id)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isDone(byte)" class="member-name-link">isDone</a><wbr>(byte&nbsp;id)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isRejected(byte)" class="member-name-link">isRejected</a><wbr>(byte&nbsp;id)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isLooped(byte)" class="member-name-link">isLooped</a><wbr>(byte&nbsp;id)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#remove(byte,boolean)" class="member-name-link">remove</a><wbr>(byte&nbsp;id,
- boolean&nbsp;isCanceled)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isRejected(byte)" class="member-name-link">isRejected</a><wbr>(byte&nbsp;id)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#replaceObjectInQueuedActions(zombie.characters.IsoPlayer,java.lang.Object,java.lang.Object)" class="member-name-link">replaceObjectInQueuedActions</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#remove(byte,boolean)" class="member-name-link">remove</a><wbr>(byte&nbsp;id,
+ boolean&nbsp;isCanceled)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#replaceObjectInQueuedActions(zombie.characters.IsoPlayer,java.lang.Object,java.lang.Object)" class="member-name-link">replaceObjectInQueuedActions</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;oldItem,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;newItem)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStateFromPacket(zombie.core.Action)" class="member-name-link">setStateFromPacket</a><wbr>(zombie.core.Action&nbsp;packet)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStateFromPacket(zombie.core.Action)" class="member-name-link">setStateFromPacket</a><wbr>(zombie.core.Action&nbsp;packet)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#start(zombie.core.Action)" class="member-name-link">start</a><wbr>(zombie.core.Action&nbsp;action)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#start(zombie.core.Action)" class="member-name-link">start</a><wbr>(zombie.core.Action&nbsp;action)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stop(zombie.core.Action)" class="member-name-link">stop</a><wbr>(zombie.core.Action&nbsp;action)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stop(zombie.core.Action)" class="member-name-link">stop</a><wbr>(zombie.core.Action&nbsp;action)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stopPlayerActions(zombie.network.fields.character.PlayerID)" class="member-name-link">stopPlayerActions</a><wbr>(<a href="../network/fields/character/PlayerID.html" title="class in zombie.network.fields.character">PlayerID</a>&nbsp;playerId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
@@ -253,6 +262,14 @@ loadScripts(document, 'script');</script>
 <h3>stop</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">stop</span><wbr><span class="parameters">(zombie.core.Action&nbsp;action)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="stopPlayerActions(zombie.network.fields.character.PlayerID)">
+<h3>stopPlayerActions</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">stopPlayerActions</span><wbr><span class="parameters">(<a href="../network/fields/character/PlayerID.html" title="class in zombie.network.fields.character">PlayerID</a>&nbsp;playerId)</span></div>
 </div>
 </section>
 </li>
@@ -370,6 +387,15 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">replaceObjectInQueuedActions</span><wbr><span class="parameters">(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;oldItem,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;newItem)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getAction(byte,zombie.network.fields.character.PlayerID)">
+<h3>getAction</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="NetTimedAction.html" title="class in zombie.core">NetTimedAction</a></span>&nbsp;<span class="element-name">getAction</span><wbr><span class="parameters">(byte&nbsp;id,
+ <a href="../network/fields/character/PlayerID.html" title="class in zombie.network.fields.character">PlayerID</a>&nbsp;playerId)</span></div>
 </div>
 </section>
 </li>

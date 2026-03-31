@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -69,9 +69,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#logActionState(java.lang.String,java.lang.String)" tabindex="0">logActionState(String, String)</a></li>
 <li><a href="#logAIState(zombie.ai.State,java.util.List)" tabindex="0">logAIState(State, List)</a></li>
 <li><a href="#logAIState(java.lang.String)" tabindex="0">logAIState(String)</a></li>
-<li><a href="#logAnimState(zombie.core.skinnedmodel.advancedanimation.AnimState)" tabindex="0">logAnimState(AnimState)</a></li>
+<li><a href="#logAnimState(zombie.core.skinnedmodel.advancedanimation.AnimLayer,zombie.core.skinnedmodel.advancedanimation.AnimState)" tabindex="0">logAnimState(AnimLayer, AnimState)</a></li>
 <li><a href="#logCharacterToPlayerDiff(zombie.iso.Vector3)" tabindex="0">logCharacterToPlayerDiff(Vector3)</a></li>
 <li><a href="#buildHeader(java.lang.StringBuilder)" tabindex="0">buildHeader(StringBuilder)</a></li>
+<li><a href="#reset()" tabindex="0">reset()</a></li>
 </ol>
 </li>
 </ol>
@@ -141,20 +142,24 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../../ai/StateMachine.SubstateSlot.html" title="class in zombie.ai">StateMachine.SubstateSlot</a>&gt;&nbsp;subStates)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logAnimState(zombie.core.skinnedmodel.advancedanimation.AnimState)" class="member-name-link">logAnimState</a><wbr>(<a href="../../advancedanimation/AnimState.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimState</a>&nbsp;state)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logAnimState(zombie.core.skinnedmodel.advancedanimation.AnimLayer,zombie.core.skinnedmodel.advancedanimation.AnimState)" class="member-name-link">logAnimState</a><wbr>(<a href="../../advancedanimation/AnimLayer.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimLayer</a>&nbsp;layer,
+ <a href="../../advancedanimation/AnimState.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimState</a>&nbsp;state)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logCharacterToPlayerDiff(zombie.iso.Vector3)" class="member-name-link">logCharacterToPlayerDiff</a><wbr>(<a href="../../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;diff)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset()" class="member-name-link">reset</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.core.skinnedmodel.animation.debug.GenericNameWeightRecordingFrame">Methods inherited from class&nbsp;<a href="GenericNameWeightRecordingFrame.html#method-summary" title="class in zombie.core.skinnedmodel.animation.debug">GenericNameWeightRecordingFrame</a></h3>
-<code><a href="GenericNameWeightRecordingFrame.html#getOrCreateColumn(java.lang.String,int)" title="getOrCreateColumn(String, int)">getOrCreateColumn</a>, <a href="GenericNameWeightRecordingFrame.html#getValueAt(int)" title="getValueAt(int)">getValueAt</a>, <a href="GenericNameWeightRecordingFrame.html#getWeightAt(int)" title="getWeightAt(int)">getWeightAt</a>, <a href="GenericNameWeightRecordingFrame.html#logWeight(java.lang.String,int,float)" title="logWeight(String, int, float)">logWeight</a>, <a href="GenericNameWeightRecordingFrame.html#reset()" title="reset()">reset</a></code></div>
+<code><a href="GenericNameWeightRecordingFrame.html#getSlotAt(int)" title="getSlotAt(int)">getSlotAt</a>, <a href="GenericNameWeightRecordingFrame.html#getValueAt(int)" title="getValueAt(int)">getValueAt</a>, <a href="GenericNameWeightRecordingFrame.html#isCellEmpty(int)" title="isCellEmpty(int)">isCellEmpty</a>, <a href="GenericNameWeightRecordingFrame.html#logWeight(java.lang.String,int,int,float)" title="logWeight(String, int, int, float)">logWeight</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.core.skinnedmodel.animation.debug.GenericNameValueRecordingFrame">Methods inherited from class&nbsp;<a href="GenericNameValueRecordingFrame.html#method-summary" title="class in zombie.core.skinnedmodel.animation.debug">GenericNameValueRecordingFrame</a></h3>
-<code><a href="GenericNameValueRecordingFrame.html#appendCell(java.lang.StringBuilder)" title="appendCell(StringBuilder)">appendCell</a>, <a href="GenericNameValueRecordingFrame.html#appendCell(java.lang.StringBuilder,float)" title="appendCell(StringBuilder, float)">appendCell</a>, <a href="GenericNameValueRecordingFrame.html#appendCell(java.lang.StringBuilder,int)" title="appendCell(StringBuilder, int)">appendCell</a>, <a href="GenericNameValueRecordingFrame.html#appendCell(java.lang.StringBuilder,long)" title="appendCell(StringBuilder, long)">appendCell</a>, <a href="GenericNameValueRecordingFrame.html#appendCell(java.lang.StringBuilder,java.lang.String)" title="appendCell(StringBuilder, String)">appendCell</a>, <a href="GenericNameValueRecordingFrame.html#appendCellQuot(java.lang.StringBuilder,java.lang.String)" title="appendCellQuot(StringBuilder, String)">appendCellQuot</a>, <a href="GenericNameValueRecordingFrame.html#close()" title="close()">close</a>, <a href="GenericNameValueRecordingFrame.html#closeAndDiscard()" title="closeAndDiscard()">closeAndDiscard</a>, <a href="GenericNameValueRecordingFrame.html#getColumnCount()" title="getColumnCount()">getColumnCount</a>, <a href="GenericNameValueRecordingFrame.html#getNameAt(int)" title="getNameAt(int)">getNameAt</a>, <a href="GenericNameValueRecordingFrame.html#getOrCreateColumn(java.lang.String)" title="getOrCreateColumn(String)">getOrCreateColumn</a>, <a href="GenericNameValueRecordingFrame.html#setFrameNumber(int)" title="setFrameNumber(int)">setFrameNumber</a>, <a href="GenericNameValueRecordingFrame.html#writeLine()" title="writeLine()">writeLine</a></code></div>
+<code><a href="GenericNameValueRecordingFrame.html#appendCell(java.lang.StringBuilder)" title="appendCell(StringBuilder)">appendCell</a>, <a href="GenericNameValueRecordingFrame.html#appendCell(java.lang.StringBuilder,float)" title="appendCell(StringBuilder, float)">appendCell</a>, <a href="GenericNameValueRecordingFrame.html#appendCell(java.lang.StringBuilder,int)" title="appendCell(StringBuilder, int)">appendCell</a>, <a href="GenericNameValueRecordingFrame.html#appendCell(java.lang.StringBuilder,long)" title="appendCell(StringBuilder, long)">appendCell</a>, <a href="GenericNameValueRecordingFrame.html#appendCell(java.lang.StringBuilder,java.lang.String)" title="appendCell(StringBuilder, String)">appendCell</a>, <a href="GenericNameValueRecordingFrame.html#close()" title="close()">close</a>, <a href="GenericNameValueRecordingFrame.html#closeAndDiscard()" title="closeAndDiscard()">closeAndDiscard</a>, <a href="GenericNameValueRecordingFrame.html#getColumnCount()" title="getColumnCount()">getColumnCount</a>, <a href="GenericNameValueRecordingFrame.html#getNameAt(int)" title="getNameAt(int)">getNameAt</a>, <a href="GenericNameValueRecordingFrame.html#getOrCreateColumn(java.lang.String)" title="getOrCreateColumn(String)">getOrCreateColumn</a>, <a href="GenericNameValueRecordingFrame.html#setFrameNumber(int)" title="setFrameNumber(int)">setFrameNumber</a>, <a href="GenericNameValueRecordingFrame.html#writeLine()" title="writeLine()">writeLine</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -222,10 +227,11 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="logAnimState(zombie.core.skinnedmodel.advancedanimation.AnimState)">
+<section class="detail" id="logAnimState(zombie.core.skinnedmodel.advancedanimation.AnimLayer,zombie.core.skinnedmodel.advancedanimation.AnimState)">
 <h3>logAnimState</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">logAnimState</span><wbr><span class="parameters">(<a href="../../advancedanimation/AnimState.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimState</a>&nbsp;state)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">logAnimState</span><wbr><span class="parameters">(<a href="../../advancedanimation/AnimLayer.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimLayer</a>&nbsp;layer,
+ <a href="../../advancedanimation/AnimState.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimState</a>&nbsp;state)</span></div>
 </div>
 </section>
 </li>
@@ -242,6 +248,18 @@ loadScripts(document, 'script');</script>
 <h3>buildHeader</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">buildHeader</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/StringBuilder.html" title="class or interface in java.lang" class="external-link">StringBuilder</a>&nbsp;logLine)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="reset()">
+<h3>reset</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">reset</span>()</div>
+<dl class="notes">
+<dt>Overrides:</dt>
+<dd><code><a href="GenericNameWeightRecordingFrame.html#reset()">reset</a></code>&nbsp;in class&nbsp;<code><a href="GenericNameWeightRecordingFrame.html" title="class in zombie.core.skinnedmodel.animation.debug">GenericNameWeightRecordingFrame</a></code></dd>
+</dl>
 </div>
 </section>
 </li>

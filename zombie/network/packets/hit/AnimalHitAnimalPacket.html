@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -71,9 +71,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#write(zombie.core.network.ByteBufferWriter)" tabindex="0">write(ByteBufferWriter)</a></li>
 <li><a href="#isRelevant(zombie.core.raknet.UdpConnection)" tabindex="0">isRelevant(UdpConnection)</a></li>
 <li><a href="#isConsistent(zombie.network.IConnection)" tabindex="0">isConsistent(IConnection)</a></li>
-<li><a href="#preProcess()" tabindex="0">preProcess()</a></li>
 <li><a href="#process()" tabindex="0">process()</a></li>
-<li><a href="#postProcess()" tabindex="0">postProcess()</a></li>
 <li><a href="#getDistance()" tabindex="0">getDistance()</a></li>
 </ol>
 </li>
@@ -141,12 +139,6 @@ implements <a href="../../anticheats/AntiCheatHitShortDistance.IAntiCheat.html" 
  <a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#postProcess()" class="member-name-link">postProcess</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preProcess()" class="member-name-link">preProcess</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#process()" class="member-name-link">process</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -172,13 +164,13 @@ implements <a href="../../anticheats/AntiCheatHitShortDistance.IAntiCheat.html" 
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.packets.hit.HitCharacter">Methods inherited from interface&nbsp;<a href="HitCharacter.html#method-summary" title="interface in zombie.network.packets.hit">HitCharacter</a></h3>
-<code><a href="HitCharacter.html#attack()" title="attack()">attack</a>, <a href="HitCharacter.html#log(zombie.core.raknet.UdpConnection)" title="log(UdpConnection)">log</a>, <a href="HitCharacter.html#processClient(zombie.core.raknet.UdpConnection)" title="processClient(UdpConnection)">processClient</a>, <a href="HitCharacter.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="processServer(PacketTypes.PacketType, UdpConnection)">processServer</a>, <a href="HitCharacter.html#react()" title="react()">react</a>, <a href="HitCharacter.html#update()" title="update()">update</a></code></div>
+<code><a href="HitCharacter.html#attack()" title="attack()">attack</a>, <a href="HitCharacter.html#log(zombie.core.raknet.UdpConnection)" title="log(UdpConnection)">log</a>, <a href="HitCharacter.html#postProcess()" title="postProcess()">postProcess</a>, <a href="HitCharacter.html#preProcess()" title="preProcess()">preProcess</a>, <a href="HitCharacter.html#processClient(zombie.core.raknet.UdpConnection)" title="processClient(UdpConnection)">processClient</a>, <a href="HitCharacter.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="processServer(PacketTypes.PacketType, UdpConnection)">processServer</a>, <a href="HitCharacter.html#react()" title="react()">react</a>, <a href="HitCharacter.html#update()" title="update()">update</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.packets.IDescriptor">Methods inherited from interface&nbsp;<a href="../IDescriptor.html#method-summary" title="interface in zombie.network.packets">IDescriptor</a></h3>
 <code><a href="../IDescriptor.html#getClassDescription(java.lang.StringBuilder,java.lang.Class,java.util.HashSet)" title="getClassDescription(StringBuilder, Class, HashSet)">getClassDescription</a>, <a href="../IDescriptor.html#getDescription()" title="getDescription()">getDescription</a>, <a href="../IDescriptor.html#getDescription(java.util.HashSet)" title="getDescription(HashSet)">getDescription</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.packets.INetworkPacket">Methods inherited from interface&nbsp;<a href="../INetworkPacket.html#method-summary" title="interface in zombie.network.packets">INetworkPacket</a></h3>
-<code><a href="../INetworkPacket.html#isPostponed()" title="isPostponed()">isPostponed</a>, <a href="../INetworkPacket.html#parseClient(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseClient(ByteBufferReader, UdpConnection)">parseClient</a>, <a href="../INetworkPacket.html#parseClientLoading(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseClientLoading(ByteBufferReader, UdpConnection)">parseClientLoading</a>, <a href="../INetworkPacket.html#parseServer(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseServer(ByteBufferReader, UdpConnection)">parseServer</a>, <a href="../INetworkPacket.html#postpone()" title="postpone()">postpone</a>, <a href="../INetworkPacket.html#processClientLoading(zombie.core.raknet.UdpConnection)" title="processClientLoading(UdpConnection)">processClientLoading</a>, <a href="../INetworkPacket.html#sendToClient(zombie.network.PacketTypes.PacketType,zombie.network.IConnection)" title="sendToClient(PacketTypes.PacketType, IConnection)">sendToClient</a>, <a href="../INetworkPacket.html#sendToClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sendToClients(PacketTypes.PacketType, UdpConnection)">sendToClients</a>, <a href="../INetworkPacket.html#sendToRelativeClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection,float,float)" title="sendToRelativeClients(PacketTypes.PacketType, UdpConnection, float, float)">sendToRelativeClients</a>, <a href="../INetworkPacket.html#sendToServer(zombie.network.PacketTypes.PacketType)" title="sendToServer(PacketTypes.PacketType)">sendToServer</a>, <a href="../INetworkPacket.html#sync(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sync(PacketTypes.PacketType, UdpConnection)">sync</a></code></div>
+<code><a href="../INetworkPacket.html#isPostponed()" title="isPostponed()">isPostponed</a>, <a href="../INetworkPacket.html#parseClient(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseClient(ByteBufferReader, UdpConnection)">parseClient</a>, <a href="../INetworkPacket.html#parseClientLoading(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseClientLoading(ByteBufferReader, UdpConnection)">parseClientLoading</a>, <a href="../INetworkPacket.html#parseServer(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseServer(ByteBufferReader, UdpConnection)">parseServer</a>, <a href="../INetworkPacket.html#postpone()" title="postpone()">postpone</a>, <a href="../INetworkPacket.html#processClientLoading(zombie.core.raknet.UdpConnection)" title="processClientLoading(UdpConnection)">processClientLoading</a>, <a href="../INetworkPacket.html#sendToClient(zombie.network.PacketTypes.PacketType,zombie.network.IConnection)" title="sendToClient(PacketTypes.PacketType, IConnection)">sendToClient</a>, <a href="../INetworkPacket.html#sendToClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sendToClients(PacketTypes.PacketType, UdpConnection)">sendToClients</a>, <a href="../INetworkPacket.html#sendToRelativeClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection,float,float)" title="sendToRelativeClients(PacketTypes.PacketType, UdpConnection, float, float)">sendToRelativeClients</a>, <a href="../INetworkPacket.html#sendToServer(zombie.network.PacketTypes.PacketType)" title="sendToServer(PacketTypes.PacketType)">sendToServer</a>, <a href="../INetworkPacket.html#shouldInstantiate()" title="shouldInstantiate()">shouldInstantiate</a>, <a href="../INetworkPacket.html#sync(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sync(PacketTypes.PacketType, UdpConnection)">sync</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.fields.INetworkPacketField">Methods inherited from interface&nbsp;<a href="../../fields/INetworkPacketField.html#method-summary" title="interface in zombie.network.fields">INetworkPacketField</a></h3>
 <code><a href="../../fields/INetworkPacketField.html#getPacketSizeBytes()" title="getPacketSizeBytes()">getPacketSizeBytes</a></code></div>
@@ -288,18 +280,6 @@ implements <a href="../../anticheats/AntiCheatHitShortDistance.IAntiCheat.html" 
 </section>
 </li>
 <li>
-<section class="detail" id="preProcess()">
-<h3>preProcess</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">preProcess</span>()</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="HitCharacter.html#preProcess()">preProcess</a></code>&nbsp;in interface&nbsp;<code><a href="HitCharacter.html" title="interface in zombie.network.packets.hit">HitCharacter</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="process()">
 <h3>process</h3>
 <div class="horizontal-scroll">
@@ -307,18 +287,6 @@ implements <a href="../../anticheats/AntiCheatHitShortDistance.IAntiCheat.html" 
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="HitCharacter.html#process()">process</a></code>&nbsp;in interface&nbsp;<code><a href="HitCharacter.html" title="interface in zombie.network.packets.hit">HitCharacter</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="postProcess()">
-<h3>postProcess</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">postProcess</span>()</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="HitCharacter.html#postProcess()">postProcess</a></code>&nbsp;in interface&nbsp;<code><a href="HitCharacter.html" title="interface in zombie.network.packets.hit">HitCharacter</a></code></dd>
 </dl>
 </div>
 </section>

@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -62,10 +62,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#enum-constant-detail" tabindex="0">Enum Constant Details</a>
 <ol class="toc-list">
+<li><a href="#General" tabindex="0">General</a></li>
 <li><a href="#Packet" tabindex="0">Packet</a></li>
 <li><a href="#NetworkFileDebug" tabindex="0">NetworkFileDebug</a></li>
 <li><a href="#Network" tabindex="0">Network</a></li>
-<li><a href="#General" tabindex="0">General</a></li>
 <li><a href="#DetailedInfo" tabindex="0">DetailedInfo</a></li>
 <li><a href="#Lua" tabindex="0">Lua</a></li>
 <li><a href="#Mod" tabindex="0">Mod</a></li>
@@ -80,7 +80,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#Animation" tabindex="0">Animation</a></li>
 <li><a href="#AnimationDetailed" tabindex="0">AnimationDetailed</a></li>
 <li><a href="#AnimationLayers" tabindex="0">AnimationLayers</a></li>
-<li><a href="#AnimationRecorder" tabindex="0">AnimationRecorder</a></li>
 <li><a href="#Asset" tabindex="0">Asset</a></li>
 <li><a href="#Script" tabindex="0">Script</a></li>
 <li><a href="#Shader" tabindex="0">Shader</a></li>
@@ -97,6 +96,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#Discord" tabindex="0">Discord</a></li>
 <li><a href="#Statistic" tabindex="0">Statistic</a></li>
 <li><a href="#Vehicle" tabindex="0">Vehicle</a></li>
+<li><a href="#VehicleHit" tabindex="0">VehicleHit</a></li>
 <li><a href="#Voice" tabindex="0">Voice</a></li>
 <li><a href="#Checksum" tabindex="0">Checksum</a></li>
 <li><a href="#Animal" tabindex="0">Animal</a></li>
@@ -127,7 +127,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#FallDamage" tabindex="0">FallDamage</a></li>
 <li><a href="#ImGui" tabindex="0">ImGui</a></li>
 <li><a href="#CharacterTrait" tabindex="0">CharacterTrait</a></li>
-<li><a href="#VehicleHit" tabindex="0">VehicleHit</a></li>
+<li><a href="#AnimationRecorder" tabindex="0">AnimationRecorder</a></li>
 </ol>
 </li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
@@ -139,9 +139,13 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#values()" tabindex="0">values()</a></li>
 <li><a href="#valueOf(java.lang.String)" tabindex="0">valueOf(String)</a></li>
+<li><a href="#isName(java.lang.String)" tabindex="0">isName(String)</a></li>
 <li><a href="#isEnabled()" tabindex="0">isEnabled()</a></li>
 <li><a href="#isEnabled(zombie.debug.LogSeverity)" tabindex="0">isEnabled(LogSeverity)</a></li>
 <li><a href="#getLogStream()" tabindex="0">getLogStream()</a></li>
+<li><a href="#setLogSeverity(zombie.debug.LogSeverity)" tabindex="0">setLogSeverity(LogSeverity)</a></li>
+<li><a href="#getLogSeverity()" tabindex="0">getLogSeverity()</a></li>
+<li><a href="#getFormatter()" tabindex="0">getFormatter()</a></li>
 <li><a href="#print(boolean)" tabindex="0">print(boolean)</a></li>
 <li><a href="#print(char)" tabindex="0">print(char)</a></li>
 <li><a href="#print(int)" tabindex="0">print(int)</a></li>
@@ -178,6 +182,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#error(java.lang.String,java.lang.Object...)" tabindex="0">error(String, Object...)</a></li>
 <li><a href="#write(zombie.debug.LogSeverity,java.lang.String)" tabindex="0">write(LogSeverity, String)</a></li>
 <li><a href="#routedWrite(int,zombie.debug.LogSeverity,java.lang.String)" tabindex="0">routedWrite(int, LogSeverity, String)</a></li>
+<li><a href="#printException(java.lang.Throwable,zombie.debug.LogSeverity)" tabindex="0">printException(Throwable, LogSeverity)</a></li>
 <li><a href="#printException(java.lang.Throwable,java.lang.String,zombie.debug.LogSeverity)" tabindex="0">printException(Throwable, String, LogSeverity)</a></li>
 <li><a href="#printException(java.lang.Throwable,zombie.debug.LogSeverity,java.lang.String,java.lang.Object...)" tabindex="0">printException(Throwable, LogSeverity, String, Object...)</a></li>
 <li><a href="#printStackTrace()" tabindex="0">printStackTrace()</a></li>
@@ -410,6 +415,12 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#error(java.lang.String,java.lang.Object...)" class="member-name-link">error</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;params)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="IDebugLogFormatter.html" title="interface in zombie.debug">IDebugLogFormatter</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFormatter()" class="member-name-link">getFormatter</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLogSeverity()" class="member-name-link">getLogSeverity</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DebugLogStream.html" title="class in zombie.debug">DebugLogStream</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLogStream()" class="member-name-link">getLogStream</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -419,40 +430,47 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEnabled(zombie.debug.LogSeverity)" class="member-name-link">isEnabled</a><wbr>(<a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#noise(java.lang.Object)" class="member-name-link">noise</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;formatNoParams)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isName(java.lang.String)" class="member-name-link">isName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;rhs)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#noise(java.lang.String,java.lang.Object...)" class="member-name-link">noise</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#noise(java.lang.Object)" class="member-name-link">noise</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;formatNoParams)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#noise(java.lang.String,java.lang.Object...)" class="member-name-link">noise</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;params)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print(boolean)" class="member-name-link">print</a><wbr>(boolean&nbsp;b)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print(char)" class="member-name-link">print</a><wbr>(char&nbsp;c)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print(boolean)" class="member-name-link">print</a><wbr>(boolean&nbsp;b)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print(double)" class="member-name-link">print</a><wbr>(double&nbsp;d)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print(char)" class="member-name-link">print</a><wbr>(char&nbsp;c)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print(float)" class="member-name-link">print</a><wbr>(float&nbsp;f)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print(double)" class="member-name-link">print</a><wbr>(double&nbsp;d)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print(int)" class="member-name-link">print</a><wbr>(int&nbsp;i)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print(float)" class="member-name-link">print</a><wbr>(float&nbsp;f)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print(long)" class="member-name-link">print</a><wbr>(long&nbsp;l)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print(int)" class="member-name-link">print</a><wbr>(int&nbsp;i)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print(java.lang.Object)" class="member-name-link">print</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print(long)" class="member-name-link">print</a><wbr>(long&nbsp;l)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print(java.lang.String)" class="member-name-link">print</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print(java.lang.Object)" class="member-name-link">print</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#printException(java.lang.Throwable,java.lang.String,zombie.debug.LogSeverity)" class="member-name-link">printException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;ex,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print(java.lang.String)" class="member-name-link">print</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#printException(java.lang.Throwable,java.lang.String,zombie.debug.LogSeverity)" class="member-name-link">printException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;ex,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
+ <a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#printException(java.lang.Throwable,zombie.debug.LogSeverity)" class="member-name-link">printException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;ex,
  <a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -517,41 +535,44 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;logText)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#trace(java.lang.Object)" class="member-name-link">trace</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;formatNoParams)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLogSeverity(zombie.debug.LogSeverity)" class="member-name-link">setLogSeverity</a><wbr>(<a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;newSeverity)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#trace(java.lang.String,java.lang.Object...)" class="member-name-link">trace</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;params)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#trace(java.lang.Object)" class="member-name-link">trace</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;formatNoParams)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="DebugType.html" title="enum class in zombie.debug">DebugType</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#valueOf(java.lang.String)" class="member-name-link">valueOf</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#trace(java.lang.String,java.lang.Object...)" class="member-name-link">trace</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;params)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="DebugType.html" title="enum class in zombie.debug">DebugType</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#valueOf(java.lang.String)" class="member-name-link">valueOf</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns the enum constant of this class with the specified name.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#values()" class="member-name-link">values</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#values()" class="member-name-link">values</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns an array containing the constants of this enum class, in
 the order they are declared.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#warn(java.lang.Object)" class="member-name-link">warn</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;formatNoParams)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#warn(java.lang.String,java.lang.Object...)" class="member-name-link">warn</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;params)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#warn(java.lang.Object)" class="member-name-link">warn</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;formatNoParams)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#warnOnce(java.lang.Object)" class="member-name-link">warnOnce</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;formatNoParams)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#warn(java.lang.String,java.lang.Object...)" class="member-name-link">warn</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;params)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#warnOnce(java.lang.String,java.lang.Object...)" class="member-name-link">warnOnce</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;params)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#warnOnce(java.lang.Object)" class="member-name-link">warnOnce</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;formatNoParams)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#write(zombie.debug.LogSeverity,java.lang.String)" class="member-name-link">write</a><wbr>(<a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#warnOnce(java.lang.String,java.lang.Object...)" class="member-name-link">warnOnce</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;params)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#write(zombie.debug.LogSeverity,java.lang.String)" class="member-name-link">write</a><wbr>(<a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;logText)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -573,6 +594,14 @@ the order they are declared.</div>
 <h2>Enum Constant Details</h2>
 <ul class="member-list">
 <li>
+<section class="detail" id="General">
+<h3>General</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="DebugType.html" title="enum class in zombie.debug">DebugType</a></span>&nbsp;<span class="element-name">General</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="Packet">
 <h3>Packet</h3>
 <div class="horizontal-scroll">
@@ -593,14 +622,6 @@ the order they are declared.</div>
 <h3>Network</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="DebugType.html" title="enum class in zombie.debug">DebugType</a></span>&nbsp;<span class="element-name">Network</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="General">
-<h3>General</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="DebugType.html" title="enum class in zombie.debug">DebugType</a></span>&nbsp;<span class="element-name">General</span></div>
 </div>
 </section>
 </li>
@@ -713,14 +734,6 @@ the order they are declared.</div>
 <h3>AnimationLayers</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="DebugType.html" title="enum class in zombie.debug">DebugType</a></span>&nbsp;<span class="element-name">AnimationLayers</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="AnimationRecorder">
-<h3>AnimationRecorder</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="DebugType.html" title="enum class in zombie.debug">DebugType</a></span>&nbsp;<span class="element-name">AnimationRecorder</span></div>
 </div>
 </section>
 </li>
@@ -849,6 +862,14 @@ the order they are declared.</div>
 <h3>Vehicle</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="DebugType.html" title="enum class in zombie.debug">DebugType</a></span>&nbsp;<span class="element-name">Vehicle</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="VehicleHit">
+<h3>VehicleHit</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="DebugType.html" title="enum class in zombie.debug">DebugType</a></span>&nbsp;<span class="element-name">VehicleHit</span></div>
 </div>
 </section>
 </li>
@@ -1093,10 +1114,10 @@ the order they are declared.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="VehicleHit">
-<h3>VehicleHit</h3>
+<section class="detail" id="AnimationRecorder">
+<h3>AnimationRecorder</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="DebugType.html" title="enum class in zombie.debug">DebugType</a></span>&nbsp;<span class="element-name">VehicleHit</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="DebugType.html" title="enum class in zombie.debug">DebugType</a></span>&nbsp;<span class="element-name">AnimationRecorder</span></div>
 </div>
 </section>
 </li>
@@ -1160,6 +1181,14 @@ not permitted.)</div>
 </section>
 </li>
 <li>
+<section class="detail" id="isName(java.lang.String)">
+<h3>isName</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isName</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;rhs)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="isEnabled()">
 <h3>isEnabled</h3>
 <div class="horizontal-scroll">
@@ -1180,6 +1209,30 @@ not permitted.)</div>
 <h3>getLogStream</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DebugLogStream.html" title="class in zombie.debug">DebugLogStream</a></span>&nbsp;<span class="element-name">getLogStream</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setLogSeverity(zombie.debug.LogSeverity)">
+<h3>setLogSeverity</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setLogSeverity</span><wbr><span class="parameters">(<a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;newSeverity)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getLogSeverity()">
+<h3>getLogSeverity</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a></span>&nbsp;<span class="element-name">getLogSeverity</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getFormatter()">
+<h3>getFormatter</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="IDebugLogFormatter.html" title="interface in zombie.debug">IDebugLogFormatter</a></span>&nbsp;<span class="element-name">getFormatter</span>()</div>
 </div>
 </section>
 </li>
@@ -1480,6 +1533,15 @@ not permitted.)</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">routedWrite</span><wbr><span class="parameters">(int&nbsp;backTraceOffset,
  <a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;logText)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="printException(java.lang.Throwable,zombie.debug.LogSeverity)">
+<h3>printException</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">printException</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;ex,
+ <a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity)</span></div>
 </div>
 </section>
 </li>

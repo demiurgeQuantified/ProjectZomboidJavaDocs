@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -74,9 +74,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#checksumTime" tabindex="0">checksumTime</a></li>
 <li><a href="#awaitingCoopApprove" tabindex="0">awaitingCoopApprove</a></li>
 <li><a href="#isCoopHost" tabindex="0">isCoopHost</a></li>
-<li><a href="#chunkObjectState" tabindex="0">chunkObjectState</a></li>
+<li><a href="#chunkObjectStateRequests" tabindex="0">chunkObjectStateRequests</a></li>
+<li><a href="#vehicleRequests" tabindex="0">vehicleRequests</a></li>
+<li><a href="#thumpHits" tabindex="0">thumpHits</a></li>
 <li><a href="#netStatistics" tabindex="0">netStatistics</a></li>
 <li><a href="#pingHistory" tabindex="0">pingHistory</a></li>
+<li><a href="#statisticTransmissionEnabled" tabindex="0">statisticTransmissionEnabled</a></li>
+<li><a href="#playerSave" tabindex="0">playerSave</a></li>
 <li><a href="#CONNECTION_GRACE_INTERVAL" tabindex="0">CONNECTION_GRACE_INTERVAL</a></li>
 <li><a href="#CONNECTION_READY_INTERVAL" tabindex="0">CONNECTION_READY_INTERVAL</a></li>
 <li><a href="#connectionTimestamp" tabindex="0">connectionTimestamp</a></li>
@@ -143,6 +147,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#setChunkGridWidth(int)" tabindex="0">setChunkGridWidth(int)</a></li>
 <li><a href="#setLoadedCells(int,zombie.network.ClientServerMap)" tabindex="0">setLoadedCells(int, ClientServerMap)</a></li>
 <li><a href="#getLoadedCell(int)" tabindex="0">getLoadedCell(int)</a></li>
+<li><a href="#addChunkObjectState(short)" tabindex="0">addChunkObjectState(short)</a></li>
 <li><a href="#setConnectArea(int,zombie.iso.Vector3)" tabindex="0">setConnectArea(int, Vector3)</a></li>
 <li><a href="#getRelevantPos(int)" tabindex="0">getRelevantPos(int)</a></li>
 <li><a href="#setConnectionTimestamp(long)" tabindex="0">setConnectionTimestamp(long)</a></li>
@@ -172,6 +177,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#getConnectionType()" tabindex="0">getConnectionType()</a></li>
 <li><a href="#toString()" tabindex="0">toString()</a></li>
 <li><a href="#hasPlayer(java.lang.String)" tabindex="0">hasPlayer(String)</a></li>
+<li><a href="#hasPlayer(short)" tabindex="0">hasPlayer(short)</a></li>
 <li><a href="#getRole()" tabindex="0">getRole()</a></li>
 <li><a href="#setRole(zombie.characters.Role)" tabindex="0">setRole(Role)</a></li>
 <li><a href="#havePlayer(zombie.characters.IsoPlayer)" tabindex="0">havePlayer(IsoPlayer)</a></li>
@@ -241,7 +247,7 @@ implements <a href="../../network/IConnection.html" title="interface in zombie.n
 <div class="col-second even-row-color"><code><a href="#checksumTime" class="member-name-link">checksumTime</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final gnu.trove.list.array.TShortArrayList</code></div>
-<div class="col-second odd-row-color"><code><a href="#chunkObjectState" class="member-name-link">chunkObjectState</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#chunkObjectStateRequests" class="member-name-link">chunkObjectStateRequests</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>[]</code></div>
 <div class="col-second even-row-color"><code><a href="#connectArea" class="member-name-link">connectArea</a></code></div>
@@ -282,17 +288,29 @@ implements <a href="../../network/IConnection.html" title="interface in zombie.n
 <div class="col-first even-row-color"><code><a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>[]</code></div>
 <div class="col-second even-row-color"><code><a href="#players" class="member-name-link">players</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>[]</code></div>
-<div class="col-second odd-row-color"><code><a href="#releventPos" class="member-name-link">releventPos</a></code></div>
+<div class="col-first odd-row-color"><code>final <a href="../utils/UpdateLimit.html" title="class in zombie.core.utils">UpdateLimit</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#playerSave" class="member-name-link">playerSave</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../utils/UpdateTimer.html" title="class in zombie.core.utils">UpdateTimer</a></code></div>
-<div class="col-second even-row-color"><code><a href="#timerSendZombie" class="member-name-link">timerSendZombie</a></code></div>
+<div class="col-first even-row-color"><code><a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>[]</code></div>
+<div class="col-second even-row-color"><code><a href="#releventPos" class="member-name-link">releventPos</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link">HashMap</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Short.html" title="class or interface in java.lang" class="external-link">Short</a>, <a href="../utils/UpdateTimer.html" title="class in zombie.core.utils">UpdateTimer</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#timerUpdateAnimal" class="member-name-link">timerUpdateAnimal</a></code></div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#statisticTransmissionEnabled" class="member-name-link">statisticTransmissionEnabled</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</code></div>
-<div class="col-second even-row-color"><code><a href="#usernames" class="member-name-link">usernames</a></code></div>
+<div class="col-first even-row-color"><code>final gnu.trove.map.hash.TShortObjectHashMap<wbr>&lt;<a href="../../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#thumpHits" class="member-name-link">thumpHits</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../utils/UpdateTimer.html" title="class in zombie.core.utils">UpdateTimer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#timerSendZombie" class="member-name-link">timerSendZombie</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link">HashMap</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Short.html" title="class or interface in java.lang" class="external-link">Short</a>, <a href="../utils/UpdateLimit.html" title="class in zombie.core.utils">UpdateLimit</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#timerUpdateAnimal" class="member-name-link">timerUpdateAnimal</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</code></div>
+<div class="col-second odd-row-color"><code><a href="#usernames" class="member-name-link">usernames</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final gnu.trove.map.hash.TShortShortHashMap</code></div>
+<div class="col-second even-row-color"><code><a href="#vehicleRequests" class="member-name-link">vehicleRequests</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -324,137 +342,143 @@ implements <a href="../../network/IConnection.html" title="interface in zombie.n
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calcCountPlayersInRelevantPosition()" class="member-name-link">calcCountPlayersInRelevantPosition</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addChunkObjectState(short)" class="member-name-link">addChunkObjectState</a><wbr>(short&nbsp;w)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#cancelPacket()" class="member-name-link">cancelPacket</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calcCountPlayersInRelevantPosition()" class="member-name-link">calcCountPlayersInRelevantPosition</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#checkReady()" class="member-name-link">checkReady</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#cancelPacket()" class="member-name-link">cancelPacket</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#endPacket()" class="member-name-link">endPacket</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#checkReady()" class="member-name-link">checkReady</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#endPacket(int,int,byte)" class="member-name-link">endPacket</a><wbr>(int&nbsp;priority,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#endPacket()" class="member-name-link">endPacket</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#endPacket(int,int,byte)" class="member-name-link">endPacket</a><wbr>(int&nbsp;priority,
  int&nbsp;reliability,
  byte&nbsp;ordering)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#endPacketImmediate()" class="member-name-link">endPacketImmediate</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#endPacketSuperHighUnreliable()" class="member-name-link">endPacketSuperHighUnreliable</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#endPacketImmediate()" class="member-name-link">endPacketImmediate</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#endPacketUnordered()" class="member-name-link">endPacketUnordered</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#endPacketSuperHighUnreliable()" class="member-name-link">endPacketSuperHighUnreliable</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#endPacketUnreliable()" class="member-name-link">endPacketUnreliable</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#endPacketUnordered()" class="member-name-link">endPacketUnordered</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#endPingPacket()" class="member-name-link">endPingPacket</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#endPacketUnreliable()" class="member-name-link">endPacketUnreliable</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#forceDisconnect(java.lang.String)" class="member-name-link">forceDisconnect</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;description)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#endPingPacket()" class="member-name-link">endPingPacket</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAveragePing()" class="member-name-link">getAveragePing</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#forceDisconnect(java.lang.String)" class="member-name-link">forceDisconnect</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;description)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBufferPosition()" class="member-name-link">getBufferPosition</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAveragePing()" class="member-name-link">getAveragePing</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkGridWidth()" class="member-name-link">getChunkGridWidth</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBufferPosition()" class="member-name-link">getBufferPosition</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getConnectedGUID()" class="member-name-link">getConnectedGUID</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkGridWidth()" class="member-name-link">getChunkGridWidth</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="UdpConnection.ConnectionType.html" title="enum class in zombie.core.raknet">UdpConnection.ConnectionType</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getConnectionType()" class="member-name-link">getConnectionType</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getConnectedGUID()" class="member-name-link">getConnectedGUID</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIDStr()" class="member-name-link">getIDStr</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIndex()" class="member-name-link">getIndex</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/InetSocketAddress.html" title="class or interface in java.net" class="external-link">InetSocketAddress</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInetSocketAddress()" class="member-name-link">getInetSocketAddress</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="UdpConnection.ConnectionType.html" title="enum class in zombie.core.raknet">UdpConnection.ConnectionType</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getConnectionType()" class="member-name-link">getConnectionType</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIP()" class="member-name-link">getIP</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLastConnection()" class="member-name-link">getLastConnection</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLastPing()" class="member-name-link">getLastPing</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../network/ClientServerMap.html" title="class in zombie.network">ClientServerMap</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLoadedCell(int)" class="member-name-link">getLoadedCell</a><wbr>(int&nbsp;playerIndex)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLowestPing()" class="member-name-link">getLowestPing</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIDStr()" class="member-name-link">getIDStr</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMaxPlayers()" class="member-name-link">getMaxPlayers</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIndex()" class="member-name-link">getIndex</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/InetSocketAddress.html" title="class or interface in java.net" class="external-link">InetSocketAddress</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInetSocketAddress()" class="member-name-link">getInetSocketAddress</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIP()" class="member-name-link">getIP</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLastConnection()" class="member-name-link">getLastConnection</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLastPing()" class="member-name-link">getLastPing</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../network/ClientServerMap.html" title="class in zombie.network">ClientServerMap</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLoadedCell(int)" class="member-name-link">getLoadedCell</a><wbr>(int&nbsp;playerIndex)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLowestPing()" class="member-name-link">getLowestPing</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMTUSize()" class="member-name-link">getMTUSize</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMaxPlayers()" class="member-name-link">getMaxPlayers</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOwnerId()" class="member-name-link">getOwnerId</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMTUSize()" class="member-name-link">getMTUSize</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="RakNetPeerInterface.html" title="class in zombie.core.raknet">RakNetPeerInterface</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPeer()" class="member-name-link">getPeer</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOwnerId()" class="member-name-link">getOwnerId</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayerAt(int)" class="member-name-link">getPlayerAt</a><wbr>(int&nbsp;playerIndex)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="RakNetPeerInterface.html" title="class in zombie.core.raknet">RakNetPeerInterface</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPeer()" class="member-name-link">getPeer</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../network/PlayerDownloadServer.html" title="class in zombie.network">PlayerDownloadServer</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayerDownloadServer()" class="member-name-link">getPlayerDownloadServer</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayerAt(int)" class="member-name-link">getPlayerAt</a><wbr>(int&nbsp;playerIndex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>short</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayerId(int)" class="member-name-link">getPlayerId</a><wbr>(int&nbsp;playerIndex)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../network/PlayerDownloadServer.html" title="class in zombie.network">PlayerDownloadServer</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayerDownloadServer()" class="member-name-link">getPlayerDownloadServer</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>byte</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayerIndex(zombie.characters.IsoPlayer)" class="member-name-link">getPlayerIndex</a><wbr>(<a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRelevantAndDistance(float,float,float)" class="member-name-link">getRelevantAndDistance</a><wbr>(float&nbsp;x,
- float&nbsp;y,
- float&nbsp;z)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRelevantPos(int)" class="member-name-link">getRelevantPos</a><wbr>(int&nbsp;playerIndex)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>short</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayerId(int)" class="member-name-link">getPlayerId</a><wbr>(int&nbsp;playerIndex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>byte</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRelevantRange()" class="member-name-link">getRelevantRange</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayerIndex(zombie.characters.IsoPlayer)" class="member-name-link">getPlayerIndex</a><wbr>(<a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../characters/Role.html" title="class in zombie.characters">Role</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRole()" class="member-name-link">getRole</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRelevantAndDistance(float,float,float)" class="member-name-link">getRelevantAndDistance</a><wbr>(float&nbsp;x,
+ float&nbsp;y,
+ float&nbsp;z)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getServerIP()" class="member-name-link">getServerIP</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../iso/Vector3.html" title="class in zombie.iso">Vector3</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRelevantPos(int)" class="member-name-link">getRelevantPos</a><wbr>(int&nbsp;playerIndex)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../znet/ZNetStatistics.html" title="class in zombie.core.znet">ZNetStatistics</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStatistics()" class="member-name-link">getStatistics</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>byte</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRelevantRange()" class="member-name-link">getRelevantRange</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSteamId()" class="member-name-link">getSteamId</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../characters/Role.html" title="class in zombie.characters">Role</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRole()" class="member-name-link">getRole</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUserName()" class="member-name-link">getUserName</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getServerIP()" class="member-name-link">getServerIP</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../znet/ZNetStatistics.html" title="class in zombie.core.znet">ZNetStatistics</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStatistics()" class="member-name-link">getStatistics</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSteamId()" class="member-name-link">getSteamId</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUserName(int)" class="member-name-link">getUserName</a><wbr>(int&nbsp;playerIndex)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUserName()" class="member-name-link">getUserName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../network/anticheats/PacketValidator.html" title="class in zombie.network.anticheats">PacketValidator</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getValidator()" class="member-name-link">getValidator</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUserName(int)" class="member-name-link">getUserName</a><wbr>(int&nbsp;playerIndex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getZombieListHash()" class="member-name-link">getZombieListHash</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../network/anticheats/PacketValidator.html" title="class in zombie.network.anticheats">PacketValidator</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getValidator()" class="member-name-link">getValidator</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getZombieListHash()" class="member-name-link">getZombieListHash</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasPlayer(short)" class="member-name-link">hasPlayer</a><wbr>(short&nbsp;playerId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasPlayer(java.lang.String)" class="member-name-link">hasPlayer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;userName)</code></div>
@@ -595,13 +619,13 @@ implements <a href="../../network/IConnection.html" title="interface in zombie.n
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.PacketsCache">Methods inherited from class&nbsp;<a href="../../network/PacketsCache.html#method-summary" title="class in zombie.network">PacketsCache</a></h3>
-<code><a href="../../network/PacketsCache.html#getPacket(zombie.network.PacketTypes.PacketType)" title="getPacket(PacketTypes.PacketType)">getPacket</a></code></div>
+<code><a href="../../network/PacketsCache.html#getPacket(zombie.network.PacketTypes.PacketType)" title="getPacket(PacketTypes.PacketType)">getPacket</a>, <a href="../../network/PacketsCache.html#isHashEquals(zombie.network.PacketTypes.PacketType,java.lang.Integer)" title="isHashEquals(PacketTypes.PacketType, Integer)">isHashEquals</a>, <a href="../../network/PacketsCache.html#isLimitExceeded(zombie.network.PacketTypes.PacketType)" title="isLimitExceeded(PacketTypes.PacketType)">isLimitExceeded</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.IConnection">Methods inherited from interface&nbsp;<a href="../../network/IConnection.html#method-summary" title="interface in zombie.network">IConnection</a></h3>
-<code><a href="../../network/IConnection.html#getPacket(zombie.network.PacketTypes.PacketType)" title="getPacket(PacketTypes.PacketType)">getPacket</a></code></div>
+<code><a href="../../network/IConnection.html#getPacket(zombie.network.PacketTypes.PacketType)" title="getPacket(PacketTypes.PacketType)">getPacket</a>, <a href="../../network/IConnection.html#isHashEquals(zombie.network.PacketTypes.PacketType,java.lang.Integer)" title="isHashEquals(PacketTypes.PacketType, Integer)">isHashEquals</a>, <a href="../../network/IConnection.html#isLimitExceeded(zombie.network.PacketTypes.PacketType)" title="isLimitExceeded(PacketTypes.PacketType)">isLimitExceeded</a></code></div>
 </section>
 </li>
 </ul>
@@ -710,10 +734,26 @@ implements <a href="../../network/IConnection.html" title="interface in zombie.n
 </section>
 </li>
 <li>
-<section class="detail" id="chunkObjectState">
-<h3>chunkObjectState</h3>
+<section class="detail" id="chunkObjectStateRequests">
+<h3>chunkObjectStateRequests</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">gnu.trove.list.array.TShortArrayList</span>&nbsp;<span class="element-name">chunkObjectState</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">gnu.trove.list.array.TShortArrayList</span>&nbsp;<span class="element-name">chunkObjectStateRequests</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="vehicleRequests">
+<h3>vehicleRequests</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">gnu.trove.map.hash.TShortShortHashMap</span>&nbsp;<span class="element-name">vehicleRequests</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="thumpHits">
+<h3>thumpHits</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">gnu.trove.map.hash.TShortObjectHashMap&lt;<a href="../../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;</span>&nbsp;<span class="element-name">thumpHits</span></div>
 </div>
 </section>
 </li>
@@ -730,6 +770,22 @@ implements <a href="../../network/IConnection.html" title="interface in zombie.n
 <h3>pingHistory</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Deque.html" title="class or interface in java.util" class="external-link">Deque</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</span>&nbsp;<span class="element-name">pingHistory</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="statisticTransmissionEnabled">
+<h3>statisticTransmissionEnabled</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">statisticTransmissionEnabled</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="playerSave">
+<h3>playerSave</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../utils/UpdateLimit.html" title="class in zombie.core.utils">UpdateLimit</a></span>&nbsp;<span class="element-name">playerSave</span></div>
 </div>
 </section>
 </li>
@@ -793,7 +849,7 @@ implements <a href="../../network/IConnection.html" title="interface in zombie.n
 <section class="detail" id="timerUpdateAnimal">
 <h3>timerUpdateAnimal</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link">HashMap</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Short.html" title="class or interface in java.lang" class="external-link">Short</a>, <a href="../utils/UpdateTimer.html" title="class in zombie.core.utils">UpdateTimer</a>&gt;</span>&nbsp;<span class="element-name">timerUpdateAnimal</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link">HashMap</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Short.html" title="class or interface in java.lang" class="external-link">Short</a>, <a href="../utils/UpdateLimit.html" title="class in zombie.core.utils">UpdateLimit</a>&gt;</span>&nbsp;<span class="element-name">timerUpdateAnimal</span></div>
 </div>
 </section>
 </li>
@@ -1331,6 +1387,18 @@ implements <a href="../../network/IConnection.html" title="interface in zombie.n
 </section>
 </li>
 <li>
+<section class="detail" id="addChunkObjectState(short)">
+<h3>addChunkObjectState</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addChunkObjectState</span><wbr><span class="parameters">(short&nbsp;w)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../network/IConnection.html#addChunkObjectState(short)">addChunkObjectState</a></code>&nbsp;in interface&nbsp;<code><a href="../../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="setConnectArea(int,zombie.iso.Vector3)">
 <h3>setConnectArea</h3>
 <div class="horizontal-scroll">
@@ -1396,6 +1464,10 @@ implements <a href="../../network/IConnection.html" title="interface in zombie.n
 <h3>getIndex</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getIndex</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../network/IConnection.html#getIndex()">getIndex</a></code>&nbsp;in interface&nbsp;<code><a href="../../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
 </div>
 </section>
 </li>
@@ -1606,6 +1678,18 @@ implements <a href="../../network/IConnection.html" title="interface in zombie.n
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../network/IConnection.html#hasPlayer(java.lang.String)">hasPlayer</a></code>&nbsp;in interface&nbsp;<code><a href="../../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="hasPlayer(short)">
+<h3>hasPlayer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasPlayer</span><wbr><span class="parameters">(short&nbsp;playerId)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../network/IConnection.html#hasPlayer(short)">hasPlayer</a></code>&nbsp;in interface&nbsp;<code><a href="../../network/IConnection.html" title="interface in zombie.network">IConnection</a></code></dd>
 </dl>
 </div>
 </section>

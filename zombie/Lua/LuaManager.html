@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -110,6 +110,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#releaseAllVideoTextures()" tabindex="0">releaseAllVideoTextures()</a></li>
 <li><a href="#copyTable(se.krka.kahlua.vm.KahluaTable)" tabindex="0">copyTable(KahluaTable)</a></li>
 <li><a href="#copyTable(se.krka.kahlua.vm.KahluaTable,se.krka.kahlua.vm.KahluaTable)" tabindex="0">copyTable(KahluaTable, KahluaTable)</a></li>
+<li><a href="#insertAnyLuaTraceElements(java.lang.StackTraceElement%5B%5D)" tabindex="0">insertAnyLuaTraceElements(StackTraceElement[])</a></li>
+<li><a href="#getLuaStackTraceCallFrames(se.krka.kahlua.vm.Coroutine)" tabindex="0">getLuaStackTraceCallFrames(Coroutine)</a></li>
+<li><a href="#getLuaStackTraceStrings(se.krka.kahlua.vm.Coroutine)" tabindex="0">getLuaStackTraceStrings(Coroutine)</a></li>
+<li><a href="#getLuaStackStrace(se.krka.kahlua.vm.Coroutine)" tabindex="0">getLuaStackStrace(Coroutine)</a></li>
 </ol>
 </li>
 </ol>
@@ -264,21 +268,33 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLuaCacheDir()" class="member-name-link">getLuaCacheDir</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSandboxCacheDir()" class="member-name-link">getSandboxCacheDir</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/StackTraceElement.html" title="class or interface in java.lang" class="external-link">StackTraceElement</a>[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLuaStackStrace(se.krka.kahlua.vm.Coroutine)" class="member-name-link">getLuaStackStrace</a><wbr>(se.krka.kahlua.vm.Coroutine&nbsp;coroutine)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getTableObject(java.lang.String)" class="member-name-link">getTableObject</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tableName)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static se.krka.kahlua.vm.LuaCallFrame[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLuaStackTraceCallFrames(se.krka.kahlua.vm.Coroutine)" class="member-name-link">getLuaStackTraceCallFrames</a><wbr>(se.krka.kahlua.vm.Coroutine&nbsp;coroutine)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLuaStackTraceStrings(se.krka.kahlua.vm.Coroutine)" class="member-name-link">getLuaStackTraceStrings</a><wbr>(se.krka.kahlua.vm.Coroutine&nbsp;coroutine)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSandboxCacheDir()" class="member-name-link">getSandboxCacheDir</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getTableObject(java.lang.String,zombie.debug.DebugType)" class="member-name-link">getTableObject</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tableName,
- <a href="../debug/DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;logger)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getTableObject(java.lang.String)" class="member-name-link">getTableObject</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tableName)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#init()" class="member-name-link">init</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getTableObject(java.lang.String,zombie.debug.DebugType)" class="member-name-link">getTableObject</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tableName,
+ <a href="../debug/DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;logger)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initChecksum()" class="member-name-link">initChecksum</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#init()" class="member-name-link">init</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initChecksum()" class="member-name-link">initChecksum</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/StackTraceElement.html" title="class or interface in java.lang" class="external-link">StackTraceElement</a>[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#insertAnyLuaTraceElements(java.lang.StackTraceElement%5B%5D)" class="member-name-link">insertAnyLuaTraceElements</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/StackTraceElement.html" title="class or interface in java.lang" class="external-link">StackTraceElement</a>[]&nbsp;stackTraceElementsRaw)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isIndieStoneUrl(java.lang.String)" class="member-name-link">isIndieStoneUrl</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;url)</code></div>
@@ -699,6 +715,38 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">se.krka.kahlua.vm.KahluaTable</span>&nbsp;<span class="element-name">copyTable</span><wbr><span class="parameters">(se.krka.kahlua.vm.KahluaTable&nbsp;to,
  se.krka.kahlua.vm.KahluaTable&nbsp;from)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="insertAnyLuaTraceElements(java.lang.StackTraceElement[])">
+<h3>insertAnyLuaTraceElements</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/StackTraceElement.html" title="class or interface in java.lang" class="external-link">StackTraceElement</a>[]</span>&nbsp;<span class="element-name">insertAnyLuaTraceElements</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/StackTraceElement.html" title="class or interface in java.lang" class="external-link">StackTraceElement</a>[]&nbsp;stackTraceElementsRaw)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getLuaStackTraceCallFrames(se.krka.kahlua.vm.Coroutine)">
+<h3>getLuaStackTraceCallFrames</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">se.krka.kahlua.vm.LuaCallFrame[]</span>&nbsp;<span class="element-name">getLuaStackTraceCallFrames</span><wbr><span class="parameters">(se.krka.kahlua.vm.Coroutine&nbsp;coroutine)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getLuaStackTraceStrings(se.krka.kahlua.vm.Coroutine)">
+<h3>getLuaStackTraceStrings</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</span>&nbsp;<span class="element-name">getLuaStackTraceStrings</span><wbr><span class="parameters">(se.krka.kahlua.vm.Coroutine&nbsp;coroutine)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getLuaStackStrace(se.krka.kahlua.vm.Coroutine)">
+<h3>getLuaStackStrace</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/StackTraceElement.html" title="class or interface in java.lang" class="external-link">StackTraceElement</a>[]</span>&nbsp;<span class="element-name">getLuaStackStrace</span><wbr><span class="parameters">(se.krka.kahlua.vm.Coroutine&nbsp;coroutine)</span></div>
 </div>
 </section>
 </li>

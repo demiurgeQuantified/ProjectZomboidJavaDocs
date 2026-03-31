@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -88,6 +88,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#rollItem(zombie.inventory.ItemPickerJava.ItemPickerContainer,zombie.inventory.ItemContainer,boolean,zombie.characters.IsoGameCharacter,zombie.inventory.ItemPickerJava.ItemPickerRoom)" tabindex="0">rollItem(ItemPickerJava.ItemPickerContainer, ItemContainer, boolean, IsoGameCharacter, ItemPickerJava.ItemPickerRoom)</a></li>
 <li><a href="#doRollItem(zombie.inventory.ItemPickerJava.ItemPickerContainer,zombie.inventory.ItemContainer,float,zombie.characters.IsoGameCharacter,boolean,zombie.inventory.ItemPickerJava.ItemPickerRoom)" tabindex="0">doRollItem(ItemPickerJava.ItemPickerContainer, ItemContainer, float, IsoGameCharacter, boolean, ItemPickerJava.ItemPickerRoom)</a></li>
 <li><a href="#rollContainerItem(zombie.inventory.types.InventoryContainer,zombie.characters.IsoGameCharacter,zombie.inventory.ItemPickerJava.ItemPickerContainer)" tabindex="0">rollContainerItem(InventoryContainer, IsoGameCharacter, ItemPickerJava.ItemPickerContainer)</a></li>
+<li><a href="#DoWeaponUpgrade(zombie.inventory.InventoryItem)" tabindex="0">DoWeaponUpgrade(InventoryItem)</a></li>
 <li><a href="#getLootModifier(java.lang.String)" tabindex="0">getLootModifier(String)</a></li>
 <li><a href="#getLootModifierFromType(java.lang.String)" tabindex="0">getLootModifierFromType(String)</a></li>
 <li><a href="#getLootType(zombie.scripting.objects.Item)" tabindex="0">getLootType(Item)</a></li>
@@ -256,157 +257,160 @@ loadScripts(document, 'script');</script>
  <a href="ItemPickerJava.ItemPickerRoom.html" title="class in zombie.inventory">ItemPickerJava.ItemPickerRoom</a>&nbsp;roomDist)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fillContainer(zombie.inventory.ItemContainer,zombie.characters.IsoPlayer)" class="member-name-link">fillContainer</a><wbr>(<a href="ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;container,
- <a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#DoWeaponUpgrade(zombie.inventory.InventoryItem)" class="member-name-link">DoWeaponUpgrade</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fillContainerType(zombie.inventory.ItemPickerJava.ItemPickerRoom,zombie.inventory.ItemContainer,java.lang.String,zombie.characters.IsoGameCharacter)" class="member-name-link">fillContainerType</a><wbr>(<a href="ItemPickerJava.ItemPickerRoom.html" title="class in zombie.inventory">ItemPickerJava.ItemPickerRoom</a>&nbsp;roomDist,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fillContainer(zombie.inventory.ItemContainer,zombie.characters.IsoPlayer)" class="member-name-link">fillContainer</a><wbr>(<a href="ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;container,
+ <a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fillContainerType(zombie.inventory.ItemPickerJava.ItemPickerRoom,zombie.inventory.ItemContainer,java.lang.String,zombie.characters.IsoGameCharacter)" class="member-name-link">fillContainerType</a><wbr>(<a href="ItemPickerJava.ItemPickerRoom.html" title="class in zombie.inventory">ItemPickerJava.ItemPickerRoom</a>&nbsp;roomDist,
  <a href="ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;container,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;roomName,
  <a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getActualSpawnChance(zombie.inventory.ItemPickerJava.ItemPickerItem,zombie.characters.IsoGameCharacter,zombie.inventory.ItemContainer,float,boolean)" class="member-name-link">getActualSpawnChance</a><wbr>(<a href="ItemPickerJava.ItemPickerItem.html" title="class in zombie.inventory">ItemPickerJava.ItemPickerItem</a>&nbsp;item,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getActualSpawnChance(zombie.inventory.ItemPickerJava.ItemPickerItem,zombie.characters.IsoGameCharacter,zombie.inventory.ItemContainer,float,boolean)" class="member-name-link">getActualSpawnChance</a><wbr>(<a href="ItemPickerJava.ItemPickerItem.html" title="class in zombie.inventory">ItemPickerJava.ItemPickerItem</a>&nbsp;item,
  <a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
  <a href="ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;container,
  float&nbsp;zombieDensity,
  boolean&nbsp;isJunk)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getAdjustedZombieDensity(float,zombie.scripting.objects.Item,boolean)" class="member-name-link">getAdjustedZombieDensity</a><wbr>(float&nbsp;zombieDensity,
+ <a href="../scripting/objects/Item.html" title="class in zombie.scripting.objects">Item</a>&nbsp;scriptItem,
+ boolean&nbsp;isJunk)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getAdjustedZombieDensity(float,zombie.scripting.objects.Item,boolean)" class="member-name-link">getAdjustedZombieDensity</a><wbr>(float&nbsp;zombieDensity,
- <a href="../scripting/objects/Item.html" title="class in zombie.scripting.objects">Item</a>&nbsp;scriptItem,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBaseChance(zombie.inventory.ItemPickerJava.ItemPickerItem,zombie.characters.IsoGameCharacter,boolean)" class="member-name-link">getBaseChance</a><wbr>(<a href="ItemPickerJava.ItemPickerItem.html" title="class in zombie.inventory">ItemPickerJava.ItemPickerItem</a>&nbsp;item,
+ <a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
  boolean&nbsp;isJunk)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBaseChance(zombie.inventory.ItemPickerJava.ItemPickerItem,zombie.characters.IsoGameCharacter,boolean)" class="member-name-link">getBaseChance</a><wbr>(<a href="ItemPickerJava.ItemPickerItem.html" title="class in zombie.inventory">ItemPickerJava.ItemPickerItem</a>&nbsp;item,
- <a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
- boolean&nbsp;isJunk)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBaseChanceMultiplier(zombie.characters.IsoGameCharacter,boolean,zombie.scripting.objects.Item)" class="member-name-link">getBaseChanceMultiplier</a><wbr>(<a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBaseChanceMultiplier(zombie.characters.IsoGameCharacter,boolean,zombie.scripting.objects.Item)" class="member-name-link">getBaseChanceMultiplier</a><wbr>(<a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
  boolean&nbsp;isJunk,
  <a href="../scripting/objects/Item.html" title="class in zombie.scripting.objects">Item</a>&nbsp;scriptItem)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getContainerZombiesType(zombie.inventory.ItemContainer)" class="member-name-link">getContainerZombiesType</a><wbr>(<a href="ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;container)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ItemPickerJava.ItemPickerContainer.html" title="class in zombie.inventory">ItemPickerJava.ItemPickerContainer</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getItemContainer(java.lang.String,java.lang.String,java.lang.String,boolean)" class="member-name-link">getItemContainer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;room,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getContainerZombiesType(zombie.inventory.ItemContainer)" class="member-name-link">getContainerZombiesType</a><wbr>(<a href="ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;container)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ItemPickerJava.ItemPickerContainer.html" title="class in zombie.inventory">ItemPickerJava.ItemPickerContainer</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getItemContainer(java.lang.String,java.lang.String,java.lang.String,boolean)" class="member-name-link">getItemContainer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;room,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;container,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;proceduralName,
  boolean&nbsp;junk)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static gnu.trove.map.hash.THashMap<wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="ItemPickerJava.ItemPickerContainer.html" title="class in zombie.inventory">ItemPickerJava.ItemPickerContainer</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getItemPickerContainers()" class="member-name-link">getItemPickerContainers</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLootDebugString(zombie.iso.IsoObject)" class="member-name-link">getLootDebugString</a><wbr>(<a href="../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static gnu.trove.map.hash.THashMap<wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="ItemPickerJava.ItemPickerContainer.html" title="class in zombie.inventory">ItemPickerJava.ItemPickerContainer</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getItemPickerContainers()" class="member-name-link">getItemPickerContainers</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLootModifier(java.lang.String)" class="member-name-link">getLootModifier</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;itemname)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLootDebugString(zombie.iso.IsoObject)" class="member-name-link">getLootDebugString</a><wbr>(<a href="../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLootModifier(java.lang.String,boolean)" class="member-name-link">getLootModifier</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;itemName,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLootModifier(java.lang.String)" class="member-name-link">getLootModifier</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;itemname)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLootModifier(java.lang.String,boolean)" class="member-name-link">getLootModifier</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;itemName,
  boolean&nbsp;isJunk)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLootModifierFromType(java.lang.String)" class="member-name-link">getLootModifierFromType</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;lootType)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLootType(zombie.scripting.objects.Item)" class="member-name-link">getLootType</a><wbr>(<a href="../scripting/objects/Item.html" title="class in zombie.scripting.objects">Item</a>&nbsp;item)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSquareBuildingName(zombie.iso.IsoGridSquare)" class="member-name-link">getSquareBuildingName</a><wbr>(<a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSquareRegion(zombie.iso.IsoGridSquare)" class="member-name-link">getSquareRegion</a><wbr>(<a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSquareZombiesType(zombie.iso.IsoGridSquare)" class="member-name-link">getSquareZombiesType</a><wbr>(<a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getZombieDensityFactor(zombie.inventory.ItemPickerJava.ItemPickerContainer,zombie.inventory.ItemContainer)" class="member-name-link">getZombieDensityFactor</a><wbr>(<a href="ItemPickerJava.ItemPickerContainer.html" title="class in zombie.inventory">ItemPickerJava.ItemPickerContainer</a>&nbsp;containerDist,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLootModifierFromType(java.lang.String)" class="member-name-link">getLootModifierFromType</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;lootType)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLootType(zombie.scripting.objects.Item)" class="member-name-link">getLootType</a><wbr>(<a href="../scripting/objects/Item.html" title="class in zombie.scripting.objects">Item</a>&nbsp;item)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSquareBuildingName(zombie.iso.IsoGridSquare)" class="member-name-link">getSquareBuildingName</a><wbr>(<a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSquareRegion(zombie.iso.IsoGridSquare)" class="member-name-link">getSquareRegion</a><wbr>(<a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSquareZombiesType(zombie.iso.IsoGridSquare)" class="member-name-link">getSquareZombiesType</a><wbr>(<a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getZombieDensityFactor(zombie.inventory.ItemPickerJava.ItemPickerContainer,zombie.inventory.ItemContainer)" class="member-name-link">getZombieDensityFactor</a><wbr>(<a href="ItemPickerJava.ItemPickerContainer.html" title="class in zombie.inventory">ItemPickerJava.ItemPickerContainer</a>&nbsp;containerDist,
  <a href="ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;container)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hasDistributionForContainerInRoom(java.lang.String,java.lang.String)" class="member-name-link">hasDistributionForContainerInRoom</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;containerType,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;roomdef)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hasDistributionForContainerInRoom(java.lang.String,java.lang.String)" class="member-name-link">hasDistributionForContainerInRoom</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;containerType,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;roomdef)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hasDistributionForRoom(java.lang.String)" class="member-name-link">hasDistributionForRoom</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;roomdef)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#InitSandboxLootSettings()" class="member-name-link">InitSandboxLootSettings</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isGoodKey(java.lang.String)" class="member-name-link">isGoodKey</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;vehicleType)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#itemSpawnSanityCheck(zombie.inventory.InventoryItem)" class="member-name-link">itemSpawnSanityCheck</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;spawnItem)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hasDistributionForRoom(java.lang.String)" class="member-name-link">hasDistributionForRoom</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;roomdef)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#itemSpawnSanityCheck(zombie.inventory.InventoryItem,zombie.inventory.ItemContainer)" class="member-name-link">itemSpawnSanityCheck</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;spawnItem,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#InitSandboxLootSettings()" class="member-name-link">InitSandboxLootSettings</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isGoodKey(java.lang.String)" class="member-name-link">isGoodKey</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;vehicleType)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#itemSpawnSanityCheck(zombie.inventory.InventoryItem)" class="member-name-link">itemSpawnSanityCheck</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;spawnItem)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#itemSpawnSanityCheck(zombie.inventory.InventoryItem,zombie.inventory.ItemContainer)" class="member-name-link">itemSpawnSanityCheck</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;spawnItem,
  <a href="ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;container)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#keyNamerBuilding(zombie.inventory.InventoryItem,zombie.iso.IsoGridSquare)" class="member-name-link">keyNamerBuilding</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#keyNamerBuilding(zombie.inventory.InventoryItem,zombie.iso.IsoGridSquare)" class="member-name-link">keyNamerBuilding</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item,
  <a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onCreateRegion(zombie.inventory.InventoryItem,java.lang.String)" class="member-name-link">onCreateRegion</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;region)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#Parse()" class="member-name-link">Parse</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onCreateRegion(zombie.inventory.InventoryItem,java.lang.String)" class="member-name-link">onCreateRegion</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;region)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rollContainerItem(zombie.inventory.types.InventoryContainer,zombie.characters.IsoGameCharacter,zombie.inventory.ItemPickerJava.ItemPickerContainer)" class="member-name-link">rollContainerItem</a><wbr>(<a href="types/InventoryContainer.html" title="class in zombie.inventory.types">InventoryContainer</a>&nbsp;bag,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#Parse()" class="member-name-link">Parse</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rollContainerItem(zombie.inventory.types.InventoryContainer,zombie.characters.IsoGameCharacter,zombie.inventory.ItemPickerJava.ItemPickerContainer)" class="member-name-link">rollContainerItem</a><wbr>(<a href="types/InventoryContainer.html" title="class in zombie.inventory.types">InventoryContainer</a>&nbsp;bag,
  <a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
  <a href="ItemPickerJava.ItemPickerContainer.html" title="class in zombie.inventory">ItemPickerJava.ItemPickerContainer</a>&nbsp;containerDist)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rollItem(zombie.inventory.ItemPickerJava.ItemPickerContainer,zombie.inventory.ItemContainer,boolean,zombie.characters.IsoGameCharacter,zombie.inventory.ItemPickerJava.ItemPickerRoom)" class="member-name-link">rollItem</a><wbr>(<a href="ItemPickerJava.ItemPickerContainer.html" title="class in zombie.inventory">ItemPickerJava.ItemPickerContainer</a>&nbsp;containerDist,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rollItem(zombie.inventory.ItemPickerJava.ItemPickerContainer,zombie.inventory.ItemContainer,boolean,zombie.characters.IsoGameCharacter,zombie.inventory.ItemPickerJava.ItemPickerRoom)" class="member-name-link">rollItem</a><wbr>(<a href="ItemPickerJava.ItemPickerContainer.html" title="class in zombie.inventory">ItemPickerJava.ItemPickerContainer</a>&nbsp;containerDist,
  <a href="ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;container,
  boolean&nbsp;doItemContainer,
  <a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
  <a href="ItemPickerJava.ItemPickerRoom.html" title="class in zombie.inventory">ItemPickerJava.ItemPickerRoom</a>&nbsp;roomDist)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rotItem(zombie.inventory.InventoryItem)" class="member-name-link">rotItem</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;spawnItem)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#spawnLootCarKey(zombie.inventory.InventoryItem,zombie.inventory.ItemContainer)" class="member-name-link">spawnLootCarKey</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;spawnItem,
- <a href="ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;container)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rotItem(zombie.inventory.InventoryItem)" class="member-name-link">rotItem</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;spawnItem)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#spawnLootCarKey(zombie.inventory.InventoryItem,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer)" class="member-name-link">spawnLootCarKey</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;spawnItem,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#spawnLootCarKey(zombie.inventory.InventoryItem,zombie.inventory.ItemContainer)" class="member-name-link">spawnLootCarKey</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;spawnItem,
+ <a href="ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;container)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#spawnLootCarKey(zombie.inventory.InventoryItem,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer)" class="member-name-link">spawnLootCarKey</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;spawnItem,
  <a href="ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;container,
  <a href="ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;outtermost)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#squareHasZone(zombie.iso.IsoGridSquare,java.lang.String)" class="member-name-link">squareHasZone</a><wbr>(<a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;zone)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#trashItem(zombie.inventory.InventoryItem)" class="member-name-link">trashItem</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;spawnItem)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#squareHasZone(zombie.iso.IsoGridSquare,java.lang.String)" class="member-name-link">squareHasZone</a><wbr>(<a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;zone)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#trashItemLooted(zombie.inventory.InventoryItem)" class="member-name-link">trashItemLooted</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;spawnItem)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#trashItem(zombie.inventory.InventoryItem)" class="member-name-link">trashItem</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;spawnItem)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#trashItemRats(zombie.inventory.InventoryItem)" class="member-name-link">trashItemRats</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;spawnItem)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#trashItemLooted(zombie.inventory.InventoryItem)" class="member-name-link">trashItemLooted</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;spawnItem)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tryAddItemToContainer(zombie.inventory.ItemContainer,java.lang.String,zombie.inventory.ItemPickerJava.ItemPickerContainer)" class="member-name-link">tryAddItemToContainer</a><wbr>(<a href="ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;container,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#trashItemRats(zombie.inventory.InventoryItem)" class="member-name-link">trashItemRats</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;spawnItem)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tryAddItemToContainer(zombie.inventory.ItemContainer,java.lang.String,zombie.inventory.ItemPickerJava.ItemPickerContainer)" class="member-name-link">tryAddItemToContainer</a><wbr>(<a href="ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;container,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;itemType,
  <a href="ItemPickerJava.ItemPickerContainer.html" title="class in zombie.inventory">ItemPickerJava.ItemPickerContainer</a>&nbsp;containerDist)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateOverlaySprite(zombie.iso.IsoObject)" class="member-name-link">updateOverlaySprite</a><wbr>(<a href="../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;obj)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#wearDownItem(zombie.inventory.InventoryItem)" class="member-name-link">wearDownItem</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;spawnItem)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateOverlaySprite(zombie.iso.IsoObject)" class="member-name-link">updateOverlaySprite</a><wbr>(<a href="../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;obj)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#wearDownItem(zombie.inventory.InventoryItem)" class="member-name-link">wearDownItem</a><wbr>(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;spawnItem)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -598,6 +602,14 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">rollContainerItem</span><wbr><span class="parameters">(<a href="types/InventoryContainer.html" title="class in zombie.inventory.types">InventoryContainer</a>&nbsp;bag,
  <a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
  <a href="ItemPickerJava.ItemPickerContainer.html" title="class in zombie.inventory">ItemPickerJava.ItemPickerContainer</a>&nbsp;containerDist)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="DoWeaponUpgrade(zombie.inventory.InventoryItem)">
+<h3>DoWeaponUpgrade</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">DoWeaponUpgrade</span><wbr><span class="parameters">(<a href="InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</span></div>
 </div>
 </section>
 </li>

@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -72,6 +72,11 @@ loadScripts(document, 'script');</script>
 <li><a href="#isConsistent(zombie.network.IConnection)" tabindex="0">isConsistent(IConnection)</a></li>
 <li><a href="#processClient(zombie.core.raknet.UdpConnection)" tabindex="0">processClient(UdpConnection)</a></li>
 <li><a href="#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" tabindex="0">processServer(PacketTypes.PacketType, UdpConnection)</a></li>
+<li><a href="#getVehicle()" tabindex="0">getVehicle()</a></li>
+<li><a href="#getX()" tabindex="0">getX()</a></li>
+<li><a href="#getY()" tabindex="0">getY()</a></li>
+<li><a href="#getMovable(int)" tabindex="0">getMovable(int)</a></li>
+<li><a href="#getMovableCount()" tabindex="0">getMovableCount()</a></li>
 </ol>
 </li>
 </ol>
@@ -89,7 +94,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="../../../vehicles/VehicleInterpolationData.html" title="class in zombie.vehicles">VehicleInterpolationData</a>&gt;, <a href="../../fields/INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a>, <a href="../IDescriptor.html" title="interface in zombie.network.packets">IDescriptor</a>, <a href="../INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="../../../vehicles/VehicleInterpolationData.html" title="class in zombie.vehicles">VehicleInterpolationData</a>&gt;, <a href="../../anticheats/AntiCheatSpeed.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatSpeed.IAntiCheat</a>, <a href="../../fields/INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a>, <a href="../IDescriptor.html" title="interface in zombie.network.packets">IDescriptor</a>, <a href="../INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
@@ -99,7 +104,7 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">VehiclePhysicsPacket</span>
 <span class="extends-implements">extends <a href="../../../vehicles/VehicleInterpolationData.html" title="class in zombie.vehicles">VehicleInterpolationData</a>
-implements <a href="../INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a></span></div>
+implements <a href="../INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>, <a href="../../anticheats/AntiCheatSpeed.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatSpeed.IAntiCheat</a></span></div>
 </div>
 </section>
 <section class="summary">
@@ -128,29 +133,44 @@ implements <a href="../INetworkPacket.html" title="interface in zombie.network.p
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isConsistent(zombie.network.IConnection)" class="member-name-link">isConsistent</a><wbr>(<a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../fields/IMovable.html" title="interface in zombie.network.fields">IMovable</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMovable(int)" class="member-name-link">getMovable</a><wbr>(int&nbsp;index)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)" class="member-name-link">parse</a><wbr>(<a href="../../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;b,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMovableCount()" class="member-name-link">getMovableCount</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVehicle()" class="member-name-link">getVehicle</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getX()" class="member-name-link">getX</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getY()" class="member-name-link">getY</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isConsistent(zombie.network.IConnection)" class="member-name-link">isConsistent</a><wbr>(<a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)" class="member-name-link">parse</a><wbr>(<a href="../../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;b,
  <a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processClient(zombie.core.raknet.UdpConnection)" class="member-name-link">processClient</a><wbr>(<a href="../../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processClient(zombie.core.raknet.UdpConnection)" class="member-name-link">processClient</a><wbr>(<a href="../../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
  <a href="../../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(zombie.vehicles.BaseVehicle)" class="member-name-link">set</a><wbr>(<a href="../../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setData(java.lang.Object...)" class="member-name-link">setData</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;values)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(zombie.vehicles.BaseVehicle)" class="member-name-link">set</a><wbr>(<a href="../../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#write(zombie.core.network.ByteBufferWriter)" class="member-name-link">write</a><wbr>(<a href="../../../core/network/ByteBufferWriter.html" title="class in zombie.core.network">ByteBufferWriter</a>&nbsp;b)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setData(java.lang.Object...)" class="member-name-link">setData</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;values)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#write(zombie.core.network.ByteBufferWriter)" class="member-name-link">write</a><wbr>(<a href="../../../core/network/ByteBufferWriter.html" title="class in zombie.core.network">ByteBufferWriter</a>&nbsp;b)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -165,7 +185,7 @@ implements <a href="../INetworkPacket.html" title="interface in zombie.network.p
 <code><a href="../IDescriptor.html#getClassDescription(java.lang.StringBuilder,java.lang.Class,java.util.HashSet)" title="getClassDescription(StringBuilder, Class, HashSet)">getClassDescription</a>, <a href="../IDescriptor.html#getDescription()" title="getDescription()">getDescription</a>, <a href="../IDescriptor.html#getDescription(java.util.HashSet)" title="getDescription(HashSet)">getDescription</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.packets.INetworkPacket">Methods inherited from interface&nbsp;<a href="../INetworkPacket.html#method-summary" title="interface in zombie.network.packets">INetworkPacket</a></h3>
-<code><a href="../INetworkPacket.html#isPostponed()" title="isPostponed()">isPostponed</a>, <a href="../INetworkPacket.html#parseClient(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseClient(ByteBufferReader, UdpConnection)">parseClient</a>, <a href="../INetworkPacket.html#parseClientLoading(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseClientLoading(ByteBufferReader, UdpConnection)">parseClientLoading</a>, <a href="../INetworkPacket.html#parseServer(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseServer(ByteBufferReader, UdpConnection)">parseServer</a>, <a href="../INetworkPacket.html#postpone()" title="postpone()">postpone</a>, <a href="../INetworkPacket.html#processClientLoading(zombie.core.raknet.UdpConnection)" title="processClientLoading(UdpConnection)">processClientLoading</a>, <a href="../INetworkPacket.html#sendToClient(zombie.network.PacketTypes.PacketType,zombie.network.IConnection)" title="sendToClient(PacketTypes.PacketType, IConnection)">sendToClient</a>, <a href="../INetworkPacket.html#sendToClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sendToClients(PacketTypes.PacketType, UdpConnection)">sendToClients</a>, <a href="../INetworkPacket.html#sendToRelativeClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection,float,float)" title="sendToRelativeClients(PacketTypes.PacketType, UdpConnection, float, float)">sendToRelativeClients</a>, <a href="../INetworkPacket.html#sendToServer(zombie.network.PacketTypes.PacketType)" title="sendToServer(PacketTypes.PacketType)">sendToServer</a>, <a href="../INetworkPacket.html#sync(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sync(PacketTypes.PacketType, UdpConnection)">sync</a></code></div>
+<code><a href="../INetworkPacket.html#isPostponed()" title="isPostponed()">isPostponed</a>, <a href="../INetworkPacket.html#parseClient(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseClient(ByteBufferReader, UdpConnection)">parseClient</a>, <a href="../INetworkPacket.html#parseClientLoading(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseClientLoading(ByteBufferReader, UdpConnection)">parseClientLoading</a>, <a href="../INetworkPacket.html#parseServer(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseServer(ByteBufferReader, UdpConnection)">parseServer</a>, <a href="../INetworkPacket.html#postpone()" title="postpone()">postpone</a>, <a href="../INetworkPacket.html#processClientLoading(zombie.core.raknet.UdpConnection)" title="processClientLoading(UdpConnection)">processClientLoading</a>, <a href="../INetworkPacket.html#sendToClient(zombie.network.PacketTypes.PacketType,zombie.network.IConnection)" title="sendToClient(PacketTypes.PacketType, IConnection)">sendToClient</a>, <a href="../INetworkPacket.html#sendToClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sendToClients(PacketTypes.PacketType, UdpConnection)">sendToClients</a>, <a href="../INetworkPacket.html#sendToRelativeClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection,float,float)" title="sendToRelativeClients(PacketTypes.PacketType, UdpConnection, float, float)">sendToRelativeClients</a>, <a href="../INetworkPacket.html#sendToServer(zombie.network.PacketTypes.PacketType)" title="sendToServer(PacketTypes.PacketType)">sendToServer</a>, <a href="../INetworkPacket.html#shouldInstantiate()" title="shouldInstantiate()">shouldInstantiate</a>, <a href="../INetworkPacket.html#sync(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sync(PacketTypes.PacketType, UdpConnection)">sync</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.fields.INetworkPacketField">Methods inherited from interface&nbsp;<a href="../../fields/INetworkPacketField.html#method-summary" title="interface in zombie.network.fields">INetworkPacketField</a></h3>
 <code><a href="../../fields/INetworkPacketField.html#getPacketSizeBytes()" title="getPacketSizeBytes()">getPacketSizeBytes</a></code></div>
@@ -282,6 +302,54 @@ implements <a href="../INetworkPacket.html" title="interface in zombie.network.p
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../INetworkPacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)">processServer</a></code>&nbsp;in interface&nbsp;<code><a href="../INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getVehicle()">
+<h3>getVehicle</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a></span>&nbsp;<span class="element-name">getVehicle</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getX()">
+<h3>getX</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getX</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getY()">
+<h3>getY</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getY</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getMovable(int)">
+<h3>getMovable</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../fields/IMovable.html" title="interface in zombie.network.fields">IMovable</a></span>&nbsp;<span class="element-name">getMovable</span><wbr><span class="parameters">(int&nbsp;index)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../anticheats/AntiCheatSpeed.IAntiCheat.html#getMovable(int)">getMovable</a></code>&nbsp;in interface&nbsp;<code><a href="../../anticheats/AntiCheatSpeed.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatSpeed.IAntiCheat</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getMovableCount()">
+<h3>getMovableCount</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getMovableCount</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../anticheats/AntiCheatSpeed.IAntiCheat.html#getMovableCount()">getMovableCount</a></code>&nbsp;in interface&nbsp;<code><a href="../../anticheats/AntiCheatSpeed.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatSpeed.IAntiCheat</a></code></dd>
 </dl>
 </div>
 </section>

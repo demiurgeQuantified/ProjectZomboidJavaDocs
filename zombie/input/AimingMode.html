@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -58,18 +58,35 @@ loadScripts(document, 'script');</script>
 <li><a href="#" tabindex="0">Description</a></li>
 <li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
 <li><a href="#enum-constant-summary" tabindex="0">Enum Constant Summary</a></li>
+<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#enum-constant-detail" tabindex="0">Enum Constant Details</a>
 <ol class="toc-list">
-<li><a href="#REGULAR" tabindex="0">REGULAR</a></li>
-<li><a href="#TARGET_FOUND" tabindex="0">TARGET_FOUND</a></li>
+<li><a href="#UNARMED" tabindex="0">UNARMED</a></li>
+<li><a href="#UNARMED_TARGET_FOUND" tabindex="0">UNARMED_TARGET_FOUND</a></li>
+<li><a href="#MELEE" tabindex="0">MELEE</a></li>
+<li><a href="#MELEE_TARGET_FOUND" tabindex="0">MELEE_TARGET_FOUND</a></li>
+<li><a href="#RANGED" tabindex="0">RANGED</a></li>
+<li><a href="#RANGED_TARGET_FOUND" tabindex="0">RANGED_TARGET_FOUND</a></li>
+<li><a href="#RANGED_PRECISE" tabindex="0">RANGED_PRECISE</a></li>
+<li><a href="#RANGED_PRECISE_TARGET_FOUND" tabindex="0">RANGED_PRECISE_TARGET_FOUND</a></li>
 <li><a href="#NOT_AIMING" tabindex="0">NOT_AIMING</a></li>
+</ol>
+</li>
+<li><a href="#field-detail" tabindex="0">Field Details</a>
+<ol class="toc-list">
+<li><a href="#lerpRateOutwards" tabindex="0">lerpRateOutwards</a></li>
+<li><a href="#lerpRateInwards" tabindex="0">lerpRateInwards</a></li>
+<li><a href="#minDistanceAmount" tabindex="0">minDistanceAmount</a></li>
+<li><a href="#fixedAtMinDistance" tabindex="0">fixedAtMinDistance</a></li>
+<li><a href="#hasTarget" tabindex="0">hasTarget</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#values()" tabindex="0">values()</a></li>
 <li><a href="#valueOf(java.lang.String)" tabindex="0">valueOf(String)</a></li>
+<li><a href="#lerpAiming(zombie.characters.IsoPlayer,zombie.iso.Vector2,float,float,float,float,float,zombie.iso.Vector2)" tabindex="0">lerpAiming(IsoPlayer, Vector2, float, float, float, float, float, Vector2)</a></li>
 </ol>
 </li>
 </ol>
@@ -114,11 +131,50 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Enum Constant</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code><a href="#MELEE" class="member-name-link">MELEE</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="#MELEE_TARGET_FOUND" class="member-name-link">MELEE_TARGET_FOUND</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="#NOT_AIMING" class="member-name-link">NOT_AIMING</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#REGULAR" class="member-name-link">REGULAR</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#RANGED" class="member-name-link">RANGED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#TARGET_FOUND" class="member-name-link">TARGET_FOUND</a></code></div>
+<div class="col-first even-row-color"><code><a href="#RANGED_PRECISE" class="member-name-link">RANGED_PRECISE</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="#RANGED_PRECISE_TARGET_FOUND" class="member-name-link">RANGED_PRECISE_TARGET_FOUND</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="#RANGED_TARGET_FOUND" class="member-name-link">RANGED_TARGET_FOUND</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="#UNARMED" class="member-name-link">UNARMED</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="#UNARMED_TARGET_FOUND" class="member-name-link">UNARMED_TARGET_FOUND</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<!-- =========== FIELD SUMMARY =========== -->
+<li>
+<section class="field-summary" id="field-summary">
+<h2>Field Summary</h2>
+<div class="caption"><span>Fields</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Field</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#fixedAtMinDistance" class="member-name-link">fixedAtMinDistance</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#hasTarget" class="member-name-link">hasTarget</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final float</code></div>
+<div class="col-second even-row-color"><code><a href="#lerpRateInwards" class="member-name-link">lerpRateInwards</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final float</code></div>
+<div class="col-second odd-row-color"><code><a href="#lerpRateOutwards" class="member-name-link">lerpRateOutwards</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final float</code></div>
+<div class="col-second even-row-color"><code><a href="#minDistanceAmount" class="member-name-link">minDistanceAmount</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -128,20 +184,30 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="AimingMode.html" title="enum class in zombie.input">AimingMode</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#valueOf(java.lang.String)" class="member-name-link">valueOf</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#lerpAiming(zombie.characters.IsoPlayer,zombie.iso.Vector2,float,float,float,float,float,zombie.iso.Vector2)" class="member-name-link">lerpAiming</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ <a href="../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;src,
+ float&nbsp;targetX,
+ float&nbsp;targetY,
+ float&nbsp;centerX,
+ float&nbsp;centerY,
+ float&nbsp;zoom,
+ <a href="../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out_result)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="AimingMode.html" title="enum class in zombie.input">AimingMode</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#valueOf(java.lang.String)" class="member-name-link">valueOf</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns the enum constant of this class with the specified name.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="AimingMode.html" title="enum class in zombie.input">AimingMode</a>[]</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#values()" class="member-name-link">values</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="AimingMode.html" title="enum class in zombie.input">AimingMode</a>[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#values()" class="member-name-link">values</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns an array containing the constants of this enum class, in
 the order they are declared.</div>
 </div>
@@ -166,18 +232,66 @@ the order they are declared.</div>
 <h2>Enum Constant Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="REGULAR">
-<h3>REGULAR</h3>
+<section class="detail" id="UNARMED">
+<h3>UNARMED</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AimingMode.html" title="enum class in zombie.input">AimingMode</a></span>&nbsp;<span class="element-name">REGULAR</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AimingMode.html" title="enum class in zombie.input">AimingMode</a></span>&nbsp;<span class="element-name">UNARMED</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="TARGET_FOUND">
-<h3>TARGET_FOUND</h3>
+<section class="detail" id="UNARMED_TARGET_FOUND">
+<h3>UNARMED_TARGET_FOUND</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AimingMode.html" title="enum class in zombie.input">AimingMode</a></span>&nbsp;<span class="element-name">TARGET_FOUND</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AimingMode.html" title="enum class in zombie.input">AimingMode</a></span>&nbsp;<span class="element-name">UNARMED_TARGET_FOUND</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="MELEE">
+<h3>MELEE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AimingMode.html" title="enum class in zombie.input">AimingMode</a></span>&nbsp;<span class="element-name">MELEE</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="MELEE_TARGET_FOUND">
+<h3>MELEE_TARGET_FOUND</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AimingMode.html" title="enum class in zombie.input">AimingMode</a></span>&nbsp;<span class="element-name">MELEE_TARGET_FOUND</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="RANGED">
+<h3>RANGED</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AimingMode.html" title="enum class in zombie.input">AimingMode</a></span>&nbsp;<span class="element-name">RANGED</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="RANGED_TARGET_FOUND">
+<h3>RANGED_TARGET_FOUND</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AimingMode.html" title="enum class in zombie.input">AimingMode</a></span>&nbsp;<span class="element-name">RANGED_TARGET_FOUND</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="RANGED_PRECISE">
+<h3>RANGED_PRECISE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AimingMode.html" title="enum class in zombie.input">AimingMode</a></span>&nbsp;<span class="element-name">RANGED_PRECISE</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="RANGED_PRECISE_TARGET_FOUND">
+<h3>RANGED_PRECISE_TARGET_FOUND</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AimingMode.html" title="enum class in zombie.input">AimingMode</a></span>&nbsp;<span class="element-name">RANGED_PRECISE_TARGET_FOUND</span></div>
 </div>
 </section>
 </li>
@@ -186,6 +300,54 @@ the order they are declared.</div>
 <h3>NOT_AIMING</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AimingMode.html" title="enum class in zombie.input">AimingMode</a></span>&nbsp;<span class="element-name">NOT_AIMING</span></div>
+</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<!-- ============ FIELD DETAIL =========== -->
+<li>
+<section class="field-details" id="field-detail">
+<h2>Field Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="lerpRateOutwards">
+<h3>lerpRateOutwards</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">lerpRateOutwards</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="lerpRateInwards">
+<h3>lerpRateInwards</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">lerpRateInwards</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="minDistanceAmount">
+<h3>minDistanceAmount</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">minDistanceAmount</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="fixedAtMinDistance">
+<h3>fixedAtMinDistance</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">fixedAtMinDistance</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="hasTarget">
+<h3>hasTarget</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasTarget</span></div>
 </div>
 </section>
 </li>
@@ -229,6 +391,21 @@ not permitted.)</div>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if this enum class has no constant with the specified name</dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a></code> - if the argument is null</dd>
 </dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="lerpAiming(zombie.characters.IsoPlayer,zombie.iso.Vector2,float,float,float,float,float,zombie.iso.Vector2)">
+<h3>lerpAiming</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">lerpAiming</span><wbr><span class="parameters">(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ <a href="../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;src,
+ float&nbsp;targetX,
+ float&nbsp;targetY,
+ float&nbsp;centerX,
+ float&nbsp;centerY,
+ float&nbsp;zoom,
+ <a href="../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out_result)</span></div>
 </div>
 </section>
 </li>

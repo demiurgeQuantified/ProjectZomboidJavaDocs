@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -80,6 +80,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#sendModifySymbol(zombie.worldMap.symbols.WorldMapBaseSymbol)" tabindex="0">sendModifySymbol(WorldMapBaseSymbol)</a></li>
 <li><a href="#sendSetPrivateSymbol(zombie.worldMap.symbols.WorldMapBaseSymbol)" tabindex="0">sendSetPrivateSymbol(WorldMapBaseSymbol)</a></li>
 <li><a href="#sendRemoveSymbol(zombie.worldMap.symbols.WorldMapBaseSymbol)" tabindex="0">sendRemoveSymbol(WorldMapBaseSymbol)</a></li>
+<li><a href="#setAuthorHidden(java.lang.String,boolean)" tabindex="0">setAuthorHidden(String, boolean)</a></li>
+<li><a href="#isAuthorHidden(java.lang.String)" tabindex="0">isAuthorHidden(String)</a></li>
 <li><a href="#Reset()" tabindex="0">Reset()</a></li>
 </ol>
 </li>
@@ -144,31 +146,38 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="WorldMapClient.html" title="class in zombie.worldMap.network">WorldMapClient</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance()" class="member-name-link">getInstance</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#receive(zombie.core.network.ByteBufferReader)" class="member-name-link">receive</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAuthorHidden(java.lang.String)" class="member-name-link">isAuthorHidden</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;userName)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#receiveRequestData(zombie.core.network.ByteBufferReader)" class="member-name-link">receiveRequestData</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#receive(zombie.core.network.ByteBufferReader)" class="member-name-link">receive</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#Reset()" class="member-name-link">Reset</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#receiveRequestData(zombie.core.network.ByteBufferReader)" class="member-name-link">receiveRequestData</a><wbr>(<a href="../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendAddSymbol(zombie.worldMap.symbols.WorldMapBaseSymbol,zombie.worldMap.network.WorldMapSymbolNetworkInfo)" class="member-name-link">sendAddSymbol</a><wbr>(<a href="../symbols/WorldMapBaseSymbol.html" title="class in zombie.worldMap.symbols">WorldMapBaseSymbol</a>&nbsp;symbol,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#Reset()" class="member-name-link">Reset</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendAddSymbol(zombie.worldMap.symbols.WorldMapBaseSymbol,zombie.worldMap.network.WorldMapSymbolNetworkInfo)" class="member-name-link">sendAddSymbol</a><wbr>(<a href="../symbols/WorldMapBaseSymbol.html" title="class in zombie.worldMap.symbols">WorldMapBaseSymbol</a>&nbsp;symbol,
  <a href="WorldMapSymbolNetworkInfo.html" title="class in zombie.worldMap.network">WorldMapSymbolNetworkInfo</a>&nbsp;networkInfo)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendModifySymbol(zombie.worldMap.symbols.WorldMapBaseSymbol)" class="member-name-link">sendModifySymbol</a><wbr>(<a href="../symbols/WorldMapBaseSymbol.html" title="class in zombie.worldMap.symbols">WorldMapBaseSymbol</a>&nbsp;symbol)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendRemoveSymbol(zombie.worldMap.symbols.WorldMapBaseSymbol)" class="member-name-link">sendRemoveSymbol</a><wbr>(<a href="../symbols/WorldMapBaseSymbol.html" title="class in zombie.worldMap.symbols">WorldMapBaseSymbol</a>&nbsp;symbol)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendModifySymbol(zombie.worldMap.symbols.WorldMapBaseSymbol)" class="member-name-link">sendModifySymbol</a><wbr>(<a href="../symbols/WorldMapBaseSymbol.html" title="class in zombie.worldMap.symbols">WorldMapBaseSymbol</a>&nbsp;symbol)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendSetPrivateSymbol(zombie.worldMap.symbols.WorldMapBaseSymbol)" class="member-name-link">sendSetPrivateSymbol</a><wbr>(<a href="../symbols/WorldMapBaseSymbol.html" title="class in zombie.worldMap.symbols">WorldMapBaseSymbol</a>&nbsp;symbol)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendRemoveSymbol(zombie.worldMap.symbols.WorldMapBaseSymbol)" class="member-name-link">sendRemoveSymbol</a><wbr>(<a href="../symbols/WorldMapBaseSymbol.html" title="class in zombie.worldMap.symbols">WorldMapBaseSymbol</a>&nbsp;symbol)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendShareSymbol(zombie.worldMap.symbols.WorldMapBaseSymbol,zombie.worldMap.network.WorldMapSymbolNetworkInfo)" class="member-name-link">sendShareSymbol</a><wbr>(<a href="../symbols/WorldMapBaseSymbol.html" title="class in zombie.worldMap.symbols">WorldMapBaseSymbol</a>&nbsp;symbol,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendSetPrivateSymbol(zombie.worldMap.symbols.WorldMapBaseSymbol)" class="member-name-link">sendSetPrivateSymbol</a><wbr>(<a href="../symbols/WorldMapBaseSymbol.html" title="class in zombie.worldMap.symbols">WorldMapBaseSymbol</a>&nbsp;symbol)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendShareSymbol(zombie.worldMap.symbols.WorldMapBaseSymbol,zombie.worldMap.network.WorldMapSymbolNetworkInfo)" class="member-name-link">sendShareSymbol</a><wbr>(<a href="../symbols/WorldMapBaseSymbol.html" title="class in zombie.worldMap.symbols">WorldMapBaseSymbol</a>&nbsp;symbol,
  <a href="WorldMapSymbolNetworkInfo.html" title="class in zombie.worldMap.network">WorldMapSymbolNetworkInfo</a>&nbsp;networkInfo)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAuthorHidden(java.lang.String,boolean)" class="member-name-link">setAuthorHidden</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;userName,
+ boolean&nbsp;hidden)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#worldMapLoaded()" class="member-name-link">worldMapLoaded</a>()</code></div>
@@ -303,6 +312,23 @@ loadScripts(document, 'script');</script>
 <h3>sendRemoveSymbol</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendRemoveSymbol</span><wbr><span class="parameters">(<a href="../symbols/WorldMapBaseSymbol.html" title="class in zombie.worldMap.symbols">WorldMapBaseSymbol</a>&nbsp;symbol)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setAuthorHidden(java.lang.String,boolean)">
+<h3>setAuthorHidden</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setAuthorHidden</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;userName,
+ boolean&nbsp;hidden)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isAuthorHidden(java.lang.String)">
+<h3>isAuthorHidden</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAuthorHidden</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;userName)</span></div>
 </div>
 </section>
 </li>

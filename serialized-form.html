@@ -34,7 +34,7 @@ loadScripts(document, 'script');</script>
 <li><a href="search.html">Search</a></li>
 <li><a href="help-doc.html#serialized-form">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -236,10 +236,6 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>aimingDelay</h5>
 <pre>float aimingDelay</pre>
-</li>
-<li class="block-list">
-<h5>aimingMode</h5>
-<pre><a href="zombie/input/AimingMode.html" title="enum class in zombie.input">AimingMode</a> aimingMode</pre>
 </li>
 <li class="block-list">
 <h5>aiStateMap</h5>
@@ -554,6 +550,10 @@ loadScripts(document, 'script');</script>
 <pre>int dieCount</pre>
 </li>
 <li class="block-list">
+<h5>diedBody</h5>
+<pre><a href="zombie/iso/objects/IsoDeadBody.html" title="class in zombie.iso.objects">IsoDeadBody</a> diedBody</pre>
+</li>
+<li class="block-list">
 <h5>doDeathSound</h5>
 <pre>boolean doDeathSound</pre>
 </li>
@@ -684,6 +684,10 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>hasInitTextObjects</h5>
 <pre>boolean hasInitTextObjects</pre>
+</li>
+<li class="block-list">
+<h5>hasTarget</h5>
+<pre>boolean hasTarget</pre>
 </li>
 <li class="block-list">
 <h5>headLookAround</h5>
@@ -1065,6 +1069,10 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>onBed</h5>
 <pre>boolean onBed</pre>
+</li>
+<li class="block-list">
+<h5>onDiedListeners</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="zombie/characters/CharacterDiedListener.html" title="interface in zombie.characters">CharacterDiedListener</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt; onDiedListeners</pre>
 </li>
 <li class="block-list">
 <h5>onFire</h5>
@@ -1603,18 +1611,6 @@ loadScripts(document, 'script');</script>
 <pre>boolean attackFromBehind</pre>
 </li>
 <li class="block-list">
-<h5>attackLoopInstance</h5>
-<pre>long attackLoopInstance</pre>
-</li>
-<li class="block-list">
-<h5>attackLoopInstancePrev</h5>
-<pre>long attackLoopInstancePrev</pre>
-</li>
-<li class="block-list">
-<h5>attackLoopSoundName</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a> attackLoopSoundName</pre>
-</li>
-<li class="block-list">
 <h5>attackStarted</h5>
 <pre>boolean attackStarted</pre>
 </li>
@@ -1752,7 +1748,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li class="block-list">
 <h5>drunkMoveVars</h5>
-<pre>zombie.characters.IsoPlayer.MoveVars drunkMoveVars</pre>
+<pre><a href="zombie/characters/IsoPlayer.MoveVars.html" title="class in zombie.characters">IsoPlayer.MoveVars</a> drunkMoveVars</pre>
 </li>
 <li class="block-list">
 <h5>extUpdateCount</h5>
@@ -1780,7 +1776,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li class="block-list">
 <h5>footInjuryTimer</h5>
-<pre>int footInjuryTimer</pre>
+<pre>float footInjuryTimer</pre>
 </li>
 <li class="block-list">
 <h5>forceAim</h5>
@@ -1864,7 +1860,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li class="block-list">
 <h5>inputState</h5>
-<pre>zombie.characters.IsoPlayer.InputState inputState</pre>
+<pre><a href="zombie/characters/IsoPlayer.InputState.html" title="class in zombie.characters">IsoPlayer.InputState</a> inputState</pre>
 </li>
 <li class="block-list">
 <h5>invPageDirty</h5>
@@ -1927,14 +1923,6 @@ loadScripts(document, 'script');</script>
 <pre>boolean isWearingNightVisionGoggles</pre>
 </li>
 <li class="block-list">
-<h5>itemVisuals</h5>
-<pre><a href="zombie/core/skinnedmodel/visual/ItemVisuals.html" title="class in zombie.core.skinnedmodel.visual">ItemVisuals</a> itemVisuals</pre>
-</li>
-<li class="block-list">
-<h5>joypadBDown</h5>
-<pre>boolean joypadBDown</pre>
-</li>
-<li class="block-list">
 <h5>joypadBind</h5>
 <pre>int joypadBind</pre>
 </li>
@@ -1951,10 +1939,6 @@ loadScripts(document, 'script');</script>
 <pre>boolean joypadMovementActive</pre>
 </li>
 <li class="block-list">
-<h5>joypadSprint</h5>
-<pre>boolean joypadSprint</pre>
-</li>
-<li class="block-list">
 <h5>justMoved</h5>
 <pre>boolean justMoved</pre>
 </li>
@@ -1965,6 +1949,14 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>lastAttackWasHandToHand</h5>
 <pre>boolean lastAttackWasHandToHand</pre>
+</li>
+<li class="block-list">
+<h5>lastCheatEnable</h5>
+<pre>boolean lastCheatEnable</pre>
+</li>
+<li class="block-list">
+<h5>lastCheatToggle</h5>
+<pre>long lastCheatToggle</pre>
 </li>
 <li class="block-list">
 <h5>lastPillsTaken</h5>
@@ -2217,6 +2209,10 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>remoteFitLvl</h5>
 <pre>int remoteFitLvl</pre>
+</li>
+<li class="block-list">
+<h5>remotePlayerItemVisuals</h5>
+<pre><a href="zombie/core/skinnedmodel/visual/ItemVisuals.html" title="class in zombie.core.skinnedmodel.visual">ItemVisuals</a> remotePlayerItemVisuals</pre>
 </li>
 <li class="block-list">
 <h5>remoteSneakLvl</h5>
@@ -3089,10 +3085,6 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>attachBackToTreeY</h5>
 <pre>int attachBackToTreeY</pre>
-</li>
-<li class="block-list">
-<h5>attackedBy</h5>
-<pre><a href="zombie/characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a> attackedBy</pre>
 </li>
 <li class="block-list">
 <h5>attackedTimer</h5>
@@ -7788,6 +7780,14 @@ loadScripts(document, 'script');</script>
 <pre>float currentSteering</pre>
 </li>
 <li class="block-list">
+<h5>desirePhysicsActive</h5>
+<pre>boolean desirePhysicsActive</pre>
+</li>
+<li class="block-list">
+<h5>disableSimulationDueToLackOfSurroundingChunks</h5>
+<pre>boolean disableSimulationDueToLackOfSurroundingChunks</pre>
+</li>
+<li class="block-list">
 <h5>doColor</h5>
 <pre>boolean doColor</pre>
 </li>
@@ -7890,6 +7890,10 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>ignitionSwitch</h5>
 <pre><a href="zombie/inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a> ignitionSwitch</pre>
+</li>
+<li class="block-list">
+<h5>ignoreCharacterCollisionSoundTimeout</h5>
+<pre>long ignoreCharacterCollisionSoundTimeout</pre>
 </li>
 <li class="block-list">
 <h5>impulseFromServer</h5>

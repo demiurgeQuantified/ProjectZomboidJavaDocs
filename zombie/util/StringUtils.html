@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -89,6 +89,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#isInt(java.lang.String)" tabindex="0">isInt(String)</a></li>
 <li><a href="#tryParseInt(java.lang.String)" tabindex="0">tryParseInt(String)</a></li>
 <li><a href="#tryParseEnum(java.lang.Class,java.lang.String,E)" tabindex="0">tryParseEnum(Class, String, E)</a></li>
+<li><a href="#tryParseEnum(java.lang.Class,S,zombie.util.lambda.Predicates.Params1.ICallback,E)" tabindex="0">tryParseEnum(Class, S, Predicates.Params1.ICallback, E)</a></li>
 <li><a href="#contains(java.lang.String%5B%5D,java.lang.String,java.util.function.BiFunction)" tabindex="0">contains(String[], String, BiFunction)</a></li>
 <li><a href="#indexOf(java.lang.String%5B%5D,java.lang.String,java.util.function.BiFunction)" tabindex="0">indexOf(String[], String, BiFunction)</a></li>
 <li><a href="#indent(java.lang.String)" tabindex="0">indent(String)</a></li>
@@ -290,12 +291,18 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;enumStr,
  E&nbsp;defaultVal)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tryParseFloat(java.lang.String)" class="member-name-link">tryParseFloat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;valueStr)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;E extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link">Enum</a>&lt;E&gt;, S&gt;<br>E</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tryParseEnum(java.lang.Class,S,zombie.util.lambda.Predicates.Params1.ICallback,E)" class="member-name-link">tryParseEnum</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;E&gt;&nbsp;enumClass,
+ S&nbsp;comparison,
+ <a href="lambda/Predicates.Params1.ICallback.html" title="interface in zombie.util.lambda">Predicates.Params1.ICallback</a>&lt;E,<wbr>S&gt;&nbsp;predicate,
+ E&nbsp;defaultVal)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tryParseInt(java.lang.String)" class="member-name-link">tryParseInt</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;valueStr)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tryParseFloat(java.lang.String)" class="member-name-link">tryParseFloat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;valueStr)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tryParseInt(java.lang.String)" class="member-name-link">tryParseInt</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;valueStr)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -510,6 +517,17 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;E extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link">Enum</a>&lt;E&gt;&gt;</span>&nbsp;<span class="return-type">E</span>&nbsp;<span class="element-name">tryParseEnum</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;E&gt;&nbsp;enumClass,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;enumStr,
+ E&nbsp;defaultVal)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="tryParseEnum(java.lang.Class,S,zombie.util.lambda.Predicates.Params1.ICallback,E)">
+<h3 id="tryParseEnum(java.lang.Class,java.lang.Object,zombie.util.lambda.Predicates.Params1.ICallback,java.lang.Enum)">tryParseEnum</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;E extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link">Enum</a>&lt;E&gt;, S&gt;</span>&nbsp;<span class="return-type">E</span>&nbsp;<span class="element-name">tryParseEnum</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;E&gt;&nbsp;enumClass,
+ S&nbsp;comparison,
+ <a href="lambda/Predicates.Params1.ICallback.html" title="interface in zombie.util.lambda">Predicates.Params1.ICallback</a>&lt;E,<wbr>S&gt;&nbsp;predicate,
  E&nbsp;defaultVal)</span></div>
 </div>
 </section>

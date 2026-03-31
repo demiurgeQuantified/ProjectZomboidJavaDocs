@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.15.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -70,6 +70,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#isEmpty()" tabindex="0">isEmpty()</a></li>
 <li><a href="#get(int)" tabindex="0">get(int)</a></li>
 <li><a href="#set(int,E)" tabindex="0">set(int, E)</a></li>
+<li><a href="#count()" tabindex="0">count()</a></li>
+<li><a href="#keyAt(int)" tabindex="0">keyAt(int)</a></li>
+<li><a href="#elementAt(int)" tabindex="0">elementAt(int)</a></li>
 </ol>
 </li>
 </ol>
@@ -124,19 +127,28 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;ET&gt;&nbsp;<a href="IntMap.html" title="class in zombie.util.list">IntMap</a><wbr>&lt;ET&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#alloc()" class="member-name-link">alloc</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#count()" class="member-name-link">count</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-E" title="type parameter in IntMap">E</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#elementAt(int)" class="member-name-link">elementAt</a><wbr>(int&nbsp;elementIdx)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-E" title="type parameter in IntMap">E</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(int)" class="member-name-link">get</a><wbr>(int&nbsp;key)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEmpty()" class="member-name-link">isEmpty</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onReleased()" class="member-name-link">onReleased</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#keyAt(int)" class="member-name-link">keyAt</a><wbr>(int&nbsp;elementIdx)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-E" title="type parameter in IntMap">E</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,E)" class="member-name-link">set</a><wbr>(int&nbsp;key,
- <a href="#type-param-E" title="type parameter in IntMap">E</a>&nbsp;element)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onReleased()" class="member-name-link">onReleased</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-E" title="type parameter in IntMap">E</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,E)" class="member-name-link">set</a><wbr>(int&nbsp;key,
+ <a href="#type-param-E" title="type parameter in IntMap">E</a>&nbsp;element)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -211,6 +223,30 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="#type-param-E" title="type parameter in IntMap">E</a></span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(int&nbsp;key,
  <a href="#type-param-E" title="type parameter in IntMap">E</a>&nbsp;element)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="count()">
+<h3>count</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">count</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="keyAt(int)">
+<h3>keyAt</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">keyAt</span><wbr><span class="parameters">(int&nbsp;elementIdx)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="elementAt(int)">
+<h3>elementAt</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="#type-param-E" title="type parameter in IntMap">E</a></span>&nbsp;<span class="element-name">elementAt</span><wbr><span class="parameters">(int&nbsp;elementIdx)</span></div>
 </div>
 </section>
 </li>
