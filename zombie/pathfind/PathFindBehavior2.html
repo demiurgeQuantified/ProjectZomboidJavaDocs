@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.17.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -65,8 +65,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#pathNextIsSet" tabindex="0">pathNextIsSet</a></li>
 <li><a href="#pathNextX" tabindex="0">pathNextX</a></li>
 <li><a href="#pathNextY" tabindex="0">pathNextY</a></li>
-<li><a href="#listeners" tabindex="0">listeners</a></li>
-<li><a href="#npcData" tabindex="0">npcData</a></li>
 <li><a href="#stopping" tabindex="0">stopping</a></li>
 <li><a href="#walkingOnTheSpot" tabindex="0">walkingOnTheSpot</a></li>
 </ol>
@@ -123,6 +121,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#Succeeded(zombie.pathfind.Path,zombie.ai.astar.Mover)" tabindex="0">Succeeded(Path, Mover)</a></li>
 <li><a href="#Failed(zombie.ai.astar.Mover)" tabindex="0">Failed(Mover)</a></li>
 <li><a href="#isMovingUsingPathFind()" tabindex="0">isMovingUsingPathFind()</a></li>
+<li><a href="#isGoodChairAdjacentSquare(zombie.iso.IsoGridSquare,zombie.iso.IsoGridSquare)" tabindex="0">isGoodChairAdjacentSquare(IsoGridSquare, IsoGridSquare)</a></li>
 </ol>
 </li>
 </ol>
@@ -164,12 +163,9 @@ implements <a href="IPathfinder.html" title="interface in zombie.pathfind">IPath
 <div class="col-first odd-row-color"><code>static enum&nbsp;</code></div>
 <div class="col-second odd-row-color"><code><a href="PathFindBehavior2.Goal.html" class="type-name-link" title="enum class in zombie.pathfind">PathFindBehavior2.Goal</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="PathFindBehavior2.NPCData.html" class="type-name-link" title="class in zombie.pathfind">PathFindBehavior2.NPCData</a></code></div>
+<div class="col-first even-row-color"><code>static final class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="PathFindBehavior2.PointOnPath.html" class="type-name-link" title="class in zombie.pathfind">PathFindBehavior2.PointOnPath</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final class&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="PathFindBehavior2.PointOnPath.html" class="type-name-link" title="class in zombie.pathfind">PathFindBehavior2.PointOnPath</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -182,12 +178,6 @@ implements <a href="IPathfinder.html" title="interface in zombie.pathfind">IPath
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="IPathfinder.html" title="interface in zombie.pathfind">IPathfinder</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#listeners" class="member-name-link">listeners</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="PathFindBehavior2.NPCData.html" title="class in zombie.pathfind">PathFindBehavior2.NPCData</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#npcData" class="member-name-link">npcData</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>boolean</code></div>
 <div class="col-second even-row-color"><code><a href="#pathNextIsSet" class="member-name-link">pathNextIsSet</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -296,97 +286,101 @@ implements <a href="IPathfinder.html" title="interface in zombie.pathfind">IPath
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isGoalVehicleSeat()" class="member-name-link">isGoalVehicleSeat</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isMovingUsingPathFind()" class="member-name-link">isMovingUsingPathFind</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isGoodChairAdjacentSquare(zombie.iso.IsoGridSquare,zombie.iso.IsoGridSquare)" class="member-name-link">isGoodChairAdjacentSquare</a><wbr>(<a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;targetSquare,
+ <a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;adjacentSquare)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isStrafing()" class="member-name-link">isStrafing</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isMovingUsingPathFind()" class="member-name-link">isMovingUsingPathFind</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTargetLocation(float,float,float)" class="member-name-link">isTargetLocation</a><wbr>(float&nbsp;x,
- float&nbsp;y,
- float&nbsp;z)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isStrafing()" class="member-name-link">isStrafing</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTurningToObstacle()" class="member-name-link">isTurningToObstacle</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveToDir(zombie.iso.IsoMovingObject,float)" class="member-name-link">moveToDir</a><wbr>(<a href="../iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;target,
- float&nbsp;speedMul)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveToPoint(float,float,float)" class="member-name-link">moveToPoint</a><wbr>(float&nbsp;x,
- float&nbsp;y,
- float&nbsp;speedMul)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToCharacter(zombie.characters.IsoGameCharacter)" class="member-name-link">pathToCharacter</a><wbr>(<a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;target)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToGrabCorpse(zombie.iso.objects.IsoDeadBody)" class="member-name-link">pathToGrabCorpse</a><wbr>(<a href="../iso/objects/IsoDeadBody.html" title="class in zombie.iso.objects">IsoDeadBody</a>&nbsp;targetBody)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToLocation(int,int,int)" class="member-name-link">pathToLocation</a><wbr>(int&nbsp;x,
- int&nbsp;y,
- int&nbsp;z)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToLocationF(float,float,float)" class="member-name-link">pathToLocationF</a><wbr>(float&nbsp;x,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTargetLocation(float,float,float)" class="member-name-link">isTargetLocation</a><wbr>(float&nbsp;x,
  float&nbsp;y,
  float&nbsp;z)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToNearest(gnu.trove.list.array.TFloatArrayList)" class="member-name-link">pathToNearest</a><wbr>(gnu.trove.list.array.TFloatArrayList&nbsp;locations)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTurningToObstacle()" class="member-name-link">isTurningToObstacle</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToNearestTable(se.krka.kahlua.vm.KahluaTable)" class="member-name-link">pathToNearestTable</a><wbr>(se.krka.kahlua.vm.KahluaTable&nbsp;locationsTable)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveToDir(zombie.iso.IsoMovingObject,float)" class="member-name-link">moveToDir</a><wbr>(<a href="../iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;target,
+ float&nbsp;speedMul)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToSitOnFurniture(zombie.iso.IsoObject,boolean)" class="member-name-link">pathToSitOnFurniture</a><wbr>(<a href="../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;furniture,
- boolean&nbsp;bAnySpriteGridObject)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveToPoint(float,float,float)" class="member-name-link">moveToPoint</a><wbr>(float&nbsp;x,
+ float&nbsp;y,
+ float&nbsp;speedMul)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToSound(int,int,int)" class="member-name-link">pathToSound</a><wbr>(int&nbsp;x,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToCharacter(zombie.characters.IsoGameCharacter)" class="member-name-link">pathToCharacter</a><wbr>(<a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;target)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToGrabCorpse(zombie.iso.objects.IsoDeadBody)" class="member-name-link">pathToGrabCorpse</a><wbr>(<a href="../iso/objects/IsoDeadBody.html" title="class in zombie.iso.objects">IsoDeadBody</a>&nbsp;targetBody)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToLocation(int,int,int)" class="member-name-link">pathToLocation</a><wbr>(int&nbsp;x,
  int&nbsp;y,
  int&nbsp;z)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToVehicleAdjacent(zombie.vehicles.BaseVehicle)" class="member-name-link">pathToVehicleAdjacent</a><wbr>(<a href="../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToLocationF(float,float,float)" class="member-name-link">pathToLocationF</a><wbr>(float&nbsp;x,
+ float&nbsp;y,
+ float&nbsp;z)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToVehicleArea(zombie.vehicles.BaseVehicle,java.lang.String)" class="member-name-link">pathToVehicleArea</a><wbr>(<a href="../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToNearest(gnu.trove.list.array.TFloatArrayList)" class="member-name-link">pathToNearest</a><wbr>(gnu.trove.list.array.TFloatArrayList&nbsp;locations)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToNearestTable(se.krka.kahlua.vm.KahluaTable)" class="member-name-link">pathToNearestTable</a><wbr>(se.krka.kahlua.vm.KahluaTable&nbsp;locationsTable)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToSitOnFurniture(zombie.iso.IsoObject,boolean)" class="member-name-link">pathToSitOnFurniture</a><wbr>(<a href="../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;furniture,
+ boolean&nbsp;bAnySpriteGridObject)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToSound(int,int,int)" class="member-name-link">pathToSound</a><wbr>(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;z)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToVehicleAdjacent(zombie.vehicles.BaseVehicle)" class="member-name-link">pathToVehicleAdjacent</a><wbr>(<a href="../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToVehicleArea(zombie.vehicles.BaseVehicle,java.lang.String)" class="member-name-link">pathToVehicleArea</a><wbr>(<a href="../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;areaId)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToVehicleSeat(zombie.vehicles.BaseVehicle,int)" class="member-name-link">pathToVehicleSeat</a><wbr>(<a href="../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathToVehicleSeat(zombie.vehicles.BaseVehicle,int)" class="member-name-link">pathToVehicleSeat</a><wbr>(<a href="../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle,
  int&nbsp;seat)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render()" class="member-name-link">render</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset()" class="member-name-link">reset</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render()" class="member-name-link">render</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setData(float,float,float)" class="member-name-link">setData</a><wbr>(float&nbsp;targetX,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset()" class="member-name-link">reset</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setData(float,float,float)" class="member-name-link">setData</a><wbr>(float&nbsp;targetX,
  float&nbsp;targetY,
  float&nbsp;targetZ)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldBeMoving()" class="member-name-link">shouldBeMoving</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldGetUpFromCrawl()" class="member-name-link">shouldGetUpFromCrawl</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldBeMoving()" class="member-name-link">shouldBeMoving</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldIgnoreCollisionWithSquare(zombie.iso.IsoGridSquare)" class="member-name-link">shouldIgnoreCollisionWithSquare</a><wbr>(<a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldGetUpFromCrawl()" class="member-name-link">shouldGetUpFromCrawl</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#Succeeded(zombie.pathfind.Path,zombie.ai.astar.Mover)" class="member-name-link">Succeeded</a><wbr>(<a href="Path.html" title="class in zombie.pathfind">Path</a>&nbsp;path,
- <a href="../ai/astar/Mover.html" title="interface in zombie.ai.astar">Mover</a>&nbsp;mover)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldIgnoreCollisionWithSquare(zombie.iso.IsoGridSquare)" class="member-name-link">shouldIgnoreCollisionWithSquare</a><wbr>(<a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PathFindBehavior2.BehaviorResult.html" title="enum class in zombie.pathfind">PathFindBehavior2.BehaviorResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#Succeeded(zombie.pathfind.Path,zombie.ai.astar.Mover)" class="member-name-link">Succeeded</a><wbr>(<a href="Path.html" title="class in zombie.pathfind">Path</a>&nbsp;path,
+ <a href="../ai/astar/Mover.html" title="interface in zombie.ai.astar">Mover</a>&nbsp;mover)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PathFindBehavior2.BehaviorResult.html" title="enum class in zombie.pathfind">PathFindBehavior2.BehaviorResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -425,22 +419,6 @@ implements <a href="IPathfinder.html" title="interface in zombie.pathfind">IPath
 <h3>pathNextY</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">pathNextY</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="listeners">
-<h3>listeners</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="IPathfinder.html" title="interface in zombie.pathfind">IPathfinder</a>&gt;</span>&nbsp;<span class="element-name">listeners</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="npcData">
-<h3>npcData</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="PathFindBehavior2.NPCData.html" title="class in zombie.pathfind">PathFindBehavior2.NPCData</a></span>&nbsp;<span class="element-name">npcData</span></div>
 </div>
 </section>
 </li>
@@ -871,6 +849,15 @@ implements <a href="IPathfinder.html" title="interface in zombie.pathfind">IPath
 <h3>isMovingUsingPathFind</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isMovingUsingPathFind</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isGoodChairAdjacentSquare(zombie.iso.IsoGridSquare,zombie.iso.IsoGridSquare)">
+<h3>isGoodChairAdjacentSquare</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isGoodChairAdjacentSquare</span><wbr><span class="parameters">(<a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;targetSquare,
+ <a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;adjacentSquare)</span></div>
 </div>
 </section>
 </li>

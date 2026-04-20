@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../search.html">Search</a></li>
 <li><a href="../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.17.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -78,9 +78,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#getFMODParameters()" tabindex="0">getFMODParameters()</a></li>
-<li><a href="#startEvent(long,zombie.audio.GameSoundClip,java.util.BitSet)" tabindex="0">startEvent(long, GameSoundClip, BitSet)</a></li>
+<li><a href="#startEvent(long,zombie.audio.GameSoundClip,boolean,java.util.BitSet)" tabindex="0">startEvent(long, GameSoundClip, boolean, BitSet)</a></li>
 <li><a href="#updateEvent(long,zombie.audio.GameSoundClip)" tabindex="0">updateEvent(long, GameSoundClip)</a></li>
-<li><a href="#stopEvent(long,zombie.audio.GameSoundClip,java.util.BitSet)" tabindex="0">stopEvent(long, GameSoundClip, BitSet)</a></li>
+<li><a href="#stopEvent(long,zombie.audio.GameSoundClip,boolean,java.util.BitSet)" tabindex="0">stopEvent(long, GameSoundClip, boolean, BitSet)</a></li>
 <li><a href="#setUiSoundMuted(boolean)" tabindex="0">setUiSoundMuted(boolean)</a></li>
 <li><a href="#isUiSoundMuted()" tabindex="0">isUiSoundMuted()</a></li>
 <li><a href="#isRemastered()" tabindex="0">isRemastered()</a></li>
@@ -553,16 +553,18 @@ implements fmod.fmod.IFMODParameterUpdater</span></div>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;prefMusic)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startEvent(long,zombie.audio.GameSoundClip,java.util.BitSet)" class="member-name-link">startEvent</a><wbr>(long&nbsp;eventInstance,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startEvent(long,zombie.audio.GameSoundClip,boolean,java.util.BitSet)" class="member-name-link">startEvent</a><wbr>(long&nbsp;eventInstance,
  <a href="audio/GameSoundClip.html" title="class in zombie.audio">GameSoundClip</a>&nbsp;clip,
+ boolean&nbsp;remote,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/BitSet.html" title="class or interface in java.util" class="external-link">BitSet</a>&nbsp;parameterSet)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stop()" class="member-name-link">stop</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopEvent(long,zombie.audio.GameSoundClip,java.util.BitSet)" class="member-name-link">stopEvent</a><wbr>(long&nbsp;eventInstance,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopEvent(long,zombie.audio.GameSoundClip,boolean,java.util.BitSet)" class="member-name-link">stopEvent</a><wbr>(long&nbsp;eventInstance,
  <a href="audio/GameSoundClip.html" title="class in zombie.audio">GameSoundClip</a>&nbsp;clip,
+ boolean&nbsp;remote,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/BitSet.html" title="class or interface in java.util" class="external-link">BitSet</a>&nbsp;parameterSet)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -704,11 +706,12 @@ implements fmod.fmod.IFMODParameterUpdater</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="startEvent(long,zombie.audio.GameSoundClip,java.util.BitSet)">
+<section class="detail" id="startEvent(long,zombie.audio.GameSoundClip,boolean,java.util.BitSet)">
 <h3>startEvent</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">startEvent</span><wbr><span class="parameters">(long&nbsp;eventInstance,
  <a href="audio/GameSoundClip.html" title="class in zombie.audio">GameSoundClip</a>&nbsp;clip,
+ boolean&nbsp;remote,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/BitSet.html" title="class or interface in java.util" class="external-link">BitSet</a>&nbsp;parameterSet)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -731,11 +734,12 @@ implements fmod.fmod.IFMODParameterUpdater</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="stopEvent(long,zombie.audio.GameSoundClip,java.util.BitSet)">
+<section class="detail" id="stopEvent(long,zombie.audio.GameSoundClip,boolean,java.util.BitSet)">
 <h3>stopEvent</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">stopEvent</span><wbr><span class="parameters">(long&nbsp;eventInstance,
  <a href="audio/GameSoundClip.html" title="class in zombie.audio">GameSoundClip</a>&nbsp;clip,
+ boolean&nbsp;remote,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/BitSet.html" title="class or interface in java.util" class="external-link">BitSet</a>&nbsp;parameterSet)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>

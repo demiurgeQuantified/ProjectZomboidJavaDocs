@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.17.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -65,10 +65,12 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#set(float,float,float,float,float,boolean,boolean)" tabindex="0">set(float, float, float, float, float, boolean, boolean)</a></li>
+<li><a href="#set(float,float,float,float,float,boolean,boolean,boolean)" tabindex="0">set(float, float, float, float, float, boolean, boolean, boolean)</a></li>
 <li><a href="#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)" tabindex="0">parse(ByteBufferReader, IConnection)</a></li>
 <li><a href="#write(zombie.core.network.ByteBufferWriter)" tabindex="0">write(ByteBufferWriter)</a></li>
 <li><a href="#process(zombie.characters.IsoGameCharacter,zombie.characters.IsoGameCharacter,zombie.inventory.types.HandWeapon,boolean)" tabindex="0">process(IsoGameCharacter, IsoGameCharacter, HandWeapon, boolean)</a></li>
+<li><a href="#isHitHead()" tabindex="0">isHitHead()</a></li>
+<li><a href="#isHitLegs()" tabindex="0">isHitLegs()</a></li>
 </ol>
 </li>
 </ol>
@@ -121,6 +123,12 @@ implements <a href="../INetworkPacketField.html" title="interface in zombie.netw
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHitHead()" class="member-name-link">isHitHead</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHitLegs()" class="member-name-link">isHitLegs</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)" class="member-name-link">parse</a><wbr>(<a href="../../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;b,
  <a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
@@ -132,12 +140,13 @@ implements <a href="../INetworkPacketField.html" title="interface in zombie.netw
  boolean&nbsp;ignore)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(float,float,float,float,float,boolean,boolean)" class="member-name-link">set</a><wbr>(float&nbsp;damage,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(float,float,float,float,float,boolean,boolean,boolean)" class="member-name-link">set</a><wbr>(float&nbsp;damage,
  float&nbsp;range,
  float&nbsp;hitForce,
  float&nbsp;hitDirectionX,
  float&nbsp;hitDirectionY,
  boolean&nbsp;hitHead,
+ boolean&nbsp;hitLegs,
  boolean&nbsp;removeKnife)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -186,7 +195,7 @@ implements <a href="../INetworkPacketField.html" title="interface in zombie.netw
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="set(float,float,float,float,float,boolean,boolean)">
+<section class="detail" id="set(float,float,float,float,float,boolean,boolean,boolean)">
 <h3>set</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(float&nbsp;damage,
@@ -195,6 +204,7 @@ implements <a href="../INetworkPacketField.html" title="interface in zombie.netw
  float&nbsp;hitDirectionX,
  float&nbsp;hitDirectionY,
  boolean&nbsp;hitHead,
+ boolean&nbsp;hitLegs,
  boolean&nbsp;removeKnife)</span></div>
 </div>
 </section>
@@ -236,6 +246,22 @@ implements <a href="../INetworkPacketField.html" title="interface in zombie.netw
  <a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;target,
  <a href="../../../inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;weapon,
  boolean&nbsp;ignore)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isHitHead()">
+<h3>isHitHead</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isHitHead</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isHitLegs()">
+<h3>isHitLegs</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isHitLegs</span>()</div>
 </div>
 </section>
 </li>

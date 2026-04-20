@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#use">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.17.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -76,7 +76,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../../GameClient.html#sendPlayerHit(zombie.characters.IsoGameCharacter,zombie.iso.IsoObject,zombie.inventory.types.HandWeapon,float,boolean,float,boolean,java.util.List,boolean,boolean,boolean)" class="member-name-link">sendPlayerHit</a><wbr>(<a href="../../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;wielder,
+<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../../GameClient.html#sendPlayerHit(zombie.characters.IsoGameCharacter,zombie.iso.IsoObject,zombie.inventory.types.HandWeapon,float,boolean,float,boolean,java.util.List,boolean,boolean,boolean,boolean)" class="member-name-link">sendPlayerHit</a><wbr>(<a href="../../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;wielder,
  <a href="../../../../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;target,
  <a href="../../../../inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;weapon,
  float&nbsp;damage,
@@ -86,6 +86,7 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../TracerInfo.html" title="class in zombie.network.fields.hit">TracerInfo</a>&gt;&nbsp;tracers,
  boolean&nbsp;helmetFall,
  boolean&nbsp;hitHead,
+ boolean&nbsp;hitLegs,
  boolean&nbsp;removeKnife)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
@@ -126,7 +127,7 @@ loadScripts(document, 'script');</script>
  <a href="../../../../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;obj)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">PlayerHitPlayerPacket.</span><code><a href="../../../packets/hit/PlayerHitPlayerPacket.html#set(zombie.characters.IsoPlayer,zombie.inventory.types.HandWeapon,boolean,boolean,java.util.List,zombie.characters.IsoPlayer,float,float,boolean)" class="member-name-link">set</a><wbr>(<a href="../../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;wielder,
+<div class="col-second odd-row-color"><span class="type-name-label">PlayerHitPlayerPacket.</span><code><a href="../../../packets/hit/PlayerHitPlayerPacket.html#set(zombie.characters.IsoPlayer,zombie.inventory.types.HandWeapon,boolean,boolean,java.util.List,zombie.characters.IsoPlayer,float,float,boolean,boolean)" class="member-name-link">set</a><wbr>(<a href="../../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;wielder,
  <a href="../../../../inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;weapon,
  boolean&nbsp;isIgnoreDamage,
  boolean&nbsp;isCriticalHit,
@@ -134,7 +135,8 @@ loadScripts(document, 'script');</script>
  <a href="../../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;target,
  float&nbsp;damage,
  float&nbsp;range,
- boolean&nbsp;hitHead)</code></div>
+ boolean&nbsp;hitHead,
+ boolean&nbsp;hitLegs)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">PlayerHitSquarePacket.</span><code><a href="../../../packets/hit/PlayerHitSquarePacket.html#set(zombie.characters.IsoPlayer,zombie.inventory.types.HandWeapon,boolean,boolean,java.util.List)" class="member-name-link">set</a><wbr>(<a href="../../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;wielder,
@@ -153,7 +155,7 @@ loadScripts(document, 'script');</script>
  float&nbsp;damage)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">PlayerHitZombiePacket.</span><code><a href="../../../packets/hit/PlayerHitZombiePacket.html#set(zombie.characters.IsoPlayer,zombie.inventory.types.HandWeapon,boolean,boolean,java.util.List,zombie.characters.IsoZombie,float,float,boolean,boolean,boolean)" class="member-name-link">set</a><wbr>(<a href="../../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;wielder,
+<div class="col-second even-row-color"><span class="type-name-label">PlayerHitZombiePacket.</span><code><a href="../../../packets/hit/PlayerHitZombiePacket.html#set(zombie.characters.IsoPlayer,zombie.inventory.types.HandWeapon,boolean,boolean,java.util.List,zombie.characters.IsoZombie,float,float,boolean,boolean,boolean,boolean)" class="member-name-link">set</a><wbr>(<a href="../../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;wielder,
  <a href="../../../../inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;weapon,
  boolean&nbsp;isIgnoreDamage,
  boolean&nbsp;isCriticalHit,
@@ -163,6 +165,7 @@ loadScripts(document, 'script');</script>
  float&nbsp;range,
  boolean&nbsp;helmetFall,
  boolean&nbsp;hitHead,
+ boolean&nbsp;hitLegs,
  boolean&nbsp;removeKnife)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>

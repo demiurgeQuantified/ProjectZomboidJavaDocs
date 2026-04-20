@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#use">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.17.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -62,13 +62,13 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><a href="#zombie">zombie</a></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><a href="#zombie.ai">zombie.ai</a></div>
+<div class="col-first odd-row-color"><a href="#zombie.ai.states">zombie.ai.states</a></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><a href="#zombie.ai.states">zombie.ai.states</a></div>
+<div class="col-first even-row-color"><a href="#zombie.characters">zombie.characters</a></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><a href="#zombie.characters">zombie.characters</a></div>
+<div class="col-first odd-row-color"><a href="#zombie.characters.animals">zombie.characters.animals</a></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><a href="#zombie.characters.animals">zombie.characters.animals</a></div>
+<div class="col-first even-row-color"><a href="#zombie.characters.component">zombie.characters.component</a></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><a href="#zombie.core.collision">zombie.core.collision</a></div>
 <div class="col-last odd-row-color">&nbsp;</div>
@@ -142,20 +142,6 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;loc,
  <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;val)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="zombie.ai">
-<h2>Uses of <a href="../Vector2.html" title="class in zombie.iso">Vector2</a> in <a href="../../ai/package-summary.html">zombie.ai</a></h2>
-<div class="caption"><span>Fields in <a href="../../ai/package-summary.html">zombie.ai</a> declared as <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>final <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameCharacterAIBrain.</span><code><a href="../../ai/GameCharacterAIBrain.html#aiFocusPoint" class="member-name-link">aiFocusPoint</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -266,10 +252,10 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#getForwardDirection(zombie.iso.Vector2)" class="member-name-link">getForwardDirection</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;forwardDirection)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>default <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">CharacterInputComponent.</span><code><a href="../../characters/CharacterInputComponent.html#getJoypadMoveVector(zombie.iso.Vector2)" class="member-name-link">getJoypadMoveVector</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">CharacterInputComponentEntity.</span><code><a href="../../characters/CharacterInputComponentEntity.html#getInputMoveVector(zombie.iso.Vector2)" class="member-name-link">getInputMoveVector</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoPlayer.</span><code><a href="../../characters/IsoPlayer.html#getJoypadMoveVector(zombie.iso.Vector2)" class="member-name-link">getJoypadMoveVector</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoPlayer.</span><code><a href="../../characters/IsoPlayer.html#getInputMoveVector(zombie.iso.Vector2)" class="member-name-link">getInputMoveVector</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">IsoPlayer.</span><code><a href="../../characters/IsoPlayer.html#getLastAngle()" class="member-name-link">getLastAngle</a>()</code></div>
@@ -281,16 +267,17 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#getMoveForwardVec()" class="member-name-link">getMoveForwardVec</a>()</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoPlayer.</span><code><a href="../../characters/IsoPlayer.html#getPlayerMoveDir()" class="member-name-link">getPlayerMoveDir</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#getTargetGrappleRotation(zombie.iso.Vector2)" class="member-name-link">getTargetGrappleRotation</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;result)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#getTempo()" class="member-name-link">getTempo</a>()</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#getTargetGrappleRotation(zombie.iso.Vector2)" class="member-name-link">getTargetGrappleRotation</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;result)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#getTempo2()" class="member-name-link">getTempo2</a>()</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#getTempo()" class="member-name-link">getTempo</a>()</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#getTempo2()" class="member-name-link">getTempo2</a>()</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">CharacterJoypadAxis2dBinding.</span><code><a href="../../characters/CharacterJoypadAxis2dBinding.html#getValue(int,zombie.iso.Vector2)" class="member-name-link">getValue</a><wbr>(int&nbsp;joypadBind,
+ <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Methods in <a href="../../characters/package-summary.html">zombie.characters</a> with parameters of type <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></span></div>
@@ -359,10 +346,10 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#getForwardDirection(zombie.iso.Vector2)" class="member-name-link">getForwardDirection</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;forwardDirection)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>default <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">CharacterInputComponent.</span><code><a href="../../characters/CharacterInputComponent.html#getJoypadMoveVector(zombie.iso.Vector2)" class="member-name-link">getJoypadMoveVector</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">CharacterInputComponentEntity.</span><code><a href="../../characters/CharacterInputComponentEntity.html#getInputMoveVector(zombie.iso.Vector2)" class="member-name-link">getInputMoveVector</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoPlayer.</span><code><a href="../../characters/IsoPlayer.html#getJoypadMoveVector(zombie.iso.Vector2)" class="member-name-link">getJoypadMoveVector</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoPlayer.</span><code><a href="../../characters/IsoPlayer.html#getInputMoveVector(zombie.iso.Vector2)" class="member-name-link">getInputMoveVector</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#getLookVector(zombie.iso.Vector2)" class="member-name-link">getLookVector</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;vector2)</code></div>
@@ -370,57 +357,46 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
 <div class="col-second even-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#getTargetGrappleRotation(zombie.iso.Vector2)" class="member-name-link">getTargetGrappleRotation</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;result)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoZombie.</span><code><a href="../../characters/IsoZombie.html#getZombieWalkTowardSpeed(float,float,zombie.iso.Vector2)" class="member-name-link">getZombieWalkTowardSpeed</a><wbr>(float&nbsp;speed,
+<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">CharacterJoypadAxis2dBinding.</span><code><a href="../../characters/CharacterJoypadAxis2dBinding.html#getValue(int,zombie.iso.Vector2)" class="member-name-link">getValue</a><wbr>(int&nbsp;joypadBind,
+ <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoZombie.</span><code><a href="../../characters/IsoZombie.html#getZombieWalkTowardSpeed(float,float,zombie.iso.Vector2)" class="member-name-link">getZombieWalkTowardSpeed</a><wbr>(float&nbsp;speed,
  float&nbsp;dist,
  <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;temp)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#isImpactFromBehind(zombie.iso.Vector2)" class="member-name-link">isImpactFromBehind</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;impactDir)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoPlayer.</span><code><a href="../../characters/IsoPlayer.html#Move(zombie.iso.Vector2)" class="member-name-link">Move</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;dir)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoZombie.</span><code><a href="../../characters/IsoZombie.html#Move(zombie.iso.Vector2)" class="member-name-link">Move</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;dir)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoPlayer.</span><code><a href="../../characters/IsoPlayer.html#MoveUnmodded(zombie.iso.Vector2)" class="member-name-link">MoveUnmodded</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;dir)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoZombie.</span><code><a href="../../characters/IsoZombie.html#MoveUnmodded(zombie.iso.Vector2)" class="member-name-link">MoveUnmodded</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;dir)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#onHitByVehicle(zombie.vehicles.BaseVehicle,float,zombie.iso.Vector2,zombie.iso.Vector2,boolean)" class="member-name-link">onHitByVehicle</a><wbr>(<a href="../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle,
- float&nbsp;impactSpeed,
- <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;hitDir,
- <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;impactPosOnVehicle,
- boolean&nbsp;pushedBack)</code></div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#isImpactFromBehind(zombie.iso.Vector2)" class="member-name-link">isImpactFromBehind</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;impactDir)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoZombie.</span><code><a href="../../characters/IsoZombie.html#onHitByVehicle(zombie.vehicles.BaseVehicle,float,zombie.iso.Vector2,zombie.iso.Vector2,boolean)" class="member-name-link">onHitByVehicle</a><wbr>(<a href="../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle,
+<div class="col-second even-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#onHitByVehicle(zombie.vehicles.BaseVehicle,float,zombie.iso.Vector2,zombie.iso.Vector2,boolean)" class="member-name-link">onHitByVehicle</a><wbr>(<a href="../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle,
  float&nbsp;impactSpeed,
  <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;hitDir,
  <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;impactPosOnVehicle,
  boolean&nbsp;pushedBack)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#setAutoWalkDirection(zombie.iso.Vector2)" class="member-name-link">setAutoWalkDirection</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;v)</code></div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoZombie.</span><code><a href="../../characters/IsoZombie.html#onHitByVehicle(zombie.vehicles.BaseVehicle,float,zombie.iso.Vector2,zombie.iso.Vector2,boolean)" class="member-name-link">onHitByVehicle</a><wbr>(<a href="../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle,
+ float&nbsp;impactSpeed,
+ <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;hitDir,
+ <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;impactPosOnVehicle,
+ boolean&nbsp;pushedBack)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#setForwardDirection(zombie.iso.Vector2)" class="member-name-link">setForwardDirection</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;dir)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#setAutoWalkDirection(zombie.iso.Vector2)" class="member-name-link">setAutoWalkDirection</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;v)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#setHitDir(zombie.iso.Vector2)" class="member-name-link">setHitDir</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;hitDir)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#setForwardDirection(zombie.iso.Vector2)" class="member-name-link">setForwardDirection</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;dir)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoPlayer.</span><code><a href="../../characters/IsoPlayer.html#setLastAngle(zombie.iso.Vector2)" class="member-name-link">setLastAngle</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;lastAngle)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#setHitDir(zombie.iso.Vector2)" class="member-name-link">setHitDir</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;hitDir)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#setMoveForwardVec(zombie.iso.Vector2)" class="member-name-link">setMoveForwardVec</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;moveForwardVec)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoPlayer.</span><code><a href="../../characters/IsoPlayer.html#setLastAngle(zombie.iso.Vector2)" class="member-name-link">setLastAngle</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;lastAngle)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoPlayer.</span><code><a href="../../characters/IsoPlayer.html#setPlayerMoveDir(zombie.iso.Vector2)" class="member-name-link">setPlayerMoveDir</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;aPlayerMoveDir)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoGameCharacter.</span><code><a href="../../characters/IsoGameCharacter.html#setMoveForwardVec(zombie.iso.Vector2)" class="member-name-link">setMoveForwardVec</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;moveForwardVec)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -454,6 +430,35 @@ loadScripts(document, 'script');</script>
  float&nbsp;speed,
  boolean&nbsp;isHitFromBehind,
  <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;hitDir)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="zombie.characters.component">
+<h2>Uses of <a href="../Vector2.html" title="class in zombie.iso">Vector2</a> in <a href="../../characters/component/package-summary.html">zombie.characters.component</a></h2>
+<div class="caption"><span>Methods in <a href="../../characters/component/package-summary.html">zombie.characters.component</a> that return <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">CharacterInputComponent.</span><code><a href="../../characters/component/CharacterInputComponent.html#getInputMoveVector(zombie.iso.Vector2)" class="member-name-link">getInputMoveVector</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">CharacterInputComponent.</span><code><a href="../../characters/component/CharacterInputComponent.html#getJoypadAimVector(zombie.iso.Vector2)" class="member-name-link">getJoypadAimVector</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+</div>
+<div class="caption"><span>Methods in <a href="../../characters/component/package-summary.html">zombie.characters.component</a> with parameters of type <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">CharacterInputComponent.</span><code><a href="../../characters/component/CharacterInputComponent.html#getInputMoveVector(zombie.iso.Vector2)" class="member-name-link">getInputMoveVector</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">CharacterInputComponent.</span><code><a href="../../characters/component/CharacterInputComponent.html#getJoypadAimVector(zombie.iso.Vector2)" class="member-name-link">getJoypadAimVector</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
@@ -724,6 +729,10 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><span class="type-name-label">AnimationVariableRecordingFrame.</span><code><a href="../../core/skinnedmodel/animation/debug/AnimationVariableRecordingFrame.html#logDeferredMovement(zombie.iso.Vector2,zombie.iso.Vector3)" class="member-name-link">logDeferredMovement</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;deferredMovement,
  <a href="../Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;deferredMovementFromRagdoll)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">AnimationPlayerRecorder.</span><code><a href="../../core/skinnedmodel/animation/debug/AnimationPlayerRecorder.html#logVariable(java.lang.String,zombie.iso.Vector2)" class="member-name-link">logVariable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;variableKey,
+ <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;variableValue)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -812,6 +821,10 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><span class="type-name-label">JoypadManager.</span><code><a href="../../input/JoypadManager.html#getMovementAxis(int,zombie.iso.Vector2)" class="member-name-link">getMovementAxis</a><wbr>(int&nbsp;joypadIndex,
  <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">JoypadAxis2d.</span><code><a href="../../input/JoypadAxis2d.html#getValue(int,zombie.iso.Vector2)" class="member-name-link">getValue</a><wbr>(int&nbsp;joypadBind,
+ <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Methods in <a href="../../input/package-summary.html">zombie.input</a> with parameters of type <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></span></div>
 <div class="summary-table three-column-summary">
@@ -826,8 +839,12 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><span class="type-name-label">JoypadManager.</span><code><a href="../../input/JoypadManager.html#getMovementAxis(int,zombie.iso.Vector2)" class="member-name-link">getMovementAxis</a><wbr>(int&nbsp;joypadIndex,
  <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AimingMode.</span><code><a href="../../input/AimingMode.html#lerpAiming(zombie.characters.IsoPlayer,zombie.iso.Vector2,float,float,float,float,float,zombie.iso.Vector2)" class="member-name-link">lerpAiming</a><wbr>(<a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">JoypadAxis2d.</span><code><a href="../../input/JoypadAxis2d.html#getValue(int,zombie.iso.Vector2)" class="member-name-link">getValue</a><wbr>(int&nbsp;joypadBind,
+ <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">AimingMode.</span><code><a href="../../input/AimingMode.html#lerpAiming(zombie.characters.IsoPlayer,zombie.iso.Vector2,float,float,float,float,float,zombie.iso.Vector2)" class="member-name-link">lerpAiming</a><wbr>(<a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;src,
  float&nbsp;targetX,
  float&nbsp;targetY,
@@ -835,7 +852,7 @@ loadScripts(document, 'script');</script>
  float&nbsp;centerY,
  float&nbsp;zoom,
  <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out_result)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -910,97 +927,101 @@ loadScripts(document, 'script');</script>
 <div class="block">Result = a + b * scale</div>
 </div>
 <div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#aimAt(zombie.iso.Vector2)" class="member-name-link">aimAt</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-second odd-row-color"><span class="type-name-label">IsoDirections.</span><code><a href="../IsoDirections.html#addToVector(zombie.iso.Vector2,zombie.iso.Vector2)" class="member-name-link">addToVector</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;addTo,
+ <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;result)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#aimAt(zombie.iso.Vector2)" class="member-name-link">aimAt</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Set the direction of this vector to point to another vector, maintaining the length</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#clone()" class="member-name-link">clone</a>()</code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#clone()" class="member-name-link">clone</a>()</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Clone this vector</div>
 </div>
-<div class="col-first odd-row-color"><code>static <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#fromLengthDirection(float,float)" class="member-name-link">fromLengthDirection</a><wbr>(float&nbsp;length,
- float&nbsp;direction)</code></div>
-<div class="col-last odd-row-color">
-<div class="block">Create a new vector with a specified length and direction</div>
-</div>
 <div class="col-first even-row-color"><code>static <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Vector3.</span><code><a href="../Vector3.html#fromLengthDirection(float,float)" class="member-name-link">fromLengthDirection</a><wbr>(float&nbsp;length,
+<div class="col-second even-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#fromLengthDirection(float,float)" class="member-name-link">fromLengthDirection</a><wbr>(float&nbsp;length,
  float&nbsp;direction)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Create a new vector with a specified length and direction</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getFacingPosition(zombie.iso.Vector2)" class="member-name-link">getFacingPosition</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;pos)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#getFacingPosition(zombie.iso.Vector2)" class="member-name-link">getFacingPosition</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;pos)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#getFacingPositionAlt(zombie.iso.Vector2)" class="member-name-link">getFacingPositionAlt</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;pos)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getHitDir()" class="member-name-link">getHitDir</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getMovementLastFrame()" class="member-name-link">getMovementLastFrame</a>()</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getPosition(zombie.iso.Vector2)" class="member-name-link">getPosition</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoMetaGrid.</span><code><a href="../IsoMetaGrid.html#getRandomIndoorCoord()" class="member-name-link">getRandomIndoorCoord</a>()</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getVectorFromDirection(zombie.iso.Vector2)" class="member-name-link">getVectorFromDirection</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;moveForwardVec)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getVectorFromDirection(zombie.iso.Vector2,zombie.iso.IsoDirections)" class="member-name-link">getVectorFromDirection</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;moveForwardVec,
- <a href="../IsoDirections.html" title="enum class in zombie.iso">IsoDirections</a>&nbsp;dir)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Vector3.</span><code><a href="../Vector3.html#fromLengthDirection(float,float)" class="member-name-link">fromLengthDirection</a><wbr>(float&nbsp;length,
+ float&nbsp;direction)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Create a new vector with a specified length and direction</div>
+</div>
+<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getFacingPosition(zombie.iso.Vector2)" class="member-name-link">getFacingPosition</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;pos)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#getFacingPosition(zombie.iso.Vector2)" class="member-name-link">getFacingPosition</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;pos)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#getFacingPositionAlt(zombie.iso.Vector2)" class="member-name-link">getFacingPositionAlt</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;pos)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getHitDir()" class="member-name-link">getHitDir</a>()</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getMovementLastFrame()" class="member-name-link">getMovementLastFrame</a>()</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getPosition(zombie.iso.Vector2)" class="member-name-link">getPosition</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoMetaGrid.</span><code><a href="../IsoMetaGrid.html#getRandomIndoorCoord()" class="member-name-link">getRandomIndoorCoord</a>()</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getVectorFromDirection(zombie.iso.Vector2)" class="member-name-link">getVectorFromDirection</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;moveForwardVec)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#moveTowards(zombie.iso.Vector2,zombie.iso.Vector2,float)" class="member-name-link">moveTowards</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;currentVector,
+<div class="col-second even-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getVectorFromDirection(zombie.iso.Vector2,zombie.iso.IsoDirections)" class="member-name-link">getVectorFromDirection</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;moveForwardVec,
+ <a href="../IsoDirections.html" title="enum class in zombie.iso">IsoDirections</a>&nbsp;dir)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#moveTowards(zombie.iso.Vector2,zombie.iso.Vector2,float)" class="member-name-link">moveTowards</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;currentVector,
  <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;targetVector,
  float&nbsp;maxDistanceDelta)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#scale(zombie.iso.Vector2,float)" class="member-name-link">scale</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;val,
- float&nbsp;scale)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#set(float,float)" class="member-name-link">set</a><wbr>(float&nbsp;x,
+<div class="col-first even-row-color"><code>static <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#scale(zombie.iso.Vector2,float)" class="member-name-link">scale</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;val,
+ float&nbsp;scale)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#set(float,float)" class="member-name-link">set</a><wbr>(float&nbsp;x,
  float&nbsp;y)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last odd-row-color">
 <div class="block">Set the horizontal and vertical parts of this vector</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#set(zombie.iso.Vector2)" class="member-name-link">set</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#set(zombie.iso.Vector2)" class="member-name-link">set</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Make this vector identical to another vector</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#setDirection(float)" class="member-name-link">setDirection</a><wbr>(float&nbsp;directionRadians)</code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#setDirection(float)" class="member-name-link">setDirection</a><wbr>(float&nbsp;directionRadians)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Set the direction of this vector, maintaining the length</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#setLength(float)" class="member-name-link">setLength</a><wbr>(float&nbsp;length)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#setLength(float)" class="member-name-link">setLength</a><wbr>(float&nbsp;length)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Set the length of this vector, maintaining the direction</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#setLengthAndDirection(float,float)" class="member-name-link">setLengthAndDirection</a><wbr>(float&nbsp;direction,
+<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#setLengthAndDirection(float,float)" class="member-name-link">setLengthAndDirection</a><wbr>(float&nbsp;direction,
  float&nbsp;length)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last odd-row-color">
 <div class="block">Set the length and direction of this vector</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoDirections.</span><code><a href="../IsoDirections.html#ToVector()" class="member-name-link">ToVector</a>()</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoDirections.</span><code><a href="../IsoDirections.html#ToVector(zombie.iso.Vector2)" class="member-name-link">ToVector</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;result)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoDirections.</span><code><a href="../IsoDirections.html#ToVector()" class="member-name-link">ToVector</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoDirections.</span><code><a href="../IsoDirections.html#ToVector(zombie.iso.Vector2)" class="member-name-link">ToVector</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;result)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Methods in <a href="../package-summary.html">zombie.iso</a> with parameters of type <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></span></div>
 <div class="summary-table three-column-summary">
@@ -1031,112 +1052,110 @@ loadScripts(document, 'script');</script>
 <div class="block">Add another vector to this one and store the result in this one</div>
 </div>
 <div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#aimAt(zombie.iso.Vector2)" class="member-name-link">aimAt</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
-<div class="col-last even-row-color">
-<div class="block">Set the direction of this vector to point to another vector, maintaining the length</div>
-</div>
-<div class="col-first odd-row-color"><code><a href="../Vector3.html" title="class in zombie.iso">Vector3</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Vector3.</span><code><a href="../Vector3.html#aimAt(zombie.iso.Vector2)" class="member-name-link">aimAt</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoDirections.</span><code><a href="../IsoDirections.html#addToVector(zombie.iso.Vector2,zombie.iso.Vector2)" class="member-name-link">addToVector</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;addTo,
+ <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;result)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#aimAt(zombie.iso.Vector2)" class="member-name-link">aimAt</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Set the direction of this vector to point to another vector, maintaining the length</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#angleBetween(zombie.iso.Vector2)" class="member-name-link">angleBetween</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
+<div class="col-first even-row-color"><code><a href="../Vector3.html" title="class in zombie.iso">Vector3</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Vector3.</span><code><a href="../Vector3.html#aimAt(zombie.iso.Vector2)" class="member-name-link">aimAt</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
 <div class="col-last even-row-color">
+<div class="block">Set the direction of this vector to point to another vector, maintaining the length</div>
+</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#angleBetween(zombie.iso.Vector2)" class="member-name-link">angleBetween</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Calculate angle between this and other vectors</div>
 </div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#angleTo(zombie.iso.Vector2)" class="member-name-link">angleTo</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
-<div class="col-last odd-row-color">
-<div class="block">Calculate the angle between this point and another</div>
-</div>
 <div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Vector3.</span><code><a href="../Vector3.html#angleTo(zombie.iso.Vector2)" class="member-name-link">angleTo</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#angleTo(zombie.iso.Vector2)" class="member-name-link">angleTo</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Calculate the angle between this point and another</div>
 </div>
-<div class="col-first odd-row-color"><code>static <a href="../IsoDirections.html" title="enum class in zombie.iso">IsoDirections</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoDirections.</span><code><a href="../IsoDirections.html#cardinalFromAngle(zombie.iso.Vector2)" class="member-name-link">cardinalFromAngle</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;v)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#Collision(zombie.iso.Vector2,zombie.iso.IsoObject)" class="member-name-link">Collision</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;collision,
- <a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#distanceTo(zombie.iso.Vector2)" class="member-name-link">distanceTo</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Vector3.</span><code><a href="../Vector3.html#angleTo(zombie.iso.Vector2)" class="member-name-link">angleTo</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Calculate the distance between this point and another</div>
+<div class="block">Calculate the angle between this point and another</div>
 </div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Vector3.</span><code><a href="../Vector3.html#distanceTo(zombie.iso.Vector2)" class="member-name-link">distanceTo</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
-<div class="col-last even-row-color">
-<div class="block">Calculate the distance between this point and another</div>
-</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#dot(zombie.iso.Vector2)" class="member-name-link">dot</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Vector3.</span><code><a href="../Vector3.html#dot(zombie.iso.Vector2)" class="member-name-link">dot</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../IsoDirections.html" title="enum class in zombie.iso">IsoDirections</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoDirections.</span><code><a href="../IsoDirections.html#fromAngle(zombie.iso.Vector2)" class="member-name-link">fromAngle</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;v)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getFacingPosition(zombie.iso.Vector2)" class="member-name-link">getFacingPosition</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;pos)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#getFacingPosition(zombie.iso.Vector2)" class="member-name-link">getFacingPosition</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;pos)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#getFacingPositionAlt(zombie.iso.Vector2)" class="member-name-link">getFacingPositionAlt</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;pos)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getPosition(zombie.iso.Vector2)" class="member-name-link">getPosition</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getVectorFromDirection(zombie.iso.Vector2)" class="member-name-link">getVectorFromDirection</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;moveForwardVec)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getVectorFromDirection(zombie.iso.Vector2,zombie.iso.IsoDirections)" class="member-name-link">getVectorFromDirection</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;moveForwardVec,
- <a href="../IsoDirections.html" title="enum class in zombie.iso">IsoDirections</a>&nbsp;dir)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#Hit(zombie.iso.Vector2,zombie.iso.IsoObject,float)" class="member-name-link">Hit</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;collision,
- <a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;obj,
- float&nbsp;damage)</code></div>
+<div class="col-first even-row-color"><code>static <a href="../IsoDirections.html" title="enum class in zombie.iso">IsoDirections</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoDirections.</span><code><a href="../IsoDirections.html#cardinalFromAngle(zombie.iso.Vector2)" class="member-name-link">cardinalFromAngle</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;v)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#Move(zombie.iso.Vector2)" class="member-name-link">Move</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;dir)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#Collision(zombie.iso.Vector2,zombie.iso.IsoObject)" class="member-name-link">Collision</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;collision,
+ <a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#distanceTo(zombie.iso.Vector2)" class="member-name-link">distanceTo</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Calculate the distance between this point and another</div>
+</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Vector3.</span><code><a href="../Vector3.html#distanceTo(zombie.iso.Vector2)" class="member-name-link">distanceTo</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Calculate the distance between this point and another</div>
+</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#dot(zombie.iso.Vector2)" class="member-name-link">dot</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Vector3.</span><code><a href="../Vector3.html#dot(zombie.iso.Vector2)" class="member-name-link">dot</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../IsoDirections.html" title="enum class in zombie.iso">IsoDirections</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoDirections.</span><code><a href="../IsoDirections.html#fromAngle(zombie.iso.Vector2)" class="member-name-link">fromAngle</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;v)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getFacingPosition(zombie.iso.Vector2)" class="member-name-link">getFacingPosition</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;pos)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#getFacingPosition(zombie.iso.Vector2)" class="member-name-link">getFacingPosition</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;pos)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#getFacingPositionAlt(zombie.iso.Vector2)" class="member-name-link">getFacingPositionAlt</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;pos)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getPosition(zombie.iso.Vector2)" class="member-name-link">getPosition</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getVectorFromDirection(zombie.iso.Vector2)" class="member-name-link">getVectorFromDirection</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;moveForwardVec)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#getVectorFromDirection(zombie.iso.Vector2,zombie.iso.IsoDirections)" class="member-name-link">getVectorFromDirection</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;moveForwardVec,
+ <a href="../IsoDirections.html" title="enum class in zombie.iso">IsoDirections</a>&nbsp;dir)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#Hit(zombie.iso.Vector2,zombie.iso.IsoObject,float)" class="member-name-link">Hit</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;collision,
+ <a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;obj,
+ float&nbsp;damage)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
 <div class="col-second even-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#moveTowards(zombie.iso.Vector2,zombie.iso.Vector2,float)" class="member-name-link">moveTowards</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;currentVector,
  <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;targetVector,
  float&nbsp;maxDistanceDelta)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#MoveUnmodded(zombie.iso.Vector2)" class="member-name-link">MoveUnmodded</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;dir)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#scale(zombie.iso.Vector2,float)" class="member-name-link">scale</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;val,
+<div class="col-first odd-row-color"><code>static <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#scale(zombie.iso.Vector2,float)" class="member-name-link">scale</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;val,
  float&nbsp;scale)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#set(zombie.iso.Vector2)" class="member-name-link">set</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Vector2.</span><code><a href="../Vector2.html#set(zombie.iso.Vector2)" class="member-name-link">set</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;other)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Make this vector identical to another vector</div>
 </div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#setHitDir(zombie.iso.Vector2)" class="member-name-link">setHitDir</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;hitDir)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#setHitDir(zombie.iso.Vector2)" class="member-name-link">setHitDir</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;hitDir)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#setMovementLastFrame(zombie.iso.Vector2)" class="member-name-link">setMovementLastFrame</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;movementLastFrame)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#setMovementLastFrame(zombie.iso.Vector2)" class="member-name-link">setMovementLastFrame</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;movementLastFrame)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#setPosition(zombie.iso.Vector2)" class="member-name-link">setPosition</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;pos)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoMovingObject.</span><code><a href="../IsoMovingObject.html#setPosition(zombie.iso.Vector2)" class="member-name-link">setPosition</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;pos)</code></div>
+<div class="col-first even-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoDirections.</span><code><a href="../IsoDirections.html#ToVector(zombie.iso.Vector2)" class="member-name-link">ToVector</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;result)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoDirections.</span><code><a href="../IsoDirections.html#ToVector(zombie.iso.Vector2)" class="member-name-link">ToVector</a><wbr>(<a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;result)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Constructors in <a href="../package-summary.html">zombie.iso</a> with parameters of type <a href="../Vector2.html" title="class in zombie.iso">Vector2</a></span></div>
 <div class="summary-table three-column-summary">

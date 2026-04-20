@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.17.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -68,10 +68,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#setBounds(int,int,int,int)" tabindex="0">setBounds(int, int, int, int)</a></li>
 <li><a href="#getMinX()" tabindex="0">getMinX()</a></li>
 <li><a href="#getMinY()" tabindex="0">getMinY()</a></li>
+<li><a href="#getVisitedLength()" tabindex="0">getVisitedLength()</a></li>
 <li><a href="#setKnownInCells(int,int,int,int)" tabindex="0">setKnownInCells(int, int, int, int)</a></li>
 <li><a href="#clearKnownInCells(int,int,int,int)" tabindex="0">clearKnownInCells(int, int, int, int)</a></li>
 <li><a href="#setVisitedInCells(int,int,int,int)" tabindex="0">setVisitedInCells(int, int, int, int)</a></li>
 <li><a href="#clearVisitedInCells(int,int,int,int)" tabindex="0">clearVisitedInCells(int, int, int, int)</a></li>
+<li><a href="#setKnownInSquares(int,int,int,int,byte%5B%5D)" tabindex="0">setKnownInSquares(int, int, int, int, byte[])</a></li>
 <li><a href="#setKnownInSquares(int,int,int,int)" tabindex="0">setKnownInSquares(int, int, int, int)</a></li>
 <li><a href="#clearKnownInSquares(int,int,int,int)" tabindex="0">clearKnownInSquares(int, int, int, int)</a></li>
 <li><a href="#setVisitedInSquares(int,int,int,int)" tabindex="0">setVisitedInSquares(int, int, int, int)</a></li>
@@ -82,12 +84,15 @@ loadScripts(document, 'script');</script>
 <li><a href="#save()" tabindex="0">save()</a></li>
 <li><a href="#saveToBufferMap(zombie.iso.SaveBufferMap)" tabindex="0">saveToBufferMap(SaveBufferMap)</a></li>
 <li><a href="#load()" tabindex="0">load()</a></li>
+<li><a href="#processDataChunk(int,byte%5B%5D)" tabindex="0">processDataChunk(int, byte[])</a></li>
 <li><a href="#isKnown(int,int)" tabindex="0">isKnown(int, int)</a></li>
 <li><a href="#isKnown(int,int,int,int)" tabindex="0">isKnown(int, int, int, int)</a></li>
 <li><a href="#isVisited(int,int)" tabindex="0">isVisited(int, int)</a></li>
 <li><a href="#isVisited(int,int,int,int)" tabindex="0">isVisited(int, int, int, int)</a></li>
 <li><a href="#getInstance()" tabindex="0">getInstance()</a></li>
+<li><a href="#getInstance(boolean)" tabindex="0">getInstance(boolean)</a></li>
 <li><a href="#update()" tabindex="0">update()</a></li>
+<li><a href="#updatePlayer(zombie.characters.IsoPlayer,byte%5B%5D)" tabindex="0">updatePlayer(IsoPlayer, byte[])</a></li>
 <li><a href="#forget()" tabindex="0">forget()</a></li>
 <li><a href="#SaveAll()" tabindex="0">SaveAll()</a></li>
 <li><a href="#Reset()" tabindex="0">Reset()</a></li>
@@ -166,12 +171,18 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="WorldMapVisited.html" title="class in zombie.worldMap">WorldMapVisited</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance()" class="member-name-link">getInstance</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMinX()" class="member-name-link">getMinX</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="WorldMapVisited.html" title="class in zombie.worldMap">WorldMapVisited</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance(boolean)" class="member-name-link">getInstance</a><wbr>(boolean&nbsp;isLoadingNeeded)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMinY()" class="member-name-link">getMinY</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMinX()" class="member-name-link">getMinX</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMinY()" class="member-name-link">getMinY</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getVisitedLength()" class="member-name-link">getVisitedLength</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isKnown(int,int)" class="member-name-link">isKnown</a><wbr>(int&nbsp;x,
  int&nbsp;y)</code></div>
@@ -196,7 +207,11 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load()" class="member-name-link">load</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(float,float,int,int,int,int,float,boolean)" class="member-name-link">render</a><wbr>(float&nbsp;renderX,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processDataChunk(int,byte%5B%5D)" class="member-name-link">processDataChunk</a><wbr>(int&nbsp;pos,
+ byte[]&nbsp;chunk)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(float,float,int,int,int,int,float,boolean)" class="member-name-link">render</a><wbr>(float&nbsp;renderX,
  float&nbsp;renderY,
  int&nbsp;minX,
  int&nbsp;minY,
@@ -204,9 +219,9 @@ loadScripts(document, 'script');</script>
  int&nbsp;maxY,
  float&nbsp;worldScale,
  boolean&nbsp;blur)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderGrid(float,float,int,int,int,int,float,float)" class="member-name-link">renderGrid</a><wbr>(float&nbsp;renderX,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderGrid(float,float,int,int,int,int,float,float)" class="member-name-link">renderGrid</a><wbr>(float&nbsp;renderX,
  float&nbsp;renderY,
  int&nbsp;minX,
  int&nbsp;minY,
@@ -214,40 +229,47 @@ loadScripts(document, 'script');</script>
  int&nbsp;maxY,
  float&nbsp;worldScale,
  float&nbsp;zoomF)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderMain()" class="member-name-link">renderMain</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#Reset()" class="member-name-link">Reset</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#save()" class="member-name-link">save</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SaveAll()" class="member-name-link">SaveAll</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveToBufferMap(zombie.iso.SaveBufferMap)" class="member-name-link">saveToBufferMap</a><wbr>(<a href="../iso/SaveBufferMap.html" title="class in zombie.iso">SaveBufferMap</a>&nbsp;bufferMap)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBounds(int,int,int,int)" class="member-name-link">setBounds</a><wbr>(int&nbsp;minX,
- int&nbsp;minY,
- int&nbsp;maxX,
- int&nbsp;maxY)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderMain()" class="member-name-link">renderMain</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#Reset()" class="member-name-link">Reset</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#save()" class="member-name-link">save</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SaveAll()" class="member-name-link">SaveAll</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveToBufferMap(zombie.iso.SaveBufferMap)" class="member-name-link">saveToBufferMap</a><wbr>(<a href="../iso/SaveBufferMap.html" title="class in zombie.iso">SaveBufferMap</a>&nbsp;bufferMap)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKnownInCells(int,int,int,int)" class="member-name-link">setKnownInCells</a><wbr>(int&nbsp;minX,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBounds(int,int,int,int)" class="member-name-link">setBounds</a><wbr>(int&nbsp;minX,
  int&nbsp;minY,
  int&nbsp;maxX,
  int&nbsp;maxY)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKnownInSquares(int,int,int,int)" class="member-name-link">setKnownInSquares</a><wbr>(int&nbsp;minX,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKnownInCells(int,int,int,int)" class="member-name-link">setKnownInCells</a><wbr>(int&nbsp;minX,
  int&nbsp;minY,
  int&nbsp;maxX,
  int&nbsp;maxY)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKnownInSquares(int,int,int,int)" class="member-name-link">setKnownInSquares</a><wbr>(int&nbsp;minX,
+ int&nbsp;minY,
+ int&nbsp;maxX,
+ int&nbsp;maxY)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setKnownInSquares(int,int,int,int,byte%5B%5D)" class="member-name-link">setKnownInSquares</a><wbr>(int&nbsp;minX,
+ int&nbsp;minY,
+ int&nbsp;maxX,
+ int&nbsp;maxY,
+ byte[]&nbsp;visited)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setVisitedInCells(int,int,int,int)" class="member-name-link">setVisitedInCells</a><wbr>(int&nbsp;minX,
  int&nbsp;minY,
@@ -263,6 +285,10 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updatePlayer(zombie.characters.IsoPlayer,byte%5B%5D)" class="member-name-link">updatePlayer</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ byte[]&nbsp;visited)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -324,6 +350,14 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="getVisitedLength()">
+<h3>getVisitedLength</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getVisitedLength</span>()</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="setKnownInCells(int,int,int,int)">
 <h3>setKnownInCells</h3>
 <div class="horizontal-scroll">
@@ -364,6 +398,18 @@ loadScripts(document, 'script');</script>
  int&nbsp;minY,
  int&nbsp;maxX,
  int&nbsp;maxY)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setKnownInSquares(int,int,int,int,byte[])">
+<h3>setKnownInSquares</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setKnownInSquares</span><wbr><span class="parameters">(int&nbsp;minX,
+ int&nbsp;minY,
+ int&nbsp;maxX,
+ int&nbsp;maxY,
+ byte[]&nbsp;visited)</span></div>
 </div>
 </section>
 </li>
@@ -484,6 +530,15 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="processDataChunk(int,byte[])">
+<h3>processDataChunk</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processDataChunk</span><wbr><span class="parameters">(int&nbsp;pos,
+ byte[]&nbsp;chunk)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="isKnown(int,int)">
 <h3>isKnown</h3>
 <div class="horizontal-scroll">
@@ -532,10 +587,27 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="getInstance(boolean)">
+<h3>getInstance</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="WorldMapVisited.html" title="class in zombie.worldMap">WorldMapVisited</a></span>&nbsp;<span class="element-name">getInstance</span><wbr><span class="parameters">(boolean&nbsp;isLoadingNeeded)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="update()">
 <h3>update</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">update</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="updatePlayer(zombie.characters.IsoPlayer,byte[])">
+<h3>updatePlayer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updatePlayer</span><wbr><span class="parameters">(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ byte[]&nbsp;visited)</span></div>
 </div>
 </section>
 </li>

@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.16.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.17.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -64,6 +64,7 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#instance" tabindex="0">instance</a></li>
 <li><a href="#DEFAULT_PORT" tabindex="0">DEFAULT_PORT</a></li>
+<li><a href="#REMOTE_PLAYER_TIMEOUT" tabindex="0">REMOTE_PLAYER_TIMEOUT</a></li>
 <li><a href="#client" tabindex="0">client</a></li>
 <li><a href="#clientSave" tabindex="0">clientSave</a></li>
 <li><a href="#connection" tabindex="0">connection</a></li>
@@ -173,10 +174,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#receiveSendCustomColor(zombie.core.network.ByteBufferReader,short)" tabindex="0">receiveSendCustomColor(ByteBufferReader, short)</a></li>
 <li><a href="#receiveUpdateItemSprite(zombie.core.network.ByteBufferReader,short)" tabindex="0">receiveUpdateItemSprite(ByteBufferReader, short)</a></li>
 <li><a href="#getServerSpawnRegions()" tabindex="0">getServerSpawnRegions()</a></li>
-<li><a href="#sendZombieHit(zombie.characters.IsoZombie,zombie.characters.IsoPlayer,boolean,java.lang.String)" tabindex="0">sendZombieHit(IsoZombie, IsoPlayer, boolean, String)</a></li>
+<li><a href="#sendZombieHit(zombie.characters.IsoZombie,zombie.characters.IsoPlayer,boolean,java.lang.String,int)" tabindex="0">sendZombieHit(IsoZombie, IsoPlayer, boolean, String, int)</a></li>
 <li><a href="#sendAttackCollisionCheck(zombie.characters.IsoPlayer,zombie.inventory.types.HandWeapon,int)" tabindex="0">sendAttackCollisionCheck(IsoPlayer, HandWeapon, int)</a></li>
 <li><a href="#sendForageItemFound(zombie.characters.IsoPlayer,java.lang.String,float)" tabindex="0">sendForageItemFound(IsoPlayer, String, float)</a></li>
-<li><a href="#sendPlayerHit(zombie.characters.IsoGameCharacter,zombie.iso.IsoObject,zombie.inventory.types.HandWeapon,float,boolean,float,boolean,java.util.List,boolean,boolean,boolean)" tabindex="0">sendPlayerHit(IsoGameCharacter, IsoObject, HandWeapon, float, boolean, float, boolean, List, boolean, boolean, boolean)</a></li>
+<li><a href="#sendPlayerHit(zombie.characters.IsoGameCharacter,zombie.iso.IsoObject,zombie.inventory.types.HandWeapon,float,boolean,float,boolean,java.util.List,boolean,boolean,boolean,boolean)" tabindex="0">sendPlayerHit(IsoGameCharacter, IsoObject, HandWeapon, float, boolean, float, boolean, List, boolean, boolean, boolean, boolean)</a></li>
 <li><a href="#sendVehicleHit(zombie.characters.IsoPlayer,zombie.characters.IsoGameCharacter,zombie.vehicles.BaseVehicle,float,boolean,int,float,boolean)" tabindex="0">sendVehicleHit(IsoPlayer, IsoGameCharacter, BaseVehicle, float, boolean, int, float, boolean)</a></li>
 <li><a href="#sendEatBody(zombie.characters.IsoZombie,zombie.iso.IsoMovingObject)" tabindex="0">sendEatBody(IsoZombie, IsoMovingObject)</a></li>
 <li><a href="#receiveEatBody(zombie.core.network.ByteBufferReader,short)" tabindex="0">receiveEatBody(ByteBufferReader, short)</a></li>
@@ -274,7 +275,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#receiveSyncPerks(zombie.core.network.ByteBufferReader,short)" tabindex="0">receiveSyncPerks(ByteBufferReader, short)</a></li>
 <li><a href="#sendEquippedRadioFreq(zombie.characters.IsoPlayer)" tabindex="0">sendEquippedRadioFreq(IsoPlayer)</a></li>
 <li><a href="#receiveSyncEquippedRadioFreq(zombie.core.network.ByteBufferReader,short)" tabindex="0">receiveSyncEquippedRadioFreq(ByteBufferReader, short)</a></li>
-<li><a href="#sendSneezingCoughing(zombie.characters.IsoPlayer,int,byte)" tabindex="0">sendSneezingCoughing(IsoPlayer, int, byte)</a></li>
 <li><a href="#rememberPlayerPosition(zombie.characters.IsoPlayer,float,float)" tabindex="0">rememberPlayerPosition(IsoPlayer, float, float)</a></li>
 <li><a href="#sortBrowserList(se.krka.kahlua.j2se.KahluaTableImpl,java.lang.String,boolean,se.krka.kahlua.j2se.KahluaTableImpl)" tabindex="0">sortBrowserList(KahluaTableImpl, String, boolean, KahluaTableImpl)</a></li>
 </ol>
@@ -430,57 +430,60 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Short.html" title="class or interface in java.lang" class="external-link">Short</a>,<wbr><a href="../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&gt;</code></div>
 <div class="col-second odd-row-color"><code><a href="#positions" class="member-name-link">positions</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#sendQR" class="member-name-link">sendQR</a></code></div>
+<div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#REMOTE_PLAYER_TIMEOUT" class="member-name-link">REMOTE_PLAYER_TIMEOUT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="../core/utils/UpdateLimit.html" title="class in zombie.core.utils">UpdateLimit</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#sendZombieRequestsTimer" class="member-name-link">sendZombieRequestsTimer</a></code></div>
+<div class="col-first odd-row-color"><code>static boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#sendQR" class="member-name-link">sendQR</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="../core/utils/UpdateLimit.html" title="class in zombie.core.utils">UpdateLimit</a></code></div>
-<div class="col-second even-row-color"><code><a href="#sendZombieTimer" class="member-name-link">sendZombieTimer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#sendZombieRequestsTimer" class="member-name-link">sendZombieRequestsTimer</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#sendZombieWithNeighbor" class="member-name-link">sendZombieWithNeighbor</a></code></div>
+<div class="col-first odd-row-color"><code>final <a href="../core/utils/UpdateLimit.html" title="class in zombie.core.utils">UpdateLimit</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#sendZombieTimer" class="member-name-link">sendZombieTimer</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#sendZombieWithoutNeighbor" class="member-name-link">sendZombieWithoutNeighbor</a></code></div>
+<div class="col-second even-row-color"><code><a href="#sendZombieWithNeighbor" class="member-name-link">sendZombieWithNeighbor</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#serverMods" class="member-name-link">serverMods</a></code></div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#sendZombieWithoutNeighbor" class="member-name-link">sendZombieWithoutNeighbor</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#serverMods" class="member-name-link">serverMods</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#serverName" class="member-name-link">serverName</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#serverName" class="member-name-link">serverName</a></code></div>
+<div class="col-second even-row-color"><code><a href="#serverPassword" class="member-name-link">serverPassword</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#serverPassword" class="member-name-link">serverPassword</a></code></div>
+<div class="col-first odd-row-color"><code>static float</code></div>
+<div class="col-second odd-row-color"><code><a href="#serverPredictedAhead" class="member-name-link">serverPredictedAhead</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static float</code></div>
-<div class="col-second even-row-color"><code><a href="#serverPredictedAhead" class="member-name-link">serverPredictedAhead</a></code></div>
+<div class="col-first even-row-color"><code>se.krka.kahlua.vm.KahluaTable</code></div>
+<div class="col-second even-row-color"><code><a href="#serverSpawnRegions" class="member-name-link">serverSpawnRegions</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>se.krka.kahlua.vm.KahluaTable</code></div>
-<div class="col-second odd-row-color"><code><a href="#serverSpawnRegions" class="member-name-link">serverSpawnRegions</a></code></div>
+<div class="col-first odd-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Calendar.html" title="class or interface in java.util" class="external-link">Calendar</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#startAuth" class="member-name-link">startAuth</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Calendar.html" title="class or interface in java.util" class="external-link">Calendar</a></code></div>
-<div class="col-second even-row-color"><code><a href="#startAuth" class="member-name-link">startAuth</a></code></div>
+<div class="col-first even-row-color"><code>static long</code></div>
+<div class="col-second even-row-color"><code><a href="#steamID" class="member-name-link">steamID</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static long</code></div>
-<div class="col-second odd-row-color"><code><a href="#steamID" class="member-name-link">steamID</a></code></div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#timeSinceKeepAlive" class="member-name-link">timeSinceKeepAlive</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#timeSinceKeepAlive" class="member-name-link">timeSinceKeepAlive</a></code></div>
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><a href="#timeSinceLastUpdate" class="member-name-link">timeSinceLastUpdate</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><a href="#timeSinceLastUpdate" class="member-name-link">timeSinceLastUpdate</a></code></div>
+<div class="col-first odd-row-color"><code><a href="../core/raknet/UdpEngine.html" title="class in zombie.core.raknet">UdpEngine</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#udpEngine" class="member-name-link">udpEngine</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../core/raknet/UdpEngine.html" title="class in zombie.core.raknet">UdpEngine</a></code></div>
-<div class="col-second even-row-color"><code><a href="#udpEngine" class="member-name-link">udpEngine</a></code></div>
+<div class="col-first even-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#username" class="member-name-link">username</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#username" class="member-name-link">username</a></code></div>
+<div class="col-first odd-row-color"><code>static boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#useSteamRelay" class="member-name-link">useSteamRelay</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#useSteamRelay" class="member-name-link">useSteamRelay</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -1022,7 +1025,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendPlayerExtraInfo(zombie.characters.IsoPlayer)" class="member-name-link">sendPlayerExtraInfo</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendPlayerHit(zombie.characters.IsoGameCharacter,zombie.iso.IsoObject,zombie.inventory.types.HandWeapon,float,boolean,float,boolean,java.util.List,boolean,boolean,boolean)" class="member-name-link">sendPlayerHit</a><wbr>(<a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;wielder,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendPlayerHit(zombie.characters.IsoGameCharacter,zombie.iso.IsoObject,zombie.inventory.types.HandWeapon,float,boolean,float,boolean,java.util.List,boolean,boolean,boolean,boolean)" class="member-name-link">sendPlayerHit</a><wbr>(<a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;wielder,
  <a href="../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;target,
  <a href="../inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;weapon,
  float&nbsp;damage,
@@ -1032,6 +1035,7 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="fields/hit/TracerInfo.html" title="class in zombie.network.fields.hit">TracerInfo</a>&gt;&nbsp;tracers,
  boolean&nbsp;helmetFall,
  boolean&nbsp;hitHead,
+ boolean&nbsp;hitLegs,
  boolean&nbsp;removeKnife)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
@@ -1050,15 +1054,10 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendSandboxOptionsToServer(zombie.SandboxOptions)" class="member-name-link">sendSandboxOptionsToServer</a><wbr>(<a href="../SandboxOptions.html" title="class in zombie">SandboxOptions</a>&nbsp;options)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendSneezingCoughing(zombie.characters.IsoPlayer,int,byte)" class="member-name-link">sendSneezingCoughing</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- int&nbsp;sneezingCoughing,
- byte&nbsp;sneezeVar)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendStopFire(zombie.iso.IsoGridSquare)" class="member-name-link">sendStopFire</a><wbr>(<a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;sq)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendStopFire(zombie.iso.IsoGridSquare)" class="member-name-link">sendStopFire</a><wbr>(<a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;sq)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendVehicleHit(zombie.characters.IsoPlayer,zombie.characters.IsoGameCharacter,zombie.vehicles.BaseVehicle,float,boolean,int,float,boolean)" class="member-name-link">sendVehicleHit</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;wielder,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendVehicleHit(zombie.characters.IsoPlayer,zombie.characters.IsoGameCharacter,zombie.vehicles.BaseVehicle,float,boolean,int,float,boolean)" class="member-name-link">sendVehicleHit</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;wielder,
  <a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;target,
  <a href="../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle,
  float&nbsp;damage,
@@ -1066,72 +1065,73 @@ loadScripts(document, 'script');</script>
  int&nbsp;vehicleDamage,
  float&nbsp;vehicleSpeed,
  boolean&nbsp;isVehicleHitFromBehind)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendVisual(zombie.characters.IsoPlayer)" class="member-name-link">sendVisual</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendWorldMessage(java.lang.String)" class="member-name-link">sendWorldMessage</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;line)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendWorldSound(zombie.WorldSoundManager.WorldSound)" class="member-name-link">sendWorldSound</a><wbr>(<a href="../WorldSoundManager.WorldSound.html" title="class in zombie">WorldSoundManager.WorldSound</a>&nbsp;sound)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendZombieHit(zombie.characters.IsoZombie,zombie.characters.IsoPlayer,boolean,java.lang.String)" class="member-name-link">sendZombieHit</a><wbr>(<a href="../characters/IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;wielder,
- <a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;target,
- boolean&nbsp;didDamage,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;hitReaction)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setIsClientPaused(boolean)" class="member-name-link">setIsClientPaused</a><wbr>(boolean&nbsp;val)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRequest(zombie.network.GameClient.RequestState)" class="member-name-link">setRequest</a><wbr>(<a href="GameClient.RequestState.html" title="enum class in zombie.network">GameClient.RequestState</a>&nbsp;request)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendVisual(zombie.characters.IsoPlayer)" class="member-name-link">sendVisual</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setResetID(int)" class="member-name-link">setResetID</a><wbr>(int&nbsp;resetId)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendWorldMessage(java.lang.String)" class="member-name-link">sendWorldMessage</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;line)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#Shutdown()" class="member-name-link">Shutdown</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendWorldSound(zombie.WorldSoundManager.WorldSound)" class="member-name-link">sendWorldSound</a><wbr>(<a href="../WorldSoundManager.WorldSound.html" title="class in zombie">WorldSoundManager.WorldSound</a>&nbsp;sound)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendZombieHit(zombie.characters.IsoZombie,zombie.characters.IsoPlayer,boolean,java.lang.String,int)" class="member-name-link">sendZombieHit</a><wbr>(<a href="../characters/IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;wielder,
+ <a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;target,
+ boolean&nbsp;didDamage,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;hitReaction,
+ int&nbsp;bodyPart)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setIsClientPaused(boolean)" class="member-name-link">setIsClientPaused</a><wbr>(boolean&nbsp;val)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRequest(zombie.network.GameClient.RequestState)" class="member-name-link">setRequest</a><wbr>(<a href="GameClient.RequestState.html" title="enum class in zombie.network">GameClient.RequestState</a>&nbsp;request)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setResetID(int)" class="member-name-link">setResetID</a><wbr>(int&nbsp;resetId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#smashWindow(zombie.iso.objects.IsoWindow)" class="member-name-link">smashWindow</a><wbr>(<a href="../iso/objects/IsoWindow.html" title="class in zombie.iso.objects">IsoWindow</a>&nbsp;isoWindow)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#Shutdown()" class="member-name-link">Shutdown</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static se.krka.kahlua.vm.KahluaTable</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sortBrowserList(se.krka.kahlua.j2se.KahluaTableImpl,java.lang.String,boolean,se.krka.kahlua.j2se.KahluaTableImpl)" class="member-name-link">sortBrowserList</a><wbr>(se.krka.kahlua.j2se.KahluaTableImpl&nbsp;table,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#smashWindow(zombie.iso.objects.IsoWindow)" class="member-name-link">smashWindow</a><wbr>(<a href="../iso/objects/IsoWindow.html" title="class in zombie.iso.objects">IsoWindow</a>&nbsp;isoWindow)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static se.krka.kahlua.vm.KahluaTable</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sortBrowserList(se.krka.kahlua.j2se.KahluaTableImpl,java.lang.String,boolean,se.krka.kahlua.j2se.KahluaTableImpl)" class="member-name-link">sortBrowserList</a><wbr>(se.krka.kahlua.j2se.KahluaTableImpl&nbsp;table,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;sortType,
  boolean&nbsp;sortDown,
  se.krka.kahlua.j2se.KahluaTableImpl&nbsp;filterTable)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startClient()" class="member-name-link">startClient</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startLocalServer()" class="member-name-link">startLocalServer</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startClient()" class="member-name-link">startClient</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#StopSound(zombie.iso.IsoMovingObject,java.lang.String,boolean)" class="member-name-link">StopSound</a><wbr>(<a href="../iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;object,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startLocalServer()" class="member-name-link">startLocalServer</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#StopSound(zombie.iso.IsoMovingObject,java.lang.String,boolean)" class="member-name-link">StopSound</a><wbr>(<a href="../iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;object,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;soundName,
  boolean&nbsp;trigger)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tradingUISendAddItem(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">tradingUISendAddItem</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
+ <a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;other,
+ <a href="../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tradingUISendAddItem(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">tradingUISendAddItem</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tradingUISendRemoveItem(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">tradingUISendRemoveItem</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
  <a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;other,
  <a href="../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tradingUISendRemoveItem(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,zombie.inventory.InventoryItem)" class="member-name-link">tradingUISendRemoveItem</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
- <a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;other,
- <a href="../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tradingUISendUpdateState(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,int)" class="member-name-link">tradingUISendUpdateState</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tradingUISendUpdateState(zombie.characters.IsoPlayer,zombie.characters.IsoPlayer,int)" class="member-name-link">tradingUISendUpdateState</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;you,
  <a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;other,
  int&nbsp;state)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -1167,6 +1167,22 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../constant-values.html#zombie.network.GameClient.DEFAULT_PORT">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="REMOTE_PLAYER_TIMEOUT">
+<h3>REMOTE_PLAYER_TIMEOUT</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">REMOTE_PLAYER_TIMEOUT</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../constant-values.html#zombie.network.GameClient.REMOTE_PLAYER_TIMEOUT">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -2072,13 +2088,14 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="sendZombieHit(zombie.characters.IsoZombie,zombie.characters.IsoPlayer,boolean,java.lang.String)">
+<section class="detail" id="sendZombieHit(zombie.characters.IsoZombie,zombie.characters.IsoPlayer,boolean,java.lang.String,int)">
 <h3>sendZombieHit</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendZombieHit</span><wbr><span class="parameters">(<a href="../characters/IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;wielder,
  <a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;target,
  boolean&nbsp;didDamage,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;hitReaction)</span></div>
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;hitReaction,
+ int&nbsp;bodyPart)</span></div>
 </div>
 </section>
 </li>
@@ -2103,7 +2120,7 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="sendPlayerHit(zombie.characters.IsoGameCharacter,zombie.iso.IsoObject,zombie.inventory.types.HandWeapon,float,boolean,float,boolean,java.util.List,boolean,boolean,boolean)">
+<section class="detail" id="sendPlayerHit(zombie.characters.IsoGameCharacter,zombie.iso.IsoObject,zombie.inventory.types.HandWeapon,float,boolean,float,boolean,java.util.List,boolean,boolean,boolean,boolean)">
 <h3>sendPlayerHit</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendPlayerHit</span><wbr><span class="parameters">(<a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;wielder,
@@ -2116,6 +2133,7 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="fields/hit/TracerInfo.html" title="class in zombie.network.fields.hit">TracerInfo</a>&gt;&nbsp;tracers,
  boolean&nbsp;helmetFall,
  boolean&nbsp;hitHead,
+ boolean&nbsp;hitLegs,
  boolean&nbsp;removeKnife)</span></div>
 </div>
 </section>
@@ -3004,16 +3022,6 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">receiveSyncEquippedRadioFreq</span><wbr><span class="parameters">(<a href="../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;bb,
  short&nbsp;packetType)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="sendSneezingCoughing(zombie.characters.IsoPlayer,int,byte)">
-<h3>sendSneezingCoughing</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendSneezingCoughing</span><wbr><span class="parameters">(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- int&nbsp;sneezingCoughing,
- byte&nbsp;sneezeVar)</span></div>
 </div>
 </section>
 </li>
