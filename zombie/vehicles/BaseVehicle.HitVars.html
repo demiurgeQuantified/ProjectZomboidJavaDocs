@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.17.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.18.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -66,10 +66,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#isPushedBack" tabindex="0">isPushedBack</a></li>
 <li><a href="#damageToPedestrian" tabindex="0">damageToPedestrian</a></li>
 <li><a href="#targetImpulse" tabindex="0">targetImpulse</a></li>
-<li><a href="#isVehicleHitFromFront" tabindex="0">isVehicleHitFromFront</a></li>
 <li><a href="#isTargetHitFromBehind" tabindex="0">isTargetHitFromBehind</a></li>
 <li><a href="#hitFromSide" tabindex="0">hitFromSide</a></li>
-<li><a href="#vehicleDamage" tabindex="0">vehicleDamage</a></li>
 <li><a href="#hitSpeed" tabindex="0">hitSpeed</a></li>
 </ol>
 </li>
@@ -81,6 +79,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#calc(zombie.characters.IsoGameCharacter,zombie.vehicles.BaseVehicle)" tabindex="0">calc(IsoGameCharacter, BaseVehicle)</a></li>
+<li><a href="#anyDamage()" tabindex="0">anyDamage()</a></li>
+<li><a href="#isAnimalHit()" tabindex="0">isAnimalHit()</a></li>
 </ol>
 </li>
 </ol>
@@ -133,14 +133,8 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>boolean</code></div>
 <div class="col-second odd-row-color"><code><a href="#isTargetHitFromBehind" class="member-name-link">isTargetHitFromBehind</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#isVehicleHitFromFront" class="member-name-link">isVehicleHitFromFront</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final org.joml.Vector3f</code></div>
-<div class="col-second odd-row-color"><code><a href="#targetImpulse" class="member-name-link">targetImpulse</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#vehicleDamage" class="member-name-link">vehicleDamage</a></code></div>
+<div class="col-first even-row-color"><code>final org.joml.Vector3f</code></div>
+<div class="col-second even-row-color"><code><a href="#targetImpulse" class="member-name-link">targetImpulse</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -169,9 +163,15 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calc(zombie.characters.IsoGameCharacter,zombie.vehicles.BaseVehicle)" class="member-name-link">calc</a><wbr>(<a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;target,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#anyDamage()" class="member-name-link">anyDamage</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calc(zombie.characters.IsoGameCharacter,zombie.vehicles.BaseVehicle)" class="member-name-link">calc</a><wbr>(<a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;target,
  <a href="BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAnimalHit()" class="member-name-link">isAnimalHit</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -223,14 +223,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="isVehicleHitFromFront">
-<h3>isVehicleHitFromFront</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isVehicleHitFromFront</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="isTargetHitFromBehind">
 <h3>isTargetHitFromBehind</h3>
 <div class="horizontal-scroll">
@@ -243,14 +235,6 @@ loadScripts(document, 'script');</script>
 <h3>hitFromSide</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../characters/Side.html" title="enum class in zombie.characters">Side</a></span>&nbsp;<span class="element-name">hitFromSide</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="vehicleDamage">
-<h3>vehicleDamage</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">vehicleDamage</span></div>
 </div>
 </section>
 </li>
@@ -292,6 +276,22 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">calc</span><wbr><span class="parameters">(<a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;target,
  <a href="BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="anyDamage()">
+<h3>anyDamage</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">anyDamage</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isAnimalHit()">
+<h3>isAnimalHit</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAnimalHit</span>()</div>
 </div>
 </section>
 </li>

@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.17.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.18.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -66,10 +66,11 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#set(zombie.network.packets.INetworkPacket,long)" tabindex="0">set(INetworkPacket, long)</a></li>
+<li><a href="#set(zombie.network.packets.INetworkPacket,long,zombie.iso.IsoGridSquare,int)" tabindex="0">set(INetworkPacket, long, IsoGridSquare, int)</a></li>
 <li><a href="#reset()" tabindex="0">reset()</a></li>
 <li><a href="#process()" tabindex="0">process()</a></li>
 <li><a href="#isTimeout()" tabindex="0">isTimeout()</a></li>
+<li><a href="#isNextServerSquareIndex()" tabindex="0">isNextServerSquareIndex()</a></li>
 </ol>
 </li>
 </ol>
@@ -120,18 +121,23 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTimeout()" class="member-name-link">isTimeout</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNextServerSquareIndex()" class="member-name-link">isNextServerSquareIndex</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#process()" class="member-name-link">process</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTimeout()" class="member-name-link">isTimeout</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset()" class="member-name-link">reset</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#process()" class="member-name-link">process</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(zombie.network.packets.INetworkPacket,long)" class="member-name-link">set</a><wbr>(<a href="../network/packets/INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>&nbsp;packet,
- long&nbsp;timeout)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset()" class="member-name-link">reset</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(zombie.network.packets.INetworkPacket,long,zombie.iso.IsoGridSquare,int)" class="member-name-link">set</a><wbr>(<a href="../network/packets/INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>&nbsp;packet,
+ long&nbsp;timeout,
+ <a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
+ int&nbsp;serverIndex)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -166,11 +172,13 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="set(zombie.network.packets.INetworkPacket,long)">
+<section class="detail" id="set(zombie.network.packets.INetworkPacket,long,zombie.iso.IsoGridSquare,int)">
 <h3>set</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(<a href="../network/packets/INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>&nbsp;packet,
- long&nbsp;timeout)</span></div>
+ long&nbsp;timeout,
+ <a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
+ int&nbsp;serverIndex)</span></div>
 </div>
 </section>
 </li>
@@ -195,6 +203,14 @@ loadScripts(document, 'script');</script>
 <h3>isTimeout</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isTimeout</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isNextServerSquareIndex()">
+<h3>isNextServerSquareIndex</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isNextServerSquareIndex</span>()</div>
 </div>
 </section>
 </li>

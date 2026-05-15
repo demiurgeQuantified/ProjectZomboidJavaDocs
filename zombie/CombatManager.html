@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../search.html">Search</a></li>
 <li><a href="../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.17.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.18.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -82,7 +82,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#calculateAttackVars(zombie.characters.IsoLivingCharacter)" tabindex="0">calculateAttackVars(IsoLivingCharacter)</a></li>
 <li><a href="#calcValidTargets(zombie.characters.IsoLivingCharacter,zombie.inventory.types.HandWeapon,zombie.util.list.PZArrayList,zombie.util.list.PZArrayList)" tabindex="0">calcValidTargets(IsoLivingCharacter, HandWeapon, PZArrayList, PZArrayList)</a></li>
 <li><a href="#isProneTargetBetter(zombie.characters.IsoGameCharacter,zombie.network.fields.hit.HitInfo,zombie.network.fields.hit.HitInfo)" tabindex="0">isProneTargetBetter(IsoGameCharacter, HitInfo, HitInfo)</a></li>
-<li><a href="#checkPVP(zombie.characters.IsoGameCharacter,zombie.iso.IsoMovingObject)" tabindex="0">checkPVP(IsoGameCharacter, IsoMovingObject)</a></li>
+<li><a href="#checkPVP(zombie.iso.IsoMovingObject,zombie.iso.IsoMovingObject)" tabindex="0">checkPVP(IsoMovingObject, IsoMovingObject)</a></li>
+<li><a href="#getPVPPlayerFromObject(zombie.iso.IsoMovingObject)" tabindex="0">getPVPPlayerFromObject(IsoMovingObject)</a></li>
 <li><a href="#calculateHitInfoList(zombie.characters.IsoGameCharacter)" tabindex="0">calculateHitInfoList(IsoGameCharacter)</a></li>
 <li><a href="#getBoneWorldPos(zombie.iso.IsoMovingObject,java.lang.String,zombie.iso.Vector3)" tabindex="0">getBoneWorldPos(IsoMovingObject, String, Vector3)</a></li>
 <li><a href="#getDistanceModifierSightless(float,boolean)" tabindex="0">getDistanceModifierSightless(float, boolean)</a></li>
@@ -221,8 +222,8 @@ loadScripts(document, 'script');</script>
  <a href="util/list/PZArrayList.html" title="class in zombie.util.list">PZArrayList</a>&lt;<a href="network/fields/hit/HitInfo.html" title="class in zombie.network.fields.hit">HitInfo</a>&gt;&nbsp;targetsStanding)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#checkPVP(zombie.characters.IsoGameCharacter,zombie.iso.IsoMovingObject)" class="member-name-link">checkPVP</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;owner,
- <a href="iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;obj)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#checkPVP(zombie.iso.IsoMovingObject,zombie.iso.IsoMovingObject)" class="member-name-link">checkPVP</a><wbr>(<a href="iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;owner,
+ <a href="iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;target)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAimDelayPenalty(float,float,float,float)" class="member-name-link">getAimDelayPenalty</a><wbr>(float&nbsp;delay,
@@ -266,80 +267,83 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPainPenalty(zombie.characters.IsoGameCharacter)" class="member-name-link">getPainPenalty</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWeapon(zombie.characters.IsoGameCharacter)" class="member-name-link">getWeapon</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;owner)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWeatherPenalty(zombie.characters.IsoGameCharacter,zombie.inventory.types.HandWeapon,zombie.iso.IsoGridSquare,float)" class="member-name-link">getWeatherPenalty</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getPVPPlayerFromObject(zombie.iso.IsoMovingObject)" class="member-name-link">getPVPPlayerFromObject</a><wbr>(<a href="iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;obj)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWeapon(zombie.characters.IsoGameCharacter)" class="member-name-link">getWeapon</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;owner)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWeatherPenalty(zombie.characters.IsoGameCharacter,zombie.inventory.types.HandWeapon,zombie.iso.IsoGridSquare,float)" class="member-name-link">getWeatherPenalty</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;character,
  <a href="inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;weapon,
  <a href="iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
  float&nbsp;distance)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#highlightTarget(zombie.characters.IsoGameCharacter,zombie.core.Color,float)" class="member-name-link">highlightTarget</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;isoGameCharacter,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#highlightTarget(zombie.characters.IsoGameCharacter,zombie.core.Color,float)" class="member-name-link">highlightTarget</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;isoGameCharacter,
  <a href="core/Color.html" title="class in zombie.core">Color</a>&nbsp;color,
  float&nbsp;alpha)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hitIsoGridSquare(zombie.iso.IsoGridSquare,org.joml.Vector3f)" class="member-name-link">hitIsoGridSquare</a><wbr>(<a href="iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;isoGridSquare,
- org.joml.Vector3f&nbsp;hitLocation)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isProneTargetBetter(zombie.characters.IsoGameCharacter,zombie.network.fields.hit.HitInfo,zombie.network.fields.hit.HitInfo)" class="member-name-link">isProneTargetBetter</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;owner,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hitIsoGridSquare(zombie.iso.IsoGridSquare,org.joml.Vector3f)" class="member-name-link">hitIsoGridSquare</a><wbr>(<a href="iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;isoGridSquare,
+ org.joml.Vector3f&nbsp;hitLocation)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isProneTargetBetter(zombie.characters.IsoGameCharacter,zombie.network.fields.hit.HitInfo,zombie.network.fields.hit.HitInfo)" class="member-name-link">isProneTargetBetter</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;owner,
  <a href="network/fields/hit/HitInfo.html" title="class in zombie.network.fields.hit">HitInfo</a>&nbsp;bestStanding,
  <a href="network/fields/hit/HitInfo.html" title="class in zombie.network.fields.hit">HitInfo</a>&nbsp;bestProne)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#postUpdate(boolean)" class="member-name-link">postUpdate</a><wbr>(boolean&nbsp;doUpdate)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pressedAttack(zombie.characters.IsoPlayer)" class="member-name-link">pressedAttack</a><wbr>(<a href="characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;isoPlayer)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#postUpdate(boolean)" class="member-name-link">postUpdate</a><wbr>(boolean&nbsp;doUpdate)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processHit(zombie.inventory.types.HandWeapon,zombie.characters.IsoGameCharacter,zombie.characters.IsoGameCharacter)" class="member-name-link">processHit</a><wbr>(<a href="inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;weapon,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pressedAttack(zombie.characters.IsoPlayer)" class="member-name-link">pressedAttack</a><wbr>(<a href="characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;isoPlayer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processHit(zombie.inventory.types.HandWeapon,zombie.characters.IsoGameCharacter,zombie.characters.IsoGameCharacter)" class="member-name-link">processHit</a><wbr>(<a href="inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;weapon,
  <a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;wielder,
  <a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;target)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processInstantExplosion(zombie.characters.IsoGameCharacter,zombie.iso.objects.IsoTrap)" class="member-name-link">processInstantExplosion</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;target,
- <a href="iso/objects/IsoTrap.html" title="class in zombie.iso.objects">IsoTrap</a>&nbsp;isoTrap)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processMaintenanceCheck(zombie.characters.IsoGameCharacter,zombie.inventory.types.HandWeapon,zombie.iso.IsoObject)" class="member-name-link">processMaintenanceCheck</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;owner,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processInstantExplosion(zombie.characters.IsoGameCharacter,zombie.iso.objects.IsoTrap)" class="member-name-link">processInstantExplosion</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;target,
+ <a href="iso/objects/IsoTrap.html" title="class in zombie.iso.objects">IsoTrap</a>&nbsp;isoTrap)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processMaintenanceCheck(zombie.characters.IsoGameCharacter,zombie.inventory.types.HandWeapon,zombie.iso.IsoObject)" class="member-name-link">processMaintenanceCheck</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;owner,
  <a href="inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;weapon,
  <a href="iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;isoObject)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processWeaponEndurance(zombie.characters.IsoGameCharacter,zombie.inventory.types.HandWeapon)" class="member-name-link">processWeaponEndurance</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;isoGameCharacter,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processWeaponEndurance(zombie.characters.IsoGameCharacter,zombie.inventory.types.HandWeapon)" class="member-name-link">processWeaponEndurance</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;isoGameCharacter,
  <a href="inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;handWeapon)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#releaseBallisticsTargets(zombie.characters.IsoGameCharacter)" class="member-name-link">releaseBallisticsTargets</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;isoGameCharacter)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#Reset()" class="member-name-link">Reset</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#releaseBallisticsTargets(zombie.characters.IsoGameCharacter)" class="member-name-link">releaseBallisticsTargets</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;isoGameCharacter)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveSpikedArmorDamage(zombie.characters.IsoGameCharacter,zombie.inventory.types.HandWeapon,zombie.characters.IsoGameCharacter,int)" class="member-name-link">resolveSpikedArmorDamage</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;owner,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#Reset()" class="member-name-link">Reset</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveSpikedArmorDamage(zombie.characters.IsoGameCharacter,zombie.inventory.types.HandWeapon,zombie.characters.IsoGameCharacter,int)" class="member-name-link">resolveSpikedArmorDamage</a><wbr>(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;owner,
  <a href="inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;weapon,
  <a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;hitZombie,
  int&nbsp;partHit)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAimingDelay(zombie.characters.IsoPlayer,zombie.inventory.types.HandWeapon)" class="member-name-link">setAimingDelay</a><wbr>(<a href="characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;isoPlayer,
- <a href="inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;handWeapon)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#splash(zombie.iso.IsoMovingObject,zombie.inventory.types.HandWeapon,zombie.characters.IsoGameCharacter)" class="member-name-link">splash</a><wbr>(<a href="iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;obj,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAimingDelay(zombie.characters.IsoPlayer,zombie.inventory.types.HandWeapon)" class="member-name-link">setAimingDelay</a><wbr>(<a href="characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;isoPlayer,
+ <a href="inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;handWeapon)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#splash(zombie.iso.IsoMovingObject,zombie.inventory.types.HandWeapon,zombie.characters.IsoGameCharacter)" class="member-name-link">splash</a><wbr>(<a href="iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;obj,
  <a href="inventory/types/HandWeapon.html" title="class in zombie.inventory.types">HandWeapon</a>&nbsp;weapon,
  <a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;owner)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(boolean)" class="member-name-link">update</a><wbr>(boolean&nbsp;doUpdate)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateReticle(zombie.characters.IsoPlayer)" class="member-name-link">updateReticle</a><wbr>(<a href="characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;isoPlayer)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(boolean)" class="member-name-link">update</a><wbr>(boolean&nbsp;doUpdate)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateReticle(zombie.characters.IsoPlayer)" class="member-name-link">updateReticle</a><wbr>(<a href="characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;isoPlayer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -552,11 +556,19 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="checkPVP(zombie.characters.IsoGameCharacter,zombie.iso.IsoMovingObject)">
+<section class="detail" id="checkPVP(zombie.iso.IsoMovingObject,zombie.iso.IsoMovingObject)">
 <h3>checkPVP</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">checkPVP</span><wbr><span class="parameters">(<a href="characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&nbsp;owner,
- <a href="iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;obj)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">checkPVP</span><wbr><span class="parameters">(<a href="iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;owner,
+ <a href="iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;target)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getPVPPlayerFromObject(zombie.iso.IsoMovingObject)">
+<h3>getPVPPlayerFromObject</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></span>&nbsp;<span class="element-name">getPVPPlayerFromObject</span><wbr><span class="parameters">(<a href="iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;obj)</span></div>
 </div>
 </section>
 </li>
