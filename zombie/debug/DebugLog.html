@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.18.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -73,6 +73,15 @@ loadScripts(document, 'script');</script>
 <li><a href="#setLogEnabled(zombie.debug.DebugType,boolean)" tabindex="0">setLogEnabled(DebugType, boolean)</a></li>
 <li><a href="#log(java.lang.String)" tabindex="0">log(String)</a></li>
 <li><a href="#getDebugTypes()" tabindex="0">getDebugTypes()</a></li>
+<li><a href="#getSelectedProfileName()" tabindex="0">getSelectedProfileName()</a></li>
+<li><a href="#getProfileNames()" tabindex="0">getProfileNames()</a></li>
+<li><a href="#getProfileAliases()" tabindex="0">getProfileAliases()</a></li>
+<li><a href="#getLogSeverityForSelectedProfile(zombie.debug.DebugType)" tabindex="0">getLogSeverityForSelectedProfile(DebugType)</a></li>
+<li><a href="#invokeProfile(java.lang.String)" tabindex="0">invokeProfile(String)</a></li>
+<li><a href="#invokeSelectedProfile()" tabindex="0">invokeSelectedProfile()</a></li>
+<li><a href="#updateSelectedProfileAll(zombie.debug.LogSeverity)" tabindex="0">updateSelectedProfileAll(LogSeverity)</a></li>
+<li><a href="#updateSelectedProfile(zombie.debug.DebugType,zombie.debug.LogSeverity)" tabindex="0">updateSelectedProfile(DebugType, LogSeverity)</a></li>
+<li><a href="#writeConfigFile()" tabindex="0">writeConfigFile()</a></li>
 <li><a href="#isLogTraceFileLocationEnabled()" tabindex="0">isLogTraceFileLocationEnabled()</a></li>
 <li><a href="#shouldLogIncludeTimeMs()" tabindex="0">shouldLogIncludeTimeMs()</a></li>
 <li><a href="#shouldLogIncludeServerTime()" tabindex="0">shouldLogIncludeServerTime()</a></li>
@@ -85,6 +94,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#setStdErr(java.io.OutputStream)" tabindex="0">setStdErr(OutputStream)</a></li>
 <li><a href="#init()" tabindex="0">init()</a></li>
 <li><a href="#loadDebugConfig(java.lang.String)" tabindex="0">loadDebugConfig(String)</a></li>
+<li><a href="#readConfigCommand(java.lang.String,boolean)" tabindex="0">readConfigCommand(String, boolean)</a></li>
 <li><a href="#nativeLog(java.lang.String,java.lang.String,java.lang.String)" tabindex="0">nativeLog(String, String, String)</a></li>
 </ol>
 </li>
@@ -158,12 +168,30 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="DebugLog.html" title="class in zombie.debug">DebugLog</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance()" class="member-name-link">getInstance</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link">PrintStream</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecordingOut()" class="member-name-link">getRecordingOut</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLogSeverityForSelectedProfile(zombie.debug.DebugType)" class="member-name-link">getLogSeverityForSelectedProfile</a><wbr>(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;debugType)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getProfileAliases()" class="member-name-link">getProfileAliases</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getProfileNames()" class="member-name-link">getProfileNames</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link">PrintStream</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecordingOut()" class="member-name-link">getRecordingOut</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSelectedProfileName()" class="member-name-link">getSelectedProfileName</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#init()" class="member-name-link">init</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#invokeProfile(java.lang.String)" class="member-name-link">invokeProfile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;profileOrAlias)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#invokeSelectedProfile()" class="member-name-link">invokeSelectedProfile</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isEnabled(zombie.debug.DebugType)" class="member-name-link">isEnabled</a><wbr>(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
@@ -195,31 +223,45 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#printLogLevels()" class="member-name-link">printLogLevels</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setDefaultLogSeverity()" class="member-name-link">setDefaultLogSeverity</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readConfigCommand(java.lang.String,boolean)" class="member-name-link">readConfigCommand</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
+ boolean&nbsp;enable)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setLogEnabled(zombie.debug.DebugType,boolean)" class="member-name-link">setLogEnabled</a><wbr>(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type,
- boolean&nbsp;bEnabled)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setDefaultLogSeverity()" class="member-name-link">setDefaultLogSeverity</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLogServerTimeMsEnabled(boolean)" class="member-name-link">setLogServerTimeMsEnabled</a><wbr>(boolean&nbsp;logServerTimeMsEnabled)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setLogEnabled(zombie.debug.DebugType,boolean)" class="member-name-link">setLogEnabled</a><wbr>(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;type,
+ boolean&nbsp;bEnabled)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRecordingOut(java.io.PrintStream)" class="member-name-link">setRecordingOut</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link">PrintStream</a>&nbsp;recordingOut)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLogServerTimeMsEnabled(boolean)" class="member-name-link">setLogServerTimeMsEnabled</a><wbr>(boolean&nbsp;logServerTimeMsEnabled)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStdErr(java.io.OutputStream)" class="member-name-link">setStdErr</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/OutputStream.html" title="class or interface in java.io" class="external-link">OutputStream</a>&nbsp;out)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRecordingOut(java.io.PrintStream)" class="member-name-link">setRecordingOut</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link">PrintStream</a>&nbsp;recordingOut)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStdOut(java.io.OutputStream)" class="member-name-link">setStdOut</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/OutputStream.html" title="class or interface in java.io" class="external-link">OutputStream</a>&nbsp;out)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStdErr(java.io.OutputStream)" class="member-name-link">setStdErr</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/OutputStream.html" title="class or interface in java.io" class="external-link">OutputStream</a>&nbsp;out)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldLogIncludeServerTime()" class="member-name-link">shouldLogIncludeServerTime</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStdOut(java.io.OutputStream)" class="member-name-link">setStdOut</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/OutputStream.html" title="class or interface in java.io" class="external-link">OutputStream</a>&nbsp;out)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldLogIncludeTimeMs()" class="member-name-link">shouldLogIncludeTimeMs</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldLogIncludeServerTime()" class="member-name-link">shouldLogIncludeServerTime</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldLogIncludeTimeMs()" class="member-name-link">shouldLogIncludeTimeMs</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateSelectedProfile(zombie.debug.DebugType,zombie.debug.LogSeverity)" class="member-name-link">updateSelectedProfile</a><wbr>(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;debugType,
+ <a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateSelectedProfileAll(zombie.debug.LogSeverity)" class="member-name-link">updateSelectedProfileAll</a><wbr>(<a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeConfigFile()" class="member-name-link">writeConfigFile</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -368,6 +410,84 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="getSelectedProfileName()">
+<h3>getSelectedProfileName</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getSelectedProfileName</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getProfileNames()">
+<h3>getProfileNames</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">getProfileNames</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getProfileAliases()">
+<h3>getProfileAliases</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">getProfileAliases</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getLogSeverityForSelectedProfile(zombie.debug.DebugType)">
+<h3>getLogSeverityForSelectedProfile</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a></span>&nbsp;<span class="element-name">getLogSeverityForSelectedProfile</span><wbr><span class="parameters">(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;debugType)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="invokeProfile(java.lang.String)">
+<h3>invokeProfile</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">invokeProfile</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;profileOrAlias)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="invokeSelectedProfile()">
+<h3>invokeSelectedProfile</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">invokeSelectedProfile</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="updateSelectedProfileAll(zombie.debug.LogSeverity)">
+<h3>updateSelectedProfileAll</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateSelectedProfileAll</span><wbr><span class="parameters">(<a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="updateSelectedProfile(zombie.debug.DebugType,zombie.debug.LogSeverity)">
+<h3>updateSelectedProfile</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateSelectedProfile</span><wbr><span class="parameters">(<a href="DebugType.html" title="enum class in zombie.debug">DebugType</a>&nbsp;debugType,
+ <a href="LogSeverity.html" title="enum class in zombie.debug">LogSeverity</a>&nbsp;logSeverity)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="writeConfigFile()">
+<h3>writeConfigFile</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">writeConfigFile</span>()
+                            throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<dl class="notes">
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="isLogTraceFileLocationEnabled()">
 <h3>isLogTraceFileLocationEnabled</h3>
 <div class="horizontal-scroll">
@@ -460,6 +580,15 @@ loadScripts(document, 'script');</script>
 <h3>loadDebugConfig</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadDebugConfig</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filepath)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="readConfigCommand(java.lang.String,boolean)">
+<h3>readConfigCommand</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">readConfigCommand</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
+ boolean&nbsp;enable)</span></div>
 </div>
 </section>
 </li>

@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.18.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -129,6 +129,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#WorldVersion_BodyDamageStatusesSync" tabindex="0">WorldVersion_BodyDamageStatusesSync</a></li>
 <li><a href="#WorldVersion_RemoveDifficulty" tabindex="0">WorldVersion_RemoveDifficulty</a></li>
 <li><a href="#WorldVersion_AnimalWild" tabindex="0">WorldVersion_AnimalWild</a></li>
+<li><a href="#WorldVersion_DeadBodyAnimalGenetics" tabindex="0">WorldVersion_DeadBodyAnimalGenetics</a></li>
+<li><a href="#WorldVersion_AnimalOnlineId" tabindex="0">WorldVersion_AnimalOnlineId</a></li>
 <li><a href="#savedWorldVersion" tabindex="0">savedWorldVersion</a></li>
 <li><a href="#noZombies" tabindex="0">noZombies</a></li>
 <li><a href="#totalWorldVersion" tabindex="0">totalWorldVersion</a></li>
@@ -171,8 +173,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#getMap()" tabindex="0">getMap()</a></li>
 <li><a href="#renderTerrain()" tabindex="0">renderTerrain()</a></li>
 <li><a href="#getFrameNo()" tabindex="0">getFrameNo()</a></li>
-<li><a href="#isAnimationRecorderActive()" tabindex="0">isAnimationRecorderActive()</a></li>
-<li><a href="#isAnimRecorderDiscardTriggered()" tabindex="0">isAnimRecorderDiscardTriggered()</a></li>
 <li><a href="#CreateRandomSurvivor(zombie.characters.SurvivorDesc,zombie.iso.IsoGridSquare,zombie.characters.IsoPlayer)" tabindex="0">CreateRandomSurvivor(SurvivorDesc, IsoGridSquare, IsoPlayer)</a></li>
 <li><a href="#CreateSwarm(int,int,int,int,int)" tabindex="0">CreateSwarm(int, int, int, int, int)</a></li>
 <li><a href="#ForceKillAllZombies()" tabindex="0">ForceKillAllZombies()</a></li>
@@ -387,46 +387,52 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="#WorldVersion_AnimalHutch" class="member-name-link">WorldVersion_AnimalHutch</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#WorldVersion_AnimalPetTime" class="member-name-link">WorldVersion_AnimalPetTime</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#WorldVersion_AnimalOnlineId" class="member-name-link">WorldVersion_AnimalOnlineId</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#WorldVersion_AnimalRottingTexture" class="member-name-link">WorldVersion_AnimalRottingTexture</a></code></div>
+<div class="col-second even-row-color"><code><a href="#WorldVersion_AnimalPetTime" class="member-name-link">WorldVersion_AnimalPetTime</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#WorldVersion_AnimalWild" class="member-name-link">WorldVersion_AnimalWild</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#WorldVersion_AnimalRottingTexture" class="member-name-link">WorldVersion_AnimalRottingTexture</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#WorldVersion_BodyDamageSavePoulticeValues" class="member-name-link">WorldVersion_BodyDamageSavePoulticeValues</a></code></div>
+<div class="col-second even-row-color"><code><a href="#WorldVersion_AnimalWild" class="member-name-link">WorldVersion_AnimalWild</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#WorldVersion_BodyDamageStatusesSync" class="member-name-link">WorldVersion_BodyDamageStatusesSync</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#WorldVersion_BodyDamageSavePoulticeValues" class="member-name-link">WorldVersion_BodyDamageSavePoulticeValues</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#WorldVersion_CharacterDiscomfort" class="member-name-link">WorldVersion_CharacterDiscomfort</a></code></div>
+<div class="col-second even-row-color"><code><a href="#WorldVersion_BodyDamageStatusesSync" class="member-name-link">WorldVersion_BodyDamageStatusesSync</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#WorldVersion_CharacterVoiceOptions" class="member-name-link">WorldVersion_CharacterVoiceOptions</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#WorldVersion_CharacterDiscomfort" class="member-name-link">WorldVersion_CharacterDiscomfort</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#WorldVersion_CharacterVoiceType" class="member-name-link">WorldVersion_CharacterVoiceType</a></code></div>
+<div class="col-second even-row-color"><code><a href="#WorldVersion_CharacterVoiceOptions" class="member-name-link">WorldVersion_CharacterVoiceOptions</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#WorldVersion_ChunksAttachmentsPartial" class="member-name-link">WorldVersion_ChunksAttachmentsPartial</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#WorldVersion_CharacterVoiceType" class="member-name-link">WorldVersion_CharacterVoiceType</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#WorldVersion_ChunksAttachmentsState" class="member-name-link">WorldVersion_ChunksAttachmentsState</a></code></div>
+<div class="col-second even-row-color"><code><a href="#WorldVersion_ChunksAttachmentsPartial" class="member-name-link">WorldVersion_ChunksAttachmentsPartial</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#WorldVersion_ChunksWorldGeneratedBoolean" class="member-name-link">WorldVersion_ChunksWorldGeneratedBoolean</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#WorldVersion_ChunksAttachmentsState" class="member-name-link">WorldVersion_ChunksAttachmentsState</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#WorldVersion_ChunksWorldModifiedBoolean" class="member-name-link">WorldVersion_ChunksWorldModifiedBoolean</a></code></div>
+<div class="col-second even-row-color"><code><a href="#WorldVersion_ChunksWorldGeneratedBoolean" class="member-name-link">WorldVersion_ChunksWorldGeneratedBoolean</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#WorldVersion_CraftLogicParallelCrafting" class="member-name-link">WorldVersion_CraftLogicParallelCrafting</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#WorldVersion_ChunksWorldModifiedBoolean" class="member-name-link">WorldVersion_ChunksWorldModifiedBoolean</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#WorldVersion_CraftUpdateFoundations" class="member-name-link">WorldVersion_CraftUpdateFoundations</a></code></div>
+<div class="col-second even-row-color"><code><a href="#WorldVersion_CraftLogicParallelCrafting" class="member-name-link">WorldVersion_CraftLogicParallelCrafting</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#WorldVersion_CraftUpdateFoundations" class="member-name-link">WorldVersion_CraftUpdateFoundations</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#WorldVersion_DeadBodyAnimalGenetics" class="member-name-link">WorldVersion_DeadBodyAnimalGenetics</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
 <div class="col-second odd-row-color"><code><a href="#WorldVersion_DesignationZone" class="member-name-link">WorldVersion_DesignationZone</a></code></div>
@@ -743,12 +749,6 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#init()" class="member-name-link">init</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isAnimationRecorderActive()" class="member-name-link">isAnimationRecorderActive</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isAnimRecorderDiscardTriggered()" class="member-name-link">isAnimRecorderDiscardTriggered</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHydroPowerOn()" class="member-name-link">isHydroPowerOn</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -1923,6 +1923,38 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="WorldVersion_DeadBodyAnimalGenetics">
+<h3>WorldVersion_DeadBodyAnimalGenetics</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">WorldVersion_DeadBodyAnimalGenetics</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../constant-values.html#zombie.iso.IsoWorld.WorldVersion_DeadBodyAnimalGenetics">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="WorldVersion_AnimalOnlineId">
+<h3>WorldVersion_AnimalOnlineId</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">WorldVersion_AnimalOnlineId</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../constant-values.html#zombie.iso.IsoWorld.WorldVersion_AnimalOnlineId">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="savedWorldVersion">
 <h3>savedWorldVersion</h3>
 <div class="horizontal-scroll">
@@ -2257,22 +2289,6 @@ loadScripts(document, 'script');</script>
 <h3>getFrameNo</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getFrameNo</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isAnimationRecorderActive()">
-<h3>isAnimationRecorderActive</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAnimationRecorderActive</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isAnimRecorderDiscardTriggered()">
-<h3>isAnimRecorderDiscardTriggered</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAnimRecorderDiscardTriggered</span>()</div>
 </div>
 </section>
 </li>

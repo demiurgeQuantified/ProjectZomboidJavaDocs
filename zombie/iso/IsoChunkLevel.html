@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.18.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -91,6 +91,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#getLevel()" tabindex="0">getLevel()</a></li>
 <li><a href="#updateRainSplashes()" tabindex="0">updateRainSplashes()</a></li>
 <li><a href="#renderRainSplashes(int)" tabindex="0">renderRainSplashes(int)</a></li>
+<li><a href="#addObjectPoweredByGenerator(zombie.iso.IsoObject)" tabindex="0">addObjectPoweredByGenerator(IsoObject)</a></li>
+<li><a href="#removeObjectPoweredByGenerator(zombie.iso.IsoObject)" tabindex="0">removeObjectPoweredByGenerator(IsoObject)</a></li>
+<li><a href="#countObjectsPoweredByGenerator(int,int)" tabindex="0">countObjectsPoweredByGenerator(int, int)</a></li>
+<li><a href="#appendObjectsPoweredByGenerator(java.util.List)" tabindex="0">appendObjectsPoweredByGenerator(List)</a></li>
 <li><a href="#clear()" tabindex="0">clear()</a></li>
 <li><a href="#alloc()" tabindex="0">alloc()</a></li>
 <li><a href="#release()" tabindex="0">release()</a></li>
@@ -201,9 +205,15 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="IsoChunkLevel.html" title="class in zombie.iso">IsoChunkLevel</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#alloc()" class="member-name-link">alloc</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addObjectPoweredByGenerator(zombie.iso.IsoObject)" class="member-name-link">addObjectPoweredByGenerator</a><wbr>(<a href="IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="IsoChunkLevel.html" title="class in zombie.iso">IsoChunkLevel</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#alloc()" class="member-name-link">alloc</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#appendObjectsPoweredByGenerator(java.util.List)" class="member-name-link">appendObjectsPoweredByGenerator</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;&nbsp;objects)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#checkPhysicsLaterForActiveRagdoll()" class="member-name-link">checkPhysicsLaterForActiveRagdoll</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -213,18 +223,25 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#containsIsoGridSquare(zombie.iso.IsoGridSquare)" class="member-name-link">containsIsoGridSquare</a><wbr>(<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;isoGridSquare)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="IsoChunk.html" title="class in zombie.iso">IsoChunk</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunk()" class="member-name-link">getChunk</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#countObjectsPoweredByGenerator(int,int)" class="member-name-link">countObjectsPoweredByGenerator</a><wbr>(int&nbsp;x,
+ int&nbsp;y)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLevel()" class="member-name-link">getLevel</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="IsoChunk.html" title="class in zombie.iso">IsoChunk</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunk()" class="member-name-link">getChunk</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="IsoChunkLevel.html" title="class in zombie.iso">IsoChunkLevel</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#init(zombie.iso.IsoChunk,int)" class="member-name-link">init</a><wbr>(<a href="IsoChunk.html" title="class in zombie.iso">IsoChunk</a>&nbsp;chunk,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLevel()" class="member-name-link">getLevel</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="IsoChunkLevel.html" title="class in zombie.iso">IsoChunkLevel</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#init(zombie.iso.IsoChunk,int)" class="member-name-link">init</a><wbr>(<a href="IsoChunk.html" title="class in zombie.iso">IsoChunk</a>&nbsp;chunk,
  int&nbsp;level)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#release()" class="member-name-link">release</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#release()" class="member-name-link">release</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeObjectPoweredByGenerator(zombie.iso.IsoObject)" class="member-name-link">removeObjectPoweredByGenerator</a><wbr>(<a href="IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderRainSplashes(int)" class="member-name-link">renderRainSplashes</a><wbr>(int&nbsp;playerIndex)</code></div>
@@ -463,6 +480,39 @@ loadScripts(document, 'script');</script>
 <h3>renderRainSplashes</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">renderRainSplashes</span><wbr><span class="parameters">(int&nbsp;playerIndex)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="addObjectPoweredByGenerator(zombie.iso.IsoObject)">
+<h3>addObjectPoweredByGenerator</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addObjectPoweredByGenerator</span><wbr><span class="parameters">(<a href="IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="removeObjectPoweredByGenerator(zombie.iso.IsoObject)">
+<h3>removeObjectPoweredByGenerator</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeObjectPoweredByGenerator</span><wbr><span class="parameters">(<a href="IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="countObjectsPoweredByGenerator(int,int)">
+<h3>countObjectsPoweredByGenerator</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">countObjectsPoweredByGenerator</span><wbr><span class="parameters">(int&nbsp;x,
+ int&nbsp;y)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="appendObjectsPoweredByGenerator(java.util.List)">
+<h3>appendObjectsPoweredByGenerator</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">appendObjectsPoweredByGenerator</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;&nbsp;objects)</span></div>
 </div>
 </section>
 </li>

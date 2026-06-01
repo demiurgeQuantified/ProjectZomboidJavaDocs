@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.18.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -61,10 +61,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#maxZombieCount" tabindex="0">maxZombieCount</a></li>
-<li><a href="#minZombieDistance" tabindex="0">minZombieDistance</a></li>
-<li><a href="#respondToSoundCooldown" tabindex="0">respondToSoundCooldown</a></li>
-<li><a href="#seenFleshCooldown" tabindex="0">seenFleshCooldown</a></li>
 <li><a href="#zombiesForDelete" tabindex="0">zombiesForDelete</a></li>
 </ol>
 </li>
@@ -77,6 +73,7 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#startCount()" tabindex="0">startCount()</a></li>
 <li><a href="#incrementZombie(zombie.characters.IsoZombie)" tabindex="0">incrementZombie(IsoZombie)</a></li>
+<li><a href="#deleteZombies()" tabindex="0">deleteZombies()</a></li>
 </ol>
 </li>
 </ol>
@@ -107,18 +104,6 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#maxZombieCount" class="member-name-link">maxZombieCount</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#minZombieDistance" class="member-name-link">minZombieDistance</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final float</code></div>
-<div class="col-second even-row-color"><code><a href="#respondToSoundCooldown" class="member-name-link">respondToSoundCooldown</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#seenFleshCooldown" class="member-name-link">seenFleshCooldown</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../characters/IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#zombiesForDelete" class="member-name-link">zombiesForDelete</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -150,11 +135,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#incrementZombie(zombie.characters.IsoZombie)" class="member-name-link">incrementZombie</a><wbr>(<a href="../characters/IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;zombie)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#deleteZombies()" class="member-name-link">deleteZombies</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#startCount()" class="member-name-link">startCount</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#incrementZombie(zombie.characters.IsoZombie)" class="member-name-link">incrementZombie</a><wbr>(<a href="../characters/IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;zombie)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#startCount()" class="member-name-link">startCount</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -172,70 +160,6 @@ loadScripts(document, 'script');</script>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="maxZombieCount">
-<h3>maxZombieCount</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">maxZombieCount</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../constant-values.html#zombie.popman.ZombieCountOptimiser.maxZombieCount">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="minZombieDistance">
-<h3>minZombieDistance</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">minZombieDistance</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../constant-values.html#zombie.popman.ZombieCountOptimiser.minZombieDistance">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="respondToSoundCooldown">
-<h3>respondToSoundCooldown</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">respondToSoundCooldown</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../constant-values.html#zombie.popman.ZombieCountOptimiser.respondToSoundCooldown">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="seenFleshCooldown">
-<h3>seenFleshCooldown</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">seenFleshCooldown</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../constant-values.html#zombie.popman.ZombieCountOptimiser.seenFleshCooldown">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="zombiesForDelete">
 <h3>zombiesForDelete</h3>
@@ -281,6 +205,14 @@ loadScripts(document, 'script');</script>
 <h3>incrementZombie</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">incrementZombie</span><wbr><span class="parameters">(<a href="../characters/IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&nbsp;zombie)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="deleteZombies()">
+<h3>deleteZombies</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteZombies</span>()</div>
 </div>
 </section>
 </li>

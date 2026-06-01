@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.18.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -63,6 +63,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
 <li><a href="#USE_WALL_SHADER" tabindex="0">USE_WALL_SHADER</a></li>
+<li><a href="#ADD_UNDERGROUND_BLOCKS" tabindex="0">ADD_UNDERGROUND_BLOCKS</a></li>
 <li><a href="#WALL_TYPE_N" tabindex="0">WALL_TYPE_N</a></li>
 <li><a href="#WALL_TYPE_S" tabindex="0">WALL_TYPE_S</a></li>
 <li><a href="#WALL_TYPE_W" tabindex="0">WALL_TYPE_W</a></li>
@@ -463,7 +464,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#getLightInfluenceR()" tabindex="0">getLightInfluenceR()</a></li>
 <li><a href="#setLightInfluenceR(java.util.ArrayList)" tabindex="0">setLightInfluenceR(ArrayList)</a></li>
 <li><a href="#getStaticMovingObjects()" tabindex="0">getStaticMovingObjects()</a></li>
+<li><a href="#getStaticMovingObjects(java.lang.Class,java.util.function.Predicate)" tabindex="0">getStaticMovingObjects(Class, Predicate)</a></li>
+<li><a href="#getStaticMovingObjectsInNearbySquares(java.lang.Class,java.util.function.BiPredicate,java.util.function.Predicate)" tabindex="0">getStaticMovingObjectsInNearbySquares(Class, BiPredicate, Predicate)</a></li>
+<li><a href="#visitStaticMovingObjects(java.lang.Class,Param,java.util.function.Predicate,java.util.function.BiConsumer)" tabindex="0">visitStaticMovingObjects(Class, Param, Predicate, BiConsumer)</a></li>
+<li><a href="#visitStaticMovingObjectsInNearbySquares(java.lang.Class,Param,java.util.function.BiPredicate,java.util.function.Predicate,java.util.function.BiConsumer)" tabindex="0">visitStaticMovingObjectsInNearbySquares(Class, Param, BiPredicate, Predicate, BiConsumer)</a></li>
 <li><a href="#getMovingObjects()" tabindex="0">getMovingObjects()</a></li>
+<li><a href="#visitNearbySquares(Param,java.util.function.BiPredicate,java.util.function.BiConsumer)" tabindex="0">visitNearbySquares(Param, BiPredicate, BiConsumer)</a></li>
 <li><a href="#getN()" tabindex="0">getN()</a></li>
 <li><a href="#setN(zombie.iso.IsoGridSquare)" tabindex="0">setN(IsoGridSquare)</a></li>
 <li><a href="#getObjects()" tabindex="0">getObjects()</a></li>
@@ -763,198 +769,201 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code><a href="BuildingDef.html" title="class in zombie.iso">BuildingDef</a></code></div>
-<div class="col-second even-row-color"><code><a href="#associatedBuilding" class="member-name-link">associatedBuilding</a></code></div>
+<div class="col-first even-row-color"><code>static final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#ADD_UNDERGROUND_BLOCKS" class="member-name-link">ADD_UNDERGROUND_BLOCKS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static float</code></div>
-<div class="col-second odd-row-color"><code><a href="#bmod" class="member-name-link">bmod</a></code></div>
+<div class="col-first odd-row-color"><code><a href="BuildingDef.html" title="class in zombie.iso">BuildingDef</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#associatedBuilding" class="member-name-link">associatedBuilding</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#cachedScreenX" class="member-name-link">cachedScreenX</a></code></div>
+<div class="col-first even-row-color"><code>static float</code></div>
+<div class="col-second even-row-color"><code><a href="#bmod" class="member-name-link">bmod</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#cachedScreenY" class="member-name-link">cachedScreenY</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#cachedScreenX" class="member-name-link">cachedScreenX</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final <a href="IsoGridSquare.GetSquare.html" title="interface in zombie.iso">IsoGridSquare.GetSquare</a></code></div>
-<div class="col-second even-row-color"><code><a href="#cellGetSquare" class="member-name-link">cellGetSquare</a></code></div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#cachedScreenY" class="member-name-link">cachedScreenY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#choices" class="member-name-link">choices</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="IsoGridSquare.GetSquare.html" title="interface in zombie.iso">IsoGridSquare.GetSquare</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#cellGetSquare" class="member-name-link">cellGetSquare</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="IsoChunk.html" title="class in zombie.iso">IsoChunk</a></code></div>
-<div class="col-second even-row-color"><code><a href="#chunk" class="member-name-link">chunk</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#choices" class="member-name-link">choices</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#circleStencil" class="member-name-link">circleStencil</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#collideMatrix" class="member-name-link">collideMatrix</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#d" class="member-name-link">d</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
-<div class="col-second even-row-color"><code><a href="#e" class="member-name-link">e</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><a href="#FIRE_IMMUNE_THRESHOLD" class="member-name-link">FIRE_IMMUNE_THRESHOLD</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#flattenGrassEtc" class="member-name-link">flattenGrassEtc</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#FLOORS_BURNT_SPRITE_PREFIX" class="member-name-link">FLOORS_BURNT_SPRITE_PREFIX</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static float</code></div>
-<div class="col-second even-row-color"><code><a href="#gmod" class="member-name-link">gmod</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static int</code></div>
-<div class="col-second odd-row-color"><code><a href="#gridSquareCacheEmptyTimer" class="member-name-link">gridSquareCacheEmptyTimer</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>long</code></div>
-<div class="col-second even-row-color"><code><a href="#hashCodeObjects" class="member-name-link">hashCodeObjects</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>long</code></div>
-<div class="col-second odd-row-color"><code><a href="#hasTypes" class="member-name-link">hasTypes</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#haveRoof" class="member-name-link">haveRoof</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#haveSheetRope" class="member-name-link">haveSheetRope</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#hourLastSeen" class="member-name-link">hourLastSeen</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#id" class="member-name-link">id</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static int</code></div>
-<div class="col-second even-row-color"><code><a href="#idMax" class="member-name-link">idMax</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#ignoreBlockingSprites" class="member-name-link">ignoreBlockingSprites</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#isExteriorCache" class="member-name-link">isExteriorCache</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ConcurrentLinkedQueue.html" title="class or interface in java.util.concurrent" class="external-link">ConcurrentLinkedQueue</a><wbr>&lt;<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#isoGridSquareCache" class="member-name-link">isoGridSquareCache</a></code></div>
+<div class="col-first odd-row-color"><code><a href="IsoChunk.html" title="class in zombie.iso">IsoChunk</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#chunk" class="member-name-link">chunk</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#isOnScreenLast" class="member-name-link">isOnScreenLast</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#isSolidFloorCache" class="member-name-link">isSolidFloorCache</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#isVegitationCache" class="member-name-link">isVegitationCache</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="IsoGridSquare.ILighting.html" title="interface in zombie.iso">IsoGridSquare.ILighting</a>[]</code></div>
-<div class="col-second odd-row-color"><code><a href="#lighting" class="member-name-link">lighting</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#lightLevel" class="member-name-link">lightLevel</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayDeque.html" title="class or interface in java.util" class="external-link">ArrayDeque</a><wbr>&lt;<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#loadGridSquareCache" class="member-name-link">loadGridSquareCache</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
-<div class="col-second even-row-color"><code><a href="#n" class="member-name-link">n</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#ne" class="member-name-link">ne</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
-<div class="col-second even-row-color"><code><a href="#nw" class="member-name-link">nw</a></code></div>
+<div class="col-second even-row-color"><code><a href="#circleStencil" class="member-name-link">circleStencil</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><a href="#objectsSyncCount" class="member-name-link">objectsSyncCount</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#collideMatrix" class="member-name-link">collideMatrix</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
+<div class="col-second even-row-color"><code><a href="#d" class="member-name-link">d</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#e" class="member-name-link">e</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#pathMatrix" class="member-name-link">pathMatrix</a></code></div>
+<div class="col-second even-row-color"><code><a href="#FIRE_IMMUNE_THRESHOLD" class="member-name-link">FIRE_IMMUNE_THRESHOLD</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#PCF_NONE" class="member-name-link">PCF_NONE</a></code></div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#flattenGrassEtc" class="member-name-link">flattenGrassEtc</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#PCF_NORTH" class="member-name-link">PCF_NORTH</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#PCF_WEST" class="member-name-link">PCF_WEST</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#propertiesDirty" class="member-name-link">propertiesDirty</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#FLOORS_BURNT_SPRITE_PREFIX" class="member-name-link">FLOORS_BURNT_SPRITE_PREFIX</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static float</code></div>
-<div class="col-second odd-row-color"><code><a href="#recalcLightTime" class="member-name-link">recalcLightTime</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#gmod" class="member-name-link">gmod</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static float</code></div>
-<div class="col-second even-row-color"><code><a href="#rmod" class="member-name-link">rmod</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="areas/IsoBuilding.html" title="class in zombie.iso.areas">IsoBuilding</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#roofHideBuilding" class="member-name-link">roofHideBuilding</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="areas/IsoRoom.html" title="class in zombie.iso.areas">IsoRoom</a></code></div>
-<div class="col-second even-row-color"><code><a href="#room" class="member-name-link">room</a></code></div>
+<div class="col-first even-row-color"><code>static int</code></div>
+<div class="col-second even-row-color"><code><a href="#gridSquareCacheEmptyTimer" class="member-name-link">gridSquareCacheEmptyTimer</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>long</code></div>
-<div class="col-second odd-row-color"><code><a href="#roomId" class="member-name-link">roomId</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#hashCodeObjects" class="member-name-link">hashCodeObjects</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
-<div class="col-second even-row-color"><code><a href="#s" class="member-name-link">s</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#se" class="member-name-link">se</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#solidFloor" class="member-name-link">solidFloor</a></code></div>
+<div class="col-first even-row-color"><code>long</code></div>
+<div class="col-second even-row-color"><code><a href="#hasTypes" class="member-name-link">hasTypes</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#solidFloorCached" class="member-name-link">solidFloorCached</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#haveRoof" class="member-name-link">haveRoof</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
-<div class="col-second even-row-color"><code><a href="#sw" class="member-name-link">sw</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#u" class="member-name-link">u</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#USE_WALL_SHADER" class="member-name-link">USE_WALL_SHADER</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#useSlowCollision" class="member-name-link">useSlowCollision</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#visionMatrix" class="member-name-link">visionMatrix</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#w" class="member-name-link">w</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#WALL_TYPE_E" class="member-name-link">WALL_TYPE_E</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#WALL_TYPE_N" class="member-name-link">WALL_TYPE_N</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#WALL_TYPE_S" class="member-name-link">WALL_TYPE_S</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#WALL_TYPE_W" class="member-name-link">WALL_TYPE_W</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#x" class="member-name-link">x</a></code></div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#haveSheetRope" class="member-name-link">haveSheetRope</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><a href="#y" class="member-name-link">y</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#hourLastSeen" class="member-name-link">hourLastSeen</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#id" class="member-name-link">id</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static int</code></div>
+<div class="col-second odd-row-color"><code><a href="#idMax" class="member-name-link">idMax</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#ignoreBlockingSprites" class="member-name-link">ignoreBlockingSprites</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#isExteriorCache" class="member-name-link">isExteriorCache</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ConcurrentLinkedQueue.html" title="class or interface in java.util.concurrent" class="external-link">ConcurrentLinkedQueue</a><wbr>&lt;<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#isoGridSquareCache" class="member-name-link">isoGridSquareCache</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#isOnScreenLast" class="member-name-link">isOnScreenLast</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#isSolidFloorCache" class="member-name-link">isSolidFloorCache</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#isVegitationCache" class="member-name-link">isVegitationCache</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final <a href="IsoGridSquare.ILighting.html" title="interface in zombie.iso">IsoGridSquare.ILighting</a>[]</code></div>
+<div class="col-second even-row-color"><code><a href="#lighting" class="member-name-link">lighting</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><a href="#lightLevel" class="member-name-link">lightLevel</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayDeque.html" title="class or interface in java.util" class="external-link">ArrayDeque</a><wbr>&lt;<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#loadGridSquareCache" class="member-name-link">loadGridSquareCache</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#n" class="member-name-link">n</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
+<div class="col-second even-row-color"><code><a href="#ne" class="member-name-link">ne</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#nw" class="member-name-link">nw</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#z" class="member-name-link">z</a></code></div>
+<div class="col-second even-row-color"><code><a href="#objectsSyncCount" class="member-name-link">objectsSyncCount</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#zone" class="member-name-link">zone</a></code></div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><a href="#pathMatrix" class="member-name-link">pathMatrix</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final byte</code></div>
+<div class="col-second even-row-color"><code><a href="#PCF_NONE" class="member-name-link">PCF_NONE</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final byte</code></div>
+<div class="col-second odd-row-color"><code><a href="#PCF_NORTH" class="member-name-link">PCF_NORTH</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final byte</code></div>
+<div class="col-second even-row-color"><code><a href="#PCF_WEST" class="member-name-link">PCF_WEST</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#propertiesDirty" class="member-name-link">propertiesDirty</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static float</code></div>
+<div class="col-second even-row-color"><code><a href="#recalcLightTime" class="member-name-link">recalcLightTime</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static float</code></div>
+<div class="col-second odd-row-color"><code><a href="#rmod" class="member-name-link">rmod</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="areas/IsoBuilding.html" title="class in zombie.iso.areas">IsoBuilding</a></code></div>
+<div class="col-second even-row-color"><code><a href="#roofHideBuilding" class="member-name-link">roofHideBuilding</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="areas/IsoRoom.html" title="class in zombie.iso.areas">IsoRoom</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#room" class="member-name-link">room</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>long</code></div>
+<div class="col-second even-row-color"><code><a href="#roomId" class="member-name-link">roomId</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#s" class="member-name-link">s</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
+<div class="col-second even-row-color"><code><a href="#se" class="member-name-link">se</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#solidFloor" class="member-name-link">solidFloor</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#solidFloorCached" class="member-name-link">solidFloorCached</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#sw" class="member-name-link">sw</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
+<div class="col-second even-row-color"><code><a href="#u" class="member-name-link">u</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#USE_WALL_SHADER" class="member-name-link">USE_WALL_SHADER</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#useSlowCollision" class="member-name-link">useSlowCollision</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><a href="#visionMatrix" class="member-name-link">visionMatrix</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
+<div class="col-second even-row-color"><code><a href="#w" class="member-name-link">w</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#WALL_TYPE_E" class="member-name-link">WALL_TYPE_E</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#WALL_TYPE_N" class="member-name-link">WALL_TYPE_N</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#WALL_TYPE_S" class="member-name-link">WALL_TYPE_S</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#WALL_TYPE_W" class="member-name-link">WALL_TYPE_W</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><a href="#x" class="member-name-link">x</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><a href="#y" class="member-name-link">y</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><a href="#z" class="member-name-link">z</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
+<div class="col-second even-row-color"><code><a href="#zone" class="member-name-link">zone</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -1871,6 +1880,15 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStaticMovingObjects()" class="member-name-link">getStaticMovingObjects</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;ObjectType extends <a href="IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&gt;<br><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;ObjectType&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStaticMovingObjects(java.lang.Class,java.util.function.Predicate)" class="member-name-link">getStaticMovingObjects</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends ObjectType&gt;&nbsp;objectType,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;ObjectType&gt;&nbsp;objectFilter)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;ObjectType extends <a href="IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&gt;<br><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;ObjectType&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStaticMovingObjectsInNearbySquares(java.lang.Class,java.util.function.BiPredicate,java.util.function.Predicate)" class="member-name-link">getStaticMovingObjectsInNearbySquares</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends ObjectType&gt;&nbsp;objectType,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiPredicate.html" title="class or interface in java.util.function" class="external-link">BiPredicate</a>&lt;<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>, <a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&gt;&nbsp;squareFilter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;ObjectType&gt;&nbsp;objectFilter)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="IsoObject.html" title="class in zombie.iso">IsoObject</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStump()" class="member-name-link">getStump</a>()</code></div>
@@ -2982,6 +3000,24 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unset(java.lang.String)" class="member-name-link">unset</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tilePropertyKey)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;Param&gt;&nbsp;Param</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitNearbySquares(Param,java.util.function.BiPredicate,java.util.function.BiConsumer)" class="member-name-link">visitNearbySquares</a><wbr>(Param&nbsp;param,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiPredicate.html" title="class or interface in java.util.function" class="external-link">BiPredicate</a>&lt;<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>, <a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&gt;&nbsp;squareFilter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;Param, <a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&gt;&nbsp;squareVisitor)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;Param, ObjectType extends <a href="IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&gt;<br>Param</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitStaticMovingObjects(java.lang.Class,Param,java.util.function.Predicate,java.util.function.BiConsumer)" class="member-name-link">visitStaticMovingObjects</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends ObjectType&gt;&nbsp;objectType,
+ Param&nbsp;param,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;ObjectType&gt;&nbsp;objectFilter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;Param, ObjectType&gt;&nbsp;objectVisitor)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;Param, ObjectType extends <a href="IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&gt;<br>Param</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitStaticMovingObjectsInNearbySquares(java.lang.Class,Param,java.util.function.BiPredicate,java.util.function.Predicate,java.util.function.BiConsumer)" class="member-name-link">visitStaticMovingObjectsInNearbySquares</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends ObjectType&gt;&nbsp;objectType,
+ Param&nbsp;param,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiPredicate.html" title="class or interface in java.util.function" class="external-link">BiPredicate</a>&lt;<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>, <a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&gt;&nbsp;squareFilter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;ObjectType&gt;&nbsp;objectFilter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;Param, ObjectType&gt;&nbsp;objectVisitor)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -3009,6 +3045,22 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../constant-values.html#zombie.iso.IsoGridSquare.USE_WALL_SHADER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="ADD_UNDERGROUND_BLOCKS">
+<h3>ADD_UNDERGROUND_BLOCKS</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">ADD_UNDERGROUND_BLOCKS</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../constant-values.html#zombie.iso.IsoGridSquare.ADD_UNDERGROUND_BLOCKS">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -6604,6 +6656,52 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="getStaticMovingObjects(java.lang.Class,java.util.function.Predicate)">
+<h3>getStaticMovingObjects</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;ObjectType extends <a href="IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&gt;</span>
+<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;ObjectType&gt;</span>&nbsp;<span class="element-name">getStaticMovingObjects</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends ObjectType&gt;&nbsp;objectType,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;ObjectType&gt;&nbsp;objectFilter)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getStaticMovingObjectsInNearbySquares(java.lang.Class,java.util.function.BiPredicate,java.util.function.Predicate)">
+<h3>getStaticMovingObjectsInNearbySquares</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;ObjectType extends <a href="IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&gt;</span>
+<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;ObjectType&gt;</span>&nbsp;<span class="element-name">getStaticMovingObjectsInNearbySquares</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends ObjectType&gt;&nbsp;objectType,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiPredicate.html" title="class or interface in java.util.function" class="external-link">BiPredicate</a>&lt;<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>, <a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&gt;&nbsp;squareFilter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;ObjectType&gt;&nbsp;objectFilter)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="visitStaticMovingObjects(java.lang.Class,Param,java.util.function.Predicate,java.util.function.BiConsumer)">
+<h3 id="visitStaticMovingObjects(java.lang.Class,java.lang.Object,java.util.function.Predicate,java.util.function.BiConsumer)">visitStaticMovingObjects</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;Param, ObjectType extends <a href="IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&gt;</span>
+<span class="return-type">Param</span>&nbsp;<span class="element-name">visitStaticMovingObjects</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends ObjectType&gt;&nbsp;objectType,
+ Param&nbsp;param,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;ObjectType&gt;&nbsp;objectFilter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;Param, ObjectType&gt;&nbsp;objectVisitor)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="visitStaticMovingObjectsInNearbySquares(java.lang.Class,Param,java.util.function.BiPredicate,java.util.function.Predicate,java.util.function.BiConsumer)">
+<h3 id="visitStaticMovingObjectsInNearbySquares(java.lang.Class,java.lang.Object,java.util.function.BiPredicate,java.util.function.Predicate,java.util.function.BiConsumer)">visitStaticMovingObjectsInNearbySquares</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;Param, ObjectType extends <a href="IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&gt;</span>
+<span class="return-type">Param</span>&nbsp;<span class="element-name">visitStaticMovingObjectsInNearbySquares</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends ObjectType&gt;&nbsp;objectType,
+ Param&nbsp;param,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiPredicate.html" title="class or interface in java.util.function" class="external-link">BiPredicate</a>&lt;<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>, <a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&gt;&nbsp;squareFilter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;ObjectType&gt;&nbsp;objectFilter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;Param, ObjectType&gt;&nbsp;objectVisitor)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="getMovingObjects()">
 <h3>getMovingObjects</h3>
 <div class="horizontal-scroll">
@@ -6612,6 +6710,16 @@ loadScripts(document, 'script');</script>
 <dt>Returns:</dt>
 <dd>the MovingObjects</dd>
 </dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="visitNearbySquares(Param,java.util.function.BiPredicate,java.util.function.BiConsumer)">
+<h3 id="visitNearbySquares(java.lang.Object,java.util.function.BiPredicate,java.util.function.BiConsumer)">visitNearbySquares</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;Param&gt;</span>&nbsp;<span class="return-type">Param</span>&nbsp;<span class="element-name">visitNearbySquares</span><wbr><span class="parameters">(Param&nbsp;param,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiPredicate.html" title="class or interface in java.util.function" class="external-link">BiPredicate</a>&lt;<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>, <a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&gt;&nbsp;squareFilter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;Param, <a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&gt;&nbsp;squareVisitor)</span></div>
 </div>
 </section>
 </li>

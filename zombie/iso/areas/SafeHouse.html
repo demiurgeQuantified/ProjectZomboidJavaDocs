@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.18.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -96,7 +96,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#alreadyHaveSafehouse(java.lang.String)" tabindex="0">alreadyHaveSafehouse(String)</a></li>
 <li><a href="#alreadyHaveSafehouse(zombie.characters.IsoPlayer)" tabindex="0">alreadyHaveSafehouse(IsoPlayer)</a></li>
 <li><a href="#allowSafeHouse(zombie.characters.IsoPlayer)" tabindex="0">allowSafeHouse(IsoPlayer)</a></li>
-<li><a href="#updateSafehouse(zombie.characters.IsoPlayer)" tabindex="0">updateSafehouse(IsoPlayer)</a></li>
 <li><a href="#getOnlineID(int,int)" tabindex="0">getOnlineID(int, int)</a></li>
 <li><a href="#getId()" tabindex="0">getId()</a></li>
 <li><a href="#getX()" tabindex="0">getX()</a></li>
@@ -145,6 +144,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#removeInvite(java.lang.String)" tabindex="0">removeInvite(String)</a></li>
 <li><a href="#addInvite(java.lang.String)" tabindex="0">addInvite(String)</a></li>
 <li><a href="#hitPoint(int)" tabindex="0">hitPoint(int)</a></li>
+<li><a href="#kickUserFromSafehouse(zombie.iso.areas.SafeHouse,java.lang.String)" tabindex="0">kickUserFromSafehouse(SafeHouse, String)</a></li>
+<li><a href="#hasNotSurvivedEnoughToClaim(zombie.characters.IsoPlayer)" tabindex="0">hasNotSurvivedEnoughToClaim(IsoPlayer)</a></li>
+<li><a href="#update()" tabindex="0">update()</a></li>
 </ol>
 </li>
 </ol>
@@ -329,69 +331,76 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getY2()" class="member-name-link">getY2</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="SafeHouse.html" title="class in zombie.iso.areas">SafeHouse</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hasSafehouse(java.lang.String)" class="member-name-link">hasSafehouse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hasNotSurvivedEnoughToClaim(zombie.characters.IsoPlayer)" class="member-name-link">hasNotSurvivedEnoughToClaim</a><wbr>(<a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="SafeHouse.html" title="class in zombie.iso.areas">SafeHouse</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hasSafehouse(zombie.characters.IsoPlayer)" class="member-name-link">hasSafehouse</a><wbr>(<a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hasSafehouse(java.lang.String)" class="member-name-link">hasSafehouse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#haveInvite(java.lang.String)" class="member-name-link">haveInvite</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;player)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hitPoint(int)" class="member-name-link">hitPoint</a><wbr>(int&nbsp;onlineID)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#init()" class="member-name-link">init</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="SafeHouse.html" title="class in zombie.iso.areas">SafeHouse</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hasSafehouse(zombie.characters.IsoPlayer)" class="member-name-link">hasSafehouse</a><wbr>(<a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#intersects(int,int,int,int)" class="member-name-link">intersects</a><wbr>(int&nbsp;startX,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#haveInvite(java.lang.String)" class="member-name-link">haveInvite</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hitPoint(int)" class="member-name-link">hitPoint</a><wbr>(int&nbsp;onlineID)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#init()" class="member-name-link">init</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#intersects(int,int,int,int)" class="member-name-link">intersects</a><wbr>(int&nbsp;startX,
  int&nbsp;startY,
  int&nbsp;endX,
  int&nbsp;endY)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isInSameSafehouse(java.lang.String,java.lang.String)" class="member-name-link">isInSameSafehouse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;player1,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isInSameSafehouse(java.lang.String,java.lang.String)" class="member-name-link">isInSameSafehouse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;player1,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;player2)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isOwner(java.lang.String)" class="member-name-link">isOwner</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isOwner(zombie.characters.IsoPlayer)" class="member-name-link">isOwner</a><wbr>(<a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isPlayerAllowedOnSquare(zombie.characters.IsoPlayer,zombie.iso.IsoGridSquare)" class="member-name-link">isPlayerAllowedOnSquare</a><wbr>(<a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ <a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;sq)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isOwner(java.lang.String)" class="member-name-link">isOwner</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRespawnInSafehouse(java.lang.String)" class="member-name-link">isRespawnInSafehouse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isOwner(zombie.characters.IsoPlayer)" class="member-name-link">isOwner</a><wbr>(<a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isPlayerAllowedOnSquare(zombie.characters.IsoPlayer,zombie.iso.IsoGridSquare)" class="member-name-link">isPlayerAllowedOnSquare</a><wbr>(<a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;sq)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRespawnInSafehouse(java.lang.String)" class="member-name-link">isRespawnInSafehouse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="SafeHouse.html" title="class in zombie.iso.areas">SafeHouse</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isSafeHouse(zombie.iso.IsoGridSquare,java.lang.String,boolean)" class="member-name-link">isSafeHouse</a><wbr>(<a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="SafeHouse.html" title="class in zombie.iso.areas">SafeHouse</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isSafeHouse(zombie.iso.IsoGridSquare,java.lang.String,boolean)" class="member-name-link">isSafeHouse</a><wbr>(<a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username,
  boolean&nbsp;doDisableSafehouse)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Return if the square is a safehouse non allowed for the player You need to be
  on a safehouse AND not be allowed to return the safe If you're allowed,
  you'll have null in return If username is null, you basically just return if
  there's a safehouse here</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isSafehouseAllowClaimWar(zombie.iso.areas.SafeHouse,zombie.characters.IsoPlayer)" class="member-name-link">isSafehouseAllowClaimWar</a><wbr>(<a href="SafeHouse.html" title="class in zombie.iso.areas">SafeHouse</a>&nbsp;safehouse,
- <a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isSafehouseAllowInteract(zombie.iso.IsoGridSquare,zombie.characters.IsoPlayer)" class="member-name-link">isSafehouseAllowInteract</a><wbr>(<a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isSafehouseAllowClaimWar(zombie.iso.areas.SafeHouse,zombie.characters.IsoPlayer)" class="member-name-link">isSafehouseAllowClaimWar</a><wbr>(<a href="SafeHouse.html" title="class in zombie.iso.areas">SafeHouse</a>&nbsp;safehouse,
  <a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isSafehouseAllowLoot(zombie.iso.IsoGridSquare,zombie.characters.IsoPlayer)" class="member-name-link">isSafehouseAllowLoot</a><wbr>(<a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isSafehouseAllowInteract(zombie.iso.IsoGridSquare,zombie.characters.IsoPlayer)" class="member-name-link">isSafehouseAllowInteract</a><wbr>(<a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
  <a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isSafehouseAllowTrepass(zombie.iso.IsoGridSquare,zombie.characters.IsoPlayer)" class="member-name-link">isSafehouseAllowTrepass</a><wbr>(<a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isSafehouseAllowLoot(zombie.iso.IsoGridSquare,zombie.characters.IsoPlayer)" class="member-name-link">isSafehouseAllowLoot</a><wbr>(<a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
  <a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isSafehouseAllowTrepass(zombie.iso.IsoGridSquare,zombie.characters.IsoPlayer)" class="member-name-link">isSafehouseAllowTrepass</a><wbr>(<a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
+ <a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#kickUserFromSafehouse(zombie.iso.areas.SafeHouse,java.lang.String)" class="member-name-link">kickUserFromSafehouse</a><wbr>(<a href="SafeHouse.html" title="class in zombie.iso.areas">SafeHouse</a>&nbsp;safeHouse,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="SafeHouse.html" title="class in zombie.iso.areas">SafeHouse</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#load(java.nio.ByteBuffer,int)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
@@ -461,16 +470,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setY(int)" class="member-name-link">setY</a><wbr>(int&nbsp;y)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatePlayersConnected()" class="member-name-link">updatePlayersConnected</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateSafehouse(zombie.characters.IsoPlayer)" class="member-name-link">updateSafehouse</a><wbr>(<a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Update the last visited value everytime someone is in this safehouse If it's
- not visited for some time (SafehouseRemoval serveroption) it's automatically
- removed.</div>
-</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatePlayersConnected()" class="member-name-link">updatePlayersConnected</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateSafehousePlayersConnected()" class="member-name-link">updateSafehousePlayersConnected</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
@@ -783,17 +788,6 @@ loadScripts(document, 'script');</script>
 <h3>allowSafeHouse</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">allowSafeHouse</span><wbr><span class="parameters">(<a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="updateSafehouse(zombie.characters.IsoPlayer)">
-<h3>updateSafehouse</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateSafehouse</span><wbr><span class="parameters">(<a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</span></div>
-<div class="block">Update the last visited value everytime someone is in this safehouse If it's
- not visited for some time (SafehouseRemoval serveroption) it's automatically
- removed.</div>
 </div>
 </section>
 </li>
@@ -1186,6 +1180,31 @@ loadScripts(document, 'script');</script>
 <h3>hitPoint</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">hitPoint</span><wbr><span class="parameters">(int&nbsp;onlineID)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="kickUserFromSafehouse(zombie.iso.areas.SafeHouse,java.lang.String)">
+<h3>kickUserFromSafehouse</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">kickUserFromSafehouse</span><wbr><span class="parameters">(<a href="SafeHouse.html" title="class in zombie.iso.areas">SafeHouse</a>&nbsp;safeHouse,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="hasNotSurvivedEnoughToClaim(zombie.characters.IsoPlayer)">
+<h3>hasNotSurvivedEnoughToClaim</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasNotSurvivedEnoughToClaim</span><wbr><span class="parameters">(<a href="../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="update()">
+<h3>update</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">update</span>()</div>
 </div>
 </section>
 </li>

@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.18.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -63,6 +63,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#instance" tabindex="0">instance</a></li>
 <li><a href="#INVALID_PATH_XY" tabindex="0">INVALID_PATH_XY</a></li>
 <li><a href="#debugLoggingEnabled" tabindex="0">debugLoggingEnabled</a></li>
+<li><a href="#saveLock" tabindex="0">saveLock</a></li>
 <li><a href="#radarXy" tabindex="0">radarXy</a></li>
 <li><a href="#radarCount" tabindex="0">radarCount</a></li>
 <li><a href="#radarRenderFlag" tabindex="0">radarRenderFlag</a></li>
@@ -72,6 +73,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#init()" tabindex="0">init()</a></li>
+<li><a href="#requestSaveCell(int,int)" tabindex="0">requestSaveCell(int, int)</a></li>
+<li><a href="#processPendingSaveCells()" tabindex="0">processPendingSaveCells()</a></li>
 <li><a href="#init(zombie.iso.IsoMetaGrid)" tabindex="0">init(IsoMetaGrid)</a></li>
 <li><a href="#onConfigReloaded()" tabindex="0">onConfigReloaded()</a></li>
 <li><a href="#registerSpawnOrigin(int,int,int,int,se.krka.kahlua.vm.KahluaTable)" tabindex="0">registerSpawnOrigin(int, int, int, int, KahluaTable)</a></li>
@@ -149,6 +152,9 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>float[]</code></div>
 <div class="col-second even-row-color"><code><a href="#radarXy" class="member-name-link">radarXy</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/locks/ReentrantLock.html" title="class or interface in java.util.concurrent.locks" class="external-link">ReentrantLock</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#saveLock" class="member-name-link">saveLock</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -218,18 +224,25 @@ loadScripts(document, 'script');</script>
  int&nbsp;y,
  int&nbsp;z)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readyToPause()" class="member-name-link">readyToPause</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processPendingSaveCells()" class="member-name-link">processPendingSaveCells</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerSpawnOrigin(int,int,int,int,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">registerSpawnOrigin</a><wbr>(int&nbsp;x,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readyToPause()" class="member-name-link">readyToPause</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerSpawnOrigin(int,int,int,int,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">registerSpawnOrigin</a><wbr>(int&nbsp;x,
  int&nbsp;y,
  int&nbsp;width,
  int&nbsp;height,
  se.krka.kahlua.vm.KahluaTable&nbsp;properties)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeChunkFromWorld(zombie.iso.IsoChunk)" class="member-name-link">removeChunkFromWorld</a><wbr>(<a href="../iso/IsoChunk.html" title="class in zombie.iso">IsoChunk</a>&nbsp;chunk)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeChunkFromWorld(zombie.iso.IsoChunk)" class="member-name-link">removeChunkFromWorld</a><wbr>(<a href="../iso/IsoChunk.html" title="class in zombie.iso">IsoChunk</a>&nbsp;chunk)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#requestSaveCell(int,int)" class="member-name-link">requestSaveCell</a><wbr>(int&nbsp;popmanCellX,
+ int&nbsp;popmanCellY)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#save()" class="member-name-link">save</a>()</code></div>
@@ -317,6 +330,14 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="saveLock">
+<h3>saveLock</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/locks/ReentrantLock.html" title="class or interface in java.util.concurrent.locks" class="external-link">ReentrantLock</a></span>&nbsp;<span class="element-name">saveLock</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="radarXy">
 <h3>radarXy</h3>
 <div class="horizontal-scroll">
@@ -361,6 +382,23 @@ loadScripts(document, 'script');</script>
 <h3>init</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">init</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="requestSaveCell(int,int)">
+<h3>requestSaveCell</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">requestSaveCell</span><wbr><span class="parameters">(int&nbsp;popmanCellX,
+ int&nbsp;popmanCellY)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="processPendingSaveCells()">
+<h3>processPendingSaveCells</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processPendingSaveCells</span>()</div>
 </div>
 </section>
 </li>

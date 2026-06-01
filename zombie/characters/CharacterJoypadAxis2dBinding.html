@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.18.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -69,16 +69,22 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#values()" tabindex="0">values()</a></li>
 <li><a href="#valueOf(java.lang.String)" tabindex="0">valueOf(String)</a></li>
+<li><a href="#getNameTranslationKey()" tabindex="0">getNameTranslationKey()</a></li>
+<li><a href="#allBindings()" tabindex="0">allBindings()</a></li>
 <li><a href="#fromString(java.lang.String)" tabindex="0">fromString(String)</a></li>
 <li><a href="#getJoypadAxis()" tabindex="0">getJoypadAxis()</a></li>
 <li><a href="#getBinding()" tabindex="0">getBinding()</a></li>
 <li><a href="#setBinding(zombie.input.JoypadAxis2d)" tabindex="0">setBinding(JoypadAxis2d)</a></li>
+<li><a href="#removeBinding(zombie.input.JoypadAxis2d)" tabindex="0">removeBinding(JoypadAxis2d)</a></li>
+<li><a href="#moveBindingFrom(zombie.characters.CharacterJoypadAxis2dBinding)" tabindex="0">moveBindingFrom(CharacterJoypadAxis2dBinding)</a></li>
 <li><a href="#setDefault()" tabindex="0">setDefault()</a></li>
+<li><a href="#setAllToDefault()" tabindex="0">setAllToDefault()</a></li>
 <li><a href="#getLength(int)" tabindex="0">getLength(int)</a></li>
 <li><a href="#getValue(int,zombie.iso.Vector2)" tabindex="0">getValue(int, Vector2)</a></li>
 <li><a href="#getValueX(int)" tabindex="0">getValueX(int)</a></li>
 <li><a href="#getValueY(int)" tabindex="0">getValueY(int)</a></li>
 <li><a href="#isApplied(int)" tabindex="0">isApplied(int)</a></li>
+<li><a href="#findBindings(zombie.input.JoypadAxis2d)" tabindex="0">findBindings(JoypadAxis2d)</a></li>
 </ol>
 </li>
 </ol>
@@ -141,6 +147,12 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CharacterJoypadAxis2dBinding.html" title="enum class in zombie.characters">CharacterJoypadAxis2dBinding</a>[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#allBindings()" class="member-name-link">allBindings</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CharacterJoypadAxis2dBinding.html" title="enum class in zombie.characters">CharacterJoypadAxis2dBinding</a>[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findBindings(zombie.input.JoypadAxis2d)" class="member-name-link">findBindings</a><wbr>(<a href="../input/JoypadAxis2d.html" title="enum class in zombie.input">JoypadAxis2d</a>&nbsp;joypadAxis)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CharacterJoypadAxis2dBinding.html" title="enum class in zombie.characters">CharacterJoypadAxis2dBinding</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fromString(java.lang.String)" class="member-name-link">fromString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
@@ -153,19 +165,31 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLength(int)" class="member-name-link">getLength</a><wbr>(int&nbsp;joypadBind)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../iso/Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getValue(int,zombie.iso.Vector2)" class="member-name-link">getValue</a><wbr>(int&nbsp;joypadBind,
- <a href="../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNameTranslationKey()" class="member-name-link">getNameTranslationKey</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getValueX(int)" class="member-name-link">getValueX</a><wbr>(int&nbsp;joypadBind)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../iso/Vector2.html" title="class in zombie.iso">Vector2</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getValue(int,zombie.iso.Vector2)" class="member-name-link">getValue</a><wbr>(int&nbsp;joypadBind,
+ <a href="../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;out)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getValueY(int)" class="member-name-link">getValueY</a><wbr>(int&nbsp;joypadBind)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getValueX(int)" class="member-name-link">getValueX</a><wbr>(int&nbsp;joypadBind)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isApplied(int)" class="member-name-link">isApplied</a><wbr>(int&nbsp;joypadBind)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getValueY(int)" class="member-name-link">getValueY</a><wbr>(int&nbsp;joypadBind)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isApplied(int)" class="member-name-link">isApplied</a><wbr>(int&nbsp;joypadBind)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveBindingFrom(zombie.characters.CharacterJoypadAxis2dBinding)" class="member-name-link">moveBindingFrom</a><wbr>(<a href="CharacterJoypadAxis2dBinding.html" title="enum class in zombie.characters">CharacterJoypadAxis2dBinding</a>&nbsp;fromBinding)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeBinding(zombie.input.JoypadAxis2d)" class="member-name-link">removeBinding</a><wbr>(<a href="../input/JoypadAxis2d.html" title="enum class in zombie.input">JoypadAxis2d</a>&nbsp;binding)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setAllToDefault()" class="member-name-link">setAllToDefault</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBinding(zombie.input.JoypadAxis2d)" class="member-name-link">setBinding</a><wbr>(<a href="../input/JoypadAxis2d.html" title="enum class in zombie.input">JoypadAxis2d</a>&nbsp;newBinding)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -263,6 +287,22 @@ not permitted.)</div>
 </section>
 </li>
 <li>
+<section class="detail" id="getNameTranslationKey()">
+<h3>getNameTranslationKey</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getNameTranslationKey</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="allBindings()">
+<h3>allBindings</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CharacterJoypadAxis2dBinding.html" title="enum class in zombie.characters">CharacterJoypadAxis2dBinding</a>[]</span>&nbsp;<span class="element-name">allBindings</span>()</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="fromString(java.lang.String)">
 <h3>fromString</h3>
 <div class="horizontal-scroll">
@@ -295,10 +335,34 @@ not permitted.)</div>
 </section>
 </li>
 <li>
+<section class="detail" id="removeBinding(zombie.input.JoypadAxis2d)">
+<h3>removeBinding</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeBinding</span><wbr><span class="parameters">(<a href="../input/JoypadAxis2d.html" title="enum class in zombie.input">JoypadAxis2d</a>&nbsp;binding)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="moveBindingFrom(zombie.characters.CharacterJoypadAxis2dBinding)">
+<h3>moveBindingFrom</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">moveBindingFrom</span><wbr><span class="parameters">(<a href="CharacterJoypadAxis2dBinding.html" title="enum class in zombie.characters">CharacterJoypadAxis2dBinding</a>&nbsp;fromBinding)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="setDefault()">
 <h3>setDefault</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setDefault</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setAllToDefault()">
+<h3>setAllToDefault</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setAllToDefault</span>()</div>
 </div>
 </section>
 </li>
@@ -340,6 +404,14 @@ not permitted.)</div>
 <h3>isApplied</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isApplied</span><wbr><span class="parameters">(int&nbsp;joypadBind)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="findBindings(zombie.input.JoypadAxis2d)">
+<h3>findBindings</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CharacterJoypadAxis2dBinding.html" title="enum class in zombie.characters">CharacterJoypadAxis2dBinding</a>[]</span>&nbsp;<span class="element-name">findBindings</span><wbr><span class="parameters">(<a href="../input/JoypadAxis2d.html" title="enum class in zombie.input">JoypadAxis2d</a>&nbsp;joypadAxis)</span></div>
 </div>
 </section>
 </li>

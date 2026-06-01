@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#use">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.18.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -861,7 +861,8 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><span class="type-name-label">ItemPickerJava.</span><code><a href="../../inventory/ItemPickerJava.html#getLootDebugString(zombie.iso.IsoObject)" class="member-name-link">getLootDebugString</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ItemContainer.</span><code><a href="../../inventory/ItemContainer.html#isObjectPowered(zombie.iso.IsoObject)" class="member-name-link">isObjectPowered</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;parent)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ItemContainer.</span><code><a href="../../inventory/ItemContainer.html#isObjectPowered(zombie.iso.IsoObject,boolean)" class="member-name-link">isObjectPowered</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;parent,
+ boolean&nbsp;includeGenerators)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">ItemContainer.</span><code><a href="../../inventory/ItemContainer.html#setParent(zombie.iso.IsoObject)" class="member-name-link">setParent</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;parent)</code></div>
@@ -1290,6 +1291,12 @@ loadScripts(document, 'script');</script>
  <a href="../../audio/ObjectAmbientEmitters.PerObjectLogic.html" title="class in zombie.audio">ObjectAmbientEmitters.PerObjectLogic</a>&nbsp;logic)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoChunk.</span><code><a href="../IsoChunk.html#addObjectPoweredByGenerator(zombie.iso.IsoObject)" class="member-name-link">addObjectPoweredByGenerator</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoChunkLevel.</span><code><a href="../IsoChunkLevel.html#addObjectPoweredByGenerator(zombie.iso.IsoObject)" class="member-name-link">addObjectPoweredByGenerator</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">IsoGridSquare.</span><code><a href="../IsoGridSquare.html#AddSpecialObject(zombie.iso.IsoObject)" class="member-name-link">AddSpecialObject</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;obj)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
@@ -1485,6 +1492,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>void</code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">IsoChunk.</span><code><a href="../IsoChunk.html#removeObjectAmbientEmitter(zombie.iso.IsoObject)" class="member-name-link">removeObjectAmbientEmitter</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoChunk.</span><code><a href="../IsoChunk.html#removeObjectPoweredByGenerator(zombie.iso.IsoObject)" class="member-name-link">removeObjectPoweredByGenerator</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoChunkLevel.</span><code><a href="../IsoChunkLevel.html#removeObjectPoweredByGenerator(zombie.iso.IsoObject)" class="member-name-link">removeObjectPoweredByGenerator</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>int</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">IsoGridSquare.</span><code><a href="../IsoGridSquare.html#RemoveTileObject(zombie.iso.IsoObject)" class="member-name-link">RemoveTileObject</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;obj)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -1589,23 +1602,26 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoObjectUtils.</span><code><a href="../IsoObjectUtils.html#getAllMultiTileObjects(zombie.iso.IsoObject,java.util.ArrayList)" class="member-name-link">getAllMultiTileObjects</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object,
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoChunkLevel.</span><code><a href="../IsoChunkLevel.html#appendObjectsPoweredByGenerator(java.util.List)" class="member-name-link">appendObjectsPoweredByGenerator</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;&nbsp;objects)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoObjectUtils.</span><code><a href="../IsoObjectUtils.html#getAllMultiTileObjects(zombie.iso.IsoObject,java.util.ArrayList)" class="member-name-link">getAllMultiTileObjects</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;&nbsp;outList)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#getSpriteGridObjects(java.util.ArrayList)" class="member-name-link">getSpriteGridObjects</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;&nbsp;result)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#getSpriteGridObjects(java.util.ArrayList,boolean)" class="member-name-link">getSpriteGridObjects</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;&nbsp;result,
+<div class="col-second even-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#getSpriteGridObjects(java.util.ArrayList)" class="member-name-link">getSpriteGridObjects</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;&nbsp;result)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#getSpriteGridObjects(java.util.ArrayList,boolean)" class="member-name-link">getSpriteGridObjects</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;&nbsp;result,
  boolean&nbsp;bAddSelf)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#getSpriteGridObjectsExcludingSelf(java.util.ArrayList)" class="member-name-link">getSpriteGridObjectsExcludingSelf</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;&nbsp;result)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#getSpriteGridObjectsIncludingSelf(java.util.ArrayList)" class="member-name-link">getSpriteGridObjectsIncludingSelf</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;&nbsp;result)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#getSpriteGridObjectsExcludingSelf(java.util.ArrayList)" class="member-name-link">getSpriteGridObjectsExcludingSelf</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;&nbsp;result)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#getSpriteGridObjectsIncludingSelf(java.util.ArrayList)" class="member-name-link">getSpriteGridObjectsIncludingSelf</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;&nbsp;result)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>

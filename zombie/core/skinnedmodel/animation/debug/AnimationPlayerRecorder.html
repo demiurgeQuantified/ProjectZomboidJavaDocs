@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.18.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -94,6 +94,15 @@ loadScripts(document, 'script');</script>
 <li><a href="#getOwner()" tabindex="0">getOwner()</a></li>
 <li><a href="#isRecording()" tabindex="0">isRecording()</a></li>
 <li><a href="#setRecording(boolean)" tabindex="0">setRecording(boolean)</a></li>
+<li><a href="#initMessaging()" tabindex="0">initMessaging()</a></li>
+<li><a href="#isAnimationRecorderActiveAll()" tabindex="0">isAnimationRecorderActiveAll()</a></li>
+<li><a href="#setAnimationRecorderActiveAll(boolean)" tabindex="0">setAnimationRecorderActiveAll(boolean)</a></li>
+<li><a href="#isAnimationRecorderActiveForType(java.lang.Class)" tabindex="0">isAnimationRecorderActiveForType(Class)</a></li>
+<li><a href="#setAnimationRecorderActiveForType(java.lang.Class,boolean)" tabindex="0">setAnimationRecorderActiveForType(Class, boolean)</a></li>
+<li><a href="#setAnimationRecorderMinRangeOfPlayer(float)" tabindex="0">setAnimationRecorderMinRangeOfPlayer(float)</a></li>
+<li><a href="#isAnimationRecorderActive(zombie.iso.IsoMovingObject)" tabindex="0">isAnimationRecorderActive(IsoMovingObject)</a></li>
+<li><a href="#isAnimRecorderDiscardTriggered()" tabindex="0">isAnimRecorderDiscardTriggered()</a></li>
+<li><a href="#onPostUpdateWorld()" tabindex="0">onPostUpdateWorld()</a></li>
 </ol>
 </li>
 </ol>
@@ -164,86 +173,114 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#init()" class="member-name-link">init</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRecording()" class="member-name-link">isRecording</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logActionState(java.lang.String,java.lang.String)" class="member-name-link">logActionState</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;actionGroupName,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;actionStateName)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initMessaging()" class="member-name-link">initMessaging</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isAnimationRecorderActive(zombie.iso.IsoMovingObject)" class="member-name-link">isAnimationRecorderActive</a><wbr>(<a href="../../../../iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;object)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isAnimationRecorderActiveAll()" class="member-name-link">isAnimationRecorderActiveAll</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isAnimationRecorderActiveForType(java.lang.Class)" class="member-name-link">isAnimationRecorderActiveForType</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends <a href="../../../../iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&gt;&nbsp;objectType)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isAnimRecorderDiscardTriggered()" class="member-name-link">isAnimRecorderDiscardTriggered</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRecording()" class="member-name-link">isRecording</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logActionState(zombie.characters.action.ActionGroup,zombie.characters.action.ActionState,java.util.List)" class="member-name-link">logActionState</a><wbr>(<a href="../../../../characters/action/ActionGroup.html" title="class in zombie.characters.action">ActionGroup</a>&nbsp;actionGroup,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logActionState(java.lang.String,java.lang.String)" class="member-name-link">logActionState</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;actionGroupName,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;actionStateName)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logActionState(zombie.characters.action.ActionGroup,zombie.characters.action.ActionState,java.util.List)" class="member-name-link">logActionState</a><wbr>(<a href="../../../../characters/action/ActionGroup.html" title="class in zombie.characters.action">ActionGroup</a>&nbsp;actionGroup,
  <a href="../../../../characters/action/ActionState.html" title="class in zombie.characters.action">ActionState</a>&nbsp;actionState,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../../characters/action/ActionState.html" title="class in zombie.characters.action">ActionState</a>&gt;&nbsp;subStates)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logAIState(java.lang.String)" class="member-name-link">logAIState</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;aiStateName)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logAIState(zombie.ai.State,java.util.List)" class="member-name-link">logAIState</a><wbr>(<a href="../../../../ai/State.html" title="class in zombie.ai">State</a>&nbsp;state,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../../ai/StateMachine.SubstateSlot.html" title="class in zombie.ai">StateMachine.SubstateSlot</a>&gt;&nbsp;subStates)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logAIState(java.lang.String)" class="member-name-link">logAIState</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;aiStateName)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logAnimEvent(zombie.core.skinnedmodel.advancedanimation.IAnimatable,zombie.core.skinnedmodel.animation.AnimationTrack,zombie.core.skinnedmodel.advancedanimation.AnimEvent)" class="member-name-link">logAnimEvent</a><wbr>(<a href="../../advancedanimation/IAnimatable.html" title="interface in zombie.core.skinnedmodel.advancedanimation">IAnimatable</a>&nbsp;character,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logAIState(zombie.ai.State,java.util.List)" class="member-name-link">logAIState</a><wbr>(<a href="../../../../ai/State.html" title="class in zombie.ai">State</a>&nbsp;state,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../../ai/StateMachine.SubstateSlot.html" title="class in zombie.ai">StateMachine.SubstateSlot</a>&gt;&nbsp;subStates)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logAnimEvent(zombie.core.skinnedmodel.advancedanimation.IAnimatable,zombie.core.skinnedmodel.animation.AnimationTrack,zombie.core.skinnedmodel.advancedanimation.AnimEvent)" class="member-name-link">logAnimEvent</a><wbr>(<a href="../../advancedanimation/IAnimatable.html" title="interface in zombie.core.skinnedmodel.advancedanimation">IAnimatable</a>&nbsp;character,
  <a href="../AnimationTrack.html" title="class in zombie.core.skinnedmodel.animation">AnimationTrack</a>&nbsp;track,
  <a href="../../advancedanimation/AnimEvent.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimEvent</a>&nbsp;evt)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logAnimNode(zombie.core.skinnedmodel.advancedanimation.LiveAnimNode)" class="member-name-link">logAnimNode</a><wbr>(<a href="../../advancedanimation/LiveAnimNode.html" title="class in zombie.core.skinnedmodel.advancedanimation">LiveAnimNode</a>&nbsp;liveNode)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logAnimState(zombie.core.skinnedmodel.advancedanimation.AnimLayer,zombie.core.skinnedmodel.advancedanimation.AnimState)" class="member-name-link">logAnimState</a><wbr>(<a href="../../advancedanimation/AnimLayer.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimLayer</a>&nbsp;layer,
- <a href="../../advancedanimation/AnimState.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimState</a>&nbsp;state)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logAnimNode(zombie.core.skinnedmodel.advancedanimation.LiveAnimNode)" class="member-name-link">logAnimNode</a><wbr>(<a href="../../advancedanimation/LiveAnimNode.html" title="class in zombie.core.skinnedmodel.advancedanimation">LiveAnimNode</a>&nbsp;liveNode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logAnimWeights(zombie.core.skinnedmodel.animation.LiveAnimationTrackEntries,zombie.iso.Vector2,zombie.iso.Vector3)" class="member-name-link">logAnimWeights</a><wbr>(<a href="../LiveAnimationTrackEntries.html" title="class in zombie.core.skinnedmodel.animation">LiveAnimationTrackEntries</a>&nbsp;trackEntries,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logAnimState(zombie.core.skinnedmodel.advancedanimation.AnimLayer,zombie.core.skinnedmodel.advancedanimation.AnimState)" class="member-name-link">logAnimState</a><wbr>(<a href="../../advancedanimation/AnimLayer.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimLayer</a>&nbsp;layer,
+ <a href="../../advancedanimation/AnimState.html" title="class in zombie.core.skinnedmodel.advancedanimation">AnimState</a>&nbsp;state)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logAnimWeights(zombie.core.skinnedmodel.animation.LiveAnimationTrackEntries,zombie.iso.Vector2,zombie.iso.Vector3)" class="member-name-link">logAnimWeights</a><wbr>(<a href="../LiveAnimationTrackEntries.html" title="class in zombie.core.skinnedmodel.animation">LiveAnimationTrackEntries</a>&nbsp;trackEntries,
  <a href="../../../../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;deferredMovement,
  <a href="../../../../iso/Vector3.html" title="class in zombie.iso">Vector3</a>&nbsp;deferredMovementFromRagdoll)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logCharacterPos()" class="member-name-link">logCharacterPos</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logGlobalAnimEvent(zombie.core.skinnedmodel.advancedanimation.IAnimatable,zombie.core.skinnedmodel.advancedanimation.events.GlobalAnimEvent)" class="member-name-link">logGlobalAnimEvent</a><wbr>(<a href="../../advancedanimation/IAnimatable.html" title="interface in zombie.core.skinnedmodel.advancedanimation">IAnimatable</a>&nbsp;character,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logCharacterPos()" class="member-name-link">logCharacterPos</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logGlobalAnimEvent(zombie.core.skinnedmodel.advancedanimation.IAnimatable,zombie.core.skinnedmodel.advancedanimation.events.GlobalAnimEvent)" class="member-name-link">logGlobalAnimEvent</a><wbr>(<a href="../../advancedanimation/IAnimatable.html" title="interface in zombie.core.skinnedmodel.advancedanimation">IAnimatable</a>&nbsp;character,
  <a href="../../advancedanimation/events/GlobalAnimEvent.html" title="enum class in zombie.core.skinnedmodel.advancedanimation.events">GlobalAnimEvent</a>&nbsp;evt)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logVariable(java.lang.String,boolean)" class="member-name-link">logVariable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;variableKey,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logVariable(java.lang.String,boolean)" class="member-name-link">logVariable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;variableKey,
  boolean&nbsp;variableValue)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logVariable(java.lang.String,float)" class="member-name-link">logVariable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;variableKey,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logVariable(java.lang.String,float)" class="member-name-link">logVariable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;variableKey,
  float&nbsp;variableValue)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logVariable(java.lang.String,int)" class="member-name-link">logVariable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;variableKey,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logVariable(java.lang.String,int)" class="member-name-link">logVariable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;variableKey,
  int&nbsp;variableValue)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logVariable(java.lang.String,java.lang.String)" class="member-name-link">logVariable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;variableKey,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logVariable(java.lang.String,java.lang.String)" class="member-name-link">logVariable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;variableKey,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;variableValue)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logVariable(java.lang.String,zombie.iso.Vector2)" class="member-name-link">logVariable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;variableKey,
- <a href="../../../../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;variableValue)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logVariables(zombie.core.skinnedmodel.advancedanimation.IAnimationVariableSource)" class="member-name-link">logVariables</a><wbr>(<a href="../../advancedanimation/IAnimationVariableSource.html" title="interface in zombie.core.skinnedmodel.advancedanimation">IAnimationVariableSource</a>&nbsp;varSource)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logVariable(java.lang.String,zombie.iso.Vector2)" class="member-name-link">logVariable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;variableKey,
+ <a href="../../../../iso/Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;variableValue)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#newFrame(int)" class="member-name-link">newFrame</a><wbr>(int&nbsp;frameNo)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logVariables(zombie.core.skinnedmodel.advancedanimation.IAnimationVariableSource)" class="member-name-link">logVariables</a><wbr>(<a href="../../advancedanimation/IAnimationVariableSource.html" title="interface in zombie.core.skinnedmodel.advancedanimation">IAnimationVariableSource</a>&nbsp;varSource)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#newFrame(int)" class="member-name-link">newFrame</a><wbr>(int&nbsp;frameNo)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onPostUpdateWorld()" class="member-name-link">onPostUpdateWorld</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link">PrintStream</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#openFileStream(java.lang.String,boolean,java.util.function.Consumer)" class="member-name-link">openFileStream</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
  boolean&nbsp;append,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;fileNameConsumer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRecording(boolean)" class="member-name-link">setRecording</a><wbr>(boolean&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setAnimationRecorderActiveAll(boolean)" class="member-name-link">setAnimationRecorderActiveAll</a><wbr>(boolean&nbsp;setActive)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setAnimationRecorderActiveForType(java.lang.Class,boolean)" class="member-name-link">setAnimationRecorderActiveForType</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends <a href="../../../../iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&gt;&nbsp;objectType,
+ boolean&nbsp;isActive)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setAnimationRecorderMinRangeOfPlayer(float)" class="member-name-link">setAnimationRecorderMinRangeOfPlayer</a><wbr>(float&nbsp;minRange)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeFrame()" class="member-name-link">writeFrame</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRecording(boolean)" class="member-name-link">setRecording</a><wbr>(boolean&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeFrame()" class="member-name-link">writeFrame</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -523,6 +560,79 @@ loadScripts(document, 'script');</script>
 <h3>setRecording</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setRecording</span><wbr><span class="parameters">(boolean&nbsp;value)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="initMessaging()">
+<h3>initMessaging</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">initMessaging</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isAnimationRecorderActiveAll()">
+<h3>isAnimationRecorderActiveAll</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAnimationRecorderActiveAll</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setAnimationRecorderActiveAll(boolean)">
+<h3>setAnimationRecorderActiveAll</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setAnimationRecorderActiveAll</span><wbr><span class="parameters">(boolean&nbsp;setActive)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isAnimationRecorderActiveForType(java.lang.Class)">
+<h3>isAnimationRecorderActiveForType</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAnimationRecorderActiveForType</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends <a href="../../../../iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&gt;&nbsp;objectType)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setAnimationRecorderActiveForType(java.lang.Class,boolean)">
+<h3>setAnimationRecorderActiveForType</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setAnimationRecorderActiveForType</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends <a href="../../../../iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&gt;&nbsp;objectType,
+ boolean&nbsp;isActive)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setAnimationRecorderMinRangeOfPlayer(float)">
+<h3>setAnimationRecorderMinRangeOfPlayer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setAnimationRecorderMinRangeOfPlayer</span><wbr><span class="parameters">(float&nbsp;minRange)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isAnimationRecorderActive(zombie.iso.IsoMovingObject)">
+<h3>isAnimationRecorderActive</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAnimationRecorderActive</span><wbr><span class="parameters">(<a href="../../../../iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;object)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isAnimRecorderDiscardTriggered()">
+<h3>isAnimRecorderDiscardTriggered</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAnimRecorderDiscardTriggered</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="onPostUpdateWorld()">
+<h3>onPostUpdateWorld</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onPostUpdateWorld</span>()</div>
 </div>
 </section>
 </li>

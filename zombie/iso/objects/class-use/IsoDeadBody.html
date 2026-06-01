@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#use">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.18.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -155,6 +155,9 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;isGory,
  <a href="../../../characters/CharacterDiedListener.html" title="interface in zombie.characters">CharacterDiedListener</a>&nbsp;onDiedListener)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../IsoDeadBody.html" title="class in zombie.iso.objects">IsoDeadBody</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoPlayer.</span><code><a href="../../../characters/IsoPlayer.html#findClosestCorpseOnGroundToPickup()" class="member-name-link">findClosestCorpseOnGroundToPickup</a>()</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Methods in <a href="../../../characters/package-summary.html">zombie.characters</a> with parameters of type <a href="../IsoDeadBody.html" title="class in zombie.iso.objects">IsoDeadBody</a></span></div>
 <div class="summary-table three-column-summary">
@@ -430,10 +433,10 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../../Lua/LuaManager.GlobalObject.html#sendCorpse(zombie.iso.objects.IsoDeadBody)" class="member-name-link">sendCorpse</a><wbr>(<a href="../IsoDeadBody.html" title="class in zombie.iso.objects">IsoDeadBody</a>&nbsp;body)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../../Lua/LuaManager.GlobalObject.html#sendRemoveAndGrabAnimalFromTrailer(zombie.iso.objects.IsoDeadBody,zombie.characters.IsoPlayer,zombie.vehicles.BaseVehicle,zombie.inventory.types.AnimalInventoryItem)" class="member-name-link">sendRemoveAndGrabAnimalFromTrailer</a><wbr>(<a href="../IsoDeadBody.html" title="class in zombie.iso.objects">IsoDeadBody</a>&nbsp;animal,
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../../Lua/LuaManager.GlobalObject.html#sendRemoveAndGrabAnimalFromTrailer(zombie.iso.objects.IsoDeadBody,zombie.characters.IsoPlayer,zombie.vehicles.BaseVehicle,zombie.inventory.InventoryItem)" class="member-name-link">sendRemoveAndGrabAnimalFromTrailer</a><wbr>(<a href="../IsoDeadBody.html" title="class in zombie.iso.objects">IsoDeadBody</a>&nbsp;animal,
  <a href="../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
  <a href="../../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle,
- <a href="../../../inventory/types/AnimalInventoryItem.html" title="class in zombie.inventory.types">AnimalInventoryItem</a>&nbsp;item)</code></div>
+ <a href="../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -479,13 +482,20 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AnimalCommandPacket.</span><code><a href="../../../network/packets/character/AnimalCommandPacket.html#set(zombie.network.packets.character.AnimalCommandPacket.Type,zombie.iso.objects.IsoDeadBody,zombie.inventory.InventoryItem)" class="member-name-link">set</a><wbr>(<a href="../../../network/packets/character/AnimalCommandPacket.Type.html" title="enum class in zombie.network.packets.character">AnimalCommandPacket.Type</a>&nbsp;operation,
- <a href="../IsoDeadBody.html" title="class in zombie.iso.objects">IsoDeadBody</a>&nbsp;body,
+<div class="col-second even-row-color"><span class="type-name-label">AnimalCommandPacket.</span><code><a href="../../../network/packets/character/AnimalCommandPacket.html#set(zombie.network.packets.character.AnimalCommandPacket.Type,zombie.iso.objects.IsoDeadBody,zombie.characters.IsoPlayer,zombie.vehicles.BaseVehicle,zombie.inventory.InventoryItem)" class="member-name-link">set</a><wbr>(<a href="../../../network/packets/character/AnimalCommandPacket.Type.html" title="enum class in zombie.network.packets.character">AnimalCommandPacket.Type</a>&nbsp;operation,
+ <a href="../IsoDeadBody.html" title="class in zombie.iso.objects">IsoDeadBody</a>&nbsp;deadBody,
+ <a href="../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ <a href="../../../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle,
  <a href="../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">RemoveCorpseFromMapPacket.</span><code><a href="../../../network/packets/character/RemoveCorpseFromMapPacket.html#set(zombie.iso.objects.IsoDeadBody)" class="member-name-link">set</a><wbr>(<a href="../IsoDeadBody.html" title="class in zombie.iso.objects">IsoDeadBody</a>&nbsp;deadBody)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">AnimalCommandPacket.</span><code><a href="../../../network/packets/character/AnimalCommandPacket.html#set(zombie.network.packets.character.AnimalCommandPacket.Type,zombie.iso.objects.IsoDeadBody,zombie.inventory.InventoryItem)" class="member-name-link">set</a><wbr>(<a href="../../../network/packets/character/AnimalCommandPacket.Type.html" title="enum class in zombie.network.packets.character">AnimalCommandPacket.Type</a>&nbsp;operation,
+ <a href="../IsoDeadBody.html" title="class in zombie.iso.objects">IsoDeadBody</a>&nbsp;body,
+ <a href="../../../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">RemoveCorpseFromMapPacket.</span><code><a href="../../../network/packets/character/RemoveCorpseFromMapPacket.html#set(zombie.iso.objects.IsoDeadBody)" class="member-name-link">set</a><wbr>(<a href="../IsoDeadBody.html" title="class in zombie.iso.objects">IsoDeadBody</a>&nbsp;deadBody)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>

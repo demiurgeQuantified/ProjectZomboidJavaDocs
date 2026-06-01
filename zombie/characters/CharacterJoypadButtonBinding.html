@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.18.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -87,6 +87,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#SmashWindow" tabindex="0">SmashWindow</a></li>
 <li><a href="#Brakes" tabindex="0">Brakes</a></li>
 <li><a href="#CruiseControl" tabindex="0">CruiseControl</a></li>
+<li><a href="#ZoomIn" tabindex="0">ZoomIn</a></li>
+<li><a href="#ZoomOut" tabindex="0">ZoomOut</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
@@ -94,17 +96,36 @@ loadScripts(document, 'script');</script>
 <li><a href="#values()" tabindex="0">values()</a></li>
 <li><a href="#valueOf(java.lang.String)" tabindex="0">valueOf(String)</a></li>
 <li><a href="#allBindings()" tabindex="0">allBindings()</a></li>
+<li><a href="#findBinding(zombie.input.JoypadButton)" tabindex="0">findBinding(JoypadButton)</a></li>
+<li><a href="#findBindings(zombie.input.JoypadButton)" tabindex="0">findBindings(JoypadButton)</a></li>
+<li><a href="#findBindings(zombie.input.JoypadAxis1d)" tabindex="0">findBindings(JoypadAxis1d)</a></li>
+<li><a href="#findBindings(zombie.input.JoypadAxis2d)" tabindex="0">findBindings(JoypadAxis2d)</a></li>
 <li><a href="#fromString(java.lang.String)" tabindex="0">fromString(String)</a></li>
+<li><a href="#getNameTranslationKey()" tabindex="0">getNameTranslationKey()</a></li>
 <li><a href="#getJoypadButton()" tabindex="0">getJoypadButton()</a></li>
 <li><a href="#getJoypadAxis1d()" tabindex="0">getJoypadAxis1d()</a></li>
 <li><a href="#getJoypadAxis2d()" tabindex="0">getJoypadAxis2d()</a></li>
 <li><a href="#getBinding()" tabindex="0">getBinding()</a></li>
+<li><a href="#getAxisMinThreshold()" tabindex="0">getAxisMinThreshold()</a></li>
+<li><a href="#getAxisMaxThreshold()" tabindex="0">getAxisMaxThreshold()</a></li>
+<li><a href="#isAxisMaxThresholdInfinity()" tabindex="0">isAxisMaxThresholdInfinity()</a></li>
+<li><a href="#containsBinding(zombie.input.JoypadButton)" tabindex="0">containsBinding(JoypadButton)</a></li>
+<li><a href="#containsBinding(zombie.input.JoypadAxis1d)" tabindex="0">containsBinding(JoypadAxis1d)</a></li>
+<li><a href="#containsBinding(zombie.input.JoypadAxis2d)" tabindex="0">containsBinding(JoypadAxis2d)</a></li>
+<li><a href="#removeBinding(zombie.input.JoypadButton)" tabindex="0">removeBinding(JoypadButton)</a></li>
+<li><a href="#removeBinding(zombie.input.JoypadAxis1d)" tabindex="0">removeBinding(JoypadAxis1d)</a></li>
+<li><a href="#removeBinding(zombie.input.JoypadAxis2d)" tabindex="0">removeBinding(JoypadAxis2d)</a></li>
+<li><a href="#addBinding(zombie.input.JoypadButton)" tabindex="0">addBinding(JoypadButton)</a></li>
+<li><a href="#addBinding(zombie.input.JoypadAxis1d)" tabindex="0">addBinding(JoypadAxis1d)</a></li>
+<li><a href="#addBinding(zombie.input.JoypadAxis2d)" tabindex="0">addBinding(JoypadAxis2d)</a></li>
+<li><a href="#moveBindingFrom(zombie.characters.CharacterJoypadButtonBinding)" tabindex="0">moveBindingFrom(CharacterJoypadButtonBinding)</a></li>
 <li><a href="#setBinding(zombie.input.JoypadButton)" tabindex="0">setBinding(JoypadButton)</a></li>
 <li><a href="#setBinding(zombie.input.JoypadAxis1d,float,float)" tabindex="0">setBinding(JoypadAxis1d, float, float)</a></li>
 <li><a href="#setBinding(zombie.input.JoypadAxis1d,float)" tabindex="0">setBinding(JoypadAxis1d, float)</a></li>
-<li><a href="#setBinding(zombie.characters.CharacterJoypadAxis2dBinding,float,float)" tabindex="0">setBinding(CharacterJoypadAxis2dBinding, float, float)</a></li>
-<li><a href="#setBinding(zombie.characters.CharacterJoypadAxis2dBinding,float)" tabindex="0">setBinding(CharacterJoypadAxis2dBinding, float)</a></li>
+<li><a href="#setBinding(zombie.input.JoypadAxis2d,float,float)" tabindex="0">setBinding(JoypadAxis2d, float, float)</a></li>
+<li><a href="#setBinding(zombie.input.JoypadAxis2d,float)" tabindex="0">setBinding(JoypadAxis2d, float)</a></li>
 <li><a href="#setDefault()" tabindex="0">setDefault()</a></li>
+<li><a href="#setAllToDefault()" tabindex="0">setAllToDefault()</a></li>
 <li><a href="#isDown(int)" tabindex="0">isDown(int)</a></li>
 </ol>
 </li>
@@ -220,6 +241,10 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="#WalkTo" class="member-name-link">WalkTo</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="#ZoomIn" class="member-name-link">ZoomIn</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="#ZoomOut" class="member-name-link">ZoomOut</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -234,12 +259,48 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addBinding(zombie.input.JoypadAxis1d)" class="member-name-link">addBinding</a><wbr>(<a href="../input/JoypadAxis1d.html" title="enum class in zombie.input">JoypadAxis1d</a>&nbsp;axis1d)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addBinding(zombie.input.JoypadAxis2d)" class="member-name-link">addBinding</a><wbr>(<a href="../input/JoypadAxis2d.html" title="enum class in zombie.input">JoypadAxis2d</a>&nbsp;axis2d)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addBinding(zombie.input.JoypadButton)" class="member-name-link">addBinding</a><wbr>(<a href="../input/JoypadButton.html" title="enum class in zombie.input">JoypadButton</a>&nbsp;button)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CharacterJoypadButtonBinding.html" title="enum class in zombie.characters">CharacterJoypadButtonBinding</a>[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#allBindings()" class="member-name-link">allBindings</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#containsBinding(zombie.input.JoypadAxis1d)" class="member-name-link">containsBinding</a><wbr>(<a href="../input/JoypadAxis1d.html" title="enum class in zombie.input">JoypadAxis1d</a>&nbsp;axis1d)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#containsBinding(zombie.input.JoypadAxis2d)" class="member-name-link">containsBinding</a><wbr>(<a href="../input/JoypadAxis2d.html" title="enum class in zombie.input">JoypadAxis2d</a>&nbsp;axis2d)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#containsBinding(zombie.input.JoypadButton)" class="member-name-link">containsBinding</a><wbr>(<a href="../input/JoypadButton.html" title="enum class in zombie.input">JoypadButton</a>&nbsp;button)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CharacterJoypadButtonBinding.html" title="enum class in zombie.characters">CharacterJoypadButtonBinding</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findBinding(zombie.input.JoypadButton)" class="member-name-link">findBinding</a><wbr>(<a href="../input/JoypadButton.html" title="enum class in zombie.input">JoypadButton</a>&nbsp;joypadButton)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CharacterJoypadButtonBinding.html" title="enum class in zombie.characters">CharacterJoypadButtonBinding</a>[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#allBindings()" class="member-name-link">allBindings</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findBindings(zombie.input.JoypadAxis1d)" class="member-name-link">findBindings</a><wbr>(<a href="../input/JoypadAxis1d.html" title="enum class in zombie.input">JoypadAxis1d</a>&nbsp;joypadAxis)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CharacterJoypadButtonBinding.html" title="enum class in zombie.characters">CharacterJoypadButtonBinding</a>[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findBindings(zombie.input.JoypadAxis2d)" class="member-name-link">findBindings</a><wbr>(<a href="../input/JoypadAxis2d.html" title="enum class in zombie.input">JoypadAxis2d</a>&nbsp;joypadAxis)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CharacterJoypadButtonBinding.html" title="enum class in zombie.characters">CharacterJoypadButtonBinding</a>[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findBindings(zombie.input.JoypadButton)" class="member-name-link">findBindings</a><wbr>(<a href="../input/JoypadButton.html" title="enum class in zombie.input">JoypadButton</a>&nbsp;joypadButton)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CharacterJoypadButtonBinding.html" title="enum class in zombie.characters">CharacterJoypadButtonBinding</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fromString(java.lang.String)" class="member-name-link">fromString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAxisMaxThreshold()" class="member-name-link">getAxisMaxThreshold</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAxisMinThreshold()" class="member-name-link">getAxisMinThreshold</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CharacterJoypadButtonBinding.IsDownBinding.html" title="interface in zombie.characters">CharacterJoypadButtonBinding.IsDownBinding</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBinding()" class="member-name-link">getBinding</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -252,41 +313,62 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../input/JoypadButton.html" title="enum class in zombie.input">JoypadButton</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJoypadButton()" class="member-name-link">getJoypadButton</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNameTranslationKey()" class="member-name-link">getNameTranslationKey</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAxisMaxThresholdInfinity()" class="member-name-link">isAxisMaxThresholdInfinity</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDown(int)" class="member-name-link">isDown</a><wbr>(int&nbsp;joypadBind)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBinding(zombie.characters.CharacterJoypadAxis2dBinding,float)" class="member-name-link">setBinding</a><wbr>(<a href="CharacterJoypadAxis2dBinding.html" title="enum class in zombie.characters">CharacterJoypadAxis2dBinding</a>&nbsp;axis2d,
- float&nbsp;min)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveBindingFrom(zombie.characters.CharacterJoypadButtonBinding)" class="member-name-link">moveBindingFrom</a><wbr>(<a href="CharacterJoypadButtonBinding.html" title="enum class in zombie.characters">CharacterJoypadButtonBinding</a>&nbsp;fromBinding)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBinding(zombie.characters.CharacterJoypadAxis2dBinding,float,float)" class="member-name-link">setBinding</a><wbr>(<a href="CharacterJoypadAxis2dBinding.html" title="enum class in zombie.characters">CharacterJoypadAxis2dBinding</a>&nbsp;axis2d,
- float&nbsp;min,
- float&nbsp;max)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeBinding(zombie.input.JoypadAxis1d)" class="member-name-link">removeBinding</a><wbr>(<a href="../input/JoypadAxis1d.html" title="enum class in zombie.input">JoypadAxis1d</a>&nbsp;axis1d)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBinding(zombie.input.JoypadAxis1d,float)" class="member-name-link">setBinding</a><wbr>(<a href="../input/JoypadAxis1d.html" title="enum class in zombie.input">JoypadAxis1d</a>&nbsp;axis1d,
- float&nbsp;min)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeBinding(zombie.input.JoypadAxis2d)" class="member-name-link">removeBinding</a><wbr>(<a href="../input/JoypadAxis2d.html" title="enum class in zombie.input">JoypadAxis2d</a>&nbsp;axis2d)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBinding(zombie.input.JoypadAxis1d,float,float)" class="member-name-link">setBinding</a><wbr>(<a href="../input/JoypadAxis1d.html" title="enum class in zombie.input">JoypadAxis1d</a>&nbsp;axis1d,
- float&nbsp;min,
- float&nbsp;max)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeBinding(zombie.input.JoypadButton)" class="member-name-link">removeBinding</a><wbr>(<a href="../input/JoypadButton.html" title="enum class in zombie.input">JoypadButton</a>&nbsp;button)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setAllToDefault()" class="member-name-link">setAllToDefault</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBinding(zombie.input.JoypadAxis1d,float)" class="member-name-link">setBinding</a><wbr>(<a href="../input/JoypadAxis1d.html" title="enum class in zombie.input">JoypadAxis1d</a>&nbsp;axis1d,
+ float&nbsp;min)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBinding(zombie.input.JoypadButton)" class="member-name-link">setBinding</a><wbr>(<a href="../input/JoypadButton.html" title="enum class in zombie.input">JoypadButton</a>&nbsp;newBinding)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBinding(zombie.input.JoypadAxis1d,float,float)" class="member-name-link">setBinding</a><wbr>(<a href="../input/JoypadAxis1d.html" title="enum class in zombie.input">JoypadAxis1d</a>&nbsp;axis1d,
+ float&nbsp;min,
+ float&nbsp;max)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDefault()" class="member-name-link">setDefault</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBinding(zombie.input.JoypadAxis2d,float)" class="member-name-link">setBinding</a><wbr>(<a href="../input/JoypadAxis2d.html" title="enum class in zombie.input">JoypadAxis2d</a>&nbsp;axis2d,
+ float&nbsp;min)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CharacterJoypadButtonBinding.html" title="enum class in zombie.characters">CharacterJoypadButtonBinding</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#valueOf(java.lang.String)" class="member-name-link">valueOf</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBinding(zombie.input.JoypadAxis2d,float,float)" class="member-name-link">setBinding</a><wbr>(<a href="../input/JoypadAxis2d.html" title="enum class in zombie.input">JoypadAxis2d</a>&nbsp;axis2d,
+ float&nbsp;min,
+ float&nbsp;max)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBinding(zombie.input.JoypadButton)" class="member-name-link">setBinding</a><wbr>(<a href="../input/JoypadButton.html" title="enum class in zombie.input">JoypadButton</a>&nbsp;newBinding)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDefault()" class="member-name-link">setDefault</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CharacterJoypadButtonBinding.html" title="enum class in zombie.characters">CharacterJoypadButtonBinding</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#valueOf(java.lang.String)" class="member-name-link">valueOf</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns the enum constant of this class with the specified name.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CharacterJoypadButtonBinding.html" title="enum class in zombie.characters">CharacterJoypadButtonBinding</a>[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#values()" class="member-name-link">values</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CharacterJoypadButtonBinding.html" title="enum class in zombie.characters">CharacterJoypadButtonBinding</a>[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#values()" class="member-name-link">values</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns an array containing the constants of this enum class, in
 the order they are declared.</div>
 </div>
@@ -518,6 +600,22 @@ the order they are declared.</div>
 </div>
 </section>
 </li>
+<li>
+<section class="detail" id="ZoomIn">
+<h3>ZoomIn</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CharacterJoypadButtonBinding.html" title="enum class in zombie.characters">CharacterJoypadButtonBinding</a></span>&nbsp;<span class="element-name">ZoomIn</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="ZoomOut">
+<h3>ZoomOut</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CharacterJoypadButtonBinding.html" title="enum class in zombie.characters">CharacterJoypadButtonBinding</a></span>&nbsp;<span class="element-name">ZoomOut</span></div>
+</div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -570,10 +668,50 @@ not permitted.)</div>
 </section>
 </li>
 <li>
+<section class="detail" id="findBinding(zombie.input.JoypadButton)">
+<h3>findBinding</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CharacterJoypadButtonBinding.html" title="enum class in zombie.characters">CharacterJoypadButtonBinding</a></span>&nbsp;<span class="element-name">findBinding</span><wbr><span class="parameters">(<a href="../input/JoypadButton.html" title="enum class in zombie.input">JoypadButton</a>&nbsp;joypadButton)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="findBindings(zombie.input.JoypadButton)">
+<h3>findBindings</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CharacterJoypadButtonBinding.html" title="enum class in zombie.characters">CharacterJoypadButtonBinding</a>[]</span>&nbsp;<span class="element-name">findBindings</span><wbr><span class="parameters">(<a href="../input/JoypadButton.html" title="enum class in zombie.input">JoypadButton</a>&nbsp;joypadButton)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="findBindings(zombie.input.JoypadAxis1d)">
+<h3>findBindings</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CharacterJoypadButtonBinding.html" title="enum class in zombie.characters">CharacterJoypadButtonBinding</a>[]</span>&nbsp;<span class="element-name">findBindings</span><wbr><span class="parameters">(<a href="../input/JoypadAxis1d.html" title="enum class in zombie.input">JoypadAxis1d</a>&nbsp;joypadAxis)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="findBindings(zombie.input.JoypadAxis2d)">
+<h3>findBindings</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CharacterJoypadButtonBinding.html" title="enum class in zombie.characters">CharacterJoypadButtonBinding</a>[]</span>&nbsp;<span class="element-name">findBindings</span><wbr><span class="parameters">(<a href="../input/JoypadAxis2d.html" title="enum class in zombie.input">JoypadAxis2d</a>&nbsp;joypadAxis)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="fromString(java.lang.String)">
 <h3>fromString</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CharacterJoypadButtonBinding.html" title="enum class in zombie.characters">CharacterJoypadButtonBinding</a></span>&nbsp;<span class="element-name">fromString</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getNameTranslationKey()">
+<h3>getNameTranslationKey</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getNameTranslationKey</span>()</div>
 </div>
 </section>
 </li>
@@ -610,6 +748,110 @@ not permitted.)</div>
 </section>
 </li>
 <li>
+<section class="detail" id="getAxisMinThreshold()">
+<h3>getAxisMinThreshold</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getAxisMinThreshold</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getAxisMaxThreshold()">
+<h3>getAxisMaxThreshold</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getAxisMaxThreshold</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isAxisMaxThresholdInfinity()">
+<h3>isAxisMaxThresholdInfinity</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAxisMaxThresholdInfinity</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="containsBinding(zombie.input.JoypadButton)">
+<h3>containsBinding</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">containsBinding</span><wbr><span class="parameters">(<a href="../input/JoypadButton.html" title="enum class in zombie.input">JoypadButton</a>&nbsp;button)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="containsBinding(zombie.input.JoypadAxis1d)">
+<h3>containsBinding</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">containsBinding</span><wbr><span class="parameters">(<a href="../input/JoypadAxis1d.html" title="enum class in zombie.input">JoypadAxis1d</a>&nbsp;axis1d)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="containsBinding(zombie.input.JoypadAxis2d)">
+<h3>containsBinding</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">containsBinding</span><wbr><span class="parameters">(<a href="../input/JoypadAxis2d.html" title="enum class in zombie.input">JoypadAxis2d</a>&nbsp;axis2d)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="removeBinding(zombie.input.JoypadButton)">
+<h3>removeBinding</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeBinding</span><wbr><span class="parameters">(<a href="../input/JoypadButton.html" title="enum class in zombie.input">JoypadButton</a>&nbsp;button)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="removeBinding(zombie.input.JoypadAxis1d)">
+<h3>removeBinding</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeBinding</span><wbr><span class="parameters">(<a href="../input/JoypadAxis1d.html" title="enum class in zombie.input">JoypadAxis1d</a>&nbsp;axis1d)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="removeBinding(zombie.input.JoypadAxis2d)">
+<h3>removeBinding</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeBinding</span><wbr><span class="parameters">(<a href="../input/JoypadAxis2d.html" title="enum class in zombie.input">JoypadAxis2d</a>&nbsp;axis2d)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="addBinding(zombie.input.JoypadButton)">
+<h3>addBinding</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addBinding</span><wbr><span class="parameters">(<a href="../input/JoypadButton.html" title="enum class in zombie.input">JoypadButton</a>&nbsp;button)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="addBinding(zombie.input.JoypadAxis1d)">
+<h3>addBinding</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addBinding</span><wbr><span class="parameters">(<a href="../input/JoypadAxis1d.html" title="enum class in zombie.input">JoypadAxis1d</a>&nbsp;axis1d)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="addBinding(zombie.input.JoypadAxis2d)">
+<h3>addBinding</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addBinding</span><wbr><span class="parameters">(<a href="../input/JoypadAxis2d.html" title="enum class in zombie.input">JoypadAxis2d</a>&nbsp;axis2d)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="moveBindingFrom(zombie.characters.CharacterJoypadButtonBinding)">
+<h3>moveBindingFrom</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">moveBindingFrom</span><wbr><span class="parameters">(<a href="CharacterJoypadButtonBinding.html" title="enum class in zombie.characters">CharacterJoypadButtonBinding</a>&nbsp;fromBinding)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="setBinding(zombie.input.JoypadButton)">
 <h3>setBinding</h3>
 <div class="horizontal-scroll">
@@ -637,20 +879,20 @@ not permitted.)</div>
 </section>
 </li>
 <li>
-<section class="detail" id="setBinding(zombie.characters.CharacterJoypadAxis2dBinding,float,float)">
+<section class="detail" id="setBinding(zombie.input.JoypadAxis2d,float,float)">
 <h3>setBinding</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setBinding</span><wbr><span class="parameters">(<a href="CharacterJoypadAxis2dBinding.html" title="enum class in zombie.characters">CharacterJoypadAxis2dBinding</a>&nbsp;axis2d,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setBinding</span><wbr><span class="parameters">(<a href="../input/JoypadAxis2d.html" title="enum class in zombie.input">JoypadAxis2d</a>&nbsp;axis2d,
  float&nbsp;min,
  float&nbsp;max)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="setBinding(zombie.characters.CharacterJoypadAxis2dBinding,float)">
+<section class="detail" id="setBinding(zombie.input.JoypadAxis2d,float)">
 <h3>setBinding</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setBinding</span><wbr><span class="parameters">(<a href="CharacterJoypadAxis2dBinding.html" title="enum class in zombie.characters">CharacterJoypadAxis2dBinding</a>&nbsp;axis2d,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setBinding</span><wbr><span class="parameters">(<a href="../input/JoypadAxis2d.html" title="enum class in zombie.input">JoypadAxis2d</a>&nbsp;axis2d,
  float&nbsp;min)</span></div>
 </div>
 </section>
@@ -660,6 +902,14 @@ not permitted.)</div>
 <h3>setDefault</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setDefault</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setAllToDefault()">
+<h3>setAllToDefault</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setAllToDefault</span>()</div>
 </div>
 </section>
 </li>

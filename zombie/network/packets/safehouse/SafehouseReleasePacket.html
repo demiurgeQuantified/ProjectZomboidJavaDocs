@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.18.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -66,9 +66,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#setData(java.lang.Object...)" tabindex="0">setData(Object...)</a></li>
-<li><a href="#isConsistent(zombie.network.IConnection)" tabindex="0">isConsistent(IConnection)</a></li>
+<li><a href="#processClient(zombie.core.raknet.UdpConnection)" tabindex="0">processClient(UdpConnection)</a></li>
 <li><a href="#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" tabindex="0">processServer(PacketTypes.PacketType, UdpConnection)</a></li>
-<li><a href="#getPlayer()" tabindex="0">getPlayer()</a></li>
 </ol>
 </li>
 </ol>
@@ -88,13 +87,13 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../anticheats/AntiCheatSafeHousePlayer.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatSafeHousePlayer.IAntiCheat</a>, <a href="../../fields/INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a>, <a href="../IDescriptor.html" title="interface in zombie.network.packets">IDescriptor</a>, <a href="../INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a></code></dd>
+<dd><code><a href="../../anticheats/AntiCheatSafeHouseOwner.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatSafeHouseOwner.IAntiCheat</a>, <a href="../../fields/INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a>, <a href="../IDescriptor.html" title="interface in zombie.network.packets">IDescriptor</a>, <a href="../INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">SafehouseReleasePacket</span>
 <span class="extends-implements">extends <a href="../../fields/SafehouseID.html" title="class in zombie.network.fields">SafehouseID</a>
-implements <a href="../INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>, <a href="../../anticheats/AntiCheatSafeHousePlayer.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatSafeHousePlayer.IAntiCheat</a></span></div>
+implements <a href="../INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>, <a href="../../anticheats/AntiCheatSafeHouseOwner.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatSafeHouseOwner.IAntiCheat</a></span></div>
 </div>
 </section>
 <section class="summary">
@@ -123,25 +122,22 @@ implements <a href="../INetworkPacket.html" title="interface in zombie.network.p
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayer()" class="member-name-link">getPlayer</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isConsistent(zombie.network.IConnection)" class="member-name-link">isConsistent</a><wbr>(<a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
- <a href="../../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processClient(zombie.core.raknet.UdpConnection)" class="member-name-link">processClient</a><wbr>(<a href="../../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setData(java.lang.Object...)" class="member-name-link">setData</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;values)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
+ <a href="../../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setData(java.lang.Object...)" class="member-name-link">setData</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;values)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.fields.SafehouseID">Methods inherited from class&nbsp;<a href="../../fields/SafehouseID.html#method-summary" title="class in zombie.network.fields">SafehouseID</a></h3>
-<code><a href="../../fields/SafehouseID.html#getSafehouse()" title="getSafehouse()">getSafehouse</a>, <a href="../../fields/SafehouseID.html#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)" title="parse(ByteBufferReader, IConnection)">parse</a>, <a href="../../fields/SafehouseID.html#set(zombie.iso.areas.SafeHouse)" title="set(SafeHouse)">set</a>, <a href="../../fields/SafehouseID.html#toString()" title="toString()">toString</a>, <a href="../../fields/SafehouseID.html#write(zombie.core.network.ByteBufferWriter)" title="write(ByteBufferWriter)">write</a></code></div>
+<code><a href="../../fields/SafehouseID.html#getSafehouse()" title="getSafehouse()">getSafehouse</a>, <a href="../../fields/SafehouseID.html#isConsistent(zombie.network.IConnection)" title="isConsistent(IConnection)">isConsistent</a>, <a href="../../fields/SafehouseID.html#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)" title="parse(ByteBufferReader, IConnection)">parse</a>, <a href="../../fields/SafehouseID.html#set(zombie.iso.areas.SafeHouse)" title="set(SafeHouse)">set</a>, <a href="../../fields/SafehouseID.html#toString()" title="toString()">toString</a>, <a href="../../fields/SafehouseID.html#write(zombie.core.network.ByteBufferWriter)" title="write(ByteBufferWriter)">write</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.fields.IDInteger">Methods inherited from class&nbsp;<a href="../../fields/IDInteger.html#method-summary" title="class in zombie.network.fields">IDInteger</a></h3>
 <code><a href="../../fields/IDInteger.html#getID()" title="getID()">getID</a>, <a href="../../fields/IDInteger.html#setID(int)" title="setID(int)">setID</a></code></div>
@@ -149,17 +145,17 @@ implements <a href="../INetworkPacket.html" title="interface in zombie.network.p
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-zombie.network.anticheats.AntiCheatSafeHousePlayer.IAntiCheat">Methods inherited from interface&nbsp;<a href="../../anticheats/AntiCheatSafeHousePlayer.IAntiCheat.html#method-summary" title="interface in zombie.network.anticheats">AntiCheatSafeHousePlayer.IAntiCheat</a></h3>
-<code><a href="../../anticheats/AntiCheatSafeHousePlayer.IAntiCheat.html#getSafehouse()" title="getSafehouse()">getSafehouse</a></code></div>
+<h3 id="methods-inherited-from-class-zombie.network.anticheats.AntiCheatSafeHouseOwner.IAntiCheat">Methods inherited from interface&nbsp;<a href="../../anticheats/AntiCheatSafeHouseOwner.IAntiCheat.html#method-summary" title="interface in zombie.network.anticheats">AntiCheatSafeHouseOwner.IAntiCheat</a></h3>
+<code><a href="../../anticheats/AntiCheatSafeHouseOwner.IAntiCheat.html#getSafehouse()" title="getSafehouse()">getSafehouse</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.packets.IDescriptor">Methods inherited from interface&nbsp;<a href="../IDescriptor.html#method-summary" title="interface in zombie.network.packets">IDescriptor</a></h3>
 <code><a href="../IDescriptor.html#getClassDescription(java.lang.StringBuilder,java.lang.Class,java.util.HashSet)" title="getClassDescription(StringBuilder, Class, HashSet)">getClassDescription</a>, <a href="../IDescriptor.html#getDescription()" title="getDescription()">getDescription</a>, <a href="../IDescriptor.html#getDescription(java.util.HashSet)" title="getDescription(HashSet)">getDescription</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.packets.INetworkPacket">Methods inherited from interface&nbsp;<a href="../INetworkPacket.html#method-summary" title="interface in zombie.network.packets">INetworkPacket</a></h3>
-<code><a href="../INetworkPacket.html#isPostponed()" title="isPostponed()">isPostponed</a>, <a href="../INetworkPacket.html#parseClient(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseClient(ByteBufferReader, UdpConnection)">parseClient</a>, <a href="../INetworkPacket.html#parseClientLoading(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseClientLoading(ByteBufferReader, UdpConnection)">parseClientLoading</a>, <a href="../INetworkPacket.html#parseServer(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseServer(ByteBufferReader, UdpConnection)">parseServer</a>, <a href="../INetworkPacket.html#postpone()" title="postpone()">postpone</a>, <a href="../INetworkPacket.html#processClient(zombie.core.raknet.UdpConnection)" title="processClient(UdpConnection)">processClient</a>, <a href="../INetworkPacket.html#processClientLoading(zombie.core.raknet.UdpConnection)" title="processClientLoading(UdpConnection)">processClientLoading</a>, <a href="../INetworkPacket.html#sendToClient(zombie.network.PacketTypes.PacketType,zombie.network.IConnection)" title="sendToClient(PacketTypes.PacketType, IConnection)">sendToClient</a>, <a href="../INetworkPacket.html#sendToClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sendToClients(PacketTypes.PacketType, UdpConnection)">sendToClients</a>, <a href="../INetworkPacket.html#sendToRelativeClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection,float,float)" title="sendToRelativeClients(PacketTypes.PacketType, UdpConnection, float, float)">sendToRelativeClients</a>, <a href="../INetworkPacket.html#sendToServer(zombie.network.PacketTypes.PacketType)" title="sendToServer(PacketTypes.PacketType)">sendToServer</a>, <a href="../INetworkPacket.html#shouldInstantiate()" title="shouldInstantiate()">shouldInstantiate</a>, <a href="../INetworkPacket.html#sync(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sync(PacketTypes.PacketType, UdpConnection)">sync</a></code></div>
+<code><a href="../INetworkPacket.html#isPostponed()" title="isPostponed()">isPostponed</a>, <a href="../INetworkPacket.html#parseClient(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseClient(ByteBufferReader, UdpConnection)">parseClient</a>, <a href="../INetworkPacket.html#parseClientLoading(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseClientLoading(ByteBufferReader, UdpConnection)">parseClientLoading</a>, <a href="../INetworkPacket.html#parseServer(zombie.core.network.ByteBufferReader,zombie.core.raknet.UdpConnection)" title="parseServer(ByteBufferReader, UdpConnection)">parseServer</a>, <a href="../INetworkPacket.html#postpone()" title="postpone()">postpone</a>, <a href="../INetworkPacket.html#processClientLoading(zombie.core.raknet.UdpConnection)" title="processClientLoading(UdpConnection)">processClientLoading</a>, <a href="../INetworkPacket.html#sendToClient(zombie.network.PacketTypes.PacketType,java.lang.String)" title="sendToClient(PacketTypes.PacketType, String)">sendToClient</a>, <a href="../INetworkPacket.html#sendToClient(zombie.network.PacketTypes.PacketType,zombie.network.IConnection)" title="sendToClient(PacketTypes.PacketType, IConnection)">sendToClient</a>, <a href="../INetworkPacket.html#sendToClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sendToClients(PacketTypes.PacketType, UdpConnection)">sendToClients</a>, <a href="../INetworkPacket.html#sendToRelativeClients(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection,float,float)" title="sendToRelativeClients(PacketTypes.PacketType, UdpConnection, float, float)">sendToRelativeClients</a>, <a href="../INetworkPacket.html#sendToServer(zombie.network.PacketTypes.PacketType)" title="sendToServer(PacketTypes.PacketType)">sendToServer</a>, <a href="../INetworkPacket.html#shouldInstantiate()" title="shouldInstantiate()">shouldInstantiate</a>, <a href="../INetworkPacket.html#sync(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="sync(PacketTypes.PacketType, UdpConnection)">sync</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.fields.INetworkPacketField">Methods inherited from interface&nbsp;<a href="../../fields/INetworkPacketField.html#method-summary" title="interface in zombie.network.fields">INetworkPacketField</a></h3>
-<code><a href="../../fields/INetworkPacketField.html#getPacketSizeBytes()" title="getPacketSizeBytes()">getPacketSizeBytes</a>, <a href="../../fields/INetworkPacketField.html#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)" title="parse(ByteBufferReader, IConnection)">parse</a>, <a href="../../fields/INetworkPacketField.html#write(zombie.core.network.ByteBufferWriter)" title="write(ByteBufferWriter)">write</a></code></div>
+<code><a href="../../fields/INetworkPacketField.html#getPacketSizeBytes()" title="getPacketSizeBytes()">getPacketSizeBytes</a>, <a href="../../fields/INetworkPacketField.html#isConsistent(zombie.network.IConnection)" title="isConsistent(IConnection)">isConsistent</a>, <a href="../../fields/INetworkPacketField.html#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)" title="parse(ByteBufferReader, IConnection)">parse</a>, <a href="../../fields/INetworkPacketField.html#write(zombie.core.network.ByteBufferWriter)" title="write(ByteBufferWriter)">write</a></code></div>
 </section>
 </li>
 </ul>
@@ -200,15 +196,13 @@ implements <a href="../INetworkPacket.html" title="interface in zombie.network.p
 </section>
 </li>
 <li>
-<section class="detail" id="isConsistent(zombie.network.IConnection)">
-<h3>isConsistent</h3>
+<section class="detail" id="processClient(zombie.core.raknet.UdpConnection)">
+<h3>processClient</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isConsistent</span><wbr><span class="parameters">(<a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processClient</span><wbr><span class="parameters">(<a href="../../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../../fields/INetworkPacketField.html#isConsistent(zombie.network.IConnection)">isConsistent</a></code>&nbsp;in interface&nbsp;<code><a href="../../fields/INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a></code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="../../fields/SafehouseID.html#isConsistent(zombie.network.IConnection)">isConsistent</a></code>&nbsp;in class&nbsp;<code><a href="../../fields/SafehouseID.html" title="class in zombie.network.fields">SafehouseID</a></code></dd>
+<dd><code><a href="../INetworkPacket.html#processClient(zombie.core.raknet.UdpConnection)">processClient</a></code>&nbsp;in interface&nbsp;<code><a href="../INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a></code></dd>
 </dl>
 </div>
 </section>
@@ -222,18 +216,6 @@ implements <a href="../INetworkPacket.html" title="interface in zombie.network.p
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../INetworkPacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)">processServer</a></code>&nbsp;in interface&nbsp;<code><a href="../INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getPlayer()">
-<h3>getPlayer</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getPlayer</span>()</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../anticheats/AntiCheatSafeHousePlayer.IAntiCheat.html#getPlayer()">getPlayer</a></code>&nbsp;in interface&nbsp;<code><a href="../../anticheats/AntiCheatSafeHousePlayer.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatSafeHousePlayer.IAntiCheat</a></code></dd>
 </dl>
 </div>
 </section>

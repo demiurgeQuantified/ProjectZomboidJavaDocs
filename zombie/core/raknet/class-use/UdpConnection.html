@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#use">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.18.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -918,11 +918,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#getConnectionByPlayerOnlineID(short)" class="member-name-link">getConnectionByPlayerOnlineID</a><wbr>(short&nbsp;onlineID)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#getConnectionByIp(java.lang.String)" class="member-name-link">getConnectionByIp</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;ip)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#getConnectionFromPlayer(zombie.characters.IsoPlayer)" class="member-name-link">getConnectionFromPlayer</a><wbr>(<a href="../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#getConnectionByPlayerOnlineID(short)" class="member-name-link">getConnectionByPlayerOnlineID</a><wbr>(short&nbsp;onlineID)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#getConnectionFromPlayer(zombie.characters.IsoPlayer)" class="member-name-link">getConnectionFromPlayer</a><wbr>(<a href="../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Methods in <a href="../../../network/package-summary.html">zombie.network</a> with parameters of type <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a></span></div>
 <div class="summary-table three-column-summary">
@@ -1098,58 +1101,53 @@ loadScripts(document, 'script');</script>
  <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#sendNonPvpZone(zombie.iso.areas.NonPvpZone,boolean,zombie.core.raknet.UdpConnection)" class="member-name-link">sendNonPvpZone</a><wbr>(<a href="../../../iso/areas/NonPvpZone.html" title="class in zombie.iso.areas">NonPvpZone</a>&nbsp;zone,
- boolean&nbsp;remove,
+<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#sendPlayerExtraInfo(zombie.characters.IsoPlayer,zombie.core.raknet.UdpConnection)" class="member-name-link">sendPlayerExtraInfo</a><wbr>(<a href="../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
  <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#sendPlayerExtraInfo(zombie.characters.IsoPlayer,zombie.core.raknet.UdpConnection)" class="member-name-link">sendPlayerExtraInfo</a><wbr>(<a href="../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
- <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#sendPlayerExtraInfo(zombie.characters.IsoPlayer,zombie.core.raknet.UdpConnection,boolean)" class="member-name-link">sendPlayerExtraInfo</a><wbr>(<a href="../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
+<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#sendPlayerExtraInfo(zombie.characters.IsoPlayer,zombie.core.raknet.UdpConnection,boolean)" class="member-name-link">sendPlayerExtraInfo</a><wbr>(<a href="../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;p,
  <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  boolean&nbsp;isForced)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#sendRadioPostSilence(zombie.core.raknet.UdpConnection)" class="member-name-link">sendRadioPostSilence</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;c)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#sendServerCommand(java.lang.String,java.lang.String,se.krka.kahlua.vm.KahluaTable,zombie.core.raknet.UdpConnection)" class="member-name-link">sendServerCommand</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;module,
+<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#sendRadioPostSilence(zombie.core.raknet.UdpConnection)" class="member-name-link">sendRadioPostSilence</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;c)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#sendServerCommand(java.lang.String,java.lang.String,se.krka.kahlua.vm.KahluaTable,zombie.core.raknet.UdpConnection)" class="member-name-link">sendServerCommand</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;module,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;command,
  se.krka.kahlua.vm.KahluaTable&nbsp;args,
  <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;c)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#sendTickets(java.lang.String,zombie.core.raknet.UdpConnection)" class="member-name-link">sendTickets</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;author,
- <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#sendWorldSound(zombie.WorldSoundManager.WorldSound,zombie.core.raknet.UdpConnection)" class="member-name-link">sendWorldSound</a><wbr>(<a href="../../../WorldSoundManager.WorldSound.html" title="class in zombie">WorldSoundManager.WorldSound</a>&nbsp;sound,
+<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#sendTickets(java.lang.String,zombie.core.raknet.UdpConnection)" class="member-name-link">sendTickets</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;author,
  <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ClientChunkRequest.</span><code><a href="../../../network/ClientChunkRequest.html#unpack(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" class="member-name-link">unpack</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#sendWorldSound(zombie.WorldSoundManager.WorldSound,zombie.core.raknet.UdpConnection)" class="member-name-link">sendWorldSound</a><wbr>(<a href="../../../WorldSoundManager.WorldSound.html" title="class in zombie">WorldSoundManager.WorldSound</a>&nbsp;sound,
  <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ClientChunkRequest.</span><code><a href="../../../network/ClientChunkRequest.html#unpackLargeArea(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" class="member-name-link">unpackLargeArea</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+<div class="col-second odd-row-color"><span class="type-name-label">ClientChunkRequest.</span><code><a href="../../../network/ClientChunkRequest.html#unpack(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" class="member-name-link">unpack</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
  <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#updateOverlayForClients(zombie.iso.IsoObject,java.lang.String,float,float,float,float,zombie.core.raknet.UdpConnection)" class="member-name-link">updateOverlayForClients</a><wbr>(<a href="../../../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object,
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ClientChunkRequest.</span><code><a href="../../../network/ClientChunkRequest.html#unpackLargeArea(java.nio.ByteBuffer,zombie.core.raknet.UdpConnection)" class="member-name-link">unpackLargeArea</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;bb,
+ <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GameServer.</span><code><a href="../../../network/GameServer.html#updateOverlayForClients(zombie.iso.IsoObject,java.lang.String,float,float,float,float,zombie.core.raknet.UdpConnection)" class="member-name-link">updateOverlayForClients</a><wbr>(<a href="../../../iso/IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;spriteName,
  float&nbsp;r,
  float&nbsp;g,
  float&nbsp;b,
  float&nbsp;a,
  <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;playerConnection)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ConnectionDetails.</span><code><a href="../../../network/ConnectionDetails.html#write(zombie.core.raknet.UdpConnection,zombie.network.ServerWorldDatabase.LogonResult,zombie.core.network.ByteBufferWriter)" class="member-name-link">write</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ConnectionDetails.</span><code><a href="../../../network/ConnectionDetails.html#write(zombie.core.raknet.UdpConnection,zombie.network.ServerWorldDatabase.LogonResult,zombie.core.network.ByteBufferWriter)" class="member-name-link">write</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  <a href="../../../network/ServerWorldDatabase.LogonResult.html" title="class in zombie.network">ServerWorldDatabase.LogonResult</a>&nbsp;logonResult,
  <a href="../../network/ByteBufferWriter.html" title="class in zombie.core.network">ByteBufferWriter</a>&nbsp;bb)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Constructors in <a href="../../../network/package-summary.html">zombie.network</a> with parameters of type <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a></span></div>
 <div class="summary-table three-column-summary">
@@ -1284,29 +1282,33 @@ loadScripts(document, 'script');</script>
  <a href="../../../network/packets/INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>&nbsp;packet)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">AntiCheatSafeHousePlayer.</span><code><a href="../../../network/anticheats/AntiCheatSafeHousePlayer.html#validate(zombie.core.raknet.UdpConnection,zombie.network.packets.INetworkPacket)" class="member-name-link">validate</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+<div class="col-second odd-row-color"><span class="type-name-label">AntiCheatSafeHouseMember.</span><code><a href="../../../network/anticheats/AntiCheatSafeHouseMember.html#validate(zombie.core.raknet.UdpConnection,zombie.network.packets.INetworkPacket)" class="member-name-link">validate</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  <a href="../../../network/packets/INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>&nbsp;packet)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AntiCheatSafeHouseSurvivor.</span><code><a href="../../../network/anticheats/AntiCheatSafeHouseSurvivor.html#validate(zombie.core.raknet.UdpConnection,zombie.network.packets.INetworkPacket)" class="member-name-link">validate</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+<div class="col-second even-row-color"><span class="type-name-label">AntiCheatSafeHouseNotMember.</span><code><a href="../../../network/anticheats/AntiCheatSafeHouseNotMember.html#validate(zombie.core.raknet.UdpConnection,zombie.network.packets.INetworkPacket)" class="member-name-link">validate</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  <a href="../../../network/packets/INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>&nbsp;packet)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">AntiCheatSafety.</span><code><a href="../../../network/anticheats/AntiCheatSafety.html#validate(zombie.core.raknet.UdpConnection,zombie.network.packets.INetworkPacket)" class="member-name-link">validate</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+<div class="col-second odd-row-color"><span class="type-name-label">AntiCheatSafeHouseOwner.</span><code><a href="../../../network/anticheats/AntiCheatSafeHouseOwner.html#validate(zombie.core.raknet.UdpConnection,zombie.network.packets.INetworkPacket)" class="member-name-link">validate</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  <a href="../../../network/packets/INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>&nbsp;packet)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AntiCheatSpeed.</span><code><a href="../../../network/anticheats/AntiCheatSpeed.html#validate(zombie.core.raknet.UdpConnection,zombie.network.packets.INetworkPacket)" class="member-name-link">validate</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+<div class="col-second even-row-color"><span class="type-name-label">AntiCheatSafety.</span><code><a href="../../../network/anticheats/AntiCheatSafety.html#validate(zombie.core.raknet.UdpConnection,zombie.network.packets.INetworkPacket)" class="member-name-link">validate</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  <a href="../../../network/packets/INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>&nbsp;packet)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">AntiCheatTarget.</span><code><a href="../../../network/anticheats/AntiCheatTarget.html#validate(zombie.core.raknet.UdpConnection,zombie.network.packets.INetworkPacket)" class="member-name-link">validate</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+<div class="col-second odd-row-color"><span class="type-name-label">AntiCheatSpeed.</span><code><a href="../../../network/anticheats/AntiCheatSpeed.html#validate(zombie.core.raknet.UdpConnection,zombie.network.packets.INetworkPacket)" class="member-name-link">validate</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  <a href="../../../network/packets/INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>&nbsp;packet)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AntiCheatTransaction.</span><code><a href="../../../network/anticheats/AntiCheatTransaction.html#validate(zombie.core.raknet.UdpConnection,zombie.network.packets.INetworkPacket)" class="member-name-link">validate</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+<div class="col-second even-row-color"><span class="type-name-label">AntiCheatTarget.</span><code><a href="../../../network/anticheats/AntiCheatTarget.html#validate(zombie.core.raknet.UdpConnection,zombie.network.packets.INetworkPacket)" class="member-name-link">validate</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  <a href="../../../network/packets/INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>&nbsp;packet)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">AntiCheatTransaction.</span><code><a href="../../../network/anticheats/AntiCheatTransaction.html#validate(zombie.core.raknet.UdpConnection,zombie.network.packets.INetworkPacket)" class="member-name-link">validate</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+ <a href="../../../network/packets/INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>&nbsp;packet)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Constructors in <a href="../../../network/anticheats/package-summary.html">zombie.network.anticheats</a> with parameters of type <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a></span></div>
 <div class="summary-table three-column-summary">
@@ -2217,44 +2219,47 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><span class="type-name-label">SafehouseInvitePacket.</span><code><a href="../../../network/packets/safehouse/SafehouseInvitePacket.html#processClient(zombie.core.raknet.UdpConnection)" class="member-name-link">processClient</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">SafehouseSyncPacket.</span><code><a href="../../../network/packets/safehouse/SafehouseSyncPacket.html#processClient(zombie.core.raknet.UdpConnection)" class="member-name-link">processClient</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">SafehouseReleasePacket.</span><code><a href="../../../network/packets/safehouse/SafehouseReleasePacket.html#processClient(zombie.core.raknet.UdpConnection)" class="member-name-link">processClient</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">SafehouseAcceptPacket.</span><code><a href="../../../network/packets/safehouse/SafehouseAcceptPacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../../network/PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
+<div class="col-second odd-row-color"><span class="type-name-label">SafehouseSyncPacket.</span><code><a href="../../../network/packets/safehouse/SafehouseSyncPacket.html#processClient(zombie.core.raknet.UdpConnection)" class="member-name-link">processClient</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">SafehouseAcceptPacket.</span><code><a href="../../../network/packets/safehouse/SafehouseAcceptPacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../../network/PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
+ <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">SafehouseChangeMemberPacket.</span><code><a href="../../../network/packets/safehouse/SafehouseChangeMemberPacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../../network/PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
  <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">SafehouseChangeMemberPacket.</span><code><a href="../../../network/packets/safehouse/SafehouseChangeMemberPacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../../network/PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
+<div class="col-second even-row-color"><span class="type-name-label">SafehouseChangeOwnerPacket.</span><code><a href="../../../network/packets/safehouse/SafehouseChangeOwnerPacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../../network/PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
  <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">SafehouseChangeOwnerPacket.</span><code><a href="../../../network/packets/safehouse/SafehouseChangeOwnerPacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../../network/PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
+<div class="col-second odd-row-color"><span class="type-name-label">SafehouseChangeRespawnPacket.</span><code><a href="../../../network/packets/safehouse/SafehouseChangeRespawnPacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../../network/PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
  <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">SafehouseChangeRespawnPacket.</span><code><a href="../../../network/packets/safehouse/SafehouseChangeRespawnPacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../../network/PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
+<div class="col-second even-row-color"><span class="type-name-label">SafehouseChangeTitlePacket.</span><code><a href="../../../network/packets/safehouse/SafehouseChangeTitlePacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../../network/PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
  <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">SafehouseChangeTitlePacket.</span><code><a href="../../../network/packets/safehouse/SafehouseChangeTitlePacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../../network/PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
+<div class="col-second odd-row-color"><span class="type-name-label">SafehouseClaimPacket.</span><code><a href="../../../network/packets/safehouse/SafehouseClaimPacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../../network/PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
  <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">SafehouseClaimPacket.</span><code><a href="../../../network/packets/safehouse/SafehouseClaimPacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../../network/PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
+<div class="col-second even-row-color"><span class="type-name-label">SafehouseInvitePacket.</span><code><a href="../../../network/packets/safehouse/SafehouseInvitePacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../../network/PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
  <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">SafehouseInvitePacket.</span><code><a href="../../../network/packets/safehouse/SafehouseInvitePacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../../network/PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
+<div class="col-second odd-row-color"><span class="type-name-label">SafehouseReleasePacket.</span><code><a href="../../../network/packets/safehouse/SafehouseReleasePacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../../network/PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
  <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">SafehouseReleasePacket.</span><code><a href="../../../network/packets/safehouse/SafehouseReleasePacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../../network/PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
+<div class="col-second even-row-color"><span class="type-name-label">SafezoneClaimPacket.</span><code><a href="../../../network/packets/safehouse/SafezoneClaimPacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../../network/PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
  <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">SafezoneClaimPacket.</span><code><a href="../../../network/packets/safehouse/SafezoneClaimPacket.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" class="member-name-link">processServer</a><wbr>(<a href="../../../network/PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType,
- <a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -2610,7 +2615,8 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><span class="type-name-label">AnimalInstanceManager.</span><code><a href="../../../popman/animal/AnimalInstanceManager.html#removeAnimals(zombie.core.raknet.UdpConnection)" class="member-name-link">removeAnimals</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">AnimalSynchronizationManager.</span><code><a href="../../../popman/animal/AnimalSynchronizationManager.html#setExtraUpdate(zombie.core.raknet.UdpConnection)" class="member-name-link">setExtraUpdate</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">AnimalSynchronizationManager.</span><code><a href="../../../popman/animal/AnimalSynchronizationManager.html#setExtraUpdate(zombie.core.raknet.UdpConnection,short)" class="member-name-link">setExtraUpdate</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+ short&nbsp;onlineId)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">AnimalSynchronizationManager.</span><code><a href="../../../popman/animal/AnimalSynchronizationManager.html#setRequested(zombie.core.raknet.UdpConnection,java.util.HashSet)" class="member-name-link">setRequested</a><wbr>(<a href="../UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
