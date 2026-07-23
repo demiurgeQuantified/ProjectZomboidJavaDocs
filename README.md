@@ -1,0 +1,2 @@
+# Unofficial Project Zomboid Javadocs
+This project is being moved to Codeberg because Github pages has gotten too slow. I'm still planning to replace this with a custom documentation generator more attuned with modding: that will likely be hosted here too.
