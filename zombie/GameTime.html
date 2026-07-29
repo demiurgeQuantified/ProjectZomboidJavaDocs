@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../search.html">Search</a></li>
 <li><a href="../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -62,10 +62,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
+<li><a href="#NANOSECONDS_PER_SECOND" tabindex="0">NANOSECONDS_PER_SECOND</a></li>
+<li><a href="#MILLISECONDS_PER_SECOND" tabindex="0">MILLISECONDS_PER_SECOND</a></li>
 <li><a href="#MinutesPerHour" tabindex="0">MinutesPerHour</a></li>
 <li><a href="#SecondsPerHour" tabindex="0">SecondsPerHour</a></li>
-<li><a href="#SecondsPerMinute" tabindex="0">SecondsPerMinute</a></li>
+<li><a href="#SECONDS_PER_MINUTE" tabindex="0">SECONDS_PER_MINUTE</a></li>
 <li><a href="#MULTIPLIER" tabindex="0">MULTIPLIER</a></li>
+<li><a href="#THIRTY_FPS_SCALE" tabindex="0">THIRTY_FPS_SCALE</a></li>
 <li><a href="#instance" tabindex="0">instance</a></li>
 <li><a href="#timeOfDay" tabindex="0">timeOfDay</a></li>
 <li><a href="#nightsSurvived" tabindex="0">nightsSurvived</a></li>
@@ -217,6 +220,16 @@ loadScripts(document, 'script');</script>
 <li><a href="#isNight()" tabindex="0">isNight()</a></li>
 <li><a href="#isZombieActivityPhase()" tabindex="0">isZombieActivityPhase()</a></li>
 <li><a href="#isZombieInactivityPhase()" tabindex="0">isZombieInactivityPhase()</a></li>
+<li><a href="#minHours(double)" tabindex="0">minHours(double)</a></li>
+<li><a href="#minHours(double,double)" tabindex="0">minHours(double, double)</a></li>
+<li><a href="#minHours(float)" tabindex="0">minHours(float)</a></li>
+<li><a href="#minHours(float,float)" tabindex="0">minHours(float, float)</a></li>
+<li><a href="#clampHours(double)" tabindex="0">clampHours(double)</a></li>
+<li><a href="#clampHours(float)" tabindex="0">clampHours(float)</a></li>
+<li><a href="#clampHours(double,double)" tabindex="0">clampHours(double, double)</a></li>
+<li><a href="#clampHours(float,float)" tabindex="0">clampHours(float, float)</a></li>
+<li><a href="#checkHours(double,double)" tabindex="0">checkHours(double, double)</a></li>
+<li><a href="#checkHours(float,float)" tabindex="0">checkHours(float, float)</a></li>
 </ol>
 </li>
 </ol>
@@ -280,17 +293,23 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>float</code></div>
 <div class="col-second even-row-color"><code><a href="#lightSourceUpdate" class="member-name-link">lightSourceUpdate</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#MinutesPerHour" class="member-name-link">MinutesPerHour</a></code></div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#MILLISECONDS_PER_SECOND" class="member-name-link">MILLISECONDS_PER_SECOND</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#moon" class="member-name-link">moon</a></code></div>
+<div class="col-first even-row-color"><code>static final float</code></div>
+<div class="col-second even-row-color"><code><a href="#MinutesPerHour" class="member-name-link">MinutesPerHour</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#MULTIPLIER" class="member-name-link">MULTIPLIER</a></code></div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#moon" class="member-name-link">moon</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#multiplierBias" class="member-name-link">multiplierBias</a></code></div>
+<div class="col-first even-row-color"><code>static final float</code></div>
+<div class="col-second even-row-color"><code><a href="#MULTIPLIER" class="member-name-link">MULTIPLIER</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#multiplierBias" class="member-name-link">multiplierBias</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#NANOSECONDS_PER_SECOND" class="member-name-link">NANOSECONDS_PER_SECOND</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>int</code></div>
 <div class="col-second odd-row-color"><code><a href="#nightsSurvived" class="member-name-link">nightsSurvived</a></code></div>
@@ -298,11 +317,11 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>float</code></div>
 <div class="col-second even-row-color"><code><a href="#perObjectMultiplier" class="member-name-link">perObjectMultiplier</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#SecondsPerHour" class="member-name-link">SecondsPerHour</a></code></div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#SECONDS_PER_MINUTE" class="member-name-link">SECONDS_PER_MINUTE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final float</code></div>
-<div class="col-second even-row-color"><code><a href="#SecondsPerMinute" class="member-name-link">SecondsPerMinute</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SecondsPerHour" class="member-name-link">SecondsPerHour</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>float</code></div>
 <div class="col-second odd-row-color"><code><a href="#serverLastTimeOfDay" class="member-name-link">serverLastTimeOfDay</a></code></div>
@@ -313,9 +332,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>float</code></div>
 <div class="col-second odd-row-color"><code><a href="#serverTimeOfDay" class="member-name-link">serverTimeOfDay</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#timeOfDay" class="member-name-link">timeOfDay</a></code></div>
+<div class="col-first even-row-color"><code>static final float</code></div>
+<div class="col-second even-row-color"><code><a href="#THIRTY_FPS_SCALE" class="member-name-link">THIRTY_FPS_SCALE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#timeOfDay" class="member-name-link">timeOfDay</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -343,6 +365,28 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#checkHours(double,double)" class="member-name-link">checkHours</a><wbr>(double&nbsp;hours,
+ double&nbsp;worldAgeHours)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#checkHours(float,float)" class="member-name-link">checkHours</a><wbr>(float&nbsp;hours,
+ float&nbsp;worldAgeHours)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clampHours(double)" class="member-name-link">clampHours</a><wbr>(double&nbsp;hours)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#clampHours(double,double)" class="member-name-link">clampHours</a><wbr>(double&nbsp;hours,
+ double&nbsp;worldAgeHours)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clampHours(float)" class="member-name-link">clampHours</a><wbr>(float&nbsp;hours)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#clampHours(float,float)" class="member-name-link">clampHours</a><wbr>(float&nbsp;hours,
+ float&nbsp;worldAgeHours)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#daysInMonth(int,int)" class="member-name-link">daysInMonth</a><wbr>(int&nbsp;year,
  int&nbsp;month)</code></div>
@@ -690,6 +734,20 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(zombie.core.network.ByteBufferReader)" class="member-name-link">load</a><wbr>(<a href="core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;input)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#minHours(double)" class="member-name-link">minHours</a><wbr>(double&nbsp;hours)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#minHours(double,double)" class="member-name-link">minHours</a><wbr>(double&nbsp;hours,
+ double&nbsp;worldAgeHours)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#minHours(float)" class="member-name-link">minHours</a><wbr>(float&nbsp;hours)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#minHours(float,float)" class="member-name-link">minHours</a><wbr>(float&nbsp;hours,
+ float&nbsp;worldAgeHours)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#RemoveZombiesIndiscriminate(int)" class="member-name-link">RemoveZombiesIndiscriminate</a><wbr>(int&nbsp;i)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -906,6 +964,38 @@ loadScripts(document, 'script');</script>
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
+<section class="detail" id="NANOSECONDS_PER_SECOND">
+<h3>NANOSECONDS_PER_SECOND</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">NANOSECONDS_PER_SECOND</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../constant-values.html#zombie.GameTime.NANOSECONDS_PER_SECOND">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="MILLISECONDS_PER_SECOND">
+<h3>MILLISECONDS_PER_SECOND</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">MILLISECONDS_PER_SECOND</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../constant-values.html#zombie.GameTime.MILLISECONDS_PER_SECOND">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="MinutesPerHour">
 <h3>MinutesPerHour</h3>
 <div class="horizontal-scroll">
@@ -938,15 +1028,15 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="SecondsPerMinute">
-<h3>SecondsPerMinute</h3>
+<section class="detail" id="SECONDS_PER_MINUTE">
+<h3>SECONDS_PER_MINUTE</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">SecondsPerMinute</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SECONDS_PER_MINUTE</span></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="../constant-values.html#zombie.GameTime.SecondsPerMinute">Constant Field Values</a></li>
+<li><a href="../constant-values.html#zombie.GameTime.SECONDS_PER_MINUTE">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -963,6 +1053,22 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../constant-values.html#zombie.GameTime.MULTIPLIER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="THIRTY_FPS_SCALE">
+<h3>THIRTY_FPS_SCALE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">THIRTY_FPS_SCALE</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../constant-values.html#zombie.GameTime.THIRTY_FPS_SCALE">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -2504,6 +2610,92 @@ loadScripts(document, 'script');</script>
 <h3>isZombieInactivityPhase</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isZombieInactivityPhase</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="minHours(double)">
+<h3>minHours</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">minHours</span><wbr><span class="parameters">(double&nbsp;hours)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="minHours(double,double)">
+<h3>minHours</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">minHours</span><wbr><span class="parameters">(double&nbsp;hours,
+ double&nbsp;worldAgeHours)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="minHours(float)">
+<h3>minHours</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">minHours</span><wbr><span class="parameters">(float&nbsp;hours)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="minHours(float,float)">
+<h3>minHours</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">minHours</span><wbr><span class="parameters">(float&nbsp;hours,
+ float&nbsp;worldAgeHours)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="clampHours(double)">
+<h3>clampHours</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">clampHours</span><wbr><span class="parameters">(double&nbsp;hours)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="clampHours(float)">
+<h3>clampHours</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">clampHours</span><wbr><span class="parameters">(float&nbsp;hours)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="clampHours(double,double)">
+<h3>clampHours</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">clampHours</span><wbr><span class="parameters">(double&nbsp;hours,
+ double&nbsp;worldAgeHours)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="clampHours(float,float)">
+<h3>clampHours</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">clampHours</span><wbr><span class="parameters">(float&nbsp;hours,
+ float&nbsp;worldAgeHours)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="checkHours(double,double)">
+<h3>checkHours</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">checkHours</span><wbr><span class="parameters">(double&nbsp;hours,
+ double&nbsp;worldAgeHours)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="checkHours(float,float)">
+<h3>checkHours</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">checkHours</span><wbr><span class="parameters">(float&nbsp;hours,
+ float&nbsp;worldAgeHours)</span></div>
 </div>
 </section>
 </li>

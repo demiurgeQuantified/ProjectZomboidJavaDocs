@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -62,10 +62,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#poll()" tabindex="0">poll()</a></li>
 <li><a href="#wasPolled()" tabindex="0">wasPolled()</a></li>
 <li><a href="#set(zombie.input.ControllerState)" tabindex="0">set(ControllerState)</a></li>
-<li><a href="#reset()" tabindex="0">reset()</a></li>
 <li><a href="#isCreated()" tabindex="0">isCreated()</a></li>
-<li><a href="#getController(int)" tabindex="0">getController(int)</a></li>
 <li><a href="#quit()" tabindex="0">quit()</a></li>
+<li><a href="#onStateActive(zombie.input.ControllerStateCache)" tabindex="0">onStateActive(ControllerStateCache)</a></li>
+<li><a href="#onStatePolling(zombie.input.ControllerStateCache)" tabindex="0">onStatePolling(ControllerStateCache)</a></li>
 </ol>
 </li>
 </ol>
@@ -98,20 +98,20 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.lwjglx.input.Controller</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getController(int)" class="member-name-link">getController</a><wbr>(int&nbsp;index)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCreated()" class="member-name-link">isCreated</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#poll()" class="member-name-link">poll</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCreated()" class="member-name-link">isCreated</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#quit()" class="member-name-link">quit</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onStateActive(zombie.input.ControllerStateCache)" class="member-name-link">onStateActive</a><wbr>(<a href="ControllerStateCache.html" title="class in zombie.input">ControllerStateCache</a>&nbsp;stateCache)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset()" class="member-name-link">reset</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onStatePolling(zombie.input.ControllerStateCache)" class="member-name-link">onStatePolling</a><wbr>(<a href="ControllerStateCache.html" title="class in zombie.input">ControllerStateCache</a>&nbsp;stateCache)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#poll()" class="member-name-link">poll</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#quit()" class="member-name-link">quit</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(zombie.input.ControllerState)" class="member-name-link">set</a><wbr>(<a href="ControllerState.html" title="class in zombie.input">ControllerState</a>&nbsp;rhs)</code></div>
@@ -161,14 +161,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="reset()">
-<h3>reset</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">reset</span>()</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="isCreated()">
 <h3>isCreated</h3>
 <div class="horizontal-scroll">
@@ -177,18 +169,26 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="getController(int)">
-<h3>getController</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.lwjglx.input.Controller</span>&nbsp;<span class="element-name">getController</span><wbr><span class="parameters">(int&nbsp;index)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="quit()">
 <h3>quit</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">quit</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="onStateActive(zombie.input.ControllerStateCache)">
+<h3>onStateActive</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onStateActive</span><wbr><span class="parameters">(<a href="ControllerStateCache.html" title="class in zombie.input">ControllerStateCache</a>&nbsp;stateCache)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="onStatePolling(zombie.input.ControllerStateCache)">
+<h3>onStatePolling</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onStatePolling</span><wbr><span class="parameters">(<a href="ControllerStateCache.html" title="class in zombie.input">ControllerStateCache</a>&nbsp;stateCache)</span></div>
 </div>
 </section>
 </li>

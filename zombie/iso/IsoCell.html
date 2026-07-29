@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -95,10 +95,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#ShadedFloor" tabindex="0">ShadedFloor</a></li>
 <li><a href="#VegetationCorpses" tabindex="0">VegetationCorpses</a></li>
 <li><a href="#perPlayerRender" tabindex="0">perPlayerRender</a></li>
-<li><a href="#stencilX1" tabindex="0">stencilX1</a></li>
-<li><a href="#stencilY1" tabindex="0">stencilY1</a></li>
-<li><a href="#stencilX2" tabindex="0">stencilX2</a></li>
-<li><a href="#stencilY2" tabindex="0">stencilY2</a></li>
 <li><a href="#deferredCharacterTick" tabindex="0">deferredCharacterTick</a></li>
 <li><a href="#recalcFloors" tabindex="0">recalcFloors</a></li>
 <li><a href="#recalcShading" tabindex="0">recalcShading</a></li>
@@ -156,7 +152,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#getChunkForGridSquare(int,int,int)" tabindex="0">getChunkForGridSquare(int, int, int)</a></li>
 <li><a href="#getChunk(int,int)" tabindex="0">getChunk(int, int)</a></li>
 <li><a href="#CalculateVertColoursForTile(zombie.iso.IsoGridSquare,int,int,int,int)" tabindex="0">CalculateVertColoursForTile(IsoGridSquare, int, int, int, int)</a></li>
-<li><a href="#DrawStencilMask()" tabindex="0">DrawStencilMask()</a></li>
+<li><a href="#drawStencilMask()" tabindex="0">drawStencilMask()</a></li>
+<li><a href="#isInStencil(float,float)" tabindex="0">isInStencil(float, float)</a></li>
+<li><a href="#getStencilAreas()" tabindex="0">getStencilAreas()</a></li>
 <li><a href="#RenderTiles(int)" tabindex="0">RenderTiles(int)</a></li>
 <li><a href="#initTileShaders()" tabindex="0">initTileShaders()</a></li>
 <li><a href="#getPerPlayerRenderAt(int)" tabindex="0">getPerPlayerRenderAt(int)</a></li>
@@ -364,6 +362,9 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static class&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="IsoCell.s_performance.html" class="type-name-link" title="class in zombie.iso">IsoCell.s_performance</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final record&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="IsoCell.StencilArea.html" class="type-name-link" title="class in zombie.iso">IsoCell.StencilArea</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -553,18 +554,6 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#SolidFloor" class="member-name-link">SolidFloor</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><a href="#stencilX1" class="member-name-link">stencilX1</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#stencilX2" class="member-name-link">stencilX2</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><a href="#stencilY1" class="member-name-link">stencilY1</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#stencilY2" class="member-name-link">stencilY2</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&gt;&gt;</code></div>
 <div class="col-second odd-row-color"><code><a href="#tempPlayerCutawayRoomIds" class="member-name-link">tempPlayerCutawayRoomIds</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
@@ -743,7 +732,7 @@ loadScripts(document, 'script');</script>
  long&nbsp;currentTimeMillis)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#DrawStencilMask()" class="member-name-link">DrawStencilMask</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawStencilMask()" class="member-name-link">drawStencilMask</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#EnsureSurroundNotNull(int,int,int)" class="member-name-link">EnsureSurroundNotNull</a><wbr>(int&nbsp;xx,
@@ -1013,65 +1002,72 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="IsoObject.html" title="class in zombie.iso">IsoObject</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStaticUpdaterObjectList()" class="member-name-link">getStaticUpdaterObjectList</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../characters/IsoSurvivor.html" title="class in zombie.characters">IsoSurvivor</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSurvivorList()" class="member-name-link">getSurvivorList</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="IsoCell.StencilArea.html" title="class in zombie.iso">IsoCell.StencilArea</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStencilAreas()" class="member-name-link">getStencilAreas</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVehicles()" class="member-name-link">getVehicles</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../characters/IsoSurvivor.html" title="class in zombie.characters">IsoSurvivor</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSurvivorList()" class="member-name-link">getSurvivorList</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="weather/fx/IsoWeatherFX.html" title="class in zombie.iso.weather.fx">IsoWeatherFX</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWeatherFX()" class="member-name-link">getWeatherFX</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVehicles()" class="member-name-link">getVehicles</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWidth()" class="member-name-link">getWidth</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWidthInTiles()" class="member-name-link">getWidthInTiles</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="objects/IsoWindow.html" title="class in zombie.iso.objects">IsoWindow</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWindowList()" class="member-name-link">getWindowList</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="weather/fx/IsoWeatherFX.html" title="class in zombie.iso.weather.fx">IsoWeatherFX</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWeatherFX()" class="member-name-link">getWeatherFX</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWorldX()" class="member-name-link">getWorldX</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWidth()" class="member-name-link">getWidth</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWorldY()" class="member-name-link">getWorldY</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWidthInTiles()" class="member-name-link">getWidthInTiles</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../characters/IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getZombieList()" class="member-name-link">getZombieList</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="objects/IsoWindow.html" title="class in zombie.iso.objects">IsoWindow</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWindowList()" class="member-name-link">getWindowList</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWorldX()" class="member-name-link">getWorldX</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWorldY()" class="member-name-link">getWorldY</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../characters/IsoZombie.html" title="class in zombie.characters">IsoZombie</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getZombieList()" class="member-name-link">getZombieList</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">List of every zombie currently in the world.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#gridSquareIsSnow(int,int,int)" class="member-name-link">gridSquareIsSnow</a><wbr>(int&nbsp;x,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#gridSquareIsSnow(int,int,int)" class="member-name-link">gridSquareIsSnow</a><wbr>(int&nbsp;x,
  int&nbsp;y,
  int&nbsp;z)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initTileShaders()" class="member-name-link">initTileShaders</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#invalidatePeekedRoom(int)" class="member-name-link">invalidatePeekedRoom</a><wbr>(int&nbsp;playerIndex)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initTileShaders()" class="member-name-link">initTileShaders</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isBasementWallAdjacentToTheVoid_North(zombie.iso.IsoObject)" class="member-name-link">isBasementWallAdjacentToTheVoid_North</a><wbr>(<a href="IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#invalidatePeekedRoom(int)" class="member-name-link">invalidatePeekedRoom</a><wbr>(int&nbsp;playerIndex)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isBasementWallAdjacentToTheVoid_West(zombie.iso.IsoObject)" class="member-name-link">isBasementWallAdjacentToTheVoid_West</a><wbr>(<a href="IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isBasementWallAdjacentToTheVoid_North(zombie.iso.IsoObject)" class="member-name-link">isBasementWallAdjacentToTheVoid_North</a><wbr>(<a href="IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#IsBehindStuff(zombie.iso.IsoGridSquare)" class="member-name-link">IsBehindStuff</a><wbr>(<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;sq)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isBasementWallAdjacentToTheVoid_West(zombie.iso.IsoObject)" class="member-name-link">isBasementWallAdjacentToTheVoid_West</a><wbr>(<a href="IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#IsCollapsibleBuildingSquare(zombie.iso.IsoGridSquare)" class="member-name-link">IsCollapsibleBuildingSquare</a><wbr>(<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#IsBehindStuff(zombie.iso.IsoGridSquare)" class="member-name-link">IsBehindStuff</a><wbr>(<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;sq)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#IsCutawaySquare(zombie.iso.IsoGridSquare,long)" class="member-name-link">IsCutawaySquare</a><wbr>(<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
- long&nbsp;currentTimeMillis)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#IsCollapsibleBuildingSquare(zombie.iso.IsoGridSquare)" class="member-name-link">IsCollapsibleBuildingSquare</a><wbr>(<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInChunkMap(int,int)" class="member-name-link">isInChunkMap</a><wbr>(int&nbsp;x,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#IsCutawaySquare(zombie.iso.IsoGridSquare,long)" class="member-name-link">IsCutawaySquare</a><wbr>(<a href="IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
+ long&nbsp;currentTimeMillis)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInChunkMap(int,int)" class="member-name-link">isInChunkMap</a><wbr>(int&nbsp;x,
  int&nbsp;y)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInStencil(float,float)" class="member-name-link">isInStencil</a><wbr>(float&nbsp;sx,
+ float&nbsp;sy)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNull(int,int,int)" class="member-name-link">isNull</a><wbr>(int&nbsp;x,
@@ -1213,7 +1209,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDangerUpdate(zombie.core.utils.OnceEvery)" class="member-name-link">setDangerUpdate</a><wbr>(<a href="../core/utils/OnceEvery.html" title="class in zombie.core.utils">OnceEvery</a>&nbsp;dangerUpdate)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDrag(se.krka.kahlua.vm.KahluaTable,int)" class="member-name-link">setDrag</a><wbr>(se.krka.kahlua.vm.KahluaTable&nbsp;item,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDrag(se.krka.kahlua.vm.KahluaTable,int)" class="member-name-link">setDrag</a><wbr>(se.krka.kahlua.vm.KahluaTable&nbsp;draggingItem,
  int&nbsp;player)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -1646,38 +1642,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="stencilX1">
-<h3>stencilX1</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">stencilX1</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="stencilY1">
-<h3>stencilY1</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">stencilY1</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="stencilX2">
-<h3>stencilX2</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">stencilX2</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="stencilY2">
-<h3>stencilY2</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">stencilY2</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="deferredCharacterTick">
 <h3>deferredCharacterTick</h3>
 <div class="horizontal-scroll">
@@ -2102,10 +2066,27 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="DrawStencilMask()">
-<h3>DrawStencilMask</h3>
+<section class="detail" id="drawStencilMask()">
+<h3>drawStencilMask</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">DrawStencilMask</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawStencilMask</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isInStencil(float,float)">
+<h3>isInStencil</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isInStencil</span><wbr><span class="parameters">(float&nbsp;sx,
+ float&nbsp;sy)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getStencilAreas()">
+<h3>getStencilAreas</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="IsoCell.StencilArea.html" title="class in zombie.iso">IsoCell.StencilArea</a>&gt;</span>&nbsp;<span class="element-name">getStencilAreas</span>()</div>
 </div>
 </section>
 </li>
@@ -2430,7 +2411,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="setDrag(se.krka.kahlua.vm.KahluaTable,int)">
 <h3>setDrag</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setDrag</span><wbr><span class="parameters">(se.krka.kahlua.vm.KahluaTable&nbsp;item,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setDrag</span><wbr><span class="parameters">(se.krka.kahlua.vm.KahluaTable&nbsp;draggingItem,
  int&nbsp;player)</span></div>
 </div>
 </section>

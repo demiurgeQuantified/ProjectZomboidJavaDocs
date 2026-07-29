@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -61,8 +61,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
-<li><a href="#%3Cinit%3E()" tabindex="0">ObjectPool()</a></li>
-<li><a href="#%3Cinit%3E(zombie.popman.ObjectPool.Allocator)" tabindex="0">ObjectPool(ObjectPool.Allocator)</a></li>
+<li><a href="#%3Cinit%3E(java.lang.String)" tabindex="0">ObjectPool(String)</a></li>
+<li><a href="#%3Cinit%3E(zombie.popman.ObjectPool.Allocator,java.lang.String)" tabindex="0">ObjectPool(ObjectPool.Allocator, String)</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
@@ -76,6 +76,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#releaseAll(java.util.Collection)" tabindex="0">releaseAll(Collection)</a></li>
 <li><a href="#clear()" tabindex="0">clear()</a></li>
 <li><a href="#forEach(java.util.function.Consumer)" tabindex="0">forEach(Consumer)</a></li>
+<li><a href="#size()" tabindex="0">size()</a></li>
 </ol>
 </li>
 </ol>
@@ -86,7 +87,9 @@ loadScripts(document, 'script');</script>
 <h1 title="Class ObjectPool" class="title">Class ObjectPool&lt;<span id="type-param-T">T</span>&gt;</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance"><a href="../network/statistics/counters/ObjectPoolCounter.html" title="class in zombie.network.statistics.counters">zombie.network.statistics.counters.ObjectPoolCounter</a>
 <div class="inheritance">zombie.popman.ObjectPool&lt;T&gt;</div>
+</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
@@ -96,7 +99,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ObjectPool&lt;T&gt;</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<span class="extends-implements">extends <a href="../network/statistics/counters/ObjectPoolCounter.html" title="class in zombie.network.statistics.counters">ObjectPoolCounter</a></span></div>
 </div>
 </section>
 <section class="summary">
@@ -124,9 +127,10 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">ObjectPool</a>()</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">ObjectPool</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(zombie.popman.ObjectPool.Allocator)" class="member-name-link">ObjectPool</a><wbr>(<a href="ObjectPool.Allocator.html" title="interface in zombie.popman">ObjectPool.Allocator</a>&lt;<a href="#type-param-T" title="type parameter in ObjectPool">T</a>&gt;&nbsp;alloc)</code></div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(zombie.popman.ObjectPool.Allocator,java.lang.String)" class="member-name-link">ObjectPool</a><wbr>(<a href="ObjectPool.Allocator.html" title="interface in zombie.popman">ObjectPool.Allocator</a>&lt;<a href="#type-param-T" title="type parameter in ObjectPool">T</a>&gt;&nbsp;alloc,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
@@ -169,6 +173,9 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#releaseAll(java.util.List)" class="member-name-link">releaseAll</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="#type-param-T" title="type parameter in ObjectPool">T</a>&gt;&nbsp;objs)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#size()" class="member-name-link">size</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -187,18 +194,19 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;()">
+<section class="detail" id="&lt;init&gt;(java.lang.String)">
 <h3>ObjectPool</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ObjectPool</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ObjectPool</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="&lt;init&gt;(zombie.popman.ObjectPool.Allocator)">
+<section class="detail" id="&lt;init&gt;(zombie.popman.ObjectPool.Allocator,java.lang.String)">
 <h3>ObjectPool</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ObjectPool</span><wbr><span class="parameters">(<a href="ObjectPool.Allocator.html" title="interface in zombie.popman">ObjectPool.Allocator</a>&lt;<a href="#type-param-T" title="type parameter in ObjectPool">T</a>&gt;&nbsp;alloc)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ObjectPool</span><wbr><span class="parameters">(<a href="ObjectPool.Allocator.html" title="interface in zombie.popman">ObjectPool.Allocator</a>&lt;<a href="#type-param-T" title="type parameter in ObjectPool">T</a>&gt;&nbsp;alloc,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
 </div>
 </section>
 </li>
@@ -279,6 +287,18 @@ loadScripts(document, 'script');</script>
 <h3>forEach</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">forEach</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="#type-param-T" title="type parameter in ObjectPool">T</a>&gt;&nbsp;consumer)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="size()">
+<h3>size</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">size</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../network/statistics/counters/ObjectPoolCounter.html#size()">size</a></code>&nbsp;in class&nbsp;<code><a href="../network/statistics/counters/ObjectPoolCounter.html" title="class in zombie.network.statistics.counters">ObjectPoolCounter</a></code></dd>
+</dl>
 </div>
 </section>
 </li>

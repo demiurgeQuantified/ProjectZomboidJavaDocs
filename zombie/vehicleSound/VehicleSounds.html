@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -72,19 +72,28 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#setOwner(zombie.vehicleSound.VehicleSoundOwner)" tabindex="0">setOwner(VehicleSoundOwner)</a></li>
+<li><a href="#getOwner()" tabindex="0">getOwner()</a></li>
 <li><a href="#getX()" tabindex="0">getX()</a></li>
 <li><a href="#getY()" tabindex="0">getY()</a></li>
 <li><a href="#getZ()" tabindex="0">getZ()</a></li>
+<li><a href="#getXi()" tabindex="0">getXi()</a></li>
+<li><a href="#getYi()" tabindex="0">getYi()</a></li>
+<li><a href="#getZi()" tabindex="0">getZi()</a></li>
 <li><a href="#isListenerInRange(float)" tabindex="0">isListenerInRange(float)</a></li>
 <li><a href="#getScriptName()" tabindex="0">getScriptName()</a></li>
 <li><a href="#getScript()" tabindex="0">getScript()</a></li>
 <li><a href="#getEngineCondition()" tabindex="0">getEngineCondition()</a></li>
+<li><a href="#getEngineQuality()" tabindex="0">getEngineQuality()</a></li>
 <li><a href="#getEngineState()" tabindex="0">getEngineState()</a></li>
 <li><a href="#isEngineRunning()" tabindex="0">isEngineRunning()</a></li>
 <li><a href="#isEngineSounding()" tabindex="0">isEngineSounding()</a></li>
 <li><a href="#getEngineSpeed()" tabindex="0">getEngineSpeed()</a></li>
 <li><a href="#getTransmissionNumber()" tabindex="0">getTransmissionNumber()</a></li>
 <li><a href="#getCurrentSpeedKmHour()" tabindex="0">getCurrentSpeedKmHour()</a></li>
+<li><a href="#getMaxSpeed()" tabindex="0">getMaxSpeed()</a></li>
+<li><a href="#hasAlarm()" tabindex="0">hasAlarm()</a></li>
+<li><a href="#isAlarmActive()" tabindex="0">isAlarmActive()</a></li>
+<li><a href="#isAlarmSoundOn()" tabindex="0">isAlarmSoundOn()</a></li>
 <li><a href="#isAlarmSounding()" tabindex="0">isAlarmSounding()</a></li>
 <li><a href="#isBrakePedalPressed()" tabindex="0">isBrakePedalPressed()</a></li>
 <li><a href="#isGasPedalPressed()" tabindex="0">isGasPedalPressed()</a></li>
@@ -92,10 +101,15 @@ loadScripts(document, 'script');</script>
 <li><a href="#getChosenAlarmSound()" tabindex="0">getChosenAlarmSound()</a></li>
 <li><a href="#isBackupBeeperSounding()" tabindex="0">isBackupBeeperSounding()</a></li>
 <li><a href="#isDoorAlarmSounding()" tabindex="0">isDoorAlarmSounding()</a></li>
+<li><a href="#hasHorn()" tabindex="0">hasHorn()</a></li>
 <li><a href="#isHornSounding()" tabindex="0">isHornSounding()</a></li>
-<li><a href="#getEmitter()" tabindex="0">getEmitter()</a></li>
+<li><a href="#getVehicleSoundEmitter()" tabindex="0">getVehicleSoundEmitter()</a></li>
 <li><a href="#isAnyListenerInside()" tabindex="0">isAnyListenerInside()</a></li>
+<li><a href="#isSirenActive()" tabindex="0">isSirenActive()</a></li>
 <li><a href="#isSirenSounding()" tabindex="0">isSirenSounding()</a></li>
+<li><a href="#getSirenStartTime()" tabindex="0">getSirenStartTime()</a></li>
+<li><a href="#setSirenStartTime(double)" tabindex="0">setSirenStartTime(double)</a></li>
+<li><a href="#hasLightbar()" tabindex="0">hasLightbar()</a></li>
 <li><a href="#getLightbarSirenModeObject()" tabindex="0">getLightbarSirenModeObject()</a></li>
 <li><a href="#getMaxWheelSteering()" tabindex="0">getMaxWheelSteering()</a></li>
 <li><a href="#getMinWheelSkid()" tabindex="0">getMinWheelSkid()</a></li>
@@ -106,6 +120,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#startEvent(long,zombie.audio.GameSoundClip,boolean,java.util.BitSet)" tabindex="0">startEvent(long, GameSoundClip, boolean, BitSet)</a></li>
 <li><a href="#updateEvent(long,zombie.audio.GameSoundClip)" tabindex="0">updateEvent(long, GameSoundClip)</a></li>
 <li><a href="#stopEvent(long,zombie.audio.GameSoundClip,boolean,java.util.BitSet)" tabindex="0">stopEvent(long, GameSoundClip, boolean, BitSet)</a></li>
+<li><a href="#getEngineSound()" tabindex="0">getEngineSound()</a></li>
+<li><a href="#getEngineStartSound()" tabindex="0">getEngineStartSound()</a></li>
+<li><a href="#getEngineTurnOffSound()" tabindex="0">getEngineTurnOffSound()</a></li>
+<li><a href="#getHandBrakeSound()" tabindex="0">getHandBrakeSound()</a></li>
+<li><a href="#getIgnitionFailSound()" tabindex="0">getIgnitionFailSound()</a></li>
+<li><a href="#getIgnitionFailNoPowerSound()" tabindex="0">getIgnitionFailNoPowerSound()</a></li>
+<li><a href="#isCombinedWithEngineSound(java.lang.String)" tabindex="0">isCombinedWithEngineSound(String)</a></li>
 </ol>
 </li>
 </ol>
@@ -177,29 +198,53 @@ implements <a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSo
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCurrentSpeedKmHour()" class="member-name-link">getCurrentSpeedKmHour</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../audio/BaseSoundEmitter.html" title="class in zombie.audio">BaseSoundEmitter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEmitter()" class="member-name-link">getEmitter</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEngineCondition()" class="member-name-link">getEngineCondition</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEngineCondition()" class="member-name-link">getEngineCondition</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEngineQuality()" class="member-name-link">getEngineQuality</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEngineSpeed()" class="member-name-link">getEngineSpeed</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEngineSound()" class="member-name-link">getEngineSound</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEngineSpeed()" class="member-name-link">getEngineSpeed</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEngineStartSound()" class="member-name-link">getEngineStartSound</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../vehicles/BaseVehicle.engineStateTypes.html" title="enum class in zombie.vehicles">BaseVehicle.engineStateTypes</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEngineState()" class="member-name-link">getEngineState</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../audio/FMODParameterList.html" title="class in zombie.audio">FMODParameterList</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFMODParameters()" class="member-name-link">getFMODParameters</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEngineTurnOffSound()" class="member-name-link">getEngineTurnOffSound</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../audio/FMODParameterList.html" title="class in zombie.audio">FMODParameterList</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFMODParameters()" class="member-name-link">getFMODParameters</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHandBrakeSound()" class="member-name-link">getHandBrakeSound</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIgnitionFailNoPowerSound()" class="member-name-link">getIgnitionFailNoPowerSound</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIgnitionFailSound()" class="member-name-link">getIgnitionFailSound</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../vehicles/LightbarSirenMode.html" title="class in zombie.vehicles">LightbarSirenMode</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLightbarSirenModeObject()" class="member-name-link">getLightbarSirenModeObject</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMaxWheelSteering()" class="member-name-link">getMaxWheelSteering</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMaxSpeed()" class="member-name-link">getMaxSpeed</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMinWheelSkid()" class="member-name-link">getMinWheelSkid</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMaxWheelSteering()" class="member-name-link">getMaxWheelSteering</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMinWheelSkid()" class="member-name-link">getMinWheelSkid</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOwner()" class="member-name-link">getOwner</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../audio/parameters/ParameterVehicleRoadMaterial.Material.html" title="enum class in zombie.audio.parameters">ParameterVehicleRoadMaterial.Material</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRoadMaterial()" class="member-name-link">getRoadMaterial</a>()</code></div>
@@ -210,20 +255,50 @@ implements <a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSo
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getScriptName()" class="member-name-link">getScriptName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransmissionNumber()" class="member-name-link">getTransmissionNumber</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSirenStartTime()" class="member-name-link">getSirenStartTime</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransmissionNumber()" class="member-name-link">getTransmissionNumber</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../audio/BaseSoundEmitter.html" title="class in zombie.audio">BaseSoundEmitter</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVehicleSoundEmitter()" class="member-name-link">getVehicleSoundEmitter</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getX()" class="member-name-link">getX</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getY()" class="member-name-link">getY</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getXi()" class="member-name-link">getXi</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getY()" class="member-name-link">getY</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getYi()" class="member-name-link">getYi</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getZ()" class="member-name-link">getZ</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getZi()" class="member-name-link">getZi</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasAlarm()" class="member-name-link">hasAlarm</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAlarmSounding()" class="member-name-link">isAlarmSounding</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasHorn()" class="member-name-link">hasHorn</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasLightbar()" class="member-name-link">hasLightbar</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAlarmActive()" class="member-name-link">isAlarmActive</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAlarmSounding()" class="member-name-link">isAlarmSounding</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAlarmSoundOn()" class="member-name-link">isAlarmSoundOn</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAnyListenerInside()" class="member-name-link">isAnyListenerInside</a>()</code></div>
@@ -238,22 +313,28 @@ implements <a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSo
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBrakePedalPressed()" class="member-name-link">isBrakePedalPressed</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDoorAlarmSounding()" class="member-name-link">isDoorAlarmSounding</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCombinedWithEngineSound(java.lang.String)" class="member-name-link">isCombinedWithEngineSound</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;sound)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEngineRunning()" class="member-name-link">isEngineRunning</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDoorAlarmSounding()" class="member-name-link">isDoorAlarmSounding</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEngineSounding()" class="member-name-link">isEngineSounding</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEngineRunning()" class="member-name-link">isEngineRunning</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isGasPedalPressed()" class="member-name-link">isGasPedalPressed</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEngineSounding()" class="member-name-link">isEngineSounding</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHornSounding()" class="member-name-link">isHornSounding</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isGasPedalPressed()" class="member-name-link">isGasPedalPressed</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isListenerInRange(float)" class="member-name-link">isListenerInRange</a><wbr>(float&nbsp;range)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHornSounding()" class="member-name-link">isHornSounding</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isListenerInRange(float)" class="member-name-link">isListenerInRange</a><wbr>(float&nbsp;range)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSirenActive()" class="member-name-link">isSirenActive</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSirenSounding()" class="member-name-link">isSirenSounding</a>()</code></div>
@@ -265,30 +346,36 @@ implements <a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSo
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setOwner(zombie.vehicleSound.VehicleSoundOwner)" class="member-name-link">setOwner</a><wbr>(<a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a>&nbsp;owner)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startEvent(long,zombie.audio.GameSoundClip,boolean,java.util.BitSet)" class="member-name-link">startEvent</a><wbr>(long&nbsp;eventInstance,
- <a href="../audio/GameSoundClip.html" title="class in zombie.audio">GameSoundClip</a>&nbsp;clip,
- boolean&nbsp;remote,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/BitSet.html" title="class or interface in java.util" class="external-link">BitSet</a>&nbsp;parameterSet)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSirenStartTime(double)" class="member-name-link">setSirenStartTime</a><wbr>(double&nbsp;worldAgeHours)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopEvent(long,zombie.audio.GameSoundClip,boolean,java.util.BitSet)" class="member-name-link">stopEvent</a><wbr>(long&nbsp;eventInstance,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startEvent(long,zombie.audio.GameSoundClip,boolean,java.util.BitSet)" class="member-name-link">startEvent</a><wbr>(long&nbsp;eventInstance,
  <a href="../audio/GameSoundClip.html" title="class in zombie.audio">GameSoundClip</a>&nbsp;clip,
  boolean&nbsp;remote,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/BitSet.html" title="class or interface in java.util" class="external-link">BitSet</a>&nbsp;parameterSet)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopEvent(long,zombie.audio.GameSoundClip,boolean,java.util.BitSet)" class="member-name-link">stopEvent</a><wbr>(long&nbsp;eventInstance,
+ <a href="../audio/GameSoundClip.html" title="class in zombie.audio">GameSoundClip</a>&nbsp;clip,
+ boolean&nbsp;remote,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/BitSet.html" title="class or interface in java.util" class="external-link">BitSet</a>&nbsp;parameterSet)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateEvent(long,zombie.audio.GameSoundClip)" class="member-name-link">updateEvent</a><wbr>(long&nbsp;eventInstance,
- <a href="../audio/GameSoundClip.html" title="class in zombie.audio">GameSoundClip</a>&nbsp;clip)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateEvent(long,zombie.audio.GameSoundClip)" class="member-name-link">updateEvent</a><wbr>(long&nbsp;eventInstance,
+ <a href="../audio/GameSoundClip.html" title="class in zombie.audio">GameSoundClip</a>&nbsp;clip)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-zombie.vehicleSound.VehicleSoundOwner">Methods inherited from interface&nbsp;<a href="VehicleSoundOwner.html#method-summary" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></h3>
+<code><a href="VehicleSoundOwner.html#getLightbarSirenMode()" title="getLightbarSirenMode()">getLightbarSirenMode</a>, <a href="VehicleSoundOwner.html#hasSiren()" title="hasSiren()">hasSiren</a>, <a href="VehicleSoundOwner.html#setLightbarSirenMode(int)" title="setLightbarSirenMode(int)">setLightbarSirenMode</a>, <a href="VehicleSoundOwner.html#sirenShutoffTimeExpired()" title="sirenShutoffTimeExpired()">sirenShutoffTimeExpired</a></code></div>
 </section>
 </li>
 </ul>
@@ -341,6 +428,14 @@ implements <a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSo
 </section>
 </li>
 <li>
+<section class="detail" id="getOwner()">
+<h3>getOwner</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></span>&nbsp;<span class="element-name">getOwner</span>()</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="getX()">
 <h3>getX</h3>
 <div class="horizontal-scroll">
@@ -372,6 +467,42 @@ implements <a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSo
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="VehicleSoundOwner.html#getZ()">getZ</a></code>&nbsp;in interface&nbsp;<code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getXi()">
+<h3>getXi</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getXi</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="VehicleSoundOwner.html#getXi()">getXi</a></code>&nbsp;in interface&nbsp;<code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getYi()">
+<h3>getYi</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getYi</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="VehicleSoundOwner.html#getYi()">getYi</a></code>&nbsp;in interface&nbsp;<code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getZi()">
+<h3>getZi</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getZi</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="VehicleSoundOwner.html#getZi()">getZi</a></code>&nbsp;in interface&nbsp;<code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></dd>
 </dl>
 </div>
 </section>
@@ -420,6 +551,18 @@ implements <a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSo
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="VehicleSoundOwner.html#getEngineCondition()">getEngineCondition</a></code>&nbsp;in interface&nbsp;<code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getEngineQuality()">
+<h3>getEngineQuality</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getEngineQuality</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="VehicleSoundOwner.html#getEngineQuality()">getEngineQuality</a></code>&nbsp;in interface&nbsp;<code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></dd>
 </dl>
 </div>
 </section>
@@ -492,6 +635,54 @@ implements <a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSo
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="VehicleSoundOwner.html#getCurrentSpeedKmHour()">getCurrentSpeedKmHour</a></code>&nbsp;in interface&nbsp;<code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getMaxSpeed()">
+<h3>getMaxSpeed</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getMaxSpeed</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="VehicleSoundOwner.html#getMaxSpeed()">getMaxSpeed</a></code>&nbsp;in interface&nbsp;<code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="hasAlarm()">
+<h3>hasAlarm</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasAlarm</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="VehicleSoundOwner.html#hasAlarm()">hasAlarm</a></code>&nbsp;in interface&nbsp;<code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isAlarmActive()">
+<h3>isAlarmActive</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAlarmActive</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="VehicleSoundOwner.html#isAlarmActive()">isAlarmActive</a></code>&nbsp;in interface&nbsp;<code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isAlarmSoundOn()">
+<h3>isAlarmSoundOn</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAlarmSoundOn</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="VehicleSoundOwner.html#isAlarmSoundOn()">isAlarmSoundOn</a></code>&nbsp;in interface&nbsp;<code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></dd>
 </dl>
 </div>
 </section>
@@ -581,6 +772,18 @@ implements <a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSo
 </section>
 </li>
 <li>
+<section class="detail" id="hasHorn()">
+<h3>hasHorn</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasHorn</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="VehicleSoundOwner.html#hasHorn()">hasHorn</a></code>&nbsp;in interface&nbsp;<code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="isHornSounding()">
 <h3>isHornSounding</h3>
 <div class="horizontal-scroll">
@@ -593,13 +796,13 @@ implements <a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSo
 </section>
 </li>
 <li>
-<section class="detail" id="getEmitter()">
-<h3>getEmitter</h3>
+<section class="detail" id="getVehicleSoundEmitter()">
+<h3>getVehicleSoundEmitter</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../audio/BaseSoundEmitter.html" title="class in zombie.audio">BaseSoundEmitter</a></span>&nbsp;<span class="element-name">getEmitter</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../audio/BaseSoundEmitter.html" title="class in zombie.audio">BaseSoundEmitter</a></span>&nbsp;<span class="element-name">getVehicleSoundEmitter</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="VehicleSoundOwner.html#getEmitter()">getEmitter</a></code>&nbsp;in interface&nbsp;<code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></dd>
+<dd><code><a href="VehicleSoundOwner.html#getVehicleSoundEmitter()">getVehicleSoundEmitter</a></code>&nbsp;in interface&nbsp;<code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></dd>
 </dl>
 </div>
 </section>
@@ -617,6 +820,18 @@ implements <a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSo
 </section>
 </li>
 <li>
+<section class="detail" id="isSirenActive()">
+<h3>isSirenActive</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSirenActive</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="VehicleSoundOwner.html#isSirenActive()">isSirenActive</a></code>&nbsp;in interface&nbsp;<code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="isSirenSounding()">
 <h3>isSirenSounding</h3>
 <div class="horizontal-scroll">
@@ -624,6 +839,42 @@ implements <a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSo
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="VehicleSoundOwner.html#isSirenSounding()">isSirenSounding</a></code>&nbsp;in interface&nbsp;<code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getSirenStartTime()">
+<h3>getSirenStartTime</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getSirenStartTime</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="VehicleSoundOwner.html#getSirenStartTime()">getSirenStartTime</a></code>&nbsp;in interface&nbsp;<code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setSirenStartTime(double)">
+<h3>setSirenStartTime</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setSirenStartTime</span><wbr><span class="parameters">(double&nbsp;worldAgeHours)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="VehicleSoundOwner.html#setSirenStartTime(double)">setSirenStartTime</a></code>&nbsp;in interface&nbsp;<code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="hasLightbar()">
+<h3>hasLightbar</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasLightbar</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="VehicleSoundOwner.html#hasLightbar()">hasLightbar</a></code>&nbsp;in interface&nbsp;<code><a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSound">VehicleSoundOwner</a></code></dd>
 </dl>
 </div>
 </section>
@@ -744,6 +995,62 @@ implements <a href="VehicleSoundOwner.html" title="interface in zombie.vehicleSo
 <dt>Specified by:</dt>
 <dd><code>stopEvent</code>&nbsp;in interface&nbsp;<code>fmod.fmod.IFMODParameterUpdater</code></dd>
 </dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getEngineSound()">
+<h3>getEngineSound</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getEngineSound</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getEngineStartSound()">
+<h3>getEngineStartSound</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getEngineStartSound</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getEngineTurnOffSound()">
+<h3>getEngineTurnOffSound</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getEngineTurnOffSound</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getHandBrakeSound()">
+<h3>getHandBrakeSound</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getHandBrakeSound</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getIgnitionFailSound()">
+<h3>getIgnitionFailSound</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getIgnitionFailSound</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getIgnitionFailNoPowerSound()">
+<h3>getIgnitionFailNoPowerSound</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getIgnitionFailNoPowerSound</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isCombinedWithEngineSound(java.lang.String)">
+<h3>isCombinedWithEngineSound</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isCombinedWithEngineSound</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;sound)</span></div>
 </div>
 </section>
 </li>

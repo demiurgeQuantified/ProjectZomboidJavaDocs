@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -74,8 +74,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#alloc()" tabindex="0">alloc()</a></li>
 <li><a href="#render()" tabindex="0">render()</a></li>
 <li><a href="#postRender()" tabindex="0">postRender()</a></li>
+<li><a href="#startFrame()" tabindex="0">startFrame()</a></li>
 <li><a href="#init()" tabindex="0">init()</a></li>
-<li><a href="#addTree(zombie.core.textures.Texture,zombie.core.textures.Texture,float,float,float,float,float,float,float,zombie.iso.objects.ObjectRenderEffects,boolean,float)" tabindex="0">addTree(Texture, Texture, float, float, float, float, float, float, float, ObjectRenderEffects, boolean, float)</a></li>
+<li><a href="#addTree(zombie.core.textures.Texture,zombie.core.textures.Texture,float,float,float,float,float,float,float,zombie.iso.objects.ObjectRenderEffects,boolean,float,boolean,float)" tabindex="0">addTree(Texture, Texture, float, float, float, float, float, float, float, ObjectRenderEffects, boolean, float, boolean, float)</a></li>
 </ol>
 </li>
 </ol>
@@ -139,7 +140,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addTree(zombie.core.textures.Texture,zombie.core.textures.Texture,float,float,float,float,float,float,float,zombie.iso.objects.ObjectRenderEffects,boolean,float)" class="member-name-link">addTree</a><wbr>(<a href="../../core/textures/Texture.html" title="class in zombie.core.textures">Texture</a>&nbsp;texture,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addTree(zombie.core.textures.Texture,zombie.core.textures.Texture,float,float,float,float,float,float,float,zombie.iso.objects.ObjectRenderEffects,boolean,float,boolean,float)" class="member-name-link">addTree</a><wbr>(<a href="../../core/textures/Texture.html" title="class in zombie.core.textures">Texture</a>&nbsp;texture,
  <a href="../../core/textures/Texture.html" title="class in zombie.core.textures">Texture</a>&nbsp;texture2,
  float&nbsp;x,
  float&nbsp;y,
@@ -150,7 +151,9 @@ loadScripts(document, 'script');</script>
  float&nbsp;a,
  <a href="../objects/ObjectRenderEffects.html" title="class in zombie.iso.objects">ObjectRenderEffects</a>&nbsp;ore,
  boolean&nbsp;bUseStencil,
- float&nbsp;fadeAlpha)</code></div>
+ float&nbsp;fadeAlpha,
+ boolean&nbsp;transparent,
+ float&nbsp;cutawayAlpha)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FBORenderTrees.html" title="class in zombie.iso.fboRenderChunk">FBORenderTrees</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#alloc()" class="member-name-link">alloc</a>()</code></div>
@@ -164,6 +167,9 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render()" class="member-name-link">render</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#startFrame()" class="member-name-link">startFrame</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -249,6 +255,14 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="startFrame()">
+<h3>startFrame</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">startFrame</span>()</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="init()">
 <h3>init</h3>
 <div class="horizontal-scroll">
@@ -257,7 +271,7 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="addTree(zombie.core.textures.Texture,zombie.core.textures.Texture,float,float,float,float,float,float,float,zombie.iso.objects.ObjectRenderEffects,boolean,float)">
+<section class="detail" id="addTree(zombie.core.textures.Texture,zombie.core.textures.Texture,float,float,float,float,float,float,float,zombie.iso.objects.ObjectRenderEffects,boolean,float,boolean,float)">
 <h3>addTree</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addTree</span><wbr><span class="parameters">(<a href="../../core/textures/Texture.html" title="class in zombie.core.textures">Texture</a>&nbsp;texture,
@@ -271,7 +285,9 @@ loadScripts(document, 'script');</script>
  float&nbsp;a,
  <a href="../objects/ObjectRenderEffects.html" title="class in zombie.iso.objects">ObjectRenderEffects</a>&nbsp;ore,
  boolean&nbsp;bUseStencil,
- float&nbsp;fadeAlpha)</span></div>
+ float&nbsp;fadeAlpha,
+ boolean&nbsp;transparent,
+ float&nbsp;cutawayAlpha)</span></div>
 </div>
 </section>
 </li>

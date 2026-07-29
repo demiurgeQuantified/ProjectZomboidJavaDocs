@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -66,9 +66,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#getRoadGenerators()" tabindex="0">getRoadGenerators()</a></li>
-<li><a href="#genRandomChunk(zombie.iso.IsoCell,zombie.iso.IsoChunk,int,int)" tabindex="0">genRandomChunk(IsoCell, IsoChunk, int, int)</a></li>
-<li><a href="#genMapChunk(zombie.iso.IsoCell,zombie.iso.IsoChunk,int,int)" tabindex="0">genMapChunk(IsoCell, IsoChunk, int, int)</a></li>
-<li><a href="#replaceTiles(zombie.iso.IsoCell,zombie.iso.IsoChunk,int,int)" tabindex="0">replaceTiles(IsoCell, IsoChunk, int, int)</a></li>
+<li><a href="#generateChunks(zombie.iso.worldgen.ChunksCache)" tabindex="0">generateChunks(ChunksCache)</a></li>
+<li><a href="#replaceTiles(zombie.iso.IsoCell,zombie.iso.worldgen.ChunksCache,zombie.iso.IsoChunk,int,int)" tabindex="0">replaceTiles(IsoCell, ChunksCache, IsoChunk, int, int)</a></li>
 <li><a href="#addZombieToSquare(zombie.iso.IsoGridSquare)" tabindex="0">addZombieToSquare(IsoGridSquare)</a></li>
 <li><a href="#getBiome(int,int)" tabindex="0">getBiome(int, int)</a></li>
 <li><a href="#getMapBiome(int,int,java.lang.String)" tabindex="0">getMapBiome(int, int, String)</a></li>
@@ -129,43 +128,35 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filter)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#genMapChunk(zombie.iso.IsoCell,zombie.iso.IsoChunk,int,int)" class="member-name-link">genMapChunk</a><wbr>(<a href="../IsoCell.html" title="class in zombie.iso">IsoCell</a>&nbsp;cell,
- <a href="../IsoChunk.html" title="class in zombie.iso">IsoChunk</a>&nbsp;ch,
- int&nbsp;chunkX,
- int&nbsp;chunkY)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#genRandomChunk(zombie.iso.IsoCell,zombie.iso.IsoChunk,int,int)" class="member-name-link">genRandomChunk</a><wbr>(<a href="../IsoCell.html" title="class in zombie.iso">IsoCell</a>&nbsp;cell,
- <a href="../IsoChunk.html" title="class in zombie.iso">IsoChunk</a>&nbsp;ch,
- int&nbsp;chunkX,
- int&nbsp;chunkY)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="biomes/IBiome.html" title="interface in zombie.iso.worldgen.biomes">IBiome</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBiome(int,int)" class="member-name-link">getBiome</a><wbr>(int&nbsp;x,
- int&nbsp;y)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generateChunks(zombie.iso.worldgen.ChunksCache)" class="member-name-link">generateChunks</a><wbr>(<a href="ChunksCache.html" title="class in zombie.iso.worldgen">ChunksCache</a>&nbsp;chunks)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="biomes/IBiome.html" title="interface in zombie.iso.worldgen.biomes">IBiome</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMapBiome(int,int,java.lang.String)" class="member-name-link">getMapBiome</a><wbr>(int&nbsp;x,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBiome(int,int)" class="member-name-link">getBiome</a><wbr>(int&nbsp;x,
+ int&nbsp;y)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="biomes/IBiome.html" title="interface in zombie.iso.worldgen.biomes">IBiome</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMapBiome(int,int,java.lang.String)" class="member-name-link">getMapBiome</a><wbr>(int&nbsp;x,
  int&nbsp;y,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filter)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="roads/RoadGenerator.html" title="class in zombie.iso.worldgen.roads">RoadGenerator</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRoadGenerators()" class="member-name-link">getRoadGenerators</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isProtected(java.util.List,java.lang.String)" class="member-name-link">isProtected</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;protectedTiles,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tile)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="roads/RoadGenerator.html" title="class in zombie.iso.worldgen.roads">RoadGenerator</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRoadGenerators()" class="member-name-link">getRoadGenerators</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#priority(java.lang.String,java.lang.String)" class="member-name-link">priority</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tile,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tileRemote)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isProtected(java.util.List,java.lang.String)" class="member-name-link">isProtected</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;protectedTiles,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tile)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#replaceTiles(zombie.iso.IsoCell,zombie.iso.IsoChunk,int,int)" class="member-name-link">replaceTiles</a><wbr>(<a href="../IsoCell.html" title="class in zombie.iso">IsoCell</a>&nbsp;cell,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#priority(java.lang.String,java.lang.String)" class="member-name-link">priority</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tile,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tileRemote)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#replaceTiles(zombie.iso.IsoCell,zombie.iso.worldgen.ChunksCache,zombie.iso.IsoChunk,int,int)" class="member-name-link">replaceTiles</a><wbr>(<a href="../IsoCell.html" title="class in zombie.iso">IsoCell</a>&nbsp;cell,
+ <a href="ChunksCache.html" title="class in zombie.iso.worldgen">ChunksCache</a>&nbsp;chunks,
  <a href="../IsoChunk.html" title="class in zombie.iso">IsoChunk</a>&nbsp;ch,
  int&nbsp;chunkX,
  int&nbsp;chunkY)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -208,32 +199,19 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="genRandomChunk(zombie.iso.IsoCell,zombie.iso.IsoChunk,int,int)">
-<h3>genRandomChunk</h3>
+<section class="detail" id="generateChunks(zombie.iso.worldgen.ChunksCache)">
+<h3>generateChunks</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">genRandomChunk</span><wbr><span class="parameters">(<a href="../IsoCell.html" title="class in zombie.iso">IsoCell</a>&nbsp;cell,
- <a href="../IsoChunk.html" title="class in zombie.iso">IsoChunk</a>&nbsp;ch,
- int&nbsp;chunkX,
- int&nbsp;chunkY)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">generateChunks</span><wbr><span class="parameters">(<a href="ChunksCache.html" title="class in zombie.iso.worldgen">ChunksCache</a>&nbsp;chunks)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="genMapChunk(zombie.iso.IsoCell,zombie.iso.IsoChunk,int,int)">
-<h3>genMapChunk</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">genMapChunk</span><wbr><span class="parameters">(<a href="../IsoCell.html" title="class in zombie.iso">IsoCell</a>&nbsp;cell,
- <a href="../IsoChunk.html" title="class in zombie.iso">IsoChunk</a>&nbsp;ch,
- int&nbsp;chunkX,
- int&nbsp;chunkY)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="replaceTiles(zombie.iso.IsoCell,zombie.iso.IsoChunk,int,int)">
+<section class="detail" id="replaceTiles(zombie.iso.IsoCell,zombie.iso.worldgen.ChunksCache,zombie.iso.IsoChunk,int,int)">
 <h3>replaceTiles</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">replaceTiles</span><wbr><span class="parameters">(<a href="../IsoCell.html" title="class in zombie.iso">IsoCell</a>&nbsp;cell,
+ <a href="ChunksCache.html" title="class in zombie.iso.worldgen">ChunksCache</a>&nbsp;chunks,
  <a href="../IsoChunk.html" title="class in zombie.iso">IsoChunk</a>&nbsp;ch,
  int&nbsp;chunkX,
  int&nbsp;chunkY)</span></div>

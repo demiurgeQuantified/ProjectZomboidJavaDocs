@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -73,9 +73,11 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#render(float,float,float,zombie.core.textures.ColorInfo,java.util.function.Consumer)" tabindex="0">render(float, float, float, ColorInfo, Consumer)</a></li>
+<li><a href="#render(zombie.iso.IsoObject,zombie.iso.IsoDirections,float,float,float,zombie.core.textures.ColorInfo,java.util.function.Consumer)" tabindex="0">render(IsoObject, IsoDirections, float, float, float, ColorInfo, Consumer)</a></li>
 <li><a href="#save(java.nio.ByteBuffer)" tabindex="0">save(ByteBuffer)</a></li>
 <li><a href="#load(java.nio.ByteBuffer,int)" tabindex="0">load(ByteBuffer, int)</a></li>
+<li><a href="#isNorthSprite()" tabindex="0">isNorthSprite()</a></li>
+<li><a href="#isWestSprite()" tabindex="0">isWestSprite()</a></li>
 </ol>
 </li>
 </ol>
@@ -142,12 +144,20 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNorthSprite()" class="member-name-link">isNorthSprite</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isWestSprite()" class="member-name-link">isWestSprite</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(java.nio.ByteBuffer,int)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;input,
  int&nbsp;worldVersion)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(float,float,float,zombie.core.textures.ColorInfo,java.util.function.Consumer)" class="member-name-link">render</a><wbr>(float&nbsp;x,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(zombie.iso.IsoObject,zombie.iso.IsoDirections,float,float,float,zombie.core.textures.ColorInfo,java.util.function.Consumer)" class="member-name-link">render</a><wbr>(<a href="IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;obj,
+ <a href="IsoDirections.html" title="enum class in zombie.iso">IsoDirections</a>&nbsp;dir,
+ float&nbsp;x,
  float&nbsp;y,
  float&nbsp;z,
  <a href="../core/textures/ColorInfo.html" title="class in zombie.core.textures">ColorInfo</a>&nbsp;objectColor,
@@ -223,10 +233,12 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="render(float,float,float,zombie.core.textures.ColorInfo,java.util.function.Consumer)">
+<section class="detail" id="render(zombie.iso.IsoObject,zombie.iso.IsoDirections,float,float,float,zombie.core.textures.ColorInfo,java.util.function.Consumer)">
 <h3>render</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">render</span><wbr><span class="parameters">(float&nbsp;x,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">render</span><wbr><span class="parameters">(<a href="IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;obj,
+ <a href="IsoDirections.html" title="enum class in zombie.iso">IsoDirections</a>&nbsp;dir,
+ float&nbsp;x,
  float&nbsp;y,
  float&nbsp;z,
  <a href="../core/textures/ColorInfo.html" title="class in zombie.core.textures">ColorInfo</a>&nbsp;objectColor,
@@ -253,6 +265,22 @@ loadScripts(document, 'script');</script>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 </dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isNorthSprite()">
+<h3>isNorthSprite</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isNorthSprite</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isWestSprite()">
+<h3>isWestSprite</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isWestSprite</span>()</div>
 </div>
 </section>
 </li>

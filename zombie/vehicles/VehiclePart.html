@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -61,11 +61,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
-<li><a href="#%3Cinit%3E(zombie.vehicles.BaseVehicle)" tabindex="0">VehiclePart(BaseVehicle)</a></li>
+<li><a href="#%3Cinit%3E(zombie.vehicles.VehiclePartOwner)" tabindex="0">VehiclePart(VehiclePartOwner)</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
+<li><a href="#getOwner()" tabindex="0">getOwner()</a></li>
 <li><a href="#getVehicle()" tabindex="0">getVehicle()</a></li>
 <li><a href="#setScriptPart(zombie.scripting.objects.VehicleScript.Part)" tabindex="0">setScriptPart(VehicleScript.Part)</a></li>
 <li><a href="#getScriptPart()" tabindex="0">getScriptPart()</a></li>
@@ -113,6 +114,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#getChild(int)" tabindex="0">getChild(int)</a></li>
 <li><a href="#getDoor()" tabindex="0">getDoor()</a></li>
 <li><a href="#getEnclosingDoor()" tabindex="0">getEnclosingDoor()</a></li>
+<li><a href="#getVehicleEngine()" tabindex="0">getVehicleEngine()</a></li>
 <li><a href="#getWindow()" tabindex="0">getWindow()</a></li>
 <li><a href="#getChildWindow()" tabindex="0">getChildWindow()</a></li>
 <li><a href="#findWindow()" tabindex="0">findWindow()</a></li>
@@ -213,7 +215,7 @@ implements <a href="../chat/ChatElementOwner.html" title="interface in zombie.ch
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(zombie.vehicles.BaseVehicle)" class="member-name-link">VehiclePart</a><wbr>(<a href="BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(zombie.vehicles.VehiclePartOwner)" class="member-name-link">VehiclePart</a><wbr>(<a href="VehiclePartOwner.html" title="interface in zombie.vehicles">VehiclePartOwner</a>&nbsp;vehicle)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -401,26 +403,32 @@ implements <a href="../chat/ChatElementOwner.html" title="interface in zombie.ch
  float&nbsp;cond,
  float&nbsp;min)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VehiclePart.html" title="class in zombie.vehicles">VehiclePart</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getParent()" class="member-name-link">getParent</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VehiclePartOwner.html" title="interface in zombie.vehicles">VehiclePartOwner</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOwner()" class="member-name-link">getOwner</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../scripting/objects/VehicleScript.Part.html" title="class in zombie.scripting.objects">VehicleScript.Part</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getScriptPart()" class="member-name-link">getScriptPart</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VehiclePart.html" title="class in zombie.vehicles">VehiclePart</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getParent()" class="member-name-link">getParent</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSquare()" class="member-name-link">getSquare</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../scripting/objects/VehicleScript.Part.html" title="class in zombie.scripting.objects">VehicleScript.Part</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getScriptPart()" class="member-name-link">getScriptPart</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSuspensionCompression()" class="member-name-link">getSuspensionCompression</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSquare()" class="member-name-link">getSquare</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSuspensionDamping()" class="member-name-link">getSuspensionDamping</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSuspensionCompression()" class="member-name-link">getSuspensionCompression</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>se.krka.kahlua.vm.KahluaTable</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTable(java.lang.String)" class="member-name-link">getTable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSuspensionDamping()" class="member-name-link">getSuspensionDamping</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVehicle()" class="member-name-link">getVehicle</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>se.krka.kahlua.vm.KahluaTable</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTable(java.lang.String)" class="member-name-link">getTable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVehicle()" class="member-name-link">getVehicle</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VehicleEngine.html" title="class in zombie.vehicles">VehicleEngine</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVehicleEngine()" class="member-name-link">getVehicleEngine</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWheelFriction()" class="member-name-link">getWheelFriction</a>()</code></div>
@@ -588,10 +596,10 @@ implements <a href="../chat/ChatElementOwner.html" title="interface in zombie.ch
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(zombie.vehicles.BaseVehicle)">
+<section class="detail" id="&lt;init&gt;(zombie.vehicles.VehiclePartOwner)">
 <h3>VehiclePart</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">VehiclePart</span><wbr><span class="parameters">(<a href="BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a>&nbsp;vehicle)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">VehiclePart</span><wbr><span class="parameters">(<a href="VehiclePartOwner.html" title="interface in zombie.vehicles">VehiclePartOwner</a>&nbsp;vehicle)</span></div>
 </div>
 </section>
 </li>
@@ -603,6 +611,14 @@ implements <a href="../chat/ChatElementOwner.html" title="interface in zombie.ch
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="getOwner()">
+<h3>getOwner</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VehiclePartOwner.html" title="interface in zombie.vehicles">VehiclePartOwner</a></span>&nbsp;<span class="element-name">getOwner</span>()</div>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="getVehicle()">
 <h3>getVehicle</h3>
@@ -985,6 +1001,14 @@ implements <a href="../chat/ChatElementOwner.html" title="interface in zombie.ch
 <h3>getEnclosingDoor</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VehicleDoor.html" title="class in zombie.vehicles">VehicleDoor</a></span>&nbsp;<span class="element-name">getEnclosingDoor</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getVehicleEngine()">
+<h3>getVehicleEngine</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VehicleEngine.html" title="class in zombie.vehicles">VehicleEngine</a></span>&nbsp;<span class="element-name">getVehicleEngine</span>()</div>
 </div>
 </section>
 </li>

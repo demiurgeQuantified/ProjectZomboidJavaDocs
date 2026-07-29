@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -61,6 +61,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
+<li><a href="#ANY_Z" tabindex="0">ANY_Z</a></li>
 <li><a href="#clipperOffset" tabindex="0">clipperOffset</a></li>
 <li><a href="#clipperBuffer" tabindex="0">clipperBuffer</a></li>
 <li><a href="#TL_Location" tabindex="0">TL_Location</a></li>
@@ -126,7 +127,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#registerZoneNoOverlap(java.lang.String,java.lang.String,int,int,int,int,int)" tabindex="0">registerZoneNoOverlap(String, String, int, int, int, int, int)</a></li>
 <li><a href="#addZone(zombie.iso.zones.Zone)" tabindex="0">addZone(Zone)</a></li>
 <li><a href="#removeZone(zombie.iso.zones.Zone)" tabindex="0">removeZone(Zone)</a></li>
-<li><a href="#removeZonesForCell(int,int)" tabindex="0">removeZonesForCell(int, int)</a></li>
 <li><a href="#removeZonesForLotDirectory(java.lang.String)" tabindex="0">removeZonesForLotDirectory(String)</a></li>
 <li><a href="#processZones()" tabindex="0">processZones()</a></li>
 <li><a href="#registerVehiclesZone(java.lang.String,java.lang.String,int,int,int,int,int,se.krka.kahlua.vm.KahluaTable)" tabindex="0">registerVehiclesZone(String, String, int, int, int, int, int, KahluaTable)</a></li>
@@ -180,6 +180,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#addRoomsToAdjacentCells(zombie.iso.BuildingDef,java.util.ArrayList)" tabindex="0">addRoomsToAdjacentCells(BuildingDef, ArrayList)</a></li>
 <li><a href="#removeRoomsFromAdjacentCells(zombie.iso.BuildingDef)" tabindex="0">removeRoomsFromAdjacentCells(BuildingDef)</a></li>
 <li><a href="#removeRoomsFromAdjacentCells(java.util.ArrayList,int,int,int,int,int)" tabindex="0">removeRoomsFromAdjacentCells(ArrayList, int, int, int, int, int)</a></li>
+<li><a href="#getZones()" tabindex="0">getZones()</a></li>
 </ol>
 </li>
 </ol>
@@ -213,51 +214,54 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>final <a href="zones/ZoneHandler.html" title="class in zombie.iso.zones">ZoneHandler</a><wbr>&lt;<a href="../characters/animals/AnimalZone.html" title="class in zombie.characters.animals">AnimalZone</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#animalZoneHandler" class="member-name-link">animalZoneHandler</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="BuildingDef.html" title="class in zombie.iso">BuildingDef</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#buildings" class="member-name-link">buildings</a></code></div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#ANY_Z" class="member-name-link">ANY_Z</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a></code></div>
-<div class="col-second even-row-color"><code><a href="#clipperBuffer" class="member-name-link">clipperBuffer</a></code></div>
+<div class="col-first even-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="BuildingDef.html" title="class in zombie.iso">BuildingDef</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#buildings" class="member-name-link">buildings</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vehicles/ClipperOffset.html" title="class in zombie.vehicles">ClipperOffset</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#clipperOffset" class="member-name-link">clipperOffset</a></code></div>
+<div class="col-first odd-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#clipperBuffer" class="member-name-link">clipperBuffer</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#maxNonProceduralX" class="member-name-link">maxNonProceduralX</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><a href="#maxNonProceduralY" class="member-name-link">maxNonProceduralY</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#maxX" class="member-name-link">maxX</a></code></div>
+<div class="col-first even-row-color"><code>static <a href="../vehicles/ClipperOffset.html" title="class in zombie.vehicles">ClipperOffset</a></code></div>
+<div class="col-second even-row-color"><code><a href="#clipperOffset" class="member-name-link">clipperOffset</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><a href="#maxY" class="member-name-link">maxY</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#metaCharacters" class="member-name-link">metaCharacters</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><a href="#minNonProceduralX" class="member-name-link">minNonProceduralX</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#maxNonProceduralX" class="member-name-link">maxNonProceduralX</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#minNonProceduralY" class="member-name-link">minNonProceduralY</a></code></div>
+<div class="col-second even-row-color"><code><a href="#maxNonProceduralY" class="member-name-link">maxNonProceduralY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><a href="#minX" class="member-name-link">minX</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#maxX" class="member-name-link">maxX</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#minY" class="member-name-link">minY</a></code></div>
+<div class="col-second even-row-color"><code><a href="#maxY" class="member-name-link">maxY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ThreadLocal.html" title="class or interface in java.lang" class="external-link">ThreadLocal</a><wbr>&lt;<a href="../characters/IsoGameCharacter.Location.html" title="class in zombie.characters">IsoGameCharacter.Location</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#TL_Location" class="member-name-link">TL_Location</a></code></div>
+<div class="col-first odd-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#metaCharacters" class="member-name-link">metaCharacters</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="zones/VehicleZone.html" title="class in zombie.iso.zones">VehicleZone</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#vehiclesZones" class="member-name-link">vehiclesZones</a></code></div>
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><a href="#minNonProceduralX" class="member-name-link">minNonProceduralX</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#zones" class="member-name-link">zones</a></code></div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><a href="#minNonProceduralY" class="member-name-link">minNonProceduralY</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><a href="#minX" class="member-name-link">minX</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><a href="#minY" class="member-name-link">minY</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ThreadLocal.html" title="class or interface in java.lang" class="external-link">ThreadLocal</a><wbr>&lt;<a href="../characters/IsoGameCharacter.Location.html" title="class in zombie.characters">IsoGameCharacter.Location</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#TL_Location" class="member-name-link">TL_Location</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="zones/VehicleZone.html" title="class in zombie.iso.zones">VehicleZone</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#vehiclesZones" class="member-name-link">vehiclesZones</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#zones" class="member-name-link">zones</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -457,101 +461,104 @@ loadScripts(document, 'script');</script>
  int&nbsp;y,
  int&nbsp;z)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getZonesAt(int,int,int)" class="member-name-link">getZonesAt</a><wbr>(int&nbsp;x,
- int&nbsp;y,
- int&nbsp;z)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getZones()" class="member-name-link">getZones</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getZonesAt(int,int,int,java.util.ArrayList)" class="member-name-link">getZonesAt</a><wbr>(int&nbsp;x,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getZonesAt(int,int,int)" class="member-name-link">getZonesAt</a><wbr>(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;z)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getZonesAt(int,int,int,java.util.ArrayList)" class="member-name-link">getZonesAt</a><wbr>(int&nbsp;x,
  int&nbsp;y,
  int&nbsp;z,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&gt;&nbsp;result)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getZonesIntersecting(int,int,int,int,int)" class="member-name-link">getZonesIntersecting</a><wbr>(int&nbsp;x,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getZonesIntersecting(int,int,int,int,int)" class="member-name-link">getZonesIntersecting</a><wbr>(int&nbsp;x,
  int&nbsp;y,
  int&nbsp;z,
  int&nbsp;w,
  int&nbsp;h)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getZonesIntersecting(int,int,int,int,int,java.util.ArrayList)" class="member-name-link">getZonesIntersecting</a><wbr>(int&nbsp;x,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getZonesIntersecting(int,int,int,int,int,java.util.ArrayList)" class="member-name-link">getZonesIntersecting</a><wbr>(int&nbsp;x,
  int&nbsp;y,
  int&nbsp;z,
  int&nbsp;w,
  int&nbsp;h,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&gt;&nbsp;result)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getZoneWithBoundsAndType(int,int,int,int,int,java.lang.String)" class="member-name-link">getZoneWithBoundsAndType</a><wbr>(int&nbsp;x,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getZoneWithBoundsAndType(int,int,int,int,int,java.lang.String)" class="member-name-link">getZoneWithBoundsAndType</a><wbr>(int&nbsp;x,
  int&nbsp;y,
  int&nbsp;z,
  int&nbsp;w,
  int&nbsp;h,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#gridX()" class="member-name-link">gridX</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#gridY()" class="member-name-link">gridY</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#gridX()" class="member-name-link">gridX</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasCell(int,int)" class="member-name-link">hasCell</a><wbr>(int&nbsp;x,
- int&nbsp;y)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="enums/MetaCellPresence.html" title="enum class in zombie.iso.enums">MetaCellPresence</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasCellData(int,int)" class="member-name-link">hasCellData</a><wbr>(int&nbsp;x,
- int&nbsp;y)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isChunkLoaded(int,int)" class="member-name-link">isChunkLoaded</a><wbr>(int&nbsp;wx,
- int&nbsp;wy)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#gridY()" class="member-name-link">gridY</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isValidChunk(int,int)" class="member-name-link">isValidChunk</a><wbr>(int&nbsp;wx,
- int&nbsp;wy)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasCell(int,int)" class="member-name-link">hasCell</a><wbr>(int&nbsp;x,
+ int&nbsp;y)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isValidSquare(int,int)" class="member-name-link">isValidSquare</a><wbr>(int&nbsp;x,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="enums/MetaCellPresence.html" title="enum class in zombie.iso.enums">MetaCellPresence</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasCellData(int,int)" class="member-name-link">hasCellData</a><wbr>(int&nbsp;x,
  int&nbsp;y)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isZoneAbove(zombie.iso.zones.Zone,zombie.iso.zones.Zone,int,int,int)" class="member-name-link">isZoneAbove</a><wbr>(<a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&nbsp;zone1,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isChunkLoaded(int,int)" class="member-name-link">isChunkLoaded</a><wbr>(int&nbsp;wx,
+ int&nbsp;wy)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isValidChunk(int,int)" class="member-name-link">isValidChunk</a><wbr>(int&nbsp;wx,
+ int&nbsp;wy)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isValidSquare(int,int)" class="member-name-link">isValidSquare</a><wbr>(int&nbsp;x,
+ int&nbsp;y)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isZoneAbove(zombie.iso.zones.Zone,zombie.iso.zones.Zone,int,int,int)" class="member-name-link">isZoneAbove</a><wbr>(<a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&nbsp;zone1,
  <a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&nbsp;zone2,
  int&nbsp;x,
  int&nbsp;y,
  int&nbsp;z)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load()" class="member-name-link">load</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(java.lang.String,java.util.function.BiConsumer)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;inFilePath,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load()" class="member-name-link">load</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(java.lang.String,java.util.function.BiConsumer)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;inFilePath,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;&nbsp;loadMethod)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(java.nio.ByteBuffer)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;input)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadAnimalZones(java.nio.ByteBuffer,int)" class="member-name-link">loadAnimalZones</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;input,
- int&nbsp;worldVersion)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(java.nio.ByteBuffer)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;input)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadCells(java.lang.String,java.lang.String,zombie.util.lambda.QuadConsumer)" class="member-name-link">loadCells</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadAnimalZones(java.nio.ByteBuffer,int)" class="member-name-link">loadAnimalZones</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;input,
+ int&nbsp;worldVersion)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadCells(java.lang.String,java.lang.String,zombie.util.lambda.QuadConsumer)" class="member-name-link">loadCells</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filter,
  <a href="../util/lambda/QuadConsumer.html" title="interface in zombie.util.lambda">QuadConsumer</a>&lt;<a href="IsoMetaCell.html" title="class in zombie.iso">IsoMetaCell</a>, <a href="IsoMetaGrid.html" title="class in zombie.iso">IsoMetaGrid</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;&nbsp;loadMethod)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadZone(java.nio.ByteBuffer,int)" class="member-name-link">loadZone</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;input,
- int&nbsp;worldVersion)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processZones()" class="member-name-link">processZones</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadZone(java.nio.ByteBuffer,int)" class="member-name-link">loadZone</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;input,
+ int&nbsp;worldVersion)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerAnimalZone(java.lang.String,java.lang.String,int,int,int,int,int,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">registerAnimalZone</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processZones()" class="member-name-link">processZones</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerAnimalZone(java.lang.String,java.lang.String,int,int,int,int,int,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">registerAnimalZone</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
  int&nbsp;x,
  int&nbsp;y,
@@ -559,34 +566,24 @@ loadScripts(document, 'script');</script>
  int&nbsp;width,
  int&nbsp;height,
  se.krka.kahlua.vm.KahluaTable&nbsp;properties)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerAnimalZone(zombie.characters.animals.AnimalZone)" class="member-name-link">registerAnimalZone</a><wbr>(<a href="../characters/animals/AnimalZone.html" title="class in zombie.characters.animals">AnimalZone</a>&nbsp;animalZone)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerAnimalZone(zombie.characters.animals.AnimalZone,boolean)" class="member-name-link">registerAnimalZone</a><wbr>(<a href="../characters/animals/AnimalZone.html" title="class in zombie.characters.animals">AnimalZone</a>&nbsp;animalZone,
- boolean&nbsp;bHotSave)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerAnimalZone(zombie.characters.animals.AnimalZone)" class="member-name-link">registerAnimalZone</a><wbr>(<a href="../characters/animals/AnimalZone.html" title="class in zombie.characters.animals">AnimalZone</a>&nbsp;animalZone)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerGeometryZone(java.lang.String,java.lang.String,int,java.lang.String,se.krka.kahlua.vm.KahluaTable,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">registerGeometryZone</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerAnimalZone(zombie.characters.animals.AnimalZone,boolean)" class="member-name-link">registerAnimalZone</a><wbr>(<a href="../characters/animals/AnimalZone.html" title="class in zombie.characters.animals">AnimalZone</a>&nbsp;animalZone,
+ boolean&nbsp;bHotSave)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerGeometryZone(java.lang.String,java.lang.String,int,java.lang.String,se.krka.kahlua.vm.KahluaTable,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">registerGeometryZone</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
  int&nbsp;z,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;geometry,
  se.krka.kahlua.vm.KahluaTable&nbsp;pointsTable,
  se.krka.kahlua.vm.KahluaTable&nbsp;properties)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerMannequinZone(java.lang.String,java.lang.String,int,int,int,int,int,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">registerMannequinZone</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
- int&nbsp;x,
- int&nbsp;y,
- int&nbsp;z,
- int&nbsp;width,
- int&nbsp;height,
- se.krka.kahlua.vm.KahluaTable&nbsp;properties)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerRoomTone(java.lang.String,java.lang.String,int,int,int,int,int,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">registerRoomTone</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerMannequinZone(java.lang.String,java.lang.String,int,int,int,int,int,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">registerMannequinZone</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
  int&nbsp;x,
  int&nbsp;y,
@@ -595,8 +592,8 @@ loadScripts(document, 'script');</script>
  int&nbsp;height,
  se.krka.kahlua.vm.KahluaTable&nbsp;properties)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerVehiclesZone(java.lang.String,java.lang.String,int,int,int,int,int,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">registerVehiclesZone</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerRoomTone(java.lang.String,java.lang.String,int,int,int,int,int,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">registerRoomTone</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
  int&nbsp;x,
  int&nbsp;y,
@@ -606,7 +603,7 @@ loadScripts(document, 'script');</script>
  se.krka.kahlua.vm.KahluaTable&nbsp;properties)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerWorldGenZone(java.lang.String,java.lang.String,int,int,int,int,int,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">registerWorldGenZone</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerVehiclesZone(java.lang.String,java.lang.String,int,int,int,int,int,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">registerVehiclesZone</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
  int&nbsp;x,
  int&nbsp;y,
@@ -616,16 +613,26 @@ loadScripts(document, 'script');</script>
  se.krka.kahlua.vm.KahluaTable&nbsp;properties)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerZone(java.lang.String,java.lang.String,int,int,int,int,int)" class="member-name-link">registerZone</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerWorldGenZone(java.lang.String,java.lang.String,int,int,int,int,int,se.krka.kahlua.vm.KahluaTable)" class="member-name-link">registerWorldGenZone</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
+ int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;z,
+ int&nbsp;width,
+ int&nbsp;height,
+ se.krka.kahlua.vm.KahluaTable&nbsp;properties)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerZone(java.lang.String,java.lang.String,int,int,int,int,int)" class="member-name-link">registerZone</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
  int&nbsp;x,
  int&nbsp;y,
  int&nbsp;z,
  int&nbsp;width,
  int&nbsp;height)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerZone(java.lang.String,java.lang.String,int,int,int,int,int,zombie.iso.zones.ZoneGeometryType,gnu.trove.list.array.TIntArrayList,int)" class="member-name-link">registerZone</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerZone(java.lang.String,java.lang.String,int,int,int,int,int,zombie.iso.zones.ZoneGeometryType,gnu.trove.list.array.TIntArrayList,int)" class="member-name-link">registerZone</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
  int&nbsp;x,
  int&nbsp;y,
@@ -635,41 +642,37 @@ loadScripts(document, 'script');</script>
  <a href="zones/ZoneGeometryType.html" title="enum class in zombie.iso.zones">ZoneGeometryType</a>&nbsp;geometryType,
  gnu.trove.list.array.TIntArrayList&nbsp;points,
  int&nbsp;polylineWidth)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerZone(zombie.iso.zones.Zone)" class="member-name-link">registerZone</a><wbr>(<a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&nbsp;zone)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#registerZoneNoOverlap(java.lang.String,java.lang.String,int,int,int,int,int)" class="member-name-link">registerZoneNoOverlap</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerZone(zombie.iso.zones.Zone)" class="member-name-link">registerZone</a><wbr>(<a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&nbsp;zone)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#registerZoneNoOverlap(java.lang.String,java.lang.String,int,int,int,int,int)" class="member-name-link">registerZoneNoOverlap</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
  int&nbsp;x,
  int&nbsp;y,
  int&nbsp;z,
  int&nbsp;width,
  int&nbsp;height)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#RemoveFromMeta(zombie.characters.IsoPlayer)" class="member-name-link">RemoveFromMeta</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;isoPlayer)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeRoomsFromAdjacentCells(java.util.ArrayList,int,int,int,int,int)" class="member-name-link">removeRoomsFromAdjacentCells</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="RoomDef.html" title="class in zombie.iso">RoomDef</a>&gt;&nbsp;rooms,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#RemoveFromMeta(zombie.characters.IsoPlayer)" class="member-name-link">RemoveFromMeta</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;isoPlayer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeRoomsFromAdjacentCells(java.util.ArrayList,int,int,int,int,int)" class="member-name-link">removeRoomsFromAdjacentCells</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="RoomDef.html" title="class in zombie.iso">RoomDef</a>&gt;&nbsp;rooms,
  int&nbsp;cellX1,
  int&nbsp;cellY1,
  int&nbsp;cellX2,
  int&nbsp;cellY2,
  int&nbsp;userDefined)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeRoomsFromAdjacentCells(zombie.iso.BuildingDef)" class="member-name-link">removeRoomsFromAdjacentCells</a><wbr>(<a href="BuildingDef.html" title="class in zombie.iso">BuildingDef</a>&nbsp;buildingDef)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeZone(zombie.iso.zones.Zone)" class="member-name-link">removeZone</a><wbr>(<a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&nbsp;zone)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeRoomsFromAdjacentCells(zombie.iso.BuildingDef)" class="member-name-link">removeRoomsFromAdjacentCells</a><wbr>(<a href="BuildingDef.html" title="class in zombie.iso">BuildingDef</a>&nbsp;buildingDef)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeZonesForCell(int,int)" class="member-name-link">removeZonesForCell</a><wbr>(int&nbsp;cellX,
- int&nbsp;cellY)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeZone(zombie.iso.zones.Zone)" class="member-name-link">removeZone</a><wbr>(<a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&nbsp;zone)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeZonesForLotDirectory(java.lang.String)" class="member-name-link">removeZonesForLotDirectory</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;lotDir)</code></div>
@@ -735,6 +738,22 @@ loadScripts(document, 'script');</script>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="ANY_Z">
+<h3>ANY_Z</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">ANY_Z</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../constant-values.html#zombie.iso.IsoMetaGrid.ANY_Z">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="clipperOffset">
 <h3>clipperOffset</h3>
@@ -1284,15 +1303,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="removeZonesForCell(int,int)">
-<h3>removeZonesForCell</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeZonesForCell</span><wbr><span class="parameters">(int&nbsp;cellX,
- int&nbsp;cellY)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="removeZonesForLotDirectory(java.lang.String)">
 <h3>removeZonesForLotDirectory</h3>
 <div class="horizontal-scroll">
@@ -1787,6 +1797,14 @@ loadScripts(document, 'script');</script>
  int&nbsp;cellX2,
  int&nbsp;cellY2,
  int&nbsp;userDefined)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getZones()">
+<h3>getZones</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="zones/Zone.html" title="class in zombie.iso.zones">Zone</a>&gt;</span>&nbsp;<span class="element-name">getZones</span>()</div>
 </div>
 </section>
 </li>

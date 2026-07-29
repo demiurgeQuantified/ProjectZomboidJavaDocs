@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../search.html">Search</a></li>
 <li><a href="../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -60,6 +60,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
+<li><a href="#MIN_MULTI_HIT_COUNT" tabindex="0">MIN_MULTI_HIT_COUNT</a></li>
 <li><a href="#hitInfoPool" tabindex="0">hitInfoPool</a></li>
 <li><a href="#StrengthLevelOffset" tabindex="0">StrengthLevelOffset</a></li>
 <li><a href="#StrengthLevelMuscleStrainModifier" tabindex="0">StrengthLevelMuscleStrainModifier</a></li>
@@ -82,7 +83,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#calculateAttackVars(zombie.characters.IsoLivingCharacter)" tabindex="0">calculateAttackVars(IsoLivingCharacter)</a></li>
 <li><a href="#calcValidTargets(zombie.characters.IsoLivingCharacter,zombie.inventory.types.HandWeapon,zombie.util.list.PZArrayList,zombie.util.list.PZArrayList)" tabindex="0">calcValidTargets(IsoLivingCharacter, HandWeapon, PZArrayList, PZArrayList)</a></li>
 <li><a href="#isProneTargetBetter(zombie.characters.IsoGameCharacter,zombie.network.fields.hit.HitInfo,zombie.network.fields.hit.HitInfo)" tabindex="0">isProneTargetBetter(IsoGameCharacter, HitInfo, HitInfo)</a></li>
-<li><a href="#checkPVP(zombie.iso.IsoMovingObject,zombie.iso.IsoMovingObject)" tabindex="0">checkPVP(IsoMovingObject, IsoMovingObject)</a></li>
+<li><a href="#checkPVP(zombie.iso.IsoMovingObject,zombie.iso.IsoMovingObject,boolean)" tabindex="0">checkPVP(IsoMovingObject, IsoMovingObject, boolean)</a></li>
 <li><a href="#getPVPPlayerFromObject(zombie.iso.IsoMovingObject)" tabindex="0">getPVPPlayerFromObject(IsoMovingObject)</a></li>
 <li><a href="#calculateHitInfoList(zombie.characters.IsoGameCharacter)" tabindex="0">calculateHitInfoList(IsoGameCharacter)</a></li>
 <li><a href="#getBoneWorldPos(zombie.iso.IsoMovingObject,java.lang.String,zombie.iso.Vector3)" tabindex="0">getBoneWorldPos(IsoMovingObject, String, Vector3)</a></li>
@@ -143,15 +144,18 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>final <a href="popman/ObjectPool.html" title="class in zombie.popman">ObjectPool</a><wbr>&lt;<a href="network/fields/hit/HitInfo.html" title="class in zombie.network.fields.hit">HitInfo</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#hitInfoPool" class="member-name-link">hitInfoPool</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#StrengthLevelMuscleStrainModifier" class="member-name-link">StrengthLevelMuscleStrainModifier</a></code></div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#MIN_MULTI_HIT_COUNT" class="member-name-link">MIN_MULTI_HIT_COUNT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#StrengthLevelOffset" class="member-name-link">StrengthLevelOffset</a></code></div>
+<div class="col-first even-row-color"><code>static final float</code></div>
+<div class="col-second even-row-color"><code><a href="#StrengthLevelMuscleStrainModifier" class="member-name-link">StrengthLevelMuscleStrainModifier</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#TwoHandedWeaponMuscleStrainModifier" class="member-name-link">TwoHandedWeaponMuscleStrainModifier</a></code></div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#StrengthLevelOffset" class="member-name-link">StrengthLevelOffset</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final float</code></div>
+<div class="col-second even-row-color"><code><a href="#TwoHandedWeaponMuscleStrainModifier" class="member-name-link">TwoHandedWeaponMuscleStrainModifier</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -222,8 +226,9 @@ loadScripts(document, 'script');</script>
  <a href="util/list/PZArrayList.html" title="class in zombie.util.list">PZArrayList</a>&lt;<a href="network/fields/hit/HitInfo.html" title="class in zombie.network.fields.hit">HitInfo</a>&gt;&nbsp;targetsStanding)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#checkPVP(zombie.iso.IsoMovingObject,zombie.iso.IsoMovingObject)" class="member-name-link">checkPVP</a><wbr>(<a href="iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;owner,
- <a href="iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;target)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#checkPVP(zombie.iso.IsoMovingObject,zombie.iso.IsoMovingObject,boolean)" class="member-name-link">checkPVP</a><wbr>(<a href="iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;owner,
+ <a href="iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;target,
+ boolean&nbsp;isMelee)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAimDelayPenalty(float,float,float,float)" class="member-name-link">getAimDelayPenalty</a><wbr>(float&nbsp;delay,
@@ -361,6 +366,22 @@ loadScripts(document, 'script');</script>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="MIN_MULTI_HIT_COUNT">
+<h3>MIN_MULTI_HIT_COUNT</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">MIN_MULTI_HIT_COUNT</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../constant-values.html#zombie.CombatManager.MIN_MULTI_HIT_COUNT">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="hitInfoPool">
 <h3>hitInfoPool</h3>
@@ -556,11 +577,12 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="checkPVP(zombie.iso.IsoMovingObject,zombie.iso.IsoMovingObject)">
+<section class="detail" id="checkPVP(zombie.iso.IsoMovingObject,zombie.iso.IsoMovingObject,boolean)">
 <h3>checkPVP</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">checkPVP</span><wbr><span class="parameters">(<a href="iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;owner,
- <a href="iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;target)</span></div>
+ <a href="iso/IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;target,
+ boolean&nbsp;isMelee)</span></div>
 </div>
 </section>
 </li>

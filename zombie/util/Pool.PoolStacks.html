@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -62,6 +62,12 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#getInUse()" tabindex="0">getInUse()</a></li>
 <li><a href="#getReleased()" tabindex="0">getReleased()</a></li>
+<li><a href="#getTotalObjectsCount()" tabindex="0">getTotalObjectsCount()</a></li>
+<li><a href="#getUsedCount()" tabindex="0">getUsedCount()</a></li>
+<li><a href="#getReleasedCount()" tabindex="0">getReleasedCount()</a></li>
+<li><a href="#isBeingMonitoredBy(zombie.network.statistics.counters.PoolCounter)" tabindex="0">isBeingMonitoredBy(PoolCounter)</a></li>
+<li><a href="#getPoolMonitoringCounter()" tabindex="0">getPoolMonitoringCounter()</a></li>
+<li><a href="#setPoolMonitoringCounter(zombie.network.statistics.counters.PoolCounter)" tabindex="0">setPoolMonitoringCounter(PoolCounter)</a></li>
 </ol>
 </li>
 </ol>
@@ -101,8 +107,26 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>gnu.trove.set.hash.THashSet<wbr>&lt;<a href="IPooledObject.html" title="interface in zombie.util">IPooledObject</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInUse()" class="member-name-link">getInUse</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="IPooledObject.html" title="interface in zombie.util">IPooledObject</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getReleased()" class="member-name-link">getReleased</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../network/statistics/counters/PoolCounter.html" title="class in zombie.network.statistics.counters">PoolCounter</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPoolMonitoringCounter()" class="member-name-link">getPoolMonitoringCounter</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="IPooledObject.html" title="interface in zombie.util">IPooledObject</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getReleased()" class="member-name-link">getReleased</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getReleasedCount()" class="member-name-link">getReleasedCount</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTotalObjectsCount()" class="member-name-link">getTotalObjectsCount</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUsedCount()" class="member-name-link">getUsedCount</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBeingMonitoredBy(zombie.network.statistics.counters.PoolCounter)" class="member-name-link">isBeingMonitoredBy</a><wbr>(<a href="../network/statistics/counters/PoolCounter.html" title="class in zombie.network.statistics.counters">PoolCounter</a>&nbsp;counter)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPoolMonitoringCounter(zombie.network.statistics.counters.PoolCounter)" class="member-name-link">setPoolMonitoringCounter</a><wbr>(<a href="../network/statistics/counters/PoolCounter.html" title="class in zombie.network.statistics.counters">PoolCounter</a>&nbsp;foundCounter)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -134,6 +158,54 @@ loadScripts(document, 'script');</script>
 <h3>getReleased</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="IPooledObject.html" title="interface in zombie.util">IPooledObject</a>&gt;</span>&nbsp;<span class="element-name">getReleased</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getTotalObjectsCount()">
+<h3>getTotalObjectsCount</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getTotalObjectsCount</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getUsedCount()">
+<h3>getUsedCount</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getUsedCount</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getReleasedCount()">
+<h3>getReleasedCount</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getReleasedCount</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isBeingMonitoredBy(zombie.network.statistics.counters.PoolCounter)">
+<h3>isBeingMonitoredBy</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isBeingMonitoredBy</span><wbr><span class="parameters">(<a href="../network/statistics/counters/PoolCounter.html" title="class in zombie.network.statistics.counters">PoolCounter</a>&nbsp;counter)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getPoolMonitoringCounter()">
+<h3>getPoolMonitoringCounter</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../network/statistics/counters/PoolCounter.html" title="class in zombie.network.statistics.counters">PoolCounter</a></span>&nbsp;<span class="element-name">getPoolMonitoringCounter</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setPoolMonitoringCounter(zombie.network.statistics.counters.PoolCounter)">
+<h3>setPoolMonitoringCounter</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPoolMonitoringCounter</span><wbr><span class="parameters">(<a href="../network/statistics/counters/PoolCounter.html" title="class in zombie.network.statistics.counters">PoolCounter</a>&nbsp;foundCounter)</span></div>
 </div>
 </section>
 </li>

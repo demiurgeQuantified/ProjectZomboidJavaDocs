@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -71,6 +71,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#mannequinList" tabindex="0">mannequinList</a></li>
 <li><a href="#renderAnimatedAttachments" tabindex="0">renderAnimatedAttachments</a></li>
 <li><a href="#renderTranslucentOnly" tabindex="0">renderTranslucentOnly</a></li>
+<li><a href="#renderWindowFrameOutline" tabindex="0">renderWindowFrameOutline</a></li>
 <li><a href="#renderDebugChunkState" tabindex="0">renderDebugChunkState</a></li>
 <li><a href="#calculateRenderInfo" tabindex="0">calculateRenderInfo</a></li>
 <li><a href="#cutaways" tabindex="0">cutaways</a></li>
@@ -101,6 +102,7 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#renderInternal()" tabindex="0">renderInternal()</a></li>
 <li><a href="#RenderTiles(int,int)" tabindex="0">RenderTiles(int, int)</a></li>
+<li><a href="#isTreeRenderedEveryFrame(zombie.iso.IsoObject)" tabindex="0">isTreeRenderedEveryFrame(IsoObject)</a></li>
 <li><a href="#isTranslucentTree(zombie.iso.IsoObject)" tabindex="0">isTranslucentTree(IsoObject)</a></li>
 <li><a href="#calculateWindowTargetAlpha(int,zombie.iso.IsoObject,zombie.iso.IsoGridSquare,boolean)" tabindex="0">calculateWindowTargetAlpha(int, IsoObject, IsoGridSquare, boolean)</a></li>
 <li><a href="#renderFloor(zombie.iso.IsoGridSquare)" tabindex="0">renderFloor(IsoGridSquare)</a></li>
@@ -218,39 +220,42 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>boolean</code></div>
 <div class="col-second odd-row-color"><code><a href="#renderTranslucentOnly" class="member-name-link">renderTranslucentOnly</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final <a href="../../core/profiling/PerformanceProfileProbe.html" title="class in zombie.core.profiling">PerformanceProfileProbe</a></code></div>
-<div class="col-second even-row-color"><code><a href="#shadowsProbe" class="member-name-link">shadowsProbe</a></code></div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#renderWindowFrameOutline" class="member-name-link">renderWindowFrameOutline</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="../../core/profiling/PerformanceProfileProbe.html" title="class in zombie.core.profiling">PerformanceProfileProbe</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#tilesProbe" class="member-name-link">tilesProbe</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#shadowsProbe" class="member-name-link">shadowsProbe</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="../../core/profiling/PerformanceProfileProbe.html" title="class in zombie.core.profiling">PerformanceProfileProbe</a></code></div>
-<div class="col-second even-row-color"><code><a href="#translucentFloor" class="member-name-link">translucentFloor</a></code></div>
+<div class="col-second even-row-color"><code><a href="#tilesProbe" class="member-name-link">tilesProbe</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="../../core/profiling/PerformanceProfileProbe.html" title="class in zombie.core.profiling">PerformanceProfileProbe</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#translucentFloorObjectsProbe" class="member-name-link">translucentFloorObjectsProbe</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#translucentFloor" class="member-name-link">translucentFloor</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="../../core/profiling/PerformanceProfileProbe.html" title="class in zombie.core.profiling">PerformanceProfileProbe</a></code></div>
-<div class="col-second even-row-color"><code><a href="#translucentNonFloor" class="member-name-link">translucentNonFloor</a></code></div>
+<div class="col-second even-row-color"><code><a href="#translucentFloorObjectsProbe" class="member-name-link">translucentFloorObjectsProbe</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="../../core/profiling/PerformanceProfileProbe.html" title="class in zombie.core.profiling">PerformanceProfileProbe</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#translucentObjectsProbe" class="member-name-link">translucentObjectsProbe</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#translucentNonFloor" class="member-name-link">translucentNonFloor</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="../../core/profiling/PerformanceProfileProbe.html" title="class in zombie.core.profiling">PerformanceProfileProbe</a></code></div>
-<div class="col-second even-row-color"><code><a href="#updateLighting" class="member-name-link">updateLighting</a></code></div>
+<div class="col-second even-row-color"><code><a href="#translucentObjectsProbe" class="member-name-link">translucentObjectsProbe</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="../../core/profiling/PerformanceProfileProbe.html" title="class in zombie.core.profiling">PerformanceProfileProbe</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#visibilityProbe" class="member-name-link">visibilityProbe</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#updateLighting" class="member-name-link">updateLighting</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="../../core/profiling/PerformanceProfileProbe.html" title="class in zombie.core.profiling">PerformanceProfileProbe</a></code></div>
-<div class="col-second even-row-color"><code><a href="#water" class="member-name-link">water</a></code></div>
+<div class="col-second even-row-color"><code><a href="#visibilityProbe" class="member-name-link">visibilityProbe</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#waterAttachSquares" class="member-name-link">waterAttachSquares</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="../../core/profiling/PerformanceProfileProbe.html" title="class in zombie.core.profiling">PerformanceProfileProbe</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#water" class="member-name-link">water</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#waterSquares" class="member-name-link">waterSquares</a></code></div>
+<div class="col-second even-row-color"><code><a href="#waterAttachSquares" class="member-name-link">waterAttachSquares</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#waterSquares" class="member-name-link">waterSquares</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -283,44 +288,23 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTranslucentTree(zombie.iso.IsoObject)" class="member-name-link">isTranslucentTree</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderAnimatedAttachments(zombie.iso.IsoObject)" class="member-name-link">renderAnimatedAttachments</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTreeRenderedEveryFrame(zombie.iso.IsoObject)" class="member-name-link">isTreeRenderedEveryFrame</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderFloor(zombie.iso.IsoGridSquare)" class="member-name-link">renderFloor</a><wbr>(<a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderAnimatedAttachments(zombie.iso.IsoObject)" class="member-name-link">renderAnimatedAttachments</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderFloor(zombie.iso.IsoObject)" class="member-name-link">renderFloor</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderFloor(zombie.iso.IsoGridSquare)" class="member-name-link">renderFloor</a><wbr>(<a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderInternal()" class="member-name-link">renderInternal</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderFloor(zombie.iso.IsoObject)" class="member-name-link">renderFloor</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderSeamFix1_Floor(zombie.iso.IsoObject,float,float,float,zombie.core.textures.ColorInfo,java.util.function.Consumer)" class="member-name-link">renderSeamFix1_Floor</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object,
- float&nbsp;x,
- float&nbsp;y,
- float&nbsp;z,
- <a href="../../core/textures/ColorInfo.html" title="class in zombie.core.textures">ColorInfo</a>&nbsp;stCol,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../core/textures/TextureDraw.html" title="class in zombie.core.textures">TextureDraw</a>&gt;&nbsp;texdModifier)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderInternal()" class="member-name-link">renderInternal</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderSeamFix1_Wall(zombie.iso.IsoObject,float,float,float,zombie.core.textures.ColorInfo,java.util.function.Consumer)" class="member-name-link">renderSeamFix1_Wall</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object,
- float&nbsp;x,
- float&nbsp;y,
- float&nbsp;z,
- <a href="../../core/textures/ColorInfo.html" title="class in zombie.core.textures">ColorInfo</a>&nbsp;stCol,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../core/textures/TextureDraw.html" title="class in zombie.core.textures">TextureDraw</a>&gt;&nbsp;texdModifier)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderSeamFix2_Floor(zombie.iso.IsoObject,float,float,float,zombie.core.textures.ColorInfo,java.util.function.Consumer)" class="member-name-link">renderSeamFix2_Floor</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object,
- float&nbsp;x,
- float&nbsp;y,
- float&nbsp;z,
- <a href="../../core/textures/ColorInfo.html" title="class in zombie.core.textures">ColorInfo</a>&nbsp;stCol,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../core/textures/TextureDraw.html" title="class in zombie.core.textures">TextureDraw</a>&gt;&nbsp;texdModifier)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderSeamFix2_Wall(zombie.iso.IsoObject,float,float,float,zombie.core.textures.ColorInfo,java.util.function.Consumer)" class="member-name-link">renderSeamFix2_Wall</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderSeamFix1_Floor(zombie.iso.IsoObject,float,float,float,zombie.core.textures.ColorInfo,java.util.function.Consumer)" class="member-name-link">renderSeamFix1_Floor</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object,
  float&nbsp;x,
  float&nbsp;y,
  float&nbsp;z,
@@ -328,18 +312,42 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../core/textures/TextureDraw.html" title="class in zombie.core.textures">TextureDraw</a>&gt;&nbsp;texdModifier)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#RenderTiles(int,int)" class="member-name-link">RenderTiles</a><wbr>(int&nbsp;minHeight,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderSeamFix1_Wall(zombie.iso.IsoObject,float,float,float,zombie.core.textures.ColorInfo,java.util.function.Consumer)" class="member-name-link">renderSeamFix1_Wall</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object,
+ float&nbsp;x,
+ float&nbsp;y,
+ float&nbsp;z,
+ <a href="../../core/textures/ColorInfo.html" title="class in zombie.core.textures">ColorInfo</a>&nbsp;stCol,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../core/textures/TextureDraw.html" title="class in zombie.core.textures">TextureDraw</a>&gt;&nbsp;texdModifier)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderSeamFix2_Floor(zombie.iso.IsoObject,float,float,float,zombie.core.textures.ColorInfo,java.util.function.Consumer)" class="member-name-link">renderSeamFix2_Floor</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object,
+ float&nbsp;x,
+ float&nbsp;y,
+ float&nbsp;z,
+ <a href="../../core/textures/ColorInfo.html" title="class in zombie.core.textures">ColorInfo</a>&nbsp;stCol,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../core/textures/TextureDraw.html" title="class in zombie.core.textures">TextureDraw</a>&gt;&nbsp;texdModifier)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderSeamFix2_Wall(zombie.iso.IsoObject,float,float,float,zombie.core.textures.ColorInfo,java.util.function.Consumer)" class="member-name-link">renderSeamFix2_Wall</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object,
+ float&nbsp;x,
+ float&nbsp;y,
+ float&nbsp;z,
+ <a href="../../core/textures/ColorInfo.html" title="class in zombie.core.textures">ColorInfo</a>&nbsp;stCol,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../core/textures/TextureDraw.html" title="class in zombie.core.textures">TextureDraw</a>&gt;&nbsp;texdModifier)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#RenderTiles(int,int)" class="member-name-link">RenderTiles</a><wbr>(int&nbsp;minHeight,
  int&nbsp;maxHeight)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderTranslucent(zombie.iso.IsoObject)" class="member-name-link">renderTranslucent</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#Reset()" class="member-name-link">Reset</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderTranslucent(zombie.iso.IsoObject)" class="member-name-link">renderTranslucent</a><wbr>(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldDarkenIndividualRooms()" class="member-name-link">shouldDarkenIndividualRooms</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#Reset()" class="member-name-link">Reset</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldDarkenIndividualRooms()" class="member-name-link">shouldDarkenIndividualRooms</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -450,6 +458,14 @@ loadScripts(document, 'script');</script>
 <h3>renderTranslucentOnly</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">renderTranslucentOnly</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="renderWindowFrameOutline">
+<h3>renderWindowFrameOutline</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">renderWindowFrameOutline</span></div>
 </div>
 </section>
 </li>
@@ -691,6 +707,14 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">RenderTiles</span><wbr><span class="parameters">(int&nbsp;minHeight,
  int&nbsp;maxHeight)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isTreeRenderedEveryFrame(zombie.iso.IsoObject)">
+<h3>isTreeRenderedEveryFrame</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isTreeRenderedEveryFrame</span><wbr><span class="parameters">(<a href="../IsoObject.html" title="class in zombie.iso">IsoObject</a>&nbsp;object)</span></div>
 </div>
 </section>
 </li>

@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -75,7 +75,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#getChunk()" tabindex="0">getChunk()</a></li>
+<li><a href="#getRetryChunk(zombie.network.ClientChunkRequest.Chunk)" tabindex="0">getRetryChunk(ClientChunkRequest.Chunk)</a></li>
 <li><a href="#releaseChunk(zombie.network.ClientChunkRequest.Chunk)" tabindex="0">releaseChunk(ClientChunkRequest.Chunk)</a></li>
+<li><a href="#isChunksFilled()" tabindex="0">isChunksFilled()</a></li>
 <li><a href="#getByteBuffer(zombie.network.ClientChunkRequest.Chunk)" tabindex="0">getByteBuffer(ClientChunkRequest.Chunk)</a></li>
 <li><a href="#releaseBuffer(zombie.network.ClientChunkRequest.Chunk)" tabindex="0">releaseBuffer(ClientChunkRequest.Chunk)</a></li>
 <li><a href="#releaseBuffers()" tabindex="0">releaseBuffers()</a></li>
@@ -126,7 +128,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="ClientChunkRequest.Chunk.html" title="class in zombie.network">ClientChunkRequest.Chunk</a>&gt;</code></div>
+<div class="col-first even-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="ClientChunkRequest.Chunk.html" title="class in zombie.network">ClientChunkRequest.Chunk</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#chunks" class="member-name-link">chunks</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ConcurrentLinkedQueue.html" title="class or interface in java.util.concurrent" class="external-link">ConcurrentLinkedQueue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&gt;</code></div>
@@ -168,6 +170,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ClientChunkRequest.Chunk.html" title="class in zombie.network">ClientChunkRequest.Chunk</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunk()" class="member-name-link">getChunk</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ClientChunkRequest.Chunk.html" title="class in zombie.network">ClientChunkRequest.Chunk</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRetryChunk(zombie.network.ClientChunkRequest.Chunk)" class="member-name-link">getRetryChunk</a><wbr>(<a href="ClientChunkRequest.Chunk.html" title="class in zombie.network">ClientChunkRequest.Chunk</a>&nbsp;originalChunk)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isChunksFilled()" class="member-name-link">isChunksFilled</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#releaseBuffer(zombie.network.ClientChunkRequest.Chunk)" class="member-name-link">releaseBuffer</a><wbr>(<a href="ClientChunkRequest.Chunk.html" title="class in zombie.network">ClientChunkRequest.Chunk</a>&nbsp;chunk)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -206,7 +214,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="chunks">
 <h3>chunks</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="ClientChunkRequest.Chunk.html" title="class in zombie.network">ClientChunkRequest.Chunk</a>&gt;</span>&nbsp;<span class="element-name">chunks</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="ClientChunkRequest.Chunk.html" title="class in zombie.network">ClientChunkRequest.Chunk</a>&gt;</span>&nbsp;<span class="element-name">chunks</span></div>
 </div>
 </section>
 </li>
@@ -259,10 +267,26 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="getRetryChunk(zombie.network.ClientChunkRequest.Chunk)">
+<h3>getRetryChunk</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ClientChunkRequest.Chunk.html" title="class in zombie.network">ClientChunkRequest.Chunk</a></span>&nbsp;<span class="element-name">getRetryChunk</span><wbr><span class="parameters">(<a href="ClientChunkRequest.Chunk.html" title="class in zombie.network">ClientChunkRequest.Chunk</a>&nbsp;originalChunk)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="releaseChunk(zombie.network.ClientChunkRequest.Chunk)">
 <h3>releaseChunk</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">releaseChunk</span><wbr><span class="parameters">(<a href="ClientChunkRequest.Chunk.html" title="class in zombie.network">ClientChunkRequest.Chunk</a>&nbsp;chunk)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isChunksFilled()">
+<h3>isChunksFilled</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isChunksFilled</span>()</div>
 </div>
 </section>
 </li>

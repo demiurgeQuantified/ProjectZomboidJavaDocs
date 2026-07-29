@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -166,6 +166,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#zombieRenderCanCrawlUnderVehicle" tabindex="0">zombieRenderCanCrawlUnderVehicle</a></li>
 <li><a href="#zombieRenderFakeDead" tabindex="0">zombieRenderFakeDead</a></li>
 <li><a href="#zombieRenderMemory" tabindex="0">zombieRenderMemory</a></li>
+<li><a href="#zombieRenderThump" tabindex="0">zombieRenderThump</a></li>
 <li><a href="#zombieRenderViewDistance" tabindex="0">zombieRenderViewDistance</a></li>
 <li><a href="#zombieOutfitRandom" tabindex="0">zombieOutfitRandom</a></li>
 <li><a href="#entityDebugUi" tabindex="0">entityDebugUi</a></li>
@@ -190,6 +191,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#threadModelSlotInit" tabindex="0">threadModelSlotInit</a></li>
 <li><a href="#threadAnimation" tabindex="0">threadAnimation</a></li>
 <li><a href="#delayObjectRender" tabindex="0">delayObjectRender</a></li>
+<li><a href="#renderTreeSeen" tabindex="0">renderTreeSeen</a></li>
 <li><a href="#checks" tabindex="0">checks</a></li>
 <li><a href="#isoSprite" tabindex="0">isoSprite</a></li>
 <li><a href="#network" tabindex="0">network</a></li>
@@ -463,229 +465,235 @@ implements <a href="options/IDebugOptionGroup.html" title="interface in zombie.d
 <div class="col-second even-row-color"><code><a href="#renderTestFsQuad" class="member-name-link">renderTestFsQuad</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#skyboxShow" class="member-name-link">skyboxShow</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="options/Statistics.html" title="class in zombie.debug.options">Statistics</a></code></div>
-<div class="col-second even-row-color"><code><a href="#statistics" class="member-name-link">statistics</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="options/Terrain.html" title="class in zombie.debug.options">Terrain</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#terrain" class="member-name-link">terrain</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#renderTreeSeen" class="member-name-link">renderTreeSeen</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#threadAmbient" class="member-name-link">threadAmbient</a></code></div>
+<div class="col-second even-row-color"><code><a href="#skyboxShow" class="member-name-link">skyboxShow</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final <a href="options/Statistics.html" title="class in zombie.debug.options">Statistics</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#statistics" class="member-name-link">statistics</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final <a href="options/Terrain.html" title="class in zombie.debug.options">Terrain</a></code></div>
+<div class="col-second even-row-color"><code><a href="#terrain" class="member-name-link">terrain</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#threadAnimation" class="member-name-link">threadAnimation</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#threadAmbient" class="member-name-link">threadAmbient</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#threadCrashEnabled" class="member-name-link">threadCrashEnabled</a></code></div>
+<div class="col-second even-row-color"><code><a href="#threadAnimation" class="member-name-link">threadAnimation</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a>[]</code></div>
-<div class="col-second odd-row-color"><code><a href="#threadCrashGameLoadingThread" class="member-name-link">threadCrashGameLoadingThread</a></code></div>
+<div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#threadCrashEnabled" class="member-name-link">threadCrashEnabled</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a>[]</code></div>
-<div class="col-second even-row-color"><code><a href="#threadCrashGameThread" class="member-name-link">threadCrashGameThread</a></code></div>
+<div class="col-second even-row-color"><code><a href="#threadCrashGameLoadingThread" class="member-name-link">threadCrashGameLoadingThread</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a>[]</code></div>
-<div class="col-second odd-row-color"><code><a href="#threadCrashRenderThread" class="member-name-link">threadCrashRenderThread</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#threadCrashGameThread" class="member-name-link">threadCrashGameThread</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#threadGridStacks" class="member-name-link">threadGridStacks</a></code></div>
+<div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a>[]</code></div>
+<div class="col-second even-row-color"><code><a href="#threadCrashRenderThread" class="member-name-link">threadCrashRenderThread</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#threadLighting" class="member-name-link">threadLighting</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#threadGridStacks" class="member-name-link">threadGridStacks</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#threadModelSlotInit" class="member-name-link">threadModelSlotInit</a></code></div>
+<div class="col-second even-row-color"><code><a href="#threadLighting" class="member-name-link">threadLighting</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#threadPathfinding" class="member-name-link">threadPathfinding</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#threadModelSlotInit" class="member-name-link">threadModelSlotInit</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#threadSound" class="member-name-link">threadSound</a></code></div>
+<div class="col-second even-row-color"><code><a href="#threadPathfinding" class="member-name-link">threadPathfinding</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#threadWorld" class="member-name-link">threadWorld</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#threadSound" class="member-name-link">threadSound</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#thumpableBarricadeCurrentCellWindowsFullMetalBars" class="member-name-link">thumpableBarricadeCurrentCellWindowsFullMetalBars</a></code></div>
+<div class="col-second even-row-color"><code><a href="#threadWorld" class="member-name-link">threadWorld</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#thumpableBarricadeCurrentCellWindowsFullPlanks" class="member-name-link">thumpableBarricadeCurrentCellWindowsFullPlanks</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#thumpableBarricadeCurrentCellWindowsFullMetalBars" class="member-name-link">thumpableBarricadeCurrentCellWindowsFullMetalBars</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#thumpableBarricadeCurrentCellWindowsHalfPlanks" class="member-name-link">thumpableBarricadeCurrentCellWindowsHalfPlanks</a></code></div>
+<div class="col-second even-row-color"><code><a href="#thumpableBarricadeCurrentCellWindowsFullPlanks" class="member-name-link">thumpableBarricadeCurrentCellWindowsFullPlanks</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#thumpableBarricadeCurrentCellWindowsMetalPlate" class="member-name-link">thumpableBarricadeCurrentCellWindowsMetalPlate</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#thumpableBarricadeCurrentCellWindowsHalfPlanks" class="member-name-link">thumpableBarricadeCurrentCellWindowsHalfPlanks</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#thumpableRemoveBarricadeCurrentCellWindows" class="member-name-link">thumpableRemoveBarricadeCurrentCellWindows</a></code></div>
+<div class="col-second even-row-color"><code><a href="#thumpableBarricadeCurrentCellWindowsMetalPlate" class="member-name-link">thumpableBarricadeCurrentCellWindowsMetalPlate</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#thumpableResetCurrentCellWindows" class="member-name-link">thumpableResetCurrentCellWindows</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#thumpableRemoveBarricadeCurrentCellWindows" class="member-name-link">thumpableRemoveBarricadeCurrentCellWindows</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#tooltipAttributes" class="member-name-link">tooltipAttributes</a></code></div>
+<div class="col-second even-row-color"><code><a href="#thumpableResetCurrentCellWindows" class="member-name-link">thumpableResetCurrentCellWindows</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#tooltipInfo" class="member-name-link">tooltipInfo</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#tooltipAttributes" class="member-name-link">tooltipAttributes</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#tooltipModName" class="member-name-link">tooltipModName</a></code></div>
+<div class="col-second even-row-color"><code><a href="#tooltipInfo" class="member-name-link">tooltipInfo</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#translationPrefix" class="member-name-link">translationPrefix</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#tooltipModName" class="member-name-link">tooltipModName</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#uiDebugConsoleDebugLog" class="member-name-link">uiDebugConsoleDebugLog</a></code></div>
+<div class="col-second even-row-color"><code><a href="#translationPrefix" class="member-name-link">translationPrefix</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#uiDebugConsoleEchoCommand" class="member-name-link">uiDebugConsoleEchoCommand</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#uiDebugConsoleDebugLog" class="member-name-link">uiDebugConsoleDebugLog</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#uiDebugConsoleStartVisible" class="member-name-link">uiDebugConsoleStartVisible</a></code></div>
+<div class="col-second even-row-color"><code><a href="#uiDebugConsoleEchoCommand" class="member-name-link">uiDebugConsoleEchoCommand</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#uiDisableLogoState" class="member-name-link">uiDisableLogoState</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#uiDebugConsoleStartVisible" class="member-name-link">uiDebugConsoleStartVisible</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#uiDisableWelcomeMessage" class="member-name-link">uiDisableWelcomeMessage</a></code></div>
+<div class="col-second even-row-color"><code><a href="#uiDisableLogoState" class="member-name-link">uiDisableLogoState</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#uiHideDebugContextMenuOptions" class="member-name-link">uiHideDebugContextMenuOptions</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#uiDisableWelcomeMessage" class="member-name-link">uiDisableWelcomeMessage</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#uiRenderOutline" class="member-name-link">uiRenderOutline</a></code></div>
+<div class="col-second even-row-color"><code><a href="#uiHideDebugContextMenuOptions" class="member-name-link">uiHideDebugContextMenuOptions</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#uiShowContextMenuReportOptions" class="member-name-link">uiShowContextMenuReportOptions</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#uiRenderOutline" class="member-name-link">uiRenderOutline</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#uiShowResearchableEtc" class="member-name-link">uiShowResearchableEtc</a></code></div>
+<div class="col-second even-row-color"><code><a href="#uiShowContextMenuReportOptions" class="member-name-link">uiShowContextMenuReportOptions</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#useNewVisibility" class="member-name-link">useNewVisibility</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#uiShowResearchableEtc" class="member-name-link">uiShowResearchableEtc</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#vehicleCycleColor" class="member-name-link">vehicleCycleColor</a></code></div>
+<div class="col-second even-row-color"><code><a href="#useNewVisibility" class="member-name-link">useNewVisibility</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#vehicleRenderArea" class="member-name-link">vehicleRenderArea</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vehicleCycleColor" class="member-name-link">vehicleCycleColor</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#vehicleRenderAttackPositions" class="member-name-link">vehicleRenderAttackPositions</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vehicleRenderArea" class="member-name-link">vehicleRenderArea</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#vehicleRenderAuthorizations" class="member-name-link">vehicleRenderAuthorizations</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vehicleRenderAttackPositions" class="member-name-link">vehicleRenderAttackPositions</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#vehicleRenderBlood0" class="member-name-link">vehicleRenderBlood0</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vehicleRenderAuthorizations" class="member-name-link">vehicleRenderAuthorizations</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#vehicleRenderBlood100" class="member-name-link">vehicleRenderBlood100</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vehicleRenderBlood0" class="member-name-link">vehicleRenderBlood0</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#vehicleRenderBlood50" class="member-name-link">vehicleRenderBlood50</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vehicleRenderBlood100" class="member-name-link">vehicleRenderBlood100</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#vehicleRenderDamage0" class="member-name-link">vehicleRenderDamage0</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vehicleRenderBlood50" class="member-name-link">vehicleRenderBlood50</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#vehicleRenderDamage1" class="member-name-link">vehicleRenderDamage1</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vehicleRenderDamage0" class="member-name-link">vehicleRenderDamage0</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#vehicleRenderDamage2" class="member-name-link">vehicleRenderDamage2</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vehicleRenderDamage1" class="member-name-link">vehicleRenderDamage1</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#vehicleRenderExit" class="member-name-link">vehicleRenderExit</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vehicleRenderDamage2" class="member-name-link">vehicleRenderDamage2</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#vehicleRenderInterpolateBuffer" class="member-name-link">vehicleRenderInterpolateBuffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vehicleRenderExit" class="member-name-link">vehicleRenderExit</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#vehicleRenderIntersectedSquares" class="member-name-link">vehicleRenderIntersectedSquares</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vehicleRenderInterpolateBuffer" class="member-name-link">vehicleRenderInterpolateBuffer</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#vehicleRenderOutline" class="member-name-link">vehicleRenderOutline</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vehicleRenderIntersectedSquares" class="member-name-link">vehicleRenderIntersectedSquares</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#vehicleRenderRust0" class="member-name-link">vehicleRenderRust0</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vehicleRenderOutline" class="member-name-link">vehicleRenderOutline</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#vehicleRenderRust100" class="member-name-link">vehicleRenderRust100</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vehicleRenderRust0" class="member-name-link">vehicleRenderRust0</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#vehicleRenderRust50" class="member-name-link">vehicleRenderRust50</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vehicleRenderRust100" class="member-name-link">vehicleRenderRust100</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#vehicleRenderTrailerPositions" class="member-name-link">vehicleRenderTrailerPositions</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vehicleRenderRust50" class="member-name-link">vehicleRenderRust50</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#vehicleRenderVelocity" class="member-name-link">vehicleRenderVelocity</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vehicleRenderTrailerPositions" class="member-name-link">vehicleRenderTrailerPositions</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#vehicleSpawnEverywhere" class="member-name-link">vehicleSpawnEverywhere</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#VERSION" class="member-name-link">VERSION</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="options/Weather.html" title="class in zombie.debug.options">Weather</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#weather" class="member-name-link">weather</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vehicleRenderVelocity" class="member-name-link">vehicleRenderVelocity</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#worldChunkMap11x11" class="member-name-link">worldChunkMap11x11</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vehicleSpawnEverywhere" class="member-name-link">vehicleSpawnEverywhere</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#VERSION" class="member-name-link">VERSION</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final <a href="options/Weather.html" title="class in zombie.debug.options">Weather</a></code></div>
+<div class="col-second even-row-color"><code><a href="#weather" class="member-name-link">weather</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#worldChunkMap13x13" class="member-name-link">worldChunkMap13x13</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#worldChunkMap11x11" class="member-name-link">worldChunkMap11x11</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#worldChunkMap5x5" class="member-name-link">worldChunkMap5x5</a></code></div>
+<div class="col-second even-row-color"><code><a href="#worldChunkMap13x13" class="member-name-link">worldChunkMap13x13</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#worldChunkMap7x7" class="member-name-link">worldChunkMap7x7</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#worldChunkMap5x5" class="member-name-link">worldChunkMap5x5</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#worldChunkMap9x9" class="member-name-link">worldChunkMap9x9</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="options/WorldItemAtlas.html" title="class in zombie.debug.options">WorldItemAtlas</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#worldItemAtlas" class="member-name-link">worldItemAtlas</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#worldSoundRender" class="member-name-link">worldSoundRender</a></code></div>
+<div class="col-second even-row-color"><code><a href="#worldChunkMap7x7" class="member-name-link">worldChunkMap7x7</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#worldStreamerSlowLoad" class="member-name-link">worldStreamerSlowLoad</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#worldChunkMap9x9" class="member-name-link">worldChunkMap9x9</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#zombieAnimationDelay" class="member-name-link">zombieAnimationDelay</a></code></div>
+<div class="col-first even-row-color"><code>final <a href="options/WorldItemAtlas.html" title="class in zombie.debug.options">WorldItemAtlas</a></code></div>
+<div class="col-second even-row-color"><code><a href="#worldItemAtlas" class="member-name-link">worldItemAtlas</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#zombieBlendPreview" class="member-name-link">zombieBlendPreview</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#worldSoundRender" class="member-name-link">worldSoundRender</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#zombieImposterBlend" class="member-name-link">zombieImposterBlend</a></code></div>
+<div class="col-second even-row-color"><code><a href="#worldStreamerSlowLoad" class="member-name-link">worldStreamerSlowLoad</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#zombieImposterPreview" class="member-name-link">zombieImposterPreview</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#zombieAnimationDelay" class="member-name-link">zombieAnimationDelay</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#zombieImposterRendering" class="member-name-link">zombieImposterRendering</a></code></div>
+<div class="col-second even-row-color"><code><a href="#zombieBlendPreview" class="member-name-link">zombieBlendPreview</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#zombieOutfitRandom" class="member-name-link">zombieOutfitRandom</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#zombieImposterBlend" class="member-name-link">zombieImposterBlend</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#zombieRenderCanCrawlUnderVehicle" class="member-name-link">zombieRenderCanCrawlUnderVehicle</a></code></div>
+<div class="col-second even-row-color"><code><a href="#zombieImposterPreview" class="member-name-link">zombieImposterPreview</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#zombieRenderFakeDead" class="member-name-link">zombieRenderFakeDead</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#zombieImposterRendering" class="member-name-link">zombieImposterRendering</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second even-row-color"><code><a href="#zombieRenderInstanced" class="member-name-link">zombieRenderInstanced</a></code></div>
+<div class="col-second even-row-color"><code><a href="#zombieOutfitRandom" class="member-name-link">zombieOutfitRandom</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#zombieRenderMemory" class="member-name-link">zombieRenderMemory</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#zombieRenderCanCrawlUnderVehicle" class="member-name-link">zombieRenderCanCrawlUnderVehicle</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#zombieRenderFakeDead" class="member-name-link">zombieRenderFakeDead</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#zombieRenderInstanced" class="member-name-link">zombieRenderInstanced</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
+<div class="col-second even-row-color"><code><a href="#zombieRenderMemory" class="member-name-link">zombieRenderMemory</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#zombieRenderThump" class="member-name-link">zombieRenderThump</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></code></div>
 <div class="col-second even-row-color"><code><a href="#zombieRenderViewDistance" class="member-name-link">zombieRenderViewDistance</a></code></div>
@@ -1642,6 +1650,14 @@ implements <a href="options/IDebugOptionGroup.html" title="interface in zombie.d
 </section>
 </li>
 <li>
+<section class="detail" id="zombieRenderThump">
+<h3>zombieRenderThump</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></span>&nbsp;<span class="element-name">zombieRenderThump</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="zombieRenderViewDistance">
 <h3>zombieRenderViewDistance</h3>
 <div class="horizontal-scroll">
@@ -1830,6 +1846,14 @@ implements <a href="options/IDebugOptionGroup.html" title="interface in zombie.d
 <h3>delayObjectRender</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></span>&nbsp;<span class="element-name">delayObjectRender</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="renderTreeSeen">
+<h3>renderTreeSeen</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="BooleanDebugOption.html" title="class in zombie.debug">BooleanDebugOption</a></span>&nbsp;<span class="element-name">renderTreeSeen</span></div>
 </div>
 </section>
 </li>

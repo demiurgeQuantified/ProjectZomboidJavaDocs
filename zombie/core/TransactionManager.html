@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -64,7 +64,6 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#success" tabindex="0">success</a></li>
 <li><a href="#reject" tabindex="0">reject</a></li>
-<li><a href="#invalid" tabindex="0">invalid</a></li>
 <li><a href="#instance" tabindex="0">instance</a></li>
 </ol>
 </li>
@@ -79,13 +78,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#getLightweightData(zombie.characters.IsoPlayer)" tabindex="0">getLightweightData(IsoPlayer)</a></li>
 <li><a href="#update()" tabindex="0">update()</a></li>
 <li><a href="#isConsistent(int,zombie.inventory.InventoryItem,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer,java.lang.String,zombie.network.packets.ItemTransactionPacket,zombie.characters.IsoPlayer)" tabindex="0">isConsistent(int, InventoryItem, ItemContainer, ItemContainer, String, ItemTransactionPacket, IsoPlayer)</a></li>
+<li><a href="#getItemId(zombie.inventory.InventoryItem,zombie.inventory.ItemContainer)" tabindex="0">getItemId(InventoryItem, ItemContainer)</a></li>
 <li><a href="#isRejected(byte)" tabindex="0">isRejected(byte)</a></li>
 <li><a href="#isDone(byte)" tabindex="0">isDone(byte)</a></li>
 <li><a href="#cancelAllRelevantToUser(zombie.characters.IsoPlayer)" tabindex="0">cancelAllRelevantToUser(IsoPlayer)</a></li>
 <li><a href="#getDuration(byte)" tabindex="0">getDuration(byte)</a></li>
-<li><a href="#createItemTransaction(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer)" tabindex="0">createItemTransaction(IsoPlayer, InventoryItem, ItemContainer, ItemContainer)</a></li>
-<li><a href="#createItemTransaction(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer,zombie.iso.IsoDirections,float,float,float)" tabindex="0">createItemTransaction(IsoPlayer, InventoryItem, ItemContainer, ItemContainer, IsoDirections, float, float, float)</a></li>
-<li><a href="#changeItemTypeTransaction(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer,java.lang.String)" tabindex="0">changeItemTypeTransaction(IsoPlayer, InventoryItem, ItemContainer, ItemContainer, String)</a></li>
+<li><a href="#createItemTransaction(zombie.characters.IsoPlayer,java.util.List,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer)" tabindex="0">createItemTransaction(IsoPlayer, List, ItemContainer, ItemContainer)</a></li>
 <li><a href="#removeItemTransaction(byte,boolean)" tabindex="0">removeItemTransaction(byte, boolean)</a></li>
 <li><a href="#setStateFromPacket(zombie.network.packets.ItemTransactionPacket)" tabindex="0">setStateFromPacket(ItemTransactionPacket)</a></li>
 </ol>
@@ -137,14 +135,11 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="#instance" class="member-name-link">instance</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#invalid" class="member-name-link">invalid</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#reject" class="member-name-link">reject</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#reject" class="member-name-link">reject</a></code></div>
+<div class="col-second even-row-color"><code><a href="#success" class="member-name-link">success</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#success" class="member-name-link">success</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -179,59 +174,46 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#cancelAllRelevantToUser(zombie.characters.IsoPlayer)" class="member-name-link">cancelAllRelevantToUser</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static byte</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#changeItemTypeTransaction(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer,java.lang.String)" class="member-name-link">changeItemTypeTransaction</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item,
- <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;source,
- <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;destination,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;extra)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static byte</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createItemTransaction(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer)" class="member-name-link">createItemTransaction</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createItemTransaction(zombie.characters.IsoPlayer,java.util.List,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer)" class="member-name-link">createItemTransaction</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&gt;&nbsp;items,
  <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;source,
  <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;destination)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static byte</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createItemTransaction(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer,zombie.iso.IsoDirections,float,float,float)" class="member-name-link">createItemTransaction</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item,
- <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;source,
- <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;destination,
- <a href="../iso/IsoDirections.html" title="enum class in zombie.iso">IsoDirections</a>&nbsp;direction,
- float&nbsp;posX,
- float&nbsp;posY,
- float&nbsp;posZ)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getDuration(byte)" class="member-name-link">getDuration</a><wbr>(byte&nbsp;id)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="TransactionManager.LightweightData.html" title="class in zombie.core">TransactionManager.LightweightData</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLightweightData(zombie.characters.IsoPlayer)" class="member-name-link">getLightweightData</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getItemId(zombie.inventory.InventoryItem,zombie.inventory.ItemContainer)" class="member-name-link">getItemId</a><wbr>(<a href="../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item,
+ <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;source)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static byte</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isConsistent(int,zombie.inventory.InventoryItem,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer,java.lang.String,zombie.network.packets.ItemTransactionPacket,zombie.characters.IsoPlayer)" class="member-name-link">isConsistent</a><wbr>(int&nbsp;itemId,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="TransactionManager.LightweightData.html" title="class in zombie.core">TransactionManager.LightweightData</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLightweightData(zombie.characters.IsoPlayer)" class="member-name-link">getLightweightData</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static byte</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isConsistent(int,zombie.inventory.InventoryItem,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer,java.lang.String,zombie.network.packets.ItemTransactionPacket,zombie.characters.IsoPlayer)" class="member-name-link">isConsistent</a><wbr>(int&nbsp;itemId,
  <a href="../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;worldItem,
  <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;source,
  <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;destination,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;extra,
  <a href="../network/packets/ItemTransactionPacket.html" title="class in zombie.network.packets">ItemTransactionPacket</a>&nbsp;dropTransaction,
  <a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isDone(byte)" class="member-name-link">isDone</a><wbr>(byte&nbsp;id)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isRejected(byte)" class="member-name-link">isRejected</a><wbr>(byte&nbsp;id)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isDone(byte)" class="member-name-link">isDone</a><wbr>(byte&nbsp;id)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removeItemTransaction(byte,boolean)" class="member-name-link">removeItemTransaction</a><wbr>(byte&nbsp;id,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isRejected(byte)" class="member-name-link">isRejected</a><wbr>(byte&nbsp;id)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removeItemTransaction(byte,boolean)" class="member-name-link">removeItemTransaction</a><wbr>(byte&nbsp;id,
  boolean&nbsp;isCanceled)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStateFromPacket(zombie.network.packets.ItemTransactionPacket)" class="member-name-link">setStateFromPacket</a><wbr>(<a href="../network/packets/ItemTransactionPacket.html" title="class in zombie.network.packets">ItemTransactionPacket</a>&nbsp;packet)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStateFromPacket(zombie.network.packets.ItemTransactionPacket)" class="member-name-link">setStateFromPacket</a><wbr>(<a href="../network/packets/ItemTransactionPacket.html" title="class in zombie.network.packets">ItemTransactionPacket</a>&nbsp;packet)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -275,22 +257,6 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../constant-values.html#zombie.core.TransactionManager.reject">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="invalid">
-<h3>invalid</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">invalid</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../constant-values.html#zombie.core.TransactionManager.invalid">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -368,6 +334,15 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="getItemId(zombie.inventory.InventoryItem,zombie.inventory.ItemContainer)">
+<h3>getItemId</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getItemId</span><wbr><span class="parameters">(<a href="../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item,
+ <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;source)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="isRejected(byte)">
 <h3>isRejected</h3>
 <div class="horizontal-scroll">
@@ -400,40 +375,13 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="createItemTransaction(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer)">
+<section class="detail" id="createItemTransaction(zombie.characters.IsoPlayer,java.util.List,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer)">
 <h3>createItemTransaction</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">createItemTransaction</span><wbr><span class="parameters">(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&gt;&nbsp;items,
  <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;source,
  <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;destination)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createItemTransaction(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer,zombie.iso.IsoDirections,float,float,float)">
-<h3>createItemTransaction</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">createItemTransaction</span><wbr><span class="parameters">(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item,
- <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;source,
- <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;destination,
- <a href="../iso/IsoDirections.html" title="enum class in zombie.iso">IsoDirections</a>&nbsp;direction,
- float&nbsp;posX,
- float&nbsp;posY,
- float&nbsp;posZ)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="changeItemTypeTransaction(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer,java.lang.String)">
-<h3>changeItemTypeTransaction</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">changeItemTypeTransaction</span><wbr><span class="parameters">(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item,
- <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;source,
- <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;destination,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;extra)</span></div>
 </div>
 </section>
 </li>

@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#use">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -64,9 +64,9 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><a href="#zombie.Lua">zombie.Lua</a></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><a href="#zombie.network">zombie.network</a></div>
+<div class="col-first even-row-color"><a href="#zombie.network.fields">zombie.network.fields</a></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><a href="#zombie.network.fields">zombie.network.fields</a></div>
+<div class="col-first odd-row-color"><a href="#zombie.network.packets.faction">zombie.network.packets.faction</a></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <section class="class-uses">
@@ -89,18 +89,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static <a href="../Faction.html" title="class in zombie.characters">Faction</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Faction.</span><code><a href="../Faction.html#createFaction(java.lang.String,java.lang.String)" class="member-name-link">createFaction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;owner)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Faction.</span><code><a href="../Faction.html#getFaction(java.lang.String)" class="member-name-link">getFaction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static <a href="../Faction.html" title="class in zombie.characters">Faction</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Faction.</span><code><a href="../Faction.html#getFaction(java.lang.String)" class="member-name-link">getFaction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Faction.</span><code><a href="../Faction.html#getPlayerFaction(java.lang.String)" class="member-name-link">getPlayerFaction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static <a href="../Faction.html" title="class in zombie.characters">Faction</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Faction.</span><code><a href="../Faction.html#getPlayerFaction(java.lang.String)" class="member-name-link">getPlayerFaction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Faction.</span><code><a href="../Faction.html#getPlayerFaction(zombie.characters.IsoPlayer)" class="member-name-link">getPlayerFaction</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../Faction.html" title="class in zombie.characters">Faction</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Faction.</span><code><a href="../Faction.html#getPlayerFaction(zombie.characters.IsoPlayer)" class="member-name-link">getPlayerFaction</a><wbr>(<a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Methods in <a href="../package-summary.html">zombie.characters</a> that return types with arguments of type <a href="../Faction.html" title="class in zombie.characters">Faction</a></span></div>
 <div class="summary-table three-column-summary">
@@ -122,37 +118,33 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#acceptFactionInvite(zombie.characters.Faction,java.lang.String)" class="member-name-link">acceptFactionInvite</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;host)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#acceptFactionInvite(zombie.characters.Faction,java.lang.String,java.lang.String,boolean)" class="member-name-link">acceptFactionInvite</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;host,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;invited,
+ boolean&nbsp;isAccepted)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendFactionInvite(zombie.characters.Faction,zombie.characters.IsoPlayer,java.lang.String)" class="member-name-link">sendFactionInvite</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction,
- <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;host,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;invited)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendFactionChangeOwner(zombie.characters.Faction,java.lang.String)" class="member-name-link">sendFactionChangeOwner</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="zombie.network">
-<h2>Uses of <a href="../Faction.html" title="class in zombie.characters">Faction</a> in <a href="../../network/package-summary.html">zombie.network</a></h2>
-<div class="caption"><span>Methods in <a href="../../network/package-summary.html">zombie.network</a> with parameters of type <a href="../Faction.html" title="class in zombie.characters">Faction</a></span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#acceptFactionInvite(zombie.characters.Faction,java.lang.String)" class="member-name-link">acceptFactionInvite</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;host)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendFactionChangeTag(zombie.characters.Faction)" class="member-name-link">sendFactionChangeTag</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendFaction(zombie.characters.Faction,boolean)" class="member-name-link">sendFaction</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction,
- boolean&nbsp;remove)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendFactionChangeTitle(zombie.characters.Faction,java.lang.String)" class="member-name-link">sendFactionChangeTitle</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GameClient.</span><code><a href="../../network/GameClient.html#sendFactionInvite(zombie.characters.Faction,zombie.characters.IsoPlayer,java.lang.String)" class="member-name-link">sendFactionInvite</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction,
- <a href="../IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;host,
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendFactionDisband(zombie.characters.Faction)" class="member-name-link">sendFactionDisband</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendFactionInvite(zombie.characters.Faction,java.lang.String,java.lang.String)" class="member-name-link">sendFactionInvite</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;host,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;invited)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LuaManager.GlobalObject.</span><code><a href="../../Lua/LuaManager.GlobalObject.html#sendFactionRemoveMember(zombie.characters.Faction,java.lang.String)" class="member-name-link">sendFactionRemoveMember</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -160,14 +152,52 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="zombie.network.fields">
 <h2>Uses of <a href="../Faction.html" title="class in zombie.characters">Faction</a> in <a href="../../network/fields/package-summary.html">zombie.network.fields</a></h2>
+<div class="caption"><span>Methods in <a href="../../network/fields/package-summary.html">zombie.network.fields</a> that return <a href="../Faction.html" title="class in zombie.characters">Faction</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code><a href="../Faction.html" title="class in zombie.characters">Faction</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">FactionId.</span><code><a href="../../network/fields/FactionId.html#getFaction()" class="member-name-link">getFaction</a>()</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
 <div class="caption"><span>Methods in <a href="../../network/fields/package-summary.html">zombie.network.fields</a> with parameters of type <a href="../Faction.html" title="class in zombie.characters">Faction</a></span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Group.</span><code><a href="../../network/fields/Group.html#set(zombie.characters.Faction)" class="member-name-link">set</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">FactionId.</span><code><a href="../../network/fields/FactionId.html#set(zombie.characters.Faction)" class="member-name-link">set</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">FactionPlayer.</span><code><a href="../../network/fields/FactionPlayer.html#set(zombie.characters.Faction,java.lang.String)" class="member-name-link">set</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">FactionTag.</span><code><a href="../../network/fields/FactionTag.html#set(zombie.characters.Faction)" class="member-name-link">set</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Group.</span><code><a href="../../network/fields/Group.html#set(zombie.characters.Faction)" class="member-name-link">set</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="zombie.network.packets.faction">
+<h2>Uses of <a href="../Faction.html" title="class in zombie.characters">Faction</a> in <a href="../../network/packets/faction/package-summary.html">zombie.network.packets.faction</a></h2>
+<div class="caption"><span>Methods in <a href="../../network/packets/faction/package-summary.html">zombie.network.packets.faction</a> with parameters of type <a href="../Faction.html" title="class in zombie.characters">Faction</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">FactionInvitePacket.</span><code><a href="../../network/packets/faction/FactionInvitePacket.html#set(zombie.characters.Faction,java.lang.String,java.lang.String)" class="member-name-link">set</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;host,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">FactionSyncPacket.</span><code><a href="../../network/packets/faction/FactionSyncPacket.html#set(zombie.characters.Faction)" class="member-name-link">set</a><wbr>(<a href="../Faction.html" title="class in zombie.characters">Faction</a>&nbsp;faction)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>

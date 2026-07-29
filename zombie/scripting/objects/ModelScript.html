@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -94,9 +94,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#getTextureName()" tabindex="0">getTextureName()</a></li>
 <li><a href="#getTextureName(boolean)" tabindex="0">getTextureName(boolean)</a></li>
 <li><a href="#getShaderName()" tabindex="0">getShaderName()</a></li>
+<li><a href="#getModelManagerKey()" tabindex="0">getModelManagerKey()</a></li>
+<li><a href="#setModelManagerKey(java.lang.String)" tabindex="0">setModelManagerKey(String)</a></li>
 <li><a href="#getFileName()" tabindex="0">getFileName()</a></li>
 <li><a href="#getAttachmentCount()" tabindex="0">getAttachmentCount()</a></li>
 <li><a href="#getAttachment(int)" tabindex="0">getAttachment(int)</a></li>
+<li><a href="#getAttachmentById(zombie.scripting.objects.ModelAttachmentId)" tabindex="0">getAttachmentById(ModelAttachmentId)</a></li>
 <li><a href="#getAttachmentById(java.lang.String)" tabindex="0">getAttachmentById(String)</a></li>
 <li><a href="#addAttachment(zombie.scripting.objects.ModelAttachment)" tabindex="0">addAttachment(ModelAttachment)</a></li>
 <li><a href="#removeAttachment(zombie.scripting.objects.ModelAttachment)" tabindex="0">removeAttachment(ModelAttachment)</a></li>
@@ -239,17 +242,23 @@ implements <a href="IModelAttachmentOwner.html" title="interface in zombie.scrip
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ModelAttachment.html" title="class in zombie.scripting.objects">ModelAttachment</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAttachmentById(java.lang.String)" class="member-name-link">getAttachmentById</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAttachmentCount()" class="member-name-link">getAttachmentCount</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ModelAttachment.html" title="class in zombie.scripting.objects">ModelAttachment</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAttachmentById(zombie.scripting.objects.ModelAttachmentId)" class="member-name-link">getAttachmentById</a><wbr>(<a href="ModelAttachmentId.html" title="enum class in zombie.scripting.objects">ModelAttachmentId</a>&nbsp;id)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFileName()" class="member-name-link">getFileName</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAttachmentCount()" class="member-name-link">getAttachmentCount</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFullType()" class="member-name-link">getFullType</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFileName()" class="member-name-link">getFileName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMeshName()" class="member-name-link">getMeshName</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFullType()" class="member-name-link">getFullType</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMeshName()" class="member-name-link">getMeshName</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getModelManagerKey()" class="member-name-link">getModelManagerKey</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
@@ -288,6 +297,9 @@ implements <a href="IModelAttachmentOwner.html" title="interface in zombie.scrip
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ScriptsLoaded()" class="member-name-link">ScriptsLoaded</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setModelManagerKey(java.lang.String)" class="member-name-link">setModelManagerKey</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;modelManagerKey)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -545,6 +557,22 @@ implements <a href="IModelAttachmentOwner.html" title="interface in zombie.scrip
 </section>
 </li>
 <li>
+<section class="detail" id="getModelManagerKey()">
+<h3>getModelManagerKey</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getModelManagerKey</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setModelManagerKey(java.lang.String)">
+<h3>setModelManagerKey</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setModelManagerKey</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;modelManagerKey)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="getFileName()">
 <h3>getFileName</h3>
 <div class="horizontal-scroll">
@@ -565,6 +593,14 @@ implements <a href="IModelAttachmentOwner.html" title="interface in zombie.scrip
 <h3>getAttachment</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ModelAttachment.html" title="class in zombie.scripting.objects">ModelAttachment</a></span>&nbsp;<span class="element-name">getAttachment</span><wbr><span class="parameters">(int&nbsp;index)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getAttachmentById(zombie.scripting.objects.ModelAttachmentId)">
+<h3>getAttachmentById</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ModelAttachment.html" title="class in zombie.scripting.objects">ModelAttachment</a></span>&nbsp;<span class="element-name">getAttachmentById</span><wbr><span class="parameters">(<a href="ModelAttachmentId.html" title="enum class in zombie.scripting.objects">ModelAttachmentId</a>&nbsp;id)</span></div>
 </div>
 </section>
 </li>

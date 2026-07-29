@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -68,12 +68,20 @@ loadScripts(document, 'script');</script>
 <li><a href="#maxUpdatePeriod" tabindex="0">maxUpdatePeriod</a></li>
 <li><a href="#avgUpdatePeriod" tabindex="0">avgUpdatePeriod</a></li>
 <li><a href="#fps" tabindex="0">fps</a></li>
+<li><a href="#allPoolsTotal" tabindex="0">allPoolsTotal</a></li>
+<li><a href="#allPoolsInUse" tabindex="0">allPoolsInUse</a></li>
+<li><a href="#allPoolsFree" tabindex="0">allPoolsFree</a></li>
+<li><a href="#pools" tabindex="0">pools</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#getInstance()" tabindex="0">getInstance()</a></li>
 <li><a href="#addUpdate(long)" tabindex="0">addUpdate(long)</a></li>
+<li><a href="#onPooledObjectAlloc(zombie.util.Pool,PO,boolean,zombie.util.Pool.PoolStacks)" tabindex="0">onPooledObjectAlloc(Pool, PO, boolean, Pool.PoolStacks)</a></li>
+<li><a href="#onPooledObjectReleased(zombie.util.Pool,PO,zombie.util.Pool.PoolStacks)" tabindex="0">onPooledObjectReleased(Pool, PO, Pool.PoolStacks)</a></li>
+<li><a href="#visitAllPools(java.util.function.Consumer)" tabindex="0">visitAllPools(Consumer)</a></li>
+<li><a href="#addUpAllPoolValues(zombie.util.lambda.IntSupplierFunction)" tabindex="0">addUpAllPoolValues(IntSupplierFunction)</a></li>
 </ol>
 </li>
 </ol>
@@ -112,28 +120,40 @@ implements <a href="IStatistic.html" title="interface in zombie.network.statisti
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>final <a href="../counters/Counter.html" title="class in zombie.network.statistics.counters">Counter</a></code></div>
-<div class="col-second even-row-color"><code><a href="#avgUpdatePeriod" class="member-name-link">avgUpdatePeriod</a></code></div>
+<div class="col-second even-row-color"><code><a href="#allPoolsFree" class="member-name-link">allPoolsFree</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="../counters/Counter.html" title="class in zombie.network.statistics.counters">Counter</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#fps" class="member-name-link">fps</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#allPoolsInUse" class="member-name-link">allPoolsInUse</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="../counters/Counter.html" title="class in zombie.network.statistics.counters">Counter</a></code></div>
-<div class="col-second even-row-color"><code><a href="#maxUpdatePeriod" class="member-name-link">maxUpdatePeriod</a></code></div>
+<div class="col-second even-row-color"><code><a href="#allPoolsTotal" class="member-name-link">allPoolsTotal</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="../counters/Counter.html" title="class in zombie.network.statistics.counters">Counter</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#memoryFree" class="member-name-link">memoryFree</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#avgUpdatePeriod" class="member-name-link">avgUpdatePeriod</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="../counters/Counter.html" title="class in zombie.network.statistics.counters">Counter</a></code></div>
-<div class="col-second even-row-color"><code><a href="#memoryMax" class="member-name-link">memoryMax</a></code></div>
+<div class="col-second even-row-color"><code><a href="#fps" class="member-name-link">fps</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="../counters/Counter.html" title="class in zombie.network.statistics.counters">Counter</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#memoryTotal" class="member-name-link">memoryTotal</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#maxUpdatePeriod" class="member-name-link">maxUpdatePeriod</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="../counters/Counter.html" title="class in zombie.network.statistics.counters">Counter</a></code></div>
-<div class="col-second even-row-color"><code><a href="#memoryUsed" class="member-name-link">memoryUsed</a></code></div>
+<div class="col-second even-row-color"><code><a href="#memoryFree" class="member-name-link">memoryFree</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="../counters/Counter.html" title="class in zombie.network.statistics.counters">Counter</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#minUpdatePeriod" class="member-name-link">minUpdatePeriod</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#memoryMax" class="member-name-link">memoryMax</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final <a href="../counters/Counter.html" title="class in zombie.network.statistics.counters">Counter</a></code></div>
+<div class="col-second even-row-color"><code><a href="#memoryTotal" class="member-name-link">memoryTotal</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final <a href="../counters/Counter.html" title="class in zombie.network.statistics.counters">Counter</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#memoryUsed" class="member-name-link">memoryUsed</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final <a href="../counters/Counter.html" title="class in zombie.network.statistics.counters">Counter</a></code></div>
+<div class="col-second even-row-color"><code><a href="#minUpdatePeriod" class="member-name-link">minUpdatePeriod</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="../../../util/Pool.html" title="class in zombie.util">Pool</a>&lt;?&gt;&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#pools" class="member-name-link">pools</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
@@ -152,12 +172,29 @@ implements <a href="IStatistic.html" title="interface in zombie.network.statisti
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addUpdate(long)" class="member-name-link">addUpdate</a><wbr>(long&nbsp;period)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addUpAllPoolValues(zombie.util.lambda.IntSupplierFunction)" class="member-name-link">addUpAllPoolValues</a><wbr>(<a href="../../../util/lambda/IntSupplierFunction.html" title="interface in zombie.util.lambda">IntSupplierFunction</a>&lt;<a href="../counters/PoolCounter.html" title="class in zombie.network.statistics.counters">PoolCounter</a>&gt;&nbsp;intGetterFunction)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="PerformanceStatistic.html" title="class in zombie.network.statistics.data">PerformanceStatistic</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance()" class="member-name-link">getInstance</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addUpdate(long)" class="member-name-link">addUpdate</a><wbr>(long&nbsp;period)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="PerformanceStatistic.html" title="class in zombie.network.statistics.data">PerformanceStatistic</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance()" class="member-name-link">getInstance</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;PO extends <a href="../../../util/IPooledObject.html" title="interface in zombie.util">IPooledObject</a>&gt;<br>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onPooledObjectAlloc(zombie.util.Pool,PO,boolean,zombie.util.Pool.PoolStacks)" class="member-name-link">onPooledObjectAlloc</a><wbr>(<a href="../../../util/Pool.html" title="class in zombie.util">Pool</a>&lt;PO&gt;&nbsp;sender,
+ PO&nbsp;newInstance,
+ boolean&nbsp;isReused,
+ <a href="../../../util/Pool.PoolStacks.html" title="class in zombie.util">Pool.PoolStacks</a>&nbsp;threadLocalPoolStacks)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;PO extends <a href="../../../util/IPooledObject.html" title="interface in zombie.util">IPooledObject</a>&gt;<br>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onPooledObjectReleased(zombie.util.Pool,PO,zombie.util.Pool.PoolStacks)" class="member-name-link">onPooledObjectReleased</a><wbr>(<a href="../../../util/Pool.html" title="class in zombie.util">Pool</a>&lt;PO&gt;&nbsp;sender,
+ PO&nbsp;releasedInstance,
+ <a href="../../../util/Pool.PoolStacks.html" title="class in zombie.util">Pool.PoolStacks</a>&nbsp;threadLocalPoolStacks)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitAllPools(java.util.function.Consumer)" class="member-name-link">visitAllPools</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../counters/PoolCounter.html" title="class in zombie.network.statistics.counters">PoolCounter</a>&gt;&nbsp;visitor)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -245,6 +282,38 @@ implements <a href="IStatistic.html" title="interface in zombie.network.statisti
 </div>
 </section>
 </li>
+<li>
+<section class="detail" id="allPoolsTotal">
+<h3>allPoolsTotal</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../counters/Counter.html" title="class in zombie.network.statistics.counters">Counter</a></span>&nbsp;<span class="element-name">allPoolsTotal</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="allPoolsInUse">
+<h3>allPoolsInUse</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../counters/Counter.html" title="class in zombie.network.statistics.counters">Counter</a></span>&nbsp;<span class="element-name">allPoolsInUse</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="allPoolsFree">
+<h3>allPoolsFree</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../counters/Counter.html" title="class in zombie.network.statistics.counters">Counter</a></span>&nbsp;<span class="element-name">allPoolsFree</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="pools">
+<h3>pools</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../util/Pool.html" title="class in zombie.util">Pool</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">pools</span></div>
+</div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -266,6 +335,43 @@ implements <a href="IStatistic.html" title="interface in zombie.network.statisti
 <h3>addUpdate</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addUpdate</span><wbr><span class="parameters">(long&nbsp;period)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="onPooledObjectAlloc(zombie.util.Pool,PO,boolean,zombie.util.Pool.PoolStacks)">
+<h3 id="onPooledObjectAlloc(zombie.util.Pool,zombie.util.IPooledObject,boolean,zombie.util.Pool.PoolStacks)">onPooledObjectAlloc</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;PO extends <a href="../../../util/IPooledObject.html" title="interface in zombie.util">IPooledObject</a>&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onPooledObjectAlloc</span><wbr><span class="parameters">(<a href="../../../util/Pool.html" title="class in zombie.util">Pool</a>&lt;PO&gt;&nbsp;sender,
+ PO&nbsp;newInstance,
+ boolean&nbsp;isReused,
+ <a href="../../../util/Pool.PoolStacks.html" title="class in zombie.util">Pool.PoolStacks</a>&nbsp;threadLocalPoolStacks)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="onPooledObjectReleased(zombie.util.Pool,PO,zombie.util.Pool.PoolStacks)">
+<h3 id="onPooledObjectReleased(zombie.util.Pool,zombie.util.IPooledObject,zombie.util.Pool.PoolStacks)">onPooledObjectReleased</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;PO extends <a href="../../../util/IPooledObject.html" title="interface in zombie.util">IPooledObject</a>&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onPooledObjectReleased</span><wbr><span class="parameters">(<a href="../../../util/Pool.html" title="class in zombie.util">Pool</a>&lt;PO&gt;&nbsp;sender,
+ PO&nbsp;releasedInstance,
+ <a href="../../../util/Pool.PoolStacks.html" title="class in zombie.util">Pool.PoolStacks</a>&nbsp;threadLocalPoolStacks)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="visitAllPools(java.util.function.Consumer)">
+<h3>visitAllPools</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">visitAllPools</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../counters/PoolCounter.html" title="class in zombie.network.statistics.counters">PoolCounter</a>&gt;&nbsp;visitor)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="addUpAllPoolValues(zombie.util.lambda.IntSupplierFunction)">
+<h3>addUpAllPoolValues</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">addUpAllPoolValues</span><wbr><span class="parameters">(<a href="../../../util/lambda/IntSupplierFunction.html" title="interface in zombie.util.lambda">IntSupplierFunction</a>&lt;<a href="../counters/PoolCounter.html" title="class in zombie.network.statistics.counters">PoolCounter</a>&gt;&nbsp;intGetterFunction)</span></div>
 </div>
 </section>
 </li>

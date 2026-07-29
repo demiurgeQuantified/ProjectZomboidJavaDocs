@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -70,13 +70,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)" tabindex="0">parse(ByteBufferReader, IConnection)</a></li>
 <li><a href="#write(zombie.core.network.ByteBufferWriter)" tabindex="0">write(ByteBufferWriter)</a></li>
 <li><a href="#isConsistent(zombie.network.IConnection)" tabindex="0">isConsistent(IConnection)</a></li>
+<li><a href="#logInconsistentPacket(zombie.network.IConnection,zombie.network.PacketTypes.PacketType)" tabindex="0">logInconsistentPacket(IConnection, PacketTypes.PacketType)</a></li>
 <li><a href="#preProcess()" tabindex="0">preProcess()</a></li>
 <li><a href="#process()" tabindex="0">process()</a></li>
 <li><a href="#postProcess()" tabindex="0">postProcess()</a></li>
 <li><a href="#react()" tabindex="0">react()</a></li>
 <li><a href="#getDistance()" tabindex="0">getDistance()</a></li>
 <li><a href="#getWielder()" tabindex="0">getWielder()</a></li>
-<li><a href="#getTarget()" tabindex="0">getTarget()</a></li>
 <li><a href="#getHit()" tabindex="0">getHit()</a></li>
 </ol>
 </li>
@@ -95,13 +95,13 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../anticheats/AntiCheatHitDamage.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitDamage.IAntiCheat</a>, <a href="../../anticheats/AntiCheatHitLongDistance.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitLongDistance.IAntiCheat</a>, <a href="../../anticheats/AntiCheatHitWeaponAmmo.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitWeaponAmmo.IAntiCheat</a>, <a href="../../anticheats/AntiCheatHitWeaponRange.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitWeaponRange.IAntiCheat</a>, <a href="../../anticheats/AntiCheatHitWeaponRate.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitWeaponRate.IAntiCheat</a>, <a href="../../fields/INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a>, <a href="HitCharacter.html" title="interface in zombie.network.packets.hit">HitCharacter</a>, <a href="../IDescriptor.html" title="interface in zombie.network.packets">IDescriptor</a>, <a href="../INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a></code></dd>
+<dd><code><a href="../../anticheats/AntiCheatHitDamage.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitDamage.IAntiCheat</a>, <a href="../../anticheats/AntiCheatHitLongDistance.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitLongDistance.IAntiCheat</a>, <a href="../../anticheats/AntiCheatHitWeapon.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitWeapon.IAntiCheat</a>, <a href="../../fields/INetworkPacketField.html" title="interface in zombie.network.fields">INetworkPacketField</a>, <a href="HitCharacter.html" title="interface in zombie.network.packets.hit">HitCharacter</a>, <a href="../IDescriptor.html" title="interface in zombie.network.packets">IDescriptor</a>, <a href="../INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">PlayerHitZombiePacket</span>
 <span class="extends-implements">extends <a href="PlayerHit.html" title="class in zombie.network.packets.hit">PlayerHit</a>
-implements <a href="../../anticheats/AntiCheatHitDamage.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitDamage.IAntiCheat</a>, <a href="../../anticheats/AntiCheatHitLongDistance.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitLongDistance.IAntiCheat</a>, <a href="../../anticheats/AntiCheatHitWeaponAmmo.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitWeaponAmmo.IAntiCheat</a>, <a href="../../anticheats/AntiCheatHitWeaponRange.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitWeaponRange.IAntiCheat</a>, <a href="../../anticheats/AntiCheatHitWeaponRate.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitWeaponRate.IAntiCheat</a></span></div>
+implements <a href="../../anticheats/AntiCheatHitDamage.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitDamage.IAntiCheat</a>, <a href="../../anticheats/AntiCheatHitLongDistance.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitLongDistance.IAntiCheat</a>, <a href="../../anticheats/AntiCheatHitWeapon.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitWeapon.IAntiCheat</a></span></div>
 </div>
 </section>
 <section class="summary">
@@ -136,14 +136,15 @@ implements <a href="../../anticheats/AntiCheatHitDamage.IAntiCheat.html" title="
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../fields/hit/Hit.html" title="class in zombie.network.fields.hit">Hit</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHit()" class="member-name-link">getHit</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTarget()" class="member-name-link">getTarget</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWielder()" class="member-name-link">getWielder</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWielder()" class="member-name-link">getWielder</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isConsistent(zombie.network.IConnection)" class="member-name-link">isConsistent</a><wbr>(<a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isConsistent(zombie.network.IConnection)" class="member-name-link">isConsistent</a><wbr>(<a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logInconsistentPacket(zombie.network.IConnection,zombie.network.PacketTypes.PacketType)" class="member-name-link">logInconsistentPacket</a><wbr>(<a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection,
+ <a href="../../PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(zombie.core.network.ByteBufferReader,zombie.network.IConnection)" class="member-name-link">parse</a><wbr>(<a href="../../../core/network/ByteBufferReader.html" title="class in zombie.core.network">ByteBufferReader</a>&nbsp;b,
@@ -191,14 +192,8 @@ implements <a href="../../anticheats/AntiCheatHitDamage.IAntiCheat.html" title="
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-zombie.network.anticheats.AntiCheatHitWeaponAmmo.IAntiCheat">Methods inherited from interface&nbsp;<a href="../../anticheats/AntiCheatHitWeaponAmmo.IAntiCheat.html#method-summary" title="interface in zombie.network.anticheats">AntiCheatHitWeaponAmmo.IAntiCheat</a></h3>
-<code><a href="../../anticheats/AntiCheatHitWeaponAmmo.IAntiCheat.html#getHandWeapon()" title="getHandWeapon()">getHandWeapon</a>, <a href="../../anticheats/AntiCheatHitWeaponAmmo.IAntiCheat.html#getShotID()" title="getShotID()">getShotID</a>, <a href="../../anticheats/AntiCheatHitWeaponAmmo.IAntiCheat.html#isIgnoreDamage()" title="isIgnoreDamage()">isIgnoreDamage</a></code></div>
-<div class="inherited-list">
-<h3 id="methods-inherited-from-class-zombie.network.anticheats.AntiCheatHitWeaponRange.IAntiCheat">Methods inherited from interface&nbsp;<a href="../../anticheats/AntiCheatHitWeaponRange.IAntiCheat.html#method-summary" title="interface in zombie.network.anticheats">AntiCheatHitWeaponRange.IAntiCheat</a></h3>
-<code><a href="../../anticheats/AntiCheatHitWeaponRange.IAntiCheat.html#getHandWeapon()" title="getHandWeapon()">getHandWeapon</a></code></div>
-<div class="inherited-list">
-<h3 id="methods-inherited-from-class-zombie.network.anticheats.AntiCheatHitWeaponRate.IAntiCheat">Methods inherited from interface&nbsp;<a href="../../anticheats/AntiCheatHitWeaponRate.IAntiCheat.html#method-summary" title="interface in zombie.network.anticheats">AntiCheatHitWeaponRate.IAntiCheat</a></h3>
-<code><a href="../../anticheats/AntiCheatHitWeaponRate.IAntiCheat.html#getHandWeapon()" title="getHandWeapon()">getHandWeapon</a></code></div>
+<h3 id="methods-inherited-from-class-zombie.network.anticheats.AntiCheatHitWeapon.IAntiCheat">Methods inherited from interface&nbsp;<a href="../../anticheats/AntiCheatHitWeapon.IAntiCheat.html#method-summary" title="interface in zombie.network.anticheats">AntiCheatHitWeapon.IAntiCheat</a></h3>
+<code><a href="../../anticheats/AntiCheatHitWeapon.IAntiCheat.html#getHandWeapon()" title="getHandWeapon()">getHandWeapon</a>, <a href="../../anticheats/AntiCheatHitWeapon.IAntiCheat.html#getShotID()" title="getShotID()">getShotID</a>, <a href="../../anticheats/AntiCheatHitWeapon.IAntiCheat.html#isIgnoreDamage()" title="isIgnoreDamage()">isIgnoreDamage</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-zombie.network.packets.hit.HitCharacter">Methods inherited from interface&nbsp;<a href="HitCharacter.html#method-summary" title="interface in zombie.network.packets.hit">HitCharacter</a></h3>
 <code><a href="HitCharacter.html#log(zombie.core.raknet.UdpConnection)" title="log(UdpConnection)">log</a>, <a href="HitCharacter.html#processClient(zombie.core.raknet.UdpConnection)" title="processClient(UdpConnection)">processClient</a>, <a href="HitCharacter.html#processServer(zombie.network.PacketTypes.PacketType,zombie.core.raknet.UdpConnection)" title="processServer(PacketTypes.PacketType, UdpConnection)">processServer</a>, <a href="HitCharacter.html#update()" title="update()">update</a></code></div>
@@ -313,6 +308,19 @@ implements <a href="../../anticheats/AntiCheatHitDamage.IAntiCheat.html" title="
 </section>
 </li>
 <li>
+<section class="detail" id="logInconsistentPacket(zombie.network.IConnection,zombie.network.PacketTypes.PacketType)">
+<h3>logInconsistentPacket</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">logInconsistentPacket</span><wbr><span class="parameters">(<a href="../../IConnection.html" title="interface in zombie.network">IConnection</a>&nbsp;connection,
+ <a href="../../PacketTypes.PacketType.html" title="enum class in zombie.network">PacketTypes.PacketType</a>&nbsp;packetType)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../INetworkPacket.html#logInconsistentPacket(zombie.network.IConnection,zombie.network.PacketTypes.PacketType)">logInconsistentPacket</a></code>&nbsp;in interface&nbsp;<code><a href="../INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="preProcess()">
 <h3>preProcess</h3>
 <div class="horizontal-scroll">
@@ -373,9 +381,7 @@ implements <a href="../../anticheats/AntiCheatHitDamage.IAntiCheat.html" title="
 <dt>Specified by:</dt>
 <dd><code><a href="../../anticheats/AntiCheatHitLongDistance.IAntiCheat.html#getDistance()">getDistance</a></code>&nbsp;in interface&nbsp;<code><a href="../../anticheats/AntiCheatHitLongDistance.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitLongDistance.IAntiCheat</a></code></dd>
 <dt>Specified by:</dt>
-<dd><code><a href="../../anticheats/AntiCheatHitWeaponRange.IAntiCheat.html#getDistance()">getDistance</a></code>&nbsp;in interface&nbsp;<code><a href="../../anticheats/AntiCheatHitWeaponRange.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitWeaponRange.IAntiCheat</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="../../anticheats/AntiCheatHitWeaponRate.IAntiCheat.html#getDistance()">getDistance</a></code>&nbsp;in interface&nbsp;<code><a href="../../anticheats/AntiCheatHitWeaponRate.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitWeaponRate.IAntiCheat</a></code></dd>
+<dd><code><a href="../../anticheats/AntiCheatHitWeapon.IAntiCheat.html#getDistance()">getDistance</a></code>&nbsp;in interface&nbsp;<code><a href="../../anticheats/AntiCheatHitWeapon.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitWeapon.IAntiCheat</a></code></dd>
 </dl>
 </div>
 </section>
@@ -387,21 +393,7 @@ implements <a href="../../anticheats/AntiCheatHitDamage.IAntiCheat.html" title="
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></span>&nbsp;<span class="element-name">getWielder</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../../anticheats/AntiCheatHitWeaponAmmo.IAntiCheat.html#getWielder()">getWielder</a></code>&nbsp;in interface&nbsp;<code><a href="../../anticheats/AntiCheatHitWeaponAmmo.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitWeaponAmmo.IAntiCheat</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="../../anticheats/AntiCheatHitWeaponRate.IAntiCheat.html#getWielder()">getWielder</a></code>&nbsp;in interface&nbsp;<code><a href="../../anticheats/AntiCheatHitWeaponRate.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitWeaponRate.IAntiCheat</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getTarget()">
-<h3>getTarget</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../characters/IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a></span>&nbsp;<span class="element-name">getTarget</span>()</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../anticheats/AntiCheatHitWeaponRate.IAntiCheat.html#getTarget()">getTarget</a></code>&nbsp;in interface&nbsp;<code><a href="../../anticheats/AntiCheatHitWeaponRate.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitWeaponRate.IAntiCheat</a></code></dd>
+<dd><code><a href="../../anticheats/AntiCheatHitWeapon.IAntiCheat.html#getWielder()">getWielder</a></code>&nbsp;in interface&nbsp;<code><a href="../../anticheats/AntiCheatHitWeapon.IAntiCheat.html" title="interface in zombie.network.anticheats">AntiCheatHitWeapon.IAntiCheat</a></code></dd>
 </dl>
 </div>
 </section>

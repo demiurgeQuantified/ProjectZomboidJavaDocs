@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -62,23 +62,18 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#enum-constant-detail" tabindex="0">Enum Constant Details</a>
 <ol class="toc-list">
-<li><a href="#Transaction" tabindex="0">Transaction</a></li>
 <li><a href="#Safety" tabindex="0">Safety</a></li>
 <li><a href="#HitDamage" tabindex="0">HitDamage</a></li>
+<li><a href="#HitVehicle" tabindex="0">HitVehicle</a></li>
 <li><a href="#HitLongDistance" tabindex="0">HitLongDistance</a></li>
 <li><a href="#HitShortDistance" tabindex="0">HitShortDistance</a></li>
-<li><a href="#HitWeaponAmmo" tabindex="0">HitWeaponAmmo</a></li>
-<li><a href="#HitWeaponRate" tabindex="0">HitWeaponRate</a></li>
-<li><a href="#HitWeaponRange" tabindex="0">HitWeaponRange</a></li>
-<li><a href="#Target" tabindex="0">Target</a></li>
+<li><a href="#HitWeapon" tabindex="0">HitWeapon</a></li>
 <li><a href="#PacketRakNet" tabindex="0">PacketRakNet</a></li>
 <li><a href="#PacketException" tabindex="0">PacketException</a></li>
 <li><a href="#PacketType" tabindex="0">PacketType</a></li>
 <li><a href="#XPUpdate" tabindex="0">XPUpdate</a></li>
-<li><a href="#Recipe" tabindex="0">Recipe</a></li>
-<li><a href="#RecipeUpdate" tabindex="0">RecipeUpdate</a></li>
-<li><a href="#Checksum" tabindex="0">Checksum</a></li>
 <li><a href="#ChecksumUpdate" tabindex="0">ChecksumUpdate</a></li>
+<li><a href="#Target" tabindex="0">Target</a></li>
 <li><a href="#Player" tabindex="0">Player</a></li>
 <li><a href="#PlayerUpdate" tabindex="0">PlayerUpdate</a></li>
 <li><a href="#Power" tabindex="0">Power</a></li>
@@ -93,6 +88,14 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
+<li><a href="#REASON_UNKNOWN_RAKNET_PACKET" tabindex="0">REASON_UNKNOWN_RAKNET_PACKET</a></li>
+<li><a href="#REASON_UNKNOWN_ZED_PACKET" tabindex="0">REASON_UNKNOWN_ZED_PACKET</a></li>
+<li><a href="#REASON_EXCEPTION_OCCURRED" tabindex="0">REASON_EXCEPTION_OCCURRED</a></li>
+<li><a href="#REASON_INCORRECT_CHECKSUM" tabindex="0">REASON_INCORRECT_CHECKSUM</a></li>
+<li><a href="#REASON_NO_CAPABILITY" tabindex="0">REASON_NO_CAPABILITY</a></li>
+<li><a href="#REASON_UPDATE_FAILED" tabindex="0">REASON_UPDATE_FAILED</a></li>
+<li><a href="#REASON_COOLDOWN" tabindex="0">REASON_COOLDOWN</a></li>
+<li><a href="#REASON_SKIP" tabindex="0">REASON_SKIP</a></li>
 <li><a href="#anticheat" tabindex="0">anticheat</a></li>
 <li><a href="#option" tabindex="0">option</a></li>
 <li><a href="#maxSuspiciousCounter" tabindex="0">maxSuspiciousCounter</a></li>
@@ -105,7 +108,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#isEnabled()" tabindex="0">isEnabled()</a></li>
 <li><a href="#isValid(zombie.core.raknet.UdpConnection,zombie.network.packets.INetworkPacket)" tabindex="0">isValid(UdpConnection, INetworkPacket)</a></li>
 <li><a href="#update(zombie.core.raknet.UdpConnection)" tabindex="0">update(UdpConnection)</a></li>
-<li><a href="#preUpdate(zombie.core.raknet.UdpConnection)" tabindex="0">preUpdate(UdpConnection)</a></li>
+<li><a href="#log(zombie.core.raknet.UdpConnection,java.lang.String)" tabindex="0">log(UdpConnection, String)</a></li>
 <li><a href="#log(zombie.core.raknet.UdpConnection,zombie.network.anticheats.AntiCheat,int,java.lang.String)" tabindex="0">log(UdpConnection, AntiCheat, int, String)</a></li>
 <li><a href="#act(zombie.core.raknet.UdpConnection,java.lang.String)" tabindex="0">act(UdpConnection, String)</a></li>
 <li><a href="#doLogUser(zombie.core.raknet.UdpConnection,java.lang.String,java.lang.String)" tabindex="0">doLogUser(UdpConnection, String, String)</a></li>
@@ -166,21 +169,17 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code><a href="#Capability" class="member-name-link">Capability</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#Checksum" class="member-name-link">Checksum</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#ChecksumUpdate" class="member-name-link">ChecksumUpdate</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#ChecksumUpdate" class="member-name-link">ChecksumUpdate</a></code></div>
+<div class="col-first even-row-color"><code><a href="#HitDamage" class="member-name-link">HitDamage</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#HitDamage" class="member-name-link">HitDamage</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#HitLongDistance" class="member-name-link">HitLongDistance</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#HitLongDistance" class="member-name-link">HitLongDistance</a></code></div>
+<div class="col-first even-row-color"><code><a href="#HitShortDistance" class="member-name-link">HitShortDistance</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#HitShortDistance" class="member-name-link">HitShortDistance</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#HitVehicle" class="member-name-link">HitVehicle</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#HitWeaponAmmo" class="member-name-link">HitWeaponAmmo</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#HitWeaponRange" class="member-name-link">HitWeaponRange</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#HitWeaponRate" class="member-name-link">HitWeaponRate</a></code></div>
+<div class="col-first even-row-color"><code><a href="#HitWeapon" class="member-name-link">HitWeapon</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="#NoClip" class="member-name-link">NoClip</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
@@ -198,10 +197,6 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="#Power" class="member-name-link">Power</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#Recipe" class="member-name-link">Recipe</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#RecipeUpdate" class="member-name-link">RecipeUpdate</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="#SafeHouseMember" class="member-name-link">SafeHouseMember</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="#SafeHouseOwner" class="member-name-link">SafeHouseOwner</a></code></div>
@@ -214,10 +209,8 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="#Target" class="member-name-link">Target</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#Transaction" class="member-name-link">Transaction</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#XPUpdate" class="member-name-link">XPUpdate</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#XPUpdate" class="member-name-link">XPUpdate</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -238,6 +231,30 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="../ServerOptions.EnumServerOption.html" title="class in zombie.network">ServerOptions.EnumServerOption</a></code></div>
 <div class="col-second even-row-color"><code><a href="#option" class="member-name-link">option</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#REASON_COOLDOWN" class="member-name-link">REASON_COOLDOWN</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#REASON_EXCEPTION_OCCURRED" class="member-name-link">REASON_EXCEPTION_OCCURRED</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#REASON_INCORRECT_CHECKSUM" class="member-name-link">REASON_INCORRECT_CHECKSUM</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#REASON_NO_CAPABILITY" class="member-name-link">REASON_NO_CAPABILITY</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#REASON_SKIP" class="member-name-link">REASON_SKIP</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#REASON_UNKNOWN_RAKNET_PACKET" class="member-name-link">REASON_UNKNOWN_RAKNET_PACKET</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#REASON_UNKNOWN_ZED_PACKET" class="member-name-link">REASON_UNKNOWN_ZED_PACKET</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#REASON_UPDATE_FAILED" class="member-name-link">REASON_UPDATE_FAILED</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -280,13 +297,14 @@ loadScripts(document, 'script');</script>
  <a href="../packets/INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>&nbsp;packet)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#log(zombie.core.raknet.UdpConnection,zombie.network.anticheats.AntiCheat,int,java.lang.String)" class="member-name-link">log</a><wbr>(<a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#log(zombie.core.raknet.UdpConnection,java.lang.String)" class="member-name-link">log</a><wbr>(<a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#log(zombie.core.raknet.UdpConnection,zombie.network.anticheats.AntiCheat,int,java.lang.String)" class="member-name-link">log</a><wbr>(<a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
  <a href="AntiCheat.html" title="enum class in zombie.network.anticheats">AntiCheat</a>&nbsp;antiCheat,
  int&nbsp;counter,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#preUpdate(zombie.core.raknet.UdpConnection)" class="member-name-link">preUpdate</a><wbr>(<a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#update(zombie.core.raknet.UdpConnection)" class="member-name-link">update</a><wbr>(<a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</code></div>
@@ -323,14 +341,6 @@ the order they are declared.</div>
 <h2>Enum Constant Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="Transaction">
-<h3>Transaction</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AntiCheat.html" title="enum class in zombie.network.anticheats">AntiCheat</a></span>&nbsp;<span class="element-name">Transaction</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="Safety">
 <h3>Safety</h3>
 <div class="horizontal-scroll">
@@ -343,6 +353,14 @@ the order they are declared.</div>
 <h3>HitDamage</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AntiCheat.html" title="enum class in zombie.network.anticheats">AntiCheat</a></span>&nbsp;<span class="element-name">HitDamage</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="HitVehicle">
+<h3>HitVehicle</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AntiCheat.html" title="enum class in zombie.network.anticheats">AntiCheat</a></span>&nbsp;<span class="element-name">HitVehicle</span></div>
 </div>
 </section>
 </li>
@@ -363,34 +381,10 @@ the order they are declared.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="HitWeaponAmmo">
-<h3>HitWeaponAmmo</h3>
+<section class="detail" id="HitWeapon">
+<h3>HitWeapon</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AntiCheat.html" title="enum class in zombie.network.anticheats">AntiCheat</a></span>&nbsp;<span class="element-name">HitWeaponAmmo</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="HitWeaponRate">
-<h3>HitWeaponRate</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AntiCheat.html" title="enum class in zombie.network.anticheats">AntiCheat</a></span>&nbsp;<span class="element-name">HitWeaponRate</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="HitWeaponRange">
-<h3>HitWeaponRange</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AntiCheat.html" title="enum class in zombie.network.anticheats">AntiCheat</a></span>&nbsp;<span class="element-name">HitWeaponRange</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="Target">
-<h3>Target</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AntiCheat.html" title="enum class in zombie.network.anticheats">AntiCheat</a></span>&nbsp;<span class="element-name">Target</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AntiCheat.html" title="enum class in zombie.network.anticheats">AntiCheat</a></span>&nbsp;<span class="element-name">HitWeapon</span></div>
 </div>
 </section>
 </li>
@@ -427,34 +421,18 @@ the order they are declared.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="Recipe">
-<h3>Recipe</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AntiCheat.html" title="enum class in zombie.network.anticheats">AntiCheat</a></span>&nbsp;<span class="element-name">Recipe</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="RecipeUpdate">
-<h3>RecipeUpdate</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AntiCheat.html" title="enum class in zombie.network.anticheats">AntiCheat</a></span>&nbsp;<span class="element-name">RecipeUpdate</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="Checksum">
-<h3>Checksum</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AntiCheat.html" title="enum class in zombie.network.anticheats">AntiCheat</a></span>&nbsp;<span class="element-name">Checksum</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="ChecksumUpdate">
 <h3>ChecksumUpdate</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AntiCheat.html" title="enum class in zombie.network.anticheats">AntiCheat</a></span>&nbsp;<span class="element-name">ChecksumUpdate</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="Target">
+<h3>Target</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="AntiCheat.html" title="enum class in zombie.network.anticheats">AntiCheat</a></span>&nbsp;<span class="element-name">Target</span></div>
 </div>
 </section>
 </li>
@@ -546,6 +524,134 @@ the order they are declared.</div>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="REASON_UNKNOWN_RAKNET_PACKET">
+<h3>REASON_UNKNOWN_RAKNET_PACKET</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">REASON_UNKNOWN_RAKNET_PACKET</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#zombie.network.anticheats.AntiCheat.REASON_UNKNOWN_RAKNET_PACKET">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="REASON_UNKNOWN_ZED_PACKET">
+<h3>REASON_UNKNOWN_ZED_PACKET</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">REASON_UNKNOWN_ZED_PACKET</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#zombie.network.anticheats.AntiCheat.REASON_UNKNOWN_ZED_PACKET">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="REASON_EXCEPTION_OCCURRED">
+<h3>REASON_EXCEPTION_OCCURRED</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">REASON_EXCEPTION_OCCURRED</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#zombie.network.anticheats.AntiCheat.REASON_EXCEPTION_OCCURRED">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="REASON_INCORRECT_CHECKSUM">
+<h3>REASON_INCORRECT_CHECKSUM</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">REASON_INCORRECT_CHECKSUM</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#zombie.network.anticheats.AntiCheat.REASON_INCORRECT_CHECKSUM">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="REASON_NO_CAPABILITY">
+<h3>REASON_NO_CAPABILITY</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">REASON_NO_CAPABILITY</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#zombie.network.anticheats.AntiCheat.REASON_NO_CAPABILITY">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="REASON_UPDATE_FAILED">
+<h3>REASON_UPDATE_FAILED</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">REASON_UPDATE_FAILED</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#zombie.network.anticheats.AntiCheat.REASON_UPDATE_FAILED">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="REASON_COOLDOWN">
+<h3>REASON_COOLDOWN</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">REASON_COOLDOWN</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#zombie.network.anticheats.AntiCheat.REASON_COOLDOWN">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="REASON_SKIP">
+<h3>REASON_SKIP</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">REASON_SKIP</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#zombie.network.anticheats.AntiCheat.REASON_SKIP">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="anticheat">
 <h3>anticheat</h3>
@@ -639,10 +745,11 @@ not permitted.)</div>
 </section>
 </li>
 <li>
-<section class="detail" id="preUpdate(zombie.core.raknet.UdpConnection)">
-<h3>preUpdate</h3>
+<section class="detail" id="log(zombie.core.raknet.UdpConnection,java.lang.String)">
+<h3>log</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">preUpdate</span><wbr><span class="parameters">(<a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">log</span><wbr><span class="parameters">(<a href="../../core/raknet/UdpConnection.html" title="class in zombie.core.raknet">UdpConnection</a>&nbsp;connection,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</span></div>
 </div>
 </section>
 </li>

@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -104,6 +104,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#hasWater()" tabindex="0">hasWater()</a></li>
 <li><a href="#CreateFrom(zombie.iso.BuildingDef,zombie.iso.IsoMetaCell)" tabindex="0">CreateFrom(BuildingDef, IsoMetaCell)</a></li>
 <li><a href="#setAllExplored(boolean)" tabindex="0">setAllExplored(boolean)</a></li>
+<li><a href="#setAllExplored(boolean,zombie.iso.areas.IsoRoom)" tabindex="0">setAllExplored(boolean, IsoRoom)</a></li>
 <li><a href="#isAllExplored()" tabindex="0">isAllExplored()</a></li>
 <li><a href="#addWindow(zombie.iso.objects.IsoWindow,boolean,zombie.iso.IsoGridSquare,zombie.iso.areas.IsoBuilding)" tabindex="0">addWindow(IsoWindow, boolean, IsoGridSquare, IsoBuilding)</a></li>
 <li><a href="#addWindow(zombie.iso.objects.IsoWindow,boolean)" tabindex="0">addWindow(IsoWindow, boolean)</a></li>
@@ -112,6 +113,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#isResidential()" tabindex="0">isResidential()</a></li>
 <li><a href="#containsRoom(java.lang.String)" tabindex="0">containsRoom(String)</a></li>
 <li><a href="#getRandomRoom(java.lang.String)" tabindex="0">getRandomRoom(String)</a></li>
+<li><a href="#getRandomRoomExcluding(java.util.List)" tabindex="0">getRandomRoomExcluding(List)</a></li>
 <li><a href="#hasRoom(java.lang.String)" tabindex="0">hasRoom(String)</a></li>
 <li><a href="#getRandomContainer(java.lang.String)" tabindex="0">getRandomContainer(String)</a></li>
 <li><a href="#getRandomContainerSingle(java.lang.String)" tabindex="0">getRandomContainerSingle(String)</a></li>
@@ -302,36 +304,43 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="IsoRoom.html" title="class in zombie.iso.areas">IsoRoom</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRandomRoom(java.lang.String)" class="member-name-link">getRandomRoom</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;room)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRoomsNumber()" class="member-name-link">getRoomsNumber</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="IsoRoom.html" title="class in zombie.iso.areas">IsoRoom</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRandomRoomExcluding(java.util.List)" class="member-name-link">getRandomRoomExcluding</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;badRooms)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasBasement()" class="member-name-link">hasBasement</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRoomsNumber()" class="member-name-link">getRoomsNumber</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasRoom(java.lang.String)" class="member-name-link">hasRoom</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;room)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasBasement()" class="member-name-link">hasBasement</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasWater()" class="member-name-link">hasWater</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasRoom(java.lang.String)" class="member-name-link">hasRoom</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;room)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAllExplored()" class="member-name-link">isAllExplored</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasWater()" class="member-name-link">hasWater</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEntirelyEmptyOutside()" class="member-name-link">isEntirelyEmptyOutside</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAllExplored()" class="member-name-link">isAllExplored</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isResidential()" class="member-name-link">isResidential</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEntirelyEmptyOutside()" class="member-name-link">isEntirelyEmptyOutside</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isToxic()" class="member-name-link">isToxic</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isResidential()" class="member-name-link">isResidential</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ScoreBuildingPersonSpecific(zombie.characters.SurvivorDesc,boolean)" class="member-name-link">ScoreBuildingPersonSpecific</a><wbr>(<a href="../../characters/SurvivorDesc.html" title="class in zombie.characters">SurvivorDesc</a>&nbsp;desc,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isToxic()" class="member-name-link">isToxic</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ScoreBuildingPersonSpecific(zombie.characters.SurvivorDesc,boolean)" class="member-name-link">ScoreBuildingPersonSpecific</a><wbr>(<a href="../../characters/SurvivorDesc.html" title="class in zombie.characters">SurvivorDesc</a>&nbsp;desc,
  boolean&nbsp;bFarGood)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAllExplored(boolean)" class="member-name-link">setAllExplored</a><wbr>(boolean&nbsp;b)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAllExplored(boolean)" class="member-name-link">setAllExplored</a><wbr>(boolean&nbsp;b)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAllExplored(boolean,zombie.iso.areas.IsoRoom)" class="member-name-link">setAllExplored</a><wbr>(boolean&nbsp;b,
+ <a href="IsoRoom.html" title="class in zombie.iso.areas">IsoRoom</a>&nbsp;exception)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setToxic(boolean)" class="member-name-link">setToxic</a><wbr>(boolean&nbsp;isToxic)</code></div>
@@ -658,6 +667,15 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="setAllExplored(boolean,zombie.iso.areas.IsoRoom)">
+<h3>setAllExplored</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setAllExplored</span><wbr><span class="parameters">(boolean&nbsp;b,
+ <a href="IsoRoom.html" title="class in zombie.iso.areas">IsoRoom</a>&nbsp;exception)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="isAllExplored()">
 <h3>isAllExplored</h3>
 <div class="horizontal-scroll">
@@ -726,6 +744,14 @@ loadScripts(document, 'script');</script>
 <h3>getRandomRoom</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="IsoRoom.html" title="class in zombie.iso.areas">IsoRoom</a></span>&nbsp;<span class="element-name">getRandomRoom</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;room)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getRandomRoomExcluding(java.util.List)">
+<h3>getRandomRoomExcluding</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="IsoRoom.html" title="class in zombie.iso.areas">IsoRoom</a></span>&nbsp;<span class="element-name">getRandomRoomExcluding</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;badRooms)</span></div>
 </div>
 </section>
 </li>

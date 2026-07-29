@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -73,6 +73,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#targetZ" tabindex="0">targetZ</a></li>
 <li><a href="#moved" tabindex="0">moved</a></li>
 <li><a href="#switchTime" tabindex="0">switchTime</a></li>
+<li><a href="#hitTimestamp" tabindex="0">hitTimestamp</a></li>
 <li><a href="#attackRateChecker" tabindex="0">attackRateChecker</a></li>
 <li><a href="#tempTarget" tabindex="0">tempTarget</a></li>
 <li><a href="#state" tabindex="0">state</a></li>
@@ -85,6 +86,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
+<li><a href="#getHitReaction()" tabindex="0">getHitReaction()</a></li>
 <li><a href="#getState()" tabindex="0">getState()</a></li>
 <li><a href="#resetState()" tabindex="0">resetState()</a></li>
 <li><a href="#postUpdate()" tabindex="0">postUpdate()</a></li>
@@ -103,6 +105,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#isVehicleHitTimeout()" tabindex="0">isVehicleHitTimeout()</a></li>
 <li><a href="#hitByVehicle()" tabindex="0">hitByVehicle()</a></li>
 <li><a href="#setCorpse(zombie.network.packets.INetworkPacket,zombie.iso.IsoGridSquare,int)" tabindex="0">setCorpse(INetworkPacket, IsoGridSquare, int)</a></li>
+<li><a href="#setRemoveCorpse(zombie.network.packets.INetworkPacket)" tabindex="0">setRemoveCorpse(INetworkPacket)</a></li>
 <li><a href="#isDeadBodyTimeout()" tabindex="0">isDeadBodyTimeout()</a></li>
 <li><a href="#onDied()" tabindex="0">onDied()</a></li>
 <li><a href="#isCollisionEnabled()" tabindex="0">isCollisionEnabled()</a></li>
@@ -123,6 +126,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#getAnimalPacket()" tabindex="0">getAnimalPacket()</a></li>
 <li><a href="#setAnimalPacket(zombie.core.raknet.UdpConnection)" tabindex="0">setAnimalPacket(UdpConnection)</a></li>
 <li><a href="#getPlayerPacket()" tabindex="0">getPlayerPacket()</a></li>
+<li><a href="#isXpCheckerIntervalPassed()" tabindex="0">isXpCheckerIntervalPassed()</a></li>
+<li><a href="#setXp(zombie.characters.skills.PerkFactory.Perk,float)" tabindex="0">setXp(PerkFactory.Perk, float)</a></li>
+<li><a href="#setXpBoost(zombie.characters.skills.PerkFactory.Perk,int)" tabindex="0">setXpBoost(PerkFactory.Perk, int)</a></li>
+<li><a href="#setXpMultiplier(zombie.characters.skills.PerkFactory.Perk,float)" tabindex="0">setXpMultiplier(PerkFactory.Perk, float)</a></li>
+<li><a href="#updateXpChecker()" tabindex="0">updateXpChecker()</a></li>
+<li><a href="#hasHitIntervalPassed()" tabindex="0">hasHitIntervalPassed()</a></li>
+<li><a href="#resetHitInterval()" tabindex="0">resetHitInterval()</a></li>
 </ol>
 </li>
 </ol>
@@ -163,6 +173,9 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>static class&nbsp;</code></div>
 <div class="col-second odd-row-color"><code><a href="NetworkCharacterAI.SpeedChecker.html" class="type-name-link" title="class in zombie.characters">NetworkCharacterAI.SpeedChecker</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="NetworkCharacterAI.XpChecker.html" class="type-name-link" title="class in zombie.characters">NetworkCharacterAI.XpChecker</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -187,36 +200,39 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>boolean</code></div>
 <div class="col-second odd-row-color"><code><a href="#forcePathFinder" class="member-name-link">forcePathFinder</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#moved" class="member-name-link">moved</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#predictionType" class="member-name-link">predictionType</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="NetworkCharacterAI.SpeedChecker.html" title="class in zombie.characters">NetworkCharacterAI.SpeedChecker</a></code></div>
-<div class="col-second even-row-color"><code><a href="#speedChecker" class="member-name-link">speedChecker</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="NetworkState.html" title="class in zombie.characters">NetworkState</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#state" class="member-name-link">state</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#switchTime" class="member-name-link">switchTime</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>float</code></div>
-<div class="col-second odd-row-color"><code><a href="#targetX" class="member-name-link">targetX</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>float</code></div>
-<div class="col-second even-row-color"><code><a href="#targetY" class="member-name-link">targetY</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><a href="#targetZ" class="member-name-link">targetZ</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="../iso/Vector3.html" title="class in zombie.iso">Vector3</a></code></div>
-<div class="col-second even-row-color"><code><a href="#tempTarget" class="member-name-link">tempTarget</a></code></div>
+<div class="col-first even-row-color"><code>long</code></div>
+<div class="col-second even-row-color"><code><a href="#hitTimestamp" class="member-name-link">hitTimestamp</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#usePathFind" class="member-name-link">usePathFind</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#moved" class="member-name-link">moved</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>byte</code></div>
+<div class="col-second even-row-color"><code><a href="#predictionType" class="member-name-link">predictionType</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final <a href="NetworkCharacterAI.SpeedChecker.html" title="class in zombie.characters">NetworkCharacterAI.SpeedChecker</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#speedChecker" class="member-name-link">speedChecker</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final <a href="NetworkState.html" title="class in zombie.characters">NetworkState</a></code></div>
+<div class="col-second even-row-color"><code><a href="#state" class="member-name-link">state</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><a href="#switchTime" class="member-name-link">switchTime</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>float</code></div>
+<div class="col-second even-row-color"><code><a href="#targetX" class="member-name-link">targetX</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>float</code></div>
+<div class="col-second odd-row-color"><code><a href="#targetY" class="member-name-link">targetY</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><a href="#targetZ" class="member-name-link">targetZ</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final <a href="../iso/Vector3.html" title="class in zombie.iso">Vector3</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#tempTarget" class="member-name-link">tempTarget</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#usePathFind" class="member-name-link">usePathFind</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -256,26 +272,32 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="IsoGameCharacter.html" title="class in zombie.characters">IsoGameCharacter</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCharacter()" class="member-name-link">getCharacter</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../iso/objects/IsoHutch.html" title="class in zombie.iso.objects">IsoHutch</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHutch()" class="member-name-link">getHutch</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="HitReactionNetworkAI.html" title="class in zombie.characters">HitReactionNetworkAI</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHitReaction()" class="member-name-link">getHitReaction</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>short</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOnlineID()" class="member-name-link">getOnlineID</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../iso/objects/IsoHutch.html" title="class in zombie.iso.objects">IsoHutch</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHutch()" class="member-name-link">getHutch</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPerformingAction()" class="member-name-link">getPerformingAction</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>short</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOnlineID()" class="member-name-link">getOnlineID</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../network/packets/character/PlayerPacket.html" title="class in zombie.network.packets.character">PlayerPacket</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayerPacket()" class="member-name-link">getPlayerPacket</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPerformingAction()" class="member-name-link">getPerformingAction</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getRelatedPlayer()" class="member-name-link">getRelatedPlayer</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="NetworkState.html" title="class in zombie.characters">NetworkState</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getState()" class="member-name-link">getState</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../network/packets/character/PlayerPacket.html" title="class in zombie.network.packets.character">PlayerPacket</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayerPacket()" class="member-name-link">getPlayerPacket</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getRelatedPlayer()" class="member-name-link">getRelatedPlayer</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="NetworkState.html" title="class in zombie.characters">NetworkState</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getState()" class="member-name-link">getState</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVehile()" class="member-name-link">getVehile</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../vehicles/BaseVehicle.html" title="class in zombie.vehicles">BaseVehicle</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVehile()" class="member-name-link">getVehile</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasHitIntervalPassed()" class="member-name-link">hasHitIntervalPassed</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hitByVehicle()" class="member-name-link">hitByVehicle</a>()</code></div>
@@ -298,14 +320,20 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isVehicleHitTimeout()" class="member-name-link">isVehicleHitTimeout</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onDied()" class="member-name-link">onDied</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isXpCheckerIntervalPassed()" class="member-name-link">isXpCheckerIntervalPassed</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#postUpdate()" class="member-name-link">postUpdate</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onDied()" class="member-name-link">onDied</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset()" class="member-name-link">reset</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#postUpdate()" class="member-name-link">postUpdate</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset()" class="member-name-link">reset</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetHitInterval()" class="member-name-link">resetHitInterval</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetSpeedLimiter()" class="member-name-link">resetSpeedLimiter</a>()</code></div>
@@ -339,7 +367,22 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPerformingAction(java.lang.String)" class="member-name-link">setPerformingAction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;animation)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setVehicleHit(zombie.network.packets.INetworkPacket)" class="member-name-link">setVehicleHit</a><wbr>(<a href="../network/packets/INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>&nbsp;packet)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRemoveCorpse(zombie.network.packets.INetworkPacket)" class="member-name-link">setRemoveCorpse</a><wbr>(<a href="../network/packets/INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>&nbsp;packet)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setVehicleHit(zombie.network.packets.INetworkPacket)" class="member-name-link">setVehicleHit</a><wbr>(<a href="../network/packets/INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>&nbsp;packet)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setXp(zombie.characters.skills.PerkFactory.Perk,float)" class="member-name-link">setXp</a><wbr>(<a href="skills/PerkFactory.Perk.html" title="class in zombie.characters.skills">PerkFactory.Perk</a>&nbsp;perk,
+ float&nbsp;value)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setXpBoost(zombie.characters.skills.PerkFactory.Perk,int)" class="member-name-link">setXpBoost</a><wbr>(<a href="skills/PerkFactory.Perk.html" title="class in zombie.characters.skills">PerkFactory.Perk</a>&nbsp;perk,
+ int&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setXpMultiplier(zombie.characters.skills.PerkFactory.Perk,float)" class="member-name-link">setXpMultiplier</a><wbr>(<a href="skills/PerkFactory.Perk.html" title="class in zombie.characters.skills">PerkFactory.Perk</a>&nbsp;perk,
+ float&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startAction()" class="member-name-link">startAction</a>()</code></div>
@@ -359,9 +402,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#syncXp()" class="member-name-link">syncXp</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wasLocal()" class="member-name-link">wasLocal</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateXpChecker()" class="member-name-link">updateXpChecker</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wasLocal()" class="member-name-link">wasLocal</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -468,6 +514,14 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="hitTimestamp">
+<h3>hitTimestamp</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">hitTimestamp</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="attackRateChecker">
 <h3>attackRateChecker</h3>
 <div class="horizontal-scroll">
@@ -515,6 +569,14 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="getHitReaction()">
+<h3>getHitReaction</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="HitReactionNetworkAI.html" title="class in zombie.characters">HitReactionNetworkAI</a></span>&nbsp;<span class="element-name">getHitReaction</span>()</div>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="getState()">
 <h3>getState</h3>
@@ -660,6 +722,14 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCorpse</span><wbr><span class="parameters">(<a href="../network/packets/INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>&nbsp;packet,
  <a href="../iso/IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
  int&nbsp;squareIndex)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setRemoveCorpse(zombie.network.packets.INetworkPacket)">
+<h3>setRemoveCorpse</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setRemoveCorpse</span><wbr><span class="parameters">(<a href="../network/packets/INetworkPacket.html" title="interface in zombie.network.packets">INetworkPacket</a>&nbsp;packet)</span></div>
 </div>
 </section>
 </li>
@@ -820,6 +890,65 @@ loadScripts(document, 'script');</script>
 <h3>getPlayerPacket</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../network/packets/character/PlayerPacket.html" title="class in zombie.network.packets.character">PlayerPacket</a></span>&nbsp;<span class="element-name">getPlayerPacket</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isXpCheckerIntervalPassed()">
+<h3>isXpCheckerIntervalPassed</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isXpCheckerIntervalPassed</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setXp(zombie.characters.skills.PerkFactory.Perk,float)">
+<h3>setXp</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">setXp</span><wbr><span class="parameters">(<a href="skills/PerkFactory.Perk.html" title="class in zombie.characters.skills">PerkFactory.Perk</a>&nbsp;perk,
+ float&nbsp;value)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setXpBoost(zombie.characters.skills.PerkFactory.Perk,int)">
+<h3>setXpBoost</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">setXpBoost</span><wbr><span class="parameters">(<a href="skills/PerkFactory.Perk.html" title="class in zombie.characters.skills">PerkFactory.Perk</a>&nbsp;perk,
+ int&nbsp;value)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setXpMultiplier(zombie.characters.skills.PerkFactory.Perk,float)">
+<h3>setXpMultiplier</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">setXpMultiplier</span><wbr><span class="parameters">(<a href="skills/PerkFactory.Perk.html" title="class in zombie.characters.skills">PerkFactory.Perk</a>&nbsp;perk,
+ float&nbsp;value)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="updateXpChecker()">
+<h3>updateXpChecker</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateXpChecker</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="hasHitIntervalPassed()">
+<h3>hasHitIntervalPassed</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasHitIntervalPassed</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="resetHitInterval()">
+<h3>resetHitInterval</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">resetHitInterval</span>()</div>
 </div>
 </section>
 </li>

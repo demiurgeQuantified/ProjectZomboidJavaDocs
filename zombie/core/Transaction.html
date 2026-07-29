@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -72,8 +72,9 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#set(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer,java.lang.String,zombie.iso.IsoDirections,float,float,float)" tabindex="0">set(IsoPlayer, InventoryItem, ItemContainer, ItemContainer, String, IsoDirections, float, float, float)</a></li>
+<li><a href="#set(zombie.characters.IsoPlayer,java.util.List,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer,java.lang.String,zombie.iso.IsoDirections,float,float,float)" tabindex="0">set(IsoPlayer, List, ItemContainer, ItemContainer, String, IsoDirections, float, float, float)</a></li>
 <li><a href="#setTimeData()" tabindex="0">setTimeData()</a></li>
+<li><a href="#update()" tabindex="0">update()</a></li>
 <li><a href="#setState(zombie.core.Transaction.TransactionState)" tabindex="0">setState(Transaction.TransactionState)</a></li>
 <li><a href="#setDuration(long)" tabindex="0">setDuration(long)</a></li>
 <li><a href="#toString()" tabindex="0">toString()</a></li>
@@ -162,8 +163,8 @@ implements <a href="../network/packets/IDescriptor.html" title="interface in zom
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer,java.lang.String,zombie.iso.IsoDirections,float,float,float)" class="member-name-link">set</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(zombie.characters.IsoPlayer,java.util.List,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer,java.lang.String,zombie.iso.IsoDirections,float,float,float)" class="member-name-link">set</a><wbr>(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&gt;&nbsp;items,
  <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;source,
  <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;destination,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;extra,
@@ -184,6 +185,9 @@ implements <a href="../network/packets/IDescriptor.html" title="interface in zom
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -237,11 +241,11 @@ implements <a href="../network/packets/IDescriptor.html" title="interface in zom
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="set(zombie.characters.IsoPlayer,zombie.inventory.InventoryItem,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer,java.lang.String,zombie.iso.IsoDirections,float,float,float)">
+<section class="detail" id="set(zombie.characters.IsoPlayer,java.util.List,zombie.inventory.ItemContainer,zombie.inventory.ItemContainer,java.lang.String,zombie.iso.IsoDirections,float,float,float)">
 <h3>set</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(<a href="../characters/IsoPlayer.html" title="class in zombie.characters">IsoPlayer</a>&nbsp;player,
- <a href="../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&nbsp;item,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../inventory/InventoryItem.html" title="class in zombie.inventory">InventoryItem</a>&gt;&nbsp;items,
  <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;source,
  <a href="../inventory/ItemContainer.html" title="class in zombie.inventory">ItemContainer</a>&nbsp;destination,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;extra,
@@ -257,6 +261,14 @@ implements <a href="../network/packets/IDescriptor.html" title="interface in zom
 <h3>setTimeData</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setTimeData</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="update()">
+<h3>update</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">update</span>()</div>
 </div>
 </section>
 </li>

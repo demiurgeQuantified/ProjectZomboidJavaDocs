@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -64,6 +64,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#NO_TREE" tabindex="0">NO_TREE</a></li>
 <li><a href="#NO_BUSH" tabindex="0">NO_BUSH</a></li>
 <li><a href="#NO_GRASS" tabindex="0">NO_GRASS</a></li>
+<li><a href="#ANY" tabindex="0">ANY</a></li>
+<li><a href="#SUBBIOME" tabindex="0">SUBBIOME</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -73,8 +75,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#setTiles(zombie.iso.worldgen.biomes.IBiome,zombie.iso.IsoGridSquare,zombie.iso.IsoChunk,zombie.iso.IsoCell,int,int,int,int,int,int,java.util.EnumMap,boolean,java.util.Random)" tabindex="0">setTiles(IBiome, IsoGridSquare, IsoChunk, IsoCell, int, int, int, int, int, int, EnumMap, boolean, Random)</a></li>
-<li><a href="#setTiles(zombie.iso.worldgen.biomes.IBiome,zombie.iso.worldgen.biomes.FeatureType,zombie.iso.IsoGridSquare,zombie.iso.IsoChunk,zombie.iso.IsoCell,int,int,int,int,int,int,java.util.EnumMap,java.util.Random)" tabindex="0">setTiles(IBiome, FeatureType, IsoGridSquare, IsoChunk, IsoCell, int, int, int, int, int, int, EnumMap, Random)</a></li>
+<li><a href="#setTiles(zombie.iso.worldgen.biomes.IBiome,zombie.iso.worldgen.biomes.FeatureType,zombie.iso.IsoGridSquare,zombie.iso.worldgen.ChunksCache,zombie.iso.IsoChunk,zombie.iso.IsoCell,int,int,int,int,int,int,java.util.EnumMap,java.util.Random)" tabindex="0">setTiles(IBiome, FeatureType, IsoGridSquare, ChunksCache, IsoChunk, IsoCell, int, int, int, int, int, int, EnumMap, Random)</a></li>
 <li><a href="#findFeature(java.util.List,float,float,java.util.Random)" tabindex="0">findFeature(List, float, float, Random)</a></li>
 <li><a href="#setTile(zombie.iso.worldgen.veins.OreVein,zombie.iso.IsoGridSquare,zombie.iso.IsoCell,int,int,int,int,int,int,java.util.EnumMap,java.util.Random)" tabindex="0">setTile(OreVein, IsoGridSquare, IsoCell, int, int, int, int, int, int, EnumMap, Random)</a></li>
 <li><a href="#setTile(zombie.iso.worldgen.roads.Road,zombie.iso.IsoGridSquare,zombie.iso.IsoCell,int,int,int,int,int,int,java.util.EnumMap,java.util.Random)" tabindex="0">setTile(Road, IsoGridSquare, IsoCell, int, int, int, int, int, int, EnumMap, Random)</a></li>
@@ -116,13 +117,19 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#NO_BUSH" class="member-name-link">NO_BUSH</a></code></div>
+<div class="col-second even-row-color"><code><a href="#ANY" class="member-name-link">ANY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#NO_GRASS" class="member-name-link">NO_GRASS</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#NO_BUSH" class="member-name-link">NO_BUSH</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#NO_TREE" class="member-name-link">NO_TREE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#NO_GRASS" class="member-name-link">NO_GRASS</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#NO_TREE" class="member-name-link">NO_TREE</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SUBBIOME" class="member-name-link">SUBBIOME</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -151,7 +158,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="enums/TileReplacementRetValue.html" title="class in zombie.iso.worldgen.enums">TileReplacementRetValue</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#applyTile(java.lang.String,zombie.iso.IsoGridSquare,zombie.iso.IsoCell,int,int,int,java.util.Random)" class="member-name-link">applyTile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tile,
  <a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
  <a href="../IsoCell.html" title="class in zombie.iso">IsoCell</a>&nbsp;cell,
@@ -214,25 +221,11 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumMap.html" title="class or interface in java.util" class="external-link">EnumMap</a>&lt;<a href="biomes/FeatureType.html" title="enum class in zombie.iso.worldgen.biomes">FeatureType</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&gt;&nbsp;toBeDone,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Random.html" title="class or interface in java.util" class="external-link">Random</a>&nbsp;rnd)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTiles(zombie.iso.worldgen.biomes.IBiome,zombie.iso.IsoGridSquare,zombie.iso.IsoChunk,zombie.iso.IsoCell,int,int,int,int,int,int,java.util.EnumMap,boolean,java.util.Random)" class="member-name-link">setTiles</a><wbr>(<a href="biomes/IBiome.html" title="interface in zombie.iso.worldgen.biomes">IBiome</a>&nbsp;biome,
- <a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
- <a href="../IsoChunk.html" title="class in zombie.iso">IsoChunk</a>&nbsp;ch,
- <a href="../IsoCell.html" title="class in zombie.iso">IsoCell</a>&nbsp;cell,
- int&nbsp;x,
- int&nbsp;y,
- int&nbsp;z,
- int&nbsp;tileX,
- int&nbsp;tileY,
- int&nbsp;tileZ,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumMap.html" title="class or interface in java.util" class="external-link">EnumMap</a>&lt;<a href="biomes/FeatureType.html" title="enum class in zombie.iso.worldgen.biomes">FeatureType</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&gt;&nbsp;toBeDone,
- boolean&nbsp;isMap,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Random.html" title="class or interface in java.util" class="external-link">Random</a>&nbsp;rnd)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTiles(zombie.iso.worldgen.biomes.IBiome,zombie.iso.worldgen.biomes.FeatureType,zombie.iso.IsoGridSquare,zombie.iso.IsoChunk,zombie.iso.IsoCell,int,int,int,int,int,int,java.util.EnumMap,java.util.Random)" class="member-name-link">setTiles</a><wbr>(<a href="biomes/IBiome.html" title="interface in zombie.iso.worldgen.biomes">IBiome</a>&nbsp;biome,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="enums/TileReplacementRetValue.html" title="class in zombie.iso.worldgen.enums">TileReplacementRetValue</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTiles(zombie.iso.worldgen.biomes.IBiome,zombie.iso.worldgen.biomes.FeatureType,zombie.iso.IsoGridSquare,zombie.iso.worldgen.ChunksCache,zombie.iso.IsoChunk,zombie.iso.IsoCell,int,int,int,int,int,int,java.util.EnumMap,java.util.Random)" class="member-name-link">setTiles</a><wbr>(<a href="biomes/IBiome.html" title="interface in zombie.iso.worldgen.biomes">IBiome</a>&nbsp;biome,
  <a href="biomes/FeatureType.html" title="enum class in zombie.iso.worldgen.biomes">FeatureType</a>&nbsp;type,
  <a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
+ <a href="ChunksCache.html" title="class in zombie.iso.worldgen">ChunksCache</a>&nbsp;chunks,
  <a href="../IsoChunk.html" title="class in zombie.iso">IsoChunk</a>&nbsp;ch,
  <a href="../IsoCell.html" title="class in zombie.iso">IsoCell</a>&nbsp;cell,
  int&nbsp;x,
@@ -243,7 +236,7 @@ loadScripts(document, 'script');</script>
  int&nbsp;tileZ,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumMap.html" title="class or interface in java.util" class="external-link">EnumMap</a>&lt;<a href="biomes/FeatureType.html" title="enum class in zombie.iso.worldgen.biomes">FeatureType</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&gt;&nbsp;toBeDone,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Random.html" title="class or interface in java.util" class="external-link">Random</a>&nbsp;rnd)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -309,6 +302,38 @@ loadScripts(document, 'script');</script>
 </div>
 </section>
 </li>
+<li>
+<section class="detail" id="ANY">
+<h3>ANY</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">ANY</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#zombie.iso.worldgen.WorldGenTile.ANY">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SUBBIOME">
+<h3>SUBBIOME</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SUBBIOME</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#zombie.iso.worldgen.WorldGenTile.SUBBIOME">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -334,32 +359,13 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="setTiles(zombie.iso.worldgen.biomes.IBiome,zombie.iso.IsoGridSquare,zombie.iso.IsoChunk,zombie.iso.IsoCell,int,int,int,int,int,int,java.util.EnumMap,boolean,java.util.Random)">
+<section class="detail" id="setTiles(zombie.iso.worldgen.biomes.IBiome,zombie.iso.worldgen.biomes.FeatureType,zombie.iso.IsoGridSquare,zombie.iso.worldgen.ChunksCache,zombie.iso.IsoChunk,zombie.iso.IsoCell,int,int,int,int,int,int,java.util.EnumMap,java.util.Random)">
 <h3>setTiles</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setTiles</span><wbr><span class="parameters">(<a href="biomes/IBiome.html" title="interface in zombie.iso.worldgen.biomes">IBiome</a>&nbsp;biome,
- <a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
- <a href="../IsoChunk.html" title="class in zombie.iso">IsoChunk</a>&nbsp;ch,
- <a href="../IsoCell.html" title="class in zombie.iso">IsoCell</a>&nbsp;cell,
- int&nbsp;x,
- int&nbsp;y,
- int&nbsp;z,
- int&nbsp;tileX,
- int&nbsp;tileY,
- int&nbsp;tileZ,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumMap.html" title="class or interface in java.util" class="external-link">EnumMap</a>&lt;<a href="biomes/FeatureType.html" title="enum class in zombie.iso.worldgen.biomes">FeatureType</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&gt;&nbsp;toBeDone,
- boolean&nbsp;isMap,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Random.html" title="class or interface in java.util" class="external-link">Random</a>&nbsp;rnd)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="setTiles(zombie.iso.worldgen.biomes.IBiome,zombie.iso.worldgen.biomes.FeatureType,zombie.iso.IsoGridSquare,zombie.iso.IsoChunk,zombie.iso.IsoCell,int,int,int,int,int,int,java.util.EnumMap,java.util.Random)">
-<h3>setTiles</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">setTiles</span><wbr><span class="parameters">(<a href="biomes/IBiome.html" title="interface in zombie.iso.worldgen.biomes">IBiome</a>&nbsp;biome,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="enums/TileReplacementRetValue.html" title="class in zombie.iso.worldgen.enums">TileReplacementRetValue</a></span>&nbsp;<span class="element-name">setTiles</span><wbr><span class="parameters">(<a href="biomes/IBiome.html" title="interface in zombie.iso.worldgen.biomes">IBiome</a>&nbsp;biome,
  <a href="biomes/FeatureType.html" title="enum class in zombie.iso.worldgen.biomes">FeatureType</a>&nbsp;type,
  <a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
+ <a href="ChunksCache.html" title="class in zombie.iso.worldgen">ChunksCache</a>&nbsp;chunks,
  <a href="../IsoChunk.html" title="class in zombie.iso">IsoChunk</a>&nbsp;ch,
  <a href="../IsoCell.html" title="class in zombie.iso">IsoCell</a>&nbsp;cell,
  int&nbsp;x,
@@ -424,7 +430,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="applyTile(java.lang.String,zombie.iso.IsoGridSquare,zombie.iso.IsoCell,int,int,int,java.util.Random)">
 <h3>applyTile</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">applyTile</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tile,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="enums/TileReplacementRetValue.html" title="class in zombie.iso.worldgen.enums">TileReplacementRetValue</a></span>&nbsp;<span class="element-name">applyTile</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tile,
  <a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;square,
  <a href="../IsoCell.html" title="class in zombie.iso">IsoCell</a>&nbsp;cell,
  int&nbsp;x,

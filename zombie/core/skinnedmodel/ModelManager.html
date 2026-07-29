@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -121,7 +121,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#loadModel(java.lang.String,java.lang.String,zombie.core.skinnedmodel.model.ModelMesh,java.lang.String)" tabindex="0">loadModel(String, String, ModelMesh, String)</a></li>
 <li><a href="#getLoadedModel(java.lang.String)" tabindex="0">getLoadedModel(String)</a></li>
 <li><a href="#getLoadedModel(java.lang.String,java.lang.String,boolean,java.lang.String)" tabindex="0">getLoadedModel(String, String, boolean, String)</a></li>
+<li><a href="#tryGetLoadedModel(zombie.scripting.objects.ModelScript,boolean)" tabindex="0">tryGetLoadedModel(ModelScript, boolean)</a></li>
 <li><a href="#tryGetLoadedModel(java.lang.String,java.lang.String,boolean,java.lang.String,boolean)" tabindex="0">tryGetLoadedModel(String, String, boolean, String, boolean)</a></li>
+<li><a href="#tryGetLoadedModel(java.lang.String,boolean)" tabindex="0">tryGetLoadedModel(String, boolean)</a></li>
 <li><a href="#putLoadedModel(java.lang.String,java.lang.String,boolean,java.lang.String,zombie.core.skinnedmodel.model.Model)" tabindex="0">putLoadedModel(String, String, boolean, String, Model)</a></li>
 <li><a href="#getAnimationAsset(java.lang.String)" tabindex="0">getAnimationAsset(String)</a></li>
 <li><a href="#addAnimationClip(java.lang.String,zombie.core.skinnedmodel.animation.AnimationClip)" tabindex="0">addAnimationClip(String, AnimationClip)</a></li>
@@ -461,10 +463,18 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldLimitTextureSize(java.lang.String)" class="member-name-link">shouldLimitTextureSize</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;textureName)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="model/Model.html" title="class in zombie.core.skinnedmodel.model">Model</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryGetLoadedModel(java.lang.String,java.lang.String,boolean,java.lang.String,boolean)" class="member-name-link">tryGetLoadedModel</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;meshName,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryGetLoadedModel(java.lang.String,boolean)" class="member-name-link">tryGetLoadedModel</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
+ boolean&nbsp;logError)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="model/Model.html" title="class in zombie.core.skinnedmodel.model">Model</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryGetLoadedModel(java.lang.String,java.lang.String,boolean,java.lang.String,boolean)" class="member-name-link">tryGetLoadedModel</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;meshName,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tex,
  boolean&nbsp;isStatic,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;shaderName,
+ boolean&nbsp;logError)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="model/Model.html" title="class in zombie.core.skinnedmodel.model">Model</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryGetLoadedModel(zombie.scripting.objects.ModelScript,boolean)" class="member-name-link">tryGetLoadedModel</a><wbr>(<a href="../../scripting/objects/ModelScript.html" title="class in zombie.scripting.objects">ModelScript</a>&nbsp;modelScript,
  boolean&nbsp;logError)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -977,6 +987,15 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="tryGetLoadedModel(zombie.scripting.objects.ModelScript,boolean)">
+<h3>tryGetLoadedModel</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="model/Model.html" title="class in zombie.core.skinnedmodel.model">Model</a></span>&nbsp;<span class="element-name">tryGetLoadedModel</span><wbr><span class="parameters">(<a href="../../scripting/objects/ModelScript.html" title="class in zombie.scripting.objects">ModelScript</a>&nbsp;modelScript,
+ boolean&nbsp;logError)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="tryGetLoadedModel(java.lang.String,java.lang.String,boolean,java.lang.String,boolean)">
 <h3>tryGetLoadedModel</h3>
 <div class="horizontal-scroll">
@@ -984,6 +1003,15 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tex,
  boolean&nbsp;isStatic,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;shaderName,
+ boolean&nbsp;logError)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="tryGetLoadedModel(java.lang.String,boolean)">
+<h3>tryGetLoadedModel</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="model/Model.html" title="class in zombie.core.skinnedmodel.model">Model</a></span>&nbsp;<span class="element-name">tryGetLoadedModel</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
  boolean&nbsp;logError)</span></div>
 </div>
 </section>

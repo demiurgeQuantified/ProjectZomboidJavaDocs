@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#use">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -123,12 +123,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&gt;</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MovingObjectUpdateScheduler.</span><code><a href="../../MovingObjectUpdateScheduler.html#getBucket()" class="member-name-link">getBucket</a>()</code></div>
+<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MovingObjectUpdateSchedulerUpdateBucket.</span><code><a href="../../MovingObjectUpdateSchedulerUpdateBucket.html#getBucket(int)" class="member-name-link">getBucket</a><wbr>(int&nbsp;frameCounter)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&gt;</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">MovingObjectUpdateSchedulerUpdateBucket.</span><code><a href="../../MovingObjectUpdateSchedulerUpdateBucket.html#getBucket(int)" class="member-name-link">getBucket</a><wbr>(int&nbsp;frameCounter)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Methods in <a href="../../package-summary.html">zombie</a> with parameters of type <a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a></span></div>
 <div class="summary-table three-column-summary">
@@ -143,8 +140,9 @@ loadScripts(document, 'script');</script>
  <a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;b)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">CombatManager.</span><code><a href="../../CombatManager.html#checkPVP(zombie.iso.IsoMovingObject,zombie.iso.IsoMovingObject)" class="member-name-link">checkPVP</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;owner,
- <a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;target)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">CombatManager.</span><code><a href="../../CombatManager.html#checkPVP(zombie.iso.IsoMovingObject,zombie.iso.IsoMovingObject,boolean)" class="member-name-link">checkPVP</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;owner,
+ <a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;target,
+ boolean&nbsp;isMelee)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static <a href="../Vector3.html" title="class in zombie.iso">Vector3</a></code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">CombatManager.</span><code><a href="../../CombatManager.html#getBoneWorldPos(zombie.iso.IsoMovingObject,java.lang.String,zombie.iso.Vector3)" class="member-name-link">getBoneWorldPos</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;target,
@@ -355,6 +353,11 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>void</code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">IsoPlayer.</span><code><a href="../../characters/IsoPlayer.html#TestZombieSpotPlayer(zombie.iso.IsoMovingObject)" class="member-name-link">TestZombieSpotPlayer</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;chr)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ThumpDamageRender.</span><code><a href="../../characters/ThumpDamageRender.html#thump(zombie.iso.IsoMovingObject,float,float)" class="member-name-link">thump</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;chr,
+ float&nbsp;damage,
+ float&nbsp;health)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Method parameters in <a href="../../characters/package-summary.html">zombie.characters</a> with type arguments of type <a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a></span></div>
 <div class="summary-table three-column-summary">
@@ -711,7 +714,8 @@ loadScripts(document, 'script');</script>
  <a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;to)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#Thump(zombie.iso.IsoMovingObject)" class="member-name-link">Thump</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;thumper)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoObject.</span><code><a href="../IsoObject.html#Thump(zombie.iso.IsoMovingObject,int)" class="member-name-link">Thump</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;thumper,
+ int&nbsp;thumpEventCount)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Method parameters in <a href="../package-summary.html">zombie.iso</a> with type arguments of type <a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a></span></div>
@@ -816,19 +820,24 @@ loadScripts(document, 'script');</script>
  <a href="../IsoGridSquare.html" title="class in zombie.iso">IsoGridSquare</a>&nbsp;to)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoBarricade.</span><code><a href="../objects/IsoBarricade.html#Thump(zombie.iso.IsoMovingObject)" class="member-name-link">Thump</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;thumper)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoBarricade.</span><code><a href="../objects/IsoBarricade.html#Thump(zombie.iso.IsoMovingObject,int)" class="member-name-link">Thump</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;thumper,
+ int&nbsp;thumpEventCount)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoCompost.</span><code><a href="../objects/IsoCompost.html#Thump(zombie.iso.IsoMovingObject)" class="member-name-link">Thump</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;thumper)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoCompost.</span><code><a href="../objects/IsoCompost.html#Thump(zombie.iso.IsoMovingObject,int)" class="member-name-link">Thump</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;thumper,
+ int&nbsp;thumpEventCount)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoDoor.</span><code><a href="../objects/IsoDoor.html#Thump(zombie.iso.IsoMovingObject)" class="member-name-link">Thump</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;thumper)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoDoor.</span><code><a href="../objects/IsoDoor.html#Thump(zombie.iso.IsoMovingObject,int)" class="member-name-link">Thump</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;thumper,
+ int&nbsp;thumpEventCount)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IsoThumpable.</span><code><a href="../objects/IsoThumpable.html#Thump(zombie.iso.IsoMovingObject)" class="member-name-link">Thump</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;thumper)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IsoThumpable.</span><code><a href="../objects/IsoThumpable.html#Thump(zombie.iso.IsoMovingObject,int)" class="member-name-link">Thump</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;thumper,
+ int&nbsp;thumpEventCount)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IsoWindow.</span><code><a href="../objects/IsoWindow.html#Thump(zombie.iso.IsoMovingObject)" class="member-name-link">Thump</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;thumper)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IsoWindow.</span><code><a href="../objects/IsoWindow.html#Thump(zombie.iso.IsoMovingObject,int)" class="member-name-link">Thump</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;thumper,
+ int&nbsp;thumpEventCount)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -841,9 +850,13 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Thumpable.</span><code><a href="../objects/interfaces/Thumpable.html#Thump(zombie.iso.IsoMovingObject)" class="member-name-link">Thump</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;thumper)</code></div>
+<div class="col-first even-row-color"><code>default void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Thumpable.</span><code><a href="../objects/interfaces/Thumpable.html#Thump(zombie.iso.IsoMovingObject)" class="member-name-link">Thump</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;isoMovingObject)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Thumpable.</span><code><a href="../objects/interfaces/Thumpable.html#Thump(zombie.iso.IsoMovingObject,int)" class="member-name-link">Thump</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;var1,
+ int&nbsp;var2)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -1042,7 +1055,8 @@ loadScripts(document, 'script');</script>
  <a href="../Vector2.html" title="class in zombie.iso">Vector2</a>&nbsp;outImpactPosOnVehicle)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">BaseVehicle.</span><code><a href="../../vehicles/BaseVehicle.html#Thump(zombie.iso.IsoMovingObject)" class="member-name-link">Thump</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;thumper)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">BaseVehicle.</span><code><a href="../../vehicles/BaseVehicle.html#Thump(zombie.iso.IsoMovingObject,int)" class="member-name-link">Thump</a><wbr>(<a href="../IsoMovingObject.html" title="class in zombie.iso">IsoMovingObject</a>&nbsp;thumper,
+ int&nbsp;thumpEventCount)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>

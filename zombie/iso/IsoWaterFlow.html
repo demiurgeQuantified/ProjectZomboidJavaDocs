@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../search.html">Search</a></li>
 <li><a href="../../help-doc.html#class">Help</a></li>
 </ul>
-<div class="about-language">Unofficial PZ JavaDocs 42.19.0</div>
+<div class="about-language">Unofficial PZ JavaDocs 42.20.0</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -69,6 +69,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#addZone(float,float,float,float,float,float)" tabindex="0">addZone(float, float, float, float, float, float)</a></li>
 <li><a href="#getShore(int,int)" tabindex="0">getShore(int, int)</a></li>
 <li><a href="#getFlow(zombie.iso.IsoGridSquare,int,int,org.joml.Vector2f)" tabindex="0">getFlow(IsoGridSquare, int, int, Vector2f)</a></li>
+<li><a href="#getPoints()" tabindex="0">getPoints()</a></li>
+<li><a href="#getNearest(int,int)" tabindex="0">getNearest(int, int)</a></li>
+<li><a href="#getNearestMultiple(int,int,int)" tabindex="0">getNearestMultiple(int, int, int)</a></li>
 <li><a href="#Reset()" tabindex="0">Reset()</a></li>
 </ol>
 </li>
@@ -135,13 +138,25 @@ loadScripts(document, 'script');</script>
  int&nbsp;ay,
  org.joml.Vector2f&nbsp;out)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getShore(int,int)" class="member-name-link">getShore</a><wbr>(int&nbsp;x,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="WaterFlowObject.html" title="class in zombie.iso">WaterFlowObject</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getNearest(int,int)" class="member-name-link">getNearest</a><wbr>(int&nbsp;x,
  int&nbsp;y)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#Reset()" class="member-name-link">Reset</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="WaterFlowObject.html" title="class in zombie.iso">WaterFlowObject</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getNearestMultiple(int,int,int)" class="member-name-link">getNearestMultiple</a><wbr>(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;max)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="WaterFlowObject.html" title="class in zombie.iso">WaterFlowObject</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getPoints()" class="member-name-link">getPoints</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getShore(int,int)" class="member-name-link">getShore</a><wbr>(int&nbsp;x,
+ int&nbsp;y)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#Reset()" class="member-name-link">Reset</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -216,6 +231,33 @@ loadScripts(document, 'script');</script>
  int&nbsp;ax,
  int&nbsp;ay,
  org.joml.Vector2f&nbsp;out)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getPoints()">
+<h3>getPoints</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="WaterFlowObject.html" title="class in zombie.iso">WaterFlowObject</a>&gt;</span>&nbsp;<span class="element-name">getPoints</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getNearest(int,int)">
+<h3>getNearest</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="WaterFlowObject.html" title="class in zombie.iso">WaterFlowObject</a></span>&nbsp;<span class="element-name">getNearest</span><wbr><span class="parameters">(int&nbsp;x,
+ int&nbsp;y)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getNearestMultiple(int,int,int)">
+<h3>getNearestMultiple</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="WaterFlowObject.html" title="class in zombie.iso">WaterFlowObject</a>&gt;</span>&nbsp;<span class="element-name">getNearestMultiple</span><wbr><span class="parameters">(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;max)</span></div>
 </div>
 </section>
 </li>
